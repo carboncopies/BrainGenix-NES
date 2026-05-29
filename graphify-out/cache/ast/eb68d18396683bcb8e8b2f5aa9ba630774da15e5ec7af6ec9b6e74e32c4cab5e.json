@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vladimirshaleev_ipaddress_json",
+      "label": "vladimirshaleev-ipaddress.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vladimirshaleev-ipaddress.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vladimirshaleev_ipaddress_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vladimirshaleev-ipaddress.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vladimirshaleev_ipaddress_json",
+      "target": "v_vladimirshaleev_ipaddress_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vladimirshaleev-ipaddress.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

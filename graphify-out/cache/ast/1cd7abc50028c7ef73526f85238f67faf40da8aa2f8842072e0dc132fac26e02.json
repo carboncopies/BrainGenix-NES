@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mzying2001_sw_json",
+      "label": "mzying2001-sw.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mzying2001-sw.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mzying2001_sw_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mzying2001-sw.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mzying2001_sw_json",
+      "target": "m_mzying2001_sw_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mzying2001-sw.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

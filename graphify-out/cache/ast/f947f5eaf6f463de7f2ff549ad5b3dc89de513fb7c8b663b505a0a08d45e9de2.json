@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_ctbignum_json",
+      "label": "ctbignum.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbignum.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_ctbignum_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbignum.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_ctbignum_json",
+      "target": "c_ctbignum_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbignum.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

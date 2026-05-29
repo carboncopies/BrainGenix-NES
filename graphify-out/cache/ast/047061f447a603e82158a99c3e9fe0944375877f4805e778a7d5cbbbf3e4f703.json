@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ashes_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ashes_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ashes_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ashes_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ashes_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ashes_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ashes_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "ashes_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ashes_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "ashes_vcpkg_features_direct3d11",
+      "label": "direct3d11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "ashes_vcpkg_direct3d11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "ashes_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "ashes_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "ashes_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "ashes_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ashes_vcpkg_dependencies",
+      "target": "ref_spirv_cross",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ashes_vcpkg_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_default_features",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ashes_vcpkg_default_features",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ashes_vcpkg_json",
+      "target": "ashes_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features",
+      "target": "ashes_vcpkg_features_direct3d11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features_direct3d11",
+      "target": "ashes_vcpkg_direct3d11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features",
+      "target": "ashes_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features_opengl",
+      "target": "ashes_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features",
+      "target": "ashes_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "ashes_vcpkg_features_vulkan",
+      "target": "ashes_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ashes/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ]
+}

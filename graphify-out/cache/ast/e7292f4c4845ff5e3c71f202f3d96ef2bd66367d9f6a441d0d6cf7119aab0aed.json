@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libical_json",
+      "label": "libical.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libical.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libical_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libical.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libical_json",
+      "target": "l_libical_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libical.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

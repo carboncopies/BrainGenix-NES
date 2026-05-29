@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gst_rtsp_server_json",
+      "label": "gst-rtsp-server.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gst-rtsp-server.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gst_rtsp_server_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gst-rtsp-server.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gst_rtsp_server_json",
+      "target": "g_gst_rtsp_server_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gst-rtsp-server.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

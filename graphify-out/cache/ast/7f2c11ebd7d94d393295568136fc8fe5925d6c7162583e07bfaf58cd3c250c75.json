@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_ptest_c",
+      "label": "ptest.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/ptest.c",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_ptest_c",
+      "target": "thirdparty_netmorphcmake_source_point_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/ptest.c",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ptest_c",
+      "target": "thirdparty_netmorphcmake_source_vector_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/ptest.c",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

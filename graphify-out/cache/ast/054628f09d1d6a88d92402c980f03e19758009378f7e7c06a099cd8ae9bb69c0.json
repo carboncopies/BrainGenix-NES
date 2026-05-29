@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_klein_json",
+      "label": "klein.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/klein.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_klein_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/klein.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_klein_json",
+      "target": "k_klein_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/klein.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fastpfor_json",
+      "label": "fastpfor.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastpfor.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fastpfor_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastpfor.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fastpfor_json",
+      "target": "f_fastpfor_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastpfor.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

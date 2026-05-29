@@ -1,0 +1,501 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libcanberra_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libcanberra_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libcanberra_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libcanberra_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libcanberra_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libcanberra_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libcanberra_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libcanberra_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libcanberra_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "libcanberra_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_alsa",
+      "label": "alsa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libcanberra_vcpkg_alsa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libcanberra_vcpkg_alsa_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_defaults",
+      "label": "defaults",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libcanberra_vcpkg_defaults_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libcanberra_vcpkg_defaults_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_gstreamer",
+      "label": "gstreamer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libcanberra_vcpkg_gstreamer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libcanberra_vcpkg_gstreamer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_gtk3",
+      "label": "gtk3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libcanberra_vcpkg_gtk3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "libcanberra_vcpkg_gtk3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_null",
+      "label": "null",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "libcanberra_vcpkg_null_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_oss",
+      "label": "oss",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "libcanberra_vcpkg_oss_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "libcanberra_vcpkg_features_pulse",
+      "label": "pulse",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "libcanberra_vcpkg_pulse_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L67"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_dependencies",
+      "target": "ref_gettext",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libcanberra_vcpkg_dependencies",
+      "target": "ref_libvorbis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_default_features",
+      "target": "ref_defaults",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcanberra_vcpkg_json",
+      "target": "libcanberra_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_alsa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_alsa",
+      "target": "libcanberra_vcpkg_alsa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_alsa",
+      "target": "libcanberra_vcpkg_alsa_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_alsa_dependencies",
+      "target": "ref_alsa",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_defaults",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_defaults",
+      "target": "libcanberra_vcpkg_defaults_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_defaults",
+      "target": "libcanberra_vcpkg_defaults_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_gstreamer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_gstreamer",
+      "target": "libcanberra_vcpkg_gstreamer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_gstreamer",
+      "target": "libcanberra_vcpkg_gstreamer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_gtk3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_gtk3",
+      "target": "libcanberra_vcpkg_gtk3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_gtk3",
+      "target": "libcanberra_vcpkg_gtk3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_null",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_null",
+      "target": "libcanberra_vcpkg_null_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_oss",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_oss",
+      "target": "libcanberra_vcpkg_oss_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features",
+      "target": "libcanberra_vcpkg_features_pulse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "libcanberra_vcpkg_features_pulse",
+      "target": "libcanberra_vcpkg_pulse_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcanberra/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    }
+  ]
+}

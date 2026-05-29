@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fixed_containers_json",
+      "label": "fixed-containers.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fixed-containers.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fixed_containers_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fixed-containers.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fixed_containers_json",
+      "target": "f_fixed_containers_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fixed-containers.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

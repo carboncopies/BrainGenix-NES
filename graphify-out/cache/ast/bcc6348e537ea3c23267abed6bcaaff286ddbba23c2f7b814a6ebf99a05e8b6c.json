@@ -1,0 +1,557 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libopnmidi_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libopnmidi_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libopnmidi_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libopnmidi_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libopnmidi_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libopnmidi_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libopnmidi_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libopnmidi_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_gens_emulator",
+      "label": "gens-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libopnmidi_vcpkg_gens_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_gx_emulator",
+      "label": "gx-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libopnmidi_vcpkg_gx_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_mame_ym2608_emulator",
+      "label": "mame-ym2608-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libopnmidi_vcpkg_mame_ym2608_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_mame_ym2612_emulator",
+      "label": "mame-ym2612-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libopnmidi_vcpkg_mame_ym2612_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_midi_sequencer",
+      "label": "midi-sequencer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "libopnmidi_vcpkg_midi_sequencer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_mus",
+      "label": "mus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libopnmidi_vcpkg_mus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_np2_emulator",
+      "label": "np2-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "libopnmidi_vcpkg_np2_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_nuked_emulator",
+      "label": "nuked-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "libopnmidi_vcpkg_nuked_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_pmdwin_emulator",
+      "label": "pmdwin-emulator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "libopnmidi_vcpkg_pmdwin_emulator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "libopnmidi_vcpkg_features_xmi",
+      "label": "xmi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "libopnmidi_vcpkg_xmi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L57"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_gens_emulator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_mame_ym2608_emulator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_mame_ym2612_emulator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_midi_sequencer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_mus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_np2_emulator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_nuked_emulator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libopnmidi_vcpkg_default_features",
+      "target": "ref_xmi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libopnmidi_vcpkg_json",
+      "target": "libopnmidi_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_gens_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_gens_emulator",
+      "target": "libopnmidi_vcpkg_gens_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_gx_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_gx_emulator",
+      "target": "libopnmidi_vcpkg_gx_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_mame_ym2608_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_mame_ym2608_emulator",
+      "target": "libopnmidi_vcpkg_mame_ym2608_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_mame_ym2612_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_mame_ym2612_emulator",
+      "target": "libopnmidi_vcpkg_mame_ym2612_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_midi_sequencer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_midi_sequencer",
+      "target": "libopnmidi_vcpkg_midi_sequencer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_mus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_mus",
+      "target": "libopnmidi_vcpkg_mus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_np2_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_np2_emulator",
+      "target": "libopnmidi_vcpkg_np2_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_nuked_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_nuked_emulator",
+      "target": "libopnmidi_vcpkg_nuked_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_pmdwin_emulator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_pmdwin_emulator",
+      "target": "libopnmidi_vcpkg_pmdwin_emulator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features",
+      "target": "libopnmidi_vcpkg_features_xmi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "libopnmidi_vcpkg_features_xmi",
+      "target": "libopnmidi_vcpkg_xmi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libopnmidi/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    }
+  ]
+}

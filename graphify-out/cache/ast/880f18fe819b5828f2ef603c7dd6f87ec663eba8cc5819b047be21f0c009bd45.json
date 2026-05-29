@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kfr_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kfr_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kfr_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kfr_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kfr_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kfr_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "kfr_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "kfr_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "kfr_vcpkg_features_capi",
+      "label": "capi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "kfr_vcpkg_capi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "kfr_vcpkg_capi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "kfr_vcpkg_features_dft",
+      "label": "dft",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "kfr_vcpkg_dft_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kfr_vcpkg_json",
+      "target": "kfr_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "kfr_vcpkg_features",
+      "target": "kfr_vcpkg_features_capi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "kfr_vcpkg_features_capi",
+      "target": "kfr_vcpkg_capi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "kfr_vcpkg_features_capi",
+      "target": "kfr_vcpkg_capi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "kfr_vcpkg_features",
+      "target": "kfr_vcpkg_features_dft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "kfr_vcpkg_features_dft",
+      "target": "kfr_vcpkg_dft_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kfr/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ]
+}

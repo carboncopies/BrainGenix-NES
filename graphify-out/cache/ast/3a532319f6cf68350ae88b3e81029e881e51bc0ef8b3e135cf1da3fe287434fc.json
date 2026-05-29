@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sse2neon_json",
+      "label": "sse2neon.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sse2neon.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sse2neon_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sse2neon.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sse2neon_json",
+      "target": "s_sse2neon_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sse2neon.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

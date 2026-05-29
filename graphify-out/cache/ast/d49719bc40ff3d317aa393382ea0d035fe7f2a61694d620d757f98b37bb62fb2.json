@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libnick_json",
+      "label": "libnick.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnick.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libnick_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnick.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libnick_json",
+      "target": "l_libnick_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnick.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

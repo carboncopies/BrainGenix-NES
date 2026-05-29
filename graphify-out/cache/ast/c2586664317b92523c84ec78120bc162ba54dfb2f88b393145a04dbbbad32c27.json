@@ -1,0 +1,359 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_glm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_glslang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_jsoncpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_sdl2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_shaderc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_spirv_cross",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_spirv_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_valijson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_volk",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_vulkan_memory_allocator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_vulkan_utility_libraries",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_dependencies",
+      "target": "ref_vulkan_validationlayers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_sdk_components_vcpkg_json",
+      "target": "vulkan_sdk_components_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_features",
+      "target": "vulkan_sdk_components_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_features_tools",
+      "target": "vulkan_sdk_components_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_features_tools",
+      "target": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "target": "ref_lunarg_vulkantools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "target": "ref_spirv_reflect",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "target": "ref_spirv_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_sdk_components_vcpkg_tools_dependencies",
+      "target": "ref_vulkan_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-sdk-components/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

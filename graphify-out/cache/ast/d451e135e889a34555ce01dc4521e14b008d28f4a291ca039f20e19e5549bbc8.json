@@ -1,0 +1,495 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sentry_native_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sentry_native_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sentry_native_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sentry_native_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sentry_native_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sentry_native_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sentry_native_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sentry_native_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sentry_native_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sentry_native_vcpkg_features_backend",
+      "label": "backend",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sentry_native_vcpkg_backend_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "sentry_native_vcpkg_backend_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "sentry_native_vcpkg_features_compression",
+      "label": "compression",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "sentry_native_vcpkg_compression_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "sentry_native_vcpkg_compression_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "sentry_native_vcpkg_features_transport",
+      "label": "transport",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "sentry_native_vcpkg_transport_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "sentry_native_vcpkg_transport_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "sentry_native_vcpkg_features_wer",
+      "label": "wer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "sentry_native_vcpkg_wer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "sentry_native_vcpkg_wer_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "sentry_native_vcpkg_wer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L88"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_default_features",
+      "target": "ref_backend",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_default_features",
+      "target": "ref_transport",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sentry_native_vcpkg_json",
+      "target": "sentry_native_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features",
+      "target": "sentry_native_vcpkg_features_backend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features_backend",
+      "target": "sentry_native_vcpkg_backend_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_backend_description",
+      "target": "ref_enables_the_platform_specific_backend",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_backend_description",
+      "target": "ref_this_feature_does_nothing_for_some_platforms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_backend_description",
+      "target": "ref_cf_https_github_com_getsentry_sentry_native_compile_time_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_features_backend",
+      "target": "sentry_native_vcpkg_backend_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features",
+      "target": "sentry_native_vcpkg_features_compression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features_compression",
+      "target": "sentry_native_vcpkg_compression_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_compression_description",
+      "target": "ref_enables_gzip_compression_support_for_the_transport",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_compression_description",
+      "target": "ref_cf_https_github_com_getsentry_sentry_native_compile_time_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_features_compression",
+      "target": "sentry_native_vcpkg_compression_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_compression_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_features",
+      "target": "sentry_native_vcpkg_features_transport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features_transport",
+      "target": "sentry_native_vcpkg_transport_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_transport_description",
+      "target": "ref_enables_the_platform_specific_network_transport",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_transport_description",
+      "target": "ref_this_feature_does_nothing_for_some_platforms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_transport_description",
+      "target": "ref_cf_https_github_com_getsentry_sentry_native_compile_time_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_features_transport",
+      "target": "sentry_native_vcpkg_transport_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features",
+      "target": "sentry_native_vcpkg_features_wer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features_wer",
+      "target": "sentry_native_vcpkg_wer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_wer_description",
+      "target": "ref_enables_the_windows_error_reporting_backend",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_wer_description",
+      "target": "ref_cf_https_github_com_getsentry_sentry_native_compile_time_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sentry_native_vcpkg_features_wer",
+      "target": "sentry_native_vcpkg_wer_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "sentry_native_vcpkg_features_wer",
+      "target": "sentry_native_vcpkg_wer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sentry-native/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    }
+  ]
+}

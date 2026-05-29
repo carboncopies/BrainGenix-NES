@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_dlpack_json",
+      "label": "dlpack.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dlpack.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_dlpack_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dlpack.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_dlpack_json",
+      "target": "d_dlpack_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dlpack.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

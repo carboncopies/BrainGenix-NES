@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_clapack_arith_linux64_h",
+      "label": "arith_linux64.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clapack/arith_linux64.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

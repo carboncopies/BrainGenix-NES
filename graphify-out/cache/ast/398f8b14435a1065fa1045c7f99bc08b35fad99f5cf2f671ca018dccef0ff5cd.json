@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_openimageio_json",
+      "label": "openimageio.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openimageio.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_openimageio_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openimageio.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_openimageio_json",
+      "target": "o_openimageio_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openimageio.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

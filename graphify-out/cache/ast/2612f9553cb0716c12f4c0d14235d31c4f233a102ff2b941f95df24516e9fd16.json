@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_abseil_json",
+      "label": "abseil.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/abseil.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_abseil_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/abseil.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_abseil_json",
+      "target": "a_abseil_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/abseil.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

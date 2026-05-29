@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fawdlstty_libfv_json",
+      "label": "fawdlstty-libfv.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fawdlstty-libfv.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fawdlstty_libfv_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fawdlstty-libfv.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fawdlstty_libfv_json",
+      "target": "f_fawdlstty_libfv_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fawdlstty-libfv.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

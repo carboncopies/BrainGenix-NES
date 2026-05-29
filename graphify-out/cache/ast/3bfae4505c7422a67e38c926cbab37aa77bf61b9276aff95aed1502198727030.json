@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_directxmesh_json",
+      "label": "directxmesh.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxmesh.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_directxmesh_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxmesh.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_directxmesh_json",
+      "target": "d_directxmesh_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxmesh.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

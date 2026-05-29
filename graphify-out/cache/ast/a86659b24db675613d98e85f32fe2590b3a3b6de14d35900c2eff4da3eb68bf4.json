@@ -1,0 +1,281 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_features_cairo",
+      "label": "cairo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_cairo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_cairo_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "gobject_introspection_vcpkg_cairo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_description",
+      "target": "ref_a_middleware_layer_between_c_libraries_using_gobject_and_language_bindings",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gobject_introspection_vcpkg_description",
+      "target": "ref_building_with_gobject_introspection_is_based_on_dynamic_library_linkage_static_builds_of_the_core_feature_set_are_supported_only_for_ci_purposes",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gobject_introspection_vcpkg_description",
+      "target": "ref_the_g_ir_scanner_program_runs_executables_for_the_target_system_this_limits_actual_cross_build_support_to_targets_supported_by_the_host_cpu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gobject_introspection_vcpkg_dependencies",
+      "target": "ref_libffi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gobject_introspection_vcpkg_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gobject_introspection_vcpkg_json",
+      "target": "gobject_introspection_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_features",
+      "target": "gobject_introspection_vcpkg_features_cairo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_features_cairo",
+      "target": "gobject_introspection_vcpkg_cairo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_features_cairo",
+      "target": "gobject_introspection_vcpkg_cairo_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "gobject_introspection_vcpkg_features_cairo",
+      "target": "gobject_introspection_vcpkg_cairo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gobject-introspection/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ]
+}

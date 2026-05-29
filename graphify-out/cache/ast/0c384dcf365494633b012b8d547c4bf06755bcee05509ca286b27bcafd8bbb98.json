@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wayland_json",
+      "label": "wayland.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wayland.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wayland_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wayland.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wayland_json",
+      "target": "w_wayland_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wayland.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

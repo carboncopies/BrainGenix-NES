@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_7_7zip_json",
+      "label": "7zip.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/7-/7zip.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "7_7zip_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/7-/7zip.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_7_7zip_json",
+      "target": "7_7zip_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/7-/7zip.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

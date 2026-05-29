@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_plf_indiesort_json",
+      "label": "plf-indiesort.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-indiesort.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_plf_indiesort_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-indiesort.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_plf_indiesort_json",
+      "target": "p_plf_indiesort_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-indiesort.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

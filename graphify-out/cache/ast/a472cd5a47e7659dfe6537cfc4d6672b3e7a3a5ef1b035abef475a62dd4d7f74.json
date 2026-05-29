@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_contributing_pt_md",
+      "label": "CONTRIBUTING_pt.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_pt_diretrizes_de_contribui\u00e7\u00e3o",
+      "label": "Diretrizes de Contribui\u00e7\u00e3o",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_pt_problemas_issues",
+      "label": "Problemas (issues)",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_contributing_pt_pull_requests",
+      "label": "Pull Requests",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "vcpkg_contributing_pt_diretrizes_de_novos_pacotes",
+      "label": "Diretrizes de novos pacotes",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "vcpkg_contributing_pt_jur\u00eddico",
+      "label": "Jur\u00eddico",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_contributing_pt_md",
+      "target": "vcpkg_contributing_pt_diretrizes_de_contribui\u00e7\u00e3o",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_pt_diretrizes_de_contribui\u00e7\u00e3o",
+      "target": "vcpkg_contributing_pt_problemas_issues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_pt_diretrizes_de_contribui\u00e7\u00e3o",
+      "target": "vcpkg_contributing_pt_pull_requests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_pt_pull_requests",
+      "target": "vcpkg_contributing_pt_diretrizes_de_novos_pacotes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_pt_diretrizes_de_contribui\u00e7\u00e3o",
+      "target": "vcpkg_contributing_pt_jur\u00eddico",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_pt.md",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

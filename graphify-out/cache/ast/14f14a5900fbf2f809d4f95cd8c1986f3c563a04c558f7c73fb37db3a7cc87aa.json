@@ -1,0 +1,158 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_vector_c",
+      "label": "vector.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_vector_normalize",
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L192"
+    },
+    {
+      "id": "source_vector_sum",
+      "label": "sum()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L200"
+    },
+    {
+      "id": "vector",
+      "label": "Vector",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L200"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_c",
+      "target": "thirdparty_netmorphcmake_source_point_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_c",
+      "target": "thirdparty_netmorphcmake_source_vector_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_c",
+      "target": "source_vector_normalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_c",
+      "target": "source_vector_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector_sum",
+      "target": "vector",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L200",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector_sum",
+      "target": "vector",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L200",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_c",
+      "target": "source_vector_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector_sum",
+      "target": "vector",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L218",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector_sum",
+      "target": "vector",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L218",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_vector_normalize",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "source_vector_sum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_vector_sum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "source_vector_sum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "source_vector_sum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.c",
+      "source_location": "L224"
+    }
+  ]
+}

@@ -1,0 +1,1085 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libtorch_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libtorch_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libtorch_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libtorch_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libtorch_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libtorch_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libtorch_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libtorch_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "libtorch_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "libtorch_vcpkg_features_cuda",
+      "label": "cuda",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "libtorch_vcpkg_cuda_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "libtorch_vcpkg_cuda_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "libtorch_vcpkg_cuda_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "libtorch_vcpkg_features_dist",
+      "label": "dist",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "libtorch_vcpkg_dist_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "libtorch_vcpkg_dist_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "libtorch_vcpkg_dist_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "libtorch_vcpkg_features_gflags",
+      "label": "gflags",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "libtorch_vcpkg_gflags_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L118"
+    },
+    {
+      "id": "libtorch_vcpkg_gflags_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L119"
+    },
+    {
+      "id": "libtorch_vcpkg_features_glog",
+      "label": "glog",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "libtorch_vcpkg_glog_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "libtorch_vcpkg_glog_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "libtorch_vcpkg_features_llvm",
+      "label": "llvm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "libtorch_vcpkg_llvm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "libtorch_vcpkg_llvm_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "libtorch_vcpkg_features_mpi",
+      "label": "mpi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "libtorch_vcpkg_mpi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "libtorch_vcpkg_mpi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L137"
+    },
+    {
+      "id": "libtorch_vcpkg_features_nnpack",
+      "label": "nnpack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "libtorch_vcpkg_nnpack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "libtorch_vcpkg_nnpack_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "libtorch_vcpkg_nnpack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "libtorch_vcpkg_features_opencv",
+      "label": "opencv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L148"
+    },
+    {
+      "id": "libtorch_vcpkg_opencv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L149"
+    },
+    {
+      "id": "libtorch_vcpkg_opencv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "libtorch_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L154"
+    },
+    {
+      "id": "libtorch_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L155"
+    },
+    {
+      "id": "libtorch_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L156"
+    },
+    {
+      "id": "libtorch_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L166"
+    },
+    {
+      "id": "libtorch_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L167"
+    },
+    {
+      "id": "libtorch_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L168"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_blas",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_cpp_httplib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_cpuinfo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_flatbuffers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_foxi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_fp16",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_gemmlowp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_lapack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_lmdb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_mimalloc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_onnx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_onnx_optimizer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_opencl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_pocketfft",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_protobuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_pthreadpool",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_pybind11",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_sleef",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_dependencies",
+      "target": "ref_xnnpack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_default_features",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_default_features",
+      "target": "ref_glog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_default_features",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_default_features",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorch_vcpkg_json",
+      "target": "libtorch_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_cuda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_cuda",
+      "target": "libtorch_vcpkg_cuda_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_cuda",
+      "target": "libtorch_vcpkg_cuda_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_cuda",
+      "target": "libtorch_vcpkg_cuda_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_cuda_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_cuda_dependencies",
+      "target": "ref_cudnn",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_cuda_dependencies",
+      "target": "ref_magma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_cuda_dependencies",
+      "target": "ref_nvidia_cutlass",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_dist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_dist",
+      "target": "libtorch_vcpkg_dist_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_dist",
+      "target": "libtorch_vcpkg_dist_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_dist",
+      "target": "libtorch_vcpkg_dist_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_gflags",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_gflags",
+      "target": "libtorch_vcpkg_gflags_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_gflags",
+      "target": "libtorch_vcpkg_gflags_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_gflags_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_glog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_glog",
+      "target": "libtorch_vcpkg_glog_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_glog",
+      "target": "libtorch_vcpkg_glog_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_glog_dependencies",
+      "target": "ref_glog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_llvm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_llvm",
+      "target": "libtorch_vcpkg_llvm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_llvm",
+      "target": "libtorch_vcpkg_llvm_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_llvm_dependencies",
+      "target": "ref_llvm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_mpi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_mpi",
+      "target": "libtorch_vcpkg_mpi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_mpi",
+      "target": "libtorch_vcpkg_mpi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_mpi_dependencies",
+      "target": "ref_mpi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_nnpack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_nnpack",
+      "target": "libtorch_vcpkg_nnpack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_nnpack",
+      "target": "libtorch_vcpkg_nnpack_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_nnpack",
+      "target": "libtorch_vcpkg_nnpack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_nnpack_dependencies",
+      "target": "ref_nnpack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_opencv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_opencv",
+      "target": "libtorch_vcpkg_opencv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_opencv",
+      "target": "libtorch_vcpkg_opencv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_opencv_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_vulkan",
+      "target": "libtorch_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_vulkan",
+      "target": "libtorch_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_loader",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_memory_allocator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorch_vcpkg_features",
+      "target": "libtorch_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_zstd",
+      "target": "libtorch_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_features_zstd",
+      "target": "libtorch_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorch_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorch/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

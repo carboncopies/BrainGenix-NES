@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_luasocket_json",
+      "label": "luasocket.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luasocket.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_luasocket_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luasocket.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_luasocket_json",
+      "target": "l_luasocket_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luasocket.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

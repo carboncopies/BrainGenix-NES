@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "azure_storage_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_storage_cpp_vcpkg_description",
+      "target": "ref_legacy_microsoft_azure_storage_client_sdk_for_c",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_storage_cpp_vcpkg_description",
+      "target": "ref_a_client_library_for_working_with_microsoft_azure_storage_services_including_blobs_files_tables_and_queues_this_client_library_enables_working_with_the_microsoft_azure_storage_services_which_include_the_blob_service_for_storing_binary_and_text_data_the_file_service_for_storing_binary_and_text_data_the_table_service_for_storing_structured_non_relational_data_and_the_queue_service_for_storing_messages_that_may_be_accessed_by_a_client",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_storage_cpp_vcpkg_json",
+      "target": "azure_storage_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-storage-cpp/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ]
+}

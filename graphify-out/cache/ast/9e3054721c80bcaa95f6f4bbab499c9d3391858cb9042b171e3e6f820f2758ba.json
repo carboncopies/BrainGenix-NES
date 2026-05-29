@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rabit_json",
+      "label": "rabit.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rabit.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rabit_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rabit.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rabit_json",
+      "target": "r_rabit_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rabit.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

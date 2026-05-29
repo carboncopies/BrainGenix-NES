@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_http_parser_json",
+      "label": "http-parser.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/http-parser.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_http_parser_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/http-parser.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_http_parser_json",
+      "target": "h_http_parser_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/http-parser.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

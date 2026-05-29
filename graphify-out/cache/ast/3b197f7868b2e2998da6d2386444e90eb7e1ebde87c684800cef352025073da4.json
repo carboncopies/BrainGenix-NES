@@ -1,0 +1,357 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "spdlog_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "spdlog_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "spdlog_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "spdlog_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "spdlog_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "spdlog_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "spdlog_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "spdlog_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "spdlog_vcpkg_features_benchmark",
+      "label": "benchmark",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "spdlog_vcpkg_benchmark_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "spdlog_vcpkg_benchmark_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "spdlog_vcpkg_features_fmt",
+      "label": "fmt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "spdlog_vcpkg_fmt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "spdlog_vcpkg_fmt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "spdlog_vcpkg_features_tz_offset",
+      "label": "tz-offset",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "spdlog_vcpkg_tz_offset_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "spdlog_vcpkg_features_wchar",
+      "label": "wchar",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "spdlog_vcpkg_wchar_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "spdlog_vcpkg_wchar_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_default_features",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "spdlog_vcpkg_default_features",
+      "target": "ref_tz_offset",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_spdlog_vcpkg_json",
+      "target": "spdlog_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features",
+      "target": "spdlog_vcpkg_features_benchmark",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_benchmark",
+      "target": "spdlog_vcpkg_benchmark_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_benchmark",
+      "target": "spdlog_vcpkg_benchmark_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_benchmark_dependencies",
+      "target": "ref_benchmark",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "spdlog_vcpkg_features",
+      "target": "spdlog_vcpkg_features_fmt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_fmt",
+      "target": "spdlog_vcpkg_fmt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_fmt",
+      "target": "spdlog_vcpkg_fmt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_fmt_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "spdlog_vcpkg_features",
+      "target": "spdlog_vcpkg_features_tz_offset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_tz_offset",
+      "target": "spdlog_vcpkg_tz_offset_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features",
+      "target": "spdlog_vcpkg_features_wchar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_wchar",
+      "target": "spdlog_vcpkg_wchar_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "spdlog_vcpkg_features_wchar",
+      "target": "spdlog_vcpkg_wchar_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/spdlog/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ]
+}

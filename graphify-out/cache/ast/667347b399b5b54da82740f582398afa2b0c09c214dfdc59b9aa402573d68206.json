@@ -1,0 +1,254 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_client",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_delta",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_diff",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_fs",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_ra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_repos",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "svn_wc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_subversion_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_client_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_delta_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_diff_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_fs_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_ra_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_repos_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_subr_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "svn_wc_version",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-subversion/project/main.cpp",
+      "source_location": "L75"
+    }
+  ]
+}

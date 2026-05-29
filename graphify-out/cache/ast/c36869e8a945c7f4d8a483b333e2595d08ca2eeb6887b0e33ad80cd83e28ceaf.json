@@ -1,0 +1,367 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sqlpp11_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sqlpp11_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sqlpp11_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sqlpp11_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sqlpp11_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sqlpp11_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sqlpp11_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "sqlpp11_vcpkg_features_mariadb",
+      "label": "mariadb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "sqlpp11_vcpkg_mariadb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "sqlpp11_vcpkg_mariadb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "sqlpp11_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "sqlpp11_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "sqlpp11_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "sqlpp11_vcpkg_features_postgresql",
+      "label": "postgresql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sqlpp11_vcpkg_postgresql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "sqlpp11_vcpkg_postgresql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "sqlpp11_vcpkg_features_sqlite3",
+      "label": "sqlite3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "sqlpp11_vcpkg_sqlite3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "sqlpp11_vcpkg_sqlite3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_dependencies",
+      "target": "ref_date",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_vcpkg_json",
+      "target": "sqlpp11_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features",
+      "target": "sqlpp11_vcpkg_features_mariadb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_mariadb",
+      "target": "sqlpp11_vcpkg_mariadb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_mariadb",
+      "target": "sqlpp11_vcpkg_mariadb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_mariadb_dependencies",
+      "target": "ref_libmariadb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sqlpp11_vcpkg_features",
+      "target": "sqlpp11_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_mysql",
+      "target": "sqlpp11_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_mysql",
+      "target": "sqlpp11_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_mysql_dependencies",
+      "target": "ref_libmysql",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sqlpp11_vcpkg_features",
+      "target": "sqlpp11_vcpkg_features_postgresql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_postgresql",
+      "target": "sqlpp11_vcpkg_postgresql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_postgresql",
+      "target": "sqlpp11_vcpkg_postgresql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_postgresql_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sqlpp11_vcpkg_features",
+      "target": "sqlpp11_vcpkg_features_sqlite3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_sqlite3",
+      "target": "sqlpp11_vcpkg_sqlite3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_features_sqlite3",
+      "target": "sqlpp11_vcpkg_sqlite3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_vcpkg_sqlite3_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

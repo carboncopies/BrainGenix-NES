@@ -1,0 +1,5572 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "label": "BigString.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "dil2al_bigstring_error",
+      "label": "error()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L43"
+    },
+    {
+      "id": "dil2al_bigstring_operator_const_char_const",
+      "label": "operator const char*() const()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L49"
+    },
+    {
+      "id": "dil2al_bigstring_ncopy",
+      "label": "ncopy()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L80"
+    },
+    {
+      "id": "bigstring_iterator",
+      "label": "_BIGSTRING_ITERATOR",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L80"
+    },
+    {
+      "id": "dil2al_bigstring_ncopy0",
+      "label": "ncopy0()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L86"
+    },
+    {
+      "id": "dil2al_bigstring_ncopy0_istream",
+      "label": "ncopy0_istream()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L99"
+    },
+    {
+      "id": "istream",
+      "label": "istream",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L99"
+    },
+    {
+      "id": "dil2al_bigstring_scopy",
+      "label": "scopy()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L108"
+    },
+    {
+      "id": "dil2al_bigstring_revcopy",
+      "label": "revcopy()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L114"
+    },
+    {
+      "id": "bigstring_reverse",
+      "label": "_BIGSTRING_REVERSE",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L114"
+    },
+    {
+      "id": "dil2al_bigstring_slen",
+      "label": "slen()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L120"
+    },
+    {
+      "id": "bigstring_size",
+      "label": "_BIGSTRING_SIZE",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L120"
+    },
+    {
+      "id": "dil2al_bigstring_snew",
+      "label": "Snew()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150"
+    },
+    {
+      "id": "strrep",
+      "label": "StrRep",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150"
+    },
+    {
+      "id": "bigstring_alloc",
+      "label": "_BIGSTRING_ALLOC",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150"
+    },
+    {
+      "id": "dil2al_bigstring_salloc",
+      "label": "Salloc()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178"
+    },
+    {
+      "id": "dil2al_bigstring_salloc_istream",
+      "label": "Salloc_istream()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212"
+    },
+    {
+      "id": "dil2al_bigstring_sresize",
+      "label": "Sresize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L236"
+    },
+    {
+      "id": "dil2al_bigstring_alloc",
+      "label": "alloc()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L257"
+    },
+    {
+      "id": "dil2al_bigstring_scat",
+      "label": "Scat()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298"
+    },
+    {
+      "id": "dil2al_bigstring_scat_istream",
+      "label": "Scat_istream()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325"
+    },
+    {
+      "id": "dil2al_bigstring_sprepend",
+      "label": "Sprepend()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L378"
+    },
+    {
+      "id": "dil2al_bigstring_scmp",
+      "label": "scmp()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L412"
+    },
+    {
+      "id": "dil2al_bigstring_ncmp",
+      "label": "ncmp()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L428"
+    },
+    {
+      "id": "dil2al_bigstring_fcompare",
+      "label": "fcompare()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436"
+    },
+    {
+      "id": "dil2al_bigstring_compare",
+      "label": "compare()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L464"
+    },
+    {
+      "id": "substring",
+      "label": "SubString",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L474"
+    },
+    {
+      "id": "dil2al_bigstring_search",
+      "label": "search()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L507"
+    },
+    {
+      "id": "dil2al_bigstring_match",
+      "label": "match()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563"
+    },
+    {
+      "id": "dil2al_bigstring_assign",
+      "label": "assign()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L585"
+    },
+    {
+      "id": "dil2al_bigstring_gsub",
+      "label": "_gsub()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L647"
+    },
+    {
+      "id": "dil2al_bigstring_del",
+      "label": "del()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L851"
+    },
+    {
+      "id": "bigregex",
+      "label": "BigRegex",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L860"
+    },
+    {
+      "id": "dil2al_bigstring_at",
+      "label": "at()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L894"
+    },
+    {
+      "id": "dil2al_bigstring_operator",
+      "label": "operator()()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L899"
+    },
+    {
+      "id": "dil2al_bigstring_before",
+      "label": "before()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L904"
+    },
+    {
+      "id": "dil2al_bigstring_through",
+      "label": "through()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L909"
+    },
+    {
+      "id": "dil2al_bigstring_after",
+      "label": "after()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L914"
+    },
+    {
+      "id": "dil2al_bigstring_from",
+      "label": "from()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L919"
+    },
+    {
+      "id": "dil2al_bigstring_sub",
+      "label": "sub()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1094"
+    },
+    {
+      "id": "dil2al_bigstring_split",
+      "label": "split()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106"
+    },
+    {
+      "id": "dil2al_bigstring_returns",
+      "label": "RETURNS()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1156"
+    },
+    {
+      "id": "x",
+      "label": "x",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1156"
+    },
+    {
+      "id": "dil2al_bigstring_sreverse",
+      "label": "Sreverse()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1186"
+    },
+    {
+      "id": "dil2al_bigstring_supcase",
+      "label": "Supcase()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1206"
+    },
+    {
+      "id": "dil2al_bigstring_sdowncase",
+      "label": "Sdowncase()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1216"
+    },
+    {
+      "id": "dil2al_bigstring_scapitalize",
+      "label": "Scapitalize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1226"
+    },
+    {
+      "id": "dil2al_bigstring_w",
+      "label": "w()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1267"
+    },
+    {
+      "id": "dil2al_bigstring_replicate",
+      "label": "replicate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1309"
+    },
+    {
+      "id": "dil2al_bigstring_common_prefix",
+      "label": "common_prefix()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337"
+    },
+    {
+      "id": "dil2al_bigstring_common_suffix",
+      "label": "common_suffix()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353"
+    },
+    {
+      "id": "dil2al_bigstring_readline",
+      "label": "readline()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1409"
+    },
+    {
+      "id": "dil2al_bigstring_freq",
+      "label": "freq()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1455"
+    },
+    {
+      "id": "dil2al_bigstring_ok",
+      "label": "OK()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1488"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "limits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "thirdparty_netmorphcmake_source_dil2al_bigstring_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "new",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "ctype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_error",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_operator_const_char_const",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_ncopy",
+      "target": "bigstring_iterator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_ncopy0",
+      "target": "bigstring_iterator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ncopy0_istream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_ncopy0_istream",
+      "target": "istream",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_ncopy0_istream",
+      "target": "bigstring_iterator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scopy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_revcopy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_revcopy",
+      "target": "bigstring_reverse",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_slen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_slen",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L120",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_snew",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_snew",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_snew",
+      "target": "bigstring_alloc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L150",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L178",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_salloc_istream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "istream",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sresize",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_sresize",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_sresize",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_alloc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_alloc",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L257",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scopy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scopy",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L267",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_scopy",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L267",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scopy",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L267",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L298",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scat_istream",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "istream",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L325",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L349",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_sprepend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L378",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L378",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L378",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L378",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L412",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ncmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_ncmp",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L428",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_ncmp",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L428",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_ncmp",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L428",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_fcompare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_fcompare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_fcompare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_fcompare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L436",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L464",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L464",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L464",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L469",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L469",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L469",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L469",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L474",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L474",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L474",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L474",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L479",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L479",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L479",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L479",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L484",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L484",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L484",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L484",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_compare",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L489",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L489",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L489",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L507",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L507",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L507",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L527",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L527",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L527",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L527",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L527",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_match",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_match",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_match",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_match",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_match",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L563",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_assign",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L585",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L585",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L585",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_gsub",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L647",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L647",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L647",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L647",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L851",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L851",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L851",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L860",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L860",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L860",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L867",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L867",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L874",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L874",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L874",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L879",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L879",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L879",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_del",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L884",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L884",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L894",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L894",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L894",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L894",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L899",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_operator",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L899",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_operator",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L899",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_operator",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L899",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L904",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L904",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L904",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L909",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L909",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L909",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L914",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L914",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L914",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L919",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L919",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L919",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L924",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L924",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L924",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L924",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L930",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L930",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L930",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L930",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L936",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L936",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L936",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L936",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L943",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L943",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L943",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_at",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L950",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L950",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L950",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L956",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L956",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L956",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L956",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L962",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L962",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L962",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L962",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L968",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L968",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L968",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L968",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L975",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L975",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L975",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_before",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L981",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L981",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L981",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L988",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L988",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L988",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L988",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L995",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L995",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L995",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L995",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1002",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1002",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1002",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1002",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1010",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1010",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1010",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_through",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1017",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1017",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1017",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1025",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1025",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1025",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1025",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1032",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1032",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1032",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1032",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1039",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1039",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1039",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1046",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1046",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1046",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1046",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_after",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1054",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1054",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1054",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1062",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1062",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1062",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1062",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1068",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1068",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1068",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1068",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1074",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1074",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1074",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1074",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1081",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1081",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1081",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_from",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1087",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1087",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1087",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_sub",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1094",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sub",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1094",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_sub",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1094",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_split",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1106",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_split",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "bigregex",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1125",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_returns",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1156",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_returns",
+      "target": "x",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1156",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_sreverse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1186",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sreverse",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1186",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_sreverse",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1186",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_sreverse",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1186",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_supcase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1206",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_supcase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1206",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_supcase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1206",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_supcase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1206",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_sdowncase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1216",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sdowncase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1216",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_sdowncase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1216",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_sdowncase",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1216",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_scapitalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1226",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scapitalize",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1226",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_scapitalize",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1226",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_scapitalize",
+      "target": "strrep",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1226",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_w",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1267",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_w",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1267",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_replicate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1309",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1309",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1309",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_replicate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1319",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1319",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1319",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1319",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_common_prefix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_common_prefix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_prefix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_prefix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_prefix",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1337",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_common_suffix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_common_suffix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_suffix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_suffix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_common_suffix",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1353",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_readline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1409",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_readline",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1409",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_readline",
+      "target": "istream",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1409",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "dil2al_bigstring_readline",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1409",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_freq",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1455",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1455",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "substring",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1455",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_freq",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1463",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1463",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1463",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_freq",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1471",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1471",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_freq",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "bigstring_size",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1479",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ok",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1488",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_bigstring_cc",
+      "target": "dil2al_bigstring_ok",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1497",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_snew",
+      "target": "dil2al_bigstring_operator",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_salloc_istream",
+      "target": "dil2al_bigstring_ncopy0_istream",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sresize",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sresize",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L246",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_alloc",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scopy",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L286",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scopy",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L291",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L340",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scat_istream",
+      "target": "dil2al_bigstring_ncopy0_istream",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L341",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L390",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "dil2al_bigstring_snew",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "dil2al_bigstring_revcopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L401",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sprepend",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L402",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "dil2al_bigstring_scmp",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L466",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_compare",
+      "target": "dil2al_bigstring_ncmp",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L476",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_search",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L530",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_match",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L565",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L589",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L602",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L603",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "dil2al_bigstring_scopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L605",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_assign",
+      "target": "dil2al_bigstring_revcopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L630",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L669",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L679",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L684",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_gsub",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L700",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L856",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L863",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_del",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L869",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L926",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_at",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L945",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L958",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_before",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L983",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L990",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_through",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1019",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1027",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_after",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1056",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1064",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_from",
+      "target": "dil2al_bigstring_slen",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1089",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "dil2al_bigstring_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1115",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_split",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1118",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_returns",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1166",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_returns",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1172",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_returns",
+      "target": "dil2al_bigstring_ncopy0",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1177",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sreverse",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1190",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_supcase",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1209",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_sdowncase",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1219",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_scapitalize",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1229",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_w",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1270",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_w",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1274",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1312",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_replicate",
+      "target": "dil2al_bigstring_ncopy",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1327",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_common_prefix",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1349",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_common_suffix",
+      "target": "dil2al_bigstring_salloc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1364",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_readline",
+      "target": "dil2al_bigstring_sresize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1424",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_freq",
+      "target": "dil2al_bigstring_match",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1459",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_bigstring_ok",
+      "target": "dil2al_bigstring_error",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1493",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "dil2al_bigstring_operator_const_char_const",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_ncopy0_istream",
+      "callee": "read",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_ncopy0_istream",
+      "callee": "gcount",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_ncopy0_istream",
+      "callee": "gcount",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_ncopy0_istream",
+      "callee": "gcount",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_salloc_istream",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L217"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_salloc_istream",
+      "callee": "tellg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_salloc_istream",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scat_istream",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L331"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scat_istream",
+      "callee": "tellg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L332"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scat_istream",
+      "callee": "seekg",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L333"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_fcompare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_fcompare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L439"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_fcompare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L440"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_fcompare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L441"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L471"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L471"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L476"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L481"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L481"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L481"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L481"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L492"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_compare",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_search",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L509"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_search",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_gsub",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L652"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_gsub",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L656"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L853"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L854"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L856"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L863"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L863"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L870"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L876"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L876"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L876"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L876"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L881"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L881"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L881"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L881"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_del",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L886"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L896"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_operator",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L901"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L906"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L911"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L916"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L916"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L921"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L921"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L926"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L926"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L926"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L927"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L927"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L932"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L932"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L932"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L933"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L933"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L939"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L939"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L940"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L946"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L947"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L952"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_at",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L953"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L958"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L958"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L958"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L959"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L964"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L964"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L964"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L965"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L971"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L971"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L972"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L977"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L978"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L984"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_before",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L985"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L990"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L990"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L990"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L991"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L992"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L997"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L997"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L997"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L998"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L999"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1005"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1005"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1007"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1012"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1014"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1020"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_through",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1022"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1027"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1027"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1027"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1028"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1029"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1029"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1034"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1034"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1034"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1035"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1036"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1036"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1041"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1043"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1043"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1049"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1049"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1051"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1051"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1057"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1059"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_after",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1059"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1064"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1064"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1064"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1065"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1065"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1070"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1070"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1070"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1071"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1071"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "chars",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1077"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1077"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1078"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1078"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1083"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1084"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1084"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1090"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1091"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_from",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1091"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_sub",
+      "callee": "match_info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1096"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_sub",
+      "callee": "_substr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1097"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1109"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1110"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1115"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1115"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1120"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1128"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_split",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1129"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "RETURN_OBJECT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1158"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1163"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1164"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1172"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1172"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1173"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1174"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1174"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1175"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1177"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1177"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_returns",
+      "callee": "RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1178"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_supcase",
+      "callee": "islower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1212"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_supcase",
+      "callee": "toupper",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1212"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_sdowncase",
+      "callee": "isupper",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1222"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_sdowncase",
+      "callee": "tolower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1222"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "islower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1236"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "toupper",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1237"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "isupper",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1239"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "isdigit",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1239"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "isupper",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1245"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "tolower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1246"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "islower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1249"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_scapitalize",
+      "callee": "isdigit",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1249"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_w",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1269"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_w",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1274"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_replicate",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1322"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_replicate",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1327"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_prefix",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1340"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_prefix",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1341"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_prefix",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1344"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_prefix",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1346"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_suffix",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1356"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_suffix",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1357"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_suffix",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1358"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_common_suffix",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1360"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_readline",
+      "callee": "ipfx",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1419"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_readline",
+      "callee": "rdbuf",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1425"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_readline",
+      "callee": "sbumpc",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1426"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_readline",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1439"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_readline",
+      "callee": "rdstate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1439"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1458"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1459"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1459"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1459"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1466"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1467"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "chars",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1467"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1467"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1474"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1475"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1482"
+    },
+    {
+      "caller_nid": "dil2al_bigstring_freq",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/BigString.cc",
+      "source_location": "L1483"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_blickfeld_qb2_json",
+      "label": "blickfeld-qb2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blickfeld-qb2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_blickfeld_qb2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blickfeld-qb2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_blickfeld_qb2_json",
+      "target": "b_blickfeld_qb2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blickfeld-qb2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

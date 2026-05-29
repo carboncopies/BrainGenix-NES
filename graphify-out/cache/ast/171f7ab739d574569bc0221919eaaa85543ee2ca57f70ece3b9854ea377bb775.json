@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_imcce_openfa_json",
+      "label": "imcce-openfa.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imcce-openfa.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_imcce_openfa_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imcce-openfa.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_imcce_openfa_json",
+      "target": "i_imcce_openfa_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imcce-openfa.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_casclib_json",
+      "label": "casclib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/casclib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_casclib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/casclib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_casclib_json",
+      "target": "c_casclib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/casclib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_svt_av1_json",
+      "label": "svt-av1.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/svt-av1.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_svt_av1_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/svt-av1.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_svt_av1_json",
+      "target": "s_svt_av1_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/svt-av1.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

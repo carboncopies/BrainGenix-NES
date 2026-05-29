@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_d3d12_memory_allocator_json",
+      "label": "d3d12-memory-allocator.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3d12-memory-allocator.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_d3d12_memory_allocator_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3d12-memory-allocator.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_d3d12_memory_allocator_json",
+      "target": "d_d3d12_memory_allocator_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3d12-memory-allocator.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

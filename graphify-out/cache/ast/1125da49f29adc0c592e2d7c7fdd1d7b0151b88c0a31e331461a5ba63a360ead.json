@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_spatialite_tools_json",
+      "label": "spatialite-tools.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spatialite-tools.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_spatialite_tools_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spatialite-tools.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_spatialite_tools_json",
+      "target": "s_spatialite_tools_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spatialite-tools.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

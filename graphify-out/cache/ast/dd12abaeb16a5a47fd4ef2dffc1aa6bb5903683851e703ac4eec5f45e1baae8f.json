@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_curve_coco_json",
+      "label": "curve-coco.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curve-coco.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_curve_coco_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curve-coco.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_curve_coco_json",
+      "target": "c_curve_coco_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curve-coco.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

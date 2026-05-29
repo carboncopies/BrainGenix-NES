@@ -1,0 +1,706 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "label": "regex-gnu.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "dil2al_regex_gnu_init_syntax_once",
+      "label": "init_syntax_once()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L177"
+    },
+    {
+      "id": "dil2al_regex_gnu_re_pattern_buffer",
+      "label": "re_pattern_buffer",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L377"
+    },
+    {
+      "id": "dil2al_regex_gnu_regex_grow_registers",
+      "label": "regex_grow_registers()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1818"
+    },
+    {
+      "id": "num_regs",
+      "label": "num_regs",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1818"
+    },
+    {
+      "id": "dil2al_regex_gnu_re_registers",
+      "label": "re_registers",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3535"
+    },
+    {
+      "id": "dil2al_regex_gnu_is_active",
+      "label": "IS_ACTIVE()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4112"
+    },
+    {
+      "id": "reg_info",
+      "label": "reg_info",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4112"
+    },
+    {
+      "id": "dil2al_regex_gnu_matched_something",
+      "label": "MATCHED_SOMETHING()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4113"
+    },
+    {
+      "id": "dil2al_regex_gnu_ever_matched_something",
+      "label": "EVER_MATCHED_SOMETHING()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4114"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "stddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "types",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "wctype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "wchar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "libintl",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "lisp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "buffer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "syntax",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "stdlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "strings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_init_syntax_once",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "ctype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "alloca",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L298",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L618",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L621",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L917",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L921",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_regex_grow_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1818",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_regex_gnu_regex_grow_registers",
+      "target": "num_regs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1818",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1873",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1880",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3224",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3228",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3535",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3535",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3540",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3541",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3571",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3572",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3576",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3579",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3613",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3614",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3618",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3623",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3840",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3841",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3845",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3848",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3892",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3893",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3897",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3900",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3921",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3922",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3926",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L3930",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_is_active",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4112",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_regex_gnu_is_active",
+      "target": "reg_info",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4112",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_matched_something",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4113",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_regex_gnu_matched_something",
+      "target": "reg_info",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4113",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_ever_matched_something",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4114",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_regex_gnu_ever_matched_something",
+      "target": "reg_info",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4114",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_ever_matched_something",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4590",
+      "weight": 1.0
+    },
+    {
+      "source": "dil2al_regex_gnu_ever_matched_something",
+      "target": "reg_info",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L4590",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5615",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5621",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_pattern_buffer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5654",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5712",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5857",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dil2al_regex_gnu_cc",
+      "target": "dil2al_regex_gnu_re_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L5883",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "dil2al_regex_gnu_init_syntax_once",
+      "callee": "bzero",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "dil2al_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1834"
+    },
+    {
+      "caller_nid": "dil2al_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dil2al/regex-gnu.cc",
+      "source_location": "L1836"
+    }
+  ]
+}

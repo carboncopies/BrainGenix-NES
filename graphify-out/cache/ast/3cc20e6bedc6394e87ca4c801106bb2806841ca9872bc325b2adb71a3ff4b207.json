@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_openni2_openni2deploy_ps1",
+      "label": "openni2deploy.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "openni2_openni2deploy_deployopenni2",
+      "label": "deployOpenNI2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_openni2_openni2deploy_ps1",
+      "target": "openni2_openni2deploy_deployopenni2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L5"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "deployBinary",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "Get-ChildItem",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "%",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "openni2_openni2deploy_deployopenni2",
+      "callee": "deployBinary",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/openni2/openni2deploy.ps1",
+      "source_location": "L13"
+    }
+  ]
+}

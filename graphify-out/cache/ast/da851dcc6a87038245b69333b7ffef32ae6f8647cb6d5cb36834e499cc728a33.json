@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libyaml_json",
+      "label": "libyaml.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libyaml.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libyaml_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libyaml.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libyaml_json",
+      "target": "l_libyaml_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libyaml.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "fluidsynth_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "fluidsynth_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "fluidsynth_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "fluidsynth_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "fluidsynth_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "fluidsynth_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "fluidsynth_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "fluidsynth_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "fluidsynth_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "fluidsynth_vcpkg_features_libinstpatch",
+      "label": "libinstpatch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "fluidsynth_vcpkg_libinstpatch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "fluidsynth_vcpkg_libinstpatch_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "fluidsynth_vcpkg_features_pulseaudio",
+      "label": "pulseaudio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "fluidsynth_vcpkg_pulseaudio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "fluidsynth_vcpkg_pulseaudio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "fluidsynth_vcpkg_features_sndfile",
+      "label": "sndfile",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "fluidsynth_vcpkg_sndfile_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "fluidsynth_vcpkg_sndfile_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_dependencies",
+      "target": "ref_gcem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fluidsynth_vcpkg_json",
+      "target": "fluidsynth_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features",
+      "target": "fluidsynth_vcpkg_features_libinstpatch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_libinstpatch",
+      "target": "fluidsynth_vcpkg_libinstpatch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_libinstpatch",
+      "target": "fluidsynth_vcpkg_libinstpatch_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_libinstpatch_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "fluidsynth_vcpkg_features",
+      "target": "fluidsynth_vcpkg_features_pulseaudio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_pulseaudio",
+      "target": "fluidsynth_vcpkg_pulseaudio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_pulseaudio",
+      "target": "fluidsynth_vcpkg_pulseaudio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_pulseaudio_dependencies",
+      "target": "ref_pulseaudio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "fluidsynth_vcpkg_features",
+      "target": "fluidsynth_vcpkg_features_sndfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_sndfile",
+      "target": "fluidsynth_vcpkg_sndfile_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "fluidsynth_vcpkg_features_sndfile",
+      "target": "fluidsynth_vcpkg_sndfile_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fluidsynth/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libressl_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libressl_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libressl_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libressl_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libressl_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "libressl_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "libressl_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libressl_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libressl_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "libressl_vcpkg_description",
+      "target": "ref_libressl_is_a_tls_crypto_stack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libressl_vcpkg_description",
+      "target": "ref_it_was_forked_from_openssl_in_2014_by_the_openbsd_project_with_goals_of_modernizing_the_codebase_improving_security_and_applying_best_practice_development_processes",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libressl_vcpkg_description",
+      "target": "ref_libressl_provides_much_of_the_openssl_1_1_api_incompatibilities_between_the_projects_exist_and_are_unavoidable_since_both_evolve_with_different_goals_and_priorities",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libressl_vcpkg_json",
+      "target": "libressl_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libressl_vcpkg_features",
+      "target": "libressl_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libressl_vcpkg_features_tools",
+      "target": "libressl_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libressl/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    }
+  ]
+}

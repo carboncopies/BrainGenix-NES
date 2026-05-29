@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_features_pkg_config",
+      "label": "pkg-config",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_pkg_config_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "vcpkg_msbuild_vcpkg_pkg_config_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vcpkg_msbuild_vcpkg_json",
+      "target": "vcpkg_msbuild_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_msbuild_vcpkg_features",
+      "target": "vcpkg_msbuild_vcpkg_features_pkg_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_msbuild_vcpkg_features_pkg_config",
+      "target": "vcpkg_msbuild_vcpkg_pkg_config_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_msbuild_vcpkg_features_pkg_config",
+      "target": "vcpkg_msbuild_vcpkg_pkg_config_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_msbuild_vcpkg_pkg_config_dependencies",
+      "target": "ref_pkgconf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vcpkg-msbuild/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

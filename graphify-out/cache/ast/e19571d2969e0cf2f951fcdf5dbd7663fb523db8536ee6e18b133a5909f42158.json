@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_zookeeper_json",
+      "label": "zookeeper.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zookeeper.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_zookeeper_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zookeeper.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_zookeeper_json",
+      "target": "z_zookeeper_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zookeeper.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

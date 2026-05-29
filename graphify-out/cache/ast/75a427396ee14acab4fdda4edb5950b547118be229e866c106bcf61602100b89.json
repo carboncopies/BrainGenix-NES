@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tclap_json",
+      "label": "tclap.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tclap.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tclap_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tclap.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tclap_json",
+      "target": "t_tclap_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tclap.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

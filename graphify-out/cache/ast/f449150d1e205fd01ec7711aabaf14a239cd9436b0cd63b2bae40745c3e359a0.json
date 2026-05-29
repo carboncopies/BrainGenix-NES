@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_docraft_json",
+      "label": "docraft.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/docraft.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_docraft_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/docraft.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_docraft_json",
+      "target": "d_docraft_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/docraft.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

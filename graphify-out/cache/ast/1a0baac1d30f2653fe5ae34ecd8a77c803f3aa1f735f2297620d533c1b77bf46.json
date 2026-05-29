@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libimobiledevice_glue_json",
+      "label": "libimobiledevice-glue.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libimobiledevice-glue.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libimobiledevice_glue_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libimobiledevice-glue.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libimobiledevice_glue_json",
+      "target": "l_libimobiledevice_glue_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libimobiledevice-glue.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_zix_json",
+      "label": "zix.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zix.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_zix_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zix.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_zix_json",
+      "target": "z_zix_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zix.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

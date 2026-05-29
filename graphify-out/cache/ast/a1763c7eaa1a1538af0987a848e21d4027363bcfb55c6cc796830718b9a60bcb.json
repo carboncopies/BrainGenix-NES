@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kdsingleapplication_json",
+      "label": "kdsingleapplication.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kdsingleapplication.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kdsingleapplication_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kdsingleapplication.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kdsingleapplication_json",
+      "target": "k_kdsingleapplication_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kdsingleapplication.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

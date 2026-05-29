@@ -1,0 +1,263 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "shaderwriter_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "shaderwriter_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "shaderwriter_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "shaderwriter_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "shaderwriter_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "shaderwriter_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "shaderwriter_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "shaderwriter_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "shaderwriter_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "shaderwriter_vcpkg_features_glsl",
+      "label": "glsl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "shaderwriter_vcpkg_glsl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "shaderwriter_vcpkg_features_hlsl",
+      "label": "hlsl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "shaderwriter_vcpkg_hlsl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "shaderwriter_vcpkg_features_spirv",
+      "label": "spirv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "shaderwriter_vcpkg_spirv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_default_features",
+      "target": "ref_spirv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_shaderwriter_vcpkg_json",
+      "target": "shaderwriter_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features",
+      "target": "shaderwriter_vcpkg_features_glsl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features_glsl",
+      "target": "shaderwriter_vcpkg_glsl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features",
+      "target": "shaderwriter_vcpkg_features_hlsl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features_hlsl",
+      "target": "shaderwriter_vcpkg_hlsl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features",
+      "target": "shaderwriter_vcpkg_features_spirv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "shaderwriter_vcpkg_features_spirv",
+      "target": "shaderwriter_vcpkg_spirv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/shaderwriter/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    }
+  ]
+}

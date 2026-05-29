@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "leptonica_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "leptonica_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "leptonica_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "leptonica_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "leptonica_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "leptonica_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_leptonica_vcpkg_json",
+      "target": "leptonica_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "leptonica_vcpkg_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "leptonica_vcpkg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "leptonica_vcpkg_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "leptonica_vcpkg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "leptonica_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/leptonica/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

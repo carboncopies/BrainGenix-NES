@@ -1,0 +1,317 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "lightgbm_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "lightgbm_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "lightgbm_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "lightgbm_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "lightgbm_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "lightgbm_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "lightgbm_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "lightgbm_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "lightgbm_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "lightgbm_vcpkg_features_gpu",
+      "label": "gpu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "lightgbm_vcpkg_gpu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "lightgbm_vcpkg_gpu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "lightgbm_vcpkg_features_openmp",
+      "label": "openmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "lightgbm_vcpkg_openmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_description",
+      "target": "ref_a_fast_distributed_high_performance_gradient_boosting_gbt_gbdt_gbrt_gbm_or_mart_framework_based_on_decision_tree_algorithms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lightgbm_vcpkg_description",
+      "target": "ref_designed_to_be_distributed_and_efficient_and_comes_with_faster_training_speeds_higher_efficiency_lower_memory_usage_and_support_of_parallel_distributed_and_gpu_learning",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lightgbm_vcpkg_dependencies",
+      "target": "ref_fast_double_parser",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lightgbm_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_default_features",
+      "target": "ref_openmp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lightgbm_vcpkg_json",
+      "target": "lightgbm_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_features",
+      "target": "lightgbm_vcpkg_features_gpu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_features_gpu",
+      "target": "lightgbm_vcpkg_gpu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_features_gpu",
+      "target": "lightgbm_vcpkg_gpu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_gpu_dependencies",
+      "target": "ref_boost_compute",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lightgbm_vcpkg_gpu_dependencies",
+      "target": "ref_opencl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lightgbm_vcpkg_features",
+      "target": "lightgbm_vcpkg_features_openmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "lightgbm_vcpkg_features_openmp",
+      "target": "lightgbm_vcpkg_openmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lightgbm/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ]
+}

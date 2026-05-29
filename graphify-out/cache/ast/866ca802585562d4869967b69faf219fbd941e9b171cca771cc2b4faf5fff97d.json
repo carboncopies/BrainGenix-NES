@@ -1,0 +1,287 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "wpilib_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "wpilib_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "wpilib_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "wpilib_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "wpilib_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "wpilib_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "wpilib_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "wpilib_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "wpilib_vcpkg_features_allwpilib",
+      "label": "allwpilib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "wpilib_vcpkg_allwpilib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "wpilib_vcpkg_allwpilib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "wpilib_vcpkg_features_cameraserver",
+      "label": "cameraserver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "wpilib_vcpkg_cameraserver_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "wpilib_vcpkg_cameraserver_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wpilib_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wpilib_vcpkg_dependencies",
+      "target": "ref_libuv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wpilib_vcpkg_json",
+      "target": "wpilib_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_features",
+      "target": "wpilib_vcpkg_features_allwpilib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_features_allwpilib",
+      "target": "wpilib_vcpkg_allwpilib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_features_allwpilib",
+      "target": "wpilib_vcpkg_allwpilib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_allwpilib_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wpilib_vcpkg_features",
+      "target": "wpilib_vcpkg_features_cameraserver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_features_cameraserver",
+      "target": "wpilib_vcpkg_cameraserver_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_features_cameraserver",
+      "target": "wpilib_vcpkg_cameraserver_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "wpilib_vcpkg_cameraserver_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wpilib/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

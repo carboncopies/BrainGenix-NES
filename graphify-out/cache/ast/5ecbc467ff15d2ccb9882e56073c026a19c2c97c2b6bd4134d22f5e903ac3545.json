@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_netgen_json",
+      "label": "netgen.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netgen.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_netgen_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netgen.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_netgen_json",
+      "target": "n_netgen_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netgen.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

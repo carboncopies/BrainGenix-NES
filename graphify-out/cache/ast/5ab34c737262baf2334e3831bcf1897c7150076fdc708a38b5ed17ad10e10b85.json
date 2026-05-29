@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_protobuf_json",
+      "label": "protobuf.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/protobuf.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_protobuf_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/protobuf.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_protobuf_json",
+      "target": "p_protobuf_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/protobuf.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

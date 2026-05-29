@@ -1,0 +1,347 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_features_installer",
+      "label": "installer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_installer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_installer_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_installer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_features_multi_process",
+      "label": "multi-process",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_multi_process_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_multi_process_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_multi_process_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_features_package_server",
+      "label": "package-server",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_package_server_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "qtapplicationmanager_vcpkg_package_server_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L57"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_dependencies",
+      "target": "ref_libyaml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtapplicationmanager_vcpkg_json",
+      "target": "qtapplicationmanager_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features",
+      "target": "qtapplicationmanager_vcpkg_features_installer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_installer",
+      "target": "qtapplicationmanager_vcpkg_installer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_installer",
+      "target": "qtapplicationmanager_vcpkg_installer_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_installer",
+      "target": "qtapplicationmanager_vcpkg_installer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features",
+      "target": "qtapplicationmanager_vcpkg_features_multi_process",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_multi_process",
+      "target": "qtapplicationmanager_vcpkg_multi_process_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_multi_process",
+      "target": "qtapplicationmanager_vcpkg_multi_process_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_multi_process",
+      "target": "qtapplicationmanager_vcpkg_multi_process_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_multi_process_dependencies",
+      "target": "ref_qtwayland",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features",
+      "target": "qtapplicationmanager_vcpkg_features_package_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_package_server",
+      "target": "qtapplicationmanager_vcpkg_package_server_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_features_package_server",
+      "target": "qtapplicationmanager_vcpkg_package_server_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "qtapplicationmanager_vcpkg_package_server_dependencies",
+      "target": "ref_qthttpserver",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtapplicationmanager/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

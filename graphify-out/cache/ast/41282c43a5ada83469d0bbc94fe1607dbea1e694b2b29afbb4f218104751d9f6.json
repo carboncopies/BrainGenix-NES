@@ -1,0 +1,455 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "label": "webgpu_glfw3.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_webgpu_glfw3_objc_call",
+      "label": "objc_call()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43"
+    },
+    {
+      "id": "t",
+      "label": "T",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43"
+    },
+    {
+      "id": "id",
+      "label": "id",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43"
+    },
+    {
+      "id": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "label": "setup_window_and_get_surface_descriptor()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "unique_ptr",
+      "label": "unique_ptr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "chainedstruct",
+      "label": "ChainedStruct",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "glfwwindow",
+      "label": "GLFWwindow",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "project_webgpu_glfw3_create_surface",
+      "label": "create_surface()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115"
+    },
+    {
+      "id": "surface",
+      "label": "Surface",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115"
+    },
+    {
+      "id": "instance",
+      "label": "Instance",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "glfw3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "webgpu_cpp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "emscripten",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "glfw3native",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "message",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "objc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "runtime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "project_webgpu_glfw3_objc_call",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "project_webgpu_glfw3_objc_call",
+      "target": "t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "project_webgpu_glfw3_objc_call",
+      "target": "id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "project_webgpu_glfw3_objc_call",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "project_webgpu_glfw3_objc_call",
+      "target": "t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "target": "unique_ptr",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "target": "chainedstruct",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "target": "glfwwindow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_dawn_project_webgpu_glfw3_cpp",
+      "target": "project_webgpu_glfw3_create_surface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "project_webgpu_glfw3_create_surface",
+      "target": "surface",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "project_webgpu_glfw3_create_surface",
+      "target": "instance",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_webgpu_glfw3_create_surface",
+      "target": "glfwwindow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_webgpu_glfw3_create_surface",
+      "target": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L116",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_webgpu_glfw3_objc_call",
+      "callee": "sel_registerName",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_objc_call",
+      "callee": "objc_getClass",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetWindowAttrib",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "make_unique<wgpu::EmscriptenSurfaceSourceCanvasHTMLSelector>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "make_unique<wgpu::SurfaceSourceWindowsHWND>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetWin32Window",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "GetModuleHandle",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetCocoaWindow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "CFRetain",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "CFRetain",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "make_unique<wgpu::SurfaceSourceMetalLayer>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "CFRelease",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "CFRelease",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetPlatform",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "make_unique<wgpu::SurfaceSourceWaylandSurface>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetWaylandDisplay",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetWaylandWindow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "make_unique<wgpu::SurfaceSourceXlibWindow>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetX11Display",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_setup_window_and_get_surface_descriptor",
+      "callee": "glfwGetX11Window",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_create_surface",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "project_webgpu_glfw3_create_surface",
+      "callee": "CreateSurface",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-dawn/project/webgpu_glfw3.cpp",
+      "source_location": "L119"
+    }
+  ]
+}

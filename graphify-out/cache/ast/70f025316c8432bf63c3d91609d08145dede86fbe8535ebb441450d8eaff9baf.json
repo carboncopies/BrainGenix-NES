@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "freealut_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "freealut_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "freealut_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "freealut_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "freealut_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "freealut_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "freealut_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "freealut_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "freealut_vcpkg_description",
+      "target": "ref_freealut_is_a_free_implementation_of_openal_s_alut_standard",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "freealut_vcpkg_description",
+      "target": "ref_alut_is_a_set_of_portable_functions_which_remove_the_annoying_details_of_getting_an_audio_application_started_it_is_the_openal_counterpart_of_what_glut_is_for_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freealut_vcpkg_json",
+      "target": "freealut_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "freealut_vcpkg_dependencies",
+      "target": "ref_openal_soft",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freealut/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

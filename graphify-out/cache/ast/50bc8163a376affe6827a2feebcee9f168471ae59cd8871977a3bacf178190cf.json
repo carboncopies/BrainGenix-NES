@@ -1,0 +1,803 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_schema",
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_elasticsearch",
+      "label": "elasticsearch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_elasticsearch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_elasticsearch_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_etw",
+      "label": "etw",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_etw_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_etw_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_geneva",
+      "label": "geneva",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_geneva_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_geneva_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_opentracing",
+      "label": "opentracing",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_opentracing_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_opentracing_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_otlp_file",
+      "label": "otlp-file",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_file_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_file_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_file_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_otlp_grpc",
+      "label": "otlp-grpc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_grpc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_grpc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_otlp_http",
+      "label": "otlp-http",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_http_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_otlp_http_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_prometheus",
+      "label": "prometheus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_prometheus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_prometheus_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_user_events",
+      "label": "user-events",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_user_events_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_user_events_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_user_events_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_features_zipkin",
+      "label": "zipkin",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_zipkin_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "opentelemetry_cpp_vcpkg_zipkin_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L103"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_description",
+      "target": "ref_opentelemetry_is_a_collection_of_tools_apis_and_sdks",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_description",
+      "target": "ref_you_use_it_to_instrument_generate_collect_and_export_telemetry_data_metrics_logs_and_traces_for_analysis_in_order_to_understand_your_software_s_performance_and_behavior",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_dependencies",
+      "target": "ref_abseil",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opentelemetry_cpp_vcpkg_json",
+      "target": "opentelemetry_cpp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_elasticsearch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_elasticsearch",
+      "target": "opentelemetry_cpp_vcpkg_elasticsearch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_elasticsearch",
+      "target": "opentelemetry_cpp_vcpkg_elasticsearch_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_etw",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_etw",
+      "target": "opentelemetry_cpp_vcpkg_etw_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_etw",
+      "target": "opentelemetry_cpp_vcpkg_etw_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_geneva",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_geneva",
+      "target": "opentelemetry_cpp_vcpkg_geneva_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_geneva",
+      "target": "opentelemetry_cpp_vcpkg_geneva_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_geneva_dependencies",
+      "target": "ref_opentelemetry_cpp_contrib_version",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_opentracing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_opentracing",
+      "target": "opentelemetry_cpp_vcpkg_opentracing_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_opentracing",
+      "target": "opentelemetry_cpp_vcpkg_opentracing_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_opentracing_dependencies",
+      "target": "ref_opentracing",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_otlp_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_file",
+      "target": "opentelemetry_cpp_vcpkg_otlp_file_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_file",
+      "target": "opentelemetry_cpp_vcpkg_otlp_file_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_file",
+      "target": "opentelemetry_cpp_vcpkg_otlp_file_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_otlp_file_dependencies",
+      "target": "ref_protobuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_otlp_grpc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_grpc",
+      "target": "opentelemetry_cpp_vcpkg_otlp_grpc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_grpc",
+      "target": "opentelemetry_cpp_vcpkg_otlp_grpc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_otlp_grpc_dependencies",
+      "target": "ref_grpc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_otlp_http",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_http",
+      "target": "opentelemetry_cpp_vcpkg_otlp_http_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_otlp_http",
+      "target": "opentelemetry_cpp_vcpkg_otlp_http_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_otlp_http_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_otlp_http_dependencies",
+      "target": "ref_protobuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_prometheus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_prometheus",
+      "target": "opentelemetry_cpp_vcpkg_prometheus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_prometheus",
+      "target": "opentelemetry_cpp_vcpkg_prometheus_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_prometheus_dependencies",
+      "target": "ref_prometheus_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_user_events",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_user_events",
+      "target": "opentelemetry_cpp_vcpkg_user_events_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_user_events",
+      "target": "opentelemetry_cpp_vcpkg_user_events_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_user_events",
+      "target": "opentelemetry_cpp_vcpkg_user_events_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_user_events_dependencies",
+      "target": "ref_libeventheader_tracepoint",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_user_events_dependencies",
+      "target": "ref_libtracepoint",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_user_events_dependencies",
+      "target": "ref_opentelemetry_cpp_contrib_version",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features",
+      "target": "opentelemetry_cpp_vcpkg_features_zipkin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_zipkin",
+      "target": "opentelemetry_cpp_vcpkg_zipkin_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_features_zipkin",
+      "target": "opentelemetry_cpp_vcpkg_zipkin_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "opentelemetry_cpp_vcpkg_zipkin_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opentelemetry-cpp/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

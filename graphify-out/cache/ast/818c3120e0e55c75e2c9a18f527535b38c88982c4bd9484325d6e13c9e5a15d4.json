@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_oatpp_postgresql_json",
+      "label": "oatpp-postgresql.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oatpp-postgresql.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_oatpp_postgresql_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oatpp-postgresql.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_oatpp_postgresql_json",
+      "target": "o_oatpp_postgresql_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oatpp-postgresql.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

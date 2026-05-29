@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hazelcast_cpp_client_json",
+      "label": "hazelcast-cpp-client.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hazelcast-cpp-client.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hazelcast_cpp_client_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hazelcast-cpp-client.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hazelcast_cpp_client_json",
+      "target": "h_hazelcast_cpp_client_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hazelcast-cpp-client.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

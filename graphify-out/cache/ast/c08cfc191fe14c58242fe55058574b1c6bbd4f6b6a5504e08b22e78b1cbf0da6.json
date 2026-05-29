@@ -1,0 +1,1015 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libwebp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libwebp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libwebp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libwebp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libwebp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libwebp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libwebp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libwebp_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libwebp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libwebp_vcpkg_features_all",
+      "label": "all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libwebp_vcpkg_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libwebp_vcpkg_all_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libwebp_vcpkg_features_anim",
+      "label": "anim",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "libwebp_vcpkg_anim_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "libwebp_vcpkg_anim_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "libwebp_vcpkg_features_cwebp",
+      "label": "cwebp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "libwebp_vcpkg_cwebp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "libwebp_vcpkg_cwebp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "libwebp_vcpkg_features_dwebp",
+      "label": "dwebp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "libwebp_vcpkg_dwebp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "libwebp_vcpkg_dwebp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L111"
+    },
+    {
+      "id": "libwebp_vcpkg_features_extras",
+      "label": "extras",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L120"
+    },
+    {
+      "id": "libwebp_vcpkg_extras_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "libwebp_vcpkg_extras_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "libwebp_vcpkg_features_gif2webp",
+      "label": "gif2webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "libwebp_vcpkg_gif2webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L132"
+    },
+    {
+      "id": "libwebp_vcpkg_gif2webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L133"
+    },
+    {
+      "id": "libwebp_vcpkg_features_img2webp",
+      "label": "img2webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "libwebp_vcpkg_img2webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "libwebp_vcpkg_img2webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L146"
+    },
+    {
+      "id": "libwebp_vcpkg_features_info",
+      "label": "info",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L162"
+    },
+    {
+      "id": "libwebp_vcpkg_info_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L163"
+    },
+    {
+      "id": "libwebp_vcpkg_features_libwebpmux",
+      "label": "libwebpmux",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L165"
+    },
+    {
+      "id": "libwebp_vcpkg_libwebpmux_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L166"
+    },
+    {
+      "id": "libwebp_vcpkg_features_mux",
+      "label": "mux",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "libwebp_vcpkg_mux_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "libwebp_vcpkg_mux_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L170"
+    },
+    {
+      "id": "libwebp_vcpkg_features_nearlossless",
+      "label": "nearlossless",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L180"
+    },
+    {
+      "id": "libwebp_vcpkg_nearlossless_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L181"
+    },
+    {
+      "id": "libwebp_vcpkg_features_simd",
+      "label": "simd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "libwebp_vcpkg_simd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "libwebp_vcpkg_features_swap16bitcsp",
+      "label": "swap16bitcsp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L186"
+    },
+    {
+      "id": "libwebp_vcpkg_swap16bitcsp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L187"
+    },
+    {
+      "id": "libwebp_vcpkg_features_unicode",
+      "label": "unicode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "libwebp_vcpkg_unicode_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L190"
+    },
+    {
+      "id": "libwebp_vcpkg_features_vwebp",
+      "label": "vwebp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L192"
+    },
+    {
+      "id": "libwebp_vcpkg_vwebp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L193"
+    },
+    {
+      "id": "libwebp_vcpkg_vwebp_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L194"
+    },
+    {
+      "id": "libwebp_vcpkg_vwebp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L195"
+    },
+    {
+      "id": "libwebp_vcpkg_features_vwebp_sdl",
+      "label": "vwebp-sdl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L200"
+    },
+    {
+      "id": "libwebp_vcpkg_vwebp_sdl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L201"
+    },
+    {
+      "id": "libwebp_vcpkg_vwebp_sdl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L202"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_default_features",
+      "target": "ref_libwebpmux",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_default_features",
+      "target": "ref_nearlossless",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libwebp_vcpkg_json",
+      "target": "libwebp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_all",
+      "target": "libwebp_vcpkg_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_all",
+      "target": "libwebp_vcpkg_all_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_anim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_anim",
+      "target": "libwebp_vcpkg_anim_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_anim",
+      "target": "libwebp_vcpkg_anim_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_anim_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_anim_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_anim_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_cwebp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_cwebp",
+      "target": "libwebp_vcpkg_cwebp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_cwebp",
+      "target": "libwebp_vcpkg_cwebp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_cwebp_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_cwebp_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_dwebp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_dwebp",
+      "target": "libwebp_vcpkg_dwebp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_dwebp",
+      "target": "libwebp_vcpkg_dwebp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_dwebp_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_dwebp_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_extras",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_extras",
+      "target": "libwebp_vcpkg_extras_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_extras",
+      "target": "libwebp_vcpkg_extras_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_extras_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_extras_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_gif2webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_gif2webp",
+      "target": "libwebp_vcpkg_gif2webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_gif2webp",
+      "target": "libwebp_vcpkg_gif2webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_gif2webp_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L133",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_img2webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_img2webp",
+      "target": "libwebp_vcpkg_img2webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_img2webp",
+      "target": "libwebp_vcpkg_img2webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_img2webp_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_img2webp_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_info",
+      "target": "libwebp_vcpkg_info_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_libwebpmux",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_libwebpmux",
+      "target": "libwebp_vcpkg_libwebpmux_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_mux",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_mux",
+      "target": "libwebp_vcpkg_mux_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_mux",
+      "target": "libwebp_vcpkg_mux_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_nearlossless",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_nearlossless",
+      "target": "libwebp_vcpkg_nearlossless_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_simd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_simd",
+      "target": "libwebp_vcpkg_simd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_swap16bitcsp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_swap16bitcsp",
+      "target": "libwebp_vcpkg_swap16bitcsp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_unicode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_unicode",
+      "target": "libwebp_vcpkg_unicode_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_vwebp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_vwebp",
+      "target": "libwebp_vcpkg_vwebp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_vwebp",
+      "target": "libwebp_vcpkg_vwebp_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_vwebp",
+      "target": "libwebp_vcpkg_vwebp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_vwebp_dependencies",
+      "target": "ref_freeglut",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_vwebp_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libwebp_vcpkg_features",
+      "target": "libwebp_vcpkg_features_vwebp_sdl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_vwebp_sdl",
+      "target": "libwebp_vcpkg_vwebp_sdl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_features_vwebp_sdl",
+      "target": "libwebp_vcpkg_vwebp_sdl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "libwebp_vcpkg_vwebp_sdl_dependencies",
+      "target": "ref_sdl1",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libwebp/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

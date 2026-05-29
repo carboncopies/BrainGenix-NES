@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rewolf_wow64ext_json",
+      "label": "rewolf-wow64ext.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rewolf-wow64ext.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rewolf_wow64ext_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rewolf-wow64ext.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rewolf_wow64ext_json",
+      "target": "r_rewolf_wow64ext_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rewolf-wow64ext.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

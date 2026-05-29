@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_obfuscxx_json",
+      "label": "obfuscxx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/obfuscxx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_obfuscxx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/obfuscxx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_obfuscxx_json",
+      "target": "o_obfuscxx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/obfuscxx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

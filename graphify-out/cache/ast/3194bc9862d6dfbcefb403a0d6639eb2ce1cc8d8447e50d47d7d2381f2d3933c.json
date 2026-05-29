@@ -1,0 +1,3189 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "label": "regex-gnu.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_regex_gnu_init_syntax_once",
+      "label": "init_syntax_once()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L177"
+    },
+    {
+      "id": "source_regex_gnu_extract_number",
+      "label": "extract_number()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L558"
+    },
+    {
+      "id": "source_regex_gnu_extract_number_and_incr",
+      "label": "extract_number_and_incr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L592"
+    },
+    {
+      "id": "source_regex_gnu_print_fastmap",
+      "label": "print_fastmap()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L643"
+    },
+    {
+      "id": "source_regex_gnu_print_partial_compiled_pattern",
+      "label": "print_partial_compiled_pattern()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L680"
+    },
+    {
+      "id": "source_regex_gnu_print_compiled_pattern",
+      "label": "print_compiled_pattern()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L920"
+    },
+    {
+      "id": "source_regex_gnu_print_double_string",
+      "label": "print_double_string()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L954"
+    },
+    {
+      "id": "source_regex_gnu_printchar",
+      "label": "printchar()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L986"
+    },
+    {
+      "id": "source_regex_gnu_re_set_syntax",
+      "label": "re_set_syntax()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1028"
+    },
+    {
+      "id": "reg_syntax_t",
+      "label": "reg_syntax_t",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1028"
+    },
+    {
+      "id": "source_regex_gnu_regex_grow_registers",
+      "label": "regex_grow_registers()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1819"
+    },
+    {
+      "id": "source_regex_gnu_regex_compile",
+      "label": "regex_compile()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1876"
+    },
+    {
+      "id": "reg_errcode_t",
+      "label": "reg_errcode_t",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1876"
+    },
+    {
+      "id": "source_regex_gnu_store_op1",
+      "label": "store_op1()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2990"
+    },
+    {
+      "id": "source_regex_gnu_store_op2",
+      "label": "store_op2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3008"
+    },
+    {
+      "id": "source_regex_gnu_insert_op1",
+      "label": "insert_op1()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3028"
+    },
+    {
+      "id": "source_regex_gnu_insert_op2",
+      "label": "insert_op2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3052"
+    },
+    {
+      "id": "source_regex_gnu_at_begline_loc_p",
+      "label": "at_begline_loc_p()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3078"
+    },
+    {
+      "id": "source_regex_gnu_at_endline_loc_p",
+      "label": "at_endline_loc_p()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3102"
+    },
+    {
+      "id": "source_regex_gnu_group_in_compile_stack",
+      "label": "group_in_compile_stack()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3129"
+    },
+    {
+      "id": "source_regex_gnu_compile_range",
+      "label": "compile_range()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3163"
+    },
+    {
+      "id": "source_regex_gnu_re_compile_fastmap",
+      "label": "re_compile_fastmap()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3227"
+    },
+    {
+      "id": "source_regex_gnu_re_set_registers",
+      "label": "re_set_registers()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3539"
+    },
+    {
+      "id": "source_regex_gnu_re_search",
+      "label": "re_search()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3575"
+    },
+    {
+      "id": "source_regex_gnu_re_search_2",
+      "label": "re_search_2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3617"
+    },
+    {
+      "id": "source_regex_gnu_re_match",
+      "label": "re_match()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3844"
+    },
+    {
+      "id": "source_regex_gnu_re_match_2",
+      "label": "re_match_2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3896"
+    },
+    {
+      "id": "source_regex_gnu_group_match_null_string_p",
+      "label": "group_match_null_string_p()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5337"
+    },
+    {
+      "id": "source_regex_gnu_alt_match_null_string_p",
+      "label": "alt_match_null_string_p()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5451"
+    },
+    {
+      "id": "source_regex_gnu_common_op_match_null_string_p",
+      "label": "common_op_match_null_string_p()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5493"
+    },
+    {
+      "id": "source_regex_gnu_bcmp_translate",
+      "label": "bcmp_translate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5586"
+    },
+    {
+      "id": "source_regex_gnu_re_comp",
+      "label": "re_comp()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5662"
+    },
+    {
+      "id": "weak_function",
+      "label": "weak_function",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5662"
+    },
+    {
+      "id": "source_regex_gnu_re_exec",
+      "label": "re_exec()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5706"
+    },
+    {
+      "id": "source_regex_gnu_regcomp",
+      "label": "regcomp()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5760"
+    },
+    {
+      "id": "source_regex_gnu_regnexec",
+      "label": "regnexec()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5847"
+    },
+    {
+      "id": "source_regex_gnu_regexec",
+      "label": "regexec()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5930"
+    },
+    {
+      "id": "source_regex_gnu_regerror",
+      "label": "regerror()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5953"
+    },
+    {
+      "id": "source_regex_gnu_regfree",
+      "label": "regfree()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L6005"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "stddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "types",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "wctype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "wchar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "libintl",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "lisp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "buffer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "syntax",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "stdlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "strings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_init_syntax_once",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "thirdparty_netmorphcmake_source_regex_gnu_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "ctype",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "alloca",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L298",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_extract_number",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L558",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_extract_number_and_incr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L592",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L619",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "assert",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L622",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_print_fastmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_print_partial_compiled_pattern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L680",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_print_compiled_pattern",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L920",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_print_double_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L954",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_printchar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L986",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_set_syntax",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1028",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_set_syntax",
+      "target": "reg_syntax_t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1028",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regex_grow_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1819",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regex_compile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1876",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "reg_errcode_t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1876",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_store_op1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2990",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_store_op2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3008",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_insert_op1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3028",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_insert_op2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3052",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_at_begline_loc_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3078",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_at_endline_loc_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3102",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_group_in_compile_stack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3129",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_compile_range",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3163",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_compile_range",
+      "target": "reg_errcode_t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3163",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_compile_fastmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3227",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_set_registers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3539",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3575",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_search_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3617",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_match",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3844",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_match_2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3896",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_group_match_null_string_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5337",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_alt_match_null_string_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5451",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_common_op_match_null_string_p",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5493",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_bcmp_translate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5586",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_comp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5662",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_comp",
+      "target": "weak_function",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5662",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_re_exec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5706",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_exec",
+      "target": "weak_function",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5706",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regcomp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5760",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regnexec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5847",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regexec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5930",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5953",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_regex_gnu_c",
+      "target": "source_regex_gnu_regfree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L6005",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_extract_number_and_incr",
+      "target": "source_regex_gnu_extract_number",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L598",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_print_partial_compiled_pattern",
+      "target": "source_regex_gnu_extract_number_and_incr",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L789",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_print_compiled_pattern",
+      "target": "source_regex_gnu_print_partial_compiled_pattern",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L927",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_print_compiled_pattern",
+      "target": "source_regex_gnu_print_fastmap",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L934",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_init_syntax_once",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1968",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_at_begline_loc_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2004",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_at_endline_loc_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2019",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_compile_range",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2236",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_insert_op2",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2710",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_group_in_compile_stack",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2849",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_print_compiled_pattern",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2934",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regex_compile",
+      "target": "source_regex_gnu_regex_grow_registers",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2975",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_insert_op1",
+      "target": "source_regex_gnu_store_op1",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3042",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_insert_op2",
+      "target": "source_regex_gnu_store_op2",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3066",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_search",
+      "target": "source_regex_gnu_re_search_2",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3583",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_search_2",
+      "target": "source_regex_gnu_re_compile_fastmap",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3669",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_group_match_null_string_p",
+      "target": "source_regex_gnu_alt_match_null_string_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5389",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_group_match_null_string_p",
+      "target": "source_regex_gnu_common_op_match_null_string_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5434",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_alt_match_null_string_p",
+      "target": "source_regex_gnu_common_op_match_null_string_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5475",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_common_op_match_null_string_p",
+      "target": "source_regex_gnu_group_match_null_string_p",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5525",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_comp",
+      "target": "source_regex_gnu_regex_compile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5694",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_re_exec",
+      "target": "source_regex_gnu_re_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5713",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regcomp",
+      "target": "source_regex_gnu_regex_compile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5815",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regnexec",
+      "target": "source_regex_gnu_re_search",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5882",
+      "weight": 1.0
+    },
+    {
+      "source": "source_regex_gnu_regexec",
+      "target": "source_regex_gnu_regnexec",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5939",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_regex_gnu_init_syntax_once",
+      "callee": "bzero",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "source_regex_gnu_extract_number",
+      "callee": "SIGN_EXTEND_CHAR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L564"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_fastmap",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L656"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_fastmap",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L664"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_fastmap",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L665"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_fastmap",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L693"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L700"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L705"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L710"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L714"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L721"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L726"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L730"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L734"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L743"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L746"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L755"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L761"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L766"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L772"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L774"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L781"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L785"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L790"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L795"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L800"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L804"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L809"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L814"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L819"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L831"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L838"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L845"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L849"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L853"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L857"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L861"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L865"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L869"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L873"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L877"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L879"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L883"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L885"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L890"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L894"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L898"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L902"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L906"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L909"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_partial_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L912"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L928"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L933"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L937"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L938"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L939"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L940"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L941"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L942"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L943"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_compiled_pattern",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L944"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_double_string",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L966"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_double_string",
+      "callee": "FIRST_STRING_P",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L969"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_double_string",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L972"
+    },
+    {
+      "caller_nid": "source_regex_gnu_print_double_string",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L978"
+    },
+    {
+      "caller_nid": "source_regex_gnu_printchar",
+      "callee": "putc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L991"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1829"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1830"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1831"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1832"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1833"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1834"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1835"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1836"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_grow_registers",
+      "callee": "RETALLOC_IF",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1837"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "DEBUG_PRINT1",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1934"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1940"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "putchar",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1941"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1946"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "RETALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1977"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1981"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1983"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L1993"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2005"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2020"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2038"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2063"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2071"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2073"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2110"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2113"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2120"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2120"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2122"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2122"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2125"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2130"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2138"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "INSERT_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2139"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2152"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "INSERT_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2153"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2162"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2170"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2174"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2180"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2188"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "bzero",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2191"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2196"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2201"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2203"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2208"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2210"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2211"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2224"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2237"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2245"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2248"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2258"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2262"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2266"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2280"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2281"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "IS_CHAR_CLASS",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2285"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2287"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2291"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2293"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "__iswctype",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2298"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "__btowc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2298"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2299"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "iswctype",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2301"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "btowc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2301"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2302"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISUPPER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2306"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISLOWER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2306"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2307"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2313"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2314"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2315"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2316"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2317"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2318"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2319"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2320"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2321"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2322"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2323"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STREQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2324"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "IS_CHAR_CLASS",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2326"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2327"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2331"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2333"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISALNUM",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2339"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISALPHA",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2340"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISBLANK",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2341"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISCNTRL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2342"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2343"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISDIGIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2344"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISGRAPH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2345"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISLOWER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2346"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISPRINT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2347"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2348"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISPUNCT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2349"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISSPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2350"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISUPPER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2351"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISXDIGIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2352"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2353"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISUPPER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2355"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "ISLOWER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2355"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2356"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2366"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2367"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2374"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2423"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH_RAW",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2428"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "RETALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2442"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2466"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2489"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2498"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2502"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2511"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2516"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2544"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2560"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "INSERT_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2561"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2582"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2588"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2619"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_UNSIGNED_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2622"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_UNSIGNED_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2626"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2639"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2644"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2646"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2654"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2663"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2675"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "INSERT_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2676"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "GET_BUFFER_SPACE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2694"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "INSERT_JUMP2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2701"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2721"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2751"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2756"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2769"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2774"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2775"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "PATFETCH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2780"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2781"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2790"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2798"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2805"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2811"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2817"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2823"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2829"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2835"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2846"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2853"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2869"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH_2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2901"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2905"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "STORE_JUMP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2915"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "FREE_STACK_RETURN",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2918"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "BUF_PUSH",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2923"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2925"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "DEBUG_PRINT1",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2933"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "xmalloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2955"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "xrealloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2959"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "malloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2965"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regex_compile",
+      "callee": "realloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2969"
+    },
+    {
+      "caller_nid": "source_regex_gnu_store_op1",
+      "callee": "STORE_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L2998"
+    },
+    {
+      "caller_nid": "source_regex_gnu_store_op2",
+      "callee": "STORE_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3016"
+    },
+    {
+      "caller_nid": "source_regex_gnu_store_op2",
+      "callee": "STORE_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3017"
+    },
+    {
+      "caller_nid": "source_regex_gnu_compile_range",
+      "callee": "SET_LIST_BIT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3204"
+    },
+    {
+      "caller_nid": "source_regex_gnu_compile_range",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3204"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3260"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "INIT_FAIL_STACK",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3262"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "bzero",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3263"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "FAIL_STACK_EMPTY",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3272"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3288"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "SWITCH_ENUM_CAST",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3290"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "SYNTAX",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3331"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "SYNTAX",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3338"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "SYNTAX",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3368"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "SYNTAX",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3376"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3411"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3426"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "FAIL_STACK_EMPTY",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3430"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3440"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "PUSH_PATTERN_OP",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3451"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "RESET_FAIL_STACK",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3453"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3462"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3474"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "abort",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3496"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_compile_fastmap",
+      "callee": "RESET_FAIL_STACK",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3514"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_search_2",
+      "callee": "TRANSLATE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3711"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_search_2",
+      "callee": "re_match_2_internal",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3721"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_search_2",
+      "callee": "alloca",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3725"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_match",
+      "callee": "re_match_2_internal",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3852"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_match",
+      "callee": "alloca",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3856"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_match_2",
+      "callee": "re_match_2_internal",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3905"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_match_2",
+      "callee": "alloca",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L3909"
+    },
+    {
+      "caller_nid": "source_regex_gnu_group_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5358"
+    },
+    {
+      "caller_nid": "source_regex_gnu_group_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5405"
+    },
+    {
+      "caller_nid": "source_regex_gnu_group_match_null_string_p",
+      "callee": "EXTRACT_NUMBER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5417"
+    },
+    {
+      "caller_nid": "source_regex_gnu_group_match_null_string_p",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5428"
+    },
+    {
+      "caller_nid": "source_regex_gnu_alt_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5470"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "assert",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5524"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "REG_MATCH_NULL_STRING_P",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5530"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "REG_MATCH_NULL_STRING_P",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5531"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5539"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5549"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "EXTRACT_NUMBER_AND_INCR",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5554"
+    },
+    {
+      "caller_nid": "source_regex_gnu_common_op_match_null_string_p",
+      "callee": "REG_MATCH_NULL_STRING_P",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5562"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "gettext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5672"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "malloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5678"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "gettext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5680"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "malloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5683"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "gettext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5685"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5694"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_comp",
+      "callee": "gettext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5700"
+    },
+    {
+      "caller_nid": "source_regex_gnu_re_exec",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5711"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regcomp",
+      "callee": "malloc",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5788"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regcomp",
+      "callee": "ISUPPER",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5795"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regcomp",
+      "callee": "tolower",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5795"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regcomp",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5815"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regnexec",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5875"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regnexec",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5876"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regnexec",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5901"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regnexec",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5902"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regexec",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5939"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "abort",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5971"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "gettext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5973"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5975"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "__mempcpy",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5982"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "memcpy",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5984"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regerror",
+      "callee": "memcpy",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L5989"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regfree",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L6011"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regfree",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L6018"
+    },
+    {
+      "caller_nid": "source_regex_gnu_regfree",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/regex-gnu.c",
+      "source_location": "L6023"
+    }
+  ]
+}

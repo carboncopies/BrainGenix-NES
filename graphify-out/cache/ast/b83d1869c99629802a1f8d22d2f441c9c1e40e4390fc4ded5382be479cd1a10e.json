@@ -1,0 +1,505 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_ffmpeg",
+      "label": "ffmpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_ffmpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_ffmpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_gstreamer",
+      "label": "gstreamer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_gstreamer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_gstreamer_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_gstreamer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_pipewire",
+      "label": "pipewire",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_pipewire_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_pipewire_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_pulseaudio",
+      "label": "pulseaudio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_pulseaudio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_pulseaudio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_qml",
+      "label": "qml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_qml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_qml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L115"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_features_widgets",
+      "label": "widgets",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_widgets_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "qtmultimedia_vcpkg_widgets_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L124"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_default_features",
+      "target": "ref_ffmpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtmultimedia_vcpkg_default_features",
+      "target": "ref_widgets",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtmultimedia_vcpkg_json",
+      "target": "qtmultimedia_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_ffmpeg",
+      "target": "qtmultimedia_vcpkg_ffmpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_ffmpeg",
+      "target": "qtmultimedia_vcpkg_ffmpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_ffmpeg_dependencies",
+      "target": "ref_signalsmith_stretch",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_gstreamer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_gstreamer",
+      "target": "qtmultimedia_vcpkg_gstreamer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_gstreamer",
+      "target": "qtmultimedia_vcpkg_gstreamer_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_gstreamer",
+      "target": "qtmultimedia_vcpkg_gstreamer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_gstreamer_dependencies",
+      "target": "ref_egl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_pipewire",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_pipewire",
+      "target": "qtmultimedia_vcpkg_pipewire_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_pipewire",
+      "target": "qtmultimedia_vcpkg_pipewire_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_pipewire_dependencies",
+      "target": "ref_pipewire",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_pulseaudio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_pulseaudio",
+      "target": "qtmultimedia_vcpkg_pulseaudio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_pulseaudio",
+      "target": "qtmultimedia_vcpkg_pulseaudio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_pulseaudio_dependencies",
+      "target": "ref_pulseaudio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_qml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_qml",
+      "target": "qtmultimedia_vcpkg_qml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_qml",
+      "target": "qtmultimedia_vcpkg_qml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features",
+      "target": "qtmultimedia_vcpkg_features_widgets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_widgets",
+      "target": "qtmultimedia_vcpkg_widgets_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "qtmultimedia_vcpkg_features_widgets",
+      "target": "qtmultimedia_vcpkg_widgets_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtmultimedia/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    }
+  ]
+}

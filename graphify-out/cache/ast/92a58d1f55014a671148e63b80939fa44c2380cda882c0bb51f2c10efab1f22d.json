@@ -1,0 +1,229 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "opencc_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "opencc_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "opencc_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "opencc_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "opencc_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "opencc_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "opencc_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "opencc_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "opencc_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "opencc_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "opencc_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "opencc_vcpkg_dependencies",
+      "target": "ref_darts_clone",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencc_vcpkg_dependencies",
+      "target": "ref_marisa_trie",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencc_vcpkg_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencc_vcpkg_dependencies",
+      "target": "ref_tclap",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencc_vcpkg_json",
+      "target": "opencc_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "opencc_vcpkg_features",
+      "target": "opencc_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "opencc_vcpkg_features_tools",
+      "target": "opencc_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencc/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wolf_midi_json",
+      "label": "wolf-midi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolf-midi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wolf_midi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolf-midi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wolf_midi_json",
+      "target": "w_wolf_midi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolf-midi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

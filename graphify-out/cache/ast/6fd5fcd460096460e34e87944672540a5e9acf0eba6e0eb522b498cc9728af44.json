@@ -1,0 +1,1471 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "poco_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "poco_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "poco_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "poco_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "poco_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "poco_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "poco_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "poco_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "poco_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "poco_vcpkg_features_activerecord",
+      "label": "activerecord",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "poco_vcpkg_activerecord_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "poco_vcpkg_activerecord_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "poco_vcpkg_features_activerecord_compiler",
+      "label": "activerecord-compiler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "poco_vcpkg_activerecord_compiler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "poco_vcpkg_activerecord_compiler_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "poco_vcpkg_features_cpp_parser",
+      "label": "cpp-parser",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "poco_vcpkg_cpp_parser_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "poco_vcpkg_features_crypto",
+      "label": "crypto",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "poco_vcpkg_crypto_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "poco_vcpkg_crypto_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "poco_vcpkg_features_data",
+      "label": "data",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "poco_vcpkg_data_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "poco_vcpkg_features_encodings",
+      "label": "encodings",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "poco_vcpkg_encodings_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "poco_vcpkg_features_encodings_compiler",
+      "label": "encodings-compiler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "poco_vcpkg_encodings_compiler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "poco_vcpkg_features_json",
+      "label": "json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "poco_vcpkg_json_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "poco_vcpkg_features_jwt",
+      "label": "jwt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "poco_vcpkg_jwt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "poco_vcpkg_jwt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "poco_vcpkg_features_mariadb",
+      "label": "mariadb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "poco_vcpkg_mariadb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "poco_vcpkg_mariadb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "poco_vcpkg_features_mongodb",
+      "label": "mongodb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "poco_vcpkg_mongodb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "poco_vcpkg_mongodb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "poco_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "poco_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "poco_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "poco_vcpkg_features_net",
+      "label": "net",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "poco_vcpkg_net_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "poco_vcpkg_features_netssl",
+      "label": "netssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "poco_vcpkg_netssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "poco_vcpkg_netssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "poco_vcpkg_features_odbc",
+      "label": "odbc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "poco_vcpkg_odbc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "poco_vcpkg_odbc_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "poco_vcpkg_odbc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "poco_vcpkg_features_pagecompiler",
+      "label": "pagecompiler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L158"
+    },
+    {
+      "id": "poco_vcpkg_pagecompiler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L159"
+    },
+    {
+      "id": "poco_vcpkg_pagecompiler_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L160"
+    },
+    {
+      "id": "poco_vcpkg_features_pagecompiler_file2page",
+      "label": "pagecompiler-file2page",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L172"
+    },
+    {
+      "id": "poco_vcpkg_pagecompiler_file2page_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L173"
+    },
+    {
+      "id": "poco_vcpkg_pagecompiler_file2page_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L174"
+    },
+    {
+      "id": "poco_vcpkg_features_pdf",
+      "label": "pdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L186"
+    },
+    {
+      "id": "poco_vcpkg_pdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L187"
+    },
+    {
+      "id": "poco_vcpkg_pdf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L188"
+    },
+    {
+      "id": "poco_vcpkg_features_pocodoc",
+      "label": "pocodoc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L200"
+    },
+    {
+      "id": "poco_vcpkg_pocodoc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L201"
+    },
+    {
+      "id": "poco_vcpkg_pocodoc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L202"
+    },
+    {
+      "id": "poco_vcpkg_features_postgresql",
+      "label": "postgresql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L216"
+    },
+    {
+      "id": "poco_vcpkg_postgresql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L217"
+    },
+    {
+      "id": "poco_vcpkg_postgresql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L218"
+    },
+    {
+      "id": "poco_vcpkg_features_prometheus",
+      "label": "prometheus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L229"
+    },
+    {
+      "id": "poco_vcpkg_prometheus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L230"
+    },
+    {
+      "id": "poco_vcpkg_prometheus_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L231"
+    },
+    {
+      "id": "poco_vcpkg_features_redis",
+      "label": "redis",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L241"
+    },
+    {
+      "id": "poco_vcpkg_redis_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L242"
+    },
+    {
+      "id": "poco_vcpkg_redis_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L243"
+    },
+    {
+      "id": "poco_vcpkg_features_sevenzip",
+      "label": "sevenzip",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L253"
+    },
+    {
+      "id": "poco_vcpkg_sevenzip_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L254"
+    },
+    {
+      "id": "poco_vcpkg_features_sqlite",
+      "label": "sqlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L256"
+    },
+    {
+      "id": "poco_vcpkg_sqlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L257"
+    },
+    {
+      "id": "poco_vcpkg_sqlite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L258"
+    },
+    {
+      "id": "poco_vcpkg_features_util",
+      "label": "util",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L269"
+    },
+    {
+      "id": "poco_vcpkg_util_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L270"
+    },
+    {
+      "id": "poco_vcpkg_util_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L271"
+    },
+    {
+      "id": "poco_vcpkg_features_xml",
+      "label": "xml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L282"
+    },
+    {
+      "id": "poco_vcpkg_xml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L283"
+    },
+    {
+      "id": "poco_vcpkg_xml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L284"
+    },
+    {
+      "id": "poco_vcpkg_features_zip",
+      "label": "zip",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L288"
+    },
+    {
+      "id": "poco_vcpkg_zip_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L289"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_dependencies",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_dependencies",
+      "target": "ref_utf8proc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poco_vcpkg_json",
+      "target": "poco_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_activerecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_activerecord",
+      "target": "poco_vcpkg_activerecord_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_activerecord",
+      "target": "poco_vcpkg_activerecord_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_activerecord_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_activerecord_compiler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_activerecord_compiler",
+      "target": "poco_vcpkg_activerecord_compiler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_activerecord_compiler",
+      "target": "poco_vcpkg_activerecord_compiler_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_cpp_parser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_cpp_parser",
+      "target": "poco_vcpkg_cpp_parser_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_crypto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_crypto",
+      "target": "poco_vcpkg_crypto_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_crypto",
+      "target": "poco_vcpkg_crypto_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_crypto_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_data",
+      "target": "poco_vcpkg_data_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_encodings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_encodings",
+      "target": "poco_vcpkg_encodings_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_encodings_compiler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_encodings_compiler",
+      "target": "poco_vcpkg_encodings_compiler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_json",
+      "target": "poco_vcpkg_json_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_jwt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_jwt",
+      "target": "poco_vcpkg_jwt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_jwt",
+      "target": "poco_vcpkg_jwt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_mariadb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mariadb",
+      "target": "poco_vcpkg_mariadb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mariadb",
+      "target": "poco_vcpkg_mariadb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_mariadb_dependencies",
+      "target": "ref_libmariadb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_mongodb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mongodb",
+      "target": "poco_vcpkg_mongodb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mongodb",
+      "target": "poco_vcpkg_mongodb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mysql",
+      "target": "poco_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_mysql",
+      "target": "poco_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_mysql_dependencies",
+      "target": "ref_libmysql",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_net",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_net",
+      "target": "poco_vcpkg_net_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_netssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_netssl",
+      "target": "poco_vcpkg_netssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_netssl_description",
+      "target": "ref_netssl_support_for_poco",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_netssl_description",
+      "target": "ref_by_default_this_feature_uses_the_openssl_implementation_the_poco_enable_netssl_win_triplet_variable_can_be_used_to_switch_to_the_netssl_win_module",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features_netssl",
+      "target": "poco_vcpkg_netssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_odbc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_odbc",
+      "target": "poco_vcpkg_odbc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_odbc",
+      "target": "poco_vcpkg_odbc_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_odbc",
+      "target": "poco_vcpkg_odbc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_pagecompiler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pagecompiler",
+      "target": "poco_vcpkg_pagecompiler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pagecompiler",
+      "target": "poco_vcpkg_pagecompiler_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_pagecompiler_file2page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pagecompiler_file2page",
+      "target": "poco_vcpkg_pagecompiler_file2page_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pagecompiler_file2page",
+      "target": "poco_vcpkg_pagecompiler_file2page_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pdf",
+      "target": "poco_vcpkg_pdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pdf",
+      "target": "poco_vcpkg_pdf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_pdf_dependencies",
+      "target": "ref_libharu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L188",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_pocodoc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pocodoc",
+      "target": "poco_vcpkg_pocodoc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_pocodoc",
+      "target": "poco_vcpkg_pocodoc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_postgresql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_postgresql",
+      "target": "poco_vcpkg_postgresql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_postgresql",
+      "target": "poco_vcpkg_postgresql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_postgresql_dependencies",
+      "target": "ref_libpqxx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L218",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_prometheus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_prometheus",
+      "target": "poco_vcpkg_prometheus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_prometheus",
+      "target": "poco_vcpkg_prometheus_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L231",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_redis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L241",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_redis",
+      "target": "poco_vcpkg_redis_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_redis",
+      "target": "poco_vcpkg_redis_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L243",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_sevenzip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_sevenzip",
+      "target": "poco_vcpkg_sevenzip_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L254",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_sqlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_sqlite",
+      "target": "poco_vcpkg_sqlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_sqlite",
+      "target": "poco_vcpkg_sqlite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_sqlite_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L258",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_util",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_util",
+      "target": "poco_vcpkg_util_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_util",
+      "target": "poco_vcpkg_util_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_xml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L282",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_xml",
+      "target": "poco_vcpkg_xml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_xml",
+      "target": "poco_vcpkg_xml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L284",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_xml_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L284",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poco_vcpkg_features",
+      "target": "poco_vcpkg_features_zip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "poco_vcpkg_features_zip",
+      "target": "poco_vcpkg_zip_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poco/vcpkg.json",
+      "source_location": "L289",
+      "weight": 1.0
+    }
+  ]
+}

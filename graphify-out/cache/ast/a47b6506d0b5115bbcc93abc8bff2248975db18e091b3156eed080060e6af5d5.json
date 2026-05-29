@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_jbcoe_value_types_json",
+      "label": "jbcoe-value-types.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbcoe-value-types.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_jbcoe_value_types_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbcoe-value-types.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_jbcoe_value_types_json",
+      "target": "j_jbcoe_value_types_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbcoe-value-types.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

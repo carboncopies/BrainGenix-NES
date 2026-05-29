@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_duckx_json",
+      "label": "duckx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duckx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_duckx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duckx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_duckx_json",
+      "target": "d_duckx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duckx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

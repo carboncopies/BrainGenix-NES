@@ -1,0 +1,1581 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_ai",
+      "label": "ai",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_ai_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_ai_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_algo",
+      "label": "algo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_algo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_compress",
+      "label": "compress",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_compress_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_compress_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_crypto",
+      "label": "crypto",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_crypto_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_crypto_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_db",
+      "label": "db",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_db_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_encoding",
+      "label": "encoding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_encoding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_hardware",
+      "label": "hardware",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_hardware_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_hardware_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_io",
+      "label": "io",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_io_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_io_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_log",
+      "label": "log",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_log_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_log_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_math",
+      "label": "math",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_math_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_math_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_misc",
+      "label": "misc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L106"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_misc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_misc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_net",
+      "label": "net",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_net_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_os",
+      "label": "os",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_os_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_os_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_sync",
+      "label": "sync",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_sync_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_testing",
+      "label": "testing",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L137"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_testing_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L138"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_testing_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L139"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_time",
+      "label": "time",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L153"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_time_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L154"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_time_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L155"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_types",
+      "label": "types",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L159"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_types_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L160"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_features_util",
+      "label": "util",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_util_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L170"
+    },
+    {
+      "id": "hanjingo_high_jump_vcpkg_util_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L171"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_maintainers",
+      "target": "ref_hanjingo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_maintainers",
+      "target": "ref_hehehunanchina_live_com",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_abseil",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_bext_sml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_boost_filesystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_boost_stacktrace",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_concurrentqueue",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_libnice",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hanjingo_high_jump_vcpkg_json",
+      "target": "hanjingo_high_jump_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_ai",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_ai",
+      "target": "hanjingo_high_jump_vcpkg_ai_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_ai",
+      "target": "hanjingo_high_jump_vcpkg_ai_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_ai_dependencies",
+      "target": "ref_libqrencode",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_ai_dependencies",
+      "target": "ref_quirc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_algo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_algo",
+      "target": "hanjingo_high_jump_vcpkg_algo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_algo",
+      "target": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "target": "ref_behaviortree_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "target": "ref_boost_multi_index",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_algo_dependencies",
+      "target": "ref_boost_uuid",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_compress",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_compress",
+      "target": "hanjingo_high_jump_vcpkg_compress_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_compress",
+      "target": "hanjingo_high_jump_vcpkg_compress_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_compress_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_compress_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_crypto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_crypto",
+      "target": "hanjingo_high_jump_vcpkg_crypto_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_crypto",
+      "target": "hanjingo_high_jump_vcpkg_crypto_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_crypto_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_db",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_db",
+      "target": "hanjingo_high_jump_vcpkg_db_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_db",
+      "target": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "target": "ref_clickhouse_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "target": "ref_hiredis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "target": "ref_libpqxx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_db_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_encoding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_encoding",
+      "target": "hanjingo_high_jump_vcpkg_encoding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_encoding",
+      "target": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "target": "ref_boost_property_tree",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "target": "ref_flatbuffers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "target": "ref_protobuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "target": "ref_pugixml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_encoding_dependencies",
+      "target": "ref_yaml_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_hardware",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_hardware",
+      "target": "hanjingo_high_jump_vcpkg_hardware_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_hardware",
+      "target": "hanjingo_high_jump_vcpkg_hardware_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_hardware_dependencies",
+      "target": "ref_hidapi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_hardware_dependencies",
+      "target": "ref_opencl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_io",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_io",
+      "target": "hanjingo_high_jump_vcpkg_io_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_io",
+      "target": "hanjingo_high_jump_vcpkg_io_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_io_dependencies",
+      "target": "ref_boost_circular_buffer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_log",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_log",
+      "target": "hanjingo_high_jump_vcpkg_log_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_log",
+      "target": "hanjingo_high_jump_vcpkg_log_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_log_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_math",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_math",
+      "target": "hanjingo_high_jump_vcpkg_math_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_math",
+      "target": "hanjingo_high_jump_vcpkg_math_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_math_dependencies",
+      "target": "ref_boost_math",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_math_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_misc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_misc",
+      "target": "hanjingo_high_jump_vcpkg_misc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_misc",
+      "target": "hanjingo_high_jump_vcpkg_misc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_misc_dependencies",
+      "target": "ref_hffix",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_misc_dependencies",
+      "target": "ref_libharu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_net",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_net",
+      "target": "hanjingo_high_jump_vcpkg_net_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_net",
+      "target": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "target": "ref_boost_beast",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "target": "ref_cpp_httplib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_net_dependencies",
+      "target": "ref_zeromq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_os",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_os",
+      "target": "hanjingo_high_jump_vcpkg_os_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_os",
+      "target": "hanjingo_high_jump_vcpkg_os_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_os_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_sync",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_sync",
+      "target": "hanjingo_high_jump_vcpkg_sync_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_sync",
+      "target": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "target": "ref_boost_interprocess",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "target": "ref_boost_process",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "target": "ref_boost_thread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_sync_dependencies",
+      "target": "ref_tbb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_testing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_testing",
+      "target": "hanjingo_high_jump_vcpkg_testing_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_testing",
+      "target": "hanjingo_high_jump_vcpkg_testing_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_testing_dependencies",
+      "target": "ref_benchmark",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L139",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_testing_dependencies",
+      "target": "ref_breakpad",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L139",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_testing_dependencies",
+      "target": "ref_gtest",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L139",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_time",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_time",
+      "target": "hanjingo_high_jump_vcpkg_time_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_time",
+      "target": "hanjingo_high_jump_vcpkg_time_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_time_dependencies",
+      "target": "ref_boost_timer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L155",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_types",
+      "target": "hanjingo_high_jump_vcpkg_types_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_types",
+      "target": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "target": "ref_boost_any",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "target": "ref_boost_leaf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "target": "ref_boost_optional",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "target": "ref_boost_serialization",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_types_dependencies",
+      "target": "ref_boost_variant",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features",
+      "target": "hanjingo_high_jump_vcpkg_features_util",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_util",
+      "target": "hanjingo_high_jump_vcpkg_util_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_features_util",
+      "target": "hanjingo_high_jump_vcpkg_util_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "hanjingo_high_jump_vcpkg_util_dependencies",
+      "target": "ref_jwt_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hanjingo-high-jump/vcpkg.json",
+      "source_location": "L171",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

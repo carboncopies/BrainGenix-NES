@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_whisper_cpp_json",
+      "label": "whisper-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/whisper-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_whisper_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/whisper-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_whisper_cpp_json",
+      "target": "w_whisper_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/whisper-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

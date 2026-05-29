@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_clfft_json",
+      "label": "clfft.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/clfft.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_clfft_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/clfft.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_clfft_json",
+      "target": "c_clfft_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/clfft.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

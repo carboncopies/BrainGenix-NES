@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_zeroc_ice_json",
+      "label": "zeroc-ice.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zeroc-ice.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_zeroc_ice_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zeroc-ice.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_zeroc_ice_json",
+      "target": "z_zeroc_ice_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zeroc-ice.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

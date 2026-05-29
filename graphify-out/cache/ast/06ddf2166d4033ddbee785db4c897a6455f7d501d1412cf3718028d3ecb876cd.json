@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_alac_decoder_decomp_c",
+      "label": "decomp.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/alac-decoder/decomp.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "alac_decoder_decomp_set_endian",
+      "label": "set_endian()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/alac-decoder/decomp.c",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_alac_decoder_decomp_c",
+      "target": "decomp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/alac-decoder/decomp.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_alac_decoder_decomp_c",
+      "target": "stdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/alac-decoder/decomp.c",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_alac_decoder_decomp_c",
+      "target": "alac_decoder_decomp_set_endian",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/alac-decoder/decomp.c",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

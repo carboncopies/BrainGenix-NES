@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gloo_json",
+      "label": "gloo.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gloo.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gloo_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gloo.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gloo_json",
+      "target": "g_gloo_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gloo.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

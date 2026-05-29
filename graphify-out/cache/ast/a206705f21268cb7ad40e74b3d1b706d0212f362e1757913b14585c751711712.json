@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mapbox_geojson_vt_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mapbox_geojson_vt_cpp_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mapbox_geojson_vt_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mapbox_geojson_vt_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mapbox_geojson_vt_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "target": "mapbox_geojson_vt_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "target": "mapbox_geojson_vt_cpp_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "target": "mapbox_geojson_vt_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "target": "mapbox_geojson_vt_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapbox_geojson_vt_cpp_vcpkg_json",
+      "target": "mapbox_geojson_vt_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "mapbox_geojson_vt_cpp_vcpkg_dependencies",
+      "target": "ref_mapbox_geometry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapbox-geojson-vt-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

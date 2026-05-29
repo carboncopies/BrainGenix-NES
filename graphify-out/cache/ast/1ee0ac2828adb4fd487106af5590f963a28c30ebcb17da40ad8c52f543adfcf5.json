@@ -1,0 +1,815 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "opencv2_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "opencv2_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "opencv2_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "opencv2_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "opencv2_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "opencv2_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "opencv2_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "opencv2_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "opencv2_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "opencv2_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "opencv2_vcpkg_features_dc1394",
+      "label": "dc1394",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "opencv2_vcpkg_dc1394_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "opencv2_vcpkg_dc1394_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "opencv2_vcpkg_features_eigen",
+      "label": "eigen",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "opencv2_vcpkg_eigen_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "opencv2_vcpkg_eigen_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "opencv2_vcpkg_features_jasper",
+      "label": "jasper",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "opencv2_vcpkg_jasper_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "opencv2_vcpkg_jasper_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "opencv2_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "opencv2_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "opencv2_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "opencv2_vcpkg_features_msmf",
+      "label": "msmf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "opencv2_vcpkg_msmf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "opencv2_vcpkg_msmf_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "opencv2_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "opencv2_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "opencv2_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "opencv2_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "opencv2_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "opencv2_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "opencv2_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "opencv2_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "opencv2_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "opencv2_vcpkg_features_qt",
+      "label": "qt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "opencv2_vcpkg_qt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "opencv2_vcpkg_qt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "opencv2_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "opencv2_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "opencv2_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "opencv2_vcpkg_features_world",
+      "label": "world",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "opencv2_vcpkg_world_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L97"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_default_features",
+      "target": "ref_eigen",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_default_features",
+      "target": "ref_tiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_opencv2_vcpkg_json",
+      "target": "opencv2_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_dc1394",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_dc1394",
+      "target": "opencv2_vcpkg_dc1394_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_dc1394",
+      "target": "opencv2_vcpkg_dc1394_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_dc1394_dependencies",
+      "target": "ref_libdc1394",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_eigen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_eigen",
+      "target": "opencv2_vcpkg_eigen_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_eigen",
+      "target": "opencv2_vcpkg_eigen_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_eigen_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_jasper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_jasper",
+      "target": "opencv2_vcpkg_jasper_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_jasper",
+      "target": "opencv2_vcpkg_jasper_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_jasper_dependencies",
+      "target": "ref_jasper",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_jpeg",
+      "target": "opencv2_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_jpeg",
+      "target": "opencv2_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_msmf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_msmf",
+      "target": "opencv2_vcpkg_msmf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_msmf",
+      "target": "opencv2_vcpkg_msmf_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_openexr",
+      "target": "opencv2_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_openexr",
+      "target": "opencv2_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_openexr_dependencies",
+      "target": "ref_imath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_opengl",
+      "target": "opencv2_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_opengl",
+      "target": "opencv2_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_opengl_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_png",
+      "target": "opencv2_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_png",
+      "target": "opencv2_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_qt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_qt",
+      "target": "opencv2_vcpkg_qt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_qt",
+      "target": "opencv2_vcpkg_qt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_tiff",
+      "target": "opencv2_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_tiff",
+      "target": "opencv2_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features",
+      "target": "opencv2_vcpkg_features_world",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "opencv2_vcpkg_features_world",
+      "target": "opencv2_vcpkg_world_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/opencv2/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qtquicktimeline_json",
+      "label": "qtquicktimeline.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquicktimeline.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qtquicktimeline_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquicktimeline.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qtquicktimeline_json",
+      "target": "q_qtquicktimeline_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquicktimeline.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

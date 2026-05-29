@@ -1,0 +1,1895 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mapnik_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mapnik_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mapnik_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mapnik_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mapnik_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mapnik_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mapnik_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mapnik_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "mapnik_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "mapnik_vcpkg_features_cairo",
+      "label": "cairo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "mapnik_vcpkg_cairo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "mapnik_vcpkg_cairo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "mapnik_vcpkg_features_grid_renderer",
+      "label": "grid-renderer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "mapnik_vcpkg_grid_renderer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_csv",
+      "label": "input-csv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "mapnik_vcpkg_input_csv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "mapnik_vcpkg_input_csv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_gdal",
+      "label": "input-gdal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "mapnik_vcpkg_input_gdal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "mapnik_vcpkg_input_gdal_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_geobuf",
+      "label": "input-geobuf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "mapnik_vcpkg_input_geobuf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "mapnik_vcpkg_input_geobuf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_geojson",
+      "label": "input-geojson",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "mapnik_vcpkg_input_geojson_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L106"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_ogr",
+      "label": "input-ogr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "mapnik_vcpkg_input_ogr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "mapnik_vcpkg_input_ogr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_pgraster",
+      "label": "input-pgraster",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "mapnik_vcpkg_input_pgraster_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L115"
+    },
+    {
+      "id": "mapnik_vcpkg_input_pgraster_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_postgis",
+      "label": "input-postgis",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L120"
+    },
+    {
+      "id": "mapnik_vcpkg_input_postgis_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "mapnik_vcpkg_input_postgis_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_raster",
+      "label": "input-raster",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L126"
+    },
+    {
+      "id": "mapnik_vcpkg_input_raster_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L127"
+    },
+    {
+      "id": "mapnik_vcpkg_input_raster_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_shape",
+      "label": "input-shape",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L132"
+    },
+    {
+      "id": "mapnik_vcpkg_input_shape_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L133"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_sqlite",
+      "label": "input-sqlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "mapnik_vcpkg_input_sqlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "mapnik_vcpkg_input_sqlite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L137"
+    },
+    {
+      "id": "mapnik_vcpkg_features_input_topojson",
+      "label": "input-topojson",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "mapnik_vcpkg_input_topojson_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "mapnik_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "mapnik_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "mapnik_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L146"
+    },
+    {
+      "id": "mapnik_vcpkg_features_libxml2",
+      "label": "libxml2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "mapnik_vcpkg_libxml2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L151"
+    },
+    {
+      "id": "mapnik_vcpkg_libxml2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L152"
+    },
+    {
+      "id": "mapnik_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L156"
+    },
+    {
+      "id": "mapnik_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L157"
+    },
+    {
+      "id": "mapnik_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L158"
+    },
+    {
+      "id": "mapnik_vcpkg_features_proj",
+      "label": "proj",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L162"
+    },
+    {
+      "id": "mapnik_vcpkg_proj_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L163"
+    },
+    {
+      "id": "mapnik_vcpkg_proj_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L164"
+    },
+    {
+      "id": "mapnik_vcpkg_features_svg_renderer",
+      "label": "svg-renderer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "mapnik_vcpkg_svg_renderer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "mapnik_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L171"
+    },
+    {
+      "id": "mapnik_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L172"
+    },
+    {
+      "id": "mapnik_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L173"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_geometry_to_wkb",
+      "label": "utility-geometry-to-wkb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L177"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_geometry_to_wkb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L178"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_geometry_to_wkb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L179"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_mapnik_index",
+      "label": "utility-mapnik-index",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_mapnik_index_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_mapnik_index_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L185"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_mapnik_render",
+      "label": "utility-mapnik-render",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_mapnik_render_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L190"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_mapnik_render_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L191"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_ogrindex",
+      "label": "utility-ogrindex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L195"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_ogrindex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L196"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_pgsql2sqlite",
+      "label": "utility-pgsql2sqlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L198"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_pgsql2sqlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L199"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_pgsql2sqlite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L200"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_shapeindex",
+      "label": "utility-shapeindex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L206"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_shapeindex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L207"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_shapeindex_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L208"
+    },
+    {
+      "id": "mapnik_vcpkg_features_utility_svg2png",
+      "label": "utility-svg2png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L212"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_svg2png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L213"
+    },
+    {
+      "id": "mapnik_vcpkg_utility_svg2png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L214"
+    },
+    {
+      "id": "mapnik_vcpkg_features_viewer",
+      "label": "viewer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L218"
+    },
+    {
+      "id": "mapnik_vcpkg_viewer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L219"
+    },
+    {
+      "id": "mapnik_vcpkg_viewer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L220"
+    },
+    {
+      "id": "mapnik_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L224"
+    },
+    {
+      "id": "mapnik_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L225"
+    },
+    {
+      "id": "mapnik_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L226"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_assign",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_bimap",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_filesystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_format",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_geometry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_gil",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_interprocess",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_msm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_property_tree",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_spirit",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_icu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_mapbox_geometry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_mapbox_polylabel",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_mapbox_variant",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_protozero",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_grid_renderer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_proj",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_svg_renderer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_tiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_default_features",
+      "target": "ref_webp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mapnik_vcpkg_json",
+      "target": "mapnik_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_cairo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_cairo",
+      "target": "mapnik_vcpkg_cairo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_cairo",
+      "target": "mapnik_vcpkg_cairo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_cairo_dependencies",
+      "target": "ref_cairo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_cairo_dependencies",
+      "target": "ref_cairomm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_grid_renderer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_grid_renderer",
+      "target": "mapnik_vcpkg_grid_renderer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_csv",
+      "target": "mapnik_vcpkg_input_csv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_csv",
+      "target": "mapnik_vcpkg_input_csv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_csv_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_gdal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_gdal",
+      "target": "mapnik_vcpkg_input_gdal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_gdal",
+      "target": "mapnik_vcpkg_input_gdal_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_gdal_dependencies",
+      "target": "ref_gdal",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_geobuf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_geobuf",
+      "target": "mapnik_vcpkg_input_geobuf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_geobuf",
+      "target": "mapnik_vcpkg_input_geobuf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_geobuf_dependencies",
+      "target": "ref_protozero",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_geojson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_geojson",
+      "target": "mapnik_vcpkg_input_geojson_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_ogr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_ogr",
+      "target": "mapnik_vcpkg_input_ogr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_ogr",
+      "target": "mapnik_vcpkg_input_ogr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_ogr_dependencies",
+      "target": "ref_gdal",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_pgraster",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_pgraster",
+      "target": "mapnik_vcpkg_input_pgraster_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_pgraster",
+      "target": "mapnik_vcpkg_input_pgraster_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_pgraster_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_postgis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_postgis",
+      "target": "mapnik_vcpkg_input_postgis_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_postgis",
+      "target": "mapnik_vcpkg_input_postgis_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_postgis_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_raster",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_raster",
+      "target": "mapnik_vcpkg_input_raster_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_raster",
+      "target": "mapnik_vcpkg_input_raster_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_raster_dependencies",
+      "target": "ref_boost_format",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_shape",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_shape",
+      "target": "mapnik_vcpkg_input_shape_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_sqlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_sqlite",
+      "target": "mapnik_vcpkg_input_sqlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_sqlite",
+      "target": "mapnik_vcpkg_input_sqlite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_input_sqlite_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_input_topojson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_input_topojson",
+      "target": "mapnik_vcpkg_input_topojson_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_jpeg",
+      "target": "mapnik_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_jpeg",
+      "target": "mapnik_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_libxml2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_libxml2",
+      "target": "mapnik_vcpkg_libxml2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_libxml2",
+      "target": "mapnik_vcpkg_libxml2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_libxml2_dependencies",
+      "target": "ref_libxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L152",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_png",
+      "target": "mapnik_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_png",
+      "target": "mapnik_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_proj",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_proj",
+      "target": "mapnik_vcpkg_proj_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_proj",
+      "target": "mapnik_vcpkg_proj_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_proj_dependencies",
+      "target": "ref_proj",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_svg_renderer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_svg_renderer",
+      "target": "mapnik_vcpkg_svg_renderer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_tiff",
+      "target": "mapnik_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_tiff",
+      "target": "mapnik_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_tiff_dependencies",
+      "target": "ref_tiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L173",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_geometry_to_wkb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_geometry_to_wkb",
+      "target": "mapnik_vcpkg_utility_geometry_to_wkb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_geometry_to_wkb",
+      "target": "mapnik_vcpkg_utility_geometry_to_wkb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_geometry_to_wkb_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_mapnik_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_mapnik_index",
+      "target": "mapnik_vcpkg_utility_mapnik_index_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_mapnik_index",
+      "target": "mapnik_vcpkg_utility_mapnik_index_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_mapnik_index_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_mapnik_render",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_mapnik_render",
+      "target": "mapnik_vcpkg_utility_mapnik_render_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_mapnik_render",
+      "target": "mapnik_vcpkg_utility_mapnik_render_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_mapnik_render_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_ogrindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_ogrindex",
+      "target": "mapnik_vcpkg_utility_ogrindex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_pgsql2sqlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_pgsql2sqlite",
+      "target": "mapnik_vcpkg_utility_pgsql2sqlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_pgsql2sqlite",
+      "target": "mapnik_vcpkg_utility_pgsql2sqlite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_pgsql2sqlite_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_utility_pgsql2sqlite_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_utility_pgsql2sqlite_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_shapeindex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_shapeindex",
+      "target": "mapnik_vcpkg_utility_shapeindex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_shapeindex",
+      "target": "mapnik_vcpkg_utility_shapeindex_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_shapeindex_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L208",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_utility_svg2png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_svg2png",
+      "target": "mapnik_vcpkg_utility_svg2png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_utility_svg2png",
+      "target": "mapnik_vcpkg_utility_svg2png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_utility_svg2png_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L214",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_viewer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_viewer",
+      "target": "mapnik_vcpkg_viewer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_viewer",
+      "target": "mapnik_vcpkg_viewer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_viewer_dependencies",
+      "target": "ref_qtbase",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mapnik_vcpkg_features",
+      "target": "mapnik_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_webp",
+      "target": "mapnik_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_features_webp",
+      "target": "mapnik_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "mapnik_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mapnik/vcpkg.json",
+      "source_location": "L226",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

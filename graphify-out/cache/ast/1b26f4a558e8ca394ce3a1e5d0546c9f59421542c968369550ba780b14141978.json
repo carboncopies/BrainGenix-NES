@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_ijg_libjpeg_json",
+      "label": "ijg-libjpeg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ijg-libjpeg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_ijg_libjpeg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ijg-libjpeg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_ijg_libjpeg_json",
+      "target": "i_ijg_libjpeg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ijg-libjpeg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

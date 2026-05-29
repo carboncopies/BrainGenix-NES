@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_constexpr_json",
+      "label": "constexpr.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/constexpr.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_constexpr_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/constexpr.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_constexpr_json",
+      "target": "c_constexpr_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/constexpr.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

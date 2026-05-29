@@ -1,0 +1,765 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "halide_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "halide_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "halide_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "halide_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "halide_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "halide_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "halide_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "halide_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "halide_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "halide_vcpkg_features_target_aarch64",
+      "label": "target-aarch64",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "halide_vcpkg_target_aarch64_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "halide_vcpkg_target_aarch64_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "halide_vcpkg_features_target_all",
+      "label": "target-all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "halide_vcpkg_target_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "halide_vcpkg_target_all_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "halide_vcpkg_features_target_amdgpu",
+      "label": "target-amdgpu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "halide_vcpkg_target_amdgpu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "halide_vcpkg_target_amdgpu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "halide_vcpkg_features_target_arm",
+      "label": "target-arm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "halide_vcpkg_target_arm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "halide_vcpkg_target_arm_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "halide_vcpkg_features_target_d3d12compute",
+      "label": "target-d3d12compute",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L120"
+    },
+    {
+      "id": "halide_vcpkg_target_d3d12compute_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "halide_vcpkg_features_target_hexagon",
+      "label": "target-hexagon",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "halide_vcpkg_target_hexagon_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "halide_vcpkg_target_hexagon_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "halide_vcpkg_features_target_metal",
+      "label": "target-metal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "halide_vcpkg_target_metal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "halide_vcpkg_features_target_nvptx",
+      "label": "target-nvptx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L138"
+    },
+    {
+      "id": "halide_vcpkg_target_nvptx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L139"
+    },
+    {
+      "id": "halide_vcpkg_target_nvptx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L140"
+    },
+    {
+      "id": "halide_vcpkg_features_target_opencl",
+      "label": "target-opencl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "halide_vcpkg_target_opencl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L151"
+    },
+    {
+      "id": "halide_vcpkg_features_target_opengl_compute",
+      "label": "target-opengl-compute",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L153"
+    },
+    {
+      "id": "halide_vcpkg_target_opengl_compute_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L154"
+    },
+    {
+      "id": "halide_vcpkg_features_target_powerpc",
+      "label": "target-powerpc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L156"
+    },
+    {
+      "id": "halide_vcpkg_target_powerpc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L157"
+    },
+    {
+      "id": "halide_vcpkg_target_powerpc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L158"
+    },
+    {
+      "id": "halide_vcpkg_features_target_riscv",
+      "label": "target-riscv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "halide_vcpkg_target_riscv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "halide_vcpkg_target_riscv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L170"
+    },
+    {
+      "id": "halide_vcpkg_features_target_webassembly",
+      "label": "target-webassembly",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L180"
+    },
+    {
+      "id": "halide_vcpkg_target_webassembly_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L181"
+    },
+    {
+      "id": "halide_vcpkg_target_webassembly_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L182"
+    },
+    {
+      "id": "halide_vcpkg_features_target_x86",
+      "label": "target-x86",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L192"
+    },
+    {
+      "id": "halide_vcpkg_target_x86_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L193"
+    },
+    {
+      "id": "halide_vcpkg_target_x86_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L194"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_halide_vcpkg_json",
+      "target": "halide_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_aarch64",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_aarch64",
+      "target": "halide_vcpkg_target_aarch64_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_aarch64",
+      "target": "halide_vcpkg_target_aarch64_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_all",
+      "target": "halide_vcpkg_target_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_all",
+      "target": "halide_vcpkg_target_all_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_amdgpu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_amdgpu",
+      "target": "halide_vcpkg_target_amdgpu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_amdgpu",
+      "target": "halide_vcpkg_target_amdgpu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_arm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_arm",
+      "target": "halide_vcpkg_target_arm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_arm",
+      "target": "halide_vcpkg_target_arm_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_d3d12compute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_d3d12compute",
+      "target": "halide_vcpkg_target_d3d12compute_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_hexagon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_hexagon",
+      "target": "halide_vcpkg_target_hexagon_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_hexagon",
+      "target": "halide_vcpkg_target_hexagon_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_metal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_metal",
+      "target": "halide_vcpkg_target_metal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_nvptx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_nvptx",
+      "target": "halide_vcpkg_target_nvptx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_nvptx",
+      "target": "halide_vcpkg_target_nvptx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_opencl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_opencl",
+      "target": "halide_vcpkg_target_opencl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_opengl_compute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_opengl_compute",
+      "target": "halide_vcpkg_target_opengl_compute_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_powerpc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_powerpc",
+      "target": "halide_vcpkg_target_powerpc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_powerpc",
+      "target": "halide_vcpkg_target_powerpc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_riscv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_riscv",
+      "target": "halide_vcpkg_target_riscv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_riscv",
+      "target": "halide_vcpkg_target_riscv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_webassembly",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_webassembly",
+      "target": "halide_vcpkg_target_webassembly_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_webassembly",
+      "target": "halide_vcpkg_target_webassembly_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L182",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features",
+      "target": "halide_vcpkg_features_target_x86",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_x86",
+      "target": "halide_vcpkg_target_x86_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "halide_vcpkg_features_target_x86",
+      "target": "halide_vcpkg_target_x86_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/halide/vcpkg.json",
+      "source_location": "L194",
+      "weight": 1.0
+    }
+  ]
+}

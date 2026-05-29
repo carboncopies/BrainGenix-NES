@@ -1,0 +1,1335 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "imgui_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "imgui_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "imgui_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "imgui_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "imgui_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "imgui_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "imgui_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "imgui_vcpkg_features_allegro5_binding",
+      "label": "allegro5-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "imgui_vcpkg_allegro5_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "imgui_vcpkg_allegro5_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "imgui_vcpkg_features_android_binding",
+      "label": "android-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "imgui_vcpkg_android_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "imgui_vcpkg_android_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "imgui_vcpkg_features_docking_experimental",
+      "label": "docking-experimental",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "imgui_vcpkg_docking_experimental_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "imgui_vcpkg_features_dx10_binding",
+      "label": "dx10-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "imgui_vcpkg_dx10_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "imgui_vcpkg_dx10_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "imgui_vcpkg_features_dx11_binding",
+      "label": "dx11-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "imgui_vcpkg_dx11_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "imgui_vcpkg_dx11_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "imgui_vcpkg_features_dx12_binding",
+      "label": "dx12-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "imgui_vcpkg_dx12_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "imgui_vcpkg_dx12_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "imgui_vcpkg_features_dx9_binding",
+      "label": "dx9-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "imgui_vcpkg_dx9_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "imgui_vcpkg_dx9_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "imgui_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "imgui_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "imgui_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "imgui_vcpkg_features_freetype_svg",
+      "label": "freetype-svg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "imgui_vcpkg_freetype_svg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "imgui_vcpkg_freetype_svg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "imgui_vcpkg_features_glfw_binding",
+      "label": "glfw-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "imgui_vcpkg_glfw_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "imgui_vcpkg_glfw_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "imgui_vcpkg_features_glut_binding",
+      "label": "glut-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "imgui_vcpkg_glut_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "imgui_vcpkg_glut_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "imgui_vcpkg_features_libigl_imgui",
+      "label": "libigl-imgui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "imgui_vcpkg_libigl_imgui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "imgui_vcpkg_features_metal_binding",
+      "label": "metal-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "imgui_vcpkg_metal_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "imgui_vcpkg_metal_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "imgui_vcpkg_features_opengl2_binding",
+      "label": "opengl2-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "imgui_vcpkg_opengl2_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "imgui_vcpkg_opengl2_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "imgui_vcpkg_features_opengl3_binding",
+      "label": "opengl3-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "imgui_vcpkg_opengl3_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "imgui_vcpkg_features_osx_binding",
+      "label": "osx-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "imgui_vcpkg_osx_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "imgui_vcpkg_osx_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "imgui_vcpkg_features_sdl3_binding",
+      "label": "sdl3-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "imgui_vcpkg_sdl3_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "imgui_vcpkg_sdl3_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "imgui_vcpkg_features_sdl3_renderer_binding",
+      "label": "sdl3-renderer-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "imgui_vcpkg_sdl3_renderer_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "imgui_vcpkg_sdl3_renderer_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L111"
+    },
+    {
+      "id": "imgui_vcpkg_features_sdlgpu3_binding",
+      "label": "sdlgpu3-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L115"
+    },
+    {
+      "id": "imgui_vcpkg_sdlgpu3_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "imgui_vcpkg_sdlgpu3_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "imgui_vcpkg_features_test_engine",
+      "label": "test-engine",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L127"
+    },
+    {
+      "id": "imgui_vcpkg_test_engine_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "imgui_vcpkg_test_engine_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "imgui_vcpkg_test_engine_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "imgui_vcpkg_test_engine_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "imgui_vcpkg_features_vulkan_binding",
+      "label": "vulkan-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "imgui_vcpkg_vulkan_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "imgui_vcpkg_vulkan_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L137"
+    },
+    {
+      "id": "imgui_vcpkg_features_wchar32",
+      "label": "wchar32",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "imgui_vcpkg_wchar32_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "imgui_vcpkg_features_webgpu_binding",
+      "label": "webgpu-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "imgui_vcpkg_webgpu_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "imgui_vcpkg_webgpu_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L146"
+    },
+    {
+      "id": "imgui_vcpkg_features_win32_binding",
+      "label": "win32-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "imgui_vcpkg_win32_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L151"
+    },
+    {
+      "id": "imgui_vcpkg_win32_binding_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L152"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_imgui_vcpkg_json",
+      "target": "imgui_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_allegro5_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_allegro5_binding",
+      "target": "imgui_vcpkg_allegro5_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_allegro5_binding",
+      "target": "imgui_vcpkg_allegro5_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_allegro5_binding_dependencies",
+      "target": "ref_allegro5",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_android_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_android_binding",
+      "target": "imgui_vcpkg_android_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_android_binding",
+      "target": "imgui_vcpkg_android_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_docking_experimental",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_docking_experimental",
+      "target": "imgui_vcpkg_docking_experimental_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_dx10_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx10_binding",
+      "target": "imgui_vcpkg_dx10_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx10_binding",
+      "target": "imgui_vcpkg_dx10_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_dx11_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx11_binding",
+      "target": "imgui_vcpkg_dx11_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx11_binding",
+      "target": "imgui_vcpkg_dx11_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_dx12_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx12_binding",
+      "target": "imgui_vcpkg_dx12_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx12_binding",
+      "target": "imgui_vcpkg_dx12_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_dx9_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx9_binding",
+      "target": "imgui_vcpkg_dx9_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_dx9_binding",
+      "target": "imgui_vcpkg_dx9_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_freetype",
+      "target": "imgui_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_freetype",
+      "target": "imgui_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_freetype_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_freetype_svg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_freetype_svg",
+      "target": "imgui_vcpkg_freetype_svg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_freetype_svg",
+      "target": "imgui_vcpkg_freetype_svg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_glfw_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_glfw_binding",
+      "target": "imgui_vcpkg_glfw_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_glfw_binding",
+      "target": "imgui_vcpkg_glfw_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_glut_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_glut_binding",
+      "target": "imgui_vcpkg_glut_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_glut_binding",
+      "target": "imgui_vcpkg_glut_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_glut_binding_dependencies",
+      "target": "ref_freeglut",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_libigl_imgui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_libigl_imgui",
+      "target": "imgui_vcpkg_libigl_imgui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_metal_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_metal_binding",
+      "target": "imgui_vcpkg_metal_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_metal_binding",
+      "target": "imgui_vcpkg_metal_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_opengl2_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_opengl2_binding",
+      "target": "imgui_vcpkg_opengl2_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_opengl2_binding",
+      "target": "imgui_vcpkg_opengl2_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_opengl3_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_opengl3_binding",
+      "target": "imgui_vcpkg_opengl3_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_osx_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_osx_binding",
+      "target": "imgui_vcpkg_osx_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_osx_binding",
+      "target": "imgui_vcpkg_osx_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_sdl3_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdl3_binding",
+      "target": "imgui_vcpkg_sdl3_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdl3_binding",
+      "target": "imgui_vcpkg_sdl3_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_sdl3_binding_dependencies",
+      "target": "ref_sdl3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_sdl3_renderer_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdl3_renderer_binding",
+      "target": "imgui_vcpkg_sdl3_renderer_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdl3_renderer_binding",
+      "target": "imgui_vcpkg_sdl3_renderer_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_sdl3_renderer_binding_dependencies",
+      "target": "ref_sdl3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_sdlgpu3_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdlgpu3_binding",
+      "target": "imgui_vcpkg_sdlgpu3_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_sdlgpu3_binding",
+      "target": "imgui_vcpkg_sdlgpu3_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_sdlgpu3_binding_dependencies",
+      "target": "ref_sdl3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_test_engine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_test_engine",
+      "target": "imgui_vcpkg_test_engine_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_test_engine",
+      "target": "imgui_vcpkg_test_engine_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_test_engine",
+      "target": "imgui_vcpkg_test_engine_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_test_engine",
+      "target": "imgui_vcpkg_test_engine_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_test_engine_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_vulkan_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_vulkan_binding",
+      "target": "imgui_vcpkg_vulkan_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_vulkan_binding",
+      "target": "imgui_vcpkg_vulkan_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_vulkan_binding_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_wchar32",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_wchar32",
+      "target": "imgui_vcpkg_wchar32_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_webgpu_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_webgpu_binding",
+      "target": "imgui_vcpkg_webgpu_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_webgpu_binding",
+      "target": "imgui_vcpkg_webgpu_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_webgpu_binding_dependencies",
+      "target": "ref_dawn",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L146",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "imgui_vcpkg_features",
+      "target": "imgui_vcpkg_features_win32_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_win32_binding",
+      "target": "imgui_vcpkg_win32_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "imgui_vcpkg_features_win32_binding",
+      "target": "imgui_vcpkg_win32_binding_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/imgui/vcpkg.json",
+      "source_location": "L152",
+      "weight": 1.0
+    }
+  ]
+}

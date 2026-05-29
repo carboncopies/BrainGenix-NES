@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gz_gui_json",
+      "label": "gz-gui.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-gui.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gz_gui_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-gui.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gz_gui_json",
+      "target": "g_gz_gui_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-gui.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

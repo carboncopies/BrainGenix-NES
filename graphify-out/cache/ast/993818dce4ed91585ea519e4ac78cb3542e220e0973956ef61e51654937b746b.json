@@ -1,0 +1,527 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "label": "Base.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "include_base_base",
+      "label": "Base()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L58"
+    },
+    {
+      "id": "netmorph2neslogging",
+      "label": "Netmorph2NESLogging",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L58"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "embeddable",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "global",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "axon_direction_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "branching_models",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "catacomb_object",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "color_table",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "command_line_parameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "connection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "dendritic_growth_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "diagnostic",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "environment_physics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "event",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "fibre_elongation_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "fibre_structure",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "fig_object",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "network",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "neurite_diameter_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "neuron",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "sampled_output",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "slice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "spatial",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "spatial_presentation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "spatial_segment_subset",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "synapse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "synapse_formation_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "turning_models",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "txt_object",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "vrml_object",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_cpp",
+      "target": "include_base_base",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "include_base_base",
+      "target": "netmorph2neslogging",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_global>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_axon_direction_models>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_branching_models>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Catacomb_Object>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Color_Table>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Command_Line_Parameters>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_connection>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_dendritic_growth_model>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_diagnostic>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_environment_physics>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_event>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_fibre_elongation_model>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_fibre_structure>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Fig_Object>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_network>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_neurite_diameter_model>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_neuron>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Sampled_Output>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_slice>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_spatial>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Spatial_Presentation>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Spatial_Segment_Subset>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_synapse>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_synapse_formation_model>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_turning_model>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_Txt_Object>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "include_base_base",
+      "callee": "make_unique<netmorph_VRML_Object>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.cpp",
+      "source_location": "L85"
+    }
+  ]
+}

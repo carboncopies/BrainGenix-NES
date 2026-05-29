@@ -1,0 +1,367 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "label": "deploy-tlssettings.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "windows_deploy_tlssettings_set_cryptosetting",
+      "label": "Set-CryptoSetting()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L32"
+    },
+    {
+      "id": "windows_deploy_tlssettings_disablerc4",
+      "label": "DisableRC4()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L72"
+    },
+    {
+      "id": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "label": "Test-RegistryValueForFipsSettings()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L105"
+    },
+    {
+      "id": "windows_deploy_tlssettings_createlogdirectory",
+      "label": "CreateLogDirectory()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L155"
+    },
+    {
+      "id": "windows_deploy_tlssettings_write_log",
+      "label": "Write-Log()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L170"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_baseciphersuitesolderwindows",
+      "label": "Get-BaseCipherSuitesOlderWindows()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L198"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_browsercompatciphersuitesolderwindows",
+      "label": "Get-BrowserCompatCipherSuitesOlderWindows()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L245"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_baseciphersuiteswin10above",
+      "label": "Get-BaseCipherSuitesWin10Above()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L267"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_regkeypathfortls12",
+      "label": "Get-RegKeyPathForTls12()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L320"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_regkeypathfortls11",
+      "label": "Get-RegKeyPathForTls11()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L330"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_regkeypathfortls10",
+      "label": "Get-RegKeypathForTls10()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L340"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_regkeypathforssl30",
+      "label": "Get-RegKeyPathForSsl30()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L350"
+    },
+    {
+      "id": "windows_deploy_tlssettings_get_regkeypathforssl20",
+      "label": "Get-RegKeyPathForSsl20()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L360"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_set_cryptosetting",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_disablerc4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_createlogdirectory",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_write_log",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_baseciphersuitesolderwindows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_browsercompatciphersuitesolderwindows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_baseciphersuiteswin10above",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_regkeypathfortls12",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_regkeypathfortls11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_regkeypathfortls10",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L340",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_regkeypathforssl30",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_tlssettings_ps1",
+      "target": "windows_deploy_tlssettings_get_regkeypathforssl20",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "windows_deploy_tlssettings_disablerc4",
+      "target": "windows_deploy_tlssettings_write_log",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "target": "windows_deploy_tlssettings_write_log",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L120",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "Get-ItemProperty",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "New-ItemProperty",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_set_cryptosetting",
+      "callee": "Set-ItemProperty",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_disablerc4",
+      "callee": "Get-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "callee": "Get-ItemProperty",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "callee": "Select-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_test_registryvalueforfipssettings",
+      "callee": "set-itemproperty",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_createlogdirectory",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_createlogdirectory",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_createlogdirectory",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_write_log",
+      "callee": "Get-Date",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_write_log",
+      "callee": "ConvertTo-Csv",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_write_log",
+      "callee": "Select-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "windows_deploy_tlssettings_write_log",
+      "callee": "Out-File",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-tlssettings.ps1",
+      "source_location": "L192"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_glbinding_json",
+      "label": "glbinding.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glbinding.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_glbinding_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glbinding.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_glbinding_json",
+      "target": "g_glbinding_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glbinding.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

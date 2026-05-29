@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_x_x264_json",
+      "label": "x264.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x264.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x_x264_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x264.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_x_x264_json",
+      "target": "x_x264_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x264.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libraqm_json",
+      "label": "libraqm.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libraqm.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libraqm_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libraqm.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libraqm_json",
+      "target": "l_libraqm_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libraqm.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

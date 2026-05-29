@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libhat_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libhat_project_main_cpp",
+      "target": "signature",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libhat_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L4"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "parse_signature",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libhat/project/main.cpp",
+      "source_location": "L4"
+    }
+  ]
+}

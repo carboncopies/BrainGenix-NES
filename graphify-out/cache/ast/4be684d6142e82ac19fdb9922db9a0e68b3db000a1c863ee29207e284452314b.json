@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mtlt_json",
+      "label": "mtlt.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mtlt.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mtlt_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mtlt.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mtlt_json",
+      "target": "m_mtlt_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mtlt.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

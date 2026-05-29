@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_paho_mqttpp3_json",
+      "label": "paho-mqttpp3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/paho-mqttpp3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_paho_mqttpp3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/paho-mqttpp3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_paho_mqttpp3_json",
+      "target": "p_paho_mqttpp3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/paho-mqttpp3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

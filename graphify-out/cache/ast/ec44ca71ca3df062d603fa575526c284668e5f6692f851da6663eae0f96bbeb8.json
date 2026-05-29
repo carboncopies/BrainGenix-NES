@@ -1,0 +1,315 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cfitsio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cfitsio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cfitsio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cfitsio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cfitsio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cfitsio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "cfitsio_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "cfitsio_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "cfitsio_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "cfitsio_vcpkg_features_curl",
+      "label": "curl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "cfitsio_vcpkg_curl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "cfitsio_vcpkg_curl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "cfitsio_vcpkg_features_pthreads",
+      "label": "pthreads",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "cfitsio_vcpkg_pthreads_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "cfitsio_vcpkg_pthreads_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "cfitsio_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "cfitsio_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cfitsio_vcpkg_json",
+      "target": "cfitsio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features",
+      "target": "cfitsio_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_bzip2",
+      "target": "cfitsio_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_bzip2",
+      "target": "cfitsio_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cfitsio_vcpkg_features",
+      "target": "cfitsio_vcpkg_features_curl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_curl",
+      "target": "cfitsio_vcpkg_curl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_curl",
+      "target": "cfitsio_vcpkg_curl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_curl_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cfitsio_vcpkg_features",
+      "target": "cfitsio_vcpkg_features_pthreads",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_pthreads",
+      "target": "cfitsio_vcpkg_pthreads_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_pthreads",
+      "target": "cfitsio_vcpkg_pthreads_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features",
+      "target": "cfitsio_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "cfitsio_vcpkg_features_tools",
+      "target": "cfitsio_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cfitsio/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    }
+  ]
+}

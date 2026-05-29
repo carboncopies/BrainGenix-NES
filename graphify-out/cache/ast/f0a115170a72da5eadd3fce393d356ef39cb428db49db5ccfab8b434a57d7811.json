@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hjson_cpp_json",
+      "label": "hjson-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hjson-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hjson_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hjson-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hjson_cpp_json",
+      "target": "h_hjson_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hjson-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

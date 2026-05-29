@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_collada_dom_json",
+      "label": "collada-dom.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/collada-dom.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_collada_dom_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/collada-dom.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_collada_dom_json",
+      "target": "c_collada_dom_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/collada-dom.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

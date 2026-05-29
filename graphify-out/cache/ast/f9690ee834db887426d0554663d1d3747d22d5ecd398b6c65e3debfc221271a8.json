@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mongo_cxx_driver_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_cxx_driver_vcpkg_json",
+      "target": "mongo_cxx_driver_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_cxx_driver_vcpkg_dependencies",
+      "target": "ref_libbson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mongo_cxx_driver_vcpkg_dependencies",
+      "target": "ref_mongo_c_driver",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-cxx-driver/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

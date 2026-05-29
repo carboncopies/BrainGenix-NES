@@ -1,0 +1,1233 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "octave_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "octave_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "octave_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "octave_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "octave_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "octave_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "octave_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "octave_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "octave_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "octave_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "octave_vcpkg_features_amd",
+      "label": "amd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "octave_vcpkg_amd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "octave_vcpkg_amd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "octave_vcpkg_features_arpack",
+      "label": "arpack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "octave_vcpkg_arpack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "octave_vcpkg_arpack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "octave_vcpkg_features_bz2",
+      "label": "bz2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "octave_vcpkg_bz2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "octave_vcpkg_bz2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "octave_vcpkg_features_camd",
+      "label": "camd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "octave_vcpkg_camd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "octave_vcpkg_camd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "octave_vcpkg_features_ccolamd",
+      "label": "ccolamd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "octave_vcpkg_ccolamd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "octave_vcpkg_ccolamd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "octave_vcpkg_features_cholmod",
+      "label": "cholmod",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "octave_vcpkg_cholmod_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "octave_vcpkg_cholmod_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "octave_vcpkg_features_colamd",
+      "label": "colamd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "octave_vcpkg_colamd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "octave_vcpkg_colamd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "octave_vcpkg_features_curl",
+      "label": "curl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "octave_vcpkg_curl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "octave_vcpkg_curl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "octave_vcpkg_features_cxsparse",
+      "label": "cxsparse",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "octave_vcpkg_cxsparse_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "octave_vcpkg_cxsparse_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "octave_vcpkg_features_fltk",
+      "label": "fltk",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "octave_vcpkg_fltk_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "octave_vcpkg_fltk_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "octave_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "octave_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "octave_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L118"
+    },
+    {
+      "id": "octave_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "octave_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L126"
+    },
+    {
+      "id": "octave_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L127"
+    },
+    {
+      "id": "octave_vcpkg_features_graphicsmagick",
+      "label": "graphicsmagick",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L134"
+    },
+    {
+      "id": "octave_vcpkg_graphicsmagick_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "octave_vcpkg_graphicsmagick_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "octave_vcpkg_features_gui",
+      "label": "gui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "octave_vcpkg_gui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "octave_vcpkg_gui_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "octave_vcpkg_features_hdf5",
+      "label": "hdf5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "octave_vcpkg_hdf5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "octave_vcpkg_hdf5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L170"
+    },
+    {
+      "id": "octave_vcpkg_features_klu",
+      "label": "klu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L177"
+    },
+    {
+      "id": "octave_vcpkg_klu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L178"
+    },
+    {
+      "id": "octave_vcpkg_klu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L179"
+    },
+    {
+      "id": "octave_vcpkg_features_portaudio",
+      "label": "portaudio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L186"
+    },
+    {
+      "id": "octave_vcpkg_portaudio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L187"
+    },
+    {
+      "id": "octave_vcpkg_portaudio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L188"
+    },
+    {
+      "id": "octave_vcpkg_features_qhull",
+      "label": "qhull",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L195"
+    },
+    {
+      "id": "octave_vcpkg_qhull_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L196"
+    },
+    {
+      "id": "octave_vcpkg_qhull_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L197"
+    },
+    {
+      "id": "octave_vcpkg_features_spqr",
+      "label": "spqr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L201"
+    },
+    {
+      "id": "octave_vcpkg_spqr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L202"
+    },
+    {
+      "id": "octave_vcpkg_spqr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L203"
+    },
+    {
+      "id": "octave_vcpkg_features_umfpack",
+      "label": "umfpack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L210"
+    },
+    {
+      "id": "octave_vcpkg_umfpack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L211"
+    },
+    {
+      "id": "octave_vcpkg_umfpack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L212"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_blas",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_fftw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_glpk",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_lapack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_libsndfile",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_readline",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_octave_vcpkg_json",
+      "target": "octave_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_amd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_amd",
+      "target": "octave_vcpkg_amd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_amd",
+      "target": "octave_vcpkg_amd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_arpack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_arpack",
+      "target": "octave_vcpkg_arpack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_arpack",
+      "target": "octave_vcpkg_arpack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_bz2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_bz2",
+      "target": "octave_vcpkg_bz2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_bz2",
+      "target": "octave_vcpkg_bz2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_camd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_camd",
+      "target": "octave_vcpkg_camd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_camd",
+      "target": "octave_vcpkg_camd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_ccolamd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_ccolamd",
+      "target": "octave_vcpkg_ccolamd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_ccolamd",
+      "target": "octave_vcpkg_ccolamd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_cholmod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_cholmod",
+      "target": "octave_vcpkg_cholmod_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_cholmod",
+      "target": "octave_vcpkg_cholmod_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_colamd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_colamd",
+      "target": "octave_vcpkg_colamd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_colamd",
+      "target": "octave_vcpkg_colamd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_curl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_curl",
+      "target": "octave_vcpkg_curl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_curl",
+      "target": "octave_vcpkg_curl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_cxsparse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_cxsparse",
+      "target": "octave_vcpkg_cxsparse_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_cxsparse",
+      "target": "octave_vcpkg_cxsparse_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_fltk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_fltk",
+      "target": "octave_vcpkg_fltk_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_fltk",
+      "target": "octave_vcpkg_fltk_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_fontconfig",
+      "target": "octave_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_fontconfig",
+      "target": "octave_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_freetype",
+      "target": "octave_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_freetype",
+      "target": "octave_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_graphicsmagick",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_graphicsmagick",
+      "target": "octave_vcpkg_graphicsmagick_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_graphicsmagick",
+      "target": "octave_vcpkg_graphicsmagick_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_gui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_gui",
+      "target": "octave_vcpkg_gui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_gui",
+      "target": "octave_vcpkg_gui_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_hdf5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_hdf5",
+      "target": "octave_vcpkg_hdf5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_hdf5",
+      "target": "octave_vcpkg_hdf5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_klu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_klu",
+      "target": "octave_vcpkg_klu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_klu",
+      "target": "octave_vcpkg_klu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_portaudio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_portaudio",
+      "target": "octave_vcpkg_portaudio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_portaudio",
+      "target": "octave_vcpkg_portaudio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_qhull",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_qhull",
+      "target": "octave_vcpkg_qhull_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_qhull",
+      "target": "octave_vcpkg_qhull_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_qhull_dependencies",
+      "target": "ref_qhull",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L197",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_spqr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_spqr",
+      "target": "octave_vcpkg_spqr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_spqr",
+      "target": "octave_vcpkg_spqr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features",
+      "target": "octave_vcpkg_features_umfpack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_umfpack",
+      "target": "octave_vcpkg_umfpack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "octave_vcpkg_features_umfpack",
+      "target": "octave_vcpkg_umfpack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/octave/vcpkg.json",
+      "source_location": "L212",
+      "weight": 1.0
+    }
+  ]
+}

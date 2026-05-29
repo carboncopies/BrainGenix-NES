@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_smpeg2_json",
+      "label": "smpeg2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/smpeg2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_smpeg2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/smpeg2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_smpeg2_json",
+      "target": "s_smpeg2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/smpeg2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

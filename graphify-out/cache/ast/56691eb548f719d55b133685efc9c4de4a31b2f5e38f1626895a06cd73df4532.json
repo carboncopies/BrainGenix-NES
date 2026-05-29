@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "label": "synapse_structure.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_synapse_structure_move_add",
+      "label": "move_add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L33"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L33"
+    },
+    {
+      "id": "source_synapse_structure_fanin_rot",
+      "label": "fanin_rot()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "source_synapse_structure_net_fig",
+      "label": "net_Fig()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L47"
+    },
+    {
+      "id": "fig_object",
+      "label": "Fig_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L47"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_fig_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_sampled_output_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "source_synapse_structure_move_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_structure_move_add",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "source_synapse_structure_fanin_rot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_structure_cc",
+      "target": "source_synapse_structure_net_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_structure_net_fig",
+      "target": "fig_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "return_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "source_synapse_structure_fanin_rot",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "source_synapse_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_structure.cc",
+      "source_location": "L52"
+    }
+  ]
+}

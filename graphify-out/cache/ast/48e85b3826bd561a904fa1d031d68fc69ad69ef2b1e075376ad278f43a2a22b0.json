@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mpark_patterns_json",
+      "label": "mpark-patterns.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mpark-patterns.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mpark_patterns_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mpark-patterns.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mpark_patterns_json",
+      "target": "m_mpark_patterns_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mpark-patterns.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_lodepng_c_json",
+      "label": "lodepng-c.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lodepng-c.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_lodepng_c_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lodepng-c.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_lodepng_c_json",
+      "target": "l_lodepng_c_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lodepng-c.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

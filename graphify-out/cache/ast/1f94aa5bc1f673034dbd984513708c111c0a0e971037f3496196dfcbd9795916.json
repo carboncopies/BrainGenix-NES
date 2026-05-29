@@ -1,0 +1,282 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_file_cc",
+      "label": "file.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_file_read_file_into_string",
+      "label": "read_file_into_String()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "ifstream",
+      "label": "ifstream",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "source_file_write_file_from_string",
+      "label": "write_file_from_String()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L57"
+    },
+    {
+      "id": "source_file_append_file_from_string",
+      "label": "append_file_from_String()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L71"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "thirdparty_netmorphcmake_source_file_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "source_file_read_file_into_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "ifstream",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "source_file_read_file_into_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_read_file_into_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "source_file_write_file_from_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "source_file_write_file_from_string",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_write_file_from_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_write_file_from_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_file_cc",
+      "target": "source_file_append_file_from_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "source_file_append_file_from_string",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_append_file_from_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_file_append_file_from_string",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_file_read_file_into_string",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "source_file_read_file_into_string",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_file_read_file_into_string",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "source_file_write_file_from_string",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_file_write_file_from_string",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_file_append_file_from_string",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "source_file_append_file_from_string",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/file.cc",
+      "source_location": "L81"
+    }
+  ]
+}

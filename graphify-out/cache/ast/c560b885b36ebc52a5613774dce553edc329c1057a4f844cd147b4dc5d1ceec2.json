@@ -1,0 +1,375 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "openscap_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "openscap_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "openscap_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "openscap_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "openscap_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "openscap_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "openscap_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "openscap_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "openscap_vcpkg_features_crypto",
+      "label": "crypto",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "openscap_vcpkg_crypto_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "openscap_vcpkg_crypto_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "openscap_vcpkg_features_python",
+      "label": "python",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "openscap_vcpkg_python_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "openscap_vcpkg_python_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "openscap_vcpkg_features_util",
+      "label": "util",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "openscap_vcpkg_util_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "openscap_vcpkg_util_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L70"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_libpopt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_libyaml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_libzip",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_pcre",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_pthreads",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_dependencies",
+      "target": "ref_xmlsec",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openscap_vcpkg_json",
+      "target": "openscap_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features",
+      "target": "openscap_vcpkg_features_crypto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_crypto",
+      "target": "openscap_vcpkg_crypto_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_crypto",
+      "target": "openscap_vcpkg_crypto_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features",
+      "target": "openscap_vcpkg_features_python",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_python",
+      "target": "openscap_vcpkg_python_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_python",
+      "target": "openscap_vcpkg_python_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_python_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openscap_vcpkg_features",
+      "target": "openscap_vcpkg_features_util",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_util",
+      "target": "openscap_vcpkg_util_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "openscap_vcpkg_features_util",
+      "target": "openscap_vcpkg_util_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openscap/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    }
+  ]
+}

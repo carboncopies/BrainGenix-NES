@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_doc_compiler_directives_md",
+      "label": "compiler-directives.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/compiler-directives.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doc_compiler_directives_default_settings_of_compiler_directives",
+      "label": "Default settings of compiler directives",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/compiler-directives.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doc_compiler_directives_compiler_directives_not_included_in_the_report",
+      "label": "Compiler directives not included in the report",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/compiler-directives.md",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_doc_compiler_directives_md",
+      "target": "doc_compiler_directives_default_settings_of_compiler_directives",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/compiler-directives.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "doc_compiler_directives_default_settings_of_compiler_directives",
+      "target": "doc_compiler_directives_compiler_directives_not_included_in_the_report",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/compiler-directives.md",
+      "source_location": "L38",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -1,0 +1,411 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ableton_link_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ableton_link_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ableton_link_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ableton_link_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ableton_link_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ableton_link_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ableton_link_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "ableton_link_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "ableton_link_vcpkg_features_coretest",
+      "label": "coretest",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "ableton_link_vcpkg_coretest_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ableton_link_vcpkg_coretest_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "ableton_link_vcpkg_coretest_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ableton_link_vcpkg_features_discoverytest",
+      "label": "discoverytest",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "ableton_link_vcpkg_discoverytest_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "ableton_link_vcpkg_discoverytest_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "ableton_link_vcpkg_discoverytest_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "ableton_link_vcpkg_features_hut",
+      "label": "hut",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "ableton_link_vcpkg_hut_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "ableton_link_vcpkg_hut_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "ableton_link_vcpkg_hut_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "ableton_link_vcpkg_features_hutsilent",
+      "label": "hutsilent",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "ableton_link_vcpkg_hutsilent_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "ableton_link_vcpkg_hutsilent_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L54"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_dependencies",
+      "target": "ref_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ableton_link_vcpkg_json",
+      "target": "ableton_link_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features",
+      "target": "ableton_link_vcpkg_features_coretest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_coretest",
+      "target": "ableton_link_vcpkg_coretest_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_coretest",
+      "target": "ableton_link_vcpkg_coretest_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_coretest",
+      "target": "ableton_link_vcpkg_coretest_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_coretest_dependencies",
+      "target": "ref_catch2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ableton_link_vcpkg_features",
+      "target": "ableton_link_vcpkg_features_discoverytest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_discoverytest",
+      "target": "ableton_link_vcpkg_discoverytest_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_discoverytest",
+      "target": "ableton_link_vcpkg_discoverytest_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_discoverytest",
+      "target": "ableton_link_vcpkg_discoverytest_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_discoverytest_dependencies",
+      "target": "ref_catch2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ableton_link_vcpkg_features",
+      "target": "ableton_link_vcpkg_features_hut",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_hut",
+      "target": "ableton_link_vcpkg_hut_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_hut",
+      "target": "ableton_link_vcpkg_hut_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_hut",
+      "target": "ableton_link_vcpkg_hut_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features",
+      "target": "ableton_link_vcpkg_features_hutsilent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_hutsilent",
+      "target": "ableton_link_vcpkg_hutsilent_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "ableton_link_vcpkg_features_hutsilent",
+      "target": "ableton_link_vcpkg_hutsilent_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ableton-link/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    }
+  ]
+}

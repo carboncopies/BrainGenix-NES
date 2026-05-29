@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fbgemm_json",
+      "label": "fbgemm.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fbgemm.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fbgemm_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fbgemm.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fbgemm_json",
+      "target": "f_fbgemm_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fbgemm.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

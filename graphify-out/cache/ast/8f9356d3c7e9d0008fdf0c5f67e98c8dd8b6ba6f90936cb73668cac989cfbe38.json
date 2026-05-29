@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "plutosvg_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "plutosvg_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "plutosvg_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "plutosvg_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "plutosvg_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "plutosvg_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "plutosvg_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "plutosvg_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "plutosvg_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "plutosvg_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "plutosvg_vcpkg_dependencies",
+      "target": "ref_plutovg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plutosvg_vcpkg_json",
+      "target": "plutosvg_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "plutosvg_vcpkg_features",
+      "target": "plutosvg_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "plutosvg_vcpkg_features_freetype",
+      "target": "plutosvg_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "plutosvg_vcpkg_features_freetype",
+      "target": "plutosvg_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plutosvg/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ]
+}

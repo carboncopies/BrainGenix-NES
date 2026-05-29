@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nlopt_json",
+      "label": "nlopt.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlopt.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nlopt_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlopt.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nlopt_json",
+      "target": "n_nlopt_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlopt.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

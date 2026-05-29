@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_matplotlib_cpp_json",
+      "label": "matplotlib-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotlib-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_matplotlib_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotlib-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_matplotlib_cpp_json",
+      "target": "m_matplotlib_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotlib-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

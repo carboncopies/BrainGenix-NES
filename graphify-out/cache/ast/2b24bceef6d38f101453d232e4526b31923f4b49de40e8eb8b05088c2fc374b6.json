@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_openal_soft_json",
+      "label": "openal-soft.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openal-soft.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_openal_soft_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openal-soft.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_openal_soft_json",
+      "target": "o_openal_soft_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openal-soft.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

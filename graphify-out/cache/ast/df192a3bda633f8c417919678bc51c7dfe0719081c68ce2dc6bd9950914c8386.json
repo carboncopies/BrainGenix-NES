@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_darknet_json",
+      "label": "darknet.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/darknet.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_darknet_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/darknet.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_darknet_json",
+      "target": "d_darknet_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/darknet.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_septag_sx_json",
+      "label": "septag-sx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/septag-sx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_septag_sx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/septag-sx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_septag_sx_json",
+      "target": "s_septag_sx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/septag-sx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

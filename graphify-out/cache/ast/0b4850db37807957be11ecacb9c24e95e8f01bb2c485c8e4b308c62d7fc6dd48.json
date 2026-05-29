@@ -1,0 +1,505 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "wasmedge_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "wasmedge_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "wasmedge_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "wasmedge_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "wasmedge_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "wasmedge_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "wasmedge_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "wasmedge_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "wasmedge_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "wasmedge_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_aot",
+      "label": "aot",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "wasmedge_vcpkg_aot_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "wasmedge_vcpkg_aot_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_openvino",
+      "label": "plugin-wasi-nn-backend-openvino",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_openvino_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_openvino_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_pytorch",
+      "label": "plugin-wasi-nn-backend-pytorch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_pytorch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_pytorch_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_tensorflowlite",
+      "label": "plugin-wasi-nn-backend-tensorflowlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_tensorflowlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugin_wasi_nn_backend_tensorflowlite_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugins_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "wasmedge_vcpkg_plugins_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "wasmedge_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "wasmedge_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wasmedge_vcpkg_dependencies",
+      "target": "ref_boost_align",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wasmedge_vcpkg_dependencies",
+      "target": "ref_boost_predef",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wasmedge_vcpkg_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_default_features",
+      "target": "ref_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wasmedge_vcpkg_json",
+      "target": "wasmedge_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_aot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_aot",
+      "target": "wasmedge_vcpkg_aot_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_aot",
+      "target": "wasmedge_vcpkg_aot_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_aot_dependencies",
+      "target": "ref_llvm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_openvino",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_openvino",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_openvino_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_openvino",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_openvino_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_pytorch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_pytorch",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_pytorch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_pytorch",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_pytorch_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_tensorflowlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_tensorflowlite",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_tensorflowlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugin_wasi_nn_backend_tensorflowlite",
+      "target": "wasmedge_vcpkg_plugin_wasi_nn_backend_tensorflowlite_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugins",
+      "target": "wasmedge_vcpkg_plugins_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_plugins",
+      "target": "wasmedge_vcpkg_plugins_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features",
+      "target": "wasmedge_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "wasmedge_vcpkg_features_tools",
+      "target": "wasmedge_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wasmedge/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ]
+}

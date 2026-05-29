@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_ptex_json",
+      "label": "ptex.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ptex.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_ptex_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ptex.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_ptex_json",
+      "target": "p_ptex_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ptex.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

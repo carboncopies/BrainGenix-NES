@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nanojsonc_json",
+      "label": "nanojsonc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nanojsonc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nanojsonc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nanojsonc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nanojsonc_json",
+      "target": "n_nanojsonc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nanojsonc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

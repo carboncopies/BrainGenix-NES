@@ -1,0 +1,527 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_fluidsynth",
+      "label": "fluidsynth",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_fluidsynth_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_fluidsynth_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_libflac",
+      "label": "libflac",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libflac_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libflac_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_libvorbis",
+      "label": "libvorbis",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libvorbis_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libvorbis_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_libxmp",
+      "label": "libxmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libxmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_libxmp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_mpg123",
+      "label": "mpg123",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_mpg123_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_mpg123_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_opusfile",
+      "label": "opusfile",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_opusfile_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_opusfile_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_features_wavpack",
+      "label": "wavpack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_wavpack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "sdl3_mixer_vcpkg_wavpack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L67"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_mixer_vcpkg_json",
+      "target": "sdl3_mixer_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_fluidsynth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_fluidsynth",
+      "target": "sdl3_mixer_vcpkg_fluidsynth_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_fluidsynth",
+      "target": "sdl3_mixer_vcpkg_fluidsynth_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_fluidsynth_dependencies",
+      "target": "ref_fluidsynth",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_libflac",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libflac",
+      "target": "sdl3_mixer_vcpkg_libflac_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libflac",
+      "target": "sdl3_mixer_vcpkg_libflac_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_libvorbis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libvorbis",
+      "target": "sdl3_mixer_vcpkg_libvorbis_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libvorbis",
+      "target": "sdl3_mixer_vcpkg_libvorbis_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_libvorbis_dependencies",
+      "target": "ref_libvorbis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_libxmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libxmp",
+      "target": "sdl3_mixer_vcpkg_libxmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_libxmp",
+      "target": "sdl3_mixer_vcpkg_libxmp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_mpg123",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_mpg123",
+      "target": "sdl3_mixer_vcpkg_mpg123_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_mpg123",
+      "target": "sdl3_mixer_vcpkg_mpg123_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_mpg123_dependencies",
+      "target": "ref_mpg123",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_opusfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_opusfile",
+      "target": "sdl3_mixer_vcpkg_opusfile_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_opusfile",
+      "target": "sdl3_mixer_vcpkg_opusfile_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_opusfile_dependencies",
+      "target": "ref_opusfile",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features",
+      "target": "sdl3_mixer_vcpkg_features_wavpack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_wavpack",
+      "target": "sdl3_mixer_vcpkg_wavpack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_features_wavpack",
+      "target": "sdl3_mixer_vcpkg_wavpack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_mixer_vcpkg_wavpack_dependencies",
+      "target": "ref_wavpack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-mixer/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

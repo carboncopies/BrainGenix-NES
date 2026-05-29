@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libusb_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libusb_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libusb_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libusb_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libusb_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libusb_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libusb_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libusb_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libusb_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libusb_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libusb_vcpkg_features_udev",
+      "label": "udev",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libusb_vcpkg_udev_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libusb_vcpkg_udev_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libusb_vcpkg_json",
+      "target": "libusb_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libusb_vcpkg_features",
+      "target": "libusb_vcpkg_features_udev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libusb_vcpkg_features_udev",
+      "target": "libusb_vcpkg_udev_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libusb_vcpkg_features_udev",
+      "target": "libusb_vcpkg_udev_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libusb/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "osx_readme_vcpkg_eg_mac_vms",
+      "label": "`vcpkg-eg-mac` VMs",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "osx_readme_creating_new_base_images",
+      "label": "Creating new base images",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "osx_readme_prerequisites",
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "osx_readme_instructions_arm64",
+      "label": "Instructions (ARM64)",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "osx_readme_deploying_images",
+      "label": "Deploying images",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L97"
+    },
+    {
+      "id": "osx_readme_running_the_vm",
+      "label": "Running the VM",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L99"
+    },
+    {
+      "id": "osx_readme_getting_an_azure_pipelines_pat",
+      "label": "Getting an Azure Pipelines PAT",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L154"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_readme_md",
+      "target": "osx_readme_vcpkg_eg_mac_vms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_vcpkg_eg_mac_vms",
+      "target": "osx_readme_creating_new_base_images",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_creating_new_base_images",
+      "target": "osx_readme_prerequisites",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_creating_new_base_images",
+      "target": "osx_readme_instructions_arm64",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_vcpkg_eg_mac_vms",
+      "target": "osx_readme_deploying_images",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_deploying_images",
+      "target": "osx_readme_running_the_vm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_readme_vcpkg_eg_mac_vms",
+      "target": "osx_readme_getting_an_azure_pipelines_pat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/README.md",
+      "source_location": "L154",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

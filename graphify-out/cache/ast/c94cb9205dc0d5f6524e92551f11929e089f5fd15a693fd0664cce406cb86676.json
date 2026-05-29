@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_x_xorg_macros_json",
+      "label": "xorg-macros.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xorg-macros.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x_xorg_macros_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xorg-macros.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_x_xorg_macros_json",
+      "target": "x_xorg_macros_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xorg-macros.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

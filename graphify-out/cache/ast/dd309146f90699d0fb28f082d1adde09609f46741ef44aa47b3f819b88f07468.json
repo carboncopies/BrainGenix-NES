@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_glibmm_json",
+      "label": "glibmm.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glibmm.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_glibmm_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glibmm.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_glibmm_json",
+      "target": "g_glibmm_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glibmm.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

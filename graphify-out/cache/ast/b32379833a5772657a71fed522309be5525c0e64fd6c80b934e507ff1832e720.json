@@ -1,0 +1,587 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "minizip_ng_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "minizip_ng_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "minizip_ng_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "minizip_ng_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "minizip_ng_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "minizip_ng_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "minizip_ng_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "minizip_ng_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "minizip_ng_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "minizip_ng_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_lzma",
+      "label": "lzma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "minizip_ng_vcpkg_lzma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "minizip_ng_vcpkg_lzma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "minizip_ng_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "minizip_ng_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_pkcrypt",
+      "label": "pkcrypt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "minizip_ng_vcpkg_pkcrypt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_wzaes",
+      "label": "wzaes",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "minizip_ng_vcpkg_wzaes_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "minizip_ng_vcpkg_wzaes_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "minizip_ng_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "minizip_ng_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "minizip_ng_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "minizip_ng_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "minizip_ng_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L69"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_lzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_pkcrypt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_wzaes",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_default_features",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minizip_ng_vcpkg_json",
+      "target": "minizip_ng_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_bzip2",
+      "target": "minizip_ng_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_bzip2",
+      "target": "minizip_ng_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_lzma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_lzma",
+      "target": "minizip_ng_vcpkg_lzma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_lzma",
+      "target": "minizip_ng_vcpkg_lzma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_lzma_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_openssl",
+      "target": "minizip_ng_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_openssl",
+      "target": "minizip_ng_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_pkcrypt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_pkcrypt",
+      "target": "minizip_ng_vcpkg_pkcrypt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_wzaes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_wzaes",
+      "target": "minizip_ng_vcpkg_wzaes_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_wzaes",
+      "target": "minizip_ng_vcpkg_wzaes_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_zlib",
+      "target": "minizip_ng_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_zlib",
+      "target": "minizip_ng_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minizip_ng_vcpkg_features",
+      "target": "minizip_ng_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_zstd",
+      "target": "minizip_ng_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_features_zstd",
+      "target": "minizip_ng_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "minizip_ng_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minizip-ng/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

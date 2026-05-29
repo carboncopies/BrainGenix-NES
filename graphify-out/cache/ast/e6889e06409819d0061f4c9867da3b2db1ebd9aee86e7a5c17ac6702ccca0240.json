@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_acl_json",
+      "label": "acl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/acl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_acl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/acl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_acl_json",
+      "target": "a_acl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/acl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

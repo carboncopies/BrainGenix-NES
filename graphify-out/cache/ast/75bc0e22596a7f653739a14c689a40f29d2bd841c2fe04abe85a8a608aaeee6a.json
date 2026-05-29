@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_shaderc_build_version_inc",
+      "label": "build-version.inc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/shaderc/build-version.inc",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

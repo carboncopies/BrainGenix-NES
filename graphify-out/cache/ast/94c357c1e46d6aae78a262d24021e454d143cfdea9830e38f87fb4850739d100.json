@@ -1,0 +1,569 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cairo_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cairo_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cairo_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cairo_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cairo_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cairo_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "cairo_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "cairo_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "cairo_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "cairo_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "cairo_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "cairo_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "cairo_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "cairo_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "cairo_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "cairo_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "cairo_vcpkg_features_gobject",
+      "label": "gobject",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "cairo_vcpkg_gobject_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "cairo_vcpkg_gobject_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "cairo_vcpkg_features_lzo",
+      "label": "lzo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "cairo_vcpkg_lzo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "cairo_vcpkg_lzo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "cairo_vcpkg_features_x11",
+      "label": "x11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "cairo_vcpkg_x11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "cairo_vcpkg_x11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "cairo_vcpkg_x11_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L56"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_dirent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_pixman",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_pthread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_default_features",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_default_features",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cairo_vcpkg_json",
+      "target": "cairo_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features",
+      "target": "cairo_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_fontconfig",
+      "target": "cairo_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_fontconfig",
+      "target": "cairo_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_fontconfig_dependencies",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_features",
+      "target": "cairo_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_freetype",
+      "target": "cairo_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_freetype",
+      "target": "cairo_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features",
+      "target": "cairo_vcpkg_features_gobject",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_gobject",
+      "target": "cairo_vcpkg_gobject_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_gobject",
+      "target": "cairo_vcpkg_gobject_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_gobject_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_features",
+      "target": "cairo_vcpkg_features_lzo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_lzo",
+      "target": "cairo_vcpkg_lzo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_lzo",
+      "target": "cairo_vcpkg_lzo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_lzo_dependencies",
+      "target": "ref_lzo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_features",
+      "target": "cairo_vcpkg_features_x11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_x11",
+      "target": "cairo_vcpkg_x11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_x11",
+      "target": "cairo_vcpkg_x11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_features_x11",
+      "target": "cairo_vcpkg_x11_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "cairo_vcpkg_x11_dependencies",
+      "target": "ref_libx11",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_x11_dependencies",
+      "target": "ref_libxext",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cairo_vcpkg_x11_dependencies",
+      "target": "ref_libxrender",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cairo/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

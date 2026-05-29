@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_ableton_link_json",
+      "label": "ableton-link.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ableton-link.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_ableton_link_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ableton-link.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_ableton_link_json",
+      "target": "a_ableton_link_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ableton-link.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

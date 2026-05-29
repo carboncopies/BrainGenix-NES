@@ -1,0 +1,317 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "wolfssl_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "wolfssl_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "wolfssl_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "wolfssl_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "wolfssl_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "wolfssl_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "wolfssl_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "wolfssl_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "wolfssl_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "wolfssl_vcpkg_features_asio",
+      "label": "asio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "wolfssl_vcpkg_asio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "wolfssl_vcpkg_features_curve25519",
+      "label": "curve25519",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "wolfssl_vcpkg_curve25519_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "wolfssl_vcpkg_features_dtls",
+      "label": "dtls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "wolfssl_vcpkg_dtls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "wolfssl_vcpkg_features_quic",
+      "label": "quic",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "wolfssl_vcpkg_quic_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "wolfssl_vcpkg_features_secret_callback",
+      "label": "secret-callback",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "wolfssl_vcpkg_secret_callback_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wolfssl_vcpkg_json",
+      "target": "wolfssl_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features",
+      "target": "wolfssl_vcpkg_features_asio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features_asio",
+      "target": "wolfssl_vcpkg_asio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features",
+      "target": "wolfssl_vcpkg_features_curve25519",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features_curve25519",
+      "target": "wolfssl_vcpkg_curve25519_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features",
+      "target": "wolfssl_vcpkg_features_dtls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features_dtls",
+      "target": "wolfssl_vcpkg_dtls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features",
+      "target": "wolfssl_vcpkg_features_quic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features_quic",
+      "target": "wolfssl_vcpkg_quic_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features",
+      "target": "wolfssl_vcpkg_features_secret_callback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "wolfssl_vcpkg_features_secret_callback",
+      "target": "wolfssl_vcpkg_secret_callback_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wolfssl/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ]
+}

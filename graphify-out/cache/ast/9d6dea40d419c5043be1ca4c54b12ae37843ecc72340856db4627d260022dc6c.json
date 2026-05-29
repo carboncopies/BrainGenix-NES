@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_apriltag_json",
+      "label": "apriltag.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apriltag.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_apriltag_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apriltag.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_apriltag_json",
+      "target": "a_apriltag_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apriltag.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

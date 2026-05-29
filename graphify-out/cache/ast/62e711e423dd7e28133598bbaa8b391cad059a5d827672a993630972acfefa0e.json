@@ -1,0 +1,154 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_windows_create_image_ps1",
+      "label": "create-image.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "windows_create_image_new_password",
+      "label": "New-Password()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L45"
+    },
+    {
+      "id": "windows_create_image_wait_shutdown",
+      "label": "Wait-Shutdown()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L75"
+    },
+    {
+      "id": "windows_create_image_invoke_scriptwithprefix",
+      "label": "Invoke-ScriptWithPrefix()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L155"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_create_image_ps1",
+      "target": "windows_create_image_new_password",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_create_image_ps1",
+      "target": "windows_create_image_wait_shutdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_create_image_ps1",
+      "target": "windows_create_image_invoke_scriptwithprefix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L155",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "windows_create_image_new_password",
+      "callee": "New-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "windows_create_image_new_password",
+      "callee": "Get-SecureRandom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "windows_create_image_wait_shutdown",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "windows_create_image_wait_shutdown",
+      "callee": "Get-AzVM",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "windows_create_image_wait_shutdown",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "windows_create_image_wait_shutdown",
+      "callee": "Start-Sleep",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Write-Progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L161"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L166"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Set-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Invoke-AzVMRunCommand",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "windows_create_image_invoke_scriptwithprefix",
+      "callee": "Remove-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/create-image.ps1",
+      "source_location": "L193"
+    }
+  ]
+}

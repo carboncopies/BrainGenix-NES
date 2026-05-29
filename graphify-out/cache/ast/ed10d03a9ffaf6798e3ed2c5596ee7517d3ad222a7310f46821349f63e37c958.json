@@ -1,0 +1,52 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_azure_kinect_depth_engine_k4adeploy_ps1",
+      "label": "k4adeploy.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_kinect_depth_engine_k4adeploy_deployazurekinectsensorsdk",
+      "label": "deployAzureKinectSensorSDK()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_depth_engine_k4adeploy_ps1",
+      "target": "azure_kinect_depth_engine_k4adeploy_deployazurekinectsensorsdk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "azure_kinect_depth_engine_k4adeploy_deployazurekinectsensorsdk",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L5"
+    },
+    {
+      "caller_nid": "azure_kinect_depth_engine_k4adeploy_deployazurekinectsensorsdk",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "azure_kinect_depth_engine_k4adeploy_deployazurekinectsensorsdk",
+      "callee": "deployBinary",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-depth-engine/k4adeploy.ps1",
+      "source_location": "L7"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qtbase_json",
+      "label": "qtbase.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtbase.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qtbase_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtbase.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qtbase_json",
+      "target": "q_qtbase_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtbase.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

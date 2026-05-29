@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_jansson_json",
+      "label": "jansson.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jansson.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_jansson_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jansson.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_jansson_json",
+      "target": "j_jansson_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jansson.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

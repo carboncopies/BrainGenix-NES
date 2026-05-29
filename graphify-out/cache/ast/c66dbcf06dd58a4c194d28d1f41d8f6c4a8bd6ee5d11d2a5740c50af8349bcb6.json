@@ -1,0 +1,377 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_features_compression",
+      "label": "compression",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_compression_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_compression_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_features_pull",
+      "label": "pull",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_pull_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_pull_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_features_push",
+      "label": "push",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_push_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_push_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_features_tests",
+      "label": "tests",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_tests_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "prometheus_cpp_vcpkg_tests_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_default_features",
+      "target": "ref_compression",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_default_features",
+      "target": "ref_pull",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_prometheus_cpp_vcpkg_json",
+      "target": "prometheus_cpp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features",
+      "target": "prometheus_cpp_vcpkg_features_compression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_compression",
+      "target": "prometheus_cpp_vcpkg_compression_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_compression",
+      "target": "prometheus_cpp_vcpkg_compression_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_compression_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features",
+      "target": "prometheus_cpp_vcpkg_features_pull",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_pull",
+      "target": "prometheus_cpp_vcpkg_pull_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_pull",
+      "target": "prometheus_cpp_vcpkg_pull_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_pull_dependencies",
+      "target": "ref_civetweb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features",
+      "target": "prometheus_cpp_vcpkg_features_push",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_push",
+      "target": "prometheus_cpp_vcpkg_push_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_push",
+      "target": "prometheus_cpp_vcpkg_push_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_push_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features",
+      "target": "prometheus_cpp_vcpkg_features_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_tests",
+      "target": "prometheus_cpp_vcpkg_tests_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_features_tests",
+      "target": "prometheus_cpp_vcpkg_tests_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "prometheus_cpp_vcpkg_tests_dependencies",
+      "target": "ref_gtest",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/prometheus-cpp/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

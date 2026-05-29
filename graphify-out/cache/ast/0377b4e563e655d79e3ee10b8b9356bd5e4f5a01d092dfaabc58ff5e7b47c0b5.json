@@ -1,0 +1,151 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "simonbrunel_qtpromise_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_simonbrunel_qtpromise_vcpkg_json",
+      "target": "simonbrunel_qtpromise_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "simonbrunel_qtpromise_vcpkg_dependencies",
+      "target": "ref_qtbase",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/simonbrunel-qtpromise/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

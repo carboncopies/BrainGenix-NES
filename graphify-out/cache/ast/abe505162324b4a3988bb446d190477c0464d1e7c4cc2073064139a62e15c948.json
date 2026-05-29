@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fann_json",
+      "label": "fann.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fann.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fann_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fann.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fann_json",
+      "target": "f_fann_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fann.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

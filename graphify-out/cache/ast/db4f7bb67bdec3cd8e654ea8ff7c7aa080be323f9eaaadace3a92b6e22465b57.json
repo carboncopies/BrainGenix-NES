@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_ace_json",
+      "label": "ace.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ace.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_ace_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ace.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_ace_json",
+      "target": "a_ace_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ace.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

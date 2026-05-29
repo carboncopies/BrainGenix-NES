@@ -1,0 +1,683 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "poppler_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "poppler_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "poppler_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "poppler_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "poppler_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "poppler_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "poppler_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "poppler_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "poppler_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "poppler_vcpkg_features_cairo",
+      "label": "cairo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "poppler_vcpkg_cairo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "poppler_vcpkg_cairo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "poppler_vcpkg_features_cms",
+      "label": "cms",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "poppler_vcpkg_cms_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "poppler_vcpkg_cms_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "poppler_vcpkg_features_curl",
+      "label": "curl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "poppler_vcpkg_curl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "poppler_vcpkg_curl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "poppler_vcpkg_features_font_configuration",
+      "label": "font-configuration",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "poppler_vcpkg_font_configuration_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "poppler_vcpkg_font_configuration_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "poppler_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "poppler_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "poppler_vcpkg_fontconfig_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "poppler_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "poppler_vcpkg_features_glib",
+      "label": "glib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "poppler_vcpkg_glib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "poppler_vcpkg_glib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "poppler_vcpkg_features_private_api",
+      "label": "private-api",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "poppler_vcpkg_private_api_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "poppler_vcpkg_features_qt",
+      "label": "qt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "poppler_vcpkg_qt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "poppler_vcpkg_qt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "poppler_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "poppler_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L110"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_boost_container",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_default_features",
+      "target": "ref_font_configuration",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_poppler_vcpkg_json",
+      "target": "poppler_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_cairo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_cairo",
+      "target": "poppler_vcpkg_cairo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_cairo",
+      "target": "poppler_vcpkg_cairo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_cms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_cms",
+      "target": "poppler_vcpkg_cms_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_cms",
+      "target": "poppler_vcpkg_cms_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_cms_dependencies",
+      "target": "ref_lcms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_curl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_curl",
+      "target": "poppler_vcpkg_curl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_curl",
+      "target": "poppler_vcpkg_curl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_font_configuration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_font_configuration",
+      "target": "poppler_vcpkg_font_configuration_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_font_configuration",
+      "target": "poppler_vcpkg_font_configuration_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_fontconfig",
+      "target": "poppler_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_fontconfig",
+      "target": "poppler_vcpkg_fontconfig_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_fontconfig",
+      "target": "poppler_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_fontconfig_dependencies",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_glib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_glib",
+      "target": "poppler_vcpkg_glib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_glib",
+      "target": "poppler_vcpkg_glib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_private_api",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_private_api",
+      "target": "poppler_vcpkg_private_api_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_qt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_qt",
+      "target": "poppler_vcpkg_qt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_qt",
+      "target": "poppler_vcpkg_qt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features",
+      "target": "poppler_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "poppler_vcpkg_features_zlib",
+      "target": "poppler_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/poppler/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    }
+  ]
+}

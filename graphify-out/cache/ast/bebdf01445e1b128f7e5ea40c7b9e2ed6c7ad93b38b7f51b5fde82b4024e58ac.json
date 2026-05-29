@@ -1,0 +1,315 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libmariadb_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libmariadb_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libmariadb_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libmariadb_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libmariadb_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libmariadb_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libmariadb_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libmariadb_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libmariadb_vcpkg_features_iconv",
+      "label": "iconv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libmariadb_vcpkg_iconv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libmariadb_vcpkg_iconv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libmariadb_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libmariadb_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libmariadb_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libmariadb_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "libmariadb_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "libmariadb_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L51"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmariadb_vcpkg_json",
+      "target": "libmariadb_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features",
+      "target": "libmariadb_vcpkg_features_iconv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_iconv",
+      "target": "libmariadb_vcpkg_iconv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_iconv",
+      "target": "libmariadb_vcpkg_iconv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features",
+      "target": "libmariadb_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_openssl",
+      "target": "libmariadb_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_openssl",
+      "target": "libmariadb_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libmariadb_vcpkg_features",
+      "target": "libmariadb_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_zstd",
+      "target": "libmariadb_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_features_zstd",
+      "target": "libmariadb_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libmariadb_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmariadb/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_jigson_json",
+      "label": "jigson.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jigson.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_jigson_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jigson.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_jigson_json",
+      "target": "j_jigson_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jigson.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

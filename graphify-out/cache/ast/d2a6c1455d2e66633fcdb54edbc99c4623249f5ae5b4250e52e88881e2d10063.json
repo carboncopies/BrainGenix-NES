@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_at_spi2_atk_json",
+      "label": "at-spi2-atk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/at-spi2-atk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_at_spi2_atk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/at-spi2-atk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_at_spi2_atk_json",
+      "target": "a_at_spi2_atk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/at-spi2-atk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

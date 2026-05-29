@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vili_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vili_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vili_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vili_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vili_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vili_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vili_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "vili_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vili_vcpkg_json",
+      "target": "vili_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "vili_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vili_vcpkg_dependencies",
+      "target": "ref_nlohmann_fifo_map",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vili_vcpkg_dependencies",
+      "target": "ref_pegtl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vili/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

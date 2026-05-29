@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_y_yoctolib_json",
+      "label": "yoctolib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoctolib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "y_yoctolib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoctolib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_y_yoctolib_json",
+      "target": "y_yoctolib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoctolib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

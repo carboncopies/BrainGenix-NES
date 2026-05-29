@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qtquickeffectmaker_json",
+      "label": "qtquickeffectmaker.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquickeffectmaker.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qtquickeffectmaker_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquickeffectmaker.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qtquickeffectmaker_json",
+      "target": "q_qtquickeffectmaker_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtquickeffectmaker.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

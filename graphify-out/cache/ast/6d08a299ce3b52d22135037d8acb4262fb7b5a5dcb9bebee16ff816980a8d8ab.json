@@ -1,0 +1,281 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "aubio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "aubio_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "aubio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "aubio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "aubio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "aubio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "aubio_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "aubio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "aubio_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "aubio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "aubio_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "aubio_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "aubio_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "aubio_vcpkg_default_features",
+      "target": "ref_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aubio_vcpkg_json",
+      "target": "aubio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "aubio_vcpkg_features",
+      "target": "aubio_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "aubio_vcpkg_features_tools",
+      "target": "aubio_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "aubio_vcpkg_features_tools",
+      "target": "aubio_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "aubio_vcpkg_tools_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aubio_vcpkg_tools_dependencies",
+      "target": "ref_libflac",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aubio_vcpkg_tools_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aubio_vcpkg_tools_dependencies",
+      "target": "ref_libogg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aubio_vcpkg_tools_dependencies",
+      "target": "ref_libvorbis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aubio/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

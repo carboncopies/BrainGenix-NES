@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "label": "main.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "target": "api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "target": "tree_sitter_c",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_tree_sitter_project_main_c",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_parser_new",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_parser_set_language",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "tree_sitter_c",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_parser_parse_string",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "strlen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_tree_root_node",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_node_string",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "free",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_tree_delete",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "ts_parser_delete",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-tree-sitter/project/main.c",
+      "source_location": "L19"
+    }
+  ]
+}

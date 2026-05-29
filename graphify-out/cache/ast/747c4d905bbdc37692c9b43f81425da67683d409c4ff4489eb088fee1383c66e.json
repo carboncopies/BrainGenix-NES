@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hayai_json",
+      "label": "hayai.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hayai.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hayai_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hayai.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hayai_json",
+      "target": "h_hayai_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hayai.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

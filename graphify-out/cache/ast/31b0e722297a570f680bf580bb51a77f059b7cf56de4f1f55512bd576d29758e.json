@@ -1,0 +1,257 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "plplot_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "plplot_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "plplot_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "plplot_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "plplot_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "plplot_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "plplot_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "plplot_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "plplot_vcpkg_features_wxwidgets",
+      "label": "wxwidgets",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "plplot_vcpkg_wxwidgets_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "plplot_vcpkg_wxwidgets_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "plplot_vcpkg_features_x11",
+      "label": "x11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "plplot_vcpkg_x11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "plplot_vcpkg_x11_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_dependencies",
+      "target": "ref_pango",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_plplot_vcpkg_json",
+      "target": "plplot_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features",
+      "target": "plplot_vcpkg_features_wxwidgets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features_wxwidgets",
+      "target": "plplot_vcpkg_wxwidgets_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features_wxwidgets",
+      "target": "plplot_vcpkg_wxwidgets_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features",
+      "target": "plplot_vcpkg_features_x11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features_x11",
+      "target": "plplot_vcpkg_x11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_features_x11",
+      "target": "plplot_vcpkg_x11_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "plplot_vcpkg_x11_dependencies",
+      "target": "ref_libx11",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/plplot/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

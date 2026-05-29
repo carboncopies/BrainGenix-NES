@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qtmqtt_json",
+      "label": "qtmqtt.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtmqtt.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qtmqtt_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtmqtt.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qtmqtt_json",
+      "target": "q_qtmqtt_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtmqtt.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

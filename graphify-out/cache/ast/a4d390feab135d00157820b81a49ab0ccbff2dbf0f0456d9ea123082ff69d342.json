@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_g2o_json",
+      "label": "g2o.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/g2o.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_g2o_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/g2o.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_g2o_json",
+      "target": "g_g2o_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/g2o.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

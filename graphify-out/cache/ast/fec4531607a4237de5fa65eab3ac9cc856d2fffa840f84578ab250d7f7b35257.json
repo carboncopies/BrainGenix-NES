@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libhdfs3_json",
+      "label": "libhdfs3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libhdfs3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libhdfs3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libhdfs3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libhdfs3_json",
+      "target": "l_libhdfs3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libhdfs3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

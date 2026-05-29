@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_msquic_json",
+      "label": "msquic.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/msquic.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_msquic_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/msquic.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_msquic_json",
+      "target": "m_msquic_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/msquic.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

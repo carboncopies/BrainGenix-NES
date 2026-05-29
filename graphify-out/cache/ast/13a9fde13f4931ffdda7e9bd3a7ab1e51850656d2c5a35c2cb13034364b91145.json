@@ -1,0 +1,469 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "freerdp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "freerdp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "freerdp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "freerdp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "freerdp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "freerdp_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "freerdp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "freerdp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "freerdp_vcpkg_features_client",
+      "label": "client",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "freerdp_vcpkg_client_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "freerdp_vcpkg_features_ffmpeg",
+      "label": "ffmpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "freerdp_vcpkg_ffmpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "freerdp_vcpkg_ffmpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "freerdp_vcpkg_features_server",
+      "label": "server",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "freerdp_vcpkg_server_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "freerdp_vcpkg_server_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "freerdp_vcpkg_server_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "freerdp_vcpkg_features_urbdrc",
+      "label": "urbdrc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "freerdp_vcpkg_urbdrc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "freerdp_vcpkg_urbdrc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "freerdp_vcpkg_features_winpr_tools",
+      "label": "winpr-tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "freerdp_vcpkg_winpr_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "freerdp_vcpkg_winpr_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "freerdp_vcpkg_features_x11",
+      "label": "x11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "freerdp_vcpkg_x11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "freerdp_vcpkg_x11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L68"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_dependencies",
+      "target": "ref_cjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "freerdp_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "freerdp_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freerdp_vcpkg_json",
+      "target": "freerdp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_client",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_client",
+      "target": "freerdp_vcpkg_client_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_ffmpeg",
+      "target": "freerdp_vcpkg_ffmpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_ffmpeg",
+      "target": "freerdp_vcpkg_ffmpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_server",
+      "target": "freerdp_vcpkg_server_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_server",
+      "target": "freerdp_vcpkg_server_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_server",
+      "target": "freerdp_vcpkg_server_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_urbdrc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_urbdrc",
+      "target": "freerdp_vcpkg_urbdrc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_urbdrc",
+      "target": "freerdp_vcpkg_urbdrc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_urbdrc_dependencies",
+      "target": "ref_libusb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_winpr_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_winpr_tools",
+      "target": "freerdp_vcpkg_winpr_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_winpr_tools",
+      "target": "freerdp_vcpkg_winpr_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features",
+      "target": "freerdp_vcpkg_features_x11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_x11",
+      "target": "freerdp_vcpkg_x11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "freerdp_vcpkg_features_x11",
+      "target": "freerdp_vcpkg_x11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freerdp/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    }
+  ]
+}

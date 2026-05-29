@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_murmur3_json",
+      "label": "murmur3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/murmur3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_murmur3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/murmur3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_murmur3_json",
+      "target": "m_murmur3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/murmur3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

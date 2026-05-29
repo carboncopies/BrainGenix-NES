@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_y_yubico_piv_tool_json",
+      "label": "yubico-piv-tool.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yubico-piv-tool.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "y_yubico_piv_tool_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yubico-piv-tool.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_y_yubico_piv_tool_json",
+      "target": "y_yubico_piv_tool_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yubico-piv-tool.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

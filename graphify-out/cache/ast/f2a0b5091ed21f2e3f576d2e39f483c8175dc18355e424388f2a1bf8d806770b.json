@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sdformat9_json",
+      "label": "sdformat9.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdformat9.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sdformat9_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdformat9.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sdformat9_json",
+      "target": "s_sdformat9_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdformat9.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

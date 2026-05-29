@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_openxlsx_json",
+      "label": "openxlsx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openxlsx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_openxlsx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openxlsx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_openxlsx_json",
+      "target": "o_openxlsx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openxlsx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

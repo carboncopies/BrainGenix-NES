@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_systemc_json",
+      "label": "systemc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/systemc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_systemc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/systemc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_systemc_json",
+      "target": "s_systemc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/systemc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

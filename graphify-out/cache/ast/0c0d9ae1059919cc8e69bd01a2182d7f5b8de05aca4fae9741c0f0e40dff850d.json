@@ -1,0 +1,383 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_features_brotli",
+      "label": "brotli",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_brotli_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_brotli_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "cpp_httplib_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_default_features",
+      "target": "ref_brotli",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpp_httplib_vcpkg_json",
+      "target": "cpp_httplib_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features",
+      "target": "cpp_httplib_vcpkg_features_brotli",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_brotli",
+      "target": "cpp_httplib_vcpkg_brotli_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_brotli",
+      "target": "cpp_httplib_vcpkg_brotli_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_brotli_dependencies",
+      "target": "ref_brotli",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features",
+      "target": "cpp_httplib_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_openssl",
+      "target": "cpp_httplib_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_openssl",
+      "target": "cpp_httplib_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features",
+      "target": "cpp_httplib_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_zlib",
+      "target": "cpp_httplib_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_zlib",
+      "target": "cpp_httplib_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features",
+      "target": "cpp_httplib_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_zstd",
+      "target": "cpp_httplib_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_features_zstd",
+      "target": "cpp_httplib_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "cpp_httplib_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpp-httplib/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

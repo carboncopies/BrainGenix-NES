@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_github_issue_template_05_other_type_of_bug_report_md",
+      "label": "05-other-type-of-bug-report.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/.github/ISSUE_TEMPLATE/05-other-type-of-bug-report.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

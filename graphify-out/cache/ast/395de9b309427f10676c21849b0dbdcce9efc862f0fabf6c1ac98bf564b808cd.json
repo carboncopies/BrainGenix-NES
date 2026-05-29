@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_readme_blender_md",
+      "label": "README-Blender.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-Blender.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_readme_blender_blender_output_in_headless_blender_mode",
+      "label": "Blender output in headless Blender mode",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-Blender.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_readme_blender_md",
+      "target": "source_readme_blender_blender_output_in_headless_blender_mode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-Blender.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

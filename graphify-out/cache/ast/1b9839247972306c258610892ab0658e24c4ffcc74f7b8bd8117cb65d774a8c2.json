@@ -1,0 +1,863 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "folly_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "folly_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "folly_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "folly_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "folly_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "folly_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "folly_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "folly_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "folly_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "folly_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "folly_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "folly_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "folly_vcpkg_features_libaio",
+      "label": "libaio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "folly_vcpkg_libaio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "folly_vcpkg_libaio_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "folly_vcpkg_libaio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "folly_vcpkg_features_libsodium",
+      "label": "libsodium",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "folly_vcpkg_libsodium_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "folly_vcpkg_libsodium_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "folly_vcpkg_features_liburing",
+      "label": "liburing",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "folly_vcpkg_liburing_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "folly_vcpkg_liburing_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "folly_vcpkg_liburing_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "folly_vcpkg_features_lz4",
+      "label": "lz4",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "folly_vcpkg_lz4_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "folly_vcpkg_lz4_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "folly_vcpkg_features_lzma",
+      "label": "lzma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "folly_vcpkg_lzma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "folly_vcpkg_lzma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "folly_vcpkg_features_snappy",
+      "label": "snappy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "folly_vcpkg_snappy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "folly_vcpkg_snappy_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "folly_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "folly_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "folly_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L97"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_chrono",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_context",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_conversion",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_crc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_date_time",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_filesystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_multi_index",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_regex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_smart_ptr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_thread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_boost_variant",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_double_conversion",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_fast_float",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_glog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_libevent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_folly_vcpkg_json",
+      "target": "folly_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_bzip2",
+      "target": "folly_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_bzip2",
+      "target": "folly_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_libaio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_libaio",
+      "target": "folly_vcpkg_libaio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_libaio",
+      "target": "folly_vcpkg_libaio_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_libaio",
+      "target": "folly_vcpkg_libaio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_libaio_dependencies",
+      "target": "ref_libaio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_libsodium",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_libsodium",
+      "target": "folly_vcpkg_libsodium_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_libsodium",
+      "target": "folly_vcpkg_libsodium_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_libsodium_dependencies",
+      "target": "ref_libsodium",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_liburing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_liburing",
+      "target": "folly_vcpkg_liburing_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_liburing",
+      "target": "folly_vcpkg_liburing_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_liburing",
+      "target": "folly_vcpkg_liburing_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_liburing_dependencies",
+      "target": "ref_liburing",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_lz4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_lz4",
+      "target": "folly_vcpkg_lz4_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_lz4",
+      "target": "folly_vcpkg_lz4_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_lz4_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_lzma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_lzma",
+      "target": "folly_vcpkg_lzma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_lzma",
+      "target": "folly_vcpkg_lzma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_lzma_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_snappy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_snappy",
+      "target": "folly_vcpkg_snappy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_snappy",
+      "target": "folly_vcpkg_snappy_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features",
+      "target": "folly_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_zstd",
+      "target": "folly_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_features_zstd",
+      "target": "folly_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "folly_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/folly/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

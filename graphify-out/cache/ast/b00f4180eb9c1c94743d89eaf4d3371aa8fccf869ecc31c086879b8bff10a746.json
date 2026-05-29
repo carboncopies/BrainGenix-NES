@@ -1,0 +1,1662 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "label": "Spatial_Segment_Subset.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_spatial_segment_subset_spatial_segment_subset",
+      "label": "Spatial_Segment_Subset()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70"
+    },
+    {
+      "id": "source_spatial_segment_subset_partition",
+      "label": "partition()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L216"
+    },
+    {
+      "id": "source_spatial_segment_subset_expand",
+      "label": "expand()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L252"
+    },
+    {
+      "id": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "label": "axon_this_subset_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L269"
+    },
+    {
+      "id": "fibre_segment",
+      "label": "fibre_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L269"
+    },
+    {
+      "id": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "label": "dendrite_this_subset_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L276"
+    },
+    {
+      "id": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "label": "axon_neighbor_subset_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L283"
+    },
+    {
+      "id": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "label": "dendrite_neighbor_subset_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L323"
+    },
+    {
+      "id": "source_spatial_segment_subset_axon_connectivity",
+      "label": "axon_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L363"
+    },
+    {
+      "id": "source_spatial_segment_subset_dendrite_connectivity",
+      "label": "dendrite_connectivity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L377"
+    },
+    {
+      "id": "source_spatial_segment_subset_add_dendritic_segment",
+      "label": "add_dendritic_segment()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L389"
+    },
+    {
+      "id": "source_spatial_segment_subset_add_axonal_segment",
+      "label": "add_axonal_segment()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L424"
+    },
+    {
+      "id": "source_spatial_segment_subset_net_fig",
+      "label": "net_Fig()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L459"
+    },
+    {
+      "id": "fig_object",
+      "label": "Fig_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L459"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "cstdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_color_table_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_fig_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_formation_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "thirdparty_netmorphcmake_source_spatial_segment_subset_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_spatial_segment_subset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_spatial_segment_subset",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_segment_subset_spatial_segment_subset",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_segment_subset_spatial_segment_subset",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L70",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_spatial_segment_subset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_partition",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_expand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L269",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L276",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L283",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "target": "source_spatial_segment_subset_spatial_segment_subset",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L283",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L323",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L323",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "target": "source_spatial_segment_subset_spatial_segment_subset",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L323",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_axon_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L363",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L363",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_dendrite_connectivity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_connectivity",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L377",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_add_dendritic_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L389",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_dendritic_segment",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L389",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_add_axonal_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L424",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_axonal_segment",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L424",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_segment_subset_cc",
+      "target": "source_spatial_segment_subset_net_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L459",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_net_fig",
+      "target": "fig_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L459",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_spatial_segment_subset_partition",
+      "target": "source_spatial_segment_subset_add_dendritic_segment",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_partition",
+      "target": "source_spatial_segment_subset_add_axonal_segment",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "target": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "target": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L360",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_connectivity",
+      "target": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_axon_connectivity",
+      "target": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L374",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_connectivity",
+      "target": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_dendrite_connectivity",
+      "target": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_dendritic_segment",
+      "target": "source_spatial_segment_subset_dendrite_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_dendritic_segment",
+      "target": "source_spatial_segment_subset_expand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L405",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_axonal_segment",
+      "target": "source_spatial_segment_subset_axon_connectivity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L431",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_segment_subset_add_axonal_segment",
+      "target": "source_spatial_segment_subset_expand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L440",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_spatial_segment_subset_spatial_segment_subset",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_spatial_segment_subset",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_spatial_segment_subset",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_spatial_segment_subset",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_partition",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_partition",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_partition",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_partition",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L246"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_expand",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_expand",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L258"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_expand",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L261"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_expand",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_this_subset_connectivity",
+      "callee": "evaluate_possible_connection",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_this_subset_connectivity",
+      "callee": "evaluate_possible_connection",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L280"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L292"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L292"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L295"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L295"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L298"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L298"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L312"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L312"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L313"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L313"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L314"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L314"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L315"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L315"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L317"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L317"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_axon_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L332"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L332"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L333"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L333"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L334"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L334"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L335"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L335"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L337"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L353"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L353"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L357"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L357"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L358"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_dendrite_neighbor_subset_connectivity",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L358"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "outside",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "intersects",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L399"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L399"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_dendritic_segment",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "outside",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "intersects",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L427"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L437"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_add_axonal_segment",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L437"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L464"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L470"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L472"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L474"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L482"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L482"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L482"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L482"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L484"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L484"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L484"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L484"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L488"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L488"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L488"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L488"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L490"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L490"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L490"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L490"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L499"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L499"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L499"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L499"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L500"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L502"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L505"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L506"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L506"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L508"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Add_Fig_Object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L509"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L510"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L516"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L521"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L524"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L525"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L526"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L528"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L534"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L536"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Add_Fig_Object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L537"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Add_Fig_Object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L538"
+    },
+    {
+      "caller_nid": "source_spatial_segment_subset_net_fig",
+      "callee": "Add_Fig_Object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Spatial_Segment_Subset.cc",
+      "source_location": "L539"
+    }
+  ]
+}

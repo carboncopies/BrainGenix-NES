@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libuuid_config_linux_h",
+      "label": "config.linux.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libuuid/config.linux.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_ms_gdk_json",
+      "label": "ms-gdk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/ms-gdk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_ms_gdk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/ms-gdk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_ms_gdk_json",
+      "target": "m_ms_gdk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/ms-gdk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

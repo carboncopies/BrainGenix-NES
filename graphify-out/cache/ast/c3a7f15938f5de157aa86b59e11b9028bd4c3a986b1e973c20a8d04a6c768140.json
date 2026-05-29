@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_osp_collection_json",
+      "label": "osp-collection.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osp-collection.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_osp_collection_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osp-collection.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_osp_collection_json",
+      "target": "o_osp_collection_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osp-collection.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

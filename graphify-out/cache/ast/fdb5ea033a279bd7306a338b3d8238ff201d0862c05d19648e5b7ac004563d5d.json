@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "label": "main.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "lua",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "lualib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "lauxlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "luajit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_luajit_project_main_c",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "luaL_newstate",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "luaL_openlibs",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "luaJIT_setmode",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "luaL_dostring",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "lua_pop",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "lua_gettop",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "lua_close",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-luajit/project/main.c",
+      "source_location": "L35"
+    }
+  ]
+}

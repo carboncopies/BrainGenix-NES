@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fineftp_json",
+      "label": "fineftp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fineftp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fineftp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fineftp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fineftp_json",
+      "target": "f_fineftp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fineftp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

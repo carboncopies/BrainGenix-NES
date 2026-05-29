@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "nanomsg_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "nanomsg_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "nanomsg_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "nanomsg_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "nanomsg_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "nanomsg_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "nanomsg_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "nanomsg_vcpkg_features_tool",
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "nanomsg_vcpkg_tool_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "nanomsg_vcpkg_description",
+      "target": "ref_a_simple_high_performance_implementation_of_several_scalability_protocols",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "nanomsg_vcpkg_description",
+      "target": "ref_these_scalability_protocols_are_light_weight_messaging_protocols_which_can_be_used_to_solve_a_number_of_very_common_messaging_patterns_such_as_request_reply_publish_subscribe_surveyor_respondent_and_so_forth_these_protocols_can_run_over_a_variety_of_transports_such_as_tcp_unix_sockets_and_even_websocket",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanomsg_vcpkg_json",
+      "target": "nanomsg_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "nanomsg_vcpkg_features",
+      "target": "nanomsg_vcpkg_features_tool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "nanomsg_vcpkg_features_tool",
+      "target": "nanomsg_vcpkg_tool_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanomsg/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    }
+  ]
+}

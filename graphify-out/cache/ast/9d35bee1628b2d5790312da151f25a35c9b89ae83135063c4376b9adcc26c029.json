@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_ixwebsocket_json",
+      "label": "ixwebsocket.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ixwebsocket.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_ixwebsocket_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ixwebsocket.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_ixwebsocket_json",
+      "target": "i_ixwebsocket_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/ixwebsocket.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

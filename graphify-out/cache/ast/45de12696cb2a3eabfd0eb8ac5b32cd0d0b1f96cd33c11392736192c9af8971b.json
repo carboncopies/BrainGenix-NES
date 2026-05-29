@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_log4cplus_json",
+      "label": "log4cplus.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/log4cplus.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_log4cplus_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/log4cplus.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_log4cplus_json",
+      "target": "l_log4cplus_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/log4cplus.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fdk_aac_json",
+      "label": "fdk-aac.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdk-aac.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fdk_aac_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdk-aac.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fdk_aac_json",
+      "target": "f_fdk_aac_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdk-aac.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

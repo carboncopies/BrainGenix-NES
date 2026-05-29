@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libczi_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libczi_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libczi_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libczi_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libczi_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libczi_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libczi_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libczi_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libczi_vcpkg_features_azureblobstore",
+      "label": "azureblobstore",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libczi_vcpkg_azureblobstore_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libczi_vcpkg_azureblobstore_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libczi_vcpkg_features_curl",
+      "label": "curl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libczi_vcpkg_curl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libczi_vcpkg_curl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libczi_vcpkg_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libczi_vcpkg_json",
+      "target": "libczi_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_features",
+      "target": "libczi_vcpkg_features_azureblobstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_features_azureblobstore",
+      "target": "libczi_vcpkg_azureblobstore_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_features_azureblobstore",
+      "target": "libczi_vcpkg_azureblobstore_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_azureblobstore_dependencies",
+      "target": "ref_azure_identity_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libczi_vcpkg_azureblobstore_dependencies",
+      "target": "ref_azure_storage_blobs_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libczi_vcpkg_features",
+      "target": "libczi_vcpkg_features_curl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_features_curl",
+      "target": "libczi_vcpkg_curl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libczi_vcpkg_features_curl",
+      "target": "libczi_vcpkg_curl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libczi/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    }
+  ]
+}

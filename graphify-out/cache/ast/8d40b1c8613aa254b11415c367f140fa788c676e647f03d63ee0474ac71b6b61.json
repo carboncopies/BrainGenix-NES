@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_pcre2_json",
+      "label": "pcre2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pcre2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_pcre2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pcre2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_pcre2_json",
+      "target": "p_pcre2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pcre2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

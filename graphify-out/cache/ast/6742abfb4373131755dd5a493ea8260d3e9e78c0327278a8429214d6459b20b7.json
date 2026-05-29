@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_signalsmith_stretch_json",
+      "label": "signalsmith-stretch.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-stretch.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_signalsmith_stretch_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-stretch.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_signalsmith_stretch_json",
+      "target": "s_signalsmith_stretch_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-stretch.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

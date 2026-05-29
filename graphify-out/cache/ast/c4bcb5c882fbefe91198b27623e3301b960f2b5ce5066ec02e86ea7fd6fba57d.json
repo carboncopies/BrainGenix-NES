@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_d3dx12_json",
+      "label": "d3dx12.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3dx12.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_d3dx12_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3dx12.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_d3dx12_json",
+      "target": "d_d3dx12_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/d3dx12.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

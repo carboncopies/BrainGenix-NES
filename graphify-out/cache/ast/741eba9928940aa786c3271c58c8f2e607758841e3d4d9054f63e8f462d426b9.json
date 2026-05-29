@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_ngtcp2_json",
+      "label": "ngtcp2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngtcp2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_ngtcp2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngtcp2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_ngtcp2_json",
+      "target": "n_ngtcp2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngtcp2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

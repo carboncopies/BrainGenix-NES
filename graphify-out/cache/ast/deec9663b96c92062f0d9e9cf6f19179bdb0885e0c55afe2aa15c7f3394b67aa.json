@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nrf_ble_driver_json",
+      "label": "nrf-ble-driver.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nrf-ble-driver.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nrf_ble_driver_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nrf-ble-driver.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nrf_ble_driver_json",
+      "target": "n_nrf_ble_driver_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nrf-ble-driver.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

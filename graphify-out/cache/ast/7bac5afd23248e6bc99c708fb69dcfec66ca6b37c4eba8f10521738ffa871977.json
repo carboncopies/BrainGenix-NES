@@ -1,0 +1,421 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "corrade_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "corrade_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "corrade_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "corrade_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "corrade_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "corrade_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "corrade_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "corrade_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "corrade_vcpkg_features_dynamic_pluginmanager",
+      "label": "dynamic-pluginmanager",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "corrade_vcpkg_dynamic_pluginmanager_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "corrade_vcpkg_dynamic_pluginmanager_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "corrade_vcpkg_dynamic_pluginmanager_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "corrade_vcpkg_features_interconnect",
+      "label": "interconnect",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "corrade_vcpkg_interconnect_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "corrade_vcpkg_interconnect_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "corrade_vcpkg_features_pluginmanager",
+      "label": "pluginmanager",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "corrade_vcpkg_pluginmanager_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "corrade_vcpkg_pluginmanager_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "corrade_vcpkg_features_testsuite",
+      "label": "testsuite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "corrade_vcpkg_testsuite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "corrade_vcpkg_testsuite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "corrade_vcpkg_features_utility",
+      "label": "utility",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "corrade_vcpkg_utility_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L83"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_default_features",
+      "target": "ref_interconnect",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "corrade_vcpkg_default_features",
+      "target": "ref_pluginmanager",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "corrade_vcpkg_default_features",
+      "target": "ref_testsuite",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "corrade_vcpkg_default_features",
+      "target": "ref_utility",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_corrade_vcpkg_json",
+      "target": "corrade_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features",
+      "target": "corrade_vcpkg_features_dynamic_pluginmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_dynamic_pluginmanager",
+      "target": "corrade_vcpkg_dynamic_pluginmanager_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_dynamic_pluginmanager",
+      "target": "corrade_vcpkg_dynamic_pluginmanager_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_dynamic_pluginmanager",
+      "target": "corrade_vcpkg_dynamic_pluginmanager_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features",
+      "target": "corrade_vcpkg_features_interconnect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_interconnect",
+      "target": "corrade_vcpkg_interconnect_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_interconnect",
+      "target": "corrade_vcpkg_interconnect_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features",
+      "target": "corrade_vcpkg_features_pluginmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_pluginmanager",
+      "target": "corrade_vcpkg_pluginmanager_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_pluginmanager",
+      "target": "corrade_vcpkg_pluginmanager_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features",
+      "target": "corrade_vcpkg_features_testsuite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_testsuite",
+      "target": "corrade_vcpkg_testsuite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_testsuite",
+      "target": "corrade_vcpkg_testsuite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features",
+      "target": "corrade_vcpkg_features_utility",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "corrade_vcpkg_features_utility",
+      "target": "corrade_vcpkg_utility_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/corrade/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    }
+  ]
+}

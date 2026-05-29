@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tree_similarity_json",
+      "label": "tree-similarity.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tree-similarity.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tree_similarity_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tree-similarity.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tree_similarity_json",
+      "target": "t_tree_similarity_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tree-similarity.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

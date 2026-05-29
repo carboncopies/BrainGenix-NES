@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_turbobase64_json",
+      "label": "turbobase64.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/turbobase64.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_turbobase64_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/turbobase64.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_turbobase64_json",
+      "target": "t_turbobase64_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/turbobase64.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

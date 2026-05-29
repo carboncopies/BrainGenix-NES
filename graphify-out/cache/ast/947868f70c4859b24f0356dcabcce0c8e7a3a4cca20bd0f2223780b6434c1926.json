@@ -1,0 +1,526 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_buildsystems_msbuild_applocal_ps1",
+      "label": "applocal.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "msbuild_applocal_computehash",
+      "label": "computeHash()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L15"
+    },
+    {
+      "id": "msbuild_applocal_getmutex",
+      "label": "getMutex()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L21"
+    },
+    {
+      "id": "msbuild_applocal_deploybinary",
+      "label": "deployBinary()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L38"
+    },
+    {
+      "id": "msbuild_applocal_resolve",
+      "label": "resolve()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L84"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_msbuild_applocal_ps1",
+      "target": "msbuild_applocal_computehash",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_msbuild_applocal_ps1",
+      "target": "msbuild_applocal_getmutex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_msbuild_applocal_ps1",
+      "target": "msbuild_applocal_deploybinary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_msbuild_applocal_ps1",
+      "target": "msbuild_applocal_resolve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "msbuild_applocal_getmutex",
+      "target": "msbuild_applocal_computehash",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "msbuild_applocal_deploybinary",
+      "target": "msbuild_applocal_getmutex",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "msbuild_applocal_resolve",
+      "target": "msbuild_applocal_deploybinary",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L117",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "msbuild_applocal_getmutex",
+      "callee": "New-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "msbuild_applocal_getmutex",
+      "callee": "New-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "msbuild_applocal_getmutex",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Get-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Get-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Copy-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Copy-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Add-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Add-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "msbuild_applocal_deploybinary",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Resolve-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Split-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Get-Command",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "dumpbin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "?",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "%",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Get-Command",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "llvm-objdump",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "?",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "%",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Get-Command",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "objdump",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "?",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "%",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "%",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "deployPluginsIfQt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "deployOpenNI2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L119"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "deployPluginsIfMagnum",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "deployPluginsIfMagnum",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "deployAzureKinectSensorSDK",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "resolve",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "resolve",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "msbuild_applocal_resolve",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/msbuild/applocal.ps1",
+      "source_location": "L136"
+    }
+  ]
+}

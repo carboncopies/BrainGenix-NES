@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hdf5_json",
+      "label": "hdf5.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdf5.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hdf5_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdf5.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hdf5_json",
+      "target": "h_hdf5_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdf5.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

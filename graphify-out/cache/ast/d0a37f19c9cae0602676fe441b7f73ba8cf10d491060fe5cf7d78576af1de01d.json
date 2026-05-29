@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boinc_json",
+      "label": "boinc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boinc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boinc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boinc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boinc_json",
+      "target": "b_boinc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boinc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

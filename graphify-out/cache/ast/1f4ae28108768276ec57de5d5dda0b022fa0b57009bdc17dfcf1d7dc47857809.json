@@ -1,0 +1,237 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "zfp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "zfp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "zfp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "zfp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "zfp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "zfp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "zfp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "zfp_vcpkg_features_all",
+      "label": "all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "zfp_vcpkg_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "zfp_vcpkg_all_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "zfp_vcpkg_features_cfp",
+      "label": "cfp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "zfp_vcpkg_cfp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "zfp_vcpkg_features_utility",
+      "label": "utility",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "zfp_vcpkg_utility_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L34"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zfp_vcpkg_json",
+      "target": "zfp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features",
+      "target": "zfp_vcpkg_features_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features_all",
+      "target": "zfp_vcpkg_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features_all",
+      "target": "zfp_vcpkg_all_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features",
+      "target": "zfp_vcpkg_features_cfp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features_cfp",
+      "target": "zfp_vcpkg_cfp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features",
+      "target": "zfp_vcpkg_features_utility",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "zfp_vcpkg_features_utility",
+      "target": "zfp_vcpkg_utility_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zfp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    }
+  ]
+}

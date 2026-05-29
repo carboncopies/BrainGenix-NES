@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wolfssl_json",
+      "label": "wolfssl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolfssl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wolfssl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolfssl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wolfssl_json",
+      "target": "w_wolfssl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wolfssl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

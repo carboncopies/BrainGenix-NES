@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_dbus_cxx_json",
+      "label": "dbus-cxx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dbus-cxx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_dbus_cxx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dbus-cxx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_dbus_cxx_json",
+      "target": "d_dbus_cxx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dbus-cxx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

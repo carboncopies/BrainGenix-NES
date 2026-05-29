@@ -1,0 +1,3769 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ffmpeg_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ffmpeg_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ffmpeg_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ffmpeg_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ffmpeg_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ffmpeg_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "ffmpeg_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "ffmpeg_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_all",
+      "label": "all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_all_gpl",
+      "label": "all-gpl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L213"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_gpl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L214"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_gpl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L215"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_all_nonfree",
+      "label": "all-nonfree",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L250"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_nonfree_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L251"
+    },
+    {
+      "id": "ffmpeg_vcpkg_all_nonfree_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L252"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_alsa",
+      "label": "alsa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L265"
+    },
+    {
+      "id": "ffmpeg_vcpkg_alsa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L266"
+    },
+    {
+      "id": "ffmpeg_vcpkg_alsa_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L267"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_amf",
+      "label": "amf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L271"
+    },
+    {
+      "id": "ffmpeg_vcpkg_amf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L272"
+    },
+    {
+      "id": "ffmpeg_vcpkg_amf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L273"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_aom",
+      "label": "aom",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L277"
+    },
+    {
+      "id": "ffmpeg_vcpkg_aom_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L278"
+    },
+    {
+      "id": "ffmpeg_vcpkg_aom_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L279"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ass",
+      "label": "ass",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L283"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ass_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L284"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ass_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L285"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avcodec",
+      "label": "avcodec",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L289"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avcodec_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L290"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avdevice",
+      "label": "avdevice",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L292"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avdevice_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L293"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avdevice_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L294"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avfilter",
+      "label": "avfilter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L305"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avfilter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L306"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avformat",
+      "label": "avformat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L308"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avformat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L309"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avformat_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L310"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avisynthplus",
+      "label": "avisynthplus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L320"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avisynthplus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L321"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avisynthplus_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L322"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avisynthplus_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L323"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_avresample",
+      "label": "avresample",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L334"
+    },
+    {
+      "id": "ffmpeg_vcpkg_avresample_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L335"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L337"
+    },
+    {
+      "id": "ffmpeg_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L338"
+    },
+    {
+      "id": "ffmpeg_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L339"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_dav1d",
+      "label": "dav1d",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L343"
+    },
+    {
+      "id": "ffmpeg_vcpkg_dav1d_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L344"
+    },
+    {
+      "id": "ffmpeg_vcpkg_dav1d_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L345"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_drawtext",
+      "label": "drawtext",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L349"
+    },
+    {
+      "id": "ffmpeg_vcpkg_drawtext_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L350"
+    },
+    {
+      "id": "ffmpeg_vcpkg_drawtext_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L351"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_dvdvideo",
+      "label": "dvdvideo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L362"
+    },
+    {
+      "id": "ffmpeg_vcpkg_dvdvideo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L363"
+    },
+    {
+      "id": "ffmpeg_vcpkg_dvdvideo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L364"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_fdk_aac",
+      "label": "fdk-aac",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L376"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fdk_aac_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L377"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fdk_aac_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L378"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ffmpeg",
+      "label": "ffmpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L395"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffmpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L396"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffmpeg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L397"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffmpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L398"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ffplay",
+      "label": "ffplay",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L410"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffplay_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L411"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffplay_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L412"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffplay_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L413"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ffprobe",
+      "label": "ffprobe",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L428"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffprobe_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L429"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffprobe_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L430"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ffprobe_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L431"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L442"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L443"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L444"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L448"
+    },
+    {
+      "id": "ffmpeg_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L449"
+    },
+    {
+      "id": "ffmpeg_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L450"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_fribidi",
+      "label": "fribidi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L454"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fribidi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L455"
+    },
+    {
+      "id": "ffmpeg_vcpkg_fribidi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L456"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_gpl",
+      "label": "gpl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L460"
+    },
+    {
+      "id": "ffmpeg_vcpkg_gpl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L461"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_iconv",
+      "label": "iconv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L463"
+    },
+    {
+      "id": "ffmpeg_vcpkg_iconv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L464"
+    },
+    {
+      "id": "ffmpeg_vcpkg_iconv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L465"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ilbc",
+      "label": "ilbc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L469"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ilbc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L470"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ilbc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L471"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_lzma",
+      "label": "lzma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L475"
+    },
+    {
+      "id": "ffmpeg_vcpkg_lzma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L476"
+    },
+    {
+      "id": "ffmpeg_vcpkg_lzma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L477"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_modplug",
+      "label": "modplug",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L481"
+    },
+    {
+      "id": "ffmpeg_vcpkg_modplug_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L482"
+    },
+    {
+      "id": "ffmpeg_vcpkg_modplug_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L483"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_mp3lame",
+      "label": "mp3lame",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L487"
+    },
+    {
+      "id": "ffmpeg_vcpkg_mp3lame_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L488"
+    },
+    {
+      "id": "ffmpeg_vcpkg_mp3lame_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L489"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_nonfree",
+      "label": "nonfree",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L493"
+    },
+    {
+      "id": "ffmpeg_vcpkg_nonfree_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L494"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_nvcodec",
+      "label": "nvcodec",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L496"
+    },
+    {
+      "id": "ffmpeg_vcpkg_nvcodec_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L497"
+    },
+    {
+      "id": "ffmpeg_vcpkg_nvcodec_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L498"
+    },
+    {
+      "id": "ffmpeg_vcpkg_nvcodec_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L499"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_opencl",
+      "label": "opencl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L503"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opencl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L504"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opencl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L505"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opencl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L506"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L510"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L511"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opengl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L512"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L513"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_openh264",
+      "label": "openh264",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L518"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openh264_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L519"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openh264_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L520"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_openjpeg",
+      "label": "openjpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L524"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openjpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L525"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openjpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L526"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_openmpt",
+      "label": "openmpt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L530"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openmpt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L531"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openmpt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L532"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L536"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L537"
+    },
+    {
+      "id": "ffmpeg_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L538"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_opus",
+      "label": "opus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L549"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L550"
+    },
+    {
+      "id": "ffmpeg_vcpkg_opus_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L551"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_qsv",
+      "label": "qsv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L555"
+    },
+    {
+      "id": "ffmpeg_vcpkg_qsv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L556"
+    },
+    {
+      "id": "ffmpeg_vcpkg_qsv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L557"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_rubberband",
+      "label": "rubberband",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L561"
+    },
+    {
+      "id": "ffmpeg_vcpkg_rubberband_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L562"
+    },
+    {
+      "id": "ffmpeg_vcpkg_rubberband_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L563"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_sdl2",
+      "label": "sdl2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L574"
+    },
+    {
+      "id": "ffmpeg_vcpkg_sdl2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L575"
+    },
+    {
+      "id": "ffmpeg_vcpkg_sdl2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L576"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_snappy",
+      "label": "snappy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L591"
+    },
+    {
+      "id": "ffmpeg_vcpkg_snappy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L592"
+    },
+    {
+      "id": "ffmpeg_vcpkg_snappy_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L593"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_soxr",
+      "label": "soxr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L597"
+    },
+    {
+      "id": "ffmpeg_vcpkg_soxr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L598"
+    },
+    {
+      "id": "ffmpeg_vcpkg_soxr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L599"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_speex",
+      "label": "speex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L610"
+    },
+    {
+      "id": "ffmpeg_vcpkg_speex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L611"
+    },
+    {
+      "id": "ffmpeg_vcpkg_speex_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L612"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_srt",
+      "label": "srt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L616"
+    },
+    {
+      "id": "ffmpeg_vcpkg_srt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L617"
+    },
+    {
+      "id": "ffmpeg_vcpkg_srt_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L618"
+    },
+    {
+      "id": "ffmpeg_vcpkg_srt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L619"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_ssh",
+      "label": "ssh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L623"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ssh_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L624"
+    },
+    {
+      "id": "ffmpeg_vcpkg_ssh_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L625"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_swresample",
+      "label": "swresample",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L629"
+    },
+    {
+      "id": "ffmpeg_vcpkg_swresample_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L630"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_swscale",
+      "label": "swscale",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L632"
+    },
+    {
+      "id": "ffmpeg_vcpkg_swscale_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L633"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_tensorflow",
+      "label": "tensorflow",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L635"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tensorflow_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L636"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tensorflow_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L637"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tensorflow_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L638"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_tesseract",
+      "label": "tesseract",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L642"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tesseract_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L643"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tesseract_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L644"
+    },
+    {
+      "id": "ffmpeg_vcpkg_tesseract_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L645"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_theora",
+      "label": "theora",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L649"
+    },
+    {
+      "id": "ffmpeg_vcpkg_theora_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L650"
+    },
+    {
+      "id": "ffmpeg_vcpkg_theora_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L651"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_vaapi",
+      "label": "vaapi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L655"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vaapi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L656"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vaapi_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L657"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vaapi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L658"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_version3",
+      "label": "version3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L666"
+    },
+    {
+      "id": "ffmpeg_vcpkg_version3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L667"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_vorbis",
+      "label": "vorbis",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L669"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vorbis_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L670"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vorbis_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L671"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_vpx",
+      "label": "vpx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L675"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vpx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L676"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vpx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L677"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L688"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L689"
+    },
+    {
+      "id": "ffmpeg_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L690"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L694"
+    },
+    {
+      "id": "ffmpeg_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L695"
+    },
+    {
+      "id": "ffmpeg_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L696"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_x264",
+      "label": "x264",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L700"
+    },
+    {
+      "id": "ffmpeg_vcpkg_x264_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L701"
+    },
+    {
+      "id": "ffmpeg_vcpkg_x264_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L702"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_x265",
+      "label": "x265",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L713"
+    },
+    {
+      "id": "ffmpeg_vcpkg_x265_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L714"
+    },
+    {
+      "id": "ffmpeg_vcpkg_x265_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L715"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_xml2",
+      "label": "xml2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L726"
+    },
+    {
+      "id": "ffmpeg_vcpkg_xml2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L727"
+    },
+    {
+      "id": "ffmpeg_vcpkg_xml2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L728"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L732"
+    },
+    {
+      "id": "ffmpeg_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L733"
+    },
+    {
+      "id": "ffmpeg_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L734"
+    },
+    {
+      "id": "ffmpeg_vcpkg_features_zmq",
+      "label": "zmq",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L738"
+    },
+    {
+      "id": "ffmpeg_vcpkg_zmq_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L739"
+    },
+    {
+      "id": "ffmpeg_vcpkg_zmq_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L740"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_description",
+      "target": "ref_a_library_to_decode_encode_transcode_mux_demux_stream_filter_and_play_pretty_much_anything_that_humans_and_machines_have_created",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_description",
+      "target": "ref_ffmpeg_is_the_leading_multimedia_framework_able_to_decode_encode_transcode_mux_demux_stream_filter_and_play_pretty_much_anything_that_humans_and_machines_have_created_it_supports_the_most_obscure_ancient_formats_up_to_the_cutting_edge_no_matter_if_they_were_designed_by_some_standards_committee_the_community_or_a_corporation_it_is_also_highly_portable_ffmpeg_compiles_runs_and_passes_our_testing_infrastructure_fate_across_linux_mac_os_x_microsoft_windows_the_bsds_solaris_etc_under_a_wide_variety_of_build_environments_machine_architectures_and_configurations",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_avcodec",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_avdevice",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_avfilter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_avformat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_swresample",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_default_features",
+      "target": "ref_swscale",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ffmpeg_vcpkg_json",
+      "target": "ffmpeg_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all",
+      "target": "ffmpeg_vcpkg_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all",
+      "target": "ffmpeg_vcpkg_all_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_all_gpl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all_gpl",
+      "target": "ffmpeg_vcpkg_all_gpl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all_gpl",
+      "target": "ffmpeg_vcpkg_all_gpl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_all_nonfree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L250",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all_nonfree",
+      "target": "ffmpeg_vcpkg_all_nonfree_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_all_nonfree",
+      "target": "ffmpeg_vcpkg_all_nonfree_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_alsa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_alsa",
+      "target": "ffmpeg_vcpkg_alsa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_alsa",
+      "target": "ffmpeg_vcpkg_alsa_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_alsa_dependencies",
+      "target": "ref_alsa",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L267",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_amf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_amf",
+      "target": "ffmpeg_vcpkg_amf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_amf",
+      "target": "ffmpeg_vcpkg_amf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_amf_dependencies",
+      "target": "ref_amd_amf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L273",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_aom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L277",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_aom",
+      "target": "ffmpeg_vcpkg_aom_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_aom",
+      "target": "ffmpeg_vcpkg_aom_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L279",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_aom_dependencies",
+      "target": "ref_aom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L279",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ass",
+      "target": "ffmpeg_vcpkg_ass_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L284",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ass",
+      "target": "ffmpeg_vcpkg_ass_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_ass_dependencies",
+      "target": "ref_libass",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L285",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avcodec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avcodec",
+      "target": "ffmpeg_vcpkg_avcodec_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avdevice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avdevice",
+      "target": "ffmpeg_vcpkg_avdevice_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L293",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avdevice",
+      "target": "ffmpeg_vcpkg_avdevice_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avfilter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L305",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avfilter",
+      "target": "ffmpeg_vcpkg_avfilter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avformat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avformat",
+      "target": "ffmpeg_vcpkg_avformat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L309",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avformat",
+      "target": "ffmpeg_vcpkg_avformat_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avisynthplus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avisynthplus",
+      "target": "ffmpeg_vcpkg_avisynthplus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L321",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avisynthplus",
+      "target": "ffmpeg_vcpkg_avisynthplus_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avisynthplus",
+      "target": "ffmpeg_vcpkg_avisynthplus_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L323",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_avisynthplus_dependencies",
+      "target": "ref_avisynthplus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L323",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_avresample",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_avresample",
+      "target": "ffmpeg_vcpkg_avresample_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_bzip2",
+      "target": "ffmpeg_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L338",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_bzip2",
+      "target": "ffmpeg_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L339",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L339",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_dav1d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L343",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_dav1d",
+      "target": "ffmpeg_vcpkg_dav1d_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L344",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_dav1d",
+      "target": "ffmpeg_vcpkg_dav1d_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_dav1d_dependencies",
+      "target": "ref_dav1d",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L345",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_drawtext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_drawtext",
+      "target": "ffmpeg_vcpkg_drawtext_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_drawtext",
+      "target": "ffmpeg_vcpkg_drawtext_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L351",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_drawtext_dependencies",
+      "target": "ref_harfbuzz",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L351",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_dvdvideo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_dvdvideo",
+      "target": "ffmpeg_vcpkg_dvdvideo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L363",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_dvdvideo",
+      "target": "ffmpeg_vcpkg_dvdvideo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L364",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_dvdvideo_dependencies",
+      "target": "ref_libdvdnav",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L364",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_dvdvideo_dependencies",
+      "target": "ref_libdvdread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L364",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_fdk_aac",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L376",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fdk_aac",
+      "target": "ffmpeg_vcpkg_fdk_aac_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L377",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fdk_aac",
+      "target": "ffmpeg_vcpkg_fdk_aac_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L378",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L395",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffmpeg",
+      "target": "ffmpeg_vcpkg_ffmpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffmpeg",
+      "target": "ffmpeg_vcpkg_ffmpeg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffmpeg",
+      "target": "ffmpeg_vcpkg_ffmpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L398",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ffplay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L410",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffplay",
+      "target": "ffmpeg_vcpkg_ffplay_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L411",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffplay",
+      "target": "ffmpeg_vcpkg_ffplay_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L412",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffplay",
+      "target": "ffmpeg_vcpkg_ffplay_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L413",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ffprobe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffprobe",
+      "target": "ffmpeg_vcpkg_ffprobe_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L429",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffprobe",
+      "target": "ffmpeg_vcpkg_ffprobe_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L430",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ffprobe",
+      "target": "ffmpeg_vcpkg_ffprobe_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L431",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L442",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fontconfig",
+      "target": "ffmpeg_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L443",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fontconfig",
+      "target": "ffmpeg_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L444",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_fontconfig_dependencies",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L444",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L448",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_freetype",
+      "target": "ffmpeg_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L449",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_freetype",
+      "target": "ffmpeg_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L450",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_freetype_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L450",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_fribidi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L454",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fribidi",
+      "target": "ffmpeg_vcpkg_fribidi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L455",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_fribidi",
+      "target": "ffmpeg_vcpkg_fribidi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_fribidi_dependencies",
+      "target": "ref_fribidi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L456",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_gpl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L460",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_gpl",
+      "target": "ffmpeg_vcpkg_gpl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L461",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_iconv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L463",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_iconv",
+      "target": "ffmpeg_vcpkg_iconv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L464",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_iconv",
+      "target": "ffmpeg_vcpkg_iconv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L465",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_iconv_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L465",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ilbc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L469",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ilbc",
+      "target": "ffmpeg_vcpkg_ilbc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L470",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ilbc",
+      "target": "ffmpeg_vcpkg_ilbc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_ilbc_dependencies",
+      "target": "ref_libilbc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L471",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_lzma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L475",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_lzma",
+      "target": "ffmpeg_vcpkg_lzma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L476",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_lzma",
+      "target": "ffmpeg_vcpkg_lzma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L477",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_lzma_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L477",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_modplug",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L481",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_modplug",
+      "target": "ffmpeg_vcpkg_modplug_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L482",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_modplug",
+      "target": "ffmpeg_vcpkg_modplug_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L483",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_modplug_dependencies",
+      "target": "ref_libmodplug",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L483",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_mp3lame",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L487",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_mp3lame",
+      "target": "ffmpeg_vcpkg_mp3lame_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L488",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_mp3lame",
+      "target": "ffmpeg_vcpkg_mp3lame_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L489",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_mp3lame_dependencies",
+      "target": "ref_mp3lame",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L489",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_nonfree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L493",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_nonfree",
+      "target": "ffmpeg_vcpkg_nonfree_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L494",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_nvcodec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L496",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_nvcodec",
+      "target": "ffmpeg_vcpkg_nvcodec_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L497",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_nvcodec",
+      "target": "ffmpeg_vcpkg_nvcodec_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_nvcodec",
+      "target": "ffmpeg_vcpkg_nvcodec_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L499",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_nvcodec_dependencies",
+      "target": "ref_ffnvcodec",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L499",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_opencl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L503",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opencl",
+      "target": "ffmpeg_vcpkg_opencl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L504",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opencl",
+      "target": "ffmpeg_vcpkg_opencl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L505",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opencl",
+      "target": "ffmpeg_vcpkg_opencl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L506",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_opencl_dependencies",
+      "target": "ref_opencl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L506",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L510",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opengl",
+      "target": "ffmpeg_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L511",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opengl",
+      "target": "ffmpeg_vcpkg_opengl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L512",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opengl",
+      "target": "ffmpeg_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L513",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_opengl_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L513",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_opengl_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L513",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_openh264",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L518",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openh264",
+      "target": "ffmpeg_vcpkg_openh264_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L519",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openh264",
+      "target": "ffmpeg_vcpkg_openh264_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L520",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_openh264_dependencies",
+      "target": "ref_openh264",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L520",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_openjpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L524",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openjpeg",
+      "target": "ffmpeg_vcpkg_openjpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openjpeg",
+      "target": "ffmpeg_vcpkg_openjpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L526",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_openjpeg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L526",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_openmpt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L530",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openmpt",
+      "target": "ffmpeg_vcpkg_openmpt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L531",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openmpt",
+      "target": "ffmpeg_vcpkg_openmpt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L532",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_openmpt_dependencies",
+      "target": "ref_libopenmpt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L532",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L536",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openssl",
+      "target": "ffmpeg_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L537",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_openssl",
+      "target": "ffmpeg_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L538",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L538",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_opus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L549",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opus",
+      "target": "ffmpeg_vcpkg_opus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_opus",
+      "target": "ffmpeg_vcpkg_opus_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L551",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_opus_dependencies",
+      "target": "ref_opus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L551",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_qsv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L555",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_qsv",
+      "target": "ffmpeg_vcpkg_qsv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L556",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_qsv",
+      "target": "ffmpeg_vcpkg_qsv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L557",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_qsv_dependencies",
+      "target": "ref_mfx_dispatch",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L557",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_rubberband",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L561",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_rubberband",
+      "target": "ffmpeg_vcpkg_rubberband_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L562",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_rubberband",
+      "target": "ffmpeg_vcpkg_rubberband_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L563",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_rubberband_dependencies",
+      "target": "ref_rubberband",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L563",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_sdl2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L574",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_sdl2",
+      "target": "ffmpeg_vcpkg_sdl2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L575",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_sdl2",
+      "target": "ffmpeg_vcpkg_sdl2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L576",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_snappy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L591",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_snappy",
+      "target": "ffmpeg_vcpkg_snappy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L592",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_snappy",
+      "target": "ffmpeg_vcpkg_snappy_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L593",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_snappy_dependencies",
+      "target": "ref_snappy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L593",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_soxr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L597",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_soxr",
+      "target": "ffmpeg_vcpkg_soxr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L598",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_soxr",
+      "target": "ffmpeg_vcpkg_soxr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L599",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_soxr_dependencies",
+      "target": "ref_soxr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L599",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_speex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L610",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_speex",
+      "target": "ffmpeg_vcpkg_speex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L611",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_speex",
+      "target": "ffmpeg_vcpkg_speex_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L612",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_speex_dependencies",
+      "target": "ref_speex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L612",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_srt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L616",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_srt",
+      "target": "ffmpeg_vcpkg_srt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L617",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_srt",
+      "target": "ffmpeg_vcpkg_srt_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L618",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_srt",
+      "target": "ffmpeg_vcpkg_srt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L619",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_srt_dependencies",
+      "target": "ref_libsrt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L619",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_ssh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L623",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ssh",
+      "target": "ffmpeg_vcpkg_ssh_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L624",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_ssh",
+      "target": "ffmpeg_vcpkg_ssh_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L625",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_ssh_dependencies",
+      "target": "ref_libssh",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L625",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_swresample",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L629",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_swresample",
+      "target": "ffmpeg_vcpkg_swresample_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L630",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_swscale",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L632",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_swscale",
+      "target": "ffmpeg_vcpkg_swscale_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L633",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_tensorflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L635",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tensorflow",
+      "target": "ffmpeg_vcpkg_tensorflow_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L636",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tensorflow",
+      "target": "ffmpeg_vcpkg_tensorflow_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L637",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tensorflow",
+      "target": "ffmpeg_vcpkg_tensorflow_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L638",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_tensorflow_dependencies",
+      "target": "ref_tensorflow",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L638",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_tesseract",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L642",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tesseract",
+      "target": "ffmpeg_vcpkg_tesseract_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L643",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tesseract",
+      "target": "ffmpeg_vcpkg_tesseract_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L644",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_tesseract",
+      "target": "ffmpeg_vcpkg_tesseract_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L645",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_tesseract_dependencies",
+      "target": "ref_tesseract",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L645",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_theora",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L649",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_theora",
+      "target": "ffmpeg_vcpkg_theora_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L650",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_theora",
+      "target": "ffmpeg_vcpkg_theora_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L651",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_theora_dependencies",
+      "target": "ref_libtheora",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L651",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_vaapi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L655",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vaapi",
+      "target": "ffmpeg_vcpkg_vaapi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L656",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vaapi",
+      "target": "ffmpeg_vcpkg_vaapi_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L657",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vaapi",
+      "target": "ffmpeg_vcpkg_vaapi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L658",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_version3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L666",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_version3",
+      "target": "ffmpeg_vcpkg_version3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L667",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_vorbis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L669",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vorbis",
+      "target": "ffmpeg_vcpkg_vorbis_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L670",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vorbis",
+      "target": "ffmpeg_vcpkg_vorbis_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L671",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_vorbis_dependencies",
+      "target": "ref_libvorbis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L671",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_vpx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L675",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vpx",
+      "target": "ffmpeg_vcpkg_vpx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L676",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vpx",
+      "target": "ffmpeg_vcpkg_vpx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L677",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_vpx_dependencies",
+      "target": "ref_libvpx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L677",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L688",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vulkan",
+      "target": "ffmpeg_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L689",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_vulkan",
+      "target": "ffmpeg_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L690",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L690",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L694",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_webp",
+      "target": "ffmpeg_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L695",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_webp",
+      "target": "ffmpeg_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L696",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_x264",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L700",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_x264",
+      "target": "ffmpeg_vcpkg_x264_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L701",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_x264",
+      "target": "ffmpeg_vcpkg_x264_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L702",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_x264_dependencies",
+      "target": "ref_x264",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L702",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_x265",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L713",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_x265",
+      "target": "ffmpeg_vcpkg_x265_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L714",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_x265",
+      "target": "ffmpeg_vcpkg_x265_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L715",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_x265_dependencies",
+      "target": "ref_x265",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L715",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_xml2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L726",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_xml2",
+      "target": "ffmpeg_vcpkg_xml2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L727",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_xml2",
+      "target": "ffmpeg_vcpkg_xml2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L728",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_xml2_dependencies",
+      "target": "ref_libxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L728",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L732",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_zlib",
+      "target": "ffmpeg_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L733",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_zlib",
+      "target": "ffmpeg_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L734",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L734",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ffmpeg_vcpkg_features",
+      "target": "ffmpeg_vcpkg_features_zmq",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L738",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_zmq",
+      "target": "ffmpeg_vcpkg_zmq_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L739",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_features_zmq",
+      "target": "ffmpeg_vcpkg_zmq_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L740",
+      "weight": 1.0
+    },
+    {
+      "source": "ffmpeg_vcpkg_zmq_dependencies",
+      "target": "ref_zeromq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ffmpeg/vcpkg.json",
+      "source_location": "L740",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

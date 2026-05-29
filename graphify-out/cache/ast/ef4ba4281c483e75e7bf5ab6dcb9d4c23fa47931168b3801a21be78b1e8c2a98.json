@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_flash_runtime_extensions_json",
+      "label": "flash-runtime-extensions.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flash-runtime-extensions.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_flash_runtime_extensions_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flash-runtime-extensions.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_flash_runtime_extensions_json",
+      "target": "f_flash_runtime_extensions_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flash-runtime-extensions.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

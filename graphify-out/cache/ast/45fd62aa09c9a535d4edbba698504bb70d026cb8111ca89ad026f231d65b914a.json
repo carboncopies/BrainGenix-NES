@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libu2f_server_u2f_server_version_h",
+      "label": "u2f-server-version.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libu2f-server/u2f-server-version.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

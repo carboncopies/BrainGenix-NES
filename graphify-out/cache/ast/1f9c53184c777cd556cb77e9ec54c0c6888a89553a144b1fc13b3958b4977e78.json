@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libredwg_json",
+      "label": "libredwg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libredwg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libredwg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libredwg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libredwg_json",
+      "target": "l_libredwg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libredwg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

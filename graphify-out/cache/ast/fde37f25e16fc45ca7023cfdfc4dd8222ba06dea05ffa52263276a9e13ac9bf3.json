@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cuda_json",
+      "label": "cuda.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cuda.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cuda_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cuda.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cuda_json",
+      "target": "c_cuda_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cuda.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

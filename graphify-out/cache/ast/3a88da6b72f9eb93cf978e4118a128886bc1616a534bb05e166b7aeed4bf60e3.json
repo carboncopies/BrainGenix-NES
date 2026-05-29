@@ -1,0 +1,885 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mathgl_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mathgl_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mathgl_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mathgl_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mathgl_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mathgl_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mathgl_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mathgl_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "mathgl_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "mathgl_vcpkg_features_arma",
+      "label": "arma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "mathgl_vcpkg_arma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "mathgl_vcpkg_arma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "mathgl_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "mathgl_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "mathgl_vcpkg_features_fltk",
+      "label": "fltk",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "mathgl_vcpkg_fltk_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "mathgl_vcpkg_fltk_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "mathgl_vcpkg_features_gif",
+      "label": "gif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "mathgl_vcpkg_gif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "mathgl_vcpkg_gif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "mathgl_vcpkg_features_glut",
+      "label": "glut",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "mathgl_vcpkg_glut_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "mathgl_vcpkg_glut_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "mathgl_vcpkg_features_gsl",
+      "label": "gsl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "mathgl_vcpkg_gsl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "mathgl_vcpkg_gsl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "mathgl_vcpkg_features_hdf5",
+      "label": "hdf5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "mathgl_vcpkg_hdf5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "mathgl_vcpkg_hdf5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "mathgl_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "mathgl_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "mathgl_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "mathgl_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "mathgl_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "mathgl_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "mathgl_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "mathgl_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "mathgl_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "mathgl_vcpkg_features_qt5",
+      "label": "qt5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "mathgl_vcpkg_qt5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "mathgl_vcpkg_qt5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "mathgl_vcpkg_features_wx",
+      "label": "wx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "mathgl_vcpkg_wx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "mathgl_vcpkg_wx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "mathgl_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "mathgl_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "mathgl_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L132"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_dependencies",
+      "target": "ref_getopt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_default_features",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mathgl_vcpkg_json",
+      "target": "mathgl_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_arma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_arma",
+      "target": "mathgl_vcpkg_arma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_arma",
+      "target": "mathgl_vcpkg_arma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_arma_dependencies",
+      "target": "ref_armadillo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_examples",
+      "target": "mathgl_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_fltk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_fltk",
+      "target": "mathgl_vcpkg_fltk_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_fltk",
+      "target": "mathgl_vcpkg_fltk_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_gif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_gif",
+      "target": "mathgl_vcpkg_gif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_gif",
+      "target": "mathgl_vcpkg_gif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_gif_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_glut",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_glut",
+      "target": "mathgl_vcpkg_glut_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_glut",
+      "target": "mathgl_vcpkg_glut_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_gsl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_gsl",
+      "target": "mathgl_vcpkg_gsl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_gsl",
+      "target": "mathgl_vcpkg_gsl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_gsl_dependencies",
+      "target": "ref_gsl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_hdf5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_hdf5",
+      "target": "mathgl_vcpkg_hdf5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_hdf5",
+      "target": "mathgl_vcpkg_hdf5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_jpeg",
+      "target": "mathgl_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_jpeg",
+      "target": "mathgl_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_opengl",
+      "target": "mathgl_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_opengl",
+      "target": "mathgl_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_opengl_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_png",
+      "target": "mathgl_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_png",
+      "target": "mathgl_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_qt5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_qt5",
+      "target": "mathgl_vcpkg_qt5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_qt5",
+      "target": "mathgl_vcpkg_qt5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_wx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_wx",
+      "target": "mathgl_vcpkg_wx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_wx",
+      "target": "mathgl_vcpkg_wx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features",
+      "target": "mathgl_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_zlib",
+      "target": "mathgl_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_features_zlib",
+      "target": "mathgl_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "mathgl_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mathgl/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

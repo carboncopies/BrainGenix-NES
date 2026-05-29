@@ -1,0 +1,389 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_features_mbedtls",
+      "label": "mbedtls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_mbedtls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_mbedtls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_openssl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_features_sectransp",
+      "label": "sectransp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_sectransp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_sectransp_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_features_ssl",
+      "label": "ssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_ssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "ixwebsocket_vcpkg_ssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_default_features",
+      "target": "ref_ssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ixwebsocket_vcpkg_json",
+      "target": "ixwebsocket_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features",
+      "target": "ixwebsocket_vcpkg_features_mbedtls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_mbedtls",
+      "target": "ixwebsocket_vcpkg_mbedtls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_mbedtls",
+      "target": "ixwebsocket_vcpkg_mbedtls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_mbedtls_dependencies",
+      "target": "ref_mbedtls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features",
+      "target": "ixwebsocket_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_openssl",
+      "target": "ixwebsocket_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_openssl",
+      "target": "ixwebsocket_vcpkg_openssl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_openssl",
+      "target": "ixwebsocket_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features",
+      "target": "ixwebsocket_vcpkg_features_sectransp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_sectransp",
+      "target": "ixwebsocket_vcpkg_sectransp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_sectransp",
+      "target": "ixwebsocket_vcpkg_sectransp_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features",
+      "target": "ixwebsocket_vcpkg_features_ssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_ssl",
+      "target": "ixwebsocket_vcpkg_ssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "ixwebsocket_vcpkg_features_ssl",
+      "target": "ixwebsocket_vcpkg_ssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ixwebsocket/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    }
+  ]
+}

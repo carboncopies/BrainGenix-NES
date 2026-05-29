@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh",
+      "label": "setup-guest.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh__entry",
+      "label": "setup-guest.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "osx_setup_guest_vm_directory",
+      "label": "VM_DIRECTORY",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L2",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    },
+    {
+      "id": "osx_setup_guest_ssh_key",
+      "label": "SSH_KEY",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L3",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    },
+    {
+      "id": "osx_setup_guest_ssh_public_key",
+      "label": "SSH_PUBLIC_KEY",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L4",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh",
+      "target": "osx_setup_guest_vm_directory",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh",
+      "target": "osx_setup_guest_ssh_key",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_guest_sh",
+      "target": "osx_setup_guest_ssh_public_key",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-guest.sh",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ]
+}

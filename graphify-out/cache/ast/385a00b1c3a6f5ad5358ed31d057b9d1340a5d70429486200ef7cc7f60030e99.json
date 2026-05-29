@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_features_double",
+      "label": "double",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "tinyobjloader_vcpkg_double_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyobjloader_vcpkg_json",
+      "target": "tinyobjloader_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyobjloader_vcpkg_features",
+      "target": "tinyobjloader_vcpkg_features_double",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyobjloader_vcpkg_features_double",
+      "target": "tinyobjloader_vcpkg_double_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyobjloader/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ]
+}

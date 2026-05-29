@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_conjure_enum_json",
+      "label": "conjure-enum.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/conjure-enum.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_conjure_enum_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/conjure-enum.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_conjure_enum_json",
+      "target": "c_conjure_enum_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/conjure-enum.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

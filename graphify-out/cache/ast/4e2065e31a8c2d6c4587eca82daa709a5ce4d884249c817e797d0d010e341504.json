@@ -1,0 +1,823 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "label": "prepost_structure.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_prepost_structure_presynaptic_structure",
+      "label": "presynaptic_structure()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "neuron",
+      "label": "neuron",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "segment",
+      "label": "Segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "source_prepost_structure_array_of_terminal_segments",
+      "label": "array_of_terminal_segments()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L92"
+    },
+    {
+      "id": "terminal_segment_ptr",
+      "label": "terminal_segment_ptr",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L92"
+    },
+    {
+      "id": "source_prepost_structure_collect_data",
+      "label": "Collect_Data()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L106"
+    },
+    {
+      "id": "network_statistics_base",
+      "label": "network_statistics_base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L106"
+    },
+    {
+      "id": "source_prepost_structure_postsynaptic_structure",
+      "label": "postsynaptic_structure()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_prepost_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_axon_direction_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_neuron_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_command_line_parameters_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_presynaptic_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_presynaptic_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_presynaptic_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_presynaptic_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_presynaptic_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_array_of_terminal_segments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_array_of_terminal_segments",
+      "target": "terminal_segment_ptr",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L92",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_collect_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_collect_data",
+      "target": "network_statistics_base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L106",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_postsynaptic_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_postsynaptic_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_postsynaptic_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_postsynaptic_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_prepost_structure_postsynaptic_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L116",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_array_of_terminal_segments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L146",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_array_of_terminal_segments",
+      "target": "terminal_segment_ptr",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L146",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_prepost_structure_cc",
+      "target": "source_prepost_structure_collect_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "source_prepost_structure_collect_data",
+      "target": "network_statistics_base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L160",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "Cached_Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "Regions",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "N",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "N",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_branch_angle_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_ERI_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_elongation_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_TSBM_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_TSTM_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "set_direction_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "source_prepost_structure_presynaptic_structure",
+      "callee": "initialize",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "Next",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "Cached_Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "find",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "Regions",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "N",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "N",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_branch_angle_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_ERI_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_elongation_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_TSBM_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_TSTM_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "set_direction_model",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "source_prepost_structure_postsynaptic_structure",
+      "callee": "initialize",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "Next",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_prepost_structure_array_of_terminal_segments",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L161"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L161"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L163"
+    },
+    {
+      "caller_nid": "source_prepost_structure_collect_data",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/prepost_structure.cc",
+      "source_location": "L163"
+    }
+  ]
+}

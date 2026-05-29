@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boost_regex_json",
+      "label": "boost-regex.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-regex.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boost_regex_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-regex.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boost_regex_json",
+      "target": "b_boost_regex_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-regex.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

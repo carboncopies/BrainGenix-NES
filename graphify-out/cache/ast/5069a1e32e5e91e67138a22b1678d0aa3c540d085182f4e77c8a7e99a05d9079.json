@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_google_cloud_cpp_common_json",
+      "label": "google-cloud-cpp-common.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/google-cloud-cpp-common.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_google_cloud_cpp_common_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/google-cloud-cpp-common.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_google_cloud_cpp_common_json",
+      "target": "g_google_cloud_cpp_common_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/google-cloud-cpp-common.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

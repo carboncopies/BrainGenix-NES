@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_signalsmith_dsp_json",
+      "label": "signalsmith-dsp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-dsp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_signalsmith_dsp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-dsp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_signalsmith_dsp_json",
+      "target": "s_signalsmith_dsp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/signalsmith-dsp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

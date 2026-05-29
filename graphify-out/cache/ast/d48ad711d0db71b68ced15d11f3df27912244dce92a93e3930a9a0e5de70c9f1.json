@@ -1,0 +1,333 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x264_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "x264_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "x264_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "x264_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "x264_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "x264_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "x264_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "x264_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "x264_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "x264_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "x264_vcpkg_features_asm",
+      "label": "asm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "x264_vcpkg_asm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "x264_vcpkg_asm_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "x264_vcpkg_features_chroma_format_all",
+      "label": "chroma-format-all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "x264_vcpkg_chroma_format_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "x264_vcpkg_features_gpl",
+      "label": "gpl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "x264_vcpkg_gpl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "x264_vcpkg_features_tool",
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "x264_vcpkg_tool_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "x264_vcpkg_tool_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_x264_vcpkg_json",
+      "target": "x264_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features",
+      "target": "x264_vcpkg_features_asm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_asm",
+      "target": "x264_vcpkg_asm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_asm",
+      "target": "x264_vcpkg_asm_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features",
+      "target": "x264_vcpkg_features_chroma_format_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_chroma_format_all",
+      "target": "x264_vcpkg_chroma_format_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features",
+      "target": "x264_vcpkg_features_gpl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_gpl",
+      "target": "x264_vcpkg_gpl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features",
+      "target": "x264_vcpkg_features_tool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_tool",
+      "target": "x264_vcpkg_tool_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "x264_vcpkg_features_tool",
+      "target": "x264_vcpkg_tool_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/x264/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    }
+  ]
+}

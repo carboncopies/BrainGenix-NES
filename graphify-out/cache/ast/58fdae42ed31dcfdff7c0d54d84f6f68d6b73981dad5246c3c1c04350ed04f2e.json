@@ -1,0 +1,100 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_vector_h",
+      "label": "vector.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_vector_vector",
+      "label": "Vector()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L22"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_h",
+      "target": "thirdparty_netmorphcmake_source_common_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector_h",
+      "target": "source_vector_vector",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector_vector",
+      "target": "class",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "return_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "source_vector_vector",
+      "callee": "Point",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/vector.h",
+      "source_location": "L33"
+    }
+  ]
+}

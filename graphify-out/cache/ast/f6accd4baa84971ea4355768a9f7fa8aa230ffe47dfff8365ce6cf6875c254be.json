@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gtk3_json",
+      "label": "gtk3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtk3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gtk3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtk3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gtk3_json",
+      "target": "g_gtk3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtk3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

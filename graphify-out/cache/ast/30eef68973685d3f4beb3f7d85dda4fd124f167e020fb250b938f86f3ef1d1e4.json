@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_scottt_debugbreak_json",
+      "label": "scottt-debugbreak.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scottt-debugbreak.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_scottt_debugbreak_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scottt-debugbreak.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_scottt_debugbreak_json",
+      "target": "s_scottt_debugbreak_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scottt-debugbreak.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

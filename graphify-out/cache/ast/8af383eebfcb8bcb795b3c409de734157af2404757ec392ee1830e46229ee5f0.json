@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_readme_nes_md",
+      "label": "README-NES.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-NES.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_readme_nes_using_netmorph_as_an_embedded_component_of_nes",
+      "label": "Using Netmorph as an embedded component of NES",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-NES.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_readme_nes_md",
+      "target": "source_readme_nes_using_netmorph_as_an_embedded_component_of_nes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README-NES.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

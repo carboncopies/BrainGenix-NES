@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_raylib_cpp_json",
+      "label": "raylib-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_raylib_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_raylib_cpp_json",
+      "target": "r_raylib_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

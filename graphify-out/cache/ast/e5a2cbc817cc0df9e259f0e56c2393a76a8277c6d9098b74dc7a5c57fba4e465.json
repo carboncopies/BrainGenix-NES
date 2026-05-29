@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libosdp_json",
+      "label": "libosdp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libosdp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libosdp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libosdp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libosdp_json",
+      "target": "l_libosdp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libosdp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

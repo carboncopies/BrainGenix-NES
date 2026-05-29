@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_triton_json",
+      "label": "triton.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/triton.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_triton_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/triton.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_triton_json",
+      "target": "t_triton_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/triton.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

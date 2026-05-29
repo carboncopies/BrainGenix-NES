@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_steam_audio_json",
+      "label": "steam-audio.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/steam-audio.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_steam_audio_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/steam-audio.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_steam_audio_json",
+      "target": "s_steam_audio_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/steam-audio.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

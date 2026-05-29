@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_pe_parse_json",
+      "label": "pe-parse.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pe-parse.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_pe_parse_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pe-parse.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_pe_parse_json",
+      "target": "p_pe_parse_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pe-parse.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

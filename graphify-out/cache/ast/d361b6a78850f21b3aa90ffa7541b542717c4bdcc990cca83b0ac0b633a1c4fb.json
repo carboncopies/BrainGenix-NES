@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libvhdi_json",
+      "label": "libvhdi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libvhdi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libvhdi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libvhdi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libvhdi_json",
+      "target": "l_libvhdi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libvhdi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

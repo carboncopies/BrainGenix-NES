@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qttools_json",
+      "label": "qttools.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttools.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qttools_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttools.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qttools_json",
+      "target": "q_qttools_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttools.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

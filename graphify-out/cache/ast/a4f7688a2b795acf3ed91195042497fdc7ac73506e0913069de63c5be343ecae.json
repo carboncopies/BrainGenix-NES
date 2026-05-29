@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_spdk_isal_json",
+      "label": "spdk-isal.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk-isal.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_spdk_isal_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk-isal.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_spdk_isal_json",
+      "target": "s_spdk_isal_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk-isal.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

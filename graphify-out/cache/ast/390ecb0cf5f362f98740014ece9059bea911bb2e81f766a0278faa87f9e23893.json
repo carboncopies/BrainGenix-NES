@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cgltf_json",
+      "label": "cgltf.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cgltf.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cgltf_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cgltf.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cgltf_json",
+      "target": "c_cgltf_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cgltf.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

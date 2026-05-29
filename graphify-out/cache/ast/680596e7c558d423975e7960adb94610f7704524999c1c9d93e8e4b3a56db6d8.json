@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_aws_sdk_cpp_generatefeatures_ps1",
+      "label": "generateFeatures.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/generateFeatures.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "aws_sdk_cpp_generatefeatures_getdescription",
+      "label": "GetDescription()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/generateFeatures.ps1",
+      "source_location": "L35"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_generatefeatures_ps1",
+      "target": "aws_sdk_cpp_generatefeatures_getdescription",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/generateFeatures.ps1",
+      "source_location": "L35",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "aws_sdk_cpp_generatefeatures_getdescription",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/generateFeatures.ps1",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "aws_sdk_cpp_generatefeatures_getdescription",
+      "callee": "Select-String",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/generateFeatures.ps1",
+      "source_location": "L39"
+    }
+  ]
+}

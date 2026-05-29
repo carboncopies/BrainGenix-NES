@@ -1,0 +1,93 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "scope_guard_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "scope_guard_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "scope_guard_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "scope_guard_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "scope_guard_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "target": "scope_guard_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "target": "scope_guard_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "target": "scope_guard_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "target": "scope_guard_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_scope_guard_vcpkg_json",
+      "target": "scope_guard_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/scope-guard/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ]
+}

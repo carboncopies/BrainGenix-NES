@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_y_yoga_json",
+      "label": "yoga.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoga.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "y_yoga_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoga.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_y_yoga_json",
+      "target": "y_yoga_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yoga.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

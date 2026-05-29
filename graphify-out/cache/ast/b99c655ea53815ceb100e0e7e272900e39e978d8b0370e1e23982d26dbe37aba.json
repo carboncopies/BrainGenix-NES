@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_via_httplib_json",
+      "label": "via-httplib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/via-httplib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_via_httplib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/via-httplib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_via_httplib_json",
+      "target": "v_via_httplib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/via-httplib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

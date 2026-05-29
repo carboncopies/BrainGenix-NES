@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "label": "point.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometry_point_point",
+      "label": "Point()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L21"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L21"
+    },
+    {
+      "id": "geometry_point_dim",
+      "label": "dim()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L55"
+    },
+    {
+      "id": "geometry_point_clerr",
+      "label": "clerr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L118"
+    },
+    {
+      "id": "geometry_point_geterr",
+      "label": "geterr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L119"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "target": "thirdparty_netmorphcmake_source_geometry_common_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "target": "geometry_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_point",
+      "target": "class",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "target": "geometry_point_dim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "target": "geometry_point_clerr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "target": "geometry_point_geterr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.h",
+      "source_location": "L119",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

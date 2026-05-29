@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_point_h",
+      "label": "point.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_point_point",
+      "label": "Point()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L22"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L22"
+    },
+    {
+      "id": "source_point_dim",
+      "label": "dim()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L56"
+    },
+    {
+      "id": "source_point_clerr",
+      "label": "clerr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L119"
+    },
+    {
+      "id": "source_point_geterr",
+      "label": "geterr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L120"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_point_h",
+      "target": "thirdparty_netmorphcmake_source_common_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_point_h",
+      "target": "source_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_point_point",
+      "target": "class",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_point_h",
+      "target": "source_point_dim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_point_h",
+      "target": "source_point_clerr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_point_h",
+      "target": "source_point_geterr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/point.h",
+      "source_location": "L120",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

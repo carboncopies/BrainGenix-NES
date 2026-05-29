@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_orocos_kdl_json",
+      "label": "orocos-kdl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orocos-kdl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_orocos_kdl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orocos-kdl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_orocos_kdl_json",
+      "target": "o_orocos_kdl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orocos-kdl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

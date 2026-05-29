@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_stillwater_universal_json",
+      "label": "stillwater-universal.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/stillwater-universal.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_stillwater_universal_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/stillwater-universal.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_stillwater_universal_json",
+      "target": "s_stillwater_universal_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/stillwater-universal.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

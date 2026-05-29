@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_atomic_queue_json",
+      "label": "atomic-queue.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atomic-queue.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_atomic_queue_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atomic-queue.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_atomic_queue_json",
+      "target": "a_atomic_queue_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atomic-queue.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

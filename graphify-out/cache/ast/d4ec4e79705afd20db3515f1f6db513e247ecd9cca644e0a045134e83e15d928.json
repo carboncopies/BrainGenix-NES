@@ -1,0 +1,309 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_features_tool",
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_tool_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "azure_kinect_sensor_sdk_vcpkg_tool_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L35"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_azure_c_shared_utility",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_azure_kinect_depth_engine",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_cjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_ebml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_libsoundio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_libusb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_libyuv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_matroska",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_kinect_sensor_sdk_vcpkg_json",
+      "target": "azure_kinect_sensor_sdk_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_features",
+      "target": "azure_kinect_sensor_sdk_vcpkg_features_tool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_features_tool",
+      "target": "azure_kinect_sensor_sdk_vcpkg_tool_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_features_tool",
+      "target": "azure_kinect_sensor_sdk_vcpkg_tool_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_tool_dependencies",
+      "target": "ref_gl3w",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_kinect_sensor_sdk_vcpkg_tool_dependencies",
+      "target": "ref_glfw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-kinect-sensor-sdk/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_docs_users_manifests_md",
+      "label": "manifests.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/manifests.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_manifests_manifests",
+      "label": "Manifests",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/manifests.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_docs_users_manifests_md",
+      "target": "users_manifests_manifests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/docs/users/manifests.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

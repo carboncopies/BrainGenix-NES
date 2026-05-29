@@ -1,0 +1,485 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "directxtk12_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "directxtk12_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "directxtk12_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "directxtk12_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "directxtk12_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "directxtk12_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "directxtk12_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "directxtk12_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "directxtk12_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "directxtk12_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_gameinput",
+      "label": "gameinput",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "directxtk12_vcpkg_gameinput_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "directxtk12_vcpkg_gameinput_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "directxtk12_vcpkg_gameinput_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_spectre",
+      "label": "spectre",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "directxtk12_vcpkg_spectre_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "directxtk12_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "directxtk12_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_xaudio2_9",
+      "label": "xaudio2-9",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "directxtk12_vcpkg_xaudio2_9_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_xaudio2redist",
+      "label": "xaudio2redist",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "directxtk12_vcpkg_xaudio2redist_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "directxtk12_vcpkg_xaudio2redist_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "directxtk12_vcpkg_features_xinput",
+      "label": "xinput",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "directxtk12_vcpkg_xinput_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "directxtk12_vcpkg_xinput_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L62"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_dependencies",
+      "target": "ref_directxmath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_default_features",
+      "target": "ref_xaudio2_9",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtk12_vcpkg_json",
+      "target": "directxtk12_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_gameinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_gameinput",
+      "target": "directxtk12_vcpkg_gameinput_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_gameinput",
+      "target": "directxtk12_vcpkg_gameinput_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_gameinput",
+      "target": "directxtk12_vcpkg_gameinput_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_gameinput_dependencies",
+      "target": "ref_gameinput",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_spectre",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_spectre",
+      "target": "directxtk12_vcpkg_spectre_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_tools",
+      "target": "directxtk12_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_tools",
+      "target": "directxtk12_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_xaudio2_9",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_xaudio2_9",
+      "target": "directxtk12_vcpkg_xaudio2_9_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_xaudio2redist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_xaudio2redist",
+      "target": "directxtk12_vcpkg_xaudio2redist_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_xaudio2redist",
+      "target": "directxtk12_vcpkg_xaudio2redist_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_xaudio2redist_dependencies",
+      "target": "ref_xaudio2redist",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "directxtk12_vcpkg_features",
+      "target": "directxtk12_vcpkg_features_xinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_xinput",
+      "target": "directxtk12_vcpkg_xinput_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtk12_vcpkg_features_xinput",
+      "target": "directxtk12_vcpkg_xinput_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtk12/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    }
+  ]
+}

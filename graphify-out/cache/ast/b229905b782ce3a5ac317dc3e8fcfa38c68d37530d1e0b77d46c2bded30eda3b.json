@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_daw_utf_range_json",
+      "label": "daw-utf-range.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daw-utf-range.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_daw_utf_range_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daw-utf-range.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_daw_utf_range_json",
+      "target": "d_daw_utf_range_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daw-utf-range.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

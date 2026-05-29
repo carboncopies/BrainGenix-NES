@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libscran_umappp_json",
+      "label": "libscran-umappp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libscran-umappp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libscran_umappp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libscran-umappp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libscran_umappp_json",
+      "target": "l_libscran_umappp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libscran-umappp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

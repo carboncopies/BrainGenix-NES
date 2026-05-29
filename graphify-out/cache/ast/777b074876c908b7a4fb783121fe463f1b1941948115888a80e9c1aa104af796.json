@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kf6i18n_json",
+      "label": "kf6i18n.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6i18n.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kf6i18n_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6i18n.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kf6i18n_json",
+      "target": "k_kf6i18n_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6i18n.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

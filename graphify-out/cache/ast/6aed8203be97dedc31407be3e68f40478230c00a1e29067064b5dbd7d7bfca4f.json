@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tobias_loew_flags_json",
+      "label": "tobias-loew-flags.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tobias-loew-flags.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tobias_loew_flags_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tobias-loew-flags.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tobias_loew_flags_json",
+      "target": "t_tobias_loew_flags_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tobias-loew-flags.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

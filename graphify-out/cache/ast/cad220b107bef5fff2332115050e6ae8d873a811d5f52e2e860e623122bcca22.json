@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bond_json",
+      "label": "bond.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bond.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bond_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bond.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bond_json",
+      "target": "b_bond_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bond.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

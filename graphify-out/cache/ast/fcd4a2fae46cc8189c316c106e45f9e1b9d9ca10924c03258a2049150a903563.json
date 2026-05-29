@@ -1,0 +1,487 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtwebengine_vcpkg_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtwebengine_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtwebengine_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtwebengine_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtwebengine_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtwebengine_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtwebengine_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "qtwebengine_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_geolocation",
+      "label": "geolocation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "qtwebengine_vcpkg_geolocation_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "qtwebengine_vcpkg_geolocation_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_pdf",
+      "label": "pdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "qtwebengine_vcpkg_pdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "qtwebengine_vcpkg_pdf_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "qtwebengine_vcpkg_pdf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_proprietary_codecs",
+      "label": "proprietary-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L171"
+    },
+    {
+      "id": "qtwebengine_vcpkg_proprietary_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L172"
+    },
+    {
+      "id": "qtwebengine_vcpkg_proprietary_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L173"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_spellchecker",
+      "label": "spellchecker",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "qtwebengine_vcpkg_spellchecker_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "qtwebengine_vcpkg_spellchecker_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L185"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_webchannel",
+      "label": "webchannel",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L195"
+    },
+    {
+      "id": "qtwebengine_vcpkg_webchannel_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L196"
+    },
+    {
+      "id": "qtwebengine_vcpkg_webchannel_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L197"
+    },
+    {
+      "id": "qtwebengine_vcpkg_features_webengine",
+      "label": "webengine",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L214"
+    },
+    {
+      "id": "qtwebengine_vcpkg_webengine_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L215"
+    },
+    {
+      "id": "qtwebengine_vcpkg_webengine_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L216"
+    },
+    {
+      "id": "qtwebengine_vcpkg_webengine_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L217"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtwebengine_vcpkg_json",
+      "target": "qtwebengine_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_geolocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_geolocation",
+      "target": "qtwebengine_vcpkg_geolocation_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_geolocation",
+      "target": "qtwebengine_vcpkg_geolocation_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_pdf",
+      "target": "qtwebengine_vcpkg_pdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_pdf",
+      "target": "qtwebengine_vcpkg_pdf_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_pdf",
+      "target": "qtwebengine_vcpkg_pdf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_pdf_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_proprietary_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_proprietary_codecs",
+      "target": "qtwebengine_vcpkg_proprietary_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_proprietary_codecs",
+      "target": "qtwebengine_vcpkg_proprietary_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_spellchecker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_spellchecker",
+      "target": "qtwebengine_vcpkg_spellchecker_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_spellchecker",
+      "target": "qtwebengine_vcpkg_spellchecker_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_webchannel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_webchannel",
+      "target": "qtwebengine_vcpkg_webchannel_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_webchannel",
+      "target": "qtwebengine_vcpkg_webchannel_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features",
+      "target": "qtwebengine_vcpkg_features_webengine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_webengine",
+      "target": "qtwebengine_vcpkg_webengine_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_webengine",
+      "target": "qtwebengine_vcpkg_webengine_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "qtwebengine_vcpkg_features_webengine",
+      "target": "qtwebengine_vcpkg_webengine_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtwebengine/vcpkg.json",
+      "source_location": "L217",
+      "weight": 1.0
+    }
+  ]
+}

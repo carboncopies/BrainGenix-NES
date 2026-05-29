@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libffi_json",
+      "label": "libffi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libffi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libffi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libffi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libffi_json",
+      "target": "l_libffi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libffi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

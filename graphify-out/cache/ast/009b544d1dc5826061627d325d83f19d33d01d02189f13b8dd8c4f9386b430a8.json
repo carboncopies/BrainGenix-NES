@@ -1,0 +1,405 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f3d_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "f3d_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "f3d_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "f3d_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "f3d_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "f3d_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "f3d_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "f3d_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "f3d_vcpkg_features_alembic",
+      "label": "alembic",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "f3d_vcpkg_alembic_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "f3d_vcpkg_alembic_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "f3d_vcpkg_features_application",
+      "label": "application",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "f3d_vcpkg_application_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "f3d_vcpkg_features_assimp",
+      "label": "assimp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "f3d_vcpkg_assimp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "f3d_vcpkg_assimp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "f3d_vcpkg_features_draco",
+      "label": "draco",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "f3d_vcpkg_draco_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "f3d_vcpkg_draco_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "f3d_vcpkg_features_exr",
+      "label": "exr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "f3d_vcpkg_exr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "f3d_vcpkg_exr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_f3d_vcpkg_json",
+      "target": "f3d_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features",
+      "target": "f3d_vcpkg_features_alembic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_alembic",
+      "target": "f3d_vcpkg_alembic_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_alembic",
+      "target": "f3d_vcpkg_alembic_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_alembic_dependencies",
+      "target": "ref_alembic",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "f3d_vcpkg_features",
+      "target": "f3d_vcpkg_features_application",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_application",
+      "target": "f3d_vcpkg_application_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features",
+      "target": "f3d_vcpkg_features_assimp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_assimp",
+      "target": "f3d_vcpkg_assimp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_assimp",
+      "target": "f3d_vcpkg_assimp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_assimp_dependencies",
+      "target": "ref_assimp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "f3d_vcpkg_features",
+      "target": "f3d_vcpkg_features_draco",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_draco",
+      "target": "f3d_vcpkg_draco_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_draco",
+      "target": "f3d_vcpkg_draco_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_draco_dependencies",
+      "target": "ref_draco",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "f3d_vcpkg_features",
+      "target": "f3d_vcpkg_features_exr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_exr",
+      "target": "f3d_vcpkg_exr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_features_exr",
+      "target": "f3d_vcpkg_exr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "f3d_vcpkg_exr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/f3d/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

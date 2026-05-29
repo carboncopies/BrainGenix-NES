@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_orange_vmprotect_sdk_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_orange_vmprotect_sdk_project_main_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_orange_vmprotect_sdk_project_main_cpp",
+      "target": "vmprotectsdk",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_orange_vmprotect_sdk_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "VMProtectBeginVirtualization",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L5"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "VMProtectEnd",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-orange-vmprotect-sdk/project/main.cpp",
+      "source_location": "L12"
+    }
+  ]
+}

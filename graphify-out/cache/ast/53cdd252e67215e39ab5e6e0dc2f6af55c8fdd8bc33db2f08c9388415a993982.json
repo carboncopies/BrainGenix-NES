@@ -1,0 +1,641 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tiff_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tiff_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tiff_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tiff_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tiff_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tiff_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tiff_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "tiff_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "tiff_vcpkg_features_cxx",
+      "label": "cxx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "tiff_vcpkg_cxx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "tiff_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "tiff_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "tiff_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "tiff_vcpkg_features_lerc",
+      "label": "lerc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "tiff_vcpkg_lerc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "tiff_vcpkg_lerc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "tiff_vcpkg_features_libdeflate",
+      "label": "libdeflate",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "tiff_vcpkg_libdeflate_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "tiff_vcpkg_libdeflate_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "tiff_vcpkg_features_lzma",
+      "label": "lzma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "tiff_vcpkg_lzma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "tiff_vcpkg_lzma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "tiff_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "tiff_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "tiff_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "tiff_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "tiff_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "tiff_vcpkg_features_zip",
+      "label": "zip",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "tiff_vcpkg_zip_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "tiff_vcpkg_zip_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "tiff_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "tiff_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "tiff_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L81"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_default_features",
+      "target": "ref_lzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_default_features",
+      "target": "ref_zip",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiff_vcpkg_json",
+      "target": "tiff_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_cxx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_cxx",
+      "target": "tiff_vcpkg_cxx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_jpeg",
+      "target": "tiff_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_jpeg",
+      "target": "tiff_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_lerc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_lerc",
+      "target": "tiff_vcpkg_lerc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_lerc",
+      "target": "tiff_vcpkg_lerc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_lerc_dependencies",
+      "target": "ref_lerc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_libdeflate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_libdeflate",
+      "target": "tiff_vcpkg_libdeflate_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_libdeflate",
+      "target": "tiff_vcpkg_libdeflate_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_libdeflate_dependencies",
+      "target": "ref_libdeflate",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_lzma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_lzma",
+      "target": "tiff_vcpkg_lzma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_lzma",
+      "target": "tiff_vcpkg_lzma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_lzma_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_tools",
+      "target": "tiff_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_webp",
+      "target": "tiff_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_webp",
+      "target": "tiff_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_zip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_zip",
+      "target": "tiff_vcpkg_zip_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_zip",
+      "target": "tiff_vcpkg_zip_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_zip_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiff_vcpkg_features",
+      "target": "tiff_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_zstd",
+      "target": "tiff_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_features_zstd",
+      "target": "tiff_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "tiff_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiff/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

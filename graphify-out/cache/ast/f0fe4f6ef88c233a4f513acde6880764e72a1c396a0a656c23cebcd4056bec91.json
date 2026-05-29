@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_freeimage_freeimageconfig_static_h",
+      "label": "FreeImageConfig-static.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freeimage/FreeImageConfig-static.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

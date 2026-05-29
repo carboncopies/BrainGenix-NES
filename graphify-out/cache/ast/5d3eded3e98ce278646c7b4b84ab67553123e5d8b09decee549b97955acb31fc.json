@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_blosc_json",
+      "label": "blosc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blosc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_blosc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blosc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_blosc_json",
+      "target": "b_blosc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blosc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

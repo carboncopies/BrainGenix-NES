@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_h",
+      "label": "gettimeofday.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_h",
+      "target": "winsock2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.h",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_h",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.h",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

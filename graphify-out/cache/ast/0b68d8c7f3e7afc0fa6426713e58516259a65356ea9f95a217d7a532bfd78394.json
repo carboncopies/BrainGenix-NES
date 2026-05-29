@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_python3_project_main_c",
+      "label": "main.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_python3_project_main_c",
+      "target": "python",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_python3_project_main_c",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "PyConfig_InitPythonConfig",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "PyConfig_SetString",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "Py_InitializeFromConfig",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "PyStatus_Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "PyConfig_Clear",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "Py_ExitStatusException",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "Py_FinalizeEx",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "PyConfig_Clear",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-python3/project/main.c",
+      "source_location": "L17"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libnoise_json",
+      "label": "libnoise.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnoise.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libnoise_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnoise.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libnoise_json",
+      "target": "l_libnoise_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libnoise.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_voro_json",
+      "label": "voro.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/voro.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_voro_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/voro.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_voro_json",
+      "target": "v_voro_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/voro.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

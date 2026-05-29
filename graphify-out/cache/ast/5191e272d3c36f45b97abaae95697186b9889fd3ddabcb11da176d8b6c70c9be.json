@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_healpix_json",
+      "label": "healpix.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/healpix.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_healpix_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/healpix.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_healpix_json",
+      "target": "h_healpix_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/healpix.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

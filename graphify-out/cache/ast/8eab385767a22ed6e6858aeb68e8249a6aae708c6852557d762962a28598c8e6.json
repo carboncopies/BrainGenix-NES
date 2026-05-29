@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hdr_histogram_json",
+      "label": "hdr-histogram.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdr-histogram.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hdr_histogram_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdr-histogram.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hdr_histogram_json",
+      "target": "h_hdr_histogram_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hdr-histogram.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

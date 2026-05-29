@@ -1,0 +1,243 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "label": "IFactivity.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_ifactivity_event",
+      "label": "event()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "thirdparty_netmorphcmake_source_ifactivity_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "thirdparty_netmorphcmake_source_neuron_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "thirdparty_netmorphcmake_source_connection_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "thirdparty_netmorphcmake_source_sampled_output_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "source_ifactivity_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "source_ifactivity_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_ifactivity_cc",
+      "target": "source_ifactivity_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L73",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "spike",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "has_abstracted_connections",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "OutputConnections",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Abstract_PropDelay",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "OutputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "psp",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "PreSynaptic",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "PostSynaptic",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Average_Radius",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "source_ifactivity_event",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/IFactivity.cc",
+      "source_location": "L85"
+    }
+  ]
+}

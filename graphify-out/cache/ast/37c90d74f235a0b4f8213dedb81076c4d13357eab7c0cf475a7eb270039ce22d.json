@@ -1,0 +1,617 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "lief_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "lief_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "lief_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "lief_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "lief_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "lief_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "lief_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "lief_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "lief_vcpkg_features_art",
+      "label": "art",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "lief_vcpkg_art_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "lief_vcpkg_features_c_api",
+      "label": "c-api",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "lief_vcpkg_c_api_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "lief_vcpkg_features_dex",
+      "label": "dex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "lief_vcpkg_dex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "lief_vcpkg_features_enable_json",
+      "label": "enable-json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "lief_vcpkg_enable_json_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "lief_vcpkg_enable_json_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "lief_vcpkg_features_extra_warnings",
+      "label": "extra-warnings",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "lief_vcpkg_extra_warnings_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "lief_vcpkg_features_logging",
+      "label": "logging",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "lief_vcpkg_logging_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "lief_vcpkg_features_logging_debug",
+      "label": "logging-debug",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "lief_vcpkg_logging_debug_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "lief_vcpkg_features_oat",
+      "label": "oat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "lief_vcpkg_oat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "lief_vcpkg_features_use_ccache",
+      "label": "use-ccache",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "lief_vcpkg_use_ccache_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "lief_vcpkg_features_vdex",
+      "label": "vdex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "lief_vcpkg_vdex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L64"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_frozen",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_mbedtls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_tcb_span",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_tl_expected",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_dependencies",
+      "target": "ref_utfcpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_art",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_dex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_enable_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_logging",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_oat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_default_features",
+      "target": "ref_vdex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_lief_vcpkg_json",
+      "target": "lief_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_art",
+      "target": "lief_vcpkg_art_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_c_api",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_c_api",
+      "target": "lief_vcpkg_c_api_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_dex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_dex",
+      "target": "lief_vcpkg_dex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_enable_json",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_enable_json",
+      "target": "lief_vcpkg_enable_json_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_enable_json",
+      "target": "lief_vcpkg_enable_json_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_enable_json_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_extra_warnings",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_extra_warnings",
+      "target": "lief_vcpkg_extra_warnings_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_logging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_logging",
+      "target": "lief_vcpkg_logging_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_logging_debug",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_logging_debug",
+      "target": "lief_vcpkg_logging_debug_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_oat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_oat",
+      "target": "lief_vcpkg_oat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_use_ccache",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_use_ccache",
+      "target": "lief_vcpkg_use_ccache_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features",
+      "target": "lief_vcpkg_features_vdex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "lief_vcpkg_features_vdex",
+      "target": "lief_vcpkg_vdex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/lief/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    }
+  ]
+}

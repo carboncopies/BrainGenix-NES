@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_jinja2cpplight_json",
+      "label": "jinja2cpplight.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jinja2cpplight.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_jinja2cpplight_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jinja2cpplight.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_jinja2cpplight_json",
+      "target": "j_jinja2cpplight_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jinja2cpplight.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_osg_json",
+      "label": "osg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_osg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_osg_json",
+      "target": "o_osg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/osg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

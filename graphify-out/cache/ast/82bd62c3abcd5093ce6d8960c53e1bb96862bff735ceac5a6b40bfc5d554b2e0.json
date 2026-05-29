@@ -1,0 +1,183 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ada_idna_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ada_idna_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ada_idna_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ada_idna_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ada_idna_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ada_idna_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ada_idna_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "ada_idna_vcpkg_features_simdutf",
+      "label": "simdutf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "ada_idna_vcpkg_simdutf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "ada_idna_vcpkg_simdutf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ada_idna_vcpkg_json",
+      "target": "ada_idna_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "ada_idna_vcpkg_features",
+      "target": "ada_idna_vcpkg_features_simdutf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "ada_idna_vcpkg_features_simdutf",
+      "target": "ada_idna_vcpkg_simdutf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "ada_idna_vcpkg_features_simdutf",
+      "target": "ada_idna_vcpkg_simdutf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "ada_idna_vcpkg_simdutf_dependencies",
+      "target": "ref_simdutf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ada-idna/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

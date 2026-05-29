@@ -1,0 +1,551 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "symengine_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "symengine_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "symengine_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "symengine_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "symengine_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "symengine_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "symengine_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "symengine_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "symengine_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "symengine_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "symengine_vcpkg_features_arb",
+      "label": "arb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "symengine_vcpkg_arb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "symengine_vcpkg_arb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "symengine_vcpkg_features_flint",
+      "label": "flint",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "symengine_vcpkg_flint_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "symengine_vcpkg_flint_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "symengine_vcpkg_features_integer_class_flint",
+      "label": "integer-class-flint",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "symengine_vcpkg_integer_class_flint_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "symengine_vcpkg_integer_class_flint_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "symengine_vcpkg_features_llvm",
+      "label": "llvm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "symengine_vcpkg_llvm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "symengine_vcpkg_llvm_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "symengine_vcpkg_features_mpfr",
+      "label": "mpfr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "symengine_vcpkg_mpfr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "symengine_vcpkg_mpfr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "symengine_vcpkg_features_tcmalloc",
+      "label": "tcmalloc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "symengine_vcpkg_tcmalloc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "symengine_vcpkg_tcmalloc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L74"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_dependencies",
+      "target": "ref_boost_math",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_dependencies",
+      "target": "ref_boost_random",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_default_features",
+      "target": "ref_arb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_default_features",
+      "target": "ref_llvm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_default_features",
+      "target": "ref_mpfr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_symengine_vcpkg_json",
+      "target": "symengine_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_arb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_arb",
+      "target": "symengine_vcpkg_arb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_arb",
+      "target": "symengine_vcpkg_arb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_flint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_flint",
+      "target": "symengine_vcpkg_flint_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_flint",
+      "target": "symengine_vcpkg_flint_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_flint_dependencies",
+      "target": "ref_flint",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_integer_class_flint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_integer_class_flint",
+      "target": "symengine_vcpkg_integer_class_flint_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_integer_class_flint",
+      "target": "symengine_vcpkg_integer_class_flint_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_integer_class_flint_dependencies",
+      "target": "ref_flint",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_llvm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_llvm",
+      "target": "symengine_vcpkg_llvm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_llvm",
+      "target": "symengine_vcpkg_llvm_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_mpfr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_mpfr",
+      "target": "symengine_vcpkg_mpfr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_mpfr",
+      "target": "symengine_vcpkg_mpfr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_mpfr_dependencies",
+      "target": "ref_mpfr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "symengine_vcpkg_features",
+      "target": "symengine_vcpkg_features_tcmalloc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_tcmalloc",
+      "target": "symengine_vcpkg_tcmalloc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_features_tcmalloc",
+      "target": "symengine_vcpkg_tcmalloc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "symengine_vcpkg_tcmalloc_dependencies",
+      "target": "ref_gperftools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/symengine/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

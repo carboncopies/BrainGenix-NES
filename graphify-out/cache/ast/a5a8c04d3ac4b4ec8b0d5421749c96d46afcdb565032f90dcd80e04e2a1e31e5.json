@@ -1,0 +1,769 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libheif_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libheif_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libheif_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libheif_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libheif_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libheif_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libheif_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libheif_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libheif_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libheif_vcpkg_features_aom",
+      "label": "aom",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libheif_vcpkg_aom_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libheif_vcpkg_aom_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "libheif_vcpkg_aom_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libheif_vcpkg_features_gdk_pixbuf",
+      "label": "gdk-pixbuf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "libheif_vcpkg_gdk_pixbuf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "libheif_vcpkg_gdk_pixbuf_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libheif_vcpkg_gdk_pixbuf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libheif_vcpkg_features_h264_decoder",
+      "label": "h264-decoder",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "libheif_vcpkg_h264_decoder_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libheif_vcpkg_h264_decoder_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libheif_vcpkg_h264_decoder_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libheif_vcpkg_features_hevc",
+      "label": "hevc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libheif_vcpkg_hevc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libheif_vcpkg_hevc_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libheif_vcpkg_hevc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "libheif_vcpkg_features_iso23001_17",
+      "label": "iso23001-17",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libheif_vcpkg_iso23001_17_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "libheif_vcpkg_iso23001_17_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "libheif_vcpkg_iso23001_17_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "libheif_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "libheif_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "libheif_vcpkg_jpeg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "libheif_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "libheif_vcpkg_features_openjpeg",
+      "label": "openjpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "libheif_vcpkg_openjpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "libheif_vcpkg_openjpeg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "libheif_vcpkg_openjpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "libheif_vcpkg_features_x264",
+      "label": "x264",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "libheif_vcpkg_x264_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "libheif_vcpkg_x264_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "libheif_vcpkg_x264_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L75"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_dependencies",
+      "target": "ref_libde265",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_default_features",
+      "target": "ref_hevc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libheif_vcpkg_json",
+      "target": "libheif_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_aom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_aom",
+      "target": "libheif_vcpkg_aom_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_aom",
+      "target": "libheif_vcpkg_aom_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_aom",
+      "target": "libheif_vcpkg_aom_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_aom_dependencies",
+      "target": "ref_aom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_gdk_pixbuf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_gdk_pixbuf",
+      "target": "libheif_vcpkg_gdk_pixbuf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_gdk_pixbuf",
+      "target": "libheif_vcpkg_gdk_pixbuf_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_gdk_pixbuf",
+      "target": "libheif_vcpkg_gdk_pixbuf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_gdk_pixbuf_dependencies",
+      "target": "ref_gdk_pixbuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_h264_decoder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_h264_decoder",
+      "target": "libheif_vcpkg_h264_decoder_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_h264_decoder",
+      "target": "libheif_vcpkg_h264_decoder_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_h264_decoder",
+      "target": "libheif_vcpkg_h264_decoder_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_h264_decoder_dependencies",
+      "target": "ref_openh264",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_hevc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_hevc",
+      "target": "libheif_vcpkg_hevc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_hevc",
+      "target": "libheif_vcpkg_hevc_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_hevc",
+      "target": "libheif_vcpkg_hevc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_hevc_dependencies",
+      "target": "ref_x265",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_iso23001_17",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_iso23001_17",
+      "target": "libheif_vcpkg_iso23001_17_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_iso23001_17",
+      "target": "libheif_vcpkg_iso23001_17_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_iso23001_17",
+      "target": "libheif_vcpkg_iso23001_17_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_iso23001_17_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_jpeg",
+      "target": "libheif_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_jpeg",
+      "target": "libheif_vcpkg_jpeg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_jpeg",
+      "target": "libheif_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_openjpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_openjpeg",
+      "target": "libheif_vcpkg_openjpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_openjpeg",
+      "target": "libheif_vcpkg_openjpeg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_openjpeg",
+      "target": "libheif_vcpkg_openjpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_openjpeg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libheif_vcpkg_features",
+      "target": "libheif_vcpkg_features_x264",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_x264",
+      "target": "libheif_vcpkg_x264_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_x264",
+      "target": "libheif_vcpkg_x264_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_features_x264",
+      "target": "libheif_vcpkg_x264_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "libheif_vcpkg_x264_dependencies",
+      "target": "ref_x264",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libheif/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

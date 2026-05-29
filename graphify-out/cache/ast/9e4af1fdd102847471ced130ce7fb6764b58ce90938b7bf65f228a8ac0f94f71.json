@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libb2_json",
+      "label": "libb2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libb2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libb2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libb2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libb2_json",
+      "target": "l_libb2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libb2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libsoundio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libsoundio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libsoundio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libsoundio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libsoundio_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libsoundio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libsoundio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libsoundio_vcpkg_features_alsa",
+      "label": "alsa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libsoundio_vcpkg_alsa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libsoundio_vcpkg_features_jack",
+      "label": "jack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libsoundio_vcpkg_jack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libsoundio_vcpkg_jack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libsoundio_vcpkg_features_pulseaudio",
+      "label": "pulseaudio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libsoundio_vcpkg_pulseaudio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsoundio_vcpkg_json",
+      "target": "libsoundio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features",
+      "target": "libsoundio_vcpkg_features_alsa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features_alsa",
+      "target": "libsoundio_vcpkg_alsa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features",
+      "target": "libsoundio_vcpkg_features_jack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features_jack",
+      "target": "libsoundio_vcpkg_jack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features_jack",
+      "target": "libsoundio_vcpkg_jack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_jack_dependencies",
+      "target": "ref_jack2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsoundio_vcpkg_features",
+      "target": "libsoundio_vcpkg_features_pulseaudio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libsoundio_vcpkg_features_pulseaudio",
+      "target": "libsoundio_vcpkg_pulseaudio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsoundio/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ]
+}

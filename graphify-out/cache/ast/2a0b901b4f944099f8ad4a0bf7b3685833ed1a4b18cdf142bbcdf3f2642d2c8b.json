@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gul14_json",
+      "label": "gul14.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul14.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gul14_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul14.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gul14_json",
+      "target": "g_gul14_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul14.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

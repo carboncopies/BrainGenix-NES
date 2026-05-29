@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_box_sh",
+      "label": "setup-box.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-box.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_box_sh__entry",
+      "label": "setup-box.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-box.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_box_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_osx_setup_box_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/setup-box.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

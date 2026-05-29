@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_bootstrap_from_source_sh",
+      "label": "bootstrap-from-source.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/bootstrap-from-source.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_bootstrap_from_source_sh__entry",
+      "label": "bootstrap-from-source.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/bootstrap-from-source.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_bootstrap_from_source_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_bootstrap_from_source_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/bootstrap-from-source.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

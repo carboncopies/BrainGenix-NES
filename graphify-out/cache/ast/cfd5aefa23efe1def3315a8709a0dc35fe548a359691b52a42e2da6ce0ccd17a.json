@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh",
+      "label": "register-guest.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh__entry",
+      "label": "register-guest.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "osx_register_guest_agent",
+      "label": "AGENT",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L10",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    },
+    {
+      "id": "osx_register_guest_pool",
+      "label": "POOL",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L12",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    },
+    {
+      "id": "osx_register_guest_ssh_cookie",
+      "label": "SSH_COOKIE",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L14",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh",
+      "target": "osx_register_guest_agent",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh",
+      "target": "osx_register_guest_pool",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_osx_register_guest_sh",
+      "target": "osx_register_guest_ssh_cookie",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/osx/register-guest.sh",
+      "source_location": "L14",
+      "weight": 1.0
+    }
+  ]
+}

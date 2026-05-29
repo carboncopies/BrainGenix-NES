@@ -1,0 +1,343 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "boost_asio_vcpkg_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "boost_asio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "boost_asio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "boost_asio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "boost_asio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "boost_asio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "boost_asio_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "boost_asio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "boost_asio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "boost_asio_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "boost_asio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "boost_asio_vcpkg_features_deadline_timer",
+      "label": "deadline-timer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "boost_asio_vcpkg_deadline_timer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "boost_asio_vcpkg_deadline_timer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "boost_asio_vcpkg_features_spawn",
+      "label": "spawn",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "boost_asio_vcpkg_spawn_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "boost_asio_vcpkg_spawn_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "boost_asio_vcpkg_features_ssl",
+      "label": "ssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "boost_asio_vcpkg_ssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "boost_asio_vcpkg_ssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L69"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_default_features",
+      "target": "ref_deadline_timer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_asio_vcpkg_json",
+      "target": "boost_asio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features",
+      "target": "boost_asio_vcpkg_features_deadline_timer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_deadline_timer",
+      "target": "boost_asio_vcpkg_deadline_timer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_deadline_timer",
+      "target": "boost_asio_vcpkg_deadline_timer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features",
+      "target": "boost_asio_vcpkg_features_spawn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_spawn",
+      "target": "boost_asio_vcpkg_spawn_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_spawn",
+      "target": "boost_asio_vcpkg_spawn_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features",
+      "target": "boost_asio_vcpkg_features_ssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_ssl",
+      "target": "boost_asio_vcpkg_ssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_asio_vcpkg_features_ssl",
+      "target": "boost_asio_vcpkg_ssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-asio/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    }
+  ]
+}

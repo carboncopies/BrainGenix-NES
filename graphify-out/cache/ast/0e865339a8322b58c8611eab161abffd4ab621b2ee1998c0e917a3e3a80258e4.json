@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_micro_gl_json",
+      "label": "micro-gl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/micro-gl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_micro_gl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/micro-gl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_micro_gl_json",
+      "target": "m_micro_gl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/micro-gl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

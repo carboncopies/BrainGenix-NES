@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_update_vcpkg_tool_metadata_ps1",
+      "label": "update-vcpkg-tool-metadata.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update-vcpkg-tool-metadata.ps1",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

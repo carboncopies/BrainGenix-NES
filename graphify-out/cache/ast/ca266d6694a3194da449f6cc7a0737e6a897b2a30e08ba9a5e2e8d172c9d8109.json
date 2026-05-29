@@ -1,0 +1,289 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "darknet_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "darknet_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "darknet_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "darknet_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "darknet_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "darknet_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "darknet_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "darknet_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "darknet_vcpkg_features_cuda",
+      "label": "cuda",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "darknet_vcpkg_cuda_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "darknet_vcpkg_cuda_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "darknet_vcpkg_features_cudnn",
+      "label": "cudnn",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "darknet_vcpkg_cudnn_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "darknet_vcpkg_cudnn_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "darknet_vcpkg_features_openmp",
+      "label": "openmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "darknet_vcpkg_openmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L49"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_darknet_vcpkg_json",
+      "target": "darknet_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features",
+      "target": "darknet_vcpkg_features_cuda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features_cuda",
+      "target": "darknet_vcpkg_cuda_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features_cuda",
+      "target": "darknet_vcpkg_cuda_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_cuda_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "darknet_vcpkg_features",
+      "target": "darknet_vcpkg_features_cudnn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features_cudnn",
+      "target": "darknet_vcpkg_cudnn_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features_cudnn",
+      "target": "darknet_vcpkg_cudnn_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_cudnn_dependencies",
+      "target": "ref_cudnn",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "darknet_vcpkg_features",
+      "target": "darknet_vcpkg_features_openmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "darknet_vcpkg_features_openmp",
+      "target": "darknet_vcpkg_openmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/darknet/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    }
+  ]
+}

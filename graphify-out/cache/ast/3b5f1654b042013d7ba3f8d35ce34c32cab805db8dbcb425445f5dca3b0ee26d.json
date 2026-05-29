@@ -1,0 +1,263 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libaribcaption_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libaribcaption_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libaribcaption_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libaribcaption_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libaribcaption_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libaribcaption_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libaribcaption_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libaribcaption_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libaribcaption_vcpkg_features_gdi",
+      "label": "gdi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libaribcaption_vcpkg_gdi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libaribcaption_vcpkg_gdi_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libaribcaption_vcpkg_gdi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libaribcaption_vcpkg_features_renderer",
+      "label": "renderer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libaribcaption_vcpkg_renderer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libaribcaption_vcpkg_renderer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_default_features",
+      "target": "ref_renderer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libaribcaption_vcpkg_json",
+      "target": "libaribcaption_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features",
+      "target": "libaribcaption_vcpkg_features_gdi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features_gdi",
+      "target": "libaribcaption_vcpkg_gdi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features_gdi",
+      "target": "libaribcaption_vcpkg_gdi_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features_gdi",
+      "target": "libaribcaption_vcpkg_gdi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features",
+      "target": "libaribcaption_vcpkg_features_renderer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features_renderer",
+      "target": "libaribcaption_vcpkg_renderer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libaribcaption_vcpkg_features_renderer",
+      "target": "libaribcaption_vcpkg_renderer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libaribcaption/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_podofo_project_main_cxx",
+      "label": "main.cxx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_podofo_project_main_cxx",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_podofo_project_main_cxx",
+      "target": "podofo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_podofo_project_main_cxx",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "SearchFont",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "GetFonts",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "GetCount",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "GetPages",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "GetPageAt",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "GetPages",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "CreateField<PoDoFo::PdfSignature>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "Rect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-podofo/project/main.cxx",
+      "source_location": "L11"
+    }
+  ]
+}

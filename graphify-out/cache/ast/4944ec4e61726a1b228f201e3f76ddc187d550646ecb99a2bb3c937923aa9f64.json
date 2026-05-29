@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_zeroc_ice_change_to_mt_ps1",
+      "label": "change_to_mt.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/change_to_mt.ps1",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

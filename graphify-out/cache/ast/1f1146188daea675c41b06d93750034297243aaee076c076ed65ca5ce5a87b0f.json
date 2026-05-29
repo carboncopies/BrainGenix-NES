@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gdal_json",
+      "label": "gdal.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gdal.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gdal_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gdal.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gdal_json",
+      "target": "g_gdal_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gdal.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

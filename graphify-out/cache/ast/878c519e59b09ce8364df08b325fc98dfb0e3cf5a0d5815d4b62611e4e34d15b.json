@@ -1,0 +1,309 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cmake_user_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cmake_user_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cmake_user_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cmake_user_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cmake_user_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cmake_user_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "cmake_user_vcpkg_features_cmake_3_16",
+      "label": "cmake-3-16",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "cmake_user_vcpkg_cmake_3_16_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "cmake_user_vcpkg_features_cmake_current",
+      "label": "cmake-current",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "cmake_user_vcpkg_cmake_current_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "cmake_user_vcpkg_features_find_package",
+      "label": "find-package",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "cmake_user_vcpkg_find_package_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "cmake_user_vcpkg_find_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "cmake_user_vcpkg_features_pkg_check_modules",
+      "label": "pkg-check-modules",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L178"
+    },
+    {
+      "id": "cmake_user_vcpkg_pkg_check_modules_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L179"
+    },
+    {
+      "id": "cmake_user_vcpkg_pkg_check_modules_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L180"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_default_features",
+      "target": "ref_cmake_current",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cmake_user_vcpkg_default_features",
+      "target": "ref_find_package",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cmake_user_vcpkg_default_features",
+      "target": "ref_pkg_check_modules",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_cmake_user_vcpkg_json",
+      "target": "cmake_user_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features",
+      "target": "cmake_user_vcpkg_features_cmake_3_16",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_cmake_3_16",
+      "target": "cmake_user_vcpkg_cmake_3_16_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features",
+      "target": "cmake_user_vcpkg_features_cmake_current",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_cmake_current",
+      "target": "cmake_user_vcpkg_cmake_current_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features",
+      "target": "cmake_user_vcpkg_features_find_package",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_find_package",
+      "target": "cmake_user_vcpkg_find_package_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_find_package",
+      "target": "cmake_user_vcpkg_find_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features",
+      "target": "cmake_user_vcpkg_features_pkg_check_modules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_pkg_check_modules",
+      "target": "cmake_user_vcpkg_pkg_check_modules_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_features_pkg_check_modules",
+      "target": "cmake_user_vcpkg_pkg_check_modules_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "cmake_user_vcpkg_pkg_check_modules_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/cmake-user/vcpkg.json",
+      "source_location": "L180",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

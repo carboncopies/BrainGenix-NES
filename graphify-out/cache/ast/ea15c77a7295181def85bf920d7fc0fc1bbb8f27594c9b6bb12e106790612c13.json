@@ -1,0 +1,230 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "label": "Netmorph.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "include_netmorph_netmorph",
+      "label": "Netmorph()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L79"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "base",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "command_line_parameters",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "network",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "spatial",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "diagnostic",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "sampled_output",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "txt_object",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "file",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "nibr",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "prepost_structure",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "synapse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "synapse_formation_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "axon_direction_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "environment_physics",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "neurite_diameter_model",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "slice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "event",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "fibre_structure",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "target": "include_netmorph_netmorph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Netmorph.h",
+      "source_location": "L79",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

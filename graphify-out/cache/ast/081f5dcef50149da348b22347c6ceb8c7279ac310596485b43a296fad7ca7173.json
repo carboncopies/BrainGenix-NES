@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qttranslations_json",
+      "label": "qttranslations.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttranslations.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qttranslations_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttranslations.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qttranslations_json",
+      "target": "q_qttranslations_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qttranslations.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

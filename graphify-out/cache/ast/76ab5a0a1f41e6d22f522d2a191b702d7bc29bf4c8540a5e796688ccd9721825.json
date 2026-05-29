@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_x_x_plane_json",
+      "label": "x-plane.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x-plane.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x_x_plane_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x-plane.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_x_x_plane_json",
+      "target": "x_x_plane_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/x-/x-plane.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

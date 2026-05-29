@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libodb_boost_config_h",
+      "label": "config.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libodb-boost/config.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

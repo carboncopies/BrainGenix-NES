@@ -1,0 +1,189 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_features_lib_cl_win_legacy_await",
+      "label": "lib-cl-win-legacy-await",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "rsasynccpp_vcpkg_lib_cl_win_legacy_await_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rsasynccpp_vcpkg_json",
+      "target": "rsasynccpp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "rsasynccpp_vcpkg_features",
+      "target": "rsasynccpp_vcpkg_features_lib_cl_win_legacy_await",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "rsasynccpp_vcpkg_features_lib_cl_win_legacy_await",
+      "target": "rsasynccpp_vcpkg_lib_cl_win_legacy_await_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rsasynccpp/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ]
+}

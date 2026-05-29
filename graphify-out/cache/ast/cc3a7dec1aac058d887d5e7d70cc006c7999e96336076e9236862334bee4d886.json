@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_u_utfcpp_json",
+      "label": "utfcpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/utfcpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "u_utfcpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/utfcpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_u_utfcpp_json",
+      "target": "u_utfcpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/u-/utfcpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

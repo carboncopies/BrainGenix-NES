@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fdlibm_json",
+      "label": "fdlibm.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdlibm.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fdlibm_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdlibm.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fdlibm_json",
+      "target": "f_fdlibm_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fdlibm.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

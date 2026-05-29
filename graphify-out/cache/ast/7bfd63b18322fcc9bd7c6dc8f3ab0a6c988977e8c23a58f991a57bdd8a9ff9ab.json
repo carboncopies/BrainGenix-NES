@@ -1,0 +1,367 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "realsense2_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "realsense2_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "realsense2_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "realsense2_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "realsense2_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "realsense2_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "realsense2_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "realsense2_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "realsense2_vcpkg_features_openni2",
+      "label": "openni2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "realsense2_vcpkg_openni2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "realsense2_vcpkg_openni2_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "realsense2_vcpkg_openni2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "realsense2_vcpkg_features_rs_usb_backend",
+      "label": "rs-usb-backend",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "realsense2_vcpkg_rs_usb_backend_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "realsense2_vcpkg_rs_usb_backend_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "realsense2_vcpkg_rs_usb_backend_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "realsense2_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "realsense2_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "realsense2_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "realsense2_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "realsense2_vcpkg_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_realsense2_vcpkg_json",
+      "target": "realsense2_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features",
+      "target": "realsense2_vcpkg_features_openni2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_openni2",
+      "target": "realsense2_vcpkg_openni2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_openni2",
+      "target": "realsense2_vcpkg_openni2_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_openni2",
+      "target": "realsense2_vcpkg_openni2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_openni2_dependencies",
+      "target": "ref_openni2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "realsense2_vcpkg_features",
+      "target": "realsense2_vcpkg_features_rs_usb_backend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_rs_usb_backend",
+      "target": "realsense2_vcpkg_rs_usb_backend_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_rs_usb_backend",
+      "target": "realsense2_vcpkg_rs_usb_backend_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_rs_usb_backend",
+      "target": "realsense2_vcpkg_rs_usb_backend_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_rs_usb_backend_dependencies",
+      "target": "ref_libusb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "realsense2_vcpkg_features",
+      "target": "realsense2_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_tools",
+      "target": "realsense2_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "realsense2_vcpkg_features_tools",
+      "target": "realsense2_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/realsense2/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    }
+  ]
+}

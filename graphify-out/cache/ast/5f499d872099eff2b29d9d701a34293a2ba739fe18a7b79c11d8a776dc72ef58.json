@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hareflow_json",
+      "label": "hareflow.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hareflow.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hareflow_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hareflow.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hareflow_json",
+      "target": "h_hareflow_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hareflow.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

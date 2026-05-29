@@ -1,0 +1,257 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libcoro_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libcoro_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libcoro_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libcoro_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libcoro_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libcoro_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libcoro_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "libcoro_vcpkg_features_networking",
+      "label": "networking",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "libcoro_vcpkg_networking_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "libcoro_vcpkg_networking_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libcoro_vcpkg_networking_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libcoro_vcpkg_features_tls",
+      "label": "tls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libcoro_vcpkg_tls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libcoro_vcpkg_tls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoro_vcpkg_json",
+      "target": "libcoro_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features",
+      "target": "libcoro_vcpkg_features_networking",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features_networking",
+      "target": "libcoro_vcpkg_networking_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features_networking",
+      "target": "libcoro_vcpkg_networking_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features_networking",
+      "target": "libcoro_vcpkg_networking_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_networking_dependencies",
+      "target": "ref_c_ares",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libcoro_vcpkg_features",
+      "target": "libcoro_vcpkg_features_tls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features_tls",
+      "target": "libcoro_vcpkg_tls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_features_tls",
+      "target": "libcoro_vcpkg_tls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoro_vcpkg_tls_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoro/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

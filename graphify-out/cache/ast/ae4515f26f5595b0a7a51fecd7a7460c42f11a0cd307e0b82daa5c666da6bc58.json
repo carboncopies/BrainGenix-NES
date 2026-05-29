@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_e_eljonny_testcpp_json",
+      "label": "eljonny-testcpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/eljonny-testcpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "e_eljonny_testcpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/eljonny-testcpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_e_eljonny_testcpp_json",
+      "target": "e_eljonny_testcpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/e-/eljonny-testcpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

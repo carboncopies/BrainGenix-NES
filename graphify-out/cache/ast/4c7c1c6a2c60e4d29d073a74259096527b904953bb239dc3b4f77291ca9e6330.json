@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "hwloc_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "hwloc_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "hwloc_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "hwloc_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "hwloc_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "hwloc_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "hwloc_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "hwloc_vcpkg_description",
+      "target": "ref_portable_hardware_locality_hwloc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hwloc_vcpkg_description",
+      "target": "ref_the_portable_hardware_locality_hwloc_software_package_provides_a_portable_abstraction_across_os_versions_architectures_of_the_hierarchical_topology_of_modern_architectures_including_numa_memory_nodes_sockets_shared_caches_cores_and_simultaneous_multithreading_it_also_gathers_various_system_attributes_such_as_cache_and_memory_information_as_well_as_the_locality_of_i_o_devices_such_as_network_interfaces_infiniband_hcas_or_gpus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hwloc_vcpkg_json",
+      "target": "hwloc_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hwloc/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ]
+}

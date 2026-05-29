@@ -1,0 +1,436 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "label": "Vector3D.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_vector3d_operator",
+      "label": "operator-()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L15"
+    },
+    {
+      "id": "vector3d",
+      "label": "Vector3D",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L15"
+    },
+    {
+      "id": "source_vector3d_normalize",
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L111"
+    },
+    {
+      "id": "source_vector3d_sum",
+      "label": "sum()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L120"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "thirdparty_netmorphcmake_source_point3d_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "thirdparty_netmorphcmake_source_vector3d_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L70",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L70",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_operator",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_normalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_sum",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L120",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_sum",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L120",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_vector3d_cc",
+      "target": "source_vector3d_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "source_vector3d_sum",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_vector3d_sum",
+      "target": "vector3d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_vector3d_normalize",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Vector3D.cc",
+      "source_location": "L112"
+    }
+  ]
+}

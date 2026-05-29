@@ -1,0 +1,409 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "polyhook2_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "polyhook2_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "polyhook2_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "polyhook2_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "polyhook2_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "polyhook2_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "polyhook2_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "polyhook2_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "polyhook2_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "polyhook2_vcpkg_features_detours",
+      "label": "detours",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "polyhook2_vcpkg_detours_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "polyhook2_vcpkg_detours_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "polyhook2_vcpkg_features_exception",
+      "label": "exception",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "polyhook2_vcpkg_exception_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "polyhook2_vcpkg_features_inlinentd",
+      "label": "inlinentd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "polyhook2_vcpkg_inlinentd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "polyhook2_vcpkg_inlinentd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "polyhook2_vcpkg_features_pe",
+      "label": "pe",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "polyhook2_vcpkg_pe_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "polyhook2_vcpkg_features_virtuals",
+      "label": "virtuals",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "polyhook2_vcpkg_virtuals_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_dependencies",
+      "target": "ref_zydis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_default_features",
+      "target": "ref_detours",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "polyhook2_vcpkg_default_features",
+      "target": "ref_inlinentd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "polyhook2_vcpkg_default_features",
+      "target": "ref_virtuals",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_polyhook2_vcpkg_json",
+      "target": "polyhook2_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features",
+      "target": "polyhook2_vcpkg_features_detours",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_detours",
+      "target": "polyhook2_vcpkg_detours_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_detours",
+      "target": "polyhook2_vcpkg_detours_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_detours_dependencies",
+      "target": "ref_asmtk",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "polyhook2_vcpkg_features",
+      "target": "polyhook2_vcpkg_features_exception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_exception",
+      "target": "polyhook2_vcpkg_exception_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features",
+      "target": "polyhook2_vcpkg_features_inlinentd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_inlinentd",
+      "target": "polyhook2_vcpkg_inlinentd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_inlinentd",
+      "target": "polyhook2_vcpkg_inlinentd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_inlinentd_dependencies",
+      "target": "ref_asmjit",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "polyhook2_vcpkg_features",
+      "target": "polyhook2_vcpkg_features_pe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_pe",
+      "target": "polyhook2_vcpkg_pe_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features",
+      "target": "polyhook2_vcpkg_features_virtuals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "polyhook2_vcpkg_features_virtuals",
+      "target": "polyhook2_vcpkg_virtuals_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/polyhook2/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ]
+}

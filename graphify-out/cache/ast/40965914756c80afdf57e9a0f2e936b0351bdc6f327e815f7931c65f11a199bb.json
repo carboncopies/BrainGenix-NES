@@ -1,0 +1,241 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "gamedev_framework_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "gamedev_framework_vcpkg_maintainers",
+      "target": "ref_julien_bernard_julien_bernard_univ_fcomte_fr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_maintainers",
+      "target": "ref_arthur_hugeat_hugeat_arthur_gmail_com",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gamedev_framework_vcpkg_json",
+      "target": "gamedev_framework_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_boost_container",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_boost_filesystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_boost_heap",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_pugixml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gamedev_framework_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gamedev-framework/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

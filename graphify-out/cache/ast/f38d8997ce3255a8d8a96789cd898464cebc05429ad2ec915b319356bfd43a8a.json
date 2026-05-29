@@ -1,0 +1,711 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libgit2_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libgit2_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libgit2_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libgit2_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libgit2_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libgit2_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libgit2_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libgit2_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libgit2_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libgit2_vcpkg_features_mbedtls",
+      "label": "mbedtls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "libgit2_vcpkg_mbedtls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libgit2_vcpkg_mbedtls_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libgit2_vcpkg_mbedtls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libgit2_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libgit2_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libgit2_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libgit2_vcpkg_features_pcre",
+      "label": "pcre",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libgit2_vcpkg_pcre_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libgit2_vcpkg_pcre_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libgit2_vcpkg_features_pcre2",
+      "label": "pcre2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libgit2_vcpkg_pcre2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libgit2_vcpkg_pcre2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libgit2_vcpkg_features_sectransp",
+      "label": "sectransp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "libgit2_vcpkg_sectransp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libgit2_vcpkg_sectransp_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "libgit2_vcpkg_features_sha256",
+      "label": "sha256",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "libgit2_vcpkg_sha256_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "libgit2_vcpkg_features_ssh",
+      "label": "ssh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "libgit2_vcpkg_ssh_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "libgit2_vcpkg_ssh_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "libgit2_vcpkg_features_ssl",
+      "label": "ssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "libgit2_vcpkg_ssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "libgit2_vcpkg_ssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "libgit2_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "libgit2_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "libgit2_vcpkg_features_winhttp",
+      "label": "winhttp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "libgit2_vcpkg_winhttp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "libgit2_vcpkg_winhttp_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L97"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_dependencies",
+      "target": "ref_http_parser",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_default_features",
+      "target": "ref_pcre",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_default_features",
+      "target": "ref_ssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libgit2_vcpkg_json",
+      "target": "libgit2_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_mbedtls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_mbedtls",
+      "target": "libgit2_vcpkg_mbedtls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_mbedtls",
+      "target": "libgit2_vcpkg_mbedtls_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_mbedtls",
+      "target": "libgit2_vcpkg_mbedtls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_mbedtls_dependencies",
+      "target": "ref_mbedtls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_openssl",
+      "target": "libgit2_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_openssl",
+      "target": "libgit2_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_pcre",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_pcre",
+      "target": "libgit2_vcpkg_pcre_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_pcre",
+      "target": "libgit2_vcpkg_pcre_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_pcre_dependencies",
+      "target": "ref_pcre",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_pcre2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_pcre2",
+      "target": "libgit2_vcpkg_pcre2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_pcre2",
+      "target": "libgit2_vcpkg_pcre2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_pcre2_dependencies",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_sectransp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_sectransp",
+      "target": "libgit2_vcpkg_sectransp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_sectransp",
+      "target": "libgit2_vcpkg_sectransp_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_sha256",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_sha256",
+      "target": "libgit2_vcpkg_sha256_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_ssh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_ssh",
+      "target": "libgit2_vcpkg_ssh_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_ssh",
+      "target": "libgit2_vcpkg_ssh_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_ssh_dependencies",
+      "target": "ref_libssh2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_ssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_ssl",
+      "target": "libgit2_vcpkg_ssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_ssl",
+      "target": "libgit2_vcpkg_ssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_tools",
+      "target": "libgit2_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features",
+      "target": "libgit2_vcpkg_features_winhttp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_winhttp",
+      "target": "libgit2_vcpkg_winhttp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "libgit2_vcpkg_features_winhttp",
+      "target": "libgit2_vcpkg_winhttp_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libgit2/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    }
+  ]
+}

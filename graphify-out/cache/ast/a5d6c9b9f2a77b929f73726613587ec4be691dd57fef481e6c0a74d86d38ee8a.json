@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_angle_maintainer_notes_md",
+      "label": "maintainer-notes.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/angle/maintainer-notes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "angle_maintainer_notes_the_angle_vcpkg_port",
+      "label": "The ANGLE vcpkg port",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/angle/maintainer-notes.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "angle_maintainer_notes_updating_the_angle_vcpkg_port",
+      "label": "Updating the ANGLE vcpkg port",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/angle/maintainer-notes.md",
+      "source_location": "L13"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_angle_maintainer_notes_md",
+      "target": "angle_maintainer_notes_the_angle_vcpkg_port",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/angle/maintainer-notes.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_maintainer_notes_the_angle_vcpkg_port",
+      "target": "angle_maintainer_notes_updating_the_angle_vcpkg_port",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/angle/maintainer-notes.md",
+      "source_location": "L13",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

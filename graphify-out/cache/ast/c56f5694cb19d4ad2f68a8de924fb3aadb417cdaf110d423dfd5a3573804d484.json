@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_e_enkits_json",
+      "label": "enkits.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/enkits.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "e_enkits_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/enkits.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_e_enkits_json",
+      "target": "e_enkits_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/e-/enkits.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

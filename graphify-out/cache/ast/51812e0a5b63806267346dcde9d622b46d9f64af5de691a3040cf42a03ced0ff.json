@@ -1,0 +1,251 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "flann_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "flann_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "flann_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "flann_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "flann_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "flann_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "flann_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "flann_vcpkg_features_cuda",
+      "label": "cuda",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "flann_vcpkg_cuda_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "flann_vcpkg_cuda_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "flann_vcpkg_features_hdf5",
+      "label": "hdf5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "flann_vcpkg_hdf5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "flann_vcpkg_hdf5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L27"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flann_vcpkg_json",
+      "target": "flann_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_features",
+      "target": "flann_vcpkg_features_cuda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_features_cuda",
+      "target": "flann_vcpkg_cuda_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_features_cuda",
+      "target": "flann_vcpkg_cuda_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_cuda_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flann_vcpkg_features",
+      "target": "flann_vcpkg_features_hdf5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_features_hdf5",
+      "target": "flann_vcpkg_hdf5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_features_hdf5",
+      "target": "flann_vcpkg_hdf5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "flann_vcpkg_hdf5_dependencies",
+      "target": "ref_hdf5",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flann/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

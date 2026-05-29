@@ -1,0 +1,405 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "glib_networking_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "glib_networking_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "glib_networking_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "glib_networking_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "glib_networking_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "glib_networking_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "glib_networking_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "glib_networking_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "glib_networking_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "glib_networking_vcpkg_features_environment_proxy",
+      "label": "environment-proxy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "glib_networking_vcpkg_environment_proxy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "glib_networking_vcpkg_features_gnutls",
+      "label": "gnutls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "glib_networking_vcpkg_gnutls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "glib_networking_vcpkg_gnutls_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "glib_networking_vcpkg_gnutls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "glib_networking_vcpkg_features_libproxy",
+      "label": "libproxy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "glib_networking_vcpkg_libproxy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "glib_networking_vcpkg_libproxy_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "glib_networking_vcpkg_libproxy_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "glib_networking_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "glib_networking_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "glib_networking_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L49"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_networking_vcpkg_json",
+      "target": "glib_networking_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features",
+      "target": "glib_networking_vcpkg_features_environment_proxy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_environment_proxy",
+      "target": "glib_networking_vcpkg_environment_proxy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features",
+      "target": "glib_networking_vcpkg_features_gnutls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_gnutls",
+      "target": "glib_networking_vcpkg_gnutls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_gnutls",
+      "target": "glib_networking_vcpkg_gnutls_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_gnutls",
+      "target": "glib_networking_vcpkg_gnutls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_gnutls_dependencies",
+      "target": "ref_libgnutls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_networking_vcpkg_features",
+      "target": "glib_networking_vcpkg_features_libproxy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_libproxy",
+      "target": "glib_networking_vcpkg_libproxy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_libproxy",
+      "target": "glib_networking_vcpkg_libproxy_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_libproxy",
+      "target": "glib_networking_vcpkg_libproxy_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_libproxy_dependencies",
+      "target": "ref_libproxy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_networking_vcpkg_features",
+      "target": "glib_networking_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_openssl",
+      "target": "glib_networking_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_features_openssl",
+      "target": "glib_networking_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_networking_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib-networking/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

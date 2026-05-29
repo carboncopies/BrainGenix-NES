@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wtl_json",
+      "label": "wtl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wtl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wtl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wtl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wtl_json",
+      "target": "w_wtl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wtl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

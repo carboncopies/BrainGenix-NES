@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_features_hunspell",
+      "label": "hunspell",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_hunspell_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "qtvirtualkeyboard_vcpkg_hunspell_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "qtvirtualkeyboard_vcpkg_default_features",
+      "target": "ref_hunspell",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtvirtualkeyboard_vcpkg_json",
+      "target": "qtvirtualkeyboard_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "qtvirtualkeyboard_vcpkg_features",
+      "target": "qtvirtualkeyboard_vcpkg_features_hunspell",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "qtvirtualkeyboard_vcpkg_features_hunspell",
+      "target": "qtvirtualkeyboard_vcpkg_hunspell_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "qtvirtualkeyboard_vcpkg_features_hunspell",
+      "target": "qtvirtualkeyboard_vcpkg_hunspell_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "qtvirtualkeyboard_vcpkg_hunspell_dependencies",
+      "target": "ref_hunspell",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtvirtualkeyboard/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

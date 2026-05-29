@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_docs_users_binarycaching_md",
+      "label": "binarycaching.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/binarycaching.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_binarycaching_binary_caching",
+      "label": "Binary Caching",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/binarycaching.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_docs_users_binarycaching_md",
+      "target": "users_binarycaching_binary_caching",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/docs/users/binarycaching.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

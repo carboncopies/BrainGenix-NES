@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_botan_json",
+      "label": "botan.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/botan.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_botan_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/botan.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_botan_json",
+      "target": "b_botan_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/botan.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

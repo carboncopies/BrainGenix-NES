@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_seal_json",
+      "label": "seal.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/seal.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_seal_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/seal.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_seal_json",
+      "target": "s_seal_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/seal.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

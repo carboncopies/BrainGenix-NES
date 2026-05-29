@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_duilib_json",
+      "label": "duilib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duilib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_duilib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duilib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_duilib_json",
+      "target": "d_duilib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duilib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

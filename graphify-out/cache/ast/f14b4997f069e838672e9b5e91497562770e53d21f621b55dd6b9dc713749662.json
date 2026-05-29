@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bit7z_json",
+      "label": "bit7z.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bit7z.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bit7z_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bit7z.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bit7z_json",
+      "target": "b_bit7z_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bit7z.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

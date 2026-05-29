@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_faker_cxx_json",
+      "label": "faker-cxx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/faker-cxx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_faker_cxx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/faker-cxx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_faker_cxx_json",
+      "target": "f_faker_cxx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/faker-cxx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

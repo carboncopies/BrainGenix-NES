@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_chartdir_chartdir_h",
+      "label": "chartdir.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/chartdir/chartdir.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_chartdir_chartdir_h",
+      "target": "chartdir",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/chartdir/chartdir.h",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

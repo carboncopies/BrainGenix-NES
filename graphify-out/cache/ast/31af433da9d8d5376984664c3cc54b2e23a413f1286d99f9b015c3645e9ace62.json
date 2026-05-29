@@ -1,0 +1,301 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libva_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libva_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libva_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libva_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libva_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libva_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libva_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libva_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "libva_vcpkg_features_glx",
+      "label": "glx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "libva_vcpkg_glx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libva_vcpkg_glx_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libva_vcpkg_glx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libva_vcpkg_features_wayland",
+      "label": "wayland",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libva_vcpkg_wayland_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libva_vcpkg_wayland_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libva_vcpkg_features_x11",
+      "label": "x11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "libva_vcpkg_x11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libva_vcpkg_x11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libva_vcpkg_json",
+      "target": "libva_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features",
+      "target": "libva_vcpkg_features_glx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_glx",
+      "target": "libva_vcpkg_glx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_glx",
+      "target": "libva_vcpkg_glx_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_glx",
+      "target": "libva_vcpkg_glx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features",
+      "target": "libva_vcpkg_features_wayland",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_wayland",
+      "target": "libva_vcpkg_wayland_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_wayland",
+      "target": "libva_vcpkg_wayland_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features",
+      "target": "libva_vcpkg_features_x11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_x11",
+      "target": "libva_vcpkg_x11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libva_vcpkg_features_x11",
+      "target": "libva_vcpkg_x11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libva/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ]
+}

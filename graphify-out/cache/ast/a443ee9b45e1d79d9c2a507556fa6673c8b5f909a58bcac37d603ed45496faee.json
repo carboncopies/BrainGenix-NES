@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_jbig2dec_json",
+      "label": "jbig2dec.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbig2dec.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_jbig2dec_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbig2dec.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_jbig2dec_json",
+      "target": "j_jbig2dec_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/jbig2dec.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

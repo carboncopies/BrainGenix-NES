@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_flashlight_cpu_json",
+      "label": "flashlight-cpu.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cpu.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_flashlight_cpu_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cpu.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_flashlight_cpu_json",
+      "target": "f_flashlight_cpu_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cpu.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

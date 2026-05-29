@@ -1,0 +1,331 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "uvatlas_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "uvatlas_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "uvatlas_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "uvatlas_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "uvatlas_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "uvatlas_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "uvatlas_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "uvatlas_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "uvatlas_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "uvatlas_vcpkg_features_eigen",
+      "label": "eigen",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "uvatlas_vcpkg_eigen_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "uvatlas_vcpkg_eigen_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "uvatlas_vcpkg_features_spectre",
+      "label": "spectre",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "uvatlas_vcpkg_spectre_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "uvatlas_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "uvatlas_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "uvatlas_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "uvatlas_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L42"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_dependencies",
+      "target": "ref_directxmath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_uvatlas_vcpkg_json",
+      "target": "uvatlas_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features",
+      "target": "uvatlas_vcpkg_features_eigen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_eigen",
+      "target": "uvatlas_vcpkg_eigen_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_eigen",
+      "target": "uvatlas_vcpkg_eigen_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_eigen_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "uvatlas_vcpkg_eigen_dependencies",
+      "target": "ref_spectra",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "uvatlas_vcpkg_features",
+      "target": "uvatlas_vcpkg_features_spectre",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_spectre",
+      "target": "uvatlas_vcpkg_spectre_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features",
+      "target": "uvatlas_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_tools",
+      "target": "uvatlas_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_tools",
+      "target": "uvatlas_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "uvatlas_vcpkg_features_tools",
+      "target": "uvatlas_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/uvatlas/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    }
+  ]
+}

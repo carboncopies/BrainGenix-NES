@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wavelib_json",
+      "label": "wavelib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wavelib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wavelib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wavelib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wavelib_json",
+      "target": "w_wavelib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wavelib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

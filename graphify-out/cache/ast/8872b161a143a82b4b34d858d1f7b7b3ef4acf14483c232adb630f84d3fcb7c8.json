@@ -1,0 +1,200 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "label": "Txt_Object.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_txt_object_txt_header",
+      "label": "Txt_Header()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L32"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L32"
+    },
+    {
+      "id": "source_txt_object_str",
+      "label": "str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L57"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L57"
+    },
+    {
+      "id": "source_txt_object_add_txt_object",
+      "label": "Add_Txt_Object()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L71"
+    },
+    {
+      "id": "txt_object",
+      "label": "Txt_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L71"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "thirdparty_netmorphcmake_source_txt_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "source_txt_object_txt_header",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "source_txt_object_txt_header",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "source_txt_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "source_txt_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_txt_object_cc",
+      "target": "source_txt_object_add_txt_object",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "source_txt_object_add_txt_object",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "gsub",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_txt_object_str",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_txt_object_add_txt_object",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Txt_Object.cc",
+      "source_location": "L73"
+    }
+  ]
+}

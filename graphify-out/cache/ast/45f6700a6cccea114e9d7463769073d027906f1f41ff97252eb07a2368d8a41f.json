@@ -1,0 +1,335 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtimageformats_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtimageformats_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtimageformats_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtimageformats_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtimageformats_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtimageformats_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtimageformats_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "qtimageformats_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "qtimageformats_vcpkg_features_jasper",
+      "label": "jasper",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "qtimageformats_vcpkg_jasper_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "qtimageformats_vcpkg_jasper_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "qtimageformats_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "qtimageformats_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "qtimageformats_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "qtimageformats_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "qtimageformats_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "qtimageformats_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_default_features",
+      "target": "ref_jasper",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtimageformats_vcpkg_default_features",
+      "target": "ref_tiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtimageformats_vcpkg_default_features",
+      "target": "ref_webp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtimageformats_vcpkg_json",
+      "target": "qtimageformats_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features",
+      "target": "qtimageformats_vcpkg_features_jasper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_jasper",
+      "target": "qtimageformats_vcpkg_jasper_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_jasper",
+      "target": "qtimageformats_vcpkg_jasper_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_jasper_dependencies",
+      "target": "ref_jasper",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtimageformats_vcpkg_features",
+      "target": "qtimageformats_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_tiff",
+      "target": "qtimageformats_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_tiff",
+      "target": "qtimageformats_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features",
+      "target": "qtimageformats_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_webp",
+      "target": "qtimageformats_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_features_webp",
+      "target": "qtimageformats_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "qtimageformats_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtimageformats/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_itk_json",
+      "label": "itk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/itk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_itk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/itk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_itk_json",
+      "target": "i_itk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/itk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

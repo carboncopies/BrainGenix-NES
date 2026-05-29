@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_docs_about_privacy_md",
+      "label": "privacy.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/about/privacy.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "about_privacy_privacy",
+      "label": "Privacy",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/about/privacy.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_docs_about_privacy_md",
+      "target": "about_privacy_privacy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/docs/about/privacy.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

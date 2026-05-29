@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sqlcipher_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sqlcipher_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sqlcipher_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sqlcipher_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sqlcipher_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sqlcipher_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sqlcipher_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sqlcipher_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "sqlcipher_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "sqlcipher_vcpkg_features_fts5",
+      "label": "fts5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sqlcipher_vcpkg_fts5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "sqlcipher_vcpkg_features_geopoly",
+      "label": "geopoly",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "sqlcipher_vcpkg_geopoly_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "sqlcipher_vcpkg_features_json1",
+      "label": "json1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "sqlcipher_vcpkg_json1_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "sqlcipher_vcpkg_features_tool",
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sqlcipher_vcpkg_tool_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sqlcipher_vcpkg_dependencies",
+      "target": "ref_tcl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlcipher_vcpkg_json",
+      "target": "sqlcipher_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features",
+      "target": "sqlcipher_vcpkg_features_fts5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features_fts5",
+      "target": "sqlcipher_vcpkg_fts5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features",
+      "target": "sqlcipher_vcpkg_features_geopoly",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features_geopoly",
+      "target": "sqlcipher_vcpkg_geopoly_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features",
+      "target": "sqlcipher_vcpkg_features_json1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features_json1",
+      "target": "sqlcipher_vcpkg_json1_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features",
+      "target": "sqlcipher_vcpkg_features_tool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlcipher_vcpkg_features_tool",
+      "target": "sqlcipher_vcpkg_tool_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlcipher/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ]
+}

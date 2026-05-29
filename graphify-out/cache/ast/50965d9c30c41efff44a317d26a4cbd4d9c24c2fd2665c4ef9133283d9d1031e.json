@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_suitesparse_mongoose_json",
+      "label": "suitesparse-mongoose.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-mongoose.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_suitesparse_mongoose_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-mongoose.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_suitesparse_mongoose_json",
+      "target": "s_suitesparse_mongoose_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-mongoose.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

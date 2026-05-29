@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_e_egl_json",
+      "label": "egl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/egl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "e_egl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/egl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_e_egl_json",
+      "target": "e_egl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/e-/egl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

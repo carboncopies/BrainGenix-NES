@@ -1,0 +1,759 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "dawn_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "dawn_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "dawn_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "dawn_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "dawn_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "dawn_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "dawn_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "dawn_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "dawn_vcpkg_features_d3d11",
+      "label": "d3d11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "dawn_vcpkg_d3d11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "dawn_vcpkg_d3d11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "dawn_vcpkg_d3d11_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "dawn_vcpkg_features_d3d12",
+      "label": "d3d12",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "dawn_vcpkg_d3d12_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "dawn_vcpkg_d3d12_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "dawn_vcpkg_d3d12_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "dawn_vcpkg_features_gl",
+      "label": "gl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "dawn_vcpkg_gl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "dawn_vcpkg_gl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "dawn_vcpkg_gl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "dawn_vcpkg_features_gles",
+      "label": "gles",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "dawn_vcpkg_gles_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "dawn_vcpkg_gles_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "dawn_vcpkg_gles_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "dawn_vcpkg_features_metal",
+      "label": "metal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "dawn_vcpkg_metal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "dawn_vcpkg_metal_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "dawn_vcpkg_features_tint",
+      "label": "tint",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "dawn_vcpkg_tint_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "dawn_vcpkg_tint_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "dawn_vcpkg_tint_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "dawn_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "dawn_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "dawn_vcpkg_vulkan_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "dawn_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "dawn_vcpkg_features_wayland",
+      "label": "wayland",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "dawn_vcpkg_wayland_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L106"
+    },
+    {
+      "id": "dawn_vcpkg_wayland_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "dawn_vcpkg_features_x11",
+      "label": "x11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "dawn_vcpkg_x11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "dawn_vcpkg_x11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L111"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dawn_vcpkg_json",
+      "target": "dawn_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_d3d11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d11",
+      "target": "dawn_vcpkg_d3d11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d11",
+      "target": "dawn_vcpkg_d3d11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d11",
+      "target": "dawn_vcpkg_d3d11_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_d3d11_dependencies",
+      "target": "ref_directx_dxc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_d3d12",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d12",
+      "target": "dawn_vcpkg_d3d12_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d12",
+      "target": "dawn_vcpkg_d3d12_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_d3d12",
+      "target": "dawn_vcpkg_d3d12_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_d3d12_dependencies",
+      "target": "ref_directx_dxc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_gl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gl",
+      "target": "dawn_vcpkg_gl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gl",
+      "target": "dawn_vcpkg_gl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gl",
+      "target": "dawn_vcpkg_gl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_gl_dependencies",
+      "target": "ref_egl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_gl_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_gles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gles",
+      "target": "dawn_vcpkg_gles_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gles",
+      "target": "dawn_vcpkg_gles_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_gles",
+      "target": "dawn_vcpkg_gles_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_gles_dependencies",
+      "target": "ref_egl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_gles_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_metal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_metal",
+      "target": "dawn_vcpkg_metal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_metal",
+      "target": "dawn_vcpkg_metal_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_tint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_tint",
+      "target": "dawn_vcpkg_tint_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_tint",
+      "target": "dawn_vcpkg_tint_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_tint",
+      "target": "dawn_vcpkg_tint_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_tint_dependencies",
+      "target": "ref_glslang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_vulkan",
+      "target": "dawn_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_vulkan",
+      "target": "dawn_vcpkg_vulkan_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_vulkan",
+      "target": "dawn_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_utility_libraries",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_wayland",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_wayland",
+      "target": "dawn_vcpkg_wayland_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_wayland",
+      "target": "dawn_vcpkg_wayland_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features",
+      "target": "dawn_vcpkg_features_x11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_x11",
+      "target": "dawn_vcpkg_x11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "dawn_vcpkg_features_x11",
+      "target": "dawn_vcpkg_x11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dawn/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0
+    }
+  ]
+}

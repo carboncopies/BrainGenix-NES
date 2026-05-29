@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_features_brotli",
+      "label": "brotli",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_brotli_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_brotli_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_features_compression",
+      "label": "compression",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_compression_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "cpprestsdk_vcpkg_compression_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L80"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_description",
+      "target": "ref_c_11_json_rest_and_oauth_library",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cpprestsdk_vcpkg_description",
+      "target": "ref_the_c_rest_sdk_is_a_microsoft_project_for_cloud_based_client_server_communication_in_native_code_using_a_modern_asynchronous_c_api_design_this_project_aims_to_help_c_developers_connect_to_and_interact_with_services",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_default_features",
+      "target": "ref_compression",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cpprestsdk_vcpkg_json",
+      "target": "cpprestsdk_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features",
+      "target": "cpprestsdk_vcpkg_features_brotli",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features_brotli",
+      "target": "cpprestsdk_vcpkg_brotli_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features_brotli",
+      "target": "cpprestsdk_vcpkg_brotli_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_brotli_dependencies",
+      "target": "ref_brotli",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features",
+      "target": "cpprestsdk_vcpkg_features_compression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features_compression",
+      "target": "cpprestsdk_vcpkg_compression_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_features_compression",
+      "target": "cpprestsdk_vcpkg_compression_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "cpprestsdk_vcpkg_compression_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cpprestsdk/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

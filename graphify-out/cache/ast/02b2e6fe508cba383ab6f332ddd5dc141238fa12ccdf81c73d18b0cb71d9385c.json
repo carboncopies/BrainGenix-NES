@@ -1,0 +1,237 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "luajit_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "luajit_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "luajit_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "luajit_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "luajit_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "luajit_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "luajit_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "luajit_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "luajit_vcpkg_features_buildvm_32",
+      "label": "buildvm-32",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "luajit_vcpkg_buildvm_32_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "luajit_vcpkg_buildvm_32_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "luajit_vcpkg_features_buildvm_64",
+      "label": "buildvm-64",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "luajit_vcpkg_buildvm_64_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "luajit_vcpkg_buildvm_64_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_luajit_vcpkg_json",
+      "target": "luajit_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features",
+      "target": "luajit_vcpkg_features_buildvm_32",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features_buildvm_32",
+      "target": "luajit_vcpkg_buildvm_32_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features_buildvm_32",
+      "target": "luajit_vcpkg_buildvm_32_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features",
+      "target": "luajit_vcpkg_features_buildvm_64",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features_buildvm_64",
+      "target": "luajit_vcpkg_buildvm_64_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "luajit_vcpkg_features_buildvm_64",
+      "target": "luajit_vcpkg_buildvm_64_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/luajit/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    }
+  ]
+}

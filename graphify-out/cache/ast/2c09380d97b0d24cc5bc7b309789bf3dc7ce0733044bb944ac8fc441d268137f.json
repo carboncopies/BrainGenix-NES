@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_igraph_arith_win64_h",
+      "label": "arith_win64.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/igraph/arith_win64.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

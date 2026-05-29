@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_github_pull_request_template_md",
+      "label": "pull_request_template.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/.github/pull_request_template.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

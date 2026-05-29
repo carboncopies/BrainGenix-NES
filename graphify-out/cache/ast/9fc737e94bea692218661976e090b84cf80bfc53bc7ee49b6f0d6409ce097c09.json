@@ -1,0 +1,487 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libtcod_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libtcod_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libtcod_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libtcod_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libtcod_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libtcod_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libtcod_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libtcod_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libtcod_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libtcod_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libtcod_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libtcod_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libtcod_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libtcod_vcpkg_features_sdl",
+      "label": "sdl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libtcod_vcpkg_sdl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libtcod_vcpkg_sdl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libtcod_vcpkg_features_threads",
+      "label": "threads",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libtcod_vcpkg_threads_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libtcod_vcpkg_features_unicode",
+      "label": "unicode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libtcod_vcpkg_unicode_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libtcod_vcpkg_unicode_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libtcod_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "libtcod_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "libtcod_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_default_features",
+      "target": "ref_sdl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_default_features",
+      "target": "ref_unicode",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtcod_vcpkg_json",
+      "target": "libtcod_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features",
+      "target": "libtcod_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_png",
+      "target": "libtcod_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_png",
+      "target": "libtcod_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_png_dependencies",
+      "target": "ref_lodepng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_features",
+      "target": "libtcod_vcpkg_features_sdl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_sdl",
+      "target": "libtcod_vcpkg_sdl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_sdl",
+      "target": "libtcod_vcpkg_sdl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_sdl_dependencies",
+      "target": "ref_sdl3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_features",
+      "target": "libtcod_vcpkg_features_threads",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_threads",
+      "target": "libtcod_vcpkg_threads_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features",
+      "target": "libtcod_vcpkg_features_unicode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_unicode",
+      "target": "libtcod_vcpkg_unicode_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_unicode",
+      "target": "libtcod_vcpkg_unicode_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_unicode_dependencies",
+      "target": "ref_utf8proc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtcod_vcpkg_features",
+      "target": "libtcod_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_zlib",
+      "target": "libtcod_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_features_zlib",
+      "target": "libtcod_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "libtcod_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtcod/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

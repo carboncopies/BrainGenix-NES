@@ -1,0 +1,283 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ms_gltf_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ms_gltf_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ms_gltf_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ms_gltf_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ms_gltf_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ms_gltf_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ms_gltf_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "ms_gltf_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "ms_gltf_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "ms_gltf_vcpkg_features_samples",
+      "label": "samples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "ms_gltf_vcpkg_samples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "ms_gltf_vcpkg_samples_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ms_gltf_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ms_gltf_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "ms_gltf_vcpkg_test_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_default_features",
+      "target": "ref_test",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ms_gltf_vcpkg_json",
+      "target": "ms_gltf_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features",
+      "target": "ms_gltf_vcpkg_features_samples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features_samples",
+      "target": "ms_gltf_vcpkg_samples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features_samples",
+      "target": "ms_gltf_vcpkg_samples_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features",
+      "target": "ms_gltf_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features_test",
+      "target": "ms_gltf_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_features_test",
+      "target": "ms_gltf_vcpkg_test_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "ms_gltf_vcpkg_test_dependencies",
+      "target": "ref_gtest",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ms-gltf/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bfgroup_lyra_json",
+      "label": "bfgroup-lyra.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bfgroup-lyra.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bfgroup_lyra_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bfgroup-lyra.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bfgroup_lyra_json",
+      "target": "b_bfgroup_lyra_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bfgroup-lyra.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

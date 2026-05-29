@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gmime_project_main_c",
+      "label": "main.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_verify_callback",
+      "label": "verify_callback()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4"
+    },
+    {
+      "id": "gmimeobject",
+      "label": "GMimeObject",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4"
+    },
+    {
+      "id": "gpointer",
+      "label": "gpointer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gmime_project_main_c",
+      "target": "glib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gmime_project_main_c",
+      "target": "gmime",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gmime_project_main_c",
+      "target": "project_main_verify_callback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_verify_callback",
+      "target": "gmimeobject",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_verify_callback",
+      "target": "gmimeobject",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_verify_callback",
+      "target": "gpointer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gmime_project_main_c",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_verify_callback",
+      "callee": "GMIME_IS_MULTIPART_SIGNED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "project_main_verify_callback",
+      "callee": "g_mime_multipart_signed_verify",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "project_main_verify_callback",
+      "callee": "g_object_unref",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L12"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_mime_init",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_mime_parser_new",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_mime_parser_construct_message",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_mime_message_foreach",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_object_unref",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_object_unref",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gmime/project/main.c",
+      "source_location": "L24"
+    }
+  ]
+}

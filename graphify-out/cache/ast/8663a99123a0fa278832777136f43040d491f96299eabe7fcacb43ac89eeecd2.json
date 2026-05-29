@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mysql_connector_cpp_project_jdbc_cpp",
+      "label": "jdbc.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mysql-connector-cpp/project/jdbc.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_jdbc_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mysql-connector-cpp/project/jdbc.cpp",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mysql_connector_cpp_project_jdbc_cpp",
+      "target": "jdbc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mysql-connector-cpp/project/jdbc.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mysql_connector_cpp_project_jdbc_cpp",
+      "target": "project_jdbc_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mysql-connector-cpp/project/jdbc.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_jdbc_main",
+      "callee": "mysql::get_driver_instance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mysql-connector-cpp/project/jdbc.cpp",
+      "source_location": "L5"
+    }
+  ]
+}

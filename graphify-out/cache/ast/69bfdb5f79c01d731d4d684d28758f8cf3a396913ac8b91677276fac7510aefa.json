@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_binaries_project_transitive_cpp",
+      "label": "transitive.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/transitive.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_transitive_getteststringbackend",
+      "label": "getTestStringBackend()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/transitive.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_binaries_project_transitive_cpp",
+      "target": "project_transitive_getteststringbackend",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/transitive.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

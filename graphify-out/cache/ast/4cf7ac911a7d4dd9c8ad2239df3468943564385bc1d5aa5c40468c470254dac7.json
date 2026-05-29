@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_luminoengine_json",
+      "label": "luminoengine.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luminoengine.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_luminoengine_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luminoengine.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_luminoengine_json",
+      "target": "l_luminoengine_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/luminoengine.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

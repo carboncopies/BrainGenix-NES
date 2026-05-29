@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_decimal_for_cpp_json",
+      "label": "decimal-for-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/decimal-for-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_decimal_for_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/decimal-for-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_decimal_for_cpp_json",
+      "target": "d_decimal_for_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/decimal-for-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

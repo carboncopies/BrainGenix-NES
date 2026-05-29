@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tap_windows6_json",
+      "label": "tap-windows6.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tap-windows6.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tap_windows6_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tap-windows6.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tap_windows6_json",
+      "target": "t_tap_windows6_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tap-windows6.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

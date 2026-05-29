@@ -1,0 +1,155 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "abseil_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "abseil_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "abseil_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "abseil_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "abseil_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "abseil_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "abseil_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "abseil_vcpkg_description",
+      "target": "ref_abseil_is_an_open_source_collection_of_c_library_code_designed_to_augment_the_c_standard_library_the_abseil_library_code_is_collected_from_google_s_own_c_code_base_has_been_extensively_tested_and_used_in_production_and_is_the_same_code_we_depend_on_in_our_daily_coding_lives",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "abseil_vcpkg_description",
+      "target": "ref_in_some_cases_abseil_provides_pieces_missing_from_the_c_standard_in_others_abseil_provides_alternatives_to_the_standard_for_special_needs_we_ve_found_through_usage_in_the_google_code_base_we_denote_those_cases_clearly_within_the_library_code_we_provide_you",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "abseil_vcpkg_description",
+      "target": "ref_abseil_is_not_meant_to_be_a_competitor_to_the_standard_library_we_ve_just_found_that_many_of_these_utilities_serve_a_purpose_within_our_code_base_and_we_now_want_to_provide_those_resources_to_the_c_community_as_a_whole",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_abseil_vcpkg_json",
+      "target": "abseil_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/abseil/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ]
+}

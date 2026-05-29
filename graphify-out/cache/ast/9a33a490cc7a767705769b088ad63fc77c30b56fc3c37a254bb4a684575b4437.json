@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vulkan_tools_json",
+      "label": "vulkan-tools.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vulkan-tools.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vulkan_tools_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vulkan-tools.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vulkan_tools_json",
+      "target": "v_vulkan_tools_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vulkan-tools.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

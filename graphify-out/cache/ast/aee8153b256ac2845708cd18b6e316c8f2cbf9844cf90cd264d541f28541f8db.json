@@ -1,0 +1,186 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_connection_statistics_cc",
+      "label": "Connection_Statistics.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_connection_statistics_str",
+      "label": "str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L30"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L30"
+    },
+    {
+      "id": "source_connection_statistics_all_str",
+      "label": "all_str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "source_connection_statistics_get_connection_statistics",
+      "label": "get_Connection_Statistics()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44"
+    },
+    {
+      "id": "connection_statistics",
+      "label": "Connection_Statistics",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44"
+    },
+    {
+      "id": "neuron_type",
+      "label": "neuron_type",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_connection_statistics_cc",
+      "target": "thirdparty_netmorphcmake_source_connection_statistics_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_connection_statistics_cc",
+      "target": "source_connection_statistics_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_connection_statistics_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_connection_statistics_cc",
+      "target": "source_connection_statistics_all_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_connection_statistics_all_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_connection_statistics_cc",
+      "target": "source_connection_statistics_get_connection_statistics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "source_connection_statistics_get_connection_statistics",
+      "target": "connection_statistics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_connection_statistics_get_connection_statistics",
+      "target": "neuron_type",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_connection_statistics_get_connection_statistics",
+      "target": "neuron_type",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_connection_statistics_all_str",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_connection_statistics_all_str",
+      "callee": "Next",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_connection_statistics_get_connection_statistics",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_connection_statistics_get_connection_statistics",
+      "callee": "head",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_connection_statistics_get_connection_statistics",
+      "callee": "SourceType",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_connection_statistics_get_connection_statistics",
+      "callee": "TargetType",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Connection_Statistics.cc",
+      "source_location": "L48"
+    }
+  ]
+}

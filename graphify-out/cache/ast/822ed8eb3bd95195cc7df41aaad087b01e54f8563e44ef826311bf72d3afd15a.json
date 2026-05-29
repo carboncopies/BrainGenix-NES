@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_foonathan_lexy_json",
+      "label": "foonathan-lexy.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/foonathan-lexy.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_foonathan_lexy_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/foonathan-lexy.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_foonathan_lexy_json",
+      "target": "f_foonathan_lexy_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/foonathan-lexy.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boost_ratio_json",
+      "label": "boost-ratio.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-ratio.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boost_ratio_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-ratio.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boost_ratio_json",
+      "target": "b_boost_ratio_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-ratio.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

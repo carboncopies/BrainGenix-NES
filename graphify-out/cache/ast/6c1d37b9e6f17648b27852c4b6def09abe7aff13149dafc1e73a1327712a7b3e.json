@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_examples_nesvbp_run_attraction_sh",
+      "label": "run-attraction.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/run-attraction.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_netmorphcmake_source_examples_nesvbp_run_attraction_sh__entry",
+      "label": "run-attraction.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/run-attraction.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_examples_nesvbp_run_attraction_sh",
+      "target": "thirdparty_netmorphcmake_source_examples_nesvbp_run_attraction_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/run-attraction.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

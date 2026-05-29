@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mapbox_geojson_cpp_json",
+      "label": "mapbox-geojson-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-geojson-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mapbox_geojson_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-geojson-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mapbox_geojson_cpp_json",
+      "target": "m_mapbox_geojson_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-geojson-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

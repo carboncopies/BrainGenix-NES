@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_socket_io_client_json",
+      "label": "socket-io-client.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/socket-io-client.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_socket_io_client_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/socket-io-client.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_socket_io_client_json",
+      "target": "s_socket_io_client_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/socket-io-client.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

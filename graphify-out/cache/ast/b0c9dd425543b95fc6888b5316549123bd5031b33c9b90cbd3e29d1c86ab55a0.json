@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_3_3fd_json",
+      "label": "3fd.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/3-/3fd.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "3_3fd_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/3-/3fd.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_3_3fd_json",
+      "target": "3_3fd_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/3-/3fd.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

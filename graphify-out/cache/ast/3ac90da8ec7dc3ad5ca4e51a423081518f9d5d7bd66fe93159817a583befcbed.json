@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_openexr_json",
+      "label": "openexr.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openexr.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_openexr_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openexr.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_openexr_json",
+      "target": "o_openexr_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/openexr.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

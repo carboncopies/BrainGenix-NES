@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_better_enums_json",
+      "label": "better-enums.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/better-enums.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_better_enums_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/better-enums.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_better_enums_json",
+      "target": "b_better_enums_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/better-enums.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

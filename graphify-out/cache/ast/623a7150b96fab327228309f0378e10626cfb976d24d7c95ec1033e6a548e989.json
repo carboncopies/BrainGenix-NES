@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "jkqtplotter_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "jkqtplotter_vcpkg_dependencies",
+      "target": "ref_cimg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "jkqtplotter_vcpkg_dependencies",
+      "target": "ref_qtsvg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_jkqtplotter_vcpkg_json",
+      "target": "jkqtplotter_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "jkqtplotter_vcpkg_features",
+      "target": "jkqtplotter_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "jkqtplotter_vcpkg_features_examples",
+      "target": "jkqtplotter_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "jkqtplotter_vcpkg_features",
+      "target": "jkqtplotter_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "jkqtplotter_vcpkg_features_tools",
+      "target": "jkqtplotter_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/jkqtplotter/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ]
+}

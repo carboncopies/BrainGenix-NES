@@ -1,0 +1,47 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_patch_tuesday_checklist_md",
+      "label": "patch-tuesday-checklist.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/patch-tuesday-checklist.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_pipelines_patch_tuesday_checklist_first_time_machine_setup",
+      "label": "First time machine setup:",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/patch-tuesday-checklist.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_pipelines_patch_tuesday_checklist_each_patch_tuesday",
+      "label": "Each Patch Tuesday:",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/patch-tuesday-checklist.md",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_patch_tuesday_checklist_md",
+      "target": "azure_pipelines_patch_tuesday_checklist_first_time_machine_setup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/patch-tuesday-checklist.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_patch_tuesday_checklist_md",
+      "target": "azure_pipelines_patch_tuesday_checklist_each_patch_tuesday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/patch-tuesday-checklist.md",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

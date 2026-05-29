@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rply_json",
+      "label": "rply.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rply.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rply_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rply.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rply_json",
+      "target": "r_rply_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rply.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

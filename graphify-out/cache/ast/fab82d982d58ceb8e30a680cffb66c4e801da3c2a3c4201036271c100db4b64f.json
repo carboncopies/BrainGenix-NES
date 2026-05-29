@@ -1,0 +1,352 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "label": "diagnostic.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_diagnostic_allocating",
+      "label": "allocating()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L50"
+    },
+    {
+      "id": "source_diagnostic_memory_statistics",
+      "label": "~memory_statistics()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "source_diagnostic_initialize",
+      "label": "initialize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L106"
+    },
+    {
+      "id": "source_diagnostic_before_allocation",
+      "label": "before_allocation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L115"
+    },
+    {
+      "id": "allocation_event",
+      "label": "allocation_event",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L115"
+    },
+    {
+      "id": "source_diagnostic_after_allocation",
+      "label": "after_allocation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L138"
+    },
+    {
+      "id": "source_diagnostic_global_debug_report",
+      "label": "global_debug_report()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L166"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L166"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "unistd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "cstddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "thirdparty_netmorphcmake_source_file_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "thirdparty_netmorphcmake_source_bigstring_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "thirdparty_netmorphcmake_source_bigregex_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_allocating",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_memory_statistics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_before_allocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "source_diagnostic_before_allocation",
+      "target": "allocation_event",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L115",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_after_allocation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "source_diagnostic_after_allocation",
+      "target": "allocation_event",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L138",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_diagnostic_cc",
+      "target": "source_diagnostic_global_debug_report",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "source_diagnostic_global_debug_report",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L166",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_diagnostic_initialize",
+      "target": "source_diagnostic_before_allocation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "source_diagnostic_after_allocation",
+      "target": "source_diagnostic_allocating",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L150",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_diagnostic_memory_statistics",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "source_diagnostic_memory_statistics",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_diagnostic_memory_statistics",
+      "callee": "write_file_from_String",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "source_diagnostic_before_allocation",
+      "callee": "fopen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "source_diagnostic_before_allocation",
+      "callee": "fscanf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "source_diagnostic_before_allocation",
+      "callee": "fclose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "source_diagnostic_after_allocation",
+      "callee": "fopen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "source_diagnostic_after_allocation",
+      "callee": "fscanf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "source_diagnostic_after_allocation",
+      "callee": "fclose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L161"
+    },
+    {
+      "caller_nid": "source_diagnostic_global_debug_report",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "source_diagnostic_global_debug_report",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/diagnostic.cc",
+      "source_location": "L179"
+    }
+  ]
+}

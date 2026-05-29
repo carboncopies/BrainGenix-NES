@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_appstream_glib_json",
+      "label": "appstream-glib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream-glib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_appstream_glib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream-glib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_appstream_glib_json",
+      "target": "a_appstream_glib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream-glib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

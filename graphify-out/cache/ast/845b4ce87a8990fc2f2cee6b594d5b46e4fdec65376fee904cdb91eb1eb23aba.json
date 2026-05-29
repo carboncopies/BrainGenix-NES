@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_dirent_json",
+      "label": "dirent.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dirent.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_dirent_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dirent.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_dirent_json",
+      "target": "d_dirent_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dirent.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

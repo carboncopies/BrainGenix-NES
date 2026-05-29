@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_coolprop_json",
+      "label": "coolprop.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coolprop.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_coolprop_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coolprop.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_coolprop_json",
+      "target": "c_coolprop_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coolprop.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

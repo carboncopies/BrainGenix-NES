@@ -1,0 +1,965 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "openvino_vcpkg_schema",
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "openvino_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "openvino_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "openvino_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "openvino_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "openvino_vcpkg_summary",
+      "label": "summary",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "openvino_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "openvino_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "openvino_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "openvino_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "openvino_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "openvino_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "openvino_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "openvino_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "openvino_vcpkg_features_auto",
+      "label": "auto",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "openvino_vcpkg_auto_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "openvino_vcpkg_features_auto_batch",
+      "label": "auto-batch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "openvino_vcpkg_auto_batch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "openvino_vcpkg_features_cpu",
+      "label": "cpu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "openvino_vcpkg_cpu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "openvino_vcpkg_cpu_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "openvino_vcpkg_features_gpu",
+      "label": "gpu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "openvino_vcpkg_gpu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "openvino_vcpkg_gpu_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "openvino_vcpkg_gpu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "openvino_vcpkg_features_hetero",
+      "label": "hetero",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "openvino_vcpkg_hetero_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "openvino_vcpkg_features_ir",
+      "label": "ir",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "openvino_vcpkg_ir_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "openvino_vcpkg_features_npu",
+      "label": "npu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "openvino_vcpkg_npu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "openvino_vcpkg_npu_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "openvino_vcpkg_npu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "openvino_vcpkg_features_onnx",
+      "label": "onnx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "openvino_vcpkg_onnx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "openvino_vcpkg_onnx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "openvino_vcpkg_features_paddle",
+      "label": "paddle",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L126"
+    },
+    {
+      "id": "openvino_vcpkg_paddle_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L127"
+    },
+    {
+      "id": "openvino_vcpkg_paddle_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "openvino_vcpkg_features_pytorch",
+      "label": "pytorch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L140"
+    },
+    {
+      "id": "openvino_vcpkg_pytorch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "openvino_vcpkg_features_tensorflow",
+      "label": "tensorflow",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "openvino_vcpkg_tensorflow_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "openvino_vcpkg_tensorflow_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "openvino_vcpkg_features_tensorflow_lite",
+      "label": "tensorflow-lite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L167"
+    },
+    {
+      "id": "openvino_vcpkg_tensorflow_lite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "openvino_vcpkg_tensorflow_lite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L169"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_summary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_description",
+      "target": "ref_intel_distribution_of_openvinotm_toolkit_is_an_open_source_toolkit_for_optimizing",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_description",
+      "target": "ref_and_deploying_ai_inference_it_can_be_used_to_develop_applications_and_solutions_based",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_description",
+      "target": "ref_on_deep_learning_tasks_such_as_emulation_of_human_vision_automatic_speech_recognition",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_description",
+      "target": "ref_natural_language_processing_recommendation_systems_etc_it_provides_high_performance",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_description",
+      "target": "ref_and_rich_deployment_options_from_edge_to_cloud",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_dependencies",
+      "target": "ref_pugixml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_auto",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_auto_batch",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_hetero",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_ir",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_onnx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_paddle",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_pytorch",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_tensorflow",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_default_features",
+      "target": "ref_tensorflow_lite",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openvino_vcpkg_json",
+      "target": "openvino_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_auto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_auto",
+      "target": "openvino_vcpkg_auto_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_auto_batch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_auto_batch",
+      "target": "openvino_vcpkg_auto_batch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_cpu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_cpu",
+      "target": "openvino_vcpkg_cpu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_cpu",
+      "target": "openvino_vcpkg_cpu_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_gpu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_gpu",
+      "target": "openvino_vcpkg_gpu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_gpu",
+      "target": "openvino_vcpkg_gpu_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_gpu",
+      "target": "openvino_vcpkg_gpu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_gpu_dependencies",
+      "target": "ref_opencl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_gpu_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_hetero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_hetero",
+      "target": "openvino_vcpkg_hetero_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_ir",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_ir",
+      "target": "openvino_vcpkg_ir_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_npu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_npu",
+      "target": "openvino_vcpkg_npu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_npu",
+      "target": "openvino_vcpkg_npu_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_npu",
+      "target": "openvino_vcpkg_npu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_npu_dependencies",
+      "target": "ref_level_zero",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_onnx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_onnx",
+      "target": "openvino_vcpkg_onnx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_onnx",
+      "target": "openvino_vcpkg_onnx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_paddle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_paddle",
+      "target": "openvino_vcpkg_paddle_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_paddle",
+      "target": "openvino_vcpkg_paddle_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_pytorch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_pytorch",
+      "target": "openvino_vcpkg_pytorch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_tensorflow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_tensorflow",
+      "target": "openvino_vcpkg_tensorflow_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_tensorflow",
+      "target": "openvino_vcpkg_tensorflow_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_tensorflow_dependencies",
+      "target": "ref_snappy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openvino_vcpkg_features",
+      "target": "openvino_vcpkg_features_tensorflow_lite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_tensorflow_lite",
+      "target": "openvino_vcpkg_tensorflow_lite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "openvino_vcpkg_features_tensorflow_lite",
+      "target": "openvino_vcpkg_tensorflow_lite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openvino/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    }
+  ]
+}

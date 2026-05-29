@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nccl_json",
+      "label": "nccl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nccl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nccl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nccl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nccl_json",
+      "target": "n_nccl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nccl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

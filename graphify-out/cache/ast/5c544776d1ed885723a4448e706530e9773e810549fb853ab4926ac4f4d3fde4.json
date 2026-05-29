@@ -1,0 +1,241 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libcoap_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libcoap_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libcoap_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libcoap_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libcoap_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libcoap_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libcoap_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libcoap_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libcoap_vcpkg_features_dtls",
+      "label": "dtls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libcoap_vcpkg_dtls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libcoap_vcpkg_dtls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libcoap_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libcoap_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_default_features",
+      "target": "ref_dtls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libcoap_vcpkg_json",
+      "target": "libcoap_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_features",
+      "target": "libcoap_vcpkg_features_dtls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_features_dtls",
+      "target": "libcoap_vcpkg_dtls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_features_dtls",
+      "target": "libcoap_vcpkg_dtls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_dtls_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libcoap_vcpkg_features",
+      "target": "libcoap_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libcoap_vcpkg_features_examples",
+      "target": "libcoap_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libcoap/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ]
+}

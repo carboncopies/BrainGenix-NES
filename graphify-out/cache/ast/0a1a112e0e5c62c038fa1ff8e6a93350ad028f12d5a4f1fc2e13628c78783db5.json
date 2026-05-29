@@ -1,0 +1,426 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "label": "point.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometry_point_setdim",
+      "label": "setdim()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L98"
+    },
+    {
+      "id": "geometry_point_point",
+      "label": "Point()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L114"
+    },
+    {
+      "id": "geometry_point_q",
+      "label": "Q()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L203"
+    },
+    {
+      "id": "geometry_point_double",
+      "label": "double()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L212"
+    },
+    {
+      "id": "geometry_point_asum",
+      "label": "asum()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L279"
+    },
+    {
+      "id": "geometry_point_d",
+      "label": "d()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L329"
+    },
+    {
+      "id": "geometry_point_d2",
+      "label": "d2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L336"
+    },
+    {
+      "id": "geometry_point_isleft",
+      "label": "isLeft()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L348"
+    },
+    {
+      "id": "geometry_point_errstr",
+      "label": "errstr()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L359"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "thirdparty_netmorphcmake_source_geometry_point_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "thirdparty_netmorphcmake_source_geometry_vector_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_setdim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_q",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_q",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L203",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_double",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_double",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_asum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L279",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_asum",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L279",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_point_asum",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L279",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_asum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L302",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_asum",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L302",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_point_asum",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L302",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_d",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L329",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "geometry_point_d",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L329",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_d2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_d2",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L336",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "geometry_point_d2",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L336",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_isleft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_point_isleft",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L348",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "geometry_point_isleft",
+      "target": "geometry_point_point",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L348",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_point_c",
+      "target": "geometry_point_errstr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L359",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "geometry_point_point",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "geometry_point_point",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "geometry_point_q",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "geometry_point_double",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L217"
+    },
+    {
+      "caller_nid": "geometry_point_point",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "geometry_point_point",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "geometry_point_asum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L287"
+    },
+    {
+      "caller_nid": "geometry_point_asum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "geometry_point_asum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "geometry_point_asum",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L311"
+    },
+    {
+      "caller_nid": "geometry_point_d",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L333"
+    },
+    {
+      "caller_nid": "geometry_point_isleft",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L349"
+    },
+    {
+      "caller_nid": "geometry_point_isleft",
+      "callee": "dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/point.c",
+      "source_location": "L349"
+    }
+  ]
+}

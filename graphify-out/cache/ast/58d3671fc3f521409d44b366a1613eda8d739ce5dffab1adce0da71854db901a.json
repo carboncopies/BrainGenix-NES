@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_ponder_json",
+      "label": "ponder.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ponder.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_ponder_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ponder.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_ponder_json",
+      "target": "p_ponder_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/ponder.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

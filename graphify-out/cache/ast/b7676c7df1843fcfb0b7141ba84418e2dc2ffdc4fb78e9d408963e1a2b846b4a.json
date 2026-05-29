@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nayuki_qr_code_generator_json",
+      "label": "nayuki-qr-code-generator.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nayuki-qr-code-generator.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nayuki_qr_code_generator_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nayuki-qr-code-generator.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nayuki_qr_code_generator_json",
+      "target": "n_nayuki_qr_code_generator_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nayuki-qr-code-generator.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "soci_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "soci_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "soci_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "soci_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "soci_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "soci_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "soci_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "soci_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "soci_vcpkg_features_boost",
+      "label": "boost",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "soci_vcpkg_boost_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "soci_vcpkg_boost_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "soci_vcpkg_features_empty",
+      "label": "empty",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "soci_vcpkg_empty_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "soci_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "soci_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "soci_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "soci_vcpkg_features_odbc",
+      "label": "odbc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "soci_vcpkg_odbc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "soci_vcpkg_odbc_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "soci_vcpkg_odbc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "soci_vcpkg_features_postgresql",
+      "label": "postgresql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "soci_vcpkg_postgresql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "soci_vcpkg_postgresql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "soci_vcpkg_features_sqlite3",
+      "label": "sqlite3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "soci_vcpkg_sqlite3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "soci_vcpkg_sqlite3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_soci_vcpkg_json",
+      "target": "soci_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_boost",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_boost",
+      "target": "soci_vcpkg_boost_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_boost",
+      "target": "soci_vcpkg_boost_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_boost_dependencies",
+      "target": "ref_boost_date_time",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_boost_dependencies",
+      "target": "ref_boost_fusion",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_boost_dependencies",
+      "target": "ref_boost_optional",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_boost_dependencies",
+      "target": "ref_boost_preprocessor",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_boost_dependencies",
+      "target": "ref_boost_tuple",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_empty",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_empty",
+      "target": "soci_vcpkg_empty_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_mysql",
+      "target": "soci_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_mysql",
+      "target": "soci_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_mysql_dependencies",
+      "target": "ref_libmysql",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_odbc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_odbc",
+      "target": "soci_vcpkg_odbc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_odbc",
+      "target": "soci_vcpkg_odbc_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_odbc",
+      "target": "soci_vcpkg_odbc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_postgresql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_postgresql",
+      "target": "soci_vcpkg_postgresql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_postgresql",
+      "target": "soci_vcpkg_postgresql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features",
+      "target": "soci_vcpkg_features_sqlite3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_sqlite3",
+      "target": "soci_vcpkg_sqlite3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "soci_vcpkg_features_sqlite3",
+      "target": "soci_vcpkg_sqlite3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/soci/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    }
+  ]
+}

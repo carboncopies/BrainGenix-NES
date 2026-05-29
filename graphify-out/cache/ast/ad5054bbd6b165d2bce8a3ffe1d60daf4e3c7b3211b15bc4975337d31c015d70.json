@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_contributing_zh_md",
+      "label": "CONTRIBUTING_zh.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_zh_\u8d21\u732e\u51c6\u5219",
+      "label": "\u8d21\u732e\u51c6\u5219",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_zh_\u62a5\u544a\u95ee\u9898",
+      "label": "\u62a5\u544a\u95ee\u9898",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_contributing_zh_\u8d21\u732e_pr",
+      "label": "\u8d21\u732e (PR)",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "vcpkg_contributing_zh_\u65b0\u5305\u8d21\u732e\u51c6\u5219",
+      "label": "\u65b0\u5305\u8d21\u732e\u51c6\u5219",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "vcpkg_contributing_zh_\u6cd5\u5f8b\u58f0\u660e",
+      "label": "\u6cd5\u5f8b\u58f0\u660e",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_contributing_zh_md",
+      "target": "vcpkg_contributing_zh_\u8d21\u732e\u51c6\u5219",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_zh_\u8d21\u732e\u51c6\u5219",
+      "target": "vcpkg_contributing_zh_\u62a5\u544a\u95ee\u9898",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_zh_\u8d21\u732e\u51c6\u5219",
+      "target": "vcpkg_contributing_zh_\u8d21\u732e_pr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_zh_\u8d21\u732e_pr",
+      "target": "vcpkg_contributing_zh_\u65b0\u5305\u8d21\u732e\u51c6\u5219",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_zh_\u8d21\u732e\u51c6\u5219",
+      "target": "vcpkg_contributing_zh_\u6cd5\u5f8b\u58f0\u660e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING_zh.md",
+      "source_location": "L29",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

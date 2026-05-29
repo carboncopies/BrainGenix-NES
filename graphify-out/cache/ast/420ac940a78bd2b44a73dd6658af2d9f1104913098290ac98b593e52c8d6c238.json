@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boost_tokenizer_json",
+      "label": "boost-tokenizer.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-tokenizer.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boost_tokenizer_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-tokenizer.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boost_tokenizer_json",
+      "target": "b_boost_tokenizer_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-tokenizer.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

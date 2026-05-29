@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gtl_json",
+      "label": "gtl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gtl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gtl_json",
+      "target": "g_gtl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gtl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

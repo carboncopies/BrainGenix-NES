@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fastrtps_json",
+      "label": "fastrtps.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastrtps.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fastrtps_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastrtps.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fastrtps_json",
+      "target": "f_fastrtps_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastrtps.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

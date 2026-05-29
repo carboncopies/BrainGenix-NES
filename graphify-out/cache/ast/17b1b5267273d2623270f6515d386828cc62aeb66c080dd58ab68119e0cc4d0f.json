@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_coin_or_cbc_json",
+      "label": "coin-or-cbc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-cbc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_coin_or_cbc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-cbc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_coin_or_cbc_json",
+      "target": "c_coin_or_cbc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-cbc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

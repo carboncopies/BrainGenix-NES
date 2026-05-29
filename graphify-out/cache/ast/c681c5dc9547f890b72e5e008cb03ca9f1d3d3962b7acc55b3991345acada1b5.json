@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boost_statechart_json",
+      "label": "boost-statechart.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-statechart.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boost_statechart_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-statechart.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boost_statechart_json",
+      "target": "b_boost_statechart_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-statechart.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

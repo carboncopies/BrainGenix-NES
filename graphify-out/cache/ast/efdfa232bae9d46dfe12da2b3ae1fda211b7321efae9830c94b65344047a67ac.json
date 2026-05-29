@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_hexl_json",
+      "label": "hexl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hexl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_hexl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hexl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_hexl_json",
+      "target": "h_hexl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/hexl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

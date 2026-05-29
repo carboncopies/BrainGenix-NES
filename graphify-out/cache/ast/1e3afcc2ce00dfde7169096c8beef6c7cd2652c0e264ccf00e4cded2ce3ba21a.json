@@ -1,0 +1,298 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_windows_utility_prefix_ps1",
+      "label": "utility-prefix.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "windows_utility_prefix_get_tempfilepath",
+      "label": "Get-TempFilePath()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L15"
+    },
+    {
+      "id": "windows_utility_prefix_downloadandinstall",
+      "label": "DownloadAndInstall()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L44"
+    },
+    {
+      "id": "windows_utility_prefix_downloadandunzip",
+      "label": "DownloadAndUnzip()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L110"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_utility_prefix_ps1",
+      "target": "windows_utility_prefix_get_tempfilepath",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_utility_prefix_ps1",
+      "target": "windows_utility_prefix_downloadandinstall",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_utility_prefix_ps1",
+      "target": "windows_utility_prefix_downloadandunzip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "windows_utility_prefix_downloadandinstall",
+      "target": "windows_utility_prefix_get_tempfilepath",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "windows_utility_prefix_downloadandunzip",
+      "target": "windows_utility_prefix_get_tempfilepath",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L131",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "windows_utility_prefix_get_tempfilepath",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "curl.exe",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Start-Process",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Remove-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandinstall",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Out-Null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Join-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "curl.exe",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Remove-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "windows_utility_prefix_downloadandunzip",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/utility-prefix.ps1",
+      "source_location": "L154"
+    }
+  ]
+}

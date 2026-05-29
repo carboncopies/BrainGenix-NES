@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kinectsdk1_json",
+      "label": "kinectsdk1.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kinectsdk1.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kinectsdk1_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kinectsdk1.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kinectsdk1_json",
+      "target": "k_kinectsdk1_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kinectsdk1.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

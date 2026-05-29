@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rapidxml_json",
+      "label": "rapidxml.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rapidxml.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rapidxml_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rapidxml.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rapidxml_json",
+      "target": "r_rapidxml_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rapidxml.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

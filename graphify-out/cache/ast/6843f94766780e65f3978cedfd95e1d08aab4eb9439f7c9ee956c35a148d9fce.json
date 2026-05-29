@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_y_yomm2_json",
+      "label": "yomm2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yomm2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "y_yomm2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yomm2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_y_yomm2_json",
+      "target": "y_yomm2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yomm2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

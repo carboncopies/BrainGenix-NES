@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_features_designerplugin",
+      "label": "designerplugin",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "kf5configwidgets_vcpkg_designerplugin_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_ecm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5codecs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5config",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5coreaddons",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5guiaddons",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5i18n",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_kf5widgetsaddons",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_dependencies",
+      "target": "ref_qt5_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5configwidgets_vcpkg_json",
+      "target": "kf5configwidgets_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_features",
+      "target": "kf5configwidgets_vcpkg_features_designerplugin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5configwidgets_vcpkg_features_designerplugin",
+      "target": "kf5configwidgets_vcpkg_designerplugin_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5configwidgets/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    }
+  ]
+}

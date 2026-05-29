@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_pdcurses_json",
+      "label": "pdcurses.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pdcurses.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_pdcurses_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pdcurses.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_pdcurses_json",
+      "target": "p_pdcurses_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pdcurses.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

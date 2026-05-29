@@ -1,0 +1,275 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gtk_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gtk_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gtk_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gtk_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gtk_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "gtk_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "gtk_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gtk_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "gtk_vcpkg_features_introspection",
+      "label": "introspection",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "gtk_vcpkg_introspection_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "gtk_vcpkg_introspection_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "gtk_vcpkg_introspection_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L65"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_gdk_pixbuf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_gettext_libintl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_graphene",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_libepoxy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gtk_vcpkg_dependencies",
+      "target": "ref_pango",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gtk_vcpkg_json",
+      "target": "gtk_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_features",
+      "target": "gtk_vcpkg_features_introspection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_features_introspection",
+      "target": "gtk_vcpkg_introspection_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_features_introspection",
+      "target": "gtk_vcpkg_introspection_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_features_introspection",
+      "target": "gtk_vcpkg_introspection_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "gtk_vcpkg_introspection_dependencies",
+      "target": "ref_gobject_introspection",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gtk/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

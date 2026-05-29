@@ -1,0 +1,501 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "hello_imgui_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "hello_imgui_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "hello_imgui_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "hello_imgui_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "hello_imgui_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "hello_imgui_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_experimental_dx11_binding",
+      "label": "experimental-dx11-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_dx11_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_dx11_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_experimental_dx12_binding",
+      "label": "experimental-dx12-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_dx12_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_dx12_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_experimental_vulkan_binding",
+      "label": "experimental-vulkan-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_vulkan_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "hello_imgui_vcpkg_experimental_vulkan_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_glfw_binding",
+      "label": "glfw-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "hello_imgui_vcpkg_glfw_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "hello_imgui_vcpkg_glfw_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_metal_binding",
+      "label": "metal-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "hello_imgui_vcpkg_metal_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "hello_imgui_vcpkg_metal_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_opengl3_binding",
+      "label": "opengl3-binding",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "hello_imgui_vcpkg_opengl3_binding_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "hello_imgui_vcpkg_opengl3_binding_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "hello_imgui_vcpkg_features_test_engine",
+      "label": "test-engine",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "hello_imgui_vcpkg_test_engine_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "hello_imgui_vcpkg_test_engine_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L103"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_description",
+      "target": "ref_hello_imgui_unleash_your_creativity_in_app_development_and_prototyping",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hello_imgui_vcpkg_description",
+      "target": "ref_note_that_at_least_on_renderer_backend_and_at_least_one_platform_backend_must_be_chosen",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "hello_imgui_vcpkg_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_hello_imgui_vcpkg_json",
+      "target": "hello_imgui_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_experimental_dx11_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_dx11_binding",
+      "target": "hello_imgui_vcpkg_experimental_dx11_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_dx11_binding",
+      "target": "hello_imgui_vcpkg_experimental_dx11_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_experimental_dx12_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_dx12_binding",
+      "target": "hello_imgui_vcpkg_experimental_dx12_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_dx12_binding",
+      "target": "hello_imgui_vcpkg_experimental_dx12_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_experimental_vulkan_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_vulkan_binding",
+      "target": "hello_imgui_vcpkg_experimental_vulkan_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_experimental_vulkan_binding",
+      "target": "hello_imgui_vcpkg_experimental_vulkan_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_glfw_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_glfw_binding",
+      "target": "hello_imgui_vcpkg_glfw_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_glfw_binding",
+      "target": "hello_imgui_vcpkg_glfw_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_metal_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_metal_binding",
+      "target": "hello_imgui_vcpkg_metal_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_metal_binding",
+      "target": "hello_imgui_vcpkg_metal_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_opengl3_binding",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_opengl3_binding",
+      "target": "hello_imgui_vcpkg_opengl3_binding_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_opengl3_binding",
+      "target": "hello_imgui_vcpkg_opengl3_binding_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features",
+      "target": "hello_imgui_vcpkg_features_test_engine",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_test_engine",
+      "target": "hello_imgui_vcpkg_test_engine_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "hello_imgui_vcpkg_features_test_engine",
+      "target": "hello_imgui_vcpkg_test_engine_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/hello-imgui/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    }
+  ]
+}

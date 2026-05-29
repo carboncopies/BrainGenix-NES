@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_resultlib_json",
+      "label": "resultlib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/resultlib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_resultlib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/resultlib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_resultlib_json",
+      "target": "r_resultlib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/resultlib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_doc_extensions_md",
+      "label": "extensions.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doc_extensions_extensions",
+      "label": "Extensions",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "doc_extensions_chemical_tagging",
+      "label": "Chemical tagging",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "doc_extensions_additional_fiber_directing",
+      "label": "Additional fiber directing",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "doc_extensions_somatic_detailing",
+      "label": "Somatic detailing",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L16"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_doc_extensions_md",
+      "target": "doc_extensions_extensions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "doc_extensions_extensions",
+      "target": "doc_extensions_chemical_tagging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "doc_extensions_extensions",
+      "target": "doc_extensions_additional_fiber_directing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "doc_extensions_extensions",
+      "target": "doc_extensions_somatic_detailing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/doc/extensions.md",
+      "source_location": "L16",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

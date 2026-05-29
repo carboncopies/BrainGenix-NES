@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nethost_json",
+      "label": "nethost.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nethost.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nethost_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nethost.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nethost_json",
+      "target": "n_nethost_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nethost.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

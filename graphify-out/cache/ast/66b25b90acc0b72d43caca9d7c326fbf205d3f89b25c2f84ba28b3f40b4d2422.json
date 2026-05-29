@@ -1,0 +1,639 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "directxtex_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "directxtex_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "directxtex_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "directxtex_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "directxtex_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "directxtex_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "directxtex_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "directxtex_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "directxtex_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "directxtex_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "directxtex_vcpkg_features_dx11",
+      "label": "dx11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "directxtex_vcpkg_dx11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "directxtex_vcpkg_dx11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "directxtex_vcpkg_features_dx12",
+      "label": "dx12",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "directxtex_vcpkg_dx12_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "directxtex_vcpkg_dx12_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "directxtex_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "directxtex_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "directxtex_vcpkg_jpeg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "directxtex_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "directxtex_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "directxtex_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "directxtex_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "directxtex_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "directxtex_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "directxtex_vcpkg_png_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "directxtex_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "directxtex_vcpkg_features_spectre",
+      "label": "spectre",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "directxtex_vcpkg_spectre_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "directxtex_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "directxtex_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "directxtex_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "directxtex_vcpkg_features_xbox",
+      "label": "xbox",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "directxtex_vcpkg_xbox_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "directxtex_vcpkg_xbox_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "directxtex_vcpkg_xbox_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L78"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_dependencies",
+      "target": "ref_directxmath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxtex_vcpkg_json",
+      "target": "directxtex_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_dx11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_dx11",
+      "target": "directxtex_vcpkg_dx11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_dx11",
+      "target": "directxtex_vcpkg_dx11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_dx12",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_dx12",
+      "target": "directxtex_vcpkg_dx12_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_dx12",
+      "target": "directxtex_vcpkg_dx12_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_jpeg",
+      "target": "directxtex_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_jpeg",
+      "target": "directxtex_vcpkg_jpeg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_jpeg",
+      "target": "directxtex_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_openexr",
+      "target": "directxtex_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_openexr",
+      "target": "directxtex_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_png",
+      "target": "directxtex_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_png",
+      "target": "directxtex_vcpkg_png_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_png",
+      "target": "directxtex_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_spectre",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_spectre",
+      "target": "directxtex_vcpkg_spectre_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_tools",
+      "target": "directxtex_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_tools",
+      "target": "directxtex_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features",
+      "target": "directxtex_vcpkg_features_xbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_xbox",
+      "target": "directxtex_vcpkg_xbox_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_xbox",
+      "target": "directxtex_vcpkg_xbox_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_features_xbox",
+      "target": "directxtex_vcpkg_xbox_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "directxtex_vcpkg_xbox_dependencies",
+      "target": "ref_ms_gdkx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxtex/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

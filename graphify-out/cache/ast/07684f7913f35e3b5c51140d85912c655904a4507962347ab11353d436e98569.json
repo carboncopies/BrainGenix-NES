@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_catch_json",
+      "label": "catch.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/catch.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_catch_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/catch.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_catch_json",
+      "target": "c_catch_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/catch.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

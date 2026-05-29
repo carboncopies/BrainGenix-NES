@@ -1,0 +1,611 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_asr",
+      "label": "asr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_asr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_asr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_fl",
+      "label": "fl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_fl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_fl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_imgclass",
+      "label": "imgclass",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_imgclass_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_imgclass_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_lib",
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_lib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_lib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_lm",
+      "label": "lm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_lm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_lm_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_features_objdet",
+      "label": "objdet",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_objdet_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "flashlight_cuda_vcpkg_objdet_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L97"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_default_features",
+      "target": "ref_fl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_flashlight_cuda_vcpkg_json",
+      "target": "flashlight_cuda_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_asr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_asr",
+      "target": "flashlight_cuda_vcpkg_asr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_asr",
+      "target": "flashlight_cuda_vcpkg_asr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_asr_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_fl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_fl",
+      "target": "flashlight_cuda_vcpkg_fl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_fl",
+      "target": "flashlight_cuda_vcpkg_fl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_cereal",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_cudnn",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_nccl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_openmpi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_fl_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_imgclass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_imgclass",
+      "target": "flashlight_cuda_vcpkg_imgclass_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_imgclass",
+      "target": "flashlight_cuda_vcpkg_imgclass_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_imgclass_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_lib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_lib",
+      "target": "flashlight_cuda_vcpkg_lib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_lib",
+      "target": "flashlight_cuda_vcpkg_lib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_lib_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_lib_dependencies",
+      "target": "ref_fftw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_lib_dependencies",
+      "target": "ref_intel_mkl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_lib_dependencies",
+      "target": "ref_kenlm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_lm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_lm",
+      "target": "flashlight_cuda_vcpkg_lm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_lm",
+      "target": "flashlight_cuda_vcpkg_lm_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_lm_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features",
+      "target": "flashlight_cuda_vcpkg_features_objdet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_objdet",
+      "target": "flashlight_cuda_vcpkg_objdet_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_features_objdet",
+      "target": "flashlight_cuda_vcpkg_objdet_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "flashlight_cuda_vcpkg_objdet_dependencies",
+      "target": "ref_gflags",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flashlight-cuda/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

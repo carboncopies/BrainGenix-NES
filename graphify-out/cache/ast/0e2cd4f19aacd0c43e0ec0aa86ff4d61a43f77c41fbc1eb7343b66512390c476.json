@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_b64_b64_dynamic_config_h",
+      "label": "b64_dynamic_config.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/b64/b64_dynamic_config.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -1,0 +1,1498 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "label": "dendritic_growth_model.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "label": "prepare_parent_coordinate_system()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126"
+    },
+    {
+      "id": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "label": "daughter_to_network_coordinate_system()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L137"
+    },
+    {
+      "id": "source_dendritic_growth_model_veer",
+      "label": "veer()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164"
+    },
+    {
+      "id": "terminal_segment",
+      "label": "terminal_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164"
+    },
+    {
+      "id": "source_dendritic_growth_model_branch_selection",
+      "label": "branch_selection()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L186"
+    },
+    {
+      "id": "fibre_segment",
+      "label": "fibre_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L186"
+    },
+    {
+      "id": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "label": "van_Pelt_dendritic_growth_model()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L288"
+    },
+    {
+      "id": "tstm",
+      "label": "TSTM",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L288"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L292"
+    },
+    {
+      "id": "source_dendritic_growth_model_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L300"
+    },
+    {
+      "id": "source_dendritic_growth_model_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L308"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L308"
+    },
+    {
+      "id": "source_dendritic_growth_model_set_fixed_time_step_size",
+      "label": "set_fixed_time_step_size()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L315"
+    },
+    {
+      "id": "source_dendritic_growth_model_initialize",
+      "label": "initialize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319"
+    },
+    {
+      "id": "network",
+      "label": "network",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319"
+    },
+    {
+      "id": "connection_statistics_root",
+      "label": "Connection_Statistics_Root",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319"
+    },
+    {
+      "id": "source_dendritic_growth_model_request_elongation",
+      "label": "request_elongation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L334"
+    },
+    {
+      "id": "fibre_structure",
+      "label": "fibre_structure",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L334"
+    },
+    {
+      "id": "source_dendritic_growth_model_grow",
+      "label": "grow()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L359"
+    },
+    {
+      "id": "source_dendritic_growth_model_iscomplete",
+      "label": "IsComplete()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L424"
+    },
+    {
+      "id": "source_dendritic_growth_model_postop",
+      "label": "postop()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L429"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_sampled_output_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_fibre_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_dendritic_growth_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_axon_direction_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_bigstring_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "thirdparty_netmorphcmake_source_branching_models_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L126",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_veer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_veer",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_veer",
+      "target": "terminal_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_veer",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_branch_selection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_branch_selection",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L186",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L288",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "tstm",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L288",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L292",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L292",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L300",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L308",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_set_fixed_time_step_size",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_initialize",
+      "target": "network",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_initialize",
+      "target": "connection_statistics_root",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L319",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_request_elongation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_request_elongation",
+      "target": "fibre_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L334",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_grow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L359",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_grow",
+      "target": "network",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L359",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_grow",
+      "target": "connection_statistics_root",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L359",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_iscomplete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L424",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_dendritic_growth_model_cc",
+      "target": "source_dendritic_growth_model_postop",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L429",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_postop",
+      "target": "network",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L429",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_postop",
+      "target": "connection_statistics_root",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L429",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_dendritic_growth_model_veer",
+      "target": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_veer",
+      "target": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "source_dendritic_growth_model_set_fixed_time_step_size",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_van_pelt_dendritic_growth_model",
+      "target": "source_dendritic_growth_model_parse_clp",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "source_dendritic_growth_model_grow",
+      "target": "source_dendritic_growth_model_request_elongation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L373",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_prepare_parent_coordinate_system",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L160"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_daughter_to_network_coordinate_system",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L161"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_veer",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_veer",
+      "callee": "AngularCoords",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_branch_selection",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_branch_selection",
+      "callee": "continuation_node_to_branch",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L304"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L304"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L304"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L320"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L322"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "initialize_input_structure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L326"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L326"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L326"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "initialize_output_structure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L327"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L327"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_initialize",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L327"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_request_elongation",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L336"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_request_elongation",
+      "callee": "queue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L338"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_request_elongation",
+      "callee": "batch_elongate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L340"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L368"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "InputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "OutputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L375"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L378"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L378"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "Next",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L379"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "branching_probability",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L382"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "TSBModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L382"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "branches_at_continuation_nodes",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L388"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "Length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "Min_Node_Interval",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "BranchingModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L392"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "TerminalSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L393"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L394"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "branch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "turn_event",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "TSTModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "turn",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "Seek_Candidate_Synapses",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "add_dendritic_segment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L404"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "spatial_segment_subset",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L404"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L404"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "add_axonal_segment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L406"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "spatial_segment_subset",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L406"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L406"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "max_res",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L409"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_grow",
+      "callee": "Max_Resolution_Sample",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L409"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "Seek_Candidate_Synapses",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L433"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L434"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "InputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L436"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L436"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L436"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L437"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "add_dendritic_segment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "spatial_segment_subset",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L441"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L443"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L443"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "InputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L444"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L445"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L445"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L445"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L445"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "Seek_Candidate_Synapses",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L447"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L449"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L449"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "OutputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L449"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "add_axonal_segment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L452"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "spatial_segment_subset",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L452"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L452"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L452"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L455"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L457"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L457"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L458"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L458"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "OutputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L458"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L459"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L459"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L459"
+    },
+    {
+      "caller_nid": "source_dendritic_growth_model_postop",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/dendritic_growth_model.cc",
+      "source_location": "L459"
+    }
+  ]
+}

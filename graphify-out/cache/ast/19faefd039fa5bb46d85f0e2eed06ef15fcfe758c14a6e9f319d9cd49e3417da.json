@@ -1,0 +1,101 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_magnum_magnumdeploy_ps1",
+      "label": "magnumdeploy.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "label": "deployPluginsIfMagnum()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_magnumdeploy_ps1",
+      "target": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "Write-Verbose",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "Split-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "Split-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "magnum_magnumdeploy_deploypluginsifmagnum",
+      "callee": "deployPlugins",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/magnum/magnumdeploy.ps1",
+      "source_location": "L38"
+    }
+  ]
+}

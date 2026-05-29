@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fastfeat_json",
+      "label": "fastfeat.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastfeat.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fastfeat_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastfeat.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fastfeat_json",
+      "target": "f_fastfeat_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fastfeat.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

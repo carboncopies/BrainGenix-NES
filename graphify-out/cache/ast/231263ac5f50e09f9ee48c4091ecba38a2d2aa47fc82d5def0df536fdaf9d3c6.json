@@ -1,0 +1,593 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libtorrent_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libtorrent_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libtorrent_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libtorrent_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libtorrent_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libtorrent_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libtorrent_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libtorrent_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libtorrent_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "libtorrent_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libtorrent_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_deprfun",
+      "label": "deprfun",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libtorrent_vcpkg_deprfun_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libtorrent_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_iconv",
+      "label": "iconv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libtorrent_vcpkg_iconv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libtorrent_vcpkg_iconv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_python",
+      "label": "python",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libtorrent_vcpkg_python_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "libtorrent_vcpkg_python_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "libtorrent_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "libtorrent_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "libtorrent_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L61"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_chrono",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_config",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_crc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_date_time",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_iterator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_logic",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_multi_index",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_multiprecision",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_pool",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_random",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_scope_exit",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_boost_variant",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_default_features",
+      "target": "ref_iconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libtorrent_vcpkg_json",
+      "target": "libtorrent_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_deprfun",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_deprfun",
+      "target": "libtorrent_vcpkg_deprfun_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_examples",
+      "target": "libtorrent_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_iconv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_iconv",
+      "target": "libtorrent_vcpkg_iconv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_iconv",
+      "target": "libtorrent_vcpkg_iconv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_iconv_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_python",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_python",
+      "target": "libtorrent_vcpkg_python_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_python",
+      "target": "libtorrent_vcpkg_python_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_python_dependencies",
+      "target": "ref_boost_python",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_test",
+      "target": "libtorrent_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features",
+      "target": "libtorrent_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "libtorrent_vcpkg_features_tools",
+      "target": "libtorrent_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libtorrent/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    }
+  ]
+}

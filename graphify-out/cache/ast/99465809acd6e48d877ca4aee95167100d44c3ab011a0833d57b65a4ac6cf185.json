@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_dp_thread_pool_json",
+      "label": "dp-thread-pool.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dp-thread-pool.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_dp_thread_pool_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dp-thread-pool.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_dp_thread_pool_json",
+      "target": "d_dp_thread_pool_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dp-thread-pool.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

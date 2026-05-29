@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nlohmann_fifo_map_json",
+      "label": "nlohmann-fifo-map.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlohmann-fifo-map.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nlohmann_fifo_map_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlohmann-fifo-map.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nlohmann_fifo_map_json",
+      "target": "n_nlohmann_fifo_map_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nlohmann-fifo-map.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tiledb_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tiledb_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tiledb_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tiledb_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tiledb_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tiledb_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tiledb_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tiledb_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "tiledb_vcpkg_features_azure",
+      "label": "azure",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "tiledb_vcpkg_azure_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "tiledb_vcpkg_azure_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "tiledb_vcpkg_features_gcs",
+      "label": "gcs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "tiledb_vcpkg_gcs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "tiledb_vcpkg_gcs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "tiledb_vcpkg_features_s3",
+      "label": "s3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "tiledb_vcpkg_s3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "tiledb_vcpkg_s3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "tiledb_vcpkg_features_serialization",
+      "label": "serialization",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "tiledb_vcpkg_serialization_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "tiledb_vcpkg_serialization_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "tiledb_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "tiledb_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "tiledb_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L85"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tiledb_vcpkg_json",
+      "target": "tiledb_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features",
+      "target": "tiledb_vcpkg_features_azure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_azure",
+      "target": "tiledb_vcpkg_azure_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_azure",
+      "target": "tiledb_vcpkg_azure_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_azure_dependencies",
+      "target": "ref_azure_identity_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_azure_dependencies",
+      "target": "ref_azure_storage_blobs_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_azure_dependencies",
+      "target": "ref_azure_storage_files_datalake_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_features",
+      "target": "tiledb_vcpkg_features_gcs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_gcs",
+      "target": "tiledb_vcpkg_gcs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_gcs",
+      "target": "tiledb_vcpkg_gcs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features",
+      "target": "tiledb_vcpkg_features_s3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_s3",
+      "target": "tiledb_vcpkg_s3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_s3",
+      "target": "tiledb_vcpkg_s3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features",
+      "target": "tiledb_vcpkg_features_serialization",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_serialization",
+      "target": "tiledb_vcpkg_serialization_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_serialization",
+      "target": "tiledb_vcpkg_serialization_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_serialization_dependencies",
+      "target": "ref_capnproto",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tiledb_vcpkg_features",
+      "target": "tiledb_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_webp",
+      "target": "tiledb_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_features_webp",
+      "target": "tiledb_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "tiledb_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tiledb/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

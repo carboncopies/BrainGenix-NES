@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mnn_json",
+      "label": "mnn.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mnn.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mnn_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mnn.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mnn_json",
+      "target": "m_mnn_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mnn.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

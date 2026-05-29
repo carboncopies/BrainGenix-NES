@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_c_dbg_macro_json",
+      "label": "c-dbg-macro.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c-dbg-macro.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_c_dbg_macro_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c-dbg-macro.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_c_dbg_macro_json",
+      "target": "c_c_dbg_macro_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c-dbg-macro.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

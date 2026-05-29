@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_portmidi_json",
+      "label": "portmidi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portmidi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_portmidi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portmidi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_portmidi_json",
+      "target": "p_portmidi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portmidi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}
