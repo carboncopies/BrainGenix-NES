@@ -1,0 +1,331 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_features_net",
+      "label": "net",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_net_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_net_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_features_win",
+      "label": "win",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_win_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_win_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_features_wx",
+      "label": "wx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_wx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "ripper37_libbase_vcpkg_wx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_default_features",
+      "target": "ref_net",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ripper37_libbase_vcpkg_json",
+      "target": "ripper37_libbase_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features",
+      "target": "ripper37_libbase_vcpkg_features_net",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_net",
+      "target": "ripper37_libbase_vcpkg_net_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_net",
+      "target": "ripper37_libbase_vcpkg_net_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_net_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features",
+      "target": "ripper37_libbase_vcpkg_features_win",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_win",
+      "target": "ripper37_libbase_vcpkg_win_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_win",
+      "target": "ripper37_libbase_vcpkg_win_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features",
+      "target": "ripper37_libbase_vcpkg_features_wx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_wx",
+      "target": "ripper37_libbase_vcpkg_wx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_features_wx",
+      "target": "ripper37_libbase_vcpkg_wx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "ripper37_libbase_vcpkg_wx_dependencies",
+      "target": "ref_wxwidgets",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ripper37-libbase/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

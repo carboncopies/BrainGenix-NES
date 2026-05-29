@@ -1,0 +1,369 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "zeromq_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "zeromq_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "zeromq_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "zeromq_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "zeromq_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "zeromq_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "zeromq_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "zeromq_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "zeromq_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "zeromq_vcpkg_features_curve",
+      "label": "curve",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "zeromq_vcpkg_curve_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "zeromq_vcpkg_features_draft",
+      "label": "draft",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "zeromq_vcpkg_draft_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "zeromq_vcpkg_features_sodium",
+      "label": "sodium",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "zeromq_vcpkg_sodium_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "zeromq_vcpkg_sodium_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "zeromq_vcpkg_features_websockets",
+      "label": "websockets",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "zeromq_vcpkg_websockets_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "zeromq_vcpkg_features_websockets_secure",
+      "label": "websockets-secure",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "zeromq_vcpkg_websockets_secure_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "zeromq_vcpkg_websockets_secure_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeromq_vcpkg_json",
+      "target": "zeromq_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features",
+      "target": "zeromq_vcpkg_features_curve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_curve",
+      "target": "zeromq_vcpkg_curve_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features",
+      "target": "zeromq_vcpkg_features_draft",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_draft",
+      "target": "zeromq_vcpkg_draft_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features",
+      "target": "zeromq_vcpkg_features_sodium",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_sodium",
+      "target": "zeromq_vcpkg_sodium_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_sodium",
+      "target": "zeromq_vcpkg_sodium_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_sodium_dependencies",
+      "target": "ref_libsodium",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeromq_vcpkg_features",
+      "target": "zeromq_vcpkg_features_websockets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_websockets",
+      "target": "zeromq_vcpkg_websockets_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features",
+      "target": "zeromq_vcpkg_features_websockets_secure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_websockets_secure",
+      "target": "zeromq_vcpkg_websockets_secure_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_features_websockets_secure",
+      "target": "zeromq_vcpkg_websockets_secure_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "zeromq_vcpkg_websockets_secure_dependencies",
+      "target": "ref_libgnutls",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeromq/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

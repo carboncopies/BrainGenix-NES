@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_x_xtensor_io_json",
+      "label": "xtensor-io.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xtensor-io.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x_xtensor_io_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xtensor-io.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_x_xtensor_io_json",
+      "target": "x_xtensor_io_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xtensor-io.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

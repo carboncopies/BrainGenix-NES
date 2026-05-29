@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_discord_rpc_json",
+      "label": "discord-rpc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/discord-rpc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_discord_rpc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/discord-rpc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_discord_rpc_json",
+      "target": "d_discord_rpc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/discord-rpc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

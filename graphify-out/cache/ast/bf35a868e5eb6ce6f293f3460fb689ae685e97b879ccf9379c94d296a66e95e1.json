@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qnnpack_json",
+      "label": "qnnpack.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qnnpack.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qnnpack_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qnnpack.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qnnpack_json",
+      "target": "q_qnnpack_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qnnpack.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

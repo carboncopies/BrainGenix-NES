@@ -1,0 +1,128 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gobject_introspection_project_main_c",
+      "label": "main.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gobject_introspection_project_main_c",
+      "target": "girepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gobject_introspection_project_main_c",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_gobject_introspection_project_main_c",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_irepository_get_default",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_irepository_get_search_path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_message",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L11"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_irepository_require",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_irepository_find_by_name",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_function_info_invoke",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_message",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "g_base_info_unref",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-gobject-introspection/project/main.c",
+      "source_location": "L36"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_backward_cpp_json",
+      "label": "backward-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/backward-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_backward_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/backward-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_backward_cpp_json",
+      "target": "b_backward_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/backward-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

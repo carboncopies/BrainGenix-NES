@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_krb5_json",
+      "label": "krb5.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/krb5.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_krb5_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/krb5.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_krb5_json",
+      "target": "k_krb5_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/krb5.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "bitserializer_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "bitserializer_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "bitserializer_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "bitserializer_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "bitserializer_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "bitserializer_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "bitserializer_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "bitserializer_vcpkg_features_csv_archive",
+      "label": "csv-archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "bitserializer_vcpkg_csv_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "bitserializer_vcpkg_features_msgpack_archive",
+      "label": "msgpack-archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "bitserializer_vcpkg_msgpack_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "bitserializer_vcpkg_features_pugixml_archive",
+      "label": "pugixml-archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "bitserializer_vcpkg_pugixml_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "bitserializer_vcpkg_pugixml_archive_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "bitserializer_vcpkg_features_rapidjson_archive",
+      "label": "rapidjson-archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "bitserializer_vcpkg_rapidjson_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "bitserializer_vcpkg_rapidjson_archive_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "bitserializer_vcpkg_features_rapidyaml_archive",
+      "label": "rapidyaml-archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "bitserializer_vcpkg_rapidyaml_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "bitserializer_vcpkg_rapidyaml_archive_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bitserializer_vcpkg_json",
+      "target": "bitserializer_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features",
+      "target": "bitserializer_vcpkg_features_csv_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_csv_archive",
+      "target": "bitserializer_vcpkg_csv_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features",
+      "target": "bitserializer_vcpkg_features_msgpack_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_msgpack_archive",
+      "target": "bitserializer_vcpkg_msgpack_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features",
+      "target": "bitserializer_vcpkg_features_pugixml_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_pugixml_archive",
+      "target": "bitserializer_vcpkg_pugixml_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_pugixml_archive",
+      "target": "bitserializer_vcpkg_pugixml_archive_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_pugixml_archive_dependencies",
+      "target": "ref_pugixml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bitserializer_vcpkg_features",
+      "target": "bitserializer_vcpkg_features_rapidjson_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_rapidjson_archive",
+      "target": "bitserializer_vcpkg_rapidjson_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_rapidjson_archive",
+      "target": "bitserializer_vcpkg_rapidjson_archive_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_rapidjson_archive_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bitserializer_vcpkg_features",
+      "target": "bitserializer_vcpkg_features_rapidyaml_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_rapidyaml_archive",
+      "target": "bitserializer_vcpkg_rapidyaml_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_features_rapidyaml_archive",
+      "target": "bitserializer_vcpkg_rapidyaml_archive_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "bitserializer_vcpkg_rapidyaml_archive_dependencies",
+      "target": "ref_ryml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bitserializer/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

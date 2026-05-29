@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_miniupnpc_json",
+      "label": "miniupnpc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/miniupnpc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_miniupnpc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/miniupnpc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_miniupnpc_json",
+      "target": "m_miniupnpc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/miniupnpc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

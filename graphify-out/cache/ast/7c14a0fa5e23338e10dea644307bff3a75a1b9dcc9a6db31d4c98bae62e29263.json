@@ -1,0 +1,723 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tinyorm_vcpkg_schema",
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tinyorm_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tinyorm_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tinyorm_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tinyorm_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tinyorm_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tinyorm_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tinyorm_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "tinyorm_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "tinyorm_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "tinyorm_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "tinyorm_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_build_mysql_driver",
+      "label": "build-mysql-driver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "tinyorm_vcpkg_build_mysql_driver_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "tinyorm_vcpkg_build_mysql_driver_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_disable_thread_local",
+      "label": "disable-thread-local",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "tinyorm_vcpkg_disable_thread_local_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_inline_constants",
+      "label": "inline-constants",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "tinyorm_vcpkg_inline_constants_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_mysql_ping",
+      "label": "mysql-ping",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "tinyorm_vcpkg_mysql_ping_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "tinyorm_vcpkg_mysql_ping_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_orm",
+      "label": "orm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "tinyorm_vcpkg_orm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_sql_mysql",
+      "label": "sql-mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_sql_psql",
+      "label": "sql-psql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_psql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_psql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_sql_sqlite",
+      "label": "sql-sqlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_sqlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "tinyorm_vcpkg_sql_sqlite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_strict_mode",
+      "label": "strict-mode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "tinyorm_vcpkg_strict_mode_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_tom",
+      "label": "tom",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "tinyorm_vcpkg_tom_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "tinyorm_vcpkg_features_tom_example",
+      "label": "tom-example",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "tinyorm_vcpkg_tom_example_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "tinyorm_vcpkg_tom_example_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L98"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_dependencies",
+      "target": "ref_range_v3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tinyorm_vcpkg_dependencies",
+      "target": "ref_tabulate",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_default_features",
+      "target": "ref_orm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tinyorm_vcpkg_default_features",
+      "target": "ref_sql_sqlite",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tinyorm_vcpkg_default_features",
+      "target": "ref_tom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tinyorm_vcpkg_json",
+      "target": "tinyorm_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_build_mysql_driver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_build_mysql_driver",
+      "target": "tinyorm_vcpkg_build_mysql_driver_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_build_mysql_driver",
+      "target": "tinyorm_vcpkg_build_mysql_driver_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_build_mysql_driver_dependencies",
+      "target": "ref_libmysql",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_disable_thread_local",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_disable_thread_local",
+      "target": "tinyorm_vcpkg_disable_thread_local_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_inline_constants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_inline_constants",
+      "target": "tinyorm_vcpkg_inline_constants_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_mysql_ping",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_mysql_ping",
+      "target": "tinyorm_vcpkg_mysql_ping_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_mysql_ping",
+      "target": "tinyorm_vcpkg_mysql_ping_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_mysql_ping_dependencies",
+      "target": "ref_libmysql",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_orm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_orm",
+      "target": "tinyorm_vcpkg_orm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_sql_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_mysql",
+      "target": "tinyorm_vcpkg_sql_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_mysql",
+      "target": "tinyorm_vcpkg_sql_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_sql_psql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_psql",
+      "target": "tinyorm_vcpkg_sql_psql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_psql",
+      "target": "tinyorm_vcpkg_sql_psql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_sql_sqlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_sqlite",
+      "target": "tinyorm_vcpkg_sql_sqlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_sql_sqlite",
+      "target": "tinyorm_vcpkg_sql_sqlite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_strict_mode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_strict_mode",
+      "target": "tinyorm_vcpkg_strict_mode_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_tom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_tom",
+      "target": "tinyorm_vcpkg_tom_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features",
+      "target": "tinyorm_vcpkg_features_tom_example",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_tom_example",
+      "target": "tinyorm_vcpkg_tom_example_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "tinyorm_vcpkg_features_tom_example",
+      "target": "tinyorm_vcpkg_tom_example_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tinyorm/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    }
+  ]
+}

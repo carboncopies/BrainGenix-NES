@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_imguizmo_json",
+      "label": "imguizmo.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imguizmo.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_imguizmo_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imguizmo.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_imguizmo_json",
+      "target": "i_imguizmo_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imguizmo.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

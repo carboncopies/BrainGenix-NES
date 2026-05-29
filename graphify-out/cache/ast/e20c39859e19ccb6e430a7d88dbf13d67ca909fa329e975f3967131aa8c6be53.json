@@ -1,0 +1,173 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "nanopb_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "nanopb_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "nanopb_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "nanopb_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "nanopb_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "nanopb_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "nanopb_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "nanopb_vcpkg_features_generator",
+      "label": "generator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "nanopb_vcpkg_generator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "nanopb_vcpkg_generator_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L20"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nanopb_vcpkg_json",
+      "target": "nanopb_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "nanopb_vcpkg_features",
+      "target": "nanopb_vcpkg_features_generator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "nanopb_vcpkg_features_generator",
+      "target": "nanopb_vcpkg_generator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "nanopb_vcpkg_features_generator",
+      "target": "nanopb_vcpkg_generator_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nanopb/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    }
+  ]
+}

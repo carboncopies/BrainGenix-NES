@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_ankurvdev_embedresource_json",
+      "label": "ankurvdev-embedresource.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ankurvdev-embedresource.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_ankurvdev_embedresource_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ankurvdev-embedresource.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_ankurvdev_embedresource_json",
+      "target": "a_ankurvdev_embedresource_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/ankurvdev-embedresource.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

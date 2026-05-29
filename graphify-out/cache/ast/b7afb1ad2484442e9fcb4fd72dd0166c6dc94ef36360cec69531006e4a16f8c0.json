@@ -1,0 +1,403 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gmsh_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gmsh_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gmsh_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gmsh_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gmsh_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "gmsh_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "gmsh_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gmsh_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "gmsh_vcpkg_features_graphics",
+      "label": "graphics",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "gmsh_vcpkg_graphics_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "gmsh_vcpkg_graphics_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "gmsh_vcpkg_features_mpi",
+      "label": "mpi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "gmsh_vcpkg_mpi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "gmsh_vcpkg_mpi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "gmsh_vcpkg_features_occ",
+      "label": "occ",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "gmsh_vcpkg_occ_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "gmsh_vcpkg_occ_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "gmsh_vcpkg_features_zipper",
+      "label": "zipper",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "gmsh_vcpkg_zipper_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "gmsh_vcpkg_zipper_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L46"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_dependencies",
+      "target": "ref_blas",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gmsh_vcpkg_json",
+      "target": "gmsh_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features",
+      "target": "gmsh_vcpkg_features_graphics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_graphics",
+      "target": "gmsh_vcpkg_graphics_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_graphics",
+      "target": "gmsh_vcpkg_graphics_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_graphics_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gmsh_vcpkg_graphics_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gmsh_vcpkg_graphics_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gmsh_vcpkg_graphics_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gmsh_vcpkg_features",
+      "target": "gmsh_vcpkg_features_mpi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_mpi",
+      "target": "gmsh_vcpkg_mpi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_mpi",
+      "target": "gmsh_vcpkg_mpi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_mpi_dependencies",
+      "target": "ref_openmpi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gmsh_vcpkg_features",
+      "target": "gmsh_vcpkg_features_occ",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_occ",
+      "target": "gmsh_vcpkg_occ_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_occ",
+      "target": "gmsh_vcpkg_occ_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features",
+      "target": "gmsh_vcpkg_features_zipper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_zipper",
+      "target": "gmsh_vcpkg_zipper_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_features_zipper",
+      "target": "gmsh_vcpkg_zipper_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "gmsh_vcpkg_zipper_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gmsh/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

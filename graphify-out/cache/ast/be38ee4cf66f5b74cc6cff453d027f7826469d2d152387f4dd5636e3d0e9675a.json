@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_pipewire_json",
+      "label": "pipewire.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pipewire.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_pipewire_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pipewire.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_pipewire_json",
+      "target": "p_pipewire_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pipewire.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

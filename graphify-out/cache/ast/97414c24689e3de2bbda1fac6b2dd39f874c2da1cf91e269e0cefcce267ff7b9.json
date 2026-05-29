@@ -1,0 +1,505 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_command_cc",
+      "label": "Command.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_command_parse_command",
+      "label": "parse_command()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L33"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L33"
+    },
+    {
+      "id": "source_command_remove_whitespace",
+      "label": "remove_whitespace()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L64"
+    },
+    {
+      "id": "source_command_get_command_left_hand",
+      "label": "get_command_left_hand()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L68"
+    },
+    {
+      "id": "source_command_get_command_right_hand",
+      "label": "get_command_right_hand()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L72"
+    },
+    {
+      "id": "source_command_get_command_name",
+      "label": "get_command_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L78"
+    },
+    {
+      "id": "source_command_split_object_command",
+      "label": "split_object_command()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L84"
+    },
+    {
+      "id": "source_command_cmd_undefined",
+      "label": "cmd_Undefined()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L91"
+    },
+    {
+      "id": "source_command_cmd_exit",
+      "label": "cmd_Exit()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L96"
+    },
+    {
+      "id": "source_command_execute",
+      "label": "execute()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L101"
+    },
+    {
+      "id": "source_command_read_commands",
+      "label": "read_commands()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L113"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L113"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "thirdparty_netmorphcmake_source_command_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_parse_command",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_parse_command",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_remove_whitespace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_remove_whitespace",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_get_command_left_hand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_get_command_left_hand",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_command_get_command_left_hand",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_get_command_right_hand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_get_command_right_hand",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_command_get_command_right_hand",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_get_command_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_get_command_name",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_command_get_command_name",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_split_object_command",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_split_object_command",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_command_split_object_command",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_cmd_undefined",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_cmd_exit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_execute",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_command_cc",
+      "target": "source_command_read_commands",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_read_commands",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L113",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_command_parse_command",
+      "target": "source_command_remove_whitespace",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_parse_command",
+      "target": "source_command_split_object_command",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_execute",
+      "target": "source_command_cmd_undefined",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_execute",
+      "target": "source_command_cmd_exit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "source_command_read_commands",
+      "target": "source_command_execute",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L130",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_command_parse_command",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "source_command_parse_command",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "source_command_remove_whitespace",
+      "callee": "gsub",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_command_get_command_left_hand",
+      "callee": "before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "source_command_get_command_right_hand",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_command_get_command_right_hand",
+      "callee": "after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_command_get_command_name",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "source_command_get_command_name",
+      "callee": "before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "source_command_split_object_command",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L85"
+    },
+    {
+      "caller_nid": "source_command_split_object_command",
+      "callee": "before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_command_split_object_command",
+      "callee": "after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "source_command_cmd_undefined",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "source_command_cmd_exit",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "source_command_read_commands",
+      "callee": "eof",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "source_command_read_commands",
+      "callee": "getline",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L124"
+    },
+    {
+      "caller_nid": "source_command_read_commands",
+      "callee": "gcount",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_command_read_commands",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "source_command_read_commands",
+      "callee": "lastchar",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Command.cc",
+      "source_location": "L128"
+    }
+  ]
+}

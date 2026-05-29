@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cpputest_json",
+      "label": "cpputest.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpputest.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cpputest_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpputest.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cpputest_json",
+      "target": "c_cpputest_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpputest.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

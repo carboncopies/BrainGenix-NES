@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libssh_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libssh_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libssh_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libssh_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libssh_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libssh_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libssh_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libssh_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libssh_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libssh_vcpkg_features_pcap",
+      "label": "pcap",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libssh_vcpkg_pcap_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libssh_vcpkg_features_server",
+      "label": "server",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libssh_vcpkg_server_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "libssh_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libssh_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libssh_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libssh_vcpkg_json",
+      "target": "libssh_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features",
+      "target": "libssh_vcpkg_features_pcap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features_pcap",
+      "target": "libssh_vcpkg_pcap_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features",
+      "target": "libssh_vcpkg_features_server",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features_server",
+      "target": "libssh_vcpkg_server_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features",
+      "target": "libssh_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features_zlib",
+      "target": "libssh_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_features_zlib",
+      "target": "libssh_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "libssh_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libssh/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

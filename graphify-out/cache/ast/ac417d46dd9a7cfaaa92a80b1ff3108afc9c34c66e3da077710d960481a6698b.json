@@ -1,0 +1,425 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "restc_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "restc_cpp_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "restc_cpp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "restc_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "restc_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "restc_cpp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "restc_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "restc_cpp_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "restc_cpp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "restc_cpp_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "restc_cpp_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "restc_cpp_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "restc_cpp_vcpkg_features_threaded_ctx",
+      "label": "threaded-ctx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "restc_cpp_vcpkg_threaded_ctx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "restc_cpp_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "restc_cpp_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "restc_cpp_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L44"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_chrono",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_context",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_coroutine",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_date_time",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_filesystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_log",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_program_options",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_boost_uuid",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_default_features",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_restc_cpp_vcpkg_json",
+      "target": "restc_cpp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features",
+      "target": "restc_cpp_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features_openssl",
+      "target": "restc_cpp_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features_openssl",
+      "target": "restc_cpp_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "restc_cpp_vcpkg_features",
+      "target": "restc_cpp_vcpkg_features_threaded_ctx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features_threaded_ctx",
+      "target": "restc_cpp_vcpkg_threaded_ctx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features",
+      "target": "restc_cpp_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features_zlib",
+      "target": "restc_cpp_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_features_zlib",
+      "target": "restc_cpp_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "restc_cpp_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/restc-cpp/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

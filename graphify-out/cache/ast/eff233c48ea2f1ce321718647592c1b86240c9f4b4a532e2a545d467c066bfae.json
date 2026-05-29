@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_aliyun_oss_c_sdk_json",
+      "label": "aliyun-oss-c-sdk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aliyun-oss-c-sdk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_aliyun_oss_c_sdk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aliyun-oss-c-sdk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_aliyun_oss_c_sdk_json",
+      "target": "a_aliyun_oss_c_sdk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aliyun-oss-c-sdk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

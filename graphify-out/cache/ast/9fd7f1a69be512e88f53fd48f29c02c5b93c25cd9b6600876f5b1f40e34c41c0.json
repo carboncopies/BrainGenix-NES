@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cgns_cgnsconfig_h",
+      "label": "cgnsconfig.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cgns/cgnsconfig.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cgns_cgnsconfig_h",
+      "target": "cgnstypes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cgns/cgnsconfig.h",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,269 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vst3sdk_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vst3sdk_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vst3sdk_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vst3sdk_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vst3sdk_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vst3sdk_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vst3sdk_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "vst3sdk_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "vst3sdk_vcpkg_features_audiounit_wrapper",
+      "label": "audiounit-wrapper",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "vst3sdk_vcpkg_audiounit_wrapper_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "vst3sdk_vcpkg_audiounit_wrapper_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "vst3sdk_vcpkg_features_hosting_examples",
+      "label": "hosting-examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "vst3sdk_vcpkg_hosting_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "vst3sdk_vcpkg_hosting_examples_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "vst3sdk_vcpkg_features_plugin_examples",
+      "label": "plugin-examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "vst3sdk_vcpkg_plugin_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L28"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vst3sdk_vcpkg_json",
+      "target": "vst3sdk_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features",
+      "target": "vst3sdk_vcpkg_features_audiounit_wrapper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features_audiounit_wrapper",
+      "target": "vst3sdk_vcpkg_audiounit_wrapper_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features_audiounit_wrapper",
+      "target": "vst3sdk_vcpkg_audiounit_wrapper_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features",
+      "target": "vst3sdk_vcpkg_features_hosting_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features_hosting_examples",
+      "target": "vst3sdk_vcpkg_hosting_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features_hosting_examples",
+      "target": "vst3sdk_vcpkg_hosting_examples_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features",
+      "target": "vst3sdk_vcpkg_features_plugin_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "vst3sdk_vcpkg_features_plugin_examples",
+      "target": "vst3sdk_vcpkg_plugin_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vst3sdk/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ]
+}

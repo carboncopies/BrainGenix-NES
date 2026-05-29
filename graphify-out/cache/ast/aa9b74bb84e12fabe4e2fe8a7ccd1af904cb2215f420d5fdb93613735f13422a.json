@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_s2geometry_json",
+      "label": "s2geometry.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/s2geometry.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_s2geometry_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/s2geometry.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_s2geometry_json",
+      "target": "s_s2geometry_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/s2geometry.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

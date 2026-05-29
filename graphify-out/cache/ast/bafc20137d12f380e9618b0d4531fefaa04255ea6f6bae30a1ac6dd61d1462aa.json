@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nifticlib_json",
+      "label": "nifticlib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifticlib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nifticlib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifticlib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nifticlib_json",
+      "target": "n_nifticlib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifticlib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

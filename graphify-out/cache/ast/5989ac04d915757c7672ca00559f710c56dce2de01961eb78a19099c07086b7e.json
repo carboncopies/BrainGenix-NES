@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_robotraconteur_companion_json",
+      "label": "robotraconteur-companion.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/robotraconteur-companion.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_robotraconteur_companion_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/robotraconteur-companion.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_robotraconteur_companion_json",
+      "target": "r_robotraconteur_companion_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/robotraconteur-companion.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

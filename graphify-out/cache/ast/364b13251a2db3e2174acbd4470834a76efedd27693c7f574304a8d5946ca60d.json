@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vit_vit_ctpl_json",
+      "label": "vit-vit-ctpl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vit-vit-ctpl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vit_vit_ctpl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vit-vit-ctpl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vit_vit_ctpl_json",
+      "target": "v_vit_vit_ctpl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vit-vit-ctpl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

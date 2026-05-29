@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_try_catcher_json",
+      "label": "try-catcher.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/try-catcher.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_try_catcher_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/try-catcher.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_try_catcher_json",
+      "target": "t_try_catcher_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/try-catcher.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

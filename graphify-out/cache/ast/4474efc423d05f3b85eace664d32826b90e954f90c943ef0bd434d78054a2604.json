@@ -1,0 +1,597 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_blas",
+      "label": "blas",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_blas_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_blas_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_fftw",
+      "label": "fftw",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_fftw_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_fftw_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_lapack",
+      "label": "lapack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_lapack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_lapack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_opencv",
+      "label": "opencv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_opencv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_opencv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "matplotplusplus_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L61"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_dependencies",
+      "target": "ref_cimg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_dependencies",
+      "target": "ref_nodesoup",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_matplotplusplus_vcpkg_json",
+      "target": "matplotplusplus_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_blas",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_blas",
+      "target": "matplotplusplus_vcpkg_blas_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_blas",
+      "target": "matplotplusplus_vcpkg_blas_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_blas_dependencies",
+      "target": "ref_blas",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_fftw",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_fftw",
+      "target": "matplotplusplus_vcpkg_fftw_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_fftw",
+      "target": "matplotplusplus_vcpkg_fftw_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_fftw_dependencies",
+      "target": "ref_fftw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_jpeg",
+      "target": "matplotplusplus_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_jpeg",
+      "target": "matplotplusplus_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_lapack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_lapack",
+      "target": "matplotplusplus_vcpkg_lapack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_lapack",
+      "target": "matplotplusplus_vcpkg_lapack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_lapack_dependencies",
+      "target": "ref_lapack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_opencv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_opencv",
+      "target": "matplotplusplus_vcpkg_opencv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_opencv",
+      "target": "matplotplusplus_vcpkg_opencv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_opencv_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_opengl",
+      "target": "matplotplusplus_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_opengl",
+      "target": "matplotplusplus_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_opengl_dependencies",
+      "target": "ref_glad",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_opengl_dependencies",
+      "target": "ref_glfw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_opengl_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features",
+      "target": "matplotplusplus_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_zlib",
+      "target": "matplotplusplus_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_features_zlib",
+      "target": "matplotplusplus_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "matplotplusplus_vcpkg_zlib_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "matplotplusplus_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/matplotplusplus/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_intel_mkl_json",
+      "label": "intel-mkl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intel-mkl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_intel_mkl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intel-mkl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_intel_mkl_json",
+      "target": "i_intel_mkl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intel-mkl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_ompl_json",
+      "label": "ompl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ompl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_ompl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ompl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_ompl_json",
+      "target": "o_ompl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ompl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

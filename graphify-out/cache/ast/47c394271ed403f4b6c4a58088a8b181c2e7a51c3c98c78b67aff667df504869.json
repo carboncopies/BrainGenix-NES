@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cyrus_sasl_json",
+      "label": "cyrus-sasl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cyrus-sasl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cyrus_sasl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cyrus-sasl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cyrus_sasl_json",
+      "target": "c_cyrus_sasl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cyrus-sasl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

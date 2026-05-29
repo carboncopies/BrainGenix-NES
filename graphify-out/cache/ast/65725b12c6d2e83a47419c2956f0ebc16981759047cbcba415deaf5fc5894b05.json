@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "graphite2_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "graphite2_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "graphite2_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "graphite2_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "graphite2_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "graphite2_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "graphite2_vcpkg_description",
+      "target": "ref_graphite_is_a_smart_font_system_developed_specifically_to_handle_the_complexities_of_lesser_known_languages_of_the_world",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "graphite2_vcpkg_description",
+      "target": "ref_graphite2_is_a_rework_of_the_original_graphite_engine_that_is_faster_smaller_and_uses_an_api_that_is_better_suited_to_the_layout_architecture_of_most_text_processing_applications",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_graphite2_vcpkg_json",
+      "target": "graphite2_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/graphite2/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ]
+}

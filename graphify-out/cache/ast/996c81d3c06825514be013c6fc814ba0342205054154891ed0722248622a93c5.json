@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_guetzli_json",
+      "label": "guetzli.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guetzli.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_guetzli_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guetzli.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_guetzli_json",
+      "target": "g_guetzli_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guetzli.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

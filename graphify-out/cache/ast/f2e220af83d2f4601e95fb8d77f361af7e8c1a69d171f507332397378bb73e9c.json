@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_features_directfb",
+      "label": "directfb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_directfb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_directfb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_features_wayland",
+      "label": "wayland",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_wayland_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_features_xcb",
+      "label": "xcb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_xcb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_features_xlib",
+      "label": "xlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "vulkan_loader_vcpkg_xlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_vulkan_loader_vcpkg_json",
+      "target": "vulkan_loader_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features",
+      "target": "vulkan_loader_vcpkg_features_directfb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features_directfb",
+      "target": "vulkan_loader_vcpkg_directfb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features_directfb",
+      "target": "vulkan_loader_vcpkg_directfb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_directfb_dependencies",
+      "target": "ref_directfb2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features",
+      "target": "vulkan_loader_vcpkg_features_wayland",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features_wayland",
+      "target": "vulkan_loader_vcpkg_wayland_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features",
+      "target": "vulkan_loader_vcpkg_features_xcb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features_xcb",
+      "target": "vulkan_loader_vcpkg_xcb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features",
+      "target": "vulkan_loader_vcpkg_features_xlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "vulkan_loader_vcpkg_features_xlib",
+      "target": "vulkan_loader_vcpkg_xlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/vulkan-loader/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tdlib_json",
+      "label": "tdlib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdlib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tdlib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdlib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tdlib_json",
+      "target": "t_tdlib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdlib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

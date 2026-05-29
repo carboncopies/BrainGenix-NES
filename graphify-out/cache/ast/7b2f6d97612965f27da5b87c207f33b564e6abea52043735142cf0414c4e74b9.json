@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "seacas_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "seacas_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "seacas_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "seacas_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "seacas_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "seacas_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "seacas_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "seacas_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "seacas_vcpkg_features_matio",
+      "label": "matio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "seacas_vcpkg_matio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "seacas_vcpkg_matio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "seacas_vcpkg_features_mpi",
+      "label": "mpi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "seacas_vcpkg_mpi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "seacas_vcpkg_mpi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_dependencies",
+      "target": "ref_cereal",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "seacas_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "seacas_vcpkg_dependencies",
+      "target": "ref_metis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "seacas_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_seacas_vcpkg_json",
+      "target": "seacas_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features",
+      "target": "seacas_vcpkg_features_matio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features_matio",
+      "target": "seacas_vcpkg_matio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features_matio",
+      "target": "seacas_vcpkg_matio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features",
+      "target": "seacas_vcpkg_features_mpi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features_mpi",
+      "target": "seacas_vcpkg_mpi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "seacas_vcpkg_features_mpi",
+      "target": "seacas_vcpkg_mpi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/seacas/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tinytiff_json",
+      "label": "tinytiff.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinytiff.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tinytiff_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinytiff.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tinytiff_json",
+      "target": "t_tinytiff_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinytiff.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

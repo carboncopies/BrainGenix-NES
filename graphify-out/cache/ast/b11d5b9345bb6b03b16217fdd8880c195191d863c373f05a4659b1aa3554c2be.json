@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_ftgl_json",
+      "label": "ftgl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ftgl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_ftgl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ftgl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_ftgl_json",
+      "target": "f_ftgl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ftgl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

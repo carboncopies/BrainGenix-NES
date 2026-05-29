@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gettimeofday_json",
+      "label": "gettimeofday.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gettimeofday.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gettimeofday_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gettimeofday.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gettimeofday_json",
+      "target": "g_gettimeofday_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gettimeofday.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

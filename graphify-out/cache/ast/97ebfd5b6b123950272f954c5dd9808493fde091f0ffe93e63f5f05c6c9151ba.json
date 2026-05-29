@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_serd_json",
+      "label": "serd.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/serd.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_serd_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/serd.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_serd_json",
+      "target": "s_serd_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/serd.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

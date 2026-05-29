@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_check",
+      "label": "check",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L3"
+    },
+    {
+      "id": "project_main_operator",
+      "label": "operator()()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L6"
+    },
+    {
+      "id": "t",
+      "label": "T",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L6"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "target": "variant",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "target": "project_main_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "target": "project_main_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_operator",
+      "target": "t",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_mapbox_variant_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_main",
+      "target": "project_main_check",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L15",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_operator",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "util::apply_visitor",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-mapbox-variant/project/main.cpp",
+      "source_location": "L15"
+    }
+  ]
+}

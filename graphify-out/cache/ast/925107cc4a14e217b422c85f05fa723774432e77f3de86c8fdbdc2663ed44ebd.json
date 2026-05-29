@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_netcpp_json",
+      "label": "netcpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netcpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_netcpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netcpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_netcpp_json",
+      "target": "n_netcpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/netcpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

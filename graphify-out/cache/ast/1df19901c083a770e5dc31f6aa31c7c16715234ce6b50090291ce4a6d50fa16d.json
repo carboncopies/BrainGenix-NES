@@ -1,0 +1,851 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_synapse_cc",
+      "label": "synapse.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_synapse_synapse",
+      "label": "synapse()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "connection",
+      "label": "connection",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "synapse_type",
+      "label": "synapse_type",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "synapse_structure",
+      "label": "synapse_structure",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "source_synapse_presynaptic_neuron",
+      "label": "Presynaptic_Neuron()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L71"
+    },
+    {
+      "id": "neuron",
+      "label": "neuron",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L71"
+    },
+    {
+      "id": "source_synapse_postsynaptic_neuron",
+      "label": "Postsynaptic_Neuron()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L75"
+    },
+    {
+      "id": "source_synapse_move_add",
+      "label": "move_add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L79"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L79"
+    },
+    {
+      "id": "source_synapse_fanin_rot",
+      "label": "fanin_rot()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L83"
+    },
+    {
+      "id": "source_synapse_net_fig",
+      "label": "net_Fig()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L87"
+    },
+    {
+      "id": "fig_object",
+      "label": "Fig_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L87"
+    },
+    {
+      "id": "source_synapse_net_txt",
+      "label": "net_Txt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L103"
+    },
+    {
+      "id": "txt_object",
+      "label": "Txt_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L103"
+    },
+    {
+      "id": "source_synapse_net_nes",
+      "label": "net_NES()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L145"
+    },
+    {
+      "id": "netdata",
+      "label": "NetData",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L145"
+    },
+    {
+      "id": "source_synapse_synapse_op",
+      "label": "synapse_op()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L167"
+    },
+    {
+      "id": "synapse_tree_op",
+      "label": "synapse_tree_op",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L167"
+    },
+    {
+      "id": "source_synapse_add",
+      "label": "add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L172"
+    },
+    {
+      "id": "source_synapse_find_t_genesis",
+      "label": "find_t_genesis()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L192"
+    },
+    {
+      "id": "source_synapse_glutamate_receptors",
+      "label": "glutamate_receptors()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_connection_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_color_table_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_fibre_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_synapse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_synapse",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_synapse",
+      "target": "connection",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_synapse",
+      "target": "synapse_type",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_synapse",
+      "target": "synapse_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_synapse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_presynaptic_neuron",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_presynaptic_neuron",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_postsynaptic_neuron",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_postsynaptic_neuron",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_move_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_move_add",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_fanin_rot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_net_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_fig",
+      "target": "fig_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L87",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_net_txt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_txt",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_net_nes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_nes",
+      "target": "netdata",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L145",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_synapse_op",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_synapse_op",
+      "target": "synapse_tree_op",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L167",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_add",
+      "target": "source_synapse_synapse",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_find_t_genesis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_find_t_genesis",
+      "target": "source_synapse_synapse",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L192",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_cc",
+      "target": "source_synapse_glutamate_receptors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_glutamate_receptors",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_glutamate_receptors",
+      "target": "connection",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_glutamate_receptors",
+      "target": "synapse_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_glutamate_receptors",
+      "target": "synapse_type",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L197",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_net_txt",
+      "target": "source_synapse_presynaptic_neuron",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_txt",
+      "target": "source_synapse_postsynaptic_neuron",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_txt",
+      "target": "source_synapse_find_t_genesis",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_nes",
+      "target": "source_synapse_presynaptic_neuron",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_nes",
+      "target": "source_synapse_postsynaptic_neuron",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_net_nes",
+      "target": "source_synapse_find_t_genesis",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_glutamate_receptors",
+      "target": "source_synapse_add",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L200",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_synapse_synapse",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "source_synapse_synapse",
+      "callee": "Synapses",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "source_synapse_synapse",
+      "callee": "require",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "source_synapse_synapse",
+      "callee": "release",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "source_synapse_presynaptic_neuron",
+      "callee": "PreSynaptic",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "source_synapse_postsynaptic_neuron",
+      "callee": "PostSynaptic",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "source_synapse_net_fig",
+      "callee": "type_ID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "source_synapse_net_fig",
+      "callee": "colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "AxonSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "DendriteSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L135"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "get_APICAL",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "DendriteSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_synapse_net_txt",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "make_unique<SynapseData>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L150"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "AxonSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "DendriteSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "to_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "get_APICAL",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "DendriteSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "emplace_back",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L160"
+    },
+    {
+      "caller_nid": "source_synapse_net_nes",
+      "callee": "release",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L160"
+    },
+    {
+      "caller_nid": "source_synapse_synapse_op",
+      "callee": "op",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "source_synapse_glutamate_receptors",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse.cc",
+      "source_location": "L200"
+    }
+  ]
+}

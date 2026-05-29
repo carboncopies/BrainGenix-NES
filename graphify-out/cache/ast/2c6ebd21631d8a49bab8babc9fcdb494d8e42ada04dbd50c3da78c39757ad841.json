@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libusb_json",
+      "label": "libusb.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libusb.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libusb_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libusb.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libusb_json",
+      "target": "l_libusb_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libusb.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

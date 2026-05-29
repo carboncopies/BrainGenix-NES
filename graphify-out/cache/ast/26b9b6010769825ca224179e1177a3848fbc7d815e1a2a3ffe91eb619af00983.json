@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_guilite_json",
+      "label": "guilite.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guilite.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_guilite_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guilite.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_guilite_json",
+      "target": "g_guilite_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/guilite.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

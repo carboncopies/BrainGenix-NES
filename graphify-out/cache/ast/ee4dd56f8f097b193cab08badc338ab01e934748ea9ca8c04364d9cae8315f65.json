@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_windows_unstable_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows-unstable/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

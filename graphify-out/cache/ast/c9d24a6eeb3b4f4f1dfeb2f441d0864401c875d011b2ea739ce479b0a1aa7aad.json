@@ -1,0 +1,1137 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "skia_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "skia_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "skia_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "skia_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "skia_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "skia_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "skia_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "skia_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "skia_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "skia_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "skia_vcpkg_features_avif",
+      "label": "avif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "skia_vcpkg_avif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "skia_vcpkg_avif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "skia_vcpkg_features_dawn",
+      "label": "dawn",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "skia_vcpkg_dawn_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "skia_vcpkg_dawn_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "skia_vcpkg_dawn_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "skia_vcpkg_features_direct3d",
+      "label": "direct3d",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "skia_vcpkg_direct3d_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "skia_vcpkg_direct3d_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "skia_vcpkg_features_dng",
+      "label": "dng",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "skia_vcpkg_dng_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "skia_vcpkg_dng_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "skia_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "skia_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "skia_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L118"
+    },
+    {
+      "id": "skia_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "skia_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "skia_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "skia_vcpkg_features_gl",
+      "label": "gl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "skia_vcpkg_gl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "skia_vcpkg_gl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "skia_vcpkg_gl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "skia_vcpkg_features_graphite",
+      "label": "graphite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L149"
+    },
+    {
+      "id": "skia_vcpkg_graphite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "skia_vcpkg_graphite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L151"
+    },
+    {
+      "id": "skia_vcpkg_features_harfbuzz",
+      "label": "harfbuzz",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L161"
+    },
+    {
+      "id": "skia_vcpkg_harfbuzz_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L162"
+    },
+    {
+      "id": "skia_vcpkg_harfbuzz_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L163"
+    },
+    {
+      "id": "skia_vcpkg_features_icu",
+      "label": "icu",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L177"
+    },
+    {
+      "id": "skia_vcpkg_icu_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L178"
+    },
+    {
+      "id": "skia_vcpkg_icu_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L179"
+    },
+    {
+      "id": "skia_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "skia_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "skia_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L185"
+    },
+    {
+      "id": "skia_vcpkg_features_metal",
+      "label": "metal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "skia_vcpkg_metal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L190"
+    },
+    {
+      "id": "skia_vcpkg_metal_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L191"
+    },
+    {
+      "id": "skia_vcpkg_features_pdf",
+      "label": "pdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L193"
+    },
+    {
+      "id": "skia_vcpkg_pdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L194"
+    },
+    {
+      "id": "skia_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L196"
+    },
+    {
+      "id": "skia_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L197"
+    },
+    {
+      "id": "skia_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L198"
+    },
+    {
+      "id": "skia_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L202"
+    },
+    {
+      "id": "skia_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L203"
+    },
+    {
+      "id": "skia_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L204"
+    },
+    {
+      "id": "skia_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L209"
+    },
+    {
+      "id": "skia_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L210"
+    },
+    {
+      "id": "skia_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L211"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_description",
+      "target": "ref_skia_is_an_open_source_2d_graphics_library_which_provides_common_apis_that_work_across_a_variety_of_hardware_and_software_platforms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_description",
+      "target": "ref_it_serves_as_the_graphics_engine_for_google_chrome_and_chrome_os_android_mozilla_firefox_and_firefox_os_and_many_other_products",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_description",
+      "target": "ref_skia_is_sponsored_and_managed_by_google_but_is_available_for_use_by_anyone_under_the_bsd_free_software_license_while_engineering_of_the_core_components_is_done_by_the_skia_development_team_we_consider_contributions_from_any_source",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_dependencies",
+      "target": "ref_abseil",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_default_features",
+      "target": "ref_webp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_vcpkg_json",
+      "target": "skia_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_avif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_avif",
+      "target": "skia_vcpkg_avif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_avif",
+      "target": "skia_vcpkg_avif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_avif_dependencies",
+      "target": "ref_libavif",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_dawn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_dawn",
+      "target": "skia_vcpkg_dawn_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_dawn",
+      "target": "skia_vcpkg_dawn_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_dawn",
+      "target": "skia_vcpkg_dawn_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_direct3d",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_direct3d",
+      "target": "skia_vcpkg_direct3d_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_direct3d",
+      "target": "skia_vcpkg_direct3d_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_dng",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_dng",
+      "target": "skia_vcpkg_dng_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_dng",
+      "target": "skia_vcpkg_dng_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_fontconfig",
+      "target": "skia_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_fontconfig",
+      "target": "skia_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_fontconfig_dependencies",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_freetype",
+      "target": "skia_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_freetype",
+      "target": "skia_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_gl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_gl",
+      "target": "skia_vcpkg_gl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_gl",
+      "target": "skia_vcpkg_gl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_gl",
+      "target": "skia_vcpkg_gl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_gl_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_graphite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_graphite",
+      "target": "skia_vcpkg_graphite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_graphite",
+      "target": "skia_vcpkg_graphite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L151",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_harfbuzz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_harfbuzz",
+      "target": "skia_vcpkg_harfbuzz_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_harfbuzz",
+      "target": "skia_vcpkg_harfbuzz_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_icu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_icu",
+      "target": "skia_vcpkg_icu_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_icu",
+      "target": "skia_vcpkg_icu_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_icu_dependencies",
+      "target": "ref_icu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_jpeg",
+      "target": "skia_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_jpeg",
+      "target": "skia_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_metal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_metal",
+      "target": "skia_vcpkg_metal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_metal",
+      "target": "skia_vcpkg_metal_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_pdf",
+      "target": "skia_vcpkg_pdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_png",
+      "target": "skia_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_png",
+      "target": "skia_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L198",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_vulkan",
+      "target": "skia_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_vulkan",
+      "target": "skia_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L204",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan_memory_allocator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L204",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "skia_vcpkg_features",
+      "target": "skia_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_webp",
+      "target": "skia_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_features_webp",
+      "target": "skia_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "skia_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/vcpkg.json",
+      "source_location": "L211",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

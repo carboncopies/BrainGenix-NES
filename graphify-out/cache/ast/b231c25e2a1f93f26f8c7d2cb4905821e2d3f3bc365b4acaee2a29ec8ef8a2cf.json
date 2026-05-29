@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_flash_runtime_extensions_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/ports/flash-runtime-extensions/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "flash_runtime_extensions_readme_flash_runtime_extensions",
+      "label": "flash-runtime-extensions",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/ports/flash-runtime-extensions/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_flash_runtime_extensions_readme_md",
+      "target": "flash_runtime_extensions_readme_flash_runtime_extensions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/flash-runtime-extensions/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

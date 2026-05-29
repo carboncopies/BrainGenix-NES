@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_globjects_json",
+      "label": "globjects.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/globjects.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_globjects_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/globjects.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_globjects_json",
+      "target": "g_globjects_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/globjects.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qt_advanced_docking_system_json",
+      "label": "qt-advanced-docking-system.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qt-advanced-docking-system.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qt_advanced_docking_system_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qt-advanced-docking-system.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qt_advanced_docking_system_json",
+      "target": "q_qt_advanced_docking_system_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qt-advanced-docking-system.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

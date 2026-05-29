@@ -1,0 +1,625 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qt3d_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qt3d_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qt3d_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qt3d_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qt3d_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qt3d_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qt3d_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "qt3d_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "qt3d_vcpkg_features_animation",
+      "label": "animation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "qt3d_vcpkg_animation_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "qt3d_vcpkg_animation_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "qt3d_vcpkg_features_assimp",
+      "label": "assimp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "qt3d_vcpkg_assimp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "qt3d_vcpkg_assimp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "qt3d_vcpkg_features_extras",
+      "label": "extras",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "qt3d_vcpkg_extras_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "qt3d_vcpkg_extras_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "qt3d_vcpkg_features_input",
+      "label": "input",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "qt3d_vcpkg_input_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "qt3d_vcpkg_features_logic",
+      "label": "logic",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "qt3d_vcpkg_logic_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "qt3d_vcpkg_features_qml",
+      "label": "qml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "qt3d_vcpkg_qml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "qt3d_vcpkg_qml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "qt3d_vcpkg_features_render",
+      "label": "render",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "qt3d_vcpkg_render_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "qt3d_vcpkg_features_rhi",
+      "label": "rhi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "qt3d_vcpkg_rhi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L87"
+    },
+    {
+      "id": "qt3d_vcpkg_rhi_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "qt3d_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "qt3d_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "qt3d_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L94"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_dependencies",
+      "target": "ref_assimp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_animation",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_assimp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_extras",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_input",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_logic",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_default_features",
+      "target": "ref_render",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qt3d_vcpkg_json",
+      "target": "qt3d_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_animation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_animation",
+      "target": "qt3d_vcpkg_animation_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_animation",
+      "target": "qt3d_vcpkg_animation_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_assimp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_assimp",
+      "target": "qt3d_vcpkg_assimp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_assimp",
+      "target": "qt3d_vcpkg_assimp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_assimp_dependencies",
+      "target": "ref_assimp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_extras",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_extras",
+      "target": "qt3d_vcpkg_extras_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_extras",
+      "target": "qt3d_vcpkg_extras_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_input",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_input",
+      "target": "qt3d_vcpkg_input_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_logic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_logic",
+      "target": "qt3d_vcpkg_logic_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_qml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_qml",
+      "target": "qt3d_vcpkg_qml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_qml",
+      "target": "qt3d_vcpkg_qml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_render",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_render",
+      "target": "qt3d_vcpkg_render_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_rhi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_rhi",
+      "target": "qt3d_vcpkg_rhi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_rhi",
+      "target": "qt3d_vcpkg_rhi_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_rhi_dependencies",
+      "target": "ref_qtshadertools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qt3d_vcpkg_features",
+      "target": "qt3d_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_vulkan",
+      "target": "qt3d_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_features_vulkan",
+      "target": "qt3d_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "qt3d_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qt3d/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libqtrest_json",
+      "label": "libqtrest.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libqtrest.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libqtrest_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libqtrest.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libqtrest_json",
+      "target": "l_libqtrest_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libqtrest.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

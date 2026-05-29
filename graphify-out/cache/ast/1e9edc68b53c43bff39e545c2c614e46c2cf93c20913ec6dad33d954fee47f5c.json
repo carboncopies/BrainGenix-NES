@@ -1,0 +1,341 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_features_glib",
+      "label": "glib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_glib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_glib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_features_libuv",
+      "label": "libuv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_libuv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_libuv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_features_qt6",
+      "label": "qt6",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_qt6_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "dbus_cxx_vcpkg_qt6_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L35"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_dependencies",
+      "target": "ref_libsigcpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dbus_cxx_vcpkg_json",
+      "target": "dbus_cxx_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features",
+      "target": "dbus_cxx_vcpkg_features_glib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_glib",
+      "target": "dbus_cxx_vcpkg_glib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_glib",
+      "target": "dbus_cxx_vcpkg_glib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_glib_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features",
+      "target": "dbus_cxx_vcpkg_features_libuv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_libuv",
+      "target": "dbus_cxx_vcpkg_libuv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_libuv",
+      "target": "dbus_cxx_vcpkg_libuv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_libuv_dependencies",
+      "target": "ref_libuv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features",
+      "target": "dbus_cxx_vcpkg_features_qt6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_qt6",
+      "target": "dbus_cxx_vcpkg_qt6_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_features_qt6",
+      "target": "dbus_cxx_vcpkg_qt6_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "dbus_cxx_vcpkg_qt6_dependencies",
+      "target": "ref_qtbase",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dbus-cxx/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

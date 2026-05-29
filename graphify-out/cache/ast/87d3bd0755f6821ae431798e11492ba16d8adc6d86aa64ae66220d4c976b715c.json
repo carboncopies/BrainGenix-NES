@@ -1,0 +1,443 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_features_dds",
+      "label": "dds",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_dds_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_features_df_vulkan",
+      "label": "df-vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_df_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_features_materialx",
+      "label": "materialx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_materialx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_materialx_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_features_openimageio",
+      "label": "openimageio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_openimageio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "mdl_sdk_vcpkg_openimageio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_core",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_dynamic_bitset",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_functional",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_intrusive",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_tokenizer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_dependencies",
+      "target": "ref_boost_unordered",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mdl_sdk_vcpkg_json",
+      "target": "mdl_sdk_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features",
+      "target": "mdl_sdk_vcpkg_features_dds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_dds",
+      "target": "mdl_sdk_vcpkg_dds_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features",
+      "target": "mdl_sdk_vcpkg_features_df_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_df_vulkan",
+      "target": "mdl_sdk_vcpkg_df_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_df_vulkan",
+      "target": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "target": "ref_glfw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "target": "ref_glslang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "target": "ref_volk",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_df_vulkan_dependencies",
+      "target": "ref_vulkan_validationlayers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features",
+      "target": "mdl_sdk_vcpkg_features_materialx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_materialx",
+      "target": "mdl_sdk_vcpkg_materialx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_materialx",
+      "target": "mdl_sdk_vcpkg_materialx_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features",
+      "target": "mdl_sdk_vcpkg_features_openimageio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_openimageio",
+      "target": "mdl_sdk_vcpkg_openimageio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "mdl_sdk_vcpkg_features_openimageio",
+      "target": "mdl_sdk_vcpkg_openimageio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mdl-sdk/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ]
+}

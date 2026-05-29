@@ -1,0 +1,273 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_features_harfbuzz",
+      "label": "harfbuzz",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_harfbuzz_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_harfbuzz_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_features_svg",
+      "label": "svg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_svg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "sdl3_ttf_vcpkg_svg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sdl3_ttf_vcpkg_json",
+      "target": "sdl3_ttf_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features",
+      "target": "sdl3_ttf_vcpkg_features_harfbuzz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features_harfbuzz",
+      "target": "sdl3_ttf_vcpkg_harfbuzz_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features_harfbuzz",
+      "target": "sdl3_ttf_vcpkg_harfbuzz_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_harfbuzz_dependencies",
+      "target": "ref_harfbuzz",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features",
+      "target": "sdl3_ttf_vcpkg_features_svg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features_svg",
+      "target": "sdl3_ttf_vcpkg_svg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_features_svg",
+      "target": "sdl3_ttf_vcpkg_svg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "sdl3_ttf_vcpkg_svg_dependencies",
+      "target": "ref_plutosvg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sdl3-ttf/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

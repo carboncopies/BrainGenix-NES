@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_ring_span_lite_json",
+      "label": "ring-span-lite.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ring-span-lite.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_ring_span_lite_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ring-span-lite.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_ring_span_lite_json",
+      "target": "r_ring_span_lite_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ring-span-lite.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

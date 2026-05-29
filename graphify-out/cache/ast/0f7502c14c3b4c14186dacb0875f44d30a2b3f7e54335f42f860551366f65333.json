@@ -1,0 +1,1535 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "label": "applocal.py",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "osx_applocal_globalconfig",
+      "label": "GlobalConfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "object",
+      "label": "object",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "osx_applocal_run_and_get_output",
+      "label": "run_and_get_output()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "osx_applocal_get_dependencies",
+      "label": "get_dependencies()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L74"
+    },
+    {
+      "id": "osx_applocal_is_qt_plugin",
+      "label": "is_qt_plugin()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L93"
+    },
+    {
+      "id": "osx_applocal_is_qt_lib",
+      "label": "is_qt_lib()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L102"
+    },
+    {
+      "id": "osx_applocal_is_loader_path_lib",
+      "label": "is_loader_path_lib()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L111"
+    },
+    {
+      "id": "osx_applocal_normalize_qtplugin_name",
+      "label": "normalize_qtplugin_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L119"
+    },
+    {
+      "id": "osx_applocal_normalize_qtlib_name",
+      "label": "normalize_qtlib_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L163"
+    },
+    {
+      "id": "osx_applocal_normalize_loaderpath_name",
+      "label": "normalize_loaderpath_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L206"
+    },
+    {
+      "id": "osx_applocal_fix_dependency",
+      "label": "fix_dependency()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L244"
+    },
+    {
+      "id": "osx_applocal_fix_binary",
+      "label": "fix_binary()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L324"
+    },
+    {
+      "id": "osx_applocal_fix_main_binaries",
+      "label": "fix_main_binaries()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L344"
+    },
+    {
+      "id": "osx_applocal_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L363"
+    },
+    {
+      "id": "osx_applocal_rationale_58",
+      "label": "Run process and get all output",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "osx_applocal_rationale_75",
+      "label": "input: filename must be an absolute path     Should call `otool` and returns the",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L75"
+    },
+    {
+      "id": "osx_applocal_rationale_94",
+      "label": "Checks if a given file is a qt plugin.     Accepts absolute path as well as path",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "osx_applocal_rationale_103",
+      "label": "Checks if a given file is a qt library.     Accepts absolute path as well as pat",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L103"
+    },
+    {
+      "id": "osx_applocal_rationale_112",
+      "label": "Checks if a given file is loaded via @loader_path or @rpath",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L112"
+    },
+    {
+      "id": "osx_applocal_rationale_120",
+      "label": "input: a path to a qt plugin, as returned by otool, that can have this form :",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L120"
+    },
+    {
+      "id": "osx_applocal_rationale_164",
+      "label": "input: a path to a qt library, as returned by otool, that can have this form :",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L164"
+    },
+    {
+      "id": "osx_applocal_rationale_207",
+      "label": "input: a path to a loaderpath library, as returned by otool, that can have this",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L207"
+    },
+    {
+      "id": "osx_applocal_rationale_245",
+      "label": "fix 'dep' dependency of 'binary'. 'dep' is a qt library",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L245"
+    },
+    {
+      "id": "osx_applocal_rationale_325",
+      "label": "input:           binary: relative or absolute path (no @executable_path syntax)",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L325"
+    },
+    {
+      "id": "osx_applocal_rationale_345",
+      "label": "list the main binaries of the app bundle and fix them",
+      "file_type": "rationale",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L345"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "subprocess",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "string",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "logging",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "collections",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_globalconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_globalconfig",
+      "target": "object",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_run_and_get_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_get_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_is_qt_plugin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_is_qt_lib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_is_loader_path_lib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_normalize_qtplugin_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_normalize_qtlib_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_normalize_loaderpath_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_fix_dependency",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_fix_binary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L324",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_fix_main_binaries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L344",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_buildsystems_osx_applocal_py",
+      "target": "osx_applocal_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L363",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_get_dependencies",
+      "target": "osx_applocal_run_and_get_output",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_is_qt_lib",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_normalize_qtlib_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_is_qt_plugin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_normalize_qtplugin_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_is_loader_path_lib",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_normalize_loaderpath_name",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_run_and_get_output",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_dependency",
+      "target": "osx_applocal_fix_binary",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_binary",
+      "target": "osx_applocal_get_dependencies",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_binary",
+      "target": "osx_applocal_fix_dependency",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L338",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_fix_main_binaries",
+      "target": "osx_applocal_fix_binary",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_main",
+      "target": "osx_applocal_fix_main_binaries",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L415",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_58",
+      "target": "osx_applocal_run_and_get_output",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_75",
+      "target": "osx_applocal_get_dependencies",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_94",
+      "target": "osx_applocal_is_qt_plugin",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_103",
+      "target": "osx_applocal_is_qt_lib",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_112",
+      "target": "osx_applocal_is_loader_path_lib",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_120",
+      "target": "osx_applocal_normalize_qtplugin_name",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_164",
+      "target": "osx_applocal_normalize_qtlib_name",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_207",
+      "target": "osx_applocal_normalize_loaderpath_name",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_245",
+      "target": "osx_applocal_fix_dependency",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_325",
+      "target": "osx_applocal_fix_binary",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "osx_applocal_rationale_345",
+      "target": "osx_applocal_fix_main_binaries",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L345",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "namedtuple",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "Popen",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "communicate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "process_output",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "osx_applocal_run_and_get_output",
+      "callee": "process_output",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "split",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "strip",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "splitlines",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "osx_applocal_get_dependencies",
+      "callee": "basename",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "osx_applocal_is_qt_plugin",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "osx_applocal_is_qt_plugin",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "osx_applocal_is_qt_lib",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "osx_applocal_is_qt_lib",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "osx_applocal_is_loader_path_lib",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "osx_applocal_is_loader_path_lib",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L134"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "critical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "groups",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "groups",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "Template",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "normpath",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "dirname",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtplugin_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L159"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L174"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L176"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L177"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L179"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "critical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L180"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "groups",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "Template",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "normpath",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "dirname",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L197"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_qtlib_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L216"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L216"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "compile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "match",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L221"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "critical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "groups",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L226"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "Template",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L227"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "normpath",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L231"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "dirname",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L232"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "safe_substitute",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L240"
+    },
+    {
+      "caller_nid": "osx_applocal_normalize_loaderpath_name",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L240"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L250"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L254"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L254"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L258"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "exists",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L278"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L285"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "exists",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L289"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L292"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L292"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "dirname",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "dirname",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L301"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L314"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L317"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_dependency",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L317"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_binary",
+      "callee": "debug",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L334"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_binary",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L334"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_binary",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_binary",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L339"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L349"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "split",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L349"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "walk",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "splitext",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L356"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L357"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "format",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L357"
+    },
+    {
+      "caller_nid": "osx_applocal_fix_main_binaries",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L358"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "ArgumentParser",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L374"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "add_argument",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L376"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "add_argument",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L378"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "add_argument",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L380"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "add_argument",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L382"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "add_argument",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L384"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "parse_args",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L386"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "normpath",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "getLogger",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "Formatter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L397"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "StreamHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "setFormatter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L401"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "addHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "FileHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L406"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "setFormatter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L407"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "addHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "addHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L411"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "NullHandler",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L411"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "setLevel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L413"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "info",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L416"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L419"
+    },
+    {
+      "caller_nid": "osx_applocal_main",
+      "callee": "exit",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/buildsystems/osx/applocal.py",
+      "source_location": "L421"
+    }
+  ]
+}

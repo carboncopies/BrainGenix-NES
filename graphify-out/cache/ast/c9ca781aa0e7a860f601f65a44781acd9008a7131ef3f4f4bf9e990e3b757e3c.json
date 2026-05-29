@@ -1,0 +1,881 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_glacier2lib",
+      "label": "glacier2lib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_glacier2lib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_glacier2router",
+      "label": "glacier2router",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_glacier2router_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_glacier2router_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_glacier2router_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_iceboxlib",
+      "label": "iceboxlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_iceboxlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_iceboxlib_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_iceboxtools",
+      "label": "iceboxtools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_iceboxtools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_iceboxtools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icebridge",
+      "label": "icebridge",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icebridge_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icebridge_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icebridge_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icediscovery",
+      "label": "icediscovery",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icediscovery_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icediscovery_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icegridlib",
+      "label": "icegridlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icegridlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icegridlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icegridtools",
+      "label": "icegridtools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icegridtools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icegridtools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icegridtools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icelocatordiscovery",
+      "label": "icelocatordiscovery",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icelocatordiscovery_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icelocatordiscovery_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icessl",
+      "label": "icessl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icessl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icessl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icestormlib",
+      "label": "icestormlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L131"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icestormlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L132"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_features_icestormtools",
+      "label": "icestormtools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L134"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icestormtools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icestormtools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "zeroc_ice_vcpkg_icestormtools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L137"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_dependencies",
+      "target": "ref_lmdb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_dependencies",
+      "target": "ref_mcpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_default_features",
+      "target": "ref_glacier2lib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_default_features",
+      "target": "ref_icegridlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_default_features",
+      "target": "ref_icestormlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_zeroc_ice_vcpkg_json",
+      "target": "zeroc_ice_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_glacier2lib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_glacier2lib",
+      "target": "zeroc_ice_vcpkg_glacier2lib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_glacier2router",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_glacier2router",
+      "target": "zeroc_ice_vcpkg_glacier2router_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_glacier2router",
+      "target": "zeroc_ice_vcpkg_glacier2router_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_glacier2router",
+      "target": "zeroc_ice_vcpkg_glacier2router_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_iceboxlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_iceboxlib",
+      "target": "zeroc_ice_vcpkg_iceboxlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_iceboxlib",
+      "target": "zeroc_ice_vcpkg_iceboxlib_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_iceboxtools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_iceboxtools",
+      "target": "zeroc_ice_vcpkg_iceboxtools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_iceboxtools",
+      "target": "zeroc_ice_vcpkg_iceboxtools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icebridge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icebridge",
+      "target": "zeroc_ice_vcpkg_icebridge_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icebridge",
+      "target": "zeroc_ice_vcpkg_icebridge_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icebridge",
+      "target": "zeroc_ice_vcpkg_icebridge_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icediscovery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icediscovery",
+      "target": "zeroc_ice_vcpkg_icediscovery_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icediscovery",
+      "target": "zeroc_ice_vcpkg_icediscovery_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icegridlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icegridlib",
+      "target": "zeroc_ice_vcpkg_icegridlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icegridlib",
+      "target": "zeroc_ice_vcpkg_icegridlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icegridtools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icegridtools",
+      "target": "zeroc_ice_vcpkg_icegridtools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icegridtools",
+      "target": "zeroc_ice_vcpkg_icegridtools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icegridtools",
+      "target": "zeroc_ice_vcpkg_icegridtools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_icegridtools_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icelocatordiscovery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icelocatordiscovery",
+      "target": "zeroc_ice_vcpkg_icelocatordiscovery_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icelocatordiscovery",
+      "target": "zeroc_ice_vcpkg_icelocatordiscovery_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icessl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icessl",
+      "target": "zeroc_ice_vcpkg_icessl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icessl",
+      "target": "zeroc_ice_vcpkg_icessl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icestormlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icestormlib",
+      "target": "zeroc_ice_vcpkg_icestormlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features",
+      "target": "zeroc_ice_vcpkg_features_icestormtools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icestormtools",
+      "target": "zeroc_ice_vcpkg_icestormtools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icestormtools",
+      "target": "zeroc_ice_vcpkg_icestormtools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_features_icestormtools",
+      "target": "zeroc_ice_vcpkg_icestormtools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "zeroc_ice_vcpkg_icestormtools_dependencies",
+      "target": "ref_lmdb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/zeroc-ice/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

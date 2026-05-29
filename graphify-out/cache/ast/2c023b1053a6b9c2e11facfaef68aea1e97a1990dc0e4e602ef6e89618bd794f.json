@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sdl2_image_json",
+      "label": "sdl2-image.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdl2-image.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sdl2_image_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdl2-image.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sdl2_image_json",
+      "target": "s_sdl2_image_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sdl2-image.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

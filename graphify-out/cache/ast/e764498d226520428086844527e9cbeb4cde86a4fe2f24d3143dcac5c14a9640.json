@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_simpleamqpclient_json",
+      "label": "simpleamqpclient.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simpleamqpclient.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_simpleamqpclient_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simpleamqpclient.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_simpleamqpclient_json",
+      "target": "s_simpleamqpclient_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simpleamqpclient.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_u_usearch_json",
+      "label": "usearch.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/usearch.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "u_usearch_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/usearch.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_u_usearch_json",
+      "target": "u_usearch_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/u-/usearch.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

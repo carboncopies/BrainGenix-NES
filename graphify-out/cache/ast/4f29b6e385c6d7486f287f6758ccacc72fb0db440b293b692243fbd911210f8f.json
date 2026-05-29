@@ -1,0 +1,795 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libsbml_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libsbml_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libsbml_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libsbml_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libsbml_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libsbml_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libsbml_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libsbml_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libsbml_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libsbml_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libsbml_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libsbml_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libsbml_vcpkg_features_comp",
+      "label": "comp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libsbml_vcpkg_comp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libsbml_vcpkg_features_expat",
+      "label": "expat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libsbml_vcpkg_expat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "libsbml_vcpkg_expat_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libsbml_vcpkg_features_fbc",
+      "label": "fbc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libsbml_vcpkg_fbc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libsbml_vcpkg_features_groups",
+      "label": "groups",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libsbml_vcpkg_groups_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libsbml_vcpkg_features_layout",
+      "label": "layout",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "libsbml_vcpkg_layout_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "libsbml_vcpkg_features_libxml2",
+      "label": "libxml2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "libsbml_vcpkg_libxml2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "libsbml_vcpkg_libxml2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "libsbml_vcpkg_features_multi",
+      "label": "multi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "libsbml_vcpkg_multi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "libsbml_vcpkg_features_namespace",
+      "label": "namespace",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "libsbml_vcpkg_namespace_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "libsbml_vcpkg_features_qual",
+      "label": "qual",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "libsbml_vcpkg_qual_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "libsbml_vcpkg_features_render",
+      "label": "render",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "libsbml_vcpkg_render_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "libsbml_vcpkg_render_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "libsbml_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "libsbml_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "libsbml_vcpkg_test_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "libsbml_vcpkg_test_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "libsbml_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "libsbml_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "libsbml_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L91"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_comp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_fbc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_groups",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_layout",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_libxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_default_features",
+      "target": "ref_render",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsbml_vcpkg_json",
+      "target": "libsbml_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_bzip2",
+      "target": "libsbml_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_bzip2",
+      "target": "libsbml_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_comp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_comp",
+      "target": "libsbml_vcpkg_comp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_expat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_expat",
+      "target": "libsbml_vcpkg_expat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_expat",
+      "target": "libsbml_vcpkg_expat_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_expat_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_fbc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_fbc",
+      "target": "libsbml_vcpkg_fbc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_groups",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_groups",
+      "target": "libsbml_vcpkg_groups_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_layout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_layout",
+      "target": "libsbml_vcpkg_layout_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_libxml2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_libxml2",
+      "target": "libsbml_vcpkg_libxml2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_libxml2",
+      "target": "libsbml_vcpkg_libxml2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_multi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_multi",
+      "target": "libsbml_vcpkg_multi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_namespace",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_namespace",
+      "target": "libsbml_vcpkg_namespace_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_qual",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_qual",
+      "target": "libsbml_vcpkg_qual_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_render",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_render",
+      "target": "libsbml_vcpkg_render_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_render",
+      "target": "libsbml_vcpkg_render_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_test",
+      "target": "libsbml_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_test",
+      "target": "libsbml_vcpkg_test_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_test",
+      "target": "libsbml_vcpkg_test_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_test_dependencies",
+      "target": "ref_check",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_test_dependencies",
+      "target": "ref_dirent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsbml_vcpkg_features",
+      "target": "libsbml_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_zlib",
+      "target": "libsbml_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_features_zlib",
+      "target": "libsbml_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "libsbml_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsbml/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

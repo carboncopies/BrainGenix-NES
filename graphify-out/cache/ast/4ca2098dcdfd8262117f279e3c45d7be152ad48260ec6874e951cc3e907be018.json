@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "label": "Embeddable.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "include_embeddable_netmorph2neslogging",
+      "label": "Netmorph2NESLogging()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L35"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L35"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_embeddable_h",
+      "target": "include_embeddable_netmorph2neslogging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "include_embeddable_netmorph2neslogging",
+      "target": "class",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Embeddable.h",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "return_type"
+    }
+  ],
+  "raw_calls": []
+}

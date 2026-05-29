@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rerun_sdk_json",
+      "label": "rerun-sdk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rerun-sdk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rerun_sdk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rerun-sdk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rerun_sdk_json",
+      "target": "r_rerun_sdk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rerun-sdk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

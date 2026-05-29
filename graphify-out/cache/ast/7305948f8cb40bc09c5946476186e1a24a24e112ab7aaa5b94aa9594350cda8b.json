@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vcpkg_cmake_get_vars_json",
+      "label": "vcpkg-cmake-get-vars.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-cmake-get-vars.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vcpkg_cmake_get_vars_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-cmake-get-vars.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vcpkg_cmake_get_vars_json",
+      "target": "v_vcpkg_cmake_get_vars_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-cmake-get-vars.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

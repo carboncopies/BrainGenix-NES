@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bxzstr_json",
+      "label": "bxzstr.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bxzstr.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bxzstr_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bxzstr.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bxzstr_json",
+      "target": "b_bxzstr_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bxzstr.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

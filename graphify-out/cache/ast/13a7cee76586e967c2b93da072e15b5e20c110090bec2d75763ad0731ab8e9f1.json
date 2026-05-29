@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_asiosdk_json",
+      "label": "asiosdk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/asiosdk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_asiosdk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/asiosdk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_asiosdk_json",
+      "target": "a_asiosdk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/asiosdk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

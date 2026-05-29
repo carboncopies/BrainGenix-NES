@@ -1,0 +1,445 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "fftw3_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "fftw3_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "fftw3_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "fftw3_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "fftw3_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "fftw3_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "fftw3_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "fftw3_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "fftw3_vcpkg_features_avx",
+      "label": "avx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "fftw3_vcpkg_avx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "fftw3_vcpkg_avx_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "fftw3_vcpkg_features_avx2",
+      "label": "avx2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "fftw3_vcpkg_avx2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "fftw3_vcpkg_avx2_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "fftw3_vcpkg_features_neon",
+      "label": "neon",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "fftw3_vcpkg_neon_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "fftw3_vcpkg_neon_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "fftw3_vcpkg_features_openmp",
+      "label": "openmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "fftw3_vcpkg_openmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "fftw3_vcpkg_features_sse",
+      "label": "sse",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "fftw3_vcpkg_sse_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "fftw3_vcpkg_sse_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "fftw3_vcpkg_features_sse2",
+      "label": "sse2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "fftw3_vcpkg_sse2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "fftw3_vcpkg_sse2_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "fftw3_vcpkg_features_threads",
+      "label": "threads",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "fftw3_vcpkg_threads_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L43"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_fftw3_vcpkg_json",
+      "target": "fftw3_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_avx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_avx",
+      "target": "fftw3_vcpkg_avx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_avx",
+      "target": "fftw3_vcpkg_avx_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_avx2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_avx2",
+      "target": "fftw3_vcpkg_avx2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_avx2",
+      "target": "fftw3_vcpkg_avx2_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_neon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_neon",
+      "target": "fftw3_vcpkg_neon_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_neon",
+      "target": "fftw3_vcpkg_neon_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_openmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_openmp",
+      "target": "fftw3_vcpkg_openmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_sse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_sse",
+      "target": "fftw3_vcpkg_sse_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_sse",
+      "target": "fftw3_vcpkg_sse_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_sse2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_sse2",
+      "target": "fftw3_vcpkg_sse2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_sse2",
+      "target": "fftw3_vcpkg_sse2_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features",
+      "target": "fftw3_vcpkg_features_threads",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "fftw3_vcpkg_features_threads",
+      "target": "fftw3_vcpkg_threads_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/fftw3/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    }
+  ]
+}

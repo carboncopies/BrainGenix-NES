@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_raylib_json",
+      "label": "raylib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_raylib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_raylib_json",
+      "target": "r_raylib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/raylib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

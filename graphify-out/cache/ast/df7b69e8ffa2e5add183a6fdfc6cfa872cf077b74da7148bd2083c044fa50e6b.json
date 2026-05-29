@@ -1,0 +1,741 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "embree_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "embree_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "embree_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "embree_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "embree_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "embree_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "embree_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "embree_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "embree_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "embree_vcpkg_features_backface_culling",
+      "label": "backface-culling",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "embree_vcpkg_backface_culling_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "embree_vcpkg_features_compact_polys",
+      "label": "compact-polys",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "embree_vcpkg_compact_polys_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "embree_vcpkg_features_filter_function",
+      "label": "filter-function",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "embree_vcpkg_filter_function_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_curve",
+      "label": "geometry-curve",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "embree_vcpkg_geometry_curve_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_grid",
+      "label": "geometry-grid",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "embree_vcpkg_geometry_grid_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_instance",
+      "label": "geometry-instance",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "embree_vcpkg_geometry_instance_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_point",
+      "label": "geometry-point",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "embree_vcpkg_geometry_point_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_quad",
+      "label": "geometry-quad",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "embree_vcpkg_geometry_quad_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_subdivision",
+      "label": "geometry-subdivision",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "embree_vcpkg_geometry_subdivision_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_triangle",
+      "label": "geometry-triangle",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "embree_vcpkg_geometry_triangle_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "embree_vcpkg_features_geometry_user",
+      "label": "geometry-user",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "embree_vcpkg_geometry_user_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "embree_vcpkg_features_ray_mask",
+      "label": "ray-mask",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "embree_vcpkg_ray_mask_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "embree_vcpkg_features_ray_packets",
+      "label": "ray-packets",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "embree_vcpkg_ray_packets_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "embree_vcpkg_features_tasking_tbb",
+      "label": "tasking-tbb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "embree_vcpkg_tasking_tbb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "embree_vcpkg_tasking_tbb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L73"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_filter_function",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_curve",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_grid",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_instance",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_point",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_quad",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_subdivision",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_triangle",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_geometry_user",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_ray_packets",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "embree_vcpkg_default_features",
+      "target": "ref_tasking_tbb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_embree_vcpkg_json",
+      "target": "embree_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_backface_culling",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_backface_culling",
+      "target": "embree_vcpkg_backface_culling_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_compact_polys",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_compact_polys",
+      "target": "embree_vcpkg_compact_polys_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_filter_function",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_filter_function",
+      "target": "embree_vcpkg_filter_function_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_curve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_curve",
+      "target": "embree_vcpkg_geometry_curve_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_grid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_grid",
+      "target": "embree_vcpkg_geometry_grid_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_instance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_instance",
+      "target": "embree_vcpkg_geometry_instance_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_point",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_point",
+      "target": "embree_vcpkg_geometry_point_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_quad",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_quad",
+      "target": "embree_vcpkg_geometry_quad_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_subdivision",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_subdivision",
+      "target": "embree_vcpkg_geometry_subdivision_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_triangle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_triangle",
+      "target": "embree_vcpkg_geometry_triangle_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_geometry_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_geometry_user",
+      "target": "embree_vcpkg_geometry_user_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_ray_mask",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_ray_mask",
+      "target": "embree_vcpkg_ray_mask_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_ray_packets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_ray_packets",
+      "target": "embree_vcpkg_ray_packets_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features",
+      "target": "embree_vcpkg_features_tasking_tbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_tasking_tbb",
+      "target": "embree_vcpkg_tasking_tbb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_features_tasking_tbb",
+      "target": "embree_vcpkg_tasking_tbb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "embree_vcpkg_tasking_tbb_dependencies",
+      "target": "ref_tbb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/embree/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

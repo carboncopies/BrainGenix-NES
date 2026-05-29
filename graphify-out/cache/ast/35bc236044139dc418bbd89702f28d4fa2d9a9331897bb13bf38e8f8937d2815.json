@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gaussianlib_json",
+      "label": "gaussianlib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gaussianlib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gaussianlib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gaussianlib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gaussianlib_json",
+      "target": "g_gaussianlib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gaussianlib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libhsplasma_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libhsplasma_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libhsplasma_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libhsplasma_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libhsplasma_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libhsplasma_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libhsplasma_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libhsplasma_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libhsplasma_vcpkg_features_net",
+      "label": "net",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libhsplasma_vcpkg_net_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libhsplasma_vcpkg_net_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libhsplasma_vcpkg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libhsplasma_vcpkg_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libhsplasma_vcpkg_dependencies",
+      "target": "ref_string_theory",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libhsplasma_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libhsplasma_vcpkg_json",
+      "target": "libhsplasma_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libhsplasma_vcpkg_features",
+      "target": "libhsplasma_vcpkg_features_net",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libhsplasma_vcpkg_features_net",
+      "target": "libhsplasma_vcpkg_net_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libhsplasma_vcpkg_features_net",
+      "target": "libhsplasma_vcpkg_net_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libhsplasma_vcpkg_net_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libhsplasma/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

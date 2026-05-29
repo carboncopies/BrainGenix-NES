@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_concurrencpp_json",
+      "label": "concurrencpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/concurrencpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_concurrencpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/concurrencpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_concurrencpp_json",
+      "target": "c_concurrencpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/concurrencpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_minifb_json",
+      "label": "minifb.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/minifb.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_minifb_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/minifb.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_minifb_json",
+      "target": "m_minifb_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/minifb.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

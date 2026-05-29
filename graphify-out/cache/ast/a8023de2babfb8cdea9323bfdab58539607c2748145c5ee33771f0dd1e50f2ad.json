@@ -1,0 +1,225 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "msquic_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "msquic_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "msquic_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "msquic_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "msquic_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "msquic_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "msquic_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "msquic_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "msquic_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "msquic_vcpkg_features_0_rtt",
+      "label": "0-rtt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "msquic_vcpkg_0_rtt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "msquic_vcpkg_0_rtt_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L32"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_msquic_vcpkg_json",
+      "target": "msquic_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "msquic_vcpkg_features",
+      "target": "msquic_vcpkg_features_0_rtt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "msquic_vcpkg_features_0_rtt",
+      "target": "msquic_vcpkg_0_rtt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "msquic_vcpkg_0_rtt_description",
+      "target": "ref_enable_0_rtt_connection_support",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "msquic_vcpkg_0_rtt_description",
+      "target": "ref_this_feature_requires_the_use_of_a_fork_of_openssl_3_also_on_windows",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "msquic_vcpkg_features_0_rtt",
+      "target": "msquic_vcpkg_0_rtt_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/msquic/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    }
+  ]
+}

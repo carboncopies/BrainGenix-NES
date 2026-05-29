@@ -1,0 +1,475 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "label": "Catacomb_Object.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_catacomb_object_catacomb_header",
+      "label": "Catacomb_Header()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L34"
+    },
+    {
+      "id": "source_catacomb_object_str",
+      "label": "str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L64"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L64"
+    },
+    {
+      "id": "source_catacomb_object_add_catacomb_object",
+      "label": "Add_Catacomb_Object()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L564"
+    },
+    {
+      "id": "catacomb_object",
+      "label": "Catacomb_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L564"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "thirdparty_netmorphcmake_source_spatial_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "thirdparty_netmorphcmake_source_catacomb_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_catacomb_header",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L297",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L426",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L426",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L481",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L481",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L553",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L553",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_catacomb_object_cc",
+      "target": "source_catacomb_object_add_catacomb_object",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L564",
+      "weight": 1.0
+    },
+    {
+      "source": "source_catacomb_object_add_catacomb_object",
+      "target": "catacomb_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L564",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L428"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L430"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L437"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L439"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L439"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "center",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L450"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "center",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L452"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L454"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L454"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L473"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L473"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L485"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L487"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L492"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L493"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_in",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_out",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L497"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_in",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L514"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_out",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L517"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_in",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L520"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Dim_in",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L525"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L525"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L543"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "Name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L543"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L555"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "prepend",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L556"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L560"
+    },
+    {
+      "caller_nid": "source_catacomb_object_str",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L560"
+    },
+    {
+      "caller_nid": "source_catacomb_object_add_catacomb_object",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Catacomb_Object.cc",
+      "source_location": "L566"
+    }
+  ]
+}

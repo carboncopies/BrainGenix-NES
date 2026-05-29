@@ -1,0 +1,348 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "label": "StringList.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_stringlist_stringlist",
+      "label": "StringList()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L30"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L30"
+    },
+    {
+      "id": "source_stringlist_list_index",
+      "label": "List_Index()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L48"
+    },
+    {
+      "id": "source_stringlist_append",
+      "label": "append()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L55"
+    },
+    {
+      "id": "source_stringlist_insert",
+      "label": "insert()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L65"
+    },
+    {
+      "id": "source_stringlist_iselement",
+      "label": "iselement()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L76"
+    },
+    {
+      "id": "source_stringlist_contains",
+      "label": "contains()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L84"
+    },
+    {
+      "id": "source_stringlist_first_contained_in",
+      "label": "first_contained_in()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L92"
+    },
+    {
+      "id": "source_stringlist_split",
+      "label": "split()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L100"
+    },
+    {
+      "id": "source_stringlist_concatenate",
+      "label": "concatenate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L111"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "thirdparty_netmorphcmake_source_stringlist_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_stringlist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_stringlist",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_list_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_list_index",
+      "target": "source_stringlist_stringlist",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_append",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_append",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_insert",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_insert",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_iselement",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_iselement",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L76",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_contains",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_contains",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_first_contained_in",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_first_contained_in",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L92",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_split",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_split",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L100",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_stringlist_cc",
+      "target": "source_stringlist_concatenate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_concatenate",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_stringlist_concatenate",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_stringlist_stringlist",
+      "target": "source_stringlist_split",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_first_contained_in",
+      "target": "source_stringlist_contains",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "source_stringlist_split",
+      "target": "source_stringlist_insert",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L106",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "source_stringlist_split",
+      "callee": "length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/StringList.cc",
+      "source_location": "L108"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_vcpkg_completion_bash",
+      "label": "vcpkg_completion.bash",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg_completion.bash",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_vcpkg_completion_bash__entry",
+      "label": "vcpkg_completion.bash script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg_completion.bash",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "scripts_vcpkg_completion_vcpkg_completions",
+      "label": "_vcpkg_completions()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg_completion.bash",
+      "source_location": "L14",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_vcpkg_completion_bash",
+      "target": "thirdparty_vcpkg_scripts_vcpkg_completion_bash__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg_completion.bash",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_vcpkg_completion_bash",
+      "target": "scripts_vcpkg_completion_vcpkg_completions",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg_completion.bash",
+      "source_location": "L14",
+      "weight": 1.0
+    }
+  ]
+}

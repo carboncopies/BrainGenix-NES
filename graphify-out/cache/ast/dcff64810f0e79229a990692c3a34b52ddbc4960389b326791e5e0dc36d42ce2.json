@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tinyfiledialogs_json",
+      "label": "tinyfiledialogs.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfiledialogs.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tinyfiledialogs_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfiledialogs.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tinyfiledialogs_json",
+      "target": "t_tinyfiledialogs_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfiledialogs.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

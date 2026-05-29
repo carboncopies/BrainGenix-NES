@@ -1,0 +1,353 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "rtaudio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "rtaudio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "rtaudio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "rtaudio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "rtaudio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "rtaudio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "rtaudio_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "rtaudio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "rtaudio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "rtaudio_vcpkg_features_alsa",
+      "label": "alsa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "rtaudio_vcpkg_alsa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "rtaudio_vcpkg_alsa_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "rtaudio_vcpkg_alsa_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "rtaudio_vcpkg_features_asio",
+      "label": "asio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "rtaudio_vcpkg_asio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "rtaudio_vcpkg_asio_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "rtaudio_vcpkg_features_pulse",
+      "label": "pulse",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "rtaudio_vcpkg_pulse_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "rtaudio_vcpkg_pulse_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "rtaudio_vcpkg_pulse_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L34"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rtaudio_vcpkg_json",
+      "target": "rtaudio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features",
+      "target": "rtaudio_vcpkg_features_alsa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_alsa",
+      "target": "rtaudio_vcpkg_alsa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_alsa",
+      "target": "rtaudio_vcpkg_alsa_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_alsa",
+      "target": "rtaudio_vcpkg_alsa_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_alsa_dependencies",
+      "target": "ref_alsa",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "rtaudio_vcpkg_features",
+      "target": "rtaudio_vcpkg_features_asio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_asio",
+      "target": "rtaudio_vcpkg_asio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_asio",
+      "target": "rtaudio_vcpkg_asio_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features",
+      "target": "rtaudio_vcpkg_features_pulse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_pulse",
+      "target": "rtaudio_vcpkg_pulse_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_pulse",
+      "target": "rtaudio_vcpkg_pulse_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_features_pulse",
+      "target": "rtaudio_vcpkg_pulse_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "rtaudio_vcpkg_pulse_dependencies",
+      "target": "ref_pulseaudio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rtaudio/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

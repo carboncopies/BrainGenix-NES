@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kf5solid_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kf5solid_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kf5solid_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kf5solid_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kf5solid_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kf5solid_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "kf5solid_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "kf5solid_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "kf5solid_vcpkg_features_imobile",
+      "label": "imobile",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "kf5solid_vcpkg_imobile_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "kf5solid_vcpkg_imobile_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "kf5solid_vcpkg_features_libmount",
+      "label": "libmount",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "kf5solid_vcpkg_libmount_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "kf5solid_vcpkg_libmount_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "kf5solid_vcpkg_libmount_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_dependencies",
+      "target": "ref_ecm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5solid_vcpkg_dependencies",
+      "target": "ref_qt5_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5solid_vcpkg_json",
+      "target": "kf5solid_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features",
+      "target": "kf5solid_vcpkg_features_imobile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features_imobile",
+      "target": "kf5solid_vcpkg_imobile_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features_imobile",
+      "target": "kf5solid_vcpkg_imobile_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_imobile_dependencies",
+      "target": "ref_libimobiledevice",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5solid_vcpkg_imobile_dependencies",
+      "target": "ref_libplist",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5solid_vcpkg_features",
+      "target": "kf5solid_vcpkg_features_libmount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features_libmount",
+      "target": "kf5solid_vcpkg_libmount_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features_libmount",
+      "target": "kf5solid_vcpkg_libmount_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_features_libmount",
+      "target": "kf5solid_vcpkg_libmount_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5solid_vcpkg_libmount_dependencies",
+      "target": "ref_libmount",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5solid/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

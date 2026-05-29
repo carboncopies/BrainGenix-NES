@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nifly_json",
+      "label": "nifly.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifly.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nifly_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifly.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nifly_json",
+      "target": "n_nifly_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nifly.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

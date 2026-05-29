@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cnl_json",
+      "label": "cnl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cnl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cnl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cnl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cnl_json",
+      "target": "c_cnl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cnl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

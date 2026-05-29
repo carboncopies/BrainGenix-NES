@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_parsi_json",
+      "label": "parsi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/parsi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_parsi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/parsi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_parsi_json",
+      "target": "p_parsi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/parsi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

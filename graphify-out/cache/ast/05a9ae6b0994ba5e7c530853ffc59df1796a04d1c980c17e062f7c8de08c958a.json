@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gobject_introspection_json",
+      "label": "gobject-introspection.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gobject-introspection.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gobject_introspection_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gobject-introspection.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gobject_introspection_json",
+      "target": "g_gobject_introspection_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gobject-introspection.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

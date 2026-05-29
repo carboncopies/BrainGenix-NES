@@ -1,0 +1,679 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cyclonedds_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cyclonedds_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cyclonedds_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cyclonedds_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cyclonedds_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cyclonedds_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "cyclonedds_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "cyclonedds_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_ddsperf",
+      "label": "ddsperf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "cyclonedds_vcpkg_ddsperf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "cyclonedds_vcpkg_ddsperf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_deadline_missed",
+      "label": "deadline-missed",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "cyclonedds_vcpkg_deadline_missed_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_idlc",
+      "label": "idlc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "cyclonedds_vcpkg_idlc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_ipv6",
+      "label": "ipv6",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "cyclonedds_vcpkg_ipv6_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_lifespan",
+      "label": "lifespan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "cyclonedds_vcpkg_lifespan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_security",
+      "label": "security",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "cyclonedds_vcpkg_security_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_shm",
+      "label": "shm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "cyclonedds_vcpkg_shm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "cyclonedds_vcpkg_shm_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "cyclonedds_vcpkg_shm_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_source_specific_multicast",
+      "label": "source-specific-multicast",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "cyclonedds_vcpkg_source_specific_multicast_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_ssl",
+      "label": "ssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "cyclonedds_vcpkg_ssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "cyclonedds_vcpkg_ssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_topic_discovery",
+      "label": "topic-discovery",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "cyclonedds_vcpkg_topic_discovery_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "cyclonedds_vcpkg_topic_discovery_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "cyclonedds_vcpkg_features_type_discovery",
+      "label": "type-discovery",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "cyclonedds_vcpkg_type_discovery_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L85"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_deadline_missed",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_ipv6",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_lifespan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_security",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_source_specific_multicast",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_topic_discovery",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_default_features",
+      "target": "ref_type_discovery",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cyclonedds_vcpkg_json",
+      "target": "cyclonedds_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_ddsperf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_ddsperf",
+      "target": "cyclonedds_vcpkg_ddsperf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_ddsperf",
+      "target": "cyclonedds_vcpkg_ddsperf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_deadline_missed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_deadline_missed",
+      "target": "cyclonedds_vcpkg_deadline_missed_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_idlc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_idlc",
+      "target": "cyclonedds_vcpkg_idlc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_ipv6",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_ipv6",
+      "target": "cyclonedds_vcpkg_ipv6_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_lifespan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_lifespan",
+      "target": "cyclonedds_vcpkg_lifespan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_security",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_security",
+      "target": "cyclonedds_vcpkg_security_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_shm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_shm",
+      "target": "cyclonedds_vcpkg_shm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_shm",
+      "target": "cyclonedds_vcpkg_shm_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_shm",
+      "target": "cyclonedds_vcpkg_shm_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_shm_dependencies",
+      "target": "ref_iceoryx",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_source_specific_multicast",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_source_specific_multicast",
+      "target": "cyclonedds_vcpkg_source_specific_multicast_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_ssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_ssl",
+      "target": "cyclonedds_vcpkg_ssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_ssl",
+      "target": "cyclonedds_vcpkg_ssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_ssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_topic_discovery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_topic_discovery",
+      "target": "cyclonedds_vcpkg_topic_discovery_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_topic_discovery",
+      "target": "cyclonedds_vcpkg_topic_discovery_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features",
+      "target": "cyclonedds_vcpkg_features_type_discovery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "cyclonedds_vcpkg_features_type_discovery",
+      "target": "cyclonedds_vcpkg_type_discovery_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cyclonedds/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    }
+  ]
+}

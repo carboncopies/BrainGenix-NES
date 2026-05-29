@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libaec_json",
+      "label": "libaec.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libaec.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libaec_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libaec.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libaec_json",
+      "target": "l_libaec_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libaec.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

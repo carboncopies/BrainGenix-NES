@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_highfive_json",
+      "label": "highfive.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highfive.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_highfive_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highfive.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_highfive_json",
+      "target": "h_highfive_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highfive.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_c4core_json",
+      "label": "c4core.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c4core.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_c4core_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c4core.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_c4core_json",
+      "target": "c_c4core_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/c4core.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

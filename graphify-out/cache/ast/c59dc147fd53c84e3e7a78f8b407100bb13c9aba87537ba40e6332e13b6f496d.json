@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_grppi_json",
+      "label": "grppi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/grppi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_grppi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/grppi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_grppi_json",
+      "target": "g_grppi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/grppi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

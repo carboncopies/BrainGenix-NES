@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_c",
+      "label": "gettimeofday.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "gettimeofday_gettimeofday_gettimeofday",
+      "label": "gettimeofday()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L49"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_c",
+      "target": "winsock2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gettimeofday_gettimeofday_c",
+      "target": "gettimeofday_gettimeofday_gettimeofday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L49",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "gettimeofday_gettimeofday_gettimeofday",
+      "callee": "GetSystemTime",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "gettimeofday_gettimeofday_gettimeofday",
+      "callee": "SystemTimeToFileTime",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/gettimeofday/gettimeofday.c",
+      "source_location": "L57"
+    }
+  ]
+}

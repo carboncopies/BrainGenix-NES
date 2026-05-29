@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_zint_json",
+      "label": "zint.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zint.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_zint_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zint.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_zint_json",
+      "target": "z_zint_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zint.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

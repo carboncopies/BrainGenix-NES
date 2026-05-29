@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_modp_base64_modp_b64_data_h",
+      "label": "modp_b64_data.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/modp-base64/modp_b64_data.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_modp_base64_modp_b64_data_h",
+      "target": "stdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/modp-base64/modp_b64_data.h",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,1307 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_spatial_cc",
+      "label": "spatial.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_spatial_plane_mapped",
+      "label": "plane_mapped()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "source_spatial_convert_to_spherical",
+      "label": "convert_to_spherical()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "source_spatial_convert_from_spherical",
+      "label": "convert_from_spherical()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L104"
+    },
+    {
+      "id": "source_spatial_randomangular",
+      "label": "RandomAngular()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L119"
+    },
+    {
+      "id": "source_spatial_addrandomangular",
+      "label": "AddRandomAngular()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L133"
+    },
+    {
+      "id": "source_spatial_addrandomangularallconstrained",
+      "label": "AddRandomAngularAllConstrained()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L148"
+    },
+    {
+      "id": "source_spatial_angularopposite",
+      "label": "AngularOpposite()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L170"
+    },
+    {
+      "id": "source_spatial_negate",
+      "label": "Negate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L180"
+    },
+    {
+      "id": "source_spatial_set_by_angular_coordinates",
+      "label": "set_by_angular_coordinates()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L191"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L191"
+    },
+    {
+      "id": "source_spatial_get_angles_and_length",
+      "label": "get_angles_and_length()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L210"
+    },
+    {
+      "id": "source_spatial_length",
+      "label": "Length()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L219"
+    },
+    {
+      "id": "source_spatial_set_rotation",
+      "label": "set_rotation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L232"
+    },
+    {
+      "id": "source_spatial_rotate",
+      "label": "rotate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L281"
+    },
+    {
+      "id": "source_spatial_rotate_extract_view",
+      "label": "rotate_extract_view()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L290"
+    },
+    {
+      "id": "source_spatial_dist3d_segment_to_segment",
+      "label": "dist3D_Segment_to_Segment()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297"
+    },
+    {
+      "id": "segment",
+      "label": "Segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297"
+    },
+    {
+      "id": "source_spatial_set_projection",
+      "label": "set_projection()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L368"
+    },
+    {
+      "id": "source_spatial_project_extract_view",
+      "label": "project_extract_view()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L393"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "thirdparty_netmorphcmake_source_spatial_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "thirdparty_netmorphcmake_source_spatial_presentation_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_plane_mapped",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_plane_mapped",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_convert_to_spherical",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_convert_to_spherical",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_convert_from_spherical",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_randomangular",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_randomangular",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_addrandomangular",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_addrandomangular",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L133",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_addrandomangularallconstrained",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_addrandomangularallconstrained",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L148",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_angularopposite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_negate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_set_by_angular_coordinates",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_set_by_angular_coordinates",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_get_angles_and_length",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_get_angles_and_length",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L210",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_get_angles_and_length",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L210",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_length",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_set_rotation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_set_rotation",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L232",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_set_rotation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L276",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_set_rotation",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L276",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_set_rotation",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L276",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_rotate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L281",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_rotate",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L281",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_rotate",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L281",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_rotate_extract_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_rotate_extract_view",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L290",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_dist3d_segment_to_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_dist3d_segment_to_segment",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_dist3d_segment_to_segment",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_dist3d_segment_to_segment",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L297",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_set_projection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L368",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_set_projection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L383",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_set_projection",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L383",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_set_projection",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L383",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_set_projection",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L383",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_spatial_cc",
+      "target": "source_spatial_project_extract_view",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L393",
+      "weight": 1.0
+    },
+    {
+      "source": "source_spatial_project_extract_view",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L393",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_spatial_get_angles_and_length",
+      "target": "source_spatial_convert_to_spherical",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L216",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_spatial_plane_mapped",
+      "callee": "extract_view",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "progrss",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "atan2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "acos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "asin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "asin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_spatial_convert_to_spherical",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_spatial_convert_from_spherical",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L112"
+    },
+    {
+      "caller_nid": "source_spatial_convert_from_spherical",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "source_spatial_convert_from_spherical",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L115"
+    },
+    {
+      "caller_nid": "source_spatial_convert_from_spherical",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "source_spatial_randomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "source_spatial_randomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "source_spatial_randomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangular",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangularallconstrained",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangularallconstrained",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_spatial_addrandomangularallconstrained",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L156"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "source_spatial_set_by_angular_coordinates",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L206"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L221"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L221"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L224"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L224"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L225"
+    },
+    {
+      "caller_nid": "source_spatial_length",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L228"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L235"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "source_spatial_set_rotation",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L273"
+    },
+    {
+      "caller_nid": "source_spatial_rotate",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L283"
+    },
+    {
+      "caller_nid": "source_spatial_rotate",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L284"
+    },
+    {
+      "caller_nid": "source_spatial_rotate",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L285"
+    },
+    {
+      "caller_nid": "source_spatial_rotate",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L286"
+    },
+    {
+      "caller_nid": "source_spatial_rotate_extract_view",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "source_spatial_rotate_extract_view",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L304"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L305"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L307"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L308"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "Pabs",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "Pabs",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L353"
+    },
+    {
+      "caller_nid": "source_spatial_dist3d_segment_to_segment",
+      "callee": "norm",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L365"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L369"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L369"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L369"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L369"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L370"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "cos",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "sin",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L372"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L377"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L379"
+    },
+    {
+      "caller_nid": "source_spatial_set_projection",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L380"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L396"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "nm_dot",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "source_spatial_project_extract_view",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/spatial.cc",
+      "source_location": "L406"
+    }
+  ]
+}

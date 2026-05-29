@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_intrusive_shared_ptr_json",
+      "label": "intrusive-shared-ptr.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intrusive-shared-ptr.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_intrusive_shared_ptr_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intrusive-shared-ptr.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_intrusive_shared_ptr_json",
+      "target": "i_intrusive_shared_ptr_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/intrusive-shared-ptr.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

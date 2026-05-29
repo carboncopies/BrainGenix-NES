@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_think_cell_range_json",
+      "label": "think-cell-range.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/think-cell-range.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_think_cell_range_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/think-cell-range.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_think_cell_range_json",
+      "target": "t_think_cell_range_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/think-cell-range.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

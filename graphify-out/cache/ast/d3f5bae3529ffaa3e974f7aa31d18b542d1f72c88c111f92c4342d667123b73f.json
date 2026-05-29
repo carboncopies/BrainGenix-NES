@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_projectm_eval_json",
+      "label": "projectm-eval.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/projectm-eval.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_projectm_eval_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/projectm-eval.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_projectm_eval_json",
+      "target": "p_projectm_eval_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/projectm-eval.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,555 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "devil_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "devil_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "devil_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "devil_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "devil_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "devil_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "devil_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "devil_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "devil_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "devil_vcpkg_features_jasper",
+      "label": "jasper",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "devil_vcpkg_jasper_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "devil_vcpkg_jasper_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "devil_vcpkg_features_lcms",
+      "label": "lcms",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "devil_vcpkg_lcms_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "devil_vcpkg_lcms_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "devil_vcpkg_features_libjpeg",
+      "label": "libjpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "devil_vcpkg_libjpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "devil_vcpkg_libjpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "devil_vcpkg_features_libpng",
+      "label": "libpng",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "devil_vcpkg_libpng_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "devil_vcpkg_libpng_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "devil_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "devil_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "devil_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "devil_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "devil_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "devil_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_jasper",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_lcms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_libjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_default_features",
+      "target": "ref_tiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_devil_vcpkg_json",
+      "target": "devil_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_jasper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_jasper",
+      "target": "devil_vcpkg_jasper_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_jasper",
+      "target": "devil_vcpkg_jasper_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_jasper_dependencies",
+      "target": "ref_jasper",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_lcms",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_lcms",
+      "target": "devil_vcpkg_lcms_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_lcms",
+      "target": "devil_vcpkg_lcms_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_lcms_dependencies",
+      "target": "ref_lcms",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_libjpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_libjpeg",
+      "target": "devil_vcpkg_libjpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_libjpeg",
+      "target": "devil_vcpkg_libjpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_libjpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_libpng",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_libpng",
+      "target": "devil_vcpkg_libpng_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_libpng",
+      "target": "devil_vcpkg_libpng_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_libpng_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_openexr",
+      "target": "devil_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_openexr",
+      "target": "devil_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "devil_vcpkg_features",
+      "target": "devil_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_tiff",
+      "target": "devil_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "devil_vcpkg_features_tiff",
+      "target": "devil_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/devil/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    }
+  ]
+}

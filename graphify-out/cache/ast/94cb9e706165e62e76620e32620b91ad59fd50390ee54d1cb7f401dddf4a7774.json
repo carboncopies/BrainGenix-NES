@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_blpapi_json",
+      "label": "blpapi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blpapi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_blpapi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blpapi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_blpapi_json",
+      "target": "b_blpapi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/blpapi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

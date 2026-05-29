@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gul17_json",
+      "label": "gul17.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul17.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gul17_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul17.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gul17_json",
+      "target": "g_gul17_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gul17.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

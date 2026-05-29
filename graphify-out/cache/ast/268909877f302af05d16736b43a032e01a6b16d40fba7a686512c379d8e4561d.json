@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kwsys_json",
+      "label": "kwsys.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kwsys.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kwsys_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kwsys.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kwsys_json",
+      "target": "k_kwsys_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kwsys.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

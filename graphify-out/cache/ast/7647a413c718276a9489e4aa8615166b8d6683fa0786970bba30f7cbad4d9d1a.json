@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mimalloc_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mimalloc_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mimalloc_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mimalloc_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mimalloc_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mimalloc_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mimalloc_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mimalloc_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "mimalloc_vcpkg_features_override",
+      "label": "override",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "mimalloc_vcpkg_override_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "mimalloc_vcpkg_override_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "mimalloc_vcpkg_features_secure",
+      "label": "secure",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "mimalloc_vcpkg_secure_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mimalloc_vcpkg_json",
+      "target": "mimalloc_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "mimalloc_vcpkg_features",
+      "target": "mimalloc_vcpkg_features_override",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "mimalloc_vcpkg_features_override",
+      "target": "mimalloc_vcpkg_override_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "mimalloc_vcpkg_features_override",
+      "target": "mimalloc_vcpkg_override_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "mimalloc_vcpkg_features",
+      "target": "mimalloc_vcpkg_features_secure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "mimalloc_vcpkg_features_secure",
+      "target": "mimalloc_vcpkg_secure_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mimalloc/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    }
+  ]
+}

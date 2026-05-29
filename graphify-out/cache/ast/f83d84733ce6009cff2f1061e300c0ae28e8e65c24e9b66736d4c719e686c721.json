@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_b64_b64_static_config_h",
+      "label": "b64_static_config.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/b64/b64_static_config.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

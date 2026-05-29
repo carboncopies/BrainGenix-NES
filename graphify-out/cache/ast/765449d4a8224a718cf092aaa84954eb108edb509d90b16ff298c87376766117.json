@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_thrift_json",
+      "label": "thrift.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/thrift.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_thrift_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/thrift.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_thrift_json",
+      "target": "t_thrift_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/thrift.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

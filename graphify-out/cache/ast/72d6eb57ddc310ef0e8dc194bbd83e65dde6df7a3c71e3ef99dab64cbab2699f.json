@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_y_yasm_tool_helper_json",
+      "label": "yasm-tool-helper.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yasm-tool-helper.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "y_yasm_tool_helper_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yasm-tool-helper.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_y_yasm_tool_helper_json",
+      "target": "y_yasm_tool_helper_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/y-/yasm-tool-helper.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

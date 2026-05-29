@@ -1,0 +1,1164 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "label": "environment_physics.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_environment_physics_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L52"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L52"
+    },
+    {
+      "id": "source_environment_physics_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L78"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L78"
+    },
+    {
+      "id": "source_environment_physics_spherical_boundary",
+      "label": "~spherical_boundary()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L117"
+    },
+    {
+      "id": "source_environment_physics_direction_adjust",
+      "label": "direction_adjust()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L130"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L130"
+    },
+    {
+      "id": "source_environment_physics_direction_boundary_effect",
+      "label": "direction_boundary_effect()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L176"
+    },
+    {
+      "id": "source_environment_physics_select_physical_boundary",
+      "label": "select_physical_boundary()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L269"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_environment_physics_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_event_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_neuron_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_spatial_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L52",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L78",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_spherical_boundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_direction_adjust",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_direction_adjust",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_direction_adjust",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_direction_boundary_effect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_direction_boundary_effect",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_direction_boundary_effect",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L216",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_direction_adjust",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_direction_adjust",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L230",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_direction_adjust",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L230",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_direction_boundary_effect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_direction_boundary_effect",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L261",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_direction_boundary_effect",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L261",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_environment_physics_cc",
+      "target": "source_environment_physics_select_physical_boundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_select_physical_boundary",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L269",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_select_physical_boundary",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L269",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_environment_physics_parse_clp",
+      "target": "source_environment_physics_select_physical_boundary",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "source_environment_physics_direction_boundary_effect",
+      "target": "source_environment_physics_direction_adjust",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L186",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L57"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L59"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atoi",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Pos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "source_environment_physics_spherical_boundary",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "source_environment_physics_spherical_boundary",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "normalize",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L167"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L170"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L171"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L171"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_boundary_effect",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L194"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L195"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L197"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L199"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L201"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L201"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atoi",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Pos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L204"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L205"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L213"
+    },
+    {
+      "caller_nid": "source_environment_physics_parse_clp",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L213"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "source_environment_physics_report_parameters",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L221"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L234"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L239"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L242"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "normalize",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L256"
+    },
+    {
+      "caller_nid": "source_environment_physics_direction_adjust",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L256"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "lastchar",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L277"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L278"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "URI_unescape_ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L279"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L281"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L282"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L283"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L286"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L287"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "matches",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L291"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "link_before",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "link_before",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L299"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L309"
+    },
+    {
+      "caller_nid": "source_environment_physics_select_physical_boundary",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/environment_physics.cc",
+      "source_location": "L310"
+    }
+  ]
+}

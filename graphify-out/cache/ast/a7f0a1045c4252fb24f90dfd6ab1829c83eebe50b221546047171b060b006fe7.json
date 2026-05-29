@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_octomap_json",
+      "label": "octomap.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/octomap.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_octomap_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/octomap.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_octomap_json",
+      "target": "o_octomap_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/octomap.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

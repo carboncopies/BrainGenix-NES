@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libopusenc_json",
+      "label": "libopusenc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libopusenc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libopusenc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libopusenc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libopusenc_json",
+      "target": "l_libopusenc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libopusenc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

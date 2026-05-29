@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_anari_json",
+      "label": "anari.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/anari.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_anari_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/anari.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_anari_json",
+      "target": "a_anari_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/anari.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,851 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "osg_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "osg_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "osg_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "osg_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "osg_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "osg_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "osg_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "osg_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "osg_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "osg_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "osg_vcpkg_features_collada",
+      "label": "collada",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "osg_vcpkg_collada_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "osg_vcpkg_collada_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "osg_vcpkg_features_docs",
+      "label": "docs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "osg_vcpkg_docs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "osg_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "osg_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "osg_vcpkg_examples_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "osg_vcpkg_examples_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "osg_vcpkg_features_fontconfig",
+      "label": "fontconfig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "osg_vcpkg_fontconfig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "osg_vcpkg_fontconfig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "osg_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "osg_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "osg_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "osg_vcpkg_features_nvtt",
+      "label": "nvtt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "osg_vcpkg_nvtt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "osg_vcpkg_nvtt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "osg_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "osg_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "osg_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "osg_vcpkg_features_packages",
+      "label": "packages",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "osg_vcpkg_packages_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "osg_vcpkg_features_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "osg_vcpkg_plugins_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "osg_vcpkg_plugins_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "osg_vcpkg_features_sdl1",
+      "label": "sdl1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L148"
+    },
+    {
+      "id": "osg_vcpkg_sdl1_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L149"
+    },
+    {
+      "id": "osg_vcpkg_sdl1_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "osg_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L154"
+    },
+    {
+      "id": "osg_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L155"
+    },
+    {
+      "id": "osg_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L156"
+    },
+    {
+      "id": "osg_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L157"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_default_features",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_default_features",
+      "target": "ref_plugins",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_osg_vcpkg_json",
+      "target": "osg_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_collada",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_collada",
+      "target": "osg_vcpkg_collada_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_collada",
+      "target": "osg_vcpkg_collada_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_collada_dependencies",
+      "target": "ref_collada_dom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_docs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_docs",
+      "target": "osg_vcpkg_docs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_examples",
+      "target": "osg_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_examples",
+      "target": "osg_vcpkg_examples_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_examples",
+      "target": "osg_vcpkg_examples_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_examples_dependencies",
+      "target": "ref_sdl2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_fontconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_fontconfig",
+      "target": "osg_vcpkg_fontconfig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_fontconfig",
+      "target": "osg_vcpkg_fontconfig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_fontconfig_dependencies",
+      "target": "ref_fontconfig",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_freetype",
+      "target": "osg_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_freetype",
+      "target": "osg_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_nvtt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_nvtt",
+      "target": "osg_vcpkg_nvtt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_nvtt",
+      "target": "osg_vcpkg_nvtt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_nvtt_dependencies",
+      "target": "ref_nvtt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_openexr",
+      "target": "osg_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_openexr",
+      "target": "osg_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_packages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_packages",
+      "target": "osg_vcpkg_packages_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_plugins",
+      "target": "osg_vcpkg_plugins_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_plugins",
+      "target": "osg_vcpkg_plugins_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_plugins_dependencies",
+      "target": "ref_libgta",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_plugins_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_plugins_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_sdl1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_sdl1",
+      "target": "osg_vcpkg_sdl1_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_sdl1",
+      "target": "osg_vcpkg_sdl1_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_sdl1_dependencies",
+      "target": "ref_sdl1",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_features",
+      "target": "osg_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_tools",
+      "target": "osg_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_tools",
+      "target": "osg_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_features_tools",
+      "target": "osg_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "osg_vcpkg_tools_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L157",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "osg_vcpkg_tools_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/osg/vcpkg.json",
+      "source_location": "L157",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

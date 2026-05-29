@@ -1,0 +1,82 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_nibr_cc",
+      "label": "nibr.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_nibr_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L86"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_nibr_cc",
+      "target": "thirdparty_netmorphcmake_source_nibr_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_nibr_cc",
+      "target": "thirdparty_netmorphcmake_source_include_netmorph_h",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_nibr_cc",
+      "target": "thirdparty_netmorphcmake_source_command_line_parameters_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_nibr_cc",
+      "target": "source_nibr_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_nibr_main",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "source_nibr_main",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "source_nibr_main",
+      "callee": "run",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/nibr.cc",
+      "source_location": "L95"
+    }
+  ]
+}

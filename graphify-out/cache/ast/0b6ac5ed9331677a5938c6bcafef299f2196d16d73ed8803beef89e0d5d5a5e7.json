@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "label": "generateBaseline.py",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_generatebaseline_get_version_tag",
+      "label": "get_version_tag()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L14"
+    },
+    {
+      "id": "scripts_generatebaseline_get_version_port_version",
+      "label": "get_version_port_version()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L26"
+    },
+    {
+      "id": "scripts_generatebaseline_generate_baseline",
+      "label": "generate_baseline()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L32"
+    },
+    {
+      "id": "scripts_generatebaseline_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L75"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "scripts_generatebaseline_get_version_tag",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "scripts_generatebaseline_get_version_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "scripts_generatebaseline_generate_baseline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_generatebaseline_py",
+      "target": "scripts_generatebaseline_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_generatebaseline_generate_baseline",
+      "target": "scripts_generatebaseline_get_version_tag",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_generatebaseline_generate_baseline",
+      "target": "scripts_generatebaseline_get_version_port_version",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_generatebaseline_main",
+      "target": "scripts_generatebaseline_generate_baseline",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L78",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "scripts_generatebaseline_get_version_tag",
+      "callee": "exit",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "time",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "listdir",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "isdir",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "sort",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "exists",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "write",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "load",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "makedirs",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "join",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_generate_baseline",
+      "callee": "time",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "scripts_generatebaseline_main",
+      "callee": "exists",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/generateBaseline.py",
+      "source_location": "L76"
+    }
+  ]
+}

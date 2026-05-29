@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_iowa_hills_dsp_json",
+      "label": "iowa-hills-dsp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/iowa-hills-dsp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_iowa_hills_dsp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/iowa-hills-dsp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_iowa_hills_dsp_json",
+      "target": "i_iowa_hills_dsp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/iowa-hills-dsp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

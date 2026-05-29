@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_drekar_launch_process_cpp_json",
+      "label": "drekar-launch-process-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/drekar-launch-process-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_drekar_launch_process_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/drekar-launch-process-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_drekar_launch_process_cpp_json",
+      "target": "d_drekar_launch_process_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/drekar-launch-process-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

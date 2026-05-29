@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_spix_json",
+      "label": "spix.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spix.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_spix_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spix.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_spix_json",
+      "target": "s_spix_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spix.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

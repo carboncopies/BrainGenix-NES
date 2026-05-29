@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_include_base_h",
+      "label": "Base.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "include_base_base",
+      "label": "Base()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L68"
+    },
+    {
+      "id": "class",
+      "label": "class",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L68"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_include_base_h",
+      "target": "include_base_base",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "include_base_base",
+      "target": "class",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Include/Base.h",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "return_type"
+    }
+  ],
+  "raw_calls": []
+}

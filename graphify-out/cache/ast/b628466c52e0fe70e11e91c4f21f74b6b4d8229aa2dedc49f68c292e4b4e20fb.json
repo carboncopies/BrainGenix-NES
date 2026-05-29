@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_scope_guard_json",
+      "label": "scope-guard.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scope-guard.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_scope_guard_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scope-guard.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_scope_guard_json",
+      "target": "s_scope_guard_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scope-guard.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

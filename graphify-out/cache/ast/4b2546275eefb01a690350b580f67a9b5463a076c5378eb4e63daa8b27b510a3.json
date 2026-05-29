@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fplus_json",
+      "label": "fplus.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fplus.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fplus_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fplus.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fplus_json",
+      "target": "f_fplus_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fplus.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_skia_example_skpathediting_cpp",
+      "label": "skpathediting.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "example_skpathediting_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_skia_example_skpathediting_cpp",
+      "target": "skpath",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_example_skpathediting_cpp",
+      "target": "skpathbuilder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_example_skpathediting_cpp",
+      "target": "example_skpathediting_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "example_skpathediting_main",
+      "callee": "moveTo",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L6"
+    },
+    {
+      "caller_nid": "example_skpathediting_main",
+      "callee": "lineTo",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "example_skpathediting_main",
+      "callee": "lineTo",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "example_skpathediting_main",
+      "callee": "close",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "example_skpathediting_main",
+      "callee": "detach",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skpathediting.cpp",
+      "source_location": "L10"
+    }
+  ]
+}

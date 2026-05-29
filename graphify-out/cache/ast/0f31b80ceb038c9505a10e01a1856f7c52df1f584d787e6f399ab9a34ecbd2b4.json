@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_vcpkg_tools_json",
+      "label": "vcpkg-tools.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg-tools.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_vcpkg_tools_schema_version",
+      "label": "schema-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg-tools.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "scripts_vcpkg_tools_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg-tools.json",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_vcpkg_tools_json",
+      "target": "scripts_vcpkg_tools_schema_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg-tools.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_vcpkg_tools_json",
+      "target": "scripts_vcpkg_tools_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/vcpkg-tools.json",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ]
+}

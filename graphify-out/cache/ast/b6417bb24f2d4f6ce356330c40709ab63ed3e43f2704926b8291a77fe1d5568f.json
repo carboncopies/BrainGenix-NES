@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_portable_file_dialogs_json",
+      "label": "portable-file-dialogs.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portable-file-dialogs.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_portable_file_dialogs_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portable-file-dialogs.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_portable_file_dialogs_json",
+      "target": "p_portable_file_dialogs_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/portable-file-dialogs.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

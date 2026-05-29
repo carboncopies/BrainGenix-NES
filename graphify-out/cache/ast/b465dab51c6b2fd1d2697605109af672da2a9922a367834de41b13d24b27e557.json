@@ -1,0 +1,701 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "capstone_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "capstone_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "capstone_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "capstone_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "capstone_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "capstone_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "capstone_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "capstone_vcpkg_features_arm",
+      "label": "arm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "capstone_vcpkg_arm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "capstone_vcpkg_features_arm64",
+      "label": "arm64",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "capstone_vcpkg_arm64_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "capstone_vcpkg_features_bpf",
+      "label": "bpf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "capstone_vcpkg_bpf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "capstone_vcpkg_features_diet",
+      "label": "diet",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "capstone_vcpkg_diet_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "capstone_vcpkg_features_evm",
+      "label": "evm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "capstone_vcpkg_evm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "capstone_vcpkg_features_m680x",
+      "label": "m680x",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "capstone_vcpkg_m680x_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "capstone_vcpkg_features_m68k",
+      "label": "m68k",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "capstone_vcpkg_m68k_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "capstone_vcpkg_features_mips",
+      "label": "mips",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "capstone_vcpkg_mips_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "capstone_vcpkg_features_mos65xx",
+      "label": "mos65xx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "capstone_vcpkg_mos65xx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "capstone_vcpkg_features_ppc",
+      "label": "ppc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "capstone_vcpkg_ppc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "capstone_vcpkg_features_riscv",
+      "label": "riscv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "capstone_vcpkg_riscv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "capstone_vcpkg_features_sparc",
+      "label": "sparc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "capstone_vcpkg_sparc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "capstone_vcpkg_features_sysz",
+      "label": "sysz",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "capstone_vcpkg_sysz_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "capstone_vcpkg_features_tms320c64x",
+      "label": "tms320c64x",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "capstone_vcpkg_tms320c64x_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "capstone_vcpkg_features_tricore",
+      "label": "tricore",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "capstone_vcpkg_tricore_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "capstone_vcpkg_features_wasm",
+      "label": "wasm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "capstone_vcpkg_wasm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "capstone_vcpkg_features_x86",
+      "label": "x86",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "capstone_vcpkg_x86_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "capstone_vcpkg_features_xcore",
+      "label": "xcore",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "capstone_vcpkg_xcore_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L70"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_capstone_vcpkg_json",
+      "target": "capstone_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_arm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_arm",
+      "target": "capstone_vcpkg_arm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_arm64",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_arm64",
+      "target": "capstone_vcpkg_arm64_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_bpf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_bpf",
+      "target": "capstone_vcpkg_bpf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_diet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_diet",
+      "target": "capstone_vcpkg_diet_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_evm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_evm",
+      "target": "capstone_vcpkg_evm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_m680x",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_m680x",
+      "target": "capstone_vcpkg_m680x_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_m68k",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_m68k",
+      "target": "capstone_vcpkg_m68k_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_mips",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_mips",
+      "target": "capstone_vcpkg_mips_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_mos65xx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_mos65xx",
+      "target": "capstone_vcpkg_mos65xx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_ppc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_ppc",
+      "target": "capstone_vcpkg_ppc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_riscv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_riscv",
+      "target": "capstone_vcpkg_riscv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_sparc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_sparc",
+      "target": "capstone_vcpkg_sparc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_sysz",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_sysz",
+      "target": "capstone_vcpkg_sysz_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_tms320c64x",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_tms320c64x",
+      "target": "capstone_vcpkg_tms320c64x_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_tricore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_tricore",
+      "target": "capstone_vcpkg_tricore_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_wasm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_wasm",
+      "target": "capstone_vcpkg_wasm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_x86",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_x86",
+      "target": "capstone_vcpkg_x86_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features",
+      "target": "capstone_vcpkg_features_xcore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "capstone_vcpkg_features_xcore",
+      "target": "capstone_vcpkg_xcore_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/capstone/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    }
+  ]
+}

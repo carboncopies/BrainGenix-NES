@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_winsock2_json",
+      "label": "winsock2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/winsock2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_winsock2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/winsock2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_winsock2_json",
+      "target": "w_winsock2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/winsock2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

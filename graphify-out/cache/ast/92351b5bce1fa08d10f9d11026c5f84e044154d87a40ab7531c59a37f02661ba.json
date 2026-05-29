@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_e_effolkronium_random_json",
+      "label": "effolkronium-random.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/effolkronium-random.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "e_effolkronium_random_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/effolkronium-random.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_e_effolkronium_random_json",
+      "target": "e_effolkronium_random_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/e-/effolkronium-random.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

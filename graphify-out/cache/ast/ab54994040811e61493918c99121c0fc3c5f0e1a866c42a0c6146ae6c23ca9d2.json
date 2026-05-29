@@ -1,0 +1,363 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mygui_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mygui_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mygui_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mygui_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mygui_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mygui_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mygui_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mygui_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "mygui_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "mygui_vcpkg_features_obsolete",
+      "label": "obsolete",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "mygui_vcpkg_obsolete_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "mygui_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "mygui_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "mygui_vcpkg_opengl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "mygui_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "mygui_vcpkg_features_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "mygui_vcpkg_plugins_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "mygui_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "mygui_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "mygui_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mygui_vcpkg_dependencies",
+      "target": "ref_sdl2_image",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mygui_vcpkg_json",
+      "target": "mygui_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features",
+      "target": "mygui_vcpkg_features_obsolete",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_obsolete",
+      "target": "mygui_vcpkg_obsolete_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features",
+      "target": "mygui_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_opengl",
+      "target": "mygui_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_opengl",
+      "target": "mygui_vcpkg_opengl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_opengl",
+      "target": "mygui_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_opengl_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mygui_vcpkg_features",
+      "target": "mygui_vcpkg_features_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_plugins",
+      "target": "mygui_vcpkg_plugins_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features",
+      "target": "mygui_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_tools",
+      "target": "mygui_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "mygui_vcpkg_features_tools",
+      "target": "mygui_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mygui/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ]
+}

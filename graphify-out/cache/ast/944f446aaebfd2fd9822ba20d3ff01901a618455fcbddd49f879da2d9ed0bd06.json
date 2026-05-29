@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_ormpp_json",
+      "label": "ormpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ormpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_ormpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ormpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_ormpp_json",
+      "target": "o_ormpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/ormpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_nt_wrapper_json",
+      "label": "nt-wrapper.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nt-wrapper.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_nt_wrapper_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nt-wrapper.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_nt_wrapper_json",
+      "target": "n_nt_wrapper_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/nt-wrapper.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

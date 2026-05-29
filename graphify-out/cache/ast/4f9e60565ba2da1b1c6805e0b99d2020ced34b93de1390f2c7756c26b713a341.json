@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "label": "bootstrap.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "label": "bootstrap.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "scripts_bootstrap_vcpkgcheckrepotool",
+      "label": "vcpkgCheckRepoTool()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L70",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    },
+    {
+      "id": "scripts_bootstrap_vcpkgcheckequalfilehash",
+      "label": "vcpkgCheckEqualFileHash()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L120",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    },
+    {
+      "id": "scripts_bootstrap_vcpkgdownloadfile",
+      "label": "vcpkgDownloadFile()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L148",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    },
+    {
+      "id": "scripts_bootstrap_vcpkgextractarchive",
+      "label": "vcpkgExtractArchive()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L159",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "scripts_bootstrap_vcpkgcheckrepotool",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "scripts_bootstrap_vcpkgcheckequalfilehash",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "scripts_bootstrap_vcpkgdownloadfile",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "scripts_bootstrap_vcpkgextractarchive",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh",
+      "target": "vcpkgrootdir_scripts_vcpkg_tool_metadata_txt",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L185",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "target": "scripts_bootstrap_vcpkgcheckrepotool",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "call"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "target": "scripts_bootstrap_vcpkgdownloadfile",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "call"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "target": "scripts_bootstrap_vcpkgcheckequalfilehash",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L223",
+      "weight": 1.0,
+      "context": "call"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_bootstrap_sh__entry",
+      "target": "scripts_bootstrap_vcpkgextractarchive",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L232",
+      "weight": 1.0,
+      "context": "call"
+    },
+    {
+      "source": "scripts_bootstrap_vcpkgdownloadfile",
+      "target": "scripts_bootstrap_vcpkgcheckequalfilehash",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/bootstrap.sh",
+      "source_location": "L154",
+      "weight": 1.0,
+      "context": "call"
+    }
+  ]
+}

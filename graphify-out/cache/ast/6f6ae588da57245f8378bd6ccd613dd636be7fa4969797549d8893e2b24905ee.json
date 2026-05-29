@@ -1,0 +1,339 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_features_compression",
+      "label": "compression",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_compression_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_compression_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_features_cpr",
+      "label": "cpr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_cpr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_cpr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_features_voice",
+      "label": "voice",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_voice_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "sleepy_discord_vcpkg_voice_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sleepy_discord_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_default_features",
+      "target": "ref_cpr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sleepy_discord_vcpkg_json",
+      "target": "sleepy_discord_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features",
+      "target": "sleepy_discord_vcpkg_features_compression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_compression",
+      "target": "sleepy_discord_vcpkg_compression_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_compression",
+      "target": "sleepy_discord_vcpkg_compression_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_compression_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features",
+      "target": "sleepy_discord_vcpkg_features_cpr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_cpr",
+      "target": "sleepy_discord_vcpkg_cpr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_cpr",
+      "target": "sleepy_discord_vcpkg_cpr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_cpr_dependencies",
+      "target": "ref_cpr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features",
+      "target": "sleepy_discord_vcpkg_features_voice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_voice",
+      "target": "sleepy_discord_vcpkg_voice_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_features_voice",
+      "target": "sleepy_discord_vcpkg_voice_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "sleepy_discord_vcpkg_voice_dependencies",
+      "target": "ref_libsodium",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sleepy_discord_vcpkg_voice_dependencies",
+      "target": "ref_opus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sleepy-discord/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

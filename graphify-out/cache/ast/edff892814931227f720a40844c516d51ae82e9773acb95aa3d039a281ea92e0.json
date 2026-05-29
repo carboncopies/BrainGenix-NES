@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_woff2_json",
+      "label": "woff2.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/woff2.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_woff2_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/woff2.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_woff2_json",
+      "target": "w_woff2_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/woff2.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

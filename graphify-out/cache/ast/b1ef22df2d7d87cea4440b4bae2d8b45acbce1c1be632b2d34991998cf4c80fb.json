@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_ltla_cppirlba_json",
+      "label": "ltla-cppirlba.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-cppirlba.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_ltla_cppirlba_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-cppirlba.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_ltla_cppirlba_json",
+      "target": "l_ltla_cppirlba_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-cppirlba.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

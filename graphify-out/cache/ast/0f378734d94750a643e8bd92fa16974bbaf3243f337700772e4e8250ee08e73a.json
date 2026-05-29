@@ -1,0 +1,87 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpath_macho_test_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "rpath_macho_test_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "rpath_macho_test_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "rpath_macho_test_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_vcpkg_json",
+      "target": "rpath_macho_test_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_vcpkg_json",
+      "target": "rpath_macho_test_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_vcpkg_json",
+      "target": "rpath_macho_test_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_vcpkg_json",
+      "target": "rpath_macho_test_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "rpath_macho_test_vcpkg_dependencies",
+      "target": "ref_rpath_macho_test_binaries",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

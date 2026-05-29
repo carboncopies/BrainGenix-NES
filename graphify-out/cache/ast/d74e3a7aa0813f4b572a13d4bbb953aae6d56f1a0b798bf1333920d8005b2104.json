@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_boost_mqtt5_json",
+      "label": "boost-mqtt5.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-mqtt5.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_boost_mqtt5_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-mqtt5.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_boost_mqtt5_json",
+      "target": "b_boost_mqtt5_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/boost-mqtt5.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

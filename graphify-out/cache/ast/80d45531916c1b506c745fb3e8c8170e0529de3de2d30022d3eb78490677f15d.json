@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_curlpp_json",
+      "label": "curlpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curlpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_curlpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curlpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_curlpp_json",
+      "target": "c_curlpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/curlpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

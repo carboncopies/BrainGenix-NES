@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "python3_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "python3_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "python3_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "python3_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "python3_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "python3_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "python3_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "python3_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "python3_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "python3_vcpkg_features_extensions",
+      "label": "extensions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "python3_vcpkg_extensions_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "python3_vcpkg_extensions_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "python3_vcpkg_extensions_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "python3_vcpkg_features_readline",
+      "label": "readline",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "python3_vcpkg_readline_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "python3_vcpkg_readline_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "python3_vcpkg_readline_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L99"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_python3_vcpkg_json",
+      "target": "python3_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features",
+      "target": "python3_vcpkg_features_extensions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_extensions",
+      "target": "python3_vcpkg_extensions_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_extensions",
+      "target": "python3_vcpkg_extensions_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_extensions",
+      "target": "python3_vcpkg_extensions_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features",
+      "target": "python3_vcpkg_features_readline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_readline",
+      "target": "python3_vcpkg_readline_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_readline",
+      "target": "python3_vcpkg_readline_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_features_readline",
+      "target": "python3_vcpkg_readline_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "python3_vcpkg_readline_dependencies",
+      "target": "ref_readline",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/python3/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sassc_json",
+      "label": "sassc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sassc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sassc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sassc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sassc_json",
+      "target": "s_sassc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sassc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

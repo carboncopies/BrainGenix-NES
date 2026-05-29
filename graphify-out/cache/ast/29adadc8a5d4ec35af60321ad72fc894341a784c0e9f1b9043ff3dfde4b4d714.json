@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_directx12_agility_json",
+      "label": "directx12-agility.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directx12-agility.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_directx12_agility_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directx12-agility.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_directx12_agility_json",
+      "target": "d_directx12_agility_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directx12-agility.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

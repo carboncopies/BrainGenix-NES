@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_roaring_json",
+      "label": "roaring.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/roaring.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_roaring_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/roaring.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_roaring_json",
+      "target": "r_roaring_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/roaring.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

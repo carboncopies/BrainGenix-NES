@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_directxtex_json",
+      "label": "directxtex.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxtex.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_directxtex_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxtex.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_directxtex_json",
+      "target": "d_directxtex_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/directxtex.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

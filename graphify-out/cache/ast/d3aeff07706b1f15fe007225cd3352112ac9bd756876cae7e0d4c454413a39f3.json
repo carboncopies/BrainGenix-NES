@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_coin_or_buildtools_json",
+      "label": "coin-or-buildtools.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-buildtools.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_coin_or_buildtools_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-buildtools.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_coin_or_buildtools_json",
+      "target": "c_coin_or_buildtools_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/coin-or-buildtools.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

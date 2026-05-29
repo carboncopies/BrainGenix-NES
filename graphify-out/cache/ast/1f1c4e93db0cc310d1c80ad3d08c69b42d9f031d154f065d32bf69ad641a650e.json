@@ -1,0 +1,619 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "label": "neurite_diameter_model.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_neurite_diameter_model_diameters",
+      "label": "diameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L45"
+    },
+    {
+      "id": "source_neurite_diameter_model_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L48"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L48"
+    },
+    {
+      "id": "source_neurite_diameter_model_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "source_neurite_diameter_model_fibre_diameter",
+      "label": "fibre_diameter()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "fibre_segment",
+      "label": "fibre_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "label": "select_neurite_diameter_model()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123"
+    },
+    {
+      "id": "neurite_diameter_model",
+      "label": "Neurite_Diameter_Model",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123"
+    },
+    {
+      "id": "network",
+      "label": "network",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "thirdparty_netmorphcmake_source_fibre_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "thirdparty_netmorphcmake_source_neurite_diameter_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_diameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_fibre_diameter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_fibre_diameter",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_diameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L112",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_neurite_diameter_model_cc",
+      "target": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "target": "neurite_diameter_model",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "target": "network",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L123",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_neurite_diameter_model_diameters",
+      "target": "source_neurite_diameter_model_fibre_diameter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L95",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "random_positive",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "log",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "log",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L71"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "exp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "log",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L72"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "set_diameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "set_diameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "set_diameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L83"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "random_positive",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_fibre_diameter",
+      "callee": "set_diameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "InputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_diameters",
+      "callee": "OutputStructure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "pdfselection",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "pdfselection",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "clone",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L109"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "callee": "matches",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "source_neurite_diameter_model_select_neurite_diameter_model",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/neurite_diameter_model.cc",
+      "source_location": "L138"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libmultisense_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libmultisense_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libmultisense_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libmultisense_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libmultisense_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libmultisense_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libmultisense_vcpkg_features_json_serialization",
+      "label": "json-serialization",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libmultisense_vcpkg_json_serialization_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libmultisense_vcpkg_json_serialization_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libmultisense_vcpkg_features_opencv",
+      "label": "opencv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libmultisense_vcpkg_opencv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libmultisense_vcpkg_opencv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libmultisense_vcpkg_features_utilities",
+      "label": "utilities",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libmultisense_vcpkg_utilities_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libmultisense_vcpkg_json",
+      "target": "libmultisense_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features",
+      "target": "libmultisense_vcpkg_features_json_serialization",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features_json_serialization",
+      "target": "libmultisense_vcpkg_json_serialization_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features_json_serialization",
+      "target": "libmultisense_vcpkg_json_serialization_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features",
+      "target": "libmultisense_vcpkg_features_opencv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features_opencv",
+      "target": "libmultisense_vcpkg_opencv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features_opencv",
+      "target": "libmultisense_vcpkg_opencv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_opencv_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libmultisense_vcpkg_features",
+      "target": "libmultisense_vcpkg_features_utilities",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libmultisense_vcpkg_features_utilities",
+      "target": "libmultisense_vcpkg_utilities_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libmultisense/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ]
+}

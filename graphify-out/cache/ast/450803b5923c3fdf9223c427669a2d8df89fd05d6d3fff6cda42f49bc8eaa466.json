@@ -1,0 +1,379 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "qtopcua_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "qtopcua_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "qtopcua_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "qtopcua_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "qtopcua_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "qtopcua_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "qtopcua_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "qtopcua_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "qtopcua_vcpkg_features_gds",
+      "label": "gds",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "qtopcua_vcpkg_gds_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "qtopcua_vcpkg_features_ns0idgenerator",
+      "label": "ns0idgenerator",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "qtopcua_vcpkg_ns0idgenerator_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "qtopcua_vcpkg_ns0idgenerator_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "qtopcua_vcpkg_features_ns0idnames",
+      "label": "ns0idnames",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "qtopcua_vcpkg_ns0idnames_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "qtopcua_vcpkg_features_open62541",
+      "label": "open62541",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "qtopcua_vcpkg_open62541_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "qtopcua_vcpkg_open62541_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "qtopcua_vcpkg_features_qml",
+      "label": "qml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "qtopcua_vcpkg_qml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "qtopcua_vcpkg_qml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_default_features",
+      "target": "ref_gds",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtopcua_vcpkg_default_features",
+      "target": "ref_ns0idnames",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "qtopcua_vcpkg_default_features",
+      "target": "ref_open62541",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_qtopcua_vcpkg_json",
+      "target": "qtopcua_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features",
+      "target": "qtopcua_vcpkg_features_gds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_gds",
+      "target": "qtopcua_vcpkg_gds_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features",
+      "target": "qtopcua_vcpkg_features_ns0idgenerator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_ns0idgenerator",
+      "target": "qtopcua_vcpkg_ns0idgenerator_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_ns0idgenerator",
+      "target": "qtopcua_vcpkg_ns0idgenerator_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features",
+      "target": "qtopcua_vcpkg_features_ns0idnames",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_ns0idnames",
+      "target": "qtopcua_vcpkg_ns0idnames_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features",
+      "target": "qtopcua_vcpkg_features_open62541",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_open62541",
+      "target": "qtopcua_vcpkg_open62541_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_open62541",
+      "target": "qtopcua_vcpkg_open62541_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features",
+      "target": "qtopcua_vcpkg_features_qml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_qml",
+      "target": "qtopcua_vcpkg_qml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "qtopcua_vcpkg_features_qml",
+      "target": "qtopcua_vcpkg_qml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/qtopcua/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ]
+}

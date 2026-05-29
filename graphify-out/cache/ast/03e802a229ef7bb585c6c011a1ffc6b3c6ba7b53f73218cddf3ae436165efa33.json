@@ -1,0 +1,175 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "label": "vcpkg.in.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "aws_sdk_cpp_vcpkg_in_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L31"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "aws_sdk_cpp_vcpkg_in_dependencies",
+      "target": "ref_aws_crt_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aws_sdk_cpp_vcpkg_in_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aws_sdk_cpp_vcpkg_in_json",
+      "target": "aws_sdk_cpp_vcpkg_in_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "aws_sdk_cpp_vcpkg_in_default_features",
+      "target": "ref_dynamodb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aws_sdk_cpp_vcpkg_in_default_features",
+      "target": "ref_kinesis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aws_sdk_cpp_vcpkg_in_default_features",
+      "target": "ref_s3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aws-sdk-cpp/vcpkg.in.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

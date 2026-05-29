@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mgclient_json",
+      "label": "mgclient.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mgclient.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mgclient_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mgclient.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mgclient_json",
+      "target": "m_mgclient_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mgclient.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

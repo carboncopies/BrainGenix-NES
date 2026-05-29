@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_duvc_ctl_json",
+      "label": "duvc-ctl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duvc-ctl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_duvc_ctl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duvc-ctl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_duvc_ctl_json",
+      "target": "d_duvc_ctl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/duvc-ctl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

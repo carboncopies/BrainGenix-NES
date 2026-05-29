@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_slick_queue_json",
+      "label": "slick-queue.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/slick-queue.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_slick_queue_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/slick-queue.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_slick_queue_json",
+      "target": "s_slick_queue_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/slick-queue.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

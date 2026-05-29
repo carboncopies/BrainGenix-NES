@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libwebsockets_json",
+      "label": "libwebsockets.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libwebsockets.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libwebsockets_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libwebsockets.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libwebsockets_json",
+      "target": "l_libwebsockets_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libwebsockets.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "orange_math_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "orange_math_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "orange_math_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "orange_math_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "orange_math_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "orange_math_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "orange_math_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "orange_math_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "orange_math_vcpkg_features_avx2",
+      "label": "avx2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "orange_math_vcpkg_avx2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "orange_math_vcpkg_avx2_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "orange_math_vcpkg_features_imgui",
+      "label": "imgui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "orange_math_vcpkg_imgui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "orange_math_vcpkg_imgui_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "orange_math_vcpkg_features_inline",
+      "label": "inline",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "orange_math_vcpkg_inline_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L30"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_orange_math_vcpkg_json",
+      "target": "orange_math_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features",
+      "target": "orange_math_vcpkg_features_avx2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features_avx2",
+      "target": "orange_math_vcpkg_avx2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features_avx2",
+      "target": "orange_math_vcpkg_avx2_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features",
+      "target": "orange_math_vcpkg_features_imgui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features_imgui",
+      "target": "orange_math_vcpkg_imgui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features_imgui",
+      "target": "orange_math_vcpkg_imgui_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_imgui_dependencies",
+      "target": "ref_imgui",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "orange_math_vcpkg_features",
+      "target": "orange_math_vcpkg_features_inline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "orange_math_vcpkg_features_inline",
+      "target": "orange_math_vcpkg_inline_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/orange-math/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    }
+  ]
+}

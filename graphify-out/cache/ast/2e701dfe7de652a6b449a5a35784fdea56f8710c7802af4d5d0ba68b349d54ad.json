@@ -1,0 +1,1095 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "pangolin_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "pangolin_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "pangolin_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "pangolin_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "pangolin_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "pangolin_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "pangolin_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "pangolin_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "pangolin_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "pangolin_vcpkg_features_eigen",
+      "label": "eigen",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "pangolin_vcpkg_eigen_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "pangolin_vcpkg_features_examples",
+      "label": "examples",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "pangolin_vcpkg_examples_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "pangolin_vcpkg_features_ffmpeg",
+      "label": "ffmpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "pangolin_vcpkg_ffmpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "pangolin_vcpkg_ffmpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "pangolin_vcpkg_features_gui",
+      "label": "gui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "pangolin_vcpkg_gui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "pangolin_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "pangolin_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "pangolin_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "pangolin_vcpkg_features_lz4",
+      "label": "lz4",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "pangolin_vcpkg_lz4_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "pangolin_vcpkg_lz4_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "pangolin_vcpkg_features_module",
+      "label": "module",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "pangolin_vcpkg_module_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "pangolin_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "pangolin_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "pangolin_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "pangolin_vcpkg_features_openni2",
+      "label": "openni2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "pangolin_vcpkg_openni2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "pangolin_vcpkg_openni2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "pangolin_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "pangolin_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "pangolin_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "pangolin_vcpkg_features_pybind11",
+      "label": "pybind11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "pangolin_vcpkg_pybind11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "pangolin_vcpkg_pybind11_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "pangolin_vcpkg_features_realsense",
+      "label": "realsense",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "pangolin_vcpkg_realsense_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "pangolin_vcpkg_realsense_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "pangolin_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "pangolin_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "pangolin_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "pangolin_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "pangolin_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "pangolin_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "pangolin_vcpkg_features_uvc",
+      "label": "uvc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "pangolin_vcpkg_uvc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "pangolin_vcpkg_uvc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "pangolin_vcpkg_features_vars",
+      "label": "vars",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L118"
+    },
+    {
+      "id": "pangolin_vcpkg_vars_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L119"
+    },
+    {
+      "id": "pangolin_vcpkg_features_video",
+      "label": "video",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L121"
+    },
+    {
+      "id": "pangolin_vcpkg_video_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "pangolin_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "pangolin_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "pangolin_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L126"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_dependencies",
+      "target": "ref_glew",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_dependencies",
+      "target": "ref_libepoxy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_dependencies",
+      "target": "ref_palsigslot",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_default_features",
+      "target": "ref_ffmpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_default_features",
+      "target": "ref_jpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_default_features",
+      "target": "ref_png",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pangolin_vcpkg_json",
+      "target": "pangolin_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_eigen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_eigen",
+      "target": "pangolin_vcpkg_eigen_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_examples",
+      "target": "pangolin_vcpkg_examples_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_ffmpeg",
+      "target": "pangolin_vcpkg_ffmpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_ffmpeg",
+      "target": "pangolin_vcpkg_ffmpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_gui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_gui",
+      "target": "pangolin_vcpkg_gui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_jpeg",
+      "target": "pangolin_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_jpeg",
+      "target": "pangolin_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_lz4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_lz4",
+      "target": "pangolin_vcpkg_lz4_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_lz4",
+      "target": "pangolin_vcpkg_lz4_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_lz4_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_module",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_module",
+      "target": "pangolin_vcpkg_module_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_openexr",
+      "target": "pangolin_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_openexr",
+      "target": "pangolin_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_openni2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_openni2",
+      "target": "pangolin_vcpkg_openni2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_openni2",
+      "target": "pangolin_vcpkg_openni2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_openni2_dependencies",
+      "target": "ref_openni2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_png",
+      "target": "pangolin_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_png",
+      "target": "pangolin_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_pybind11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_pybind11",
+      "target": "pangolin_vcpkg_pybind11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_pybind11",
+      "target": "pangolin_vcpkg_pybind11_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_pybind11_dependencies",
+      "target": "ref_pybind11",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_pybind11_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_realsense",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_realsense",
+      "target": "pangolin_vcpkg_realsense_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_realsense",
+      "target": "pangolin_vcpkg_realsense_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_realsense_dependencies",
+      "target": "ref_realsense2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_tiff",
+      "target": "pangolin_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_tiff",
+      "target": "pangolin_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_tools",
+      "target": "pangolin_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_tools",
+      "target": "pangolin_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_uvc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_uvc",
+      "target": "pangolin_vcpkg_uvc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_uvc",
+      "target": "pangolin_vcpkg_uvc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_uvc_dependencies",
+      "target": "ref_libuvc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_vars",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_vars",
+      "target": "pangolin_vcpkg_vars_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_video",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_video",
+      "target": "pangolin_vcpkg_video_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features",
+      "target": "pangolin_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_zstd",
+      "target": "pangolin_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_features_zstd",
+      "target": "pangolin_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "pangolin_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pangolin/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

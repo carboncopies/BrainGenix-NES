@@ -1,0 +1,77 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_esaxx_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "esaxx_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "esaxx_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "esaxx_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "esaxx_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_esaxx_vcpkg_json",
+      "target": "esaxx_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_esaxx_vcpkg_json",
+      "target": "esaxx_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_esaxx_vcpkg_json",
+      "target": "esaxx_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_esaxx_vcpkg_json",
+      "target": "esaxx_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/esaxx/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ]
+}

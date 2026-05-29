@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_scotch_json",
+      "label": "scotch.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scotch.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_scotch_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scotch.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_scotch_json",
+      "target": "s_scotch_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/scotch.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mimicpp_json",
+      "label": "mimicpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mimicpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mimicpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mimicpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mimicpp_json",
+      "target": "m_mimicpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mimicpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

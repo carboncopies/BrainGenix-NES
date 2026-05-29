@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "getdns_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "getdns_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "getdns_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "getdns_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "getdns_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "getdns_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "getdns_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "getdns_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "getdns_vcpkg_features_libevent",
+      "label": "libevent",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "getdns_vcpkg_libevent_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "getdns_vcpkg_libevent_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "getdns_vcpkg_features_libuv",
+      "label": "libuv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "getdns_vcpkg_libuv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "getdns_vcpkg_libuv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_dependencies",
+      "target": "ref_libidn2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "getdns_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_getdns_vcpkg_json",
+      "target": "getdns_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_features",
+      "target": "getdns_vcpkg_features_libevent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_features_libevent",
+      "target": "getdns_vcpkg_libevent_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_features_libevent",
+      "target": "getdns_vcpkg_libevent_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_libevent_dependencies",
+      "target": "ref_libevent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "getdns_vcpkg_features",
+      "target": "getdns_vcpkg_features_libuv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_features_libuv",
+      "target": "getdns_vcpkg_libuv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_features_libuv",
+      "target": "getdns_vcpkg_libuv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "getdns_vcpkg_libuv_dependencies",
+      "target": "ref_libuv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/getdns/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

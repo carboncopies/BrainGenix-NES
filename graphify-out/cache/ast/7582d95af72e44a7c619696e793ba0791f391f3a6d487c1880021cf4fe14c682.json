@@ -1,0 +1,633 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "rocksdb_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "rocksdb_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "rocksdb_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "rocksdb_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "rocksdb_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "rocksdb_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "rocksdb_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "rocksdb_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "rocksdb_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_bzip2",
+      "label": "bzip2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "rocksdb_vcpkg_bzip2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "rocksdb_vcpkg_bzip2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_liburing",
+      "label": "liburing",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "rocksdb_vcpkg_liburing_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "rocksdb_vcpkg_liburing_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "rocksdb_vcpkg_liburing_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_lz4",
+      "label": "lz4",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "rocksdb_vcpkg_lz4_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "rocksdb_vcpkg_lz4_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_numa",
+      "label": "numa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "rocksdb_vcpkg_numa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "rocksdb_vcpkg_numa_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "rocksdb_vcpkg_numa_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_snappy",
+      "label": "snappy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "rocksdb_vcpkg_snappy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "rocksdb_vcpkg_snappy_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_tbb",
+      "label": "tbb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "rocksdb_vcpkg_tbb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "rocksdb_vcpkg_tbb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "rocksdb_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "rocksdb_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "rocksdb_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "rocksdb_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "rocksdb_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L79"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_default_features",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_rocksdb_vcpkg_json",
+      "target": "rocksdb_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_bzip2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_bzip2",
+      "target": "rocksdb_vcpkg_bzip2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_bzip2",
+      "target": "rocksdb_vcpkg_bzip2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_bzip2_dependencies",
+      "target": "ref_bzip2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_liburing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_liburing",
+      "target": "rocksdb_vcpkg_liburing_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_liburing",
+      "target": "rocksdb_vcpkg_liburing_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_liburing",
+      "target": "rocksdb_vcpkg_liburing_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_lz4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_lz4",
+      "target": "rocksdb_vcpkg_lz4_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_lz4",
+      "target": "rocksdb_vcpkg_lz4_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_lz4_dependencies",
+      "target": "ref_lz4",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_numa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_numa",
+      "target": "rocksdb_vcpkg_numa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_numa",
+      "target": "rocksdb_vcpkg_numa_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_numa",
+      "target": "rocksdb_vcpkg_numa_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_snappy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_snappy",
+      "target": "rocksdb_vcpkg_snappy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_snappy",
+      "target": "rocksdb_vcpkg_snappy_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_tbb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_tbb",
+      "target": "rocksdb_vcpkg_tbb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_tbb",
+      "target": "rocksdb_vcpkg_tbb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_tbb_dependencies",
+      "target": "ref_tbb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_zlib",
+      "target": "rocksdb_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_zlib",
+      "target": "rocksdb_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "rocksdb_vcpkg_features",
+      "target": "rocksdb_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_zstd",
+      "target": "rocksdb_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_features_zstd",
+      "target": "rocksdb_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "rocksdb_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/rocksdb/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

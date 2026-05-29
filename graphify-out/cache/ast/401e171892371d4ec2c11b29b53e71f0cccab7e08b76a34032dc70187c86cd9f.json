@@ -1,0 +1,225 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_objcurves_py",
+      "label": "objcurves.py",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_objcurves_get_object_info",
+      "label": "get_object_info()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "source_objcurves_get_blender_objects",
+      "label": "get_blender_objects()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "source_objcurves_set_bevel_depths",
+      "label": "set_bevel_depths()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "float",
+      "label": "float",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L39"
+    },
+    {
+      "id": "source_objcurves_delete_default_cube",
+      "label": "delete_default_cube()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L43"
+    },
+    {
+      "id": "source_objcurves_add_material_for_object",
+      "label": "add_material_for_object()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L52"
+    },
+    {
+      "id": "str",
+      "label": "str",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L52"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "bpy",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "bpy",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "mathutils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "source_objcurves_get_object_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "source_objcurves_get_blender_objects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "source_objcurves_set_bevel_depths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_objcurves_set_bevel_depths",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "source_objcurves_delete_default_cube",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_objcurves_py",
+      "target": "source_objcurves_add_material_for_object",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "source_objcurves_add_material_for_object",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L52",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_objcurves_get_object_info",
+      "callee": "load",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "source_objcurves_get_blender_objects",
+      "callee": "append",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "source_objcurves_delete_default_cube",
+      "callee": "select_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "source_objcurves_delete_default_cube",
+      "callee": "select_set",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_objcurves_delete_default_cube",
+      "callee": "delete",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_objcurves_add_material_for_object",
+      "callee": "new",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_objcurves_add_material_for_object",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "source_objcurves_add_material_for_object",
+      "callee": "append",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/objcurves.py",
+      "source_location": "L57"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_verify_resource",
+      "label": "verify_resource()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L12"
+    },
+    {
+      "id": "resourceloader",
+      "label": "ResourceLoader",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L12"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "embeddedresource",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "exception",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "string_view",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "project_main_verify_resource",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_verify_resource",
+      "target": "resourceloader",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ankurvdev_embedresource_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_main",
+      "target": "project_main_verify_resource",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L45",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "template data<uint8_t>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "name",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "template data<uint8_t>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "project_main_verify_resource",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "LOAD_RESOURCE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "runtime_error",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "LOAD_RESOURCE_COLLECTION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "LOAD_RESOURCE_COLLECTION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "LOAD_RESOURCE_COLLECTION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "project_main_main",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ankurvdev-embedresource/project/main.cpp",
+      "source_location": "L56"
+    }
+  ]
+}

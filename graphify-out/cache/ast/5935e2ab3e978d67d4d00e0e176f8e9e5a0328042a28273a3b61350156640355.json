@@ -1,0 +1,527 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_event_cc",
+      "label": "event.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_event_event",
+      "label": "Event()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L34"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L34"
+    },
+    {
+      "id": "source_event_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L36"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L36"
+    },
+    {
+      "id": "source_event_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L43"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L43"
+    },
+    {
+      "id": "source_event_add",
+      "label": "add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "source_event_variablesteps",
+      "label": "variablesteps()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "source_event_fixedsteps",
+      "label": "fixedsteps()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L68"
+    },
+    {
+      "id": "source_event_random_spikes",
+      "label": "Random_Spikes()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L72"
+    },
+    {
+      "id": "source_event_null_activity",
+      "label": "~Null_Activity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L94"
+    },
+    {
+      "id": "source_event_queue",
+      "label": "queue()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L98"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "thirdparty_netmorphcmake_source_event_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_event",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_add",
+      "target": "source_event_event",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_variablesteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_fixedsteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_random_spikes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_random_spikes",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_random_spikes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_random_spikes",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L76",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_null_activity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_queue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_event_cc",
+      "target": "source_event_queue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_event",
+      "target": "source_event_queue",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "source_event_event",
+      "target": "source_event_add",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L91",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_event_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "head",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "link_before",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "head",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "insert_before",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_event_add",
+      "callee": "link_before",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "source_event_variablesteps",
+      "callee": "head",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L61"
+    },
+    {
+      "caller_nid": "source_event_variablesteps",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "source_event_variablesteps",
+      "callee": "event",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "source_event_variablesteps",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L88"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "get_rand_range",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "PLLRoot<neuron>::length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "activity",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "PLLRoot<neuron>::el",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "source_event_event",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "source_event_null_activity",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_event_queue",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L99"
+    },
+    {
+      "caller_nid": "source_event_queue",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/event.cc",
+      "source_location": "L103"
+    }
+  ]
+}

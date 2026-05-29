@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rtmidi_json",
+      "label": "rtmidi.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rtmidi.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rtmidi_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rtmidi.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rtmidi_json",
+      "target": "r_rtmidi_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rtmidi.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

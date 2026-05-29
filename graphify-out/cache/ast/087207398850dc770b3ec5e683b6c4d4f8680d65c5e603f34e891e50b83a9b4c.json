@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_readme_netmorph_netmorph_org",
+      "label": "NETMORPH (netmorph.org)",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_readme_distribution_and_downloading",
+      "label": "Distribution and Downloading",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "source_readme_installation",
+      "label": "Installation",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_readme_md",
+      "target": "source_readme_netmorph_netmorph_org",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_readme_netmorph_netmorph_org",
+      "target": "source_readme_distribution_and_downloading",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_readme_netmorph_netmorph_org",
+      "target": "source_readme_installation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/README.md",
+      "source_location": "L36",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

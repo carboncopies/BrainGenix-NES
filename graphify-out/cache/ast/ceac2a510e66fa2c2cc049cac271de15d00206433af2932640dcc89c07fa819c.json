@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_u_uwebsockets_json",
+      "label": "uwebsockets.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/uwebsockets.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "u_uwebsockets_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/uwebsockets.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_u_uwebsockets_json",
+      "target": "u_uwebsockets_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/u-/uwebsockets.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

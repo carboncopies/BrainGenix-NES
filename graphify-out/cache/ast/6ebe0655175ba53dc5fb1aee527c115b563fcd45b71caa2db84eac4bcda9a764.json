@@ -1,0 +1,135 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_state_storable_cc",
+      "label": "state_storable.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_state_storable_state_output",
+      "label": "state_output()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31"
+    },
+    {
+      "id": "source_state_storable_state_input",
+      "label": "state_input()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_state_storable_cc",
+      "target": "thirdparty_netmorphcmake_source_state_storable_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_state_storable_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_state_storable_cc",
+      "target": "source_state_storable_state_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "source_state_storable_state_output",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_state_storable_state_output",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_state_storable_cc",
+      "target": "source_state_storable_state_input",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "source_state_storable_state_input",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_state_storable_state_input",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_state_storable_state_output",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "source_state_storable_state_input",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/state_storable.cc",
+      "source_location": "L39"
+    }
+  ]
+}

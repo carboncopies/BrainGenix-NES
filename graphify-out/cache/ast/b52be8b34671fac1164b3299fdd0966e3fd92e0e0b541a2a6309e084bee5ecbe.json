@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kf5declarative_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kf5declarative_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kf5declarative_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kf5declarative_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kf5declarative_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kf5declarative_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "kf5declarative_vcpkg_features_opengl",
+      "label": "opengl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "kf5declarative_vcpkg_opengl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "kf5declarative_vcpkg_opengl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_ecm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5config",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5guiaddons",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5i18n",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5iconthemes",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5kio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5notifications",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5package",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5widgetsaddons",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_kf5windowsystem",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kf5declarative_vcpkg_dependencies",
+      "target": "ref_qt5_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kf5declarative_vcpkg_json",
+      "target": "kf5declarative_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5declarative_vcpkg_features",
+      "target": "kf5declarative_vcpkg_features_opengl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5declarative_vcpkg_features_opengl",
+      "target": "kf5declarative_vcpkg_opengl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5declarative_vcpkg_features_opengl",
+      "target": "kf5declarative_vcpkg_opengl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "kf5declarative_vcpkg_opengl_dependencies",
+      "target": "ref_libepoxy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kf5declarative/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

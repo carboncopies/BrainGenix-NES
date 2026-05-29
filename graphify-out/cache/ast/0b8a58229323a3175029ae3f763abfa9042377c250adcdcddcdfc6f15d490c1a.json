@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sbp_json",
+      "label": "sbp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sbp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sbp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sbp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sbp_json",
+      "target": "s_sbp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sbp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

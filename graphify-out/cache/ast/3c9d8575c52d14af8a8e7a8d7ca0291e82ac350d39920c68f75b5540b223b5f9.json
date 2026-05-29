@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "monkeys_audio_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "monkeys_audio_vcpkg_description",
+      "target": "ref_monkey_s_audio_is_an_excellent_audio_compression_tool_which_has_multiple_advantages_over_traditional_methods",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "monkeys_audio_vcpkg_description",
+      "target": "ref_audio_files_compressed_with_it_end_with_ape_extension",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_monkeys_audio_vcpkg_json",
+      "target": "monkeys_audio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "monkeys_audio_vcpkg_features",
+      "target": "monkeys_audio_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "monkeys_audio_vcpkg_features_tools",
+      "target": "monkeys_audio_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/monkeys-audio/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    }
+  ]
+}

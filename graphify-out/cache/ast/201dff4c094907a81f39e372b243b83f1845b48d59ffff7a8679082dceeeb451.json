@@ -1,0 +1,283 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "iceoryx_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "iceoryx_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "iceoryx_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "iceoryx_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "iceoryx_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "iceoryx_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "iceoryx_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "iceoryx_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "iceoryx_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "iceoryx_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "iceoryx_vcpkg_features_many_to_many",
+      "label": "many-to-many",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "iceoryx_vcpkg_many_to_many_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "iceoryx_vcpkg_features_toml_config",
+      "label": "toml-config",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "iceoryx_vcpkg_toml_config_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "iceoryx_vcpkg_toml_config_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L33"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_default_features",
+      "target": "ref_many_to_many",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "iceoryx_vcpkg_default_features",
+      "target": "ref_toml_config",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_iceoryx_vcpkg_json",
+      "target": "iceoryx_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_features",
+      "target": "iceoryx_vcpkg_features_many_to_many",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_features_many_to_many",
+      "target": "iceoryx_vcpkg_many_to_many_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_features",
+      "target": "iceoryx_vcpkg_features_toml_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_features_toml_config",
+      "target": "iceoryx_vcpkg_toml_config_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_features_toml_config",
+      "target": "iceoryx_vcpkg_toml_config_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "iceoryx_vcpkg_toml_config_dependencies",
+      "target": "ref_cpptoml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/iceoryx/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

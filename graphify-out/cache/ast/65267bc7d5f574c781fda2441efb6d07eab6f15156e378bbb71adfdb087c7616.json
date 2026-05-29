@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_linux_provision_image_sh",
+      "label": "provision-image.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/linux/provision-image.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_linux_provision_image_sh__entry",
+      "label": "provision-image.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/linux/provision-image.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "linux_provision_image_debian_frontend",
+      "label": "DEBIAN_FRONTEND",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/linux/provision-image.sh",
+      "source_location": "L6",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_linux_provision_image_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_linux_provision_image_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/linux/provision-image.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_linux_provision_image_sh",
+      "target": "linux_provision_image_debian_frontend",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/linux/provision-image.sh",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ]
+}

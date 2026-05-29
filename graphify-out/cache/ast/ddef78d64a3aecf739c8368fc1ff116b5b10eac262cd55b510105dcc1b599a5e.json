@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vectorclass_json",
+      "label": "vectorclass.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vectorclass.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vectorclass_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vectorclass.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vectorclass_json",
+      "target": "v_vectorclass_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vectorclass.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

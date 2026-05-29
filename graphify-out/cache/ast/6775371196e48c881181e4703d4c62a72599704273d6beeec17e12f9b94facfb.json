@@ -1,0 +1,323 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "glib_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "glib_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "glib_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "glib_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "glib_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "glib_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "glib_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "glib_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "glib_vcpkg_features_libmount",
+      "label": "libmount",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "glib_vcpkg_libmount_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "glib_vcpkg_libmount_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "glib_vcpkg_libmount_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "glib_vcpkg_features_selinux",
+      "label": "selinux",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "glib_vcpkg_selinux_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "glib_vcpkg_selinux_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L38"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_dirent",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_gettext_libintl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_libffi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_glib_vcpkg_json",
+      "target": "glib_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features",
+      "target": "glib_vcpkg_features_libmount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features_libmount",
+      "target": "glib_vcpkg_libmount_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features_libmount",
+      "target": "glib_vcpkg_libmount_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features_libmount",
+      "target": "glib_vcpkg_libmount_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_libmount_dependencies",
+      "target": "ref_libmount",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "glib_vcpkg_features",
+      "target": "glib_vcpkg_features_selinux",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features_selinux",
+      "target": "glib_vcpkg_selinux_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "glib_vcpkg_features_selinux",
+      "target": "glib_vcpkg_selinux_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/glib/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    }
+  ]
+}

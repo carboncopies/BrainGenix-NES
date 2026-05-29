@@ -1,0 +1,371 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libspatialite_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libspatialite_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libspatialite_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libspatialite_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libspatialite_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libspatialite_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libspatialite_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libspatialite_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libspatialite_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libspatialite_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libspatialite_vcpkg_features_freexl",
+      "label": "freexl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libspatialite_vcpkg_freexl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libspatialite_vcpkg_freexl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "libspatialite_vcpkg_features_gcp",
+      "label": "gcp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libspatialite_vcpkg_gcp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libspatialite_vcpkg_features_rttopo",
+      "label": "rttopo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "libspatialite_vcpkg_rttopo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "libspatialite_vcpkg_rttopo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L50"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_dependencies",
+      "target": "ref_geos",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libspatialite_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libspatialite_vcpkg_dependencies",
+      "target": "ref_proj",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libspatialite_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_default_features",
+      "target": "ref_freexl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libspatialite_vcpkg_json",
+      "target": "libspatialite_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features",
+      "target": "libspatialite_vcpkg_features_freexl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features_freexl",
+      "target": "libspatialite_vcpkg_freexl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features_freexl",
+      "target": "libspatialite_vcpkg_freexl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_freexl_dependencies",
+      "target": "ref_freexl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libspatialite_vcpkg_features",
+      "target": "libspatialite_vcpkg_features_gcp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features_gcp",
+      "target": "libspatialite_vcpkg_gcp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features",
+      "target": "libspatialite_vcpkg_features_rttopo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features_rttopo",
+      "target": "libspatialite_vcpkg_rttopo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_features_rttopo",
+      "target": "libspatialite_vcpkg_rttopo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "libspatialite_vcpkg_rttopo_dependencies",
+      "target": "ref_librttopo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libspatialite/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

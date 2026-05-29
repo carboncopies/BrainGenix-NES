@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_example_ubuntu_provision_for_docker_sh",
+      "label": "example-ubuntu-provision-for-docker.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/example-ubuntu-provision-for-docker.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_example_ubuntu_provision_for_docker_sh__entry",
+      "label": "example-ubuntu-provision-for-docker.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/example-ubuntu-provision-for-docker.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    },
+    {
+      "id": "azure_pipelines_example_ubuntu_provision_for_docker_debian_frontend",
+      "label": "DEBIAN_FRONTEND",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/example-ubuntu-provision-for-docker.sh",
+      "source_location": "L11",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_example_ubuntu_provision_for_docker_sh",
+      "target": "thirdparty_vcpkg_scripts_azure_pipelines_example_ubuntu_provision_for_docker_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/example-ubuntu-provision-for-docker.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_example_ubuntu_provision_for_docker_sh",
+      "target": "azure_pipelines_example_ubuntu_provision_for_docker_debian_frontend",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/example-ubuntu-provision-for-docker.sh",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ]
+}

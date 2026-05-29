@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cld3_json",
+      "label": "cld3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cld3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cld3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cld3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cld3_json",
+      "target": "c_cld3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cld3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cubeb_json",
+      "label": "cubeb.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cubeb.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cubeb_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cubeb.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cubeb_json",
+      "target": "c_cubeb_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cubeb.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

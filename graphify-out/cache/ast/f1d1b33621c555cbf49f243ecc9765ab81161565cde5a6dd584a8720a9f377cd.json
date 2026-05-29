@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_if97_json",
+      "label": "if97.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/if97.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_if97_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/if97.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_if97_json",
+      "target": "i_if97_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/if97.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

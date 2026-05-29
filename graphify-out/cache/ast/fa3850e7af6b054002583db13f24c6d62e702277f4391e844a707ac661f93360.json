@@ -1,0 +1,827 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sqlite3_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sqlite3_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sqlite3_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sqlite3_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sqlite3_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sqlite3_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sqlite3_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "sqlite3_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_dbpage_vtab",
+      "label": "dbpage-vtab",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "sqlite3_vcpkg_dbpage_vtab_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_dbstat",
+      "label": "dbstat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "sqlite3_vcpkg_dbstat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_fts3",
+      "label": "fts3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "sqlite3_vcpkg_fts3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_fts4",
+      "label": "fts4",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sqlite3_vcpkg_fts4_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_fts5",
+      "label": "fts5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "sqlite3_vcpkg_fts5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_geopoly",
+      "label": "geopoly",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "sqlite3_vcpkg_geopoly_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_json1",
+      "label": "json1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "sqlite3_vcpkg_json1_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_limit",
+      "label": "limit",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "sqlite3_vcpkg_limit_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_math",
+      "label": "math",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "sqlite3_vcpkg_math_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_memsys3",
+      "label": "memsys3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "sqlite3_vcpkg_memsys3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_memsys5",
+      "label": "memsys5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "sqlite3_vcpkg_memsys5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_omit_load_extension",
+      "label": "omit-load-extension",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "sqlite3_vcpkg_omit_load_extension_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_rtree",
+      "label": "rtree",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "sqlite3_vcpkg_rtree_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_session",
+      "label": "session",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "sqlite3_vcpkg_session_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_snapshot",
+      "label": "snapshot",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "sqlite3_vcpkg_snapshot_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_soundex",
+      "label": "soundex",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "sqlite3_vcpkg_soundex_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_tool",
+      "label": "tool",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "sqlite3_vcpkg_tool_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "sqlite3_vcpkg_tool_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_unicode",
+      "label": "unicode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "sqlite3_vcpkg_unicode_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "sqlite3_vcpkg_unicode_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "sqlite3_vcpkg_features_zlib",
+      "label": "zlib",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "sqlite3_vcpkg_zlib_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "sqlite3_vcpkg_zlib_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L81"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_default_features",
+      "target": "ref_json1",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite3_vcpkg_json",
+      "target": "sqlite3_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_dbpage_vtab",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_dbpage_vtab",
+      "target": "sqlite3_vcpkg_dbpage_vtab_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_dbstat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_dbstat",
+      "target": "sqlite3_vcpkg_dbstat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_fts3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_fts3",
+      "target": "sqlite3_vcpkg_fts3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_fts4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_fts4",
+      "target": "sqlite3_vcpkg_fts4_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_fts5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_fts5",
+      "target": "sqlite3_vcpkg_fts5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_geopoly",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_geopoly",
+      "target": "sqlite3_vcpkg_geopoly_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_json1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_json1",
+      "target": "sqlite3_vcpkg_json1_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_limit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_limit",
+      "target": "sqlite3_vcpkg_limit_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_math",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_math",
+      "target": "sqlite3_vcpkg_math_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_memsys3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_memsys3",
+      "target": "sqlite3_vcpkg_memsys3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_memsys5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_memsys5",
+      "target": "sqlite3_vcpkg_memsys5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_omit_load_extension",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_omit_load_extension",
+      "target": "sqlite3_vcpkg_omit_load_extension_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_rtree",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_rtree",
+      "target": "sqlite3_vcpkg_rtree_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_session",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_session",
+      "target": "sqlite3_vcpkg_session_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_snapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_snapshot",
+      "target": "sqlite3_vcpkg_snapshot_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_soundex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_soundex",
+      "target": "sqlite3_vcpkg_soundex_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_tool",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_tool",
+      "target": "sqlite3_vcpkg_tool_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_tool",
+      "target": "sqlite3_vcpkg_tool_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_unicode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_unicode",
+      "target": "sqlite3_vcpkg_unicode_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_unicode",
+      "target": "sqlite3_vcpkg_unicode_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_unicode_dependencies",
+      "target": "ref_icu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sqlite3_vcpkg_features",
+      "target": "sqlite3_vcpkg_features_zlib",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_zlib",
+      "target": "sqlite3_vcpkg_zlib_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_features_zlib",
+      "target": "sqlite3_vcpkg_zlib_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite3_vcpkg_zlib_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite3/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "boost_mpi_vcpkg_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "boost_mpi_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "boost_mpi_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "boost_mpi_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "boost_mpi_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "boost_mpi_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "boost_mpi_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "boost_mpi_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "boost_mpi_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "boost_mpi_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "boost_mpi_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "boost_mpi_vcpkg_features_python3",
+      "label": "python3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "boost_mpi_vcpkg_python3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "boost_mpi_vcpkg_python3_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "boost_mpi_vcpkg_python3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L94"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_dependencies",
+      "target": "ref_mpi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_boost_mpi_vcpkg_json",
+      "target": "boost_mpi_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_features",
+      "target": "boost_mpi_vcpkg_features_python3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_features_python3",
+      "target": "boost_mpi_vcpkg_python3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_features_python3",
+      "target": "boost_mpi_vcpkg_python3_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_features_python3",
+      "target": "boost_mpi_vcpkg_python3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_mpi_vcpkg_python3_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/boost-mpi/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

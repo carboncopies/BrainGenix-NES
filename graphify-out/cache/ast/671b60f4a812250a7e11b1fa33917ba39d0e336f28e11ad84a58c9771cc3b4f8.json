@@ -1,0 +1,965 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "openimageio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "openimageio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "openimageio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "openimageio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "openimageio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "openimageio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "openimageio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "openimageio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "openimageio_vcpkg_features_ffmpeg",
+      "label": "ffmpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "openimageio_vcpkg_ffmpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "openimageio_vcpkg_ffmpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "openimageio_vcpkg_features_freetype",
+      "label": "freetype",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "openimageio_vcpkg_freetype_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "openimageio_vcpkg_freetype_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "openimageio_vcpkg_features_gif",
+      "label": "gif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "openimageio_vcpkg_gif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "openimageio_vcpkg_gif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "openimageio_vcpkg_features_jpegxl",
+      "label": "jpegxl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "openimageio_vcpkg_jpegxl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "openimageio_vcpkg_jpegxl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "openimageio_vcpkg_features_libheif",
+      "label": "libheif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "openimageio_vcpkg_libheif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "openimageio_vcpkg_libheif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "openimageio_vcpkg_features_libraw",
+      "label": "libraw",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "openimageio_vcpkg_libraw_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "openimageio_vcpkg_libraw_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "openimageio_vcpkg_features_opencolorio",
+      "label": "opencolorio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "openimageio_vcpkg_opencolorio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "openimageio_vcpkg_opencolorio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "openimageio_vcpkg_features_opencv",
+      "label": "opencv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "openimageio_vcpkg_opencv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "openimageio_vcpkg_opencv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "openimageio_vcpkg_features_openjpeg",
+      "label": "openjpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "openimageio_vcpkg_openjpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "openimageio_vcpkg_openjpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "openimageio_vcpkg_features_pybind11",
+      "label": "pybind11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "openimageio_vcpkg_pybind11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "openimageio_vcpkg_pybind11_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "openimageio_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "openimageio_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "openimageio_vcpkg_features_viewer",
+      "label": "viewer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L111"
+    },
+    {
+      "id": "openimageio_vcpkg_viewer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "openimageio_vcpkg_viewer_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "openimageio_vcpkg_viewer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "openimageio_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "openimageio_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "openimageio_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L130"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_opencolorio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_robin_map",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openimageio_vcpkg_json",
+      "target": "openimageio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_ffmpeg",
+      "target": "openimageio_vcpkg_ffmpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_ffmpeg",
+      "target": "openimageio_vcpkg_ffmpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_freetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_freetype",
+      "target": "openimageio_vcpkg_freetype_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_freetype",
+      "target": "openimageio_vcpkg_freetype_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_freetype_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_gif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_gif",
+      "target": "openimageio_vcpkg_gif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_gif",
+      "target": "openimageio_vcpkg_gif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_gif_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_jpegxl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_jpegxl",
+      "target": "openimageio_vcpkg_jpegxl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_jpegxl",
+      "target": "openimageio_vcpkg_jpegxl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_jpegxl_dependencies",
+      "target": "ref_libjxl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_libheif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_libheif",
+      "target": "openimageio_vcpkg_libheif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_libheif",
+      "target": "openimageio_vcpkg_libheif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_libheif_dependencies",
+      "target": "ref_libheif",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_libraw",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_libraw",
+      "target": "openimageio_vcpkg_libraw_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_libraw",
+      "target": "openimageio_vcpkg_libraw_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_libraw_dependencies",
+      "target": "ref_libraw",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_opencolorio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_opencolorio",
+      "target": "openimageio_vcpkg_opencolorio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_opencolorio_description",
+      "target": "ref_enable_opencolorio_support_for_openimageio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_opencolorio_description",
+      "target": "ref_this_feature_can_only_be_used_when_openexr_and_opencolorio_use_the_same_version_of_imath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features_opencolorio",
+      "target": "openimageio_vcpkg_opencolorio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_opencolorio_dependencies",
+      "target": "ref_opencolorio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_opencv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_opencv",
+      "target": "openimageio_vcpkg_opencv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_opencv",
+      "target": "openimageio_vcpkg_opencv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_openjpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_openjpeg",
+      "target": "openimageio_vcpkg_openjpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_openjpeg",
+      "target": "openimageio_vcpkg_openjpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_openjpeg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_pybind11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_pybind11",
+      "target": "openimageio_vcpkg_pybind11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_pybind11",
+      "target": "openimageio_vcpkg_pybind11_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_pybind11_dependencies",
+      "target": "ref_pybind11",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_pybind11_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_tools",
+      "target": "openimageio_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_viewer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_viewer",
+      "target": "openimageio_vcpkg_viewer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_viewer",
+      "target": "openimageio_vcpkg_viewer_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_viewer",
+      "target": "openimageio_vcpkg_viewer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_viewer_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openimageio_vcpkg_features",
+      "target": "openimageio_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_webp",
+      "target": "openimageio_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_features_webp",
+      "target": "openimageio_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "openimageio_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openimageio/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

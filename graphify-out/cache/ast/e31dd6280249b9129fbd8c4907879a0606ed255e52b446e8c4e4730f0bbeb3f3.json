@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qtserialport_json",
+      "label": "qtserialport.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtserialport.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qtserialport_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtserialport.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qtserialport_json",
+      "target": "q_qtserialport_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qtserialport.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

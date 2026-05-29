@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_q_qcustomplot_json",
+      "label": "qcustomplot.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qcustomplot.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "q_qcustomplot_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qcustomplot.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_q_qcustomplot_json",
+      "target": "q_qcustomplot_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/q-/qcustomplot.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

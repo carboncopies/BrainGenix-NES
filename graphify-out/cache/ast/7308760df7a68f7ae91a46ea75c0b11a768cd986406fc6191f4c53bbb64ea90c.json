@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bigint_json",
+      "label": "bigint.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bigint.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bigint_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bigint.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bigint_json",
+      "target": "b_bigint_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bigint.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_zstd_json",
+      "label": "zstd.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zstd.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_zstd_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zstd.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_zstd_json",
+      "target": "z_zstd_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/zstd.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

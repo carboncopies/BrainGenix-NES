@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mozjpeg_json",
+      "label": "mozjpeg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mozjpeg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mozjpeg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mozjpeg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mozjpeg_json",
+      "target": "m_mozjpeg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mozjpeg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

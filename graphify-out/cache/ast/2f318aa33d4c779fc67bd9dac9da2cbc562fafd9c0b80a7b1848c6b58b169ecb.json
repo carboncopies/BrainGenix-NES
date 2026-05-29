@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_binaries_project_lib_cpp",
+      "label": "lib.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/lib.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_lib_getteststring",
+      "label": "getTestString()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/lib.cpp",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_rpath_macho_test_binaries_project_lib_cpp",
+      "target": "project_lib_getteststring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/lib.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_lib_getteststring",
+      "callee": "getTestStringBackend",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/rpath-macho-test-binaries/project/lib.cpp",
+      "source_location": "L5"
+    }
+  ]
+}

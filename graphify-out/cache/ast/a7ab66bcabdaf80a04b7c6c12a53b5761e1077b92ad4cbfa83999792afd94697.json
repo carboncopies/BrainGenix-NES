@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_features_nls",
+      "label": "nls",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_nls_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "mchehab_zbar_vcpkg_nls_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mchehab_zbar_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mchehab_zbar_vcpkg_json",
+      "target": "mchehab_zbar_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "mchehab_zbar_vcpkg_features",
+      "target": "mchehab_zbar_vcpkg_features_nls",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "mchehab_zbar_vcpkg_features_nls",
+      "target": "mchehab_zbar_vcpkg_nls_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "mchehab_zbar_vcpkg_features_nls",
+      "target": "mchehab_zbar_vcpkg_nls_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "mchehab_zbar_vcpkg_nls_dependencies",
+      "target": "ref_gettext_libintl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mchehab-zbar/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

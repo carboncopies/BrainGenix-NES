@@ -1,0 +1,58 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_breakpad_check_getcontext_cc",
+      "label": "check_getcontext.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "breakpad_check_getcontext_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_breakpad_check_getcontext_cc",
+      "target": "ucontext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_breakpad_check_getcontext_cc",
+      "target": "cstddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_breakpad_check_getcontext_cc",
+      "target": "breakpad_check_getcontext_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L4",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "breakpad_check_getcontext_main",
+      "callee": "getcontext",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/breakpad/check_getcontext.cc",
+      "source_location": "L6"
+    }
+  ]
+}

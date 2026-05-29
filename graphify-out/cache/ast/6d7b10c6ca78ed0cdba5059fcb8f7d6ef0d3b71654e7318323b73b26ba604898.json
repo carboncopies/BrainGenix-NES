@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libeventheader_tracepoint_json",
+      "label": "libeventheader-tracepoint.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libeventheader-tracepoint.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libeventheader_tracepoint_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libeventheader-tracepoint.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libeventheader_tracepoint_json",
+      "target": "l_libeventheader_tracepoint_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libeventheader-tracepoint.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

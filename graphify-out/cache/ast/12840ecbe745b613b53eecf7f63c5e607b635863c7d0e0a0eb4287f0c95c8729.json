@@ -1,0 +1,199 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_features_gltfpack",
+      "label": "gltfpack",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_gltfpack_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_gltfpack_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "meshoptimizer_vcpkg_gltfpack_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_meshoptimizer_vcpkg_json",
+      "target": "meshoptimizer_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "meshoptimizer_vcpkg_features",
+      "target": "meshoptimizer_vcpkg_features_gltfpack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "meshoptimizer_vcpkg_features_gltfpack",
+      "target": "meshoptimizer_vcpkg_gltfpack_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "meshoptimizer_vcpkg_features_gltfpack",
+      "target": "meshoptimizer_vcpkg_gltfpack_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "meshoptimizer_vcpkg_features_gltfpack",
+      "target": "meshoptimizer_vcpkg_gltfpack_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "meshoptimizer_vcpkg_gltfpack_dependencies",
+      "target": "ref_basisu",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/meshoptimizer/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

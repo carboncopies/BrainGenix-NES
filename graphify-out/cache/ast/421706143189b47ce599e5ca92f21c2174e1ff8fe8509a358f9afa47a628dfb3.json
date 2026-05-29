@@ -1,0 +1,293 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "azmq_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "azmq_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "azmq_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "azmq_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "azmq_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "target": "azmq_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "target": "azmq_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "target": "azmq_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "azmq_vcpkg_description",
+      "target": "ref_boost_asio_style_bindings_for_zeromq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_description",
+      "target": "ref_this_library_is_built_on_top_of_zeromq_s_standard_c_interface_and_is_intended_to_work_well_with_c_applications_which_use_the_boost_libraries_in_general_and_asio_in_particular",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_description",
+      "target": "ref_the_main_abstraction_exposed_by_the_library_is_azmq_socket_which_provides_an_asio_style_socket_interface_to_the_underlying_zeromq_socket_and_interfaces_with_asio_s_io_service_the_socket_implementation_participates_in_the_io_service_s_reactor_for_asynchronous_io_and_may_be_freely_mixed_with_other_asio_socket_types_raw_tcp_udp_serial_etc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "target": "azmq_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azmq_vcpkg_json",
+      "target": "azmq_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_assert",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_config",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_container",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_format",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_intrusive",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_iterator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_lexical_cast",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_logic",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_optional",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_random",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_range",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_regex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_thread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_boost_utility",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azmq_vcpkg_dependencies",
+      "target": "ref_zeromq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azmq/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_ndis_driver_library_json",
+      "label": "ndis-driver-library.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ndis-driver-library.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_ndis_driver_library_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ndis-driver-library.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_ndis_driver_library_json",
+      "target": "n_ndis_driver_library_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ndis-driver-library.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

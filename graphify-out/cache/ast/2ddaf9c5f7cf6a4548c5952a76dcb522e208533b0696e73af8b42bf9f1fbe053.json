@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_graphene_json",
+      "label": "graphene.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/graphene.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_graphene_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/graphene.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_graphene_json",
+      "target": "g_graphene_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/graphene.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

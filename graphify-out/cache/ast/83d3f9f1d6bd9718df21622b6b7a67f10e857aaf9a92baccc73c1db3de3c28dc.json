@@ -1,0 +1,219 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "cppfs_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "cppfs_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "cppfs_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "cppfs_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "cppfs_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "cppfs_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "cppfs_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "cppfs_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "cppfs_vcpkg_features_ssh",
+      "label": "ssh",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "cppfs_vcpkg_ssh_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "cppfs_vcpkg_ssh_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L21"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_cppfs_vcpkg_json",
+      "target": "cppfs_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "cppfs_vcpkg_features",
+      "target": "cppfs_vcpkg_features_ssh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "cppfs_vcpkg_features_ssh",
+      "target": "cppfs_vcpkg_ssh_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "cppfs_vcpkg_features_ssh",
+      "target": "cppfs_vcpkg_ssh_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "cppfs_vcpkg_ssh_dependencies",
+      "target": "ref_libssh2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cppfs_vcpkg_ssh_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "cppfs_vcpkg_ssh_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/cppfs/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

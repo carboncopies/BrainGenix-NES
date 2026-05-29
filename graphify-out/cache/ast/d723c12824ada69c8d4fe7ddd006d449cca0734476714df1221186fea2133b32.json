@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libiconv_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libiconv_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libiconv_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libiconv_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libiconv_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libiconv_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "libiconv_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "libiconv_vcpkg_description",
+      "target": "ref_iconv_text_conversion",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libiconv_vcpkg_description",
+      "target": "ref_this_port_installs_gnu_libiconv_if_the_system_c_runtime_doesn_t_provide_a_suitable_iconv_implementation",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libiconv_vcpkg_json",
+      "target": "libiconv_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libiconv/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ]
+}

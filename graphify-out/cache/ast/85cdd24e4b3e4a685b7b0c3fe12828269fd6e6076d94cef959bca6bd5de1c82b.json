@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_i_imgui_sfml_json",
+      "label": "imgui-sfml.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imgui-sfml.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "i_imgui_sfml_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imgui-sfml.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_i_imgui_sfml_json",
+      "target": "i_imgui_sfml_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/i-/imgui-sfml.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

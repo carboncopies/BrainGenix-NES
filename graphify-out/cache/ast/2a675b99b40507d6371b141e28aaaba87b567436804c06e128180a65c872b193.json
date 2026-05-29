@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_brotli_json",
+      "label": "brotli.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/brotli.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_brotli_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/brotli.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_brotli_json",
+      "target": "b_brotli_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/brotli.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

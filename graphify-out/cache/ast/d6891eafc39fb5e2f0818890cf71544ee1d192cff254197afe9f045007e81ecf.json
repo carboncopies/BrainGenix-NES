@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_physx_json",
+      "label": "physx.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/physx.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_physx_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/physx.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_physx_json",
+      "target": "p_physx_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/physx.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

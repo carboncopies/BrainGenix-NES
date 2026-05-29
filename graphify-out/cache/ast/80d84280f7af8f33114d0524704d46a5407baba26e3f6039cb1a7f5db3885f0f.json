@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bw_tempdir_json",
+      "label": "bw-tempdir.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bw-tempdir.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bw_tempdir_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bw-tempdir.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bw_tempdir_json",
+      "target": "b_bw_tempdir_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bw-tempdir.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

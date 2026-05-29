@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_plutosvg_json",
+      "label": "plutosvg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutosvg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_plutosvg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutosvg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_plutosvg_json",
+      "target": "p_plutosvg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutosvg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

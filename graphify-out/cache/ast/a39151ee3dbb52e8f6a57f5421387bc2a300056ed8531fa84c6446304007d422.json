@@ -1,0 +1,347 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "nifticlib_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "nifticlib_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "nifticlib_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "nifticlib_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "nifticlib_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "nifticlib_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "nifticlib_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "nifticlib_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "nifticlib_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "nifticlib_vcpkg_features_cifti",
+      "label": "cifti",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "nifticlib_vcpkg_cifti_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "nifticlib_vcpkg_features_fsl",
+      "label": "fsl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "nifticlib_vcpkg_fsl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "nifticlib_vcpkg_features_nifti2",
+      "label": "nifti2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "nifticlib_vcpkg_nifti2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "nifticlib_vcpkg_features_nifticdf",
+      "label": "nifticdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "nifticlib_vcpkg_nifticdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "nifticlib_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "nifticlib_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L37"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_default_features",
+      "target": "ref_nifti2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "nifticlib_vcpkg_default_features",
+      "target": "ref_nifticdf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_nifticlib_vcpkg_json",
+      "target": "nifticlib_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features",
+      "target": "nifticlib_vcpkg_features_cifti",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features_cifti",
+      "target": "nifticlib_vcpkg_cifti_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features",
+      "target": "nifticlib_vcpkg_features_fsl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features_fsl",
+      "target": "nifticlib_vcpkg_fsl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features",
+      "target": "nifticlib_vcpkg_features_nifti2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features_nifti2",
+      "target": "nifticlib_vcpkg_nifti2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features",
+      "target": "nifticlib_vcpkg_features_nifticdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features_nifticdf",
+      "target": "nifticlib_vcpkg_nifticdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features",
+      "target": "nifticlib_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "nifticlib_vcpkg_features_tools",
+      "target": "nifticlib_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/nifticlib/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    }
+  ]
+}

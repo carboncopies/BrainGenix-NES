@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gts_json",
+      "label": "gts.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gts.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gts_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gts.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gts_json",
+      "target": "g_gts_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gts.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

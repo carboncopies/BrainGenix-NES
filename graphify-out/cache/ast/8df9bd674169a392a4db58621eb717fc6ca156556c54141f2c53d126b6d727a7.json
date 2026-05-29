@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_rx_h",
+      "label": "rx.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_rx_init_fastmap",
+      "label": "init_fastmap()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2005"
+    },
+    {
+      "id": "source_rx_uninit_fastmap",
+      "label": "uninit_fastmap()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2025"
+    },
+    {
+      "id": "source_rx_fastmap_search",
+      "label": "fastmap_search()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2036"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "features",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "stddef",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "source_rx_init_fastmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2005",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "source_rx_uninit_fastmap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2025",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "source_rx_fastmap_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2036",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2196",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "lisp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2197",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "buffer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2198",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "syntax",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2199",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "malloc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2206",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2213",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "strings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2228",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_rx_h",
+      "target": "stdlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2232",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_rx_init_fastmap",
+      "callee": "rx_blow_up_fastmap",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2019"
+    },
+    {
+      "caller_nid": "source_rx_fastmap_search",
+      "callee": "get_burst",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/rx.h",
+      "source_location": "L2158"
+    }
+  ]
+}

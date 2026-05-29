@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_features_extras",
+      "label": "extras",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_extras_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "vcpkg_ci_juce_vcpkg_extras_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_juce_vcpkg_dependencies",
+      "target": "ref_juce",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_juce_vcpkg_default_features",
+      "target": "ref_extras",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_juce_vcpkg_json",
+      "target": "vcpkg_ci_juce_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_juce_vcpkg_features",
+      "target": "vcpkg_ci_juce_vcpkg_features_extras",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_juce_vcpkg_features_extras",
+      "target": "vcpkg_ci_juce_vcpkg_extras_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_juce_vcpkg_features_extras",
+      "target": "vcpkg_ci_juce_vcpkg_extras_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-juce/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ]
+}

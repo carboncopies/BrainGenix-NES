@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libcurl_simple_https_json",
+      "label": "libcurl-simple-https.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libcurl-simple-https.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libcurl_simple_https_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libcurl-simple-https.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libcurl_simple_https_json",
+      "target": "l_libcurl_simple_https_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libcurl-simple-https.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

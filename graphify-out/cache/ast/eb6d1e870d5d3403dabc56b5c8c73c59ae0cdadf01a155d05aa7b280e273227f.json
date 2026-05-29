@@ -1,0 +1,387 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "highfive_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "highfive_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "highfive_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "highfive_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "highfive_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "highfive_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "highfive_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "highfive_vcpkg_features_boost",
+      "label": "boost",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "highfive_vcpkg_boost_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "highfive_vcpkg_boost_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "highfive_vcpkg_features_eigen3",
+      "label": "eigen3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "highfive_vcpkg_eigen3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "highfive_vcpkg_eigen3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "highfive_vcpkg_features_opencv",
+      "label": "opencv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "highfive_vcpkg_opencv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "highfive_vcpkg_opencv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "highfive_vcpkg_features_xtensor",
+      "label": "xtensor",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "highfive_vcpkg_xtensor_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "highfive_vcpkg_xtensor_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_highfive_vcpkg_json",
+      "target": "highfive_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features",
+      "target": "highfive_vcpkg_features_boost",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_boost",
+      "target": "highfive_vcpkg_boost_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_boost",
+      "target": "highfive_vcpkg_boost_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_boost_dependencies",
+      "target": "ref_boost_multi_array",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_boost_dependencies",
+      "target": "ref_boost_serialization",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_boost_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_boost_dependencies",
+      "target": "ref_boost_ublas",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_features",
+      "target": "highfive_vcpkg_features_eigen3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_eigen3",
+      "target": "highfive_vcpkg_eigen3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_eigen3",
+      "target": "highfive_vcpkg_eigen3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_eigen3_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_features",
+      "target": "highfive_vcpkg_features_opencv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_opencv",
+      "target": "highfive_vcpkg_opencv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_opencv",
+      "target": "highfive_vcpkg_opencv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_opencv_dependencies",
+      "target": "ref_opencv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "highfive_vcpkg_features",
+      "target": "highfive_vcpkg_features_xtensor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_xtensor",
+      "target": "highfive_vcpkg_xtensor_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_features_xtensor",
+      "target": "highfive_vcpkg_xtensor_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "highfive_vcpkg_xtensor_dependencies",
+      "target": "ref_xtensor",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/highfive/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

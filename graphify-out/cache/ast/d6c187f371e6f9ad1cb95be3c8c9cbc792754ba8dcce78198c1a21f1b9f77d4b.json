@@ -1,0 +1,417 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "bgfx_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "bgfx_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "bgfx_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "bgfx_vcpkg_maintainers",
+      "label": "maintainers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "bgfx_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "bgfx_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "bgfx_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "bgfx_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "bgfx_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "bgfx_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "bgfx_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "bgfx_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "bgfx_vcpkg_features_multithreaded",
+      "label": "multithreaded",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "bgfx_vcpkg_multithreaded_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "bgfx_vcpkg_multithreaded_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "bgfx_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "bgfx_vcpkg_tools_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "bgfx_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "bgfx_vcpkg_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_maintainers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_libsquish",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_lodepng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_mgnlibs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_miniz",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_stb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_dependencies",
+      "target": "ref_tinyexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_bgfx_vcpkg_json",
+      "target": "bgfx_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features",
+      "target": "bgfx_vcpkg_features_multithreaded",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features_multithreaded",
+      "target": "bgfx_vcpkg_multithreaded_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features_multithreaded",
+      "target": "bgfx_vcpkg_multithreaded_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features",
+      "target": "bgfx_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features_tools",
+      "target": "bgfx_vcpkg_tools_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features_tools",
+      "target": "bgfx_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_features_tools",
+      "target": "bgfx_vcpkg_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "bgfx_vcpkg_tools_dependencies",
+      "target": "ref_cgltf",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_tools_dependencies",
+      "target": "ref_meshoptimizer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_tools_dependencies",
+      "target": "ref_spirv_cross",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "bgfx_vcpkg_tools_dependencies",
+      "target": "ref_spirv_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/bgfx/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

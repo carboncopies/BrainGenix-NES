@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_livepp_json",
+      "label": "livepp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/livepp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_livepp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/livepp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_livepp_json",
+      "target": "l_livepp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/livepp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

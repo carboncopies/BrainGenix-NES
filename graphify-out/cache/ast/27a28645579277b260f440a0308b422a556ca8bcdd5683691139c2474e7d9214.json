@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_aws_crt_cpp_json",
+      "label": "aws-crt-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aws-crt-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_aws_crt_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aws-crt-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_aws_crt_cpp_json",
+      "target": "a_aws_crt_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/aws-crt-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

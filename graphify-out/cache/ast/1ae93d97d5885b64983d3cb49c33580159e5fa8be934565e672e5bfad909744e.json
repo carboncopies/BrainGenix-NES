@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_solid3_json",
+      "label": "solid3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/solid3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_solid3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/solid3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_solid3_json",
+      "target": "s_solid3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/solid3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libdivide_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libdivide_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libdivide_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libdivide_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libdivide_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libdivide_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libdivide_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libdivide_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L18"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libdivide_vcpkg_json",
+      "target": "libdivide_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libdivide_vcpkg_features",
+      "target": "libdivide_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libdivide_vcpkg_features_test",
+      "target": "libdivide_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libdivide/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ]
+}

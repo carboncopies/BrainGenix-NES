@@ -1,0 +1,2149 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "gdal_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "gdal_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "gdal_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "gdal_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "gdal_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "gdal_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "gdal_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "gdal_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "gdal_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "gdal_vcpkg_features_archive",
+      "label": "archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "gdal_vcpkg_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "gdal_vcpkg_archive_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L72"
+    },
+    {
+      "id": "gdal_vcpkg_features_arrow",
+      "label": "arrow",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "gdal_vcpkg_arrow_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "gdal_vcpkg_arrow_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "gdal_vcpkg_features_arrow_adbc",
+      "label": "arrow-adbc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "gdal_vcpkg_arrow_adbc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "gdal_vcpkg_arrow_adbc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "gdal_vcpkg_features_aws_ec2_windows",
+      "label": "aws-ec2-windows",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "gdal_vcpkg_aws_ec2_windows_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L95"
+    },
+    {
+      "id": "gdal_vcpkg_aws_ec2_windows_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L96"
+    },
+    {
+      "id": "gdal_vcpkg_features_cfitsio",
+      "label": "cfitsio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "gdal_vcpkg_cfitsio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "gdal_vcpkg_cfitsio_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "gdal_vcpkg_cfitsio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "gdal_vcpkg_features_curl",
+      "label": "curl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L107"
+    },
+    {
+      "id": "gdal_vcpkg_curl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L108"
+    },
+    {
+      "id": "gdal_vcpkg_curl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "gdal_vcpkg_features_expat",
+      "label": "expat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "gdal_vcpkg_expat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "gdal_vcpkg_expat_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L118"
+    },
+    {
+      "id": "gdal_vcpkg_features_freexl",
+      "label": "freexl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L122"
+    },
+    {
+      "id": "gdal_vcpkg_freexl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L123"
+    },
+    {
+      "id": "gdal_vcpkg_freexl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "gdal_vcpkg_features_geos",
+      "label": "geos",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L128"
+    },
+    {
+      "id": "gdal_vcpkg_geos_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L129"
+    },
+    {
+      "id": "gdal_vcpkg_geos_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L130"
+    },
+    {
+      "id": "gdal_vcpkg_features_gif",
+      "label": "gif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L134"
+    },
+    {
+      "id": "gdal_vcpkg_gif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L135"
+    },
+    {
+      "id": "gdal_vcpkg_gif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "gdal_vcpkg_features_hdf5",
+      "label": "hdf5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L140"
+    },
+    {
+      "id": "gdal_vcpkg_hdf5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L141"
+    },
+    {
+      "id": "gdal_vcpkg_hdf5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "gdal_vcpkg_features_iconv",
+      "label": "iconv",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L152"
+    },
+    {
+      "id": "gdal_vcpkg_iconv_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L153"
+    },
+    {
+      "id": "gdal_vcpkg_iconv_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L154"
+    },
+    {
+      "id": "gdal_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L158"
+    },
+    {
+      "id": "gdal_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L159"
+    },
+    {
+      "id": "gdal_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L160"
+    },
+    {
+      "id": "gdal_vcpkg_features_kea",
+      "label": "kea",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L164"
+    },
+    {
+      "id": "gdal_vcpkg_kea_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L165"
+    },
+    {
+      "id": "gdal_vcpkg_kea_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L166"
+    },
+    {
+      "id": "gdal_vcpkg_features_lerc",
+      "label": "lerc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L177"
+    },
+    {
+      "id": "gdal_vcpkg_lerc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L178"
+    },
+    {
+      "id": "gdal_vcpkg_lerc_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L179"
+    },
+    {
+      "id": "gdal_vcpkg_features_libkml",
+      "label": "libkml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "gdal_vcpkg_libkml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "gdal_vcpkg_libkml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L185"
+    },
+    {
+      "id": "gdal_vcpkg_features_libspatialite",
+      "label": "libspatialite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "gdal_vcpkg_libspatialite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L190"
+    },
+    {
+      "id": "gdal_vcpkg_libspatialite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L191"
+    },
+    {
+      "id": "gdal_vcpkg_features_libxml2",
+      "label": "libxml2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L198"
+    },
+    {
+      "id": "gdal_vcpkg_libxml2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L199"
+    },
+    {
+      "id": "gdal_vcpkg_libxml2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L200"
+    },
+    {
+      "id": "gdal_vcpkg_features_lzma",
+      "label": "lzma",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L207"
+    },
+    {
+      "id": "gdal_vcpkg_lzma_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L208"
+    },
+    {
+      "id": "gdal_vcpkg_lzma_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L209"
+    },
+    {
+      "id": "gdal_vcpkg_features_mysql_libmariadb",
+      "label": "mysql-libmariadb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L213"
+    },
+    {
+      "id": "gdal_vcpkg_mysql_libmariadb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L214"
+    },
+    {
+      "id": "gdal_vcpkg_mysql_libmariadb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L215"
+    },
+    {
+      "id": "gdal_vcpkg_features_netcdf",
+      "label": "netcdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L219"
+    },
+    {
+      "id": "gdal_vcpkg_netcdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L220"
+    },
+    {
+      "id": "gdal_vcpkg_netcdf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L221"
+    },
+    {
+      "id": "gdal_vcpkg_features_openjpeg",
+      "label": "openjpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L228"
+    },
+    {
+      "id": "gdal_vcpkg_openjpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L229"
+    },
+    {
+      "id": "gdal_vcpkg_openjpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L230"
+    },
+    {
+      "id": "gdal_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L234"
+    },
+    {
+      "id": "gdal_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L235"
+    },
+    {
+      "id": "gdal_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L236"
+    },
+    {
+      "id": "gdal_vcpkg_features_parquet",
+      "label": "parquet",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L240"
+    },
+    {
+      "id": "gdal_vcpkg_parquet_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L241"
+    },
+    {
+      "id": "gdal_vcpkg_parquet_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L242"
+    },
+    {
+      "id": "gdal_vcpkg_features_pcre2",
+      "label": "pcre2",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L259"
+    },
+    {
+      "id": "gdal_vcpkg_pcre2_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L260"
+    },
+    {
+      "id": "gdal_vcpkg_pcre2_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L261"
+    },
+    {
+      "id": "gdal_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L265"
+    },
+    {
+      "id": "gdal_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L266"
+    },
+    {
+      "id": "gdal_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L267"
+    },
+    {
+      "id": "gdal_vcpkg_features_poppler",
+      "label": "poppler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L271"
+    },
+    {
+      "id": "gdal_vcpkg_poppler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L272"
+    },
+    {
+      "id": "gdal_vcpkg_poppler_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L273"
+    },
+    {
+      "id": "gdal_vcpkg_features_postgresql",
+      "label": "postgresql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L283"
+    },
+    {
+      "id": "gdal_vcpkg_postgresql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L284"
+    },
+    {
+      "id": "gdal_vcpkg_postgresql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L285"
+    },
+    {
+      "id": "gdal_vcpkg_features_qhull",
+      "label": "qhull",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L289"
+    },
+    {
+      "id": "gdal_vcpkg_qhull_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L290"
+    },
+    {
+      "id": "gdal_vcpkg_qhull_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L291"
+    },
+    {
+      "id": "gdal_vcpkg_features_recommended_features",
+      "label": "recommended-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L295"
+    },
+    {
+      "id": "gdal_vcpkg_recommended_features_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L296"
+    },
+    {
+      "id": "gdal_vcpkg_recommended_features_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L297"
+    },
+    {
+      "id": "gdal_vcpkg_features_sqlite3",
+      "label": "sqlite3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L314"
+    },
+    {
+      "id": "gdal_vcpkg_sqlite3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L315"
+    },
+    {
+      "id": "gdal_vcpkg_sqlite3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L316"
+    },
+    {
+      "id": "gdal_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L325"
+    },
+    {
+      "id": "gdal_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L326"
+    },
+    {
+      "id": "gdal_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L328"
+    },
+    {
+      "id": "gdal_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L329"
+    },
+    {
+      "id": "gdal_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L330"
+    },
+    {
+      "id": "gdal_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L334"
+    },
+    {
+      "id": "gdal_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L335"
+    },
+    {
+      "id": "gdal_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L336"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_dependencies",
+      "target": "ref_json_c",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_dependencies",
+      "target": "ref_libgeotiff",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_gif",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_iconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_libkml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_libxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_lzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_recommended_features",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_webp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_default_features",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_gdal_vcpkg_json",
+      "target": "gdal_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_archive",
+      "target": "gdal_vcpkg_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_archive",
+      "target": "gdal_vcpkg_archive_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_arrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_arrow",
+      "target": "gdal_vcpkg_arrow_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_arrow",
+      "target": "gdal_vcpkg_arrow_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_arrow_adbc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_arrow_adbc",
+      "target": "gdal_vcpkg_arrow_adbc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_arrow_adbc",
+      "target": "gdal_vcpkg_arrow_adbc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_arrow_adbc_dependencies",
+      "target": "ref_arrow_adbc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_aws_ec2_windows",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_aws_ec2_windows",
+      "target": "gdal_vcpkg_aws_ec2_windows_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_aws_ec2_windows",
+      "target": "gdal_vcpkg_aws_ec2_windows_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_aws_ec2_windows_dependencies",
+      "target": "ref_atl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_cfitsio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_cfitsio",
+      "target": "gdal_vcpkg_cfitsio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_cfitsio",
+      "target": "gdal_vcpkg_cfitsio_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_cfitsio",
+      "target": "gdal_vcpkg_cfitsio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_cfitsio_dependencies",
+      "target": "ref_cfitsio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_curl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_curl",
+      "target": "gdal_vcpkg_curl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_curl",
+      "target": "gdal_vcpkg_curl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_expat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_expat",
+      "target": "gdal_vcpkg_expat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_expat",
+      "target": "gdal_vcpkg_expat_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_expat_dependencies",
+      "target": "ref_expat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L118",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_freexl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_freexl",
+      "target": "gdal_vcpkg_freexl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_freexl",
+      "target": "gdal_vcpkg_freexl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_freexl_dependencies",
+      "target": "ref_freexl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_geos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_geos",
+      "target": "gdal_vcpkg_geos_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_geos",
+      "target": "gdal_vcpkg_geos_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_geos_dependencies",
+      "target": "ref_geos",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L130",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_gif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_gif",
+      "target": "gdal_vcpkg_gif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_gif",
+      "target": "gdal_vcpkg_gif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_gif_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_hdf5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_hdf5",
+      "target": "gdal_vcpkg_hdf5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_hdf5",
+      "target": "gdal_vcpkg_hdf5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_iconv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_iconv",
+      "target": "gdal_vcpkg_iconv_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L153",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_iconv",
+      "target": "gdal_vcpkg_iconv_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_iconv_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L154",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_jpeg",
+      "target": "gdal_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_jpeg",
+      "target": "gdal_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L160",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_kea",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_kea",
+      "target": "gdal_vcpkg_kea_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_kea",
+      "target": "gdal_vcpkg_kea_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_kea_dependencies",
+      "target": "ref_kealib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L166",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_lerc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_lerc",
+      "target": "gdal_vcpkg_lerc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_lerc",
+      "target": "gdal_vcpkg_lerc_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_lerc_dependencies",
+      "target": "ref_lerc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L179",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_libkml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libkml",
+      "target": "gdal_vcpkg_libkml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libkml",
+      "target": "gdal_vcpkg_libkml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_libkml_dependencies",
+      "target": "ref_libkml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L185",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_libspatialite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libspatialite",
+      "target": "gdal_vcpkg_libspatialite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libspatialite",
+      "target": "gdal_vcpkg_libspatialite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_libxml2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libxml2",
+      "target": "gdal_vcpkg_libxml2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_libxml2",
+      "target": "gdal_vcpkg_libxml2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_lzma",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_lzma",
+      "target": "gdal_vcpkg_lzma_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_lzma",
+      "target": "gdal_vcpkg_lzma_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_lzma_dependencies",
+      "target": "ref_liblzma",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L209",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_mysql_libmariadb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_mysql_libmariadb",
+      "target": "gdal_vcpkg_mysql_libmariadb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_mysql_libmariadb",
+      "target": "gdal_vcpkg_mysql_libmariadb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_mysql_libmariadb_dependencies",
+      "target": "ref_libmariadb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L215",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_netcdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_netcdf",
+      "target": "gdal_vcpkg_netcdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_netcdf",
+      "target": "gdal_vcpkg_netcdf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_openjpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_openjpeg",
+      "target": "gdal_vcpkg_openjpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_openjpeg",
+      "target": "gdal_vcpkg_openjpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_openjpeg_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L230",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_openssl",
+      "target": "gdal_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_openssl",
+      "target": "gdal_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_parquet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_parquet",
+      "target": "gdal_vcpkg_parquet_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L241",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_parquet",
+      "target": "gdal_vcpkg_parquet_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_pcre2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_pcre2",
+      "target": "gdal_vcpkg_pcre2_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_pcre2",
+      "target": "gdal_vcpkg_pcre2_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_pcre2_dependencies",
+      "target": "ref_pcre2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L261",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L265",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_png",
+      "target": "gdal_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_png",
+      "target": "gdal_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L267",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L267",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_poppler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_poppler",
+      "target": "gdal_vcpkg_poppler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_poppler",
+      "target": "gdal_vcpkg_poppler_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_postgresql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_postgresql",
+      "target": "gdal_vcpkg_postgresql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L284",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_postgresql",
+      "target": "gdal_vcpkg_postgresql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_postgresql_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L285",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_qhull",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_qhull",
+      "target": "gdal_vcpkg_qhull_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L290",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_qhull",
+      "target": "gdal_vcpkg_qhull_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L291",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_qhull_dependencies",
+      "target": "ref_qhull",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L291",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_recommended_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L295",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_recommended_features",
+      "target": "gdal_vcpkg_recommended_features_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_recommended_features",
+      "target": "gdal_vcpkg_recommended_features_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_sqlite3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_sqlite3",
+      "target": "gdal_vcpkg_sqlite3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_sqlite3",
+      "target": "gdal_vcpkg_sqlite3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L316",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L325",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_tools",
+      "target": "gdal_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L326",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_webp",
+      "target": "gdal_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_webp",
+      "target": "gdal_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L330",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "gdal_vcpkg_features",
+      "target": "gdal_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_zstd",
+      "target": "gdal_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_features_zstd",
+      "target": "gdal_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "gdal_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/gdal/vcpkg.json",
+      "source_location": "L336",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

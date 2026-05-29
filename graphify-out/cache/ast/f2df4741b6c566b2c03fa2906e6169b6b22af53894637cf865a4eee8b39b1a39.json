@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_z_z3_json",
+      "label": "z3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/z3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "z_z3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/z-/z3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_z_z3_json",
+      "target": "z_z3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/z-/z3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

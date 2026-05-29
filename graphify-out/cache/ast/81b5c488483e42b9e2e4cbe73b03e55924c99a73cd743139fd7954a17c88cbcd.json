@@ -1,0 +1,261 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "freetype_gl_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "freetype_gl_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "freetype_gl_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "freetype_gl_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "freetype_gl_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "freetype_gl_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "freetype_gl_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "freetype_gl_vcpkg_features_glad",
+      "label": "glad",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "freetype_gl_vcpkg_glad_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "freetype_gl_vcpkg_glad_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "freetype_gl_vcpkg_features_glew",
+      "label": "glew",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "freetype_gl_vcpkg_glew_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "freetype_gl_vcpkg_glew_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_default_features",
+      "target": "ref_glew",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_freetype_gl_vcpkg_json",
+      "target": "freetype_gl_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_features",
+      "target": "freetype_gl_vcpkg_features_glad",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_features_glad",
+      "target": "freetype_gl_vcpkg_glad_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_features_glad",
+      "target": "freetype_gl_vcpkg_glad_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_glad_dependencies",
+      "target": "ref_glad",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "freetype_gl_vcpkg_features",
+      "target": "freetype_gl_vcpkg_features_glew",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_features_glew",
+      "target": "freetype_gl_vcpkg_glew_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_features_glew",
+      "target": "freetype_gl_vcpkg_glew_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "freetype_gl_vcpkg_glew_dependencies",
+      "target": "ref_glew",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/freetype-gl/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

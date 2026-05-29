@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_ffmpeg_bin2c_json",
+      "label": "ffmpeg-bin2c.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ffmpeg-bin2c.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_ffmpeg_bin2c_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ffmpeg-bin2c.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_ffmpeg_bin2c_json",
+      "target": "f_ffmpeg_bin2c_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/ffmpeg-bin2c.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "dartsim_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "dartsim_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "dartsim_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "dartsim_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "dartsim_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "dartsim_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "dartsim_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "dartsim_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "dartsim_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "dartsim_vcpkg_features_collision_bullet",
+      "label": "collision-bullet",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "dartsim_vcpkg_collision_bullet_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "dartsim_vcpkg_collision_bullet_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "dartsim_vcpkg_features_collision_ode",
+      "label": "collision-ode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "dartsim_vcpkg_collision_ode_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "dartsim_vcpkg_collision_ode_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "dartsim_vcpkg_features_gui",
+      "label": "gui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "dartsim_vcpkg_gui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "dartsim_vcpkg_gui_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "dartsim_vcpkg_features_gui_osg",
+      "label": "gui-osg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "dartsim_vcpkg_gui_osg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "dartsim_vcpkg_gui_osg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "dartsim_vcpkg_features_spdlog",
+      "label": "spdlog",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "dartsim_vcpkg_spdlog_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "dartsim_vcpkg_spdlog_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "dartsim_vcpkg_features_utils",
+      "label": "utils",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "dartsim_vcpkg_utils_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "dartsim_vcpkg_utils_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L86"
+    },
+    {
+      "id": "dartsim_vcpkg_features_utils_urdf",
+      "label": "utils-urdf",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "dartsim_vcpkg_utils_urdf_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "dartsim_vcpkg_utils_urdf_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L92"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_assimp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_fcl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_lodepng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_dependencies",
+      "target": "ref_octomap",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_dartsim_vcpkg_json",
+      "target": "dartsim_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_collision_bullet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_collision_bullet",
+      "target": "dartsim_vcpkg_collision_bullet_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_collision_bullet",
+      "target": "dartsim_vcpkg_collision_bullet_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_collision_bullet_dependencies",
+      "target": "ref_bullet3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_collision_ode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_collision_ode",
+      "target": "dartsim_vcpkg_collision_ode_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_collision_ode",
+      "target": "dartsim_vcpkg_collision_ode_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_collision_ode_dependencies",
+      "target": "ref_ode",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_gui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_gui",
+      "target": "dartsim_vcpkg_gui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_gui",
+      "target": "dartsim_vcpkg_gui_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_gui_dependencies",
+      "target": "ref_opengl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_gui_osg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_gui_osg",
+      "target": "dartsim_vcpkg_gui_osg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_gui_osg",
+      "target": "dartsim_vcpkg_gui_osg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_spdlog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_spdlog",
+      "target": "dartsim_vcpkg_spdlog_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_spdlog",
+      "target": "dartsim_vcpkg_spdlog_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_spdlog_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_utils",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_utils",
+      "target": "dartsim_vcpkg_utils_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_utils",
+      "target": "dartsim_vcpkg_utils_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_utils_dependencies",
+      "target": "ref_tinyxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L86",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "dartsim_vcpkg_features",
+      "target": "dartsim_vcpkg_features_utils_urdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_utils_urdf",
+      "target": "dartsim_vcpkg_utils_urdf_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_features_utils_urdf",
+      "target": "dartsim_vcpkg_utils_urdf_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "dartsim_vcpkg_utils_urdf_dependencies",
+      "target": "ref_urdfdom",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/dartsim/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

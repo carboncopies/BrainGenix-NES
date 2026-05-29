@@ -1,0 +1,157 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_features_wxrc",
+      "label": "wxrc",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "vcpkg_ci_wxwidgets_vcpkg_wxrc_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L27"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_wxwidgets_vcpkg_json",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_wxwidgets_vcpkg_features",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_features_wxrc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_wxwidgets_vcpkg_features_wxrc",
+      "target": "vcpkg_ci_wxwidgets_vcpkg_wxrc_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-wxwidgets/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    }
+  ]
+}

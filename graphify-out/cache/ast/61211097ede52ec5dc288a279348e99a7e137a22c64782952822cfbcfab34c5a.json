@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_x_xerces_c_json",
+      "label": "xerces-c.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xerces-c.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "x_xerces_c_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xerces-c.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_x_xerces_c_json",
+      "target": "x_xerces_c_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/x-/xerces-c.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

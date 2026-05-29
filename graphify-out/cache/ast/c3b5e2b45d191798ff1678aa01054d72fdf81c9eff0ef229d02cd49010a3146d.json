@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_ned14_internal_quickcpplib_json",
+      "label": "ned14-internal-quickcpplib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ned14-internal-quickcpplib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_ned14_internal_quickcpplib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ned14-internal-quickcpplib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_ned14_internal_quickcpplib_json",
+      "target": "n_ned14_internal_quickcpplib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ned14-internal-quickcpplib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

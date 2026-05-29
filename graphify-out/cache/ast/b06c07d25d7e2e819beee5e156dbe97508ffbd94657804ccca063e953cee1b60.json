@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mdspan_json",
+      "label": "mdspan.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdspan.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mdspan_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdspan.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mdspan_json",
+      "target": "m_mdspan_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdspan.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

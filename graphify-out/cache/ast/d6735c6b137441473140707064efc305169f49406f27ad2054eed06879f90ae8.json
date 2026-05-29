@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_sqlite3_json",
+      "label": "sqlite3.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sqlite3.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_sqlite3_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sqlite3.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_sqlite3_json",
+      "target": "s_sqlite3_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/sqlite3.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

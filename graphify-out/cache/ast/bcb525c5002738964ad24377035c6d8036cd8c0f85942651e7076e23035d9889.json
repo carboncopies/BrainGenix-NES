@@ -1,0 +1,385 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "label": "generate-ports.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "boost_generate_ports_get_portversion",
+      "label": "Get-PortVersion()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L42"
+    },
+    {
+      "id": "boost_generate_ports_generateportname",
+      "label": "GeneratePortName()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L214"
+    },
+    {
+      "id": "boost_generate_ports_generateporthash",
+      "label": "GeneratePortHash()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L221"
+    },
+    {
+      "id": "boost_generate_ports_getportdocumentation",
+      "label": "GetPortDocumentation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L233"
+    },
+    {
+      "id": "boost_generate_ports_getporthomepage",
+      "label": "GetPortHomepage()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L256"
+    },
+    {
+      "id": "boost_generate_ports_generateportdependency",
+      "label": "GeneratePortDependency()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L278"
+    },
+    {
+      "id": "boost_generate_ports_addboostversionconstraints",
+      "label": "AddBoostVersionConstraints()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L312"
+    },
+    {
+      "id": "boost_generate_ports_generateportmanifest",
+      "label": "GeneratePortManifest()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L337"
+    },
+    {
+      "id": "boost_generate_ports_generateport",
+      "label": "GeneratePort()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L409"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_get_portversion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_generateportname",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_generateporthash",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_getportdocumentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_getporthomepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_generateportdependency",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L278",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_addboostversionconstraints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_generateportmanifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_boost_generate_ports_ps1",
+      "target": "boost_generate_ports_generateport",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L409",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateportdependency",
+      "target": "boost_generate_ports_generateportname",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateportmanifest",
+      "target": "boost_generate_ports_get_portversion",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L367",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateportmanifest",
+      "target": "boost_generate_ports_addboostversionconstraints",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateport",
+      "target": "boost_generate_ports_generateportname",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L417",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateport",
+      "target": "boost_generate_ports_generateporthash",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L418",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateport",
+      "target": "boost_generate_ports_getporthomepage",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L419",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateport",
+      "target": "boost_generate_ports_getportdocumentation",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L420",
+      "weight": 1.0
+    },
+    {
+      "source": "boost_generate_ports_generateport",
+      "target": "boost_generate_ports_generateportmanifest",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L425",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "boost_generate_ports_generateportdependency",
+      "callee": "ForEach-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportdependency",
+      "callee": "GeneratePortDependency",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L297"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportdependency",
+      "callee": "Group-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L298"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportdependency",
+      "callee": "Join-String",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L299"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportmanifest",
+      "callee": "Where-Object",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L386"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportmanifest",
+      "callee": "ConvertTo-Json",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L404"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateportmanifest",
+      "callee": "Out-File",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "New-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L422"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "out-null",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L422"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L440"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-ChildItem",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L455"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L456"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L457"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L471"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L472"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L479"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L485"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L486"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Test-Path",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L496"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Get-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L497"
+    },
+    {
+      "caller_nid": "boost_generate_ports_generateport",
+      "callee": "Set-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/boost/generate-ports.ps1",
+      "source_location": "L502"
+    }
+  ]
+}

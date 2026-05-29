@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "label": "test.c",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_ci_ryu_test_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "target": "stdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "target": "ryu",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "target": "ryu2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_ryu_test_c",
+      "target": "vcpkg_ci_ryu_test_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "d2s",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "strcmp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L9"
+    },
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "d2fixed",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "strcmp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "vcpkg_ci_ryu_test_main",
+      "callee": "printf",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-ryu/test.c",
+      "source_location": "L16"
+    }
+  ]
+}

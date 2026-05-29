@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fluidlite_json",
+      "label": "fluidlite.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fluidlite.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fluidlite_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fluidlite.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fluidlite_json",
+      "target": "f_fluidlite_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fluidlite.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

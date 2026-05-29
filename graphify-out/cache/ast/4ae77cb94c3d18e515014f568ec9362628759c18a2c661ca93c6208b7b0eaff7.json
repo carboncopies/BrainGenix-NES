@@ -1,0 +1,477 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "daxa_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "daxa_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "daxa_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "daxa_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "daxa_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "daxa_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "daxa_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "daxa_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_imgui",
+      "label": "utils-imgui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "daxa_vcpkg_utils_imgui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "daxa_vcpkg_utils_imgui_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_mem",
+      "label": "utils-mem",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "daxa_vcpkg_utils_mem_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_pipeline_manager_glslang",
+      "label": "utils-pipeline-manager-glslang",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_glslang_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_glslang_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_pipeline_manager_slang",
+      "label": "utils-pipeline-manager-slang",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_slang_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_slang_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_pipeline_manager_spirv_validation",
+      "label": "utils-pipeline-manager-spirv-validation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_spirv_validation_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "daxa_vcpkg_utils_pipeline_manager_spirv_validation_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "daxa_vcpkg_features_utils_task_graph",
+      "label": "utils-task-graph",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "daxa_vcpkg_utils_task_graph_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L56"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_dependencies",
+      "target": "ref_vulkan_headers",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_dependencies",
+      "target": "ref_vulkan_memory_allocator",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_daxa_vcpkg_json",
+      "target": "daxa_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_imgui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_imgui",
+      "target": "daxa_vcpkg_utils_imgui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_imgui",
+      "target": "daxa_vcpkg_utils_imgui_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_utils_imgui_dependencies",
+      "target": "ref_imgui",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_mem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_mem",
+      "target": "daxa_vcpkg_utils_mem_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_pipeline_manager_glslang",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_glslang",
+      "target": "daxa_vcpkg_utils_pipeline_manager_glslang_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_glslang",
+      "target": "daxa_vcpkg_utils_pipeline_manager_glslang_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_utils_pipeline_manager_glslang_dependencies",
+      "target": "ref_glslang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_pipeline_manager_slang",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_slang",
+      "target": "daxa_vcpkg_utils_pipeline_manager_slang_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_slang",
+      "target": "daxa_vcpkg_utils_pipeline_manager_slang_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_utils_pipeline_manager_slang_dependencies",
+      "target": "ref_shader_slang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_pipeline_manager_spirv_validation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_spirv_validation",
+      "target": "daxa_vcpkg_utils_pipeline_manager_spirv_validation_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_pipeline_manager_spirv_validation",
+      "target": "daxa_vcpkg_utils_pipeline_manager_spirv_validation_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_utils_pipeline_manager_spirv_validation_dependencies",
+      "target": "ref_spirv_tools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "daxa_vcpkg_features",
+      "target": "daxa_vcpkg_features_utils_task_graph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "daxa_vcpkg_features_utils_task_graph",
+      "target": "daxa_vcpkg_utils_task_graph_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/daxa/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_clapack_arith_osx_h",
+      "label": "arith_osx.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clapack/arith_osx.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

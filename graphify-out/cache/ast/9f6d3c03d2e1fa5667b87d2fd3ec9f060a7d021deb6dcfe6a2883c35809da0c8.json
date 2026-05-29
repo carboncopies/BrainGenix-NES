@@ -1,0 +1,1168 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_slice_cc",
+      "label": "slice.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_slice_spatial_str",
+      "label": "spatial_str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53"
+    },
+    {
+      "id": "source_slice_range_check",
+      "label": "range_check()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "source_slice_get_spatial",
+      "label": "get_spatial()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72"
+    },
+    {
+      "id": "source_slice_init_spatial",
+      "label": "init_spatial()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98"
+    },
+    {
+      "id": "source_slice_slice",
+      "label": "Slice()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L105"
+    },
+    {
+      "id": "source_slice_prefix",
+      "label": "Prefix()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L109"
+    },
+    {
+      "id": "source_slice_set_relative_to",
+      "label": "set_relative_to()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L115"
+    },
+    {
+      "id": "source_slice_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L135"
+    },
+    {
+      "id": "source_slice_inner_normals",
+      "label": "inner_normals()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L195"
+    },
+    {
+      "id": "source_slice_iterator_first",
+      "label": "iterator_first()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L236"
+    },
+    {
+      "id": "source_slice_iterator_next",
+      "label": "iterator_next()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L243"
+    },
+    {
+      "id": "source_slice_contains",
+      "label": "contains()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L251"
+    },
+    {
+      "id": "source_slice_outlines_fig",
+      "label": "Outlines_Fig()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L261"
+    },
+    {
+      "id": "fig_group",
+      "label": "Fig_Group",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L261"
+    },
+    {
+      "id": "source_slice_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L273"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "limits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "cfloat",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "thirdparty_netmorphcmake_source_slice_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "thirdparty_netmorphcmake_source_stringlist_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "thirdparty_netmorphcmake_source_bigregex_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "thirdparty_netmorphcmake_source_fig_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_spatial_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_spatial_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_slice_spatial_str",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_range_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_range_check",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_get_spatial",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_get_spatial",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_get_spatial",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_get_spatial",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_init_spatial",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_init_spatial",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_init_spatial",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_init_spatial",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_init_spatial",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L98",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_slice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_slice",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_slice_slice",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_prefix",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_prefix",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_set_relative_to",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L135",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_inner_normals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_iterator_first",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_iterator_first",
+      "target": "source_slice_slice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_iterator_next",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L243",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_iterator_next",
+      "target": "source_slice_slice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L243",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_contains",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_contains",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L251",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_outlines_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_outlines_fig",
+      "target": "fig_group",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L261",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L266",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_slice_cc",
+      "target": "source_slice_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L273",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_slice_get_spatial",
+      "target": "source_slice_spatial_str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_get_spatial",
+      "target": "source_slice_range_check",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_init_spatial",
+      "target": "source_slice_get_spatial",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_slice",
+      "target": "source_slice_parse_clp",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "source_slice_prefix",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "source_slice_init_spatial",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "source_slice_set_relative_to",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_parse_clp",
+      "target": "source_slice_inner_normals",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "source_slice_iterator_next",
+      "target": "source_slice_iterator_first",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L246",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_slice_spatial_str",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_slice_spatial_str",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_slice_spatial_str",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_slice_spatial_str",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "source_slice_spatial_str",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "source_slice_range_check",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "source_slice_range_check",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L76"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "index",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "subpos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "sublen",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "sub",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L84"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "sub",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "sub",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L89"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "source_slice_get_spatial",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_slice_init_spatial",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_slice_prefix",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "set_Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "source_slice_set_relative_to",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L140"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_int",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L143"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "clear",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "slice_vertices",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L151"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L154"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L155"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "set_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L162"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "upcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L163"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L163"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "slice_vertices",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L164"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L166"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L167"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "init_double",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L176"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L203"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L209"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L215"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L221"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L227"
+    },
+    {
+      "caller_nid": "source_slice_inner_normals",
+      "callee": "Negate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L233"
+    },
+    {
+      "caller_nid": "source_slice_iterator_first",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L239"
+    },
+    {
+      "caller_nid": "source_slice_iterator_first",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L239"
+    },
+    {
+      "caller_nid": "source_slice_iterator_next",
+      "callee": "Next",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L246"
+    },
+    {
+      "caller_nid": "source_slice_iterator_next",
+      "callee": "Next",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L246"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L268"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L270"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L270"
+    },
+    {
+      "caller_nid": "source_slice_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/slice.cc",
+      "source_location": "L270"
+    }
+  ]
+}

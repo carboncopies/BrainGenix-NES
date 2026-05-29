@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rivers_json",
+      "label": "rivers.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rivers.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rivers_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rivers.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rivers_json",
+      "target": "r_rivers_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rivers.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

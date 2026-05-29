@@ -1,0 +1,105 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_pybind11_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_mul",
+      "label": "mul()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L3"
+    },
+    {
+      "id": "project_main_pybind11_module",
+      "label": "PYBIND11_MODULE()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7"
+    },
+    {
+      "id": "example",
+      "label": "example",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7"
+    },
+    {
+      "id": "m",
+      "label": "m",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_pybind11_project_main_cpp",
+      "target": "pybind11",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_pybind11_project_main_cpp",
+      "target": "project_main_mul",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_pybind11_project_main_cpp",
+      "target": "project_main_pybind11_module",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_pybind11_module",
+      "target": "example",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_pybind11_module",
+      "target": "m",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_pybind11_module",
+      "callee": "doc",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "project_main_pybind11_module",
+      "callee": "def",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-pybind11/project/main.cpp",
+      "source_location": "L9"
+    }
+  ]
+}

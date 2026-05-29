@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_examples_nesvbp_readme_md",
+      "label": "Readme.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/Readme.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "nesvbp_readme_nesvbp",
+      "label": "NESVBP",
+      "file_type": "document",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/Readme.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_examples_nesvbp_readme_md",
+      "target": "nesvbp_readme_nesvbp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/nesvbp/Readme.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

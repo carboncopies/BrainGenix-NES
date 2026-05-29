@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libatomic_ops_json",
+      "label": "libatomic-ops.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libatomic-ops.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libatomic_ops_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libatomic-ops.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libatomic_ops_json",
+      "target": "l_libatomic_ops_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libatomic-ops.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

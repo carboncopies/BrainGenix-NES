@@ -1,0 +1,515 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "onnxruntime_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "onnxruntime_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "onnxruntime_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "onnxruntime_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "onnxruntime_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "onnxruntime_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "onnxruntime_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "onnxruntime_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "onnxruntime_vcpkg_features_cuda",
+      "label": "cuda",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "onnxruntime_vcpkg_cuda_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "onnxruntime_vcpkg_cuda_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L70"
+    },
+    {
+      "id": "onnxruntime_vcpkg_cuda_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71"
+    },
+    {
+      "id": "onnxruntime_vcpkg_features_framework",
+      "label": "framework",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "onnxruntime_vcpkg_framework_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "onnxruntime_vcpkg_framework_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "onnxruntime_vcpkg_features_openvino",
+      "label": "openvino",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L82"
+    },
+    {
+      "id": "onnxruntime_vcpkg_openvino_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L83"
+    },
+    {
+      "id": "onnxruntime_vcpkg_openvino_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L84"
+    },
+    {
+      "id": "onnxruntime_vcpkg_openvino_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L85"
+    },
+    {
+      "id": "onnxruntime_vcpkg_features_tensorrt",
+      "label": "tensorrt",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "onnxruntime_vcpkg_tensorrt_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "onnxruntime_vcpkg_tensorrt_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L99"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_cpuinfo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_cxxopts",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_date",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_dlpack",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_ms_gsl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_optional_lite",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_re2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_safeint",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_dependencies",
+      "target": "ref_utf8_range",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_onnxruntime_vcpkg_json",
+      "target": "onnxruntime_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features",
+      "target": "onnxruntime_vcpkg_features_cuda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_cuda",
+      "target": "onnxruntime_vcpkg_cuda_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_cuda",
+      "target": "onnxruntime_vcpkg_cuda_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_cuda",
+      "target": "onnxruntime_vcpkg_cuda_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_cuda_dependencies",
+      "target": "ref_cuda",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_cuda_dependencies",
+      "target": "ref_cudnn",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_cuda_dependencies",
+      "target": "ref_cudnn_frontend",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_cuda_dependencies",
+      "target": "ref_nvidia_cutlass",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "onnxruntime_vcpkg_features",
+      "target": "onnxruntime_vcpkg_features_framework",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_framework",
+      "target": "onnxruntime_vcpkg_framework_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_framework",
+      "target": "onnxruntime_vcpkg_framework_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features",
+      "target": "onnxruntime_vcpkg_features_openvino",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_openvino",
+      "target": "onnxruntime_vcpkg_openvino_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_openvino",
+      "target": "onnxruntime_vcpkg_openvino_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_openvino",
+      "target": "onnxruntime_vcpkg_openvino_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features",
+      "target": "onnxruntime_vcpkg_features_tensorrt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_tensorrt",
+      "target": "onnxruntime_vcpkg_tensorrt_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "onnxruntime_vcpkg_features_tensorrt",
+      "target": "onnxruntime_vcpkg_tensorrt_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/onnxruntime/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    }
+  ]
+}

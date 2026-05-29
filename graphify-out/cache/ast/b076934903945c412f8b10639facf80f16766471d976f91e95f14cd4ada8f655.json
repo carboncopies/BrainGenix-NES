@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_e_expat_json",
+      "label": "expat.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/expat.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "e_expat_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/e-/expat.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_e_expat_json",
+      "target": "e_expat_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/e-/expat.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_loguru_json",
+      "label": "loguru.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/loguru.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_loguru_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/loguru.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_loguru_json",
+      "target": "l_loguru_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/loguru.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

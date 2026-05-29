@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_ltla_subpar_json",
+      "label": "ltla-subpar.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-subpar.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_ltla_subpar_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-subpar.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_ltla_subpar_json",
+      "target": "l_ltla_subpar_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/ltla-subpar.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

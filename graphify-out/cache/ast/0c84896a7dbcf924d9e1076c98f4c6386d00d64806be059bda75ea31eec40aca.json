@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tinyfsm_json",
+      "label": "tinyfsm.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfsm.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tinyfsm_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfsm.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tinyfsm_json",
+      "target": "t_tinyfsm_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tinyfsm.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

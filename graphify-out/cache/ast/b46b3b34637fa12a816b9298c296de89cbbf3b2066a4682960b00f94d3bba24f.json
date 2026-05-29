@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_munit_json",
+      "label": "munit.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/munit.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_munit_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/munit.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_munit_json",
+      "target": "m_munit_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/munit.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

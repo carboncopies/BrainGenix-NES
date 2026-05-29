@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kf6breezeicons_json",
+      "label": "kf6breezeicons.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6breezeicons.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kf6breezeicons_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6breezeicons.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kf6breezeicons_json",
+      "target": "k_kf6breezeicons_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf6breezeicons.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

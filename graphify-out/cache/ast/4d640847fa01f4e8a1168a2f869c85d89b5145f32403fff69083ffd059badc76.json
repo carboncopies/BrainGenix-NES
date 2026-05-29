@@ -1,0 +1,157 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kangaru_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kangaru_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kangaru_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kangaru_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kangaru_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kangaru_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "kangaru_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "kangaru_vcpkg_features_hashtypeid",
+      "label": "hashtypeid",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "kangaru_vcpkg_hashtypeid_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L19"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kangaru_vcpkg_json",
+      "target": "kangaru_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "kangaru_vcpkg_features",
+      "target": "kangaru_vcpkg_features_hashtypeid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "kangaru_vcpkg_features_hashtypeid",
+      "target": "kangaru_vcpkg_hashtypeid_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kangaru/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    }
+  ]
+}

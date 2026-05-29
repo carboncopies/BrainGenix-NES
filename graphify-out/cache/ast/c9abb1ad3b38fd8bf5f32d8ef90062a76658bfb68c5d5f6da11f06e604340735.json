@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_polymorphic_value_json",
+      "label": "polymorphic-value.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/polymorphic-value.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_polymorphic_value_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/polymorphic-value.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_polymorphic_value_json",
+      "target": "p_polymorphic_value_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/polymorphic-value.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

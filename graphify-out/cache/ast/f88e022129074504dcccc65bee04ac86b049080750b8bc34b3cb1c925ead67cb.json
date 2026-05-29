@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rhash_json",
+      "label": "rhash.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rhash.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rhash_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rhash.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rhash_json",
+      "target": "r_rhash_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rhash.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

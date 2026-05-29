@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mongo_cxx_driver_json",
+      "label": "mongo-cxx-driver.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mongo-cxx-driver.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mongo_cxx_driver_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mongo-cxx-driver.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mongo_cxx_driver_json",
+      "target": "m_mongo_cxx_driver_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mongo-cxx-driver.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

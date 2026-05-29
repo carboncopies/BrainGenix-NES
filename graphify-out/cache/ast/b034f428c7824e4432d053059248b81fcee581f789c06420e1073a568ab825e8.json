@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_restbed_json",
+      "label": "restbed.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/restbed.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_restbed_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/restbed.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_restbed_json",
+      "target": "r_restbed_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/restbed.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

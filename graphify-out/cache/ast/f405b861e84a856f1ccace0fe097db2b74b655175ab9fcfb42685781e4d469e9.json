@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_daxa_json",
+      "label": "daxa.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daxa.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_daxa_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daxa.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_daxa_json",
+      "target": "d_daxa_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/daxa.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

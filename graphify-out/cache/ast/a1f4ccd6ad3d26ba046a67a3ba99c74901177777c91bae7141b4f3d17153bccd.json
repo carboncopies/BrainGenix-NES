@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_presentmon_json",
+      "label": "presentmon.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/presentmon.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_presentmon_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/presentmon.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_presentmon_json",
+      "target": "p_presentmon_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/presentmon.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

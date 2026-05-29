@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_atlmfc_json",
+      "label": "atlmfc.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atlmfc.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_atlmfc_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atlmfc.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_atlmfc_json",
+      "target": "a_atlmfc_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/atlmfc.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

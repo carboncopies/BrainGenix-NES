@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_reaction_json",
+      "label": "reaction.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/reaction.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_reaction_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/reaction.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_reaction_json",
+      "target": "r_reaction_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/reaction.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

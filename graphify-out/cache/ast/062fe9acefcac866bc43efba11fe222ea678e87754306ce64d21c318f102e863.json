@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gsoap_json",
+      "label": "gsoap.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gsoap.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gsoap_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gsoap.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gsoap_json",
+      "target": "g_gsoap_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gsoap.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

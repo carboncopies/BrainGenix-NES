@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_apache_datasketches_json",
+      "label": "apache-datasketches.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apache-datasketches.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_apache_datasketches_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apache-datasketches.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_apache_datasketches_json",
+      "target": "a_apache_datasketches_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/apache-datasketches.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

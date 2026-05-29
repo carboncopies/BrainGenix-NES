@@ -1,0 +1,593 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sese_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sese_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sese_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sese_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sese_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sese_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sese_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sese_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "sese_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "sese_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "sese_vcpkg_features_archive",
+      "label": "archive",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "sese_vcpkg_archive_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "sese_vcpkg_archive_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "sese_vcpkg_features_async_logger",
+      "label": "async-logger",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "sese_vcpkg_async_logger_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "sese_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "sese_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "sese_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "sese_vcpkg_features_psql",
+      "label": "psql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "sese_vcpkg_psql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "sese_vcpkg_psql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "sese_vcpkg_features_replace_execinfo",
+      "label": "replace-execinfo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "sese_vcpkg_replace_execinfo_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "sese_vcpkg_replace_execinfo_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "sese_vcpkg_features_sqlite3",
+      "label": "sqlite3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "sese_vcpkg_sqlite3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "sese_vcpkg_sqlite3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "sese_vcpkg_features_tests",
+      "label": "tests",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "sese_vcpkg_tests_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "sese_vcpkg_tests_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L66"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_default_features",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sese_vcpkg_json",
+      "target": "sese_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_archive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_archive",
+      "target": "sese_vcpkg_archive_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_archive",
+      "target": "sese_vcpkg_archive_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_archive_dependencies",
+      "target": "ref_libarchive",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_async_logger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_async_logger",
+      "target": "sese_vcpkg_async_logger_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_mysql",
+      "target": "sese_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_mysql",
+      "target": "sese_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_mysql_dependencies",
+      "target": "ref_libmariadb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_psql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_psql",
+      "target": "sese_vcpkg_psql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_psql",
+      "target": "sese_vcpkg_psql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_psql_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_replace_execinfo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_replace_execinfo",
+      "target": "sese_vcpkg_replace_execinfo_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_replace_execinfo",
+      "target": "sese_vcpkg_replace_execinfo_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_replace_execinfo_dependencies",
+      "target": "ref_libunwind",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_sqlite3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_sqlite3",
+      "target": "sese_vcpkg_sqlite3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_sqlite3",
+      "target": "sese_vcpkg_sqlite3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_sqlite3_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_features",
+      "target": "sese_vcpkg_features_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_tests",
+      "target": "sese_vcpkg_tests_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_features_tests",
+      "target": "sese_vcpkg_tests_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "sese_vcpkg_tests_dependencies",
+      "target": "ref_benchmark",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sese_vcpkg_tests_dependencies",
+      "target": "ref_gtest",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sese/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

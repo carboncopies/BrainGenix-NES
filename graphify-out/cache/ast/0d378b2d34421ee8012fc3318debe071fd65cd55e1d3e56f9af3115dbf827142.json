@@ -1,0 +1,1557 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sail_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sail_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sail_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sail_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sail_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sail_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sail_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "sail_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "sail_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "sail_vcpkg_features_all",
+      "label": "all",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sail_vcpkg_all_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "sail_vcpkg_all_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "sail_vcpkg_features_avif",
+      "label": "avif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "sail_vcpkg_avif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "sail_vcpkg_avif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "sail_vcpkg_features_bmp",
+      "label": "bmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "sail_vcpkg_bmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "sail_vcpkg_features_gif",
+      "label": "gif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "sail_vcpkg_gif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "sail_vcpkg_gif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "sail_vcpkg_features_hdr",
+      "label": "hdr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "sail_vcpkg_hdr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "sail_vcpkg_features_heif",
+      "label": "heif",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "sail_vcpkg_heif_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "sail_vcpkg_heif_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "sail_vcpkg_features_high_priority_codecs",
+      "label": "high-priority-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "sail_vcpkg_high_priority_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "sail_vcpkg_high_priority_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "sail_vcpkg_features_highest_priority_codecs",
+      "label": "highest-priority-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L73"
+    },
+    {
+      "id": "sail_vcpkg_highest_priority_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L74"
+    },
+    {
+      "id": "sail_vcpkg_highest_priority_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L75"
+    },
+    {
+      "id": "sail_vcpkg_features_ico",
+      "label": "ico",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "sail_vcpkg_ico_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "sail_vcpkg_features_jbig",
+      "label": "jbig",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "sail_vcpkg_jbig_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "sail_vcpkg_jbig_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "sail_vcpkg_features_jpeg",
+      "label": "jpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L97"
+    },
+    {
+      "id": "sail_vcpkg_jpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L98"
+    },
+    {
+      "id": "sail_vcpkg_jpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L99"
+    },
+    {
+      "id": "sail_vcpkg_features_jpeg2000",
+      "label": "jpeg2000",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "sail_vcpkg_jpeg2000_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "sail_vcpkg_jpeg2000_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L105"
+    },
+    {
+      "id": "sail_vcpkg_features_jpegxl",
+      "label": "jpegxl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L109"
+    },
+    {
+      "id": "sail_vcpkg_jpegxl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L110"
+    },
+    {
+      "id": "sail_vcpkg_jpegxl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L111"
+    },
+    {
+      "id": "sail_vcpkg_features_low_priority_codecs",
+      "label": "low-priority-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L115"
+    },
+    {
+      "id": "sail_vcpkg_low_priority_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L116"
+    },
+    {
+      "id": "sail_vcpkg_low_priority_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L117"
+    },
+    {
+      "id": "sail_vcpkg_features_lowest_priority_codecs",
+      "label": "lowest-priority-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L132"
+    },
+    {
+      "id": "sail_vcpkg_lowest_priority_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L133"
+    },
+    {
+      "id": "sail_vcpkg_lowest_priority_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L134"
+    },
+    {
+      "id": "sail_vcpkg_features_medium_priority_codecs",
+      "label": "medium-priority-codecs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L148"
+    },
+    {
+      "id": "sail_vcpkg_medium_priority_codecs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L149"
+    },
+    {
+      "id": "sail_vcpkg_medium_priority_codecs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L150"
+    },
+    {
+      "id": "sail_vcpkg_features_openexr",
+      "label": "openexr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L162"
+    },
+    {
+      "id": "sail_vcpkg_openexr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L163"
+    },
+    {
+      "id": "sail_vcpkg_openexr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L164"
+    },
+    {
+      "id": "sail_vcpkg_features_openmp",
+      "label": "openmp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L168"
+    },
+    {
+      "id": "sail_vcpkg_openmp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L169"
+    },
+    {
+      "id": "sail_vcpkg_features_pcx",
+      "label": "pcx",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L171"
+    },
+    {
+      "id": "sail_vcpkg_pcx_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L172"
+    },
+    {
+      "id": "sail_vcpkg_features_png",
+      "label": "png",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L174"
+    },
+    {
+      "id": "sail_vcpkg_png_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L175"
+    },
+    {
+      "id": "sail_vcpkg_png_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L176"
+    },
+    {
+      "id": "sail_vcpkg_features_pnm",
+      "label": "pnm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L180"
+    },
+    {
+      "id": "sail_vcpkg_pnm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L181"
+    },
+    {
+      "id": "sail_vcpkg_features_psd",
+      "label": "psd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L183"
+    },
+    {
+      "id": "sail_vcpkg_psd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L184"
+    },
+    {
+      "id": "sail_vcpkg_features_qoi",
+      "label": "qoi",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L186"
+    },
+    {
+      "id": "sail_vcpkg_qoi_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L187"
+    },
+    {
+      "id": "sail_vcpkg_features_svg",
+      "label": "svg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "sail_vcpkg_svg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L190"
+    },
+    {
+      "id": "sail_vcpkg_svg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L191"
+    },
+    {
+      "id": "sail_vcpkg_features_tga",
+      "label": "tga",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L195"
+    },
+    {
+      "id": "sail_vcpkg_tga_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L196"
+    },
+    {
+      "id": "sail_vcpkg_features_tiff",
+      "label": "tiff",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L198"
+    },
+    {
+      "id": "sail_vcpkg_tiff_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L199"
+    },
+    {
+      "id": "sail_vcpkg_tiff_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L200"
+    },
+    {
+      "id": "sail_vcpkg_features_wal",
+      "label": "wal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L207"
+    },
+    {
+      "id": "sail_vcpkg_wal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L208"
+    },
+    {
+      "id": "sail_vcpkg_features_webp",
+      "label": "webp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L210"
+    },
+    {
+      "id": "sail_vcpkg_webp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L211"
+    },
+    {
+      "id": "sail_vcpkg_webp_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L212"
+    },
+    {
+      "id": "sail_vcpkg_features_xbm",
+      "label": "xbm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L216"
+    },
+    {
+      "id": "sail_vcpkg_xbm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L217"
+    },
+    {
+      "id": "sail_vcpkg_features_xpm",
+      "label": "xpm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L219"
+    },
+    {
+      "id": "sail_vcpkg_xpm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L220"
+    },
+    {
+      "id": "sail_vcpkg_features_xwd",
+      "label": "xwd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L222"
+    },
+    {
+      "id": "sail_vcpkg_xwd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L223"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_default_features",
+      "target": "ref_highest_priority_codecs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sail_vcpkg_json",
+      "target": "sail_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_all",
+      "target": "sail_vcpkg_all_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_all",
+      "target": "sail_vcpkg_all_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_avif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_avif",
+      "target": "sail_vcpkg_avif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_avif",
+      "target": "sail_vcpkg_avif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_avif_dependencies",
+      "target": "ref_libavif",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_bmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_bmp",
+      "target": "sail_vcpkg_bmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_gif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_gif",
+      "target": "sail_vcpkg_gif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_gif",
+      "target": "sail_vcpkg_gif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_gif_dependencies",
+      "target": "ref_giflib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_hdr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_hdr",
+      "target": "sail_vcpkg_hdr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_heif",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_heif",
+      "target": "sail_vcpkg_heif_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_heif",
+      "target": "sail_vcpkg_heif_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_heif_dependencies",
+      "target": "ref_libheif",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_high_priority_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_high_priority_codecs",
+      "target": "sail_vcpkg_high_priority_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_high_priority_codecs",
+      "target": "sail_vcpkg_high_priority_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_highest_priority_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_highest_priority_codecs",
+      "target": "sail_vcpkg_highest_priority_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_highest_priority_codecs",
+      "target": "sail_vcpkg_highest_priority_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_ico",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_ico",
+      "target": "sail_vcpkg_ico_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_jbig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jbig",
+      "target": "sail_vcpkg_jbig_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jbig",
+      "target": "sail_vcpkg_jbig_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_jbig_dependencies",
+      "target": "ref_jbigkit",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_jpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpeg",
+      "target": "sail_vcpkg_jpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpeg",
+      "target": "sail_vcpkg_jpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_jpeg_dependencies",
+      "target": "ref_libjpeg_turbo",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_jpeg2000",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpeg2000",
+      "target": "sail_vcpkg_jpeg2000_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpeg2000",
+      "target": "sail_vcpkg_jpeg2000_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_jpeg2000_dependencies",
+      "target": "ref_openjpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_jpegxl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L109",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpegxl",
+      "target": "sail_vcpkg_jpegxl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_jpegxl",
+      "target": "sail_vcpkg_jpegxl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_jpegxl_dependencies",
+      "target": "ref_libjxl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L111",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_low_priority_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_low_priority_codecs",
+      "target": "sail_vcpkg_low_priority_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_low_priority_codecs",
+      "target": "sail_vcpkg_low_priority_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_lowest_priority_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_lowest_priority_codecs",
+      "target": "sail_vcpkg_lowest_priority_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_lowest_priority_codecs",
+      "target": "sail_vcpkg_lowest_priority_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_medium_priority_codecs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_medium_priority_codecs",
+      "target": "sail_vcpkg_medium_priority_codecs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L149",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_medium_priority_codecs",
+      "target": "sail_vcpkg_medium_priority_codecs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L150",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_openexr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_openexr",
+      "target": "sail_vcpkg_openexr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_openexr",
+      "target": "sail_vcpkg_openexr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_openexr_dependencies",
+      "target": "ref_openexr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_openmp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_openmp",
+      "target": "sail_vcpkg_openmp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_pcx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_pcx",
+      "target": "sail_vcpkg_pcx_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_png",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_png",
+      "target": "sail_vcpkg_png_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_png",
+      "target": "sail_vcpkg_png_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_png_dependencies",
+      "target": "ref_libpng",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_pnm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_pnm",
+      "target": "sail_vcpkg_pnm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_psd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_psd",
+      "target": "sail_vcpkg_psd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_qoi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_qoi",
+      "target": "sail_vcpkg_qoi_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_svg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_svg",
+      "target": "sail_vcpkg_svg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_svg",
+      "target": "sail_vcpkg_svg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_svg_dependencies",
+      "target": "ref_nanosvg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_tga",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L195",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_tga",
+      "target": "sail_vcpkg_tga_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_tiff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_tiff",
+      "target": "sail_vcpkg_tiff_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L199",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_tiff",
+      "target": "sail_vcpkg_tiff_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L200",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_wal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_wal",
+      "target": "sail_vcpkg_wal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_webp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_webp",
+      "target": "sail_vcpkg_webp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_webp",
+      "target": "sail_vcpkg_webp_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_webp_dependencies",
+      "target": "ref_libwebp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_xbm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_xbm",
+      "target": "sail_vcpkg_xbm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_xpm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_xpm",
+      "target": "sail_vcpkg_xpm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features",
+      "target": "sail_vcpkg_features_xwd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "sail_vcpkg_features_xwd",
+      "target": "sail_vcpkg_xwd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sail/vcpkg.json",
+      "source_location": "L223",
+      "weight": 1.0
+    }
+  ]
+}

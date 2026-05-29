@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "minisat_master_keying_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "minisat_master_keying_vcpkg_description",
+      "target": "ref_a_minimalistic_high_performance_sat_solver",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "minisat_master_keying_vcpkg_description",
+      "target": "ref_this_is_a_modernized_cross_platform_cmake_enabled_fork_of_the_original_minisat",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_minisat_master_keying_vcpkg_json",
+      "target": "minisat_master_keying_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/minisat-master-keying/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ]
+}

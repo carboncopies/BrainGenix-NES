@@ -1,0 +1,149 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "stlab_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "stlab_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "stlab_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "stlab_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "stlab_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "stlab_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L10"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "stlab_vcpkg_description",
+      "target": "ref_stlab_is_the_ongoing_work_of_what_was_adobe_software_technology_lab",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "stlab_vcpkg_description",
+      "target": "ref_the_concurrency_library_provides_futures_and_channels_high_level_constructs_for_implementing_algorithms_that_eases_the_use_of_multiple_cpu_cores_while_minimizing_contention_this_library_solves_several_problems_of_the_c_11_and_c_17_ts_futures",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_stlab_vcpkg_json",
+      "target": "stlab_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "stlab_vcpkg_dependencies",
+      "target": "ref_stlab_copy_on_write",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "stlab_vcpkg_dependencies",
+      "target": "ref_stlab_enum_ops",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/stlab/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

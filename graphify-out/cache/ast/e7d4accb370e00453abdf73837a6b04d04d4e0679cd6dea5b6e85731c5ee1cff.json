@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_simdjson_json",
+      "label": "simdjson.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simdjson.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_simdjson_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simdjson.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_simdjson_json",
+      "target": "s_simdjson_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/simdjson.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

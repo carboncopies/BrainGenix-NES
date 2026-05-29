@@ -1,0 +1,155 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "coin_or_cgl_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_coin_or_cgl_vcpkg_json",
+      "target": "coin_or_cgl_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "coin_or_cgl_vcpkg_dependencies",
+      "target": "ref_coin_or_clp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "coin_or_cgl_vcpkg_dependencies",
+      "target": "ref_coin_or_osi",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "coin_or_cgl_vcpkg_dependencies",
+      "target": "ref_coinutils",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/coin-or-cgl/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

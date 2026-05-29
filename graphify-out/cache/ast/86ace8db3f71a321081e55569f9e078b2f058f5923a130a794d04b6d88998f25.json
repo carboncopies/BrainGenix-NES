@@ -1,0 +1,289 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "openblas_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "openblas_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "openblas_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "openblas_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "openblas_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "openblas_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "openblas_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "openblas_vcpkg_features_dynamic_arch",
+      "label": "dynamic-arch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "openblas_vcpkg_dynamic_arch_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "openblas_vcpkg_dynamic_arch_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "openblas_vcpkg_features_simplethread",
+      "label": "simplethread",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "openblas_vcpkg_simplethread_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "openblas_vcpkg_simplethread_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "openblas_vcpkg_features_threads",
+      "label": "threads",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "openblas_vcpkg_threads_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "openblas_vcpkg_threads_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L42"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_openblas_vcpkg_json",
+      "target": "openblas_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features",
+      "target": "openblas_vcpkg_features_dynamic_arch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features_dynamic_arch",
+      "target": "openblas_vcpkg_dynamic_arch_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features_dynamic_arch",
+      "target": "openblas_vcpkg_dynamic_arch_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features",
+      "target": "openblas_vcpkg_features_simplethread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features_simplethread",
+      "target": "openblas_vcpkg_simplethread_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_simplethread_description",
+      "target": "ref_use_simple_thread_safety_for_level3_functions",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openblas_vcpkg_simplethread_description",
+      "target": "ref_alternative_to_serialization_of_concurrent_access_to_parallelized_level3_functions",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "openblas_vcpkg_features_simplethread",
+      "target": "openblas_vcpkg_simplethread_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features",
+      "target": "openblas_vcpkg_features_threads",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features_threads",
+      "target": "openblas_vcpkg_threads_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "openblas_vcpkg_features_threads",
+      "target": "openblas_vcpkg_threads_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/openblas/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    }
+  ]
+}

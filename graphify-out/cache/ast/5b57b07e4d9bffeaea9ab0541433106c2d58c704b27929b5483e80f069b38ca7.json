@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_gz_physics_json",
+      "label": "gz-physics.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-physics.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_gz_physics_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-physics.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_gz_physics_json",
+      "target": "g_gz_physics_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/gz-physics.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_h_highway_json",
+      "label": "highway.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highway.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "h_highway_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highway.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_h_highway_json",
+      "target": "h_highway_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/h-/highway.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

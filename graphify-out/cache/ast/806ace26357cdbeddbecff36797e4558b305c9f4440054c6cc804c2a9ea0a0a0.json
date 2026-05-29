@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_test_modified_ports_ps1",
+      "label": "test-modified-ports.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/test-modified-ports.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_pipelines_test_modified_ports_add_toolchaintotestcmake",
+      "label": "Add-ToolchainToTestCMake()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/test-modified-ports.ps1",
+      "source_location": "L63"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_test_modified_ports_ps1",
+      "target": "azure_pipelines_test_modified_ports_add_toolchaintotestcmake",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/test-modified-ports.ps1",
+      "source_location": "L63",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "azure_pipelines_test_modified_ports_add_toolchaintotestcmake",
+      "callee": "Copy-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/test-modified-ports.ps1",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "azure_pipelines_test_modified_ports_add_toolchaintotestcmake",
+      "callee": "Copy-Item",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/test-modified-ports.ps1",
+      "source_location": "L67"
+    }
+  ]
+}

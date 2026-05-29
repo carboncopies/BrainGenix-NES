@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_matplotplusplus_json",
+      "label": "matplotplusplus.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotplusplus.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_matplotplusplus_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotplusplus.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_matplotplusplus_json",
+      "target": "m_matplotplusplus_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/matplotplusplus.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

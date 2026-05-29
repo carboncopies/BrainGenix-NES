@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tensorflow_common_generate_static_link_cmd_macos_py",
+      "label": "generate_static_link_cmd_macos.py",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tensorflow-common/generate_static_link_cmd_macos.py",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tensorflow_common_generate_static_link_cmd_macos_py",
+      "target": "os_path",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tensorflow-common/generate_static_link_cmd_macos.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tensorflow_common_generate_static_link_cmd_macos_py",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tensorflow-common/generate_static_link_cmd_macos.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tensorflow_common_generate_static_link_cmd_macos_py",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tensorflow-common/generate_static_link_cmd_macos.py",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

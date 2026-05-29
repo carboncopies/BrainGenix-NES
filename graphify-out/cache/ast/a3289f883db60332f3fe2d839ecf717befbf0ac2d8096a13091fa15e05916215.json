@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_dylib_json",
+      "label": "dylib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dylib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_dylib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dylib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_dylib_json",
+      "target": "d_dylib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/dylib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

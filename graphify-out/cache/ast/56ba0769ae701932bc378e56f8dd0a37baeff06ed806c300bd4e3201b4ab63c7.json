@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tmxlite_json",
+      "label": "tmxlite.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tmxlite.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tmxlite_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tmxlite.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tmxlite_json",
+      "target": "t_tmxlite_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tmxlite.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

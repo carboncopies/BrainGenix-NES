@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_ragel_json",
+      "label": "ragel.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ragel.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_ragel_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ragel.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_ragel_json",
+      "target": "r_ragel_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/ragel.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_features_mariadb",
+      "label": "mariadb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_mariadb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_mariadb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "sqlpp11_connector_mysql_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_default_features",
+      "target": "ref_mariadb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlpp11_connector_mysql_vcpkg_json",
+      "target": "sqlpp11_connector_mysql_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features",
+      "target": "sqlpp11_connector_mysql_vcpkg_features_mariadb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features_mariadb",
+      "target": "sqlpp11_connector_mysql_vcpkg_mariadb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features_mariadb",
+      "target": "sqlpp11_connector_mysql_vcpkg_mariadb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features",
+      "target": "sqlpp11_connector_mysql_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features_mysql",
+      "target": "sqlpp11_connector_mysql_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlpp11_connector_mysql_vcpkg_features_mysql",
+      "target": "sqlpp11_connector_mysql_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlpp11-connector-mysql/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ]
+}

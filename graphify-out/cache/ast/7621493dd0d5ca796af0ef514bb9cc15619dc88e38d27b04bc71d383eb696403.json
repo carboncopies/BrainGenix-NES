@@ -1,0 +1,455 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libsndfile_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libsndfile_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libsndfile_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libsndfile_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libsndfile_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libsndfile_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libsndfile_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libsndfile_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libsndfile_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libsndfile_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libsndfile_vcpkg_features_experimental",
+      "label": "experimental",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libsndfile_vcpkg_experimental_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "libsndfile_vcpkg_experimental_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libsndfile_vcpkg_features_external_libs",
+      "label": "external-libs",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "libsndfile_vcpkg_external_libs_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "libsndfile_vcpkg_external_libs_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libsndfile_vcpkg_features_mpeg",
+      "label": "mpeg",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libsndfile_vcpkg_mpeg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libsndfile_vcpkg_mpeg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "libsndfile_vcpkg_features_regtest",
+      "label": "regtest",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "libsndfile_vcpkg_regtest_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "libsndfile_vcpkg_regtest_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L47"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_default_features",
+      "target": "ref_external_libs",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_default_features",
+      "target": "ref_mpeg",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libsndfile_vcpkg_json",
+      "target": "libsndfile_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features",
+      "target": "libsndfile_vcpkg_features_experimental",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_experimental",
+      "target": "libsndfile_vcpkg_experimental_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_experimental",
+      "target": "libsndfile_vcpkg_experimental_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_experimental_dependencies",
+      "target": "ref_speex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_features",
+      "target": "libsndfile_vcpkg_features_external_libs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_external_libs",
+      "target": "libsndfile_vcpkg_external_libs_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_external_libs",
+      "target": "libsndfile_vcpkg_external_libs_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_external_libs_dependencies",
+      "target": "ref_libflac",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_external_libs_dependencies",
+      "target": "ref_libvorbis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_external_libs_dependencies",
+      "target": "ref_opus",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_features",
+      "target": "libsndfile_vcpkg_features_mpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_mpeg",
+      "target": "libsndfile_vcpkg_mpeg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_mpeg",
+      "target": "libsndfile_vcpkg_mpeg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_mpeg_dependencies",
+      "target": "ref_mp3lame",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_mpeg_dependencies",
+      "target": "ref_mpg123",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libsndfile_vcpkg_features",
+      "target": "libsndfile_vcpkg_features_regtest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_regtest",
+      "target": "libsndfile_vcpkg_regtest_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_features_regtest",
+      "target": "libsndfile_vcpkg_regtest_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "libsndfile_vcpkg_regtest_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libsndfile/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

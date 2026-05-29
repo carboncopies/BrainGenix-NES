@@ -1,0 +1,285 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "pulseaudio_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "pulseaudio_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "pulseaudio_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "pulseaudio_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "pulseaudio_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "pulseaudio_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "pulseaudio_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "pulseaudio_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "pulseaudio_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "pulseaudio_vcpkg_features_gstreamer",
+      "label": "gstreamer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "pulseaudio_vcpkg_gstreamer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "pulseaudio_vcpkg_gstreamer_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L54"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_fftw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_jack2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_libatomic_ops",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_libiconv",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_soxr",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_dependencies",
+      "target": "ref_speex",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_pulseaudio_vcpkg_json",
+      "target": "pulseaudio_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "pulseaudio_vcpkg_features",
+      "target": "pulseaudio_vcpkg_features_gstreamer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "pulseaudio_vcpkg_features_gstreamer",
+      "target": "pulseaudio_vcpkg_gstreamer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "pulseaudio_vcpkg_gstreamer_description",
+      "target": "ref_use_gstreamer_media_related_functionality",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_gstreamer_description",
+      "target": "ref_this_feauture_may_cause_dependency_cycles_with_other_libs_used_by_gstreamer",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "pulseaudio_vcpkg_features_gstreamer",
+      "target": "pulseaudio_vcpkg_gstreamer_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/pulseaudio/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cleishm_frequency_cpp_json",
+      "label": "cleishm-frequency-cpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cleishm-frequency-cpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cleishm_frequency_cpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cleishm-frequency-cpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cleishm_frequency_cpp_json",
+      "target": "c_cleishm_frequency_cpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cleishm-frequency-cpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fast_double_parser_json",
+      "label": "fast-double-parser.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fast-double-parser.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fast_double_parser_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fast-double-parser.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fast_double_parser_json",
+      "target": "f_fast_double_parser_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fast-double-parser.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_b_bext_wintls_json",
+      "label": "bext-wintls.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bext-wintls.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "b_bext_wintls_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bext-wintls.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_b_bext_wintls_json",
+      "target": "b_bext_wintls_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/b-/bext-wintls.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

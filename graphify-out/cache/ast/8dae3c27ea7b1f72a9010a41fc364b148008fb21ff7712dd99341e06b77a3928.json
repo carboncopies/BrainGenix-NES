@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_libxdamage_json",
+      "label": "libxdamage.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libxdamage.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_libxdamage_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libxdamage.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_libxdamage_json",
+      "target": "l_libxdamage_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/libxdamage.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

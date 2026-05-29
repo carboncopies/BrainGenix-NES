@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_flann_json",
+      "label": "flann.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flann.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_flann_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flann.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_flann_json",
+      "target": "f_flann_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flann.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

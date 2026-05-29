@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_n_ngspice_json",
+      "label": "ngspice.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngspice.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "n_ngspice_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngspice.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_n_ngspice_json",
+      "target": "n_ngspice_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/n-/ngspice.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

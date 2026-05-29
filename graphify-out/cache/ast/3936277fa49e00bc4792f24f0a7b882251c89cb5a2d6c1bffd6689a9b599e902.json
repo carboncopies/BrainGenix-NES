@@ -1,0 +1,115 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_install_disk_ps1",
+      "label": "deploy-install-disk.ps1",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L1"
+    },
+    {
+      "id": "windows_deploy_install_disk_new_physicaldisk",
+      "label": "New-PhysicalDisk()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L23"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_windows_deploy_install_disk_ps1",
+      "target": "windows_deploy_install_disk_new_physicaldisk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L23",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Get-TempFilePath",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Set-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L53"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Set-Content",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Host",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L56"
+    },
+    {
+      "caller_nid": "windows_deploy_install_disk_new_physicaldisk",
+      "callee": "Write-Error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/windows/deploy-install-disk.ps1",
+      "source_location": "L60"
+    }
+  ]
+}

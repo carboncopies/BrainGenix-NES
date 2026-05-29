@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wasmedge_json",
+      "label": "wasmedge.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wasmedge.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wasmedge_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wasmedge.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wasmedge_json",
+      "target": "w_wasmedge_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wasmedge.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

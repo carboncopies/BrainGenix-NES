@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mapbox_variant_json",
+      "label": "mapbox-variant.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-variant.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mapbox_variant_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-variant.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mapbox_variant_json",
+      "target": "m_mapbox_variant_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mapbox-variant.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

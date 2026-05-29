@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_examples_hexagon_hexagon_sh",
+      "label": "hexagon.sh",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/hexagon/hexagon.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "thirdparty_netmorphcmake_source_examples_hexagon_hexagon_sh__entry",
+      "label": "hexagon.sh script",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/hexagon/hexagon.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_examples_hexagon_hexagon_sh",
+      "target": "thirdparty_netmorphcmake_source_examples_hexagon_hexagon_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/examples/hexagon/hexagon.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

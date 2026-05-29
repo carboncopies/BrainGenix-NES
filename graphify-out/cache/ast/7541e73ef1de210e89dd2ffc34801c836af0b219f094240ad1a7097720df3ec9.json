@@ -1,0 +1,469 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libxslt_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libxslt_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libxslt_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libxslt_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libxslt_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libxslt_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libxslt_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libxslt_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libxslt_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libxslt_vcpkg_features_crypto",
+      "label": "crypto",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libxslt_vcpkg_crypto_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "libxslt_vcpkg_crypto_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libxslt_vcpkg_crypto_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "libxslt_vcpkg_features_plugins",
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "libxslt_vcpkg_plugins_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libxslt_vcpkg_plugins_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libxslt_vcpkg_features_profiler",
+      "label": "profiler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libxslt_vcpkg_profiler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "libxslt_vcpkg_features_python",
+      "label": "python",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "libxslt_vcpkg_python_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "libxslt_vcpkg_python_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "libxslt_vcpkg_python_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "libxslt_vcpkg_features_thread",
+      "label": "thread",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "libxslt_vcpkg_thread_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "libxslt_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "libxslt_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_default_features",
+      "target": "ref_profiler",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libxslt_vcpkg_default_features",
+      "target": "ref_thread",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxslt_vcpkg_json",
+      "target": "libxslt_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_crypto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_crypto",
+      "target": "libxslt_vcpkg_crypto_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_crypto",
+      "target": "libxslt_vcpkg_crypto_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_crypto",
+      "target": "libxslt_vcpkg_crypto_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_crypto_dependencies",
+      "target": "ref_libgcrypt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_plugins",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_plugins",
+      "target": "libxslt_vcpkg_plugins_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_plugins",
+      "target": "libxslt_vcpkg_plugins_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_profiler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_profiler",
+      "target": "libxslt_vcpkg_profiler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_python",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_python",
+      "target": "libxslt_vcpkg_python_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_python",
+      "target": "libxslt_vcpkg_python_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_python",
+      "target": "libxslt_vcpkg_python_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_python_dependencies",
+      "target": "ref_python3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_thread",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_thread",
+      "target": "libxslt_vcpkg_thread_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features",
+      "target": "libxslt_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "libxslt_vcpkg_features_tools",
+      "target": "libxslt_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxslt/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_freexl_json",
+      "label": "freexl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/freexl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_freexl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/freexl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_freexl_json",
+      "target": "f_freexl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/freexl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

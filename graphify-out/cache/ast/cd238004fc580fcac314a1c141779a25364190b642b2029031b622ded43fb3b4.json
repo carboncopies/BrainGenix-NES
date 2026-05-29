@@ -1,0 +1,505 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "kdgpu_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "kdgpu_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "kdgpu_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "kdgpu_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "kdgpu_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "kdgpu_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "kdgpu_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "kdgpu_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "kdgpu_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_hlsl",
+      "label": "hlsl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "kdgpu_vcpkg_hlsl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "kdgpu_vcpkg_hlsl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "kdgpu_vcpkg_hlsl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_kdgpuexample",
+      "label": "kdgpuexample",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "kdgpu_vcpkg_kdgpuexample_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "kdgpu_vcpkg_kdgpuexample_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_kdgpukdgui",
+      "label": "kdgpukdgui",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "kdgpu_vcpkg_kdgpukdgui_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_kdgpuutils",
+      "label": "kdgpuutils",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "kdgpu_vcpkg_kdgpuutils_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_openxr",
+      "label": "openxr",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "kdgpu_vcpkg_openxr_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "kdgpu_vcpkg_openxr_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L60"
+    },
+    {
+      "id": "kdgpu_vcpkg_features_slang",
+      "label": "slang",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "kdgpu_vcpkg_slang_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L66"
+    },
+    {
+      "id": "kdgpu_vcpkg_slang_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "kdgpu_vcpkg_slang_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L68"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_dependencies",
+      "target": "ref_kdutils",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kdgpu_vcpkg_dependencies",
+      "target": "ref_spdlog",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kdgpu_vcpkg_dependencies",
+      "target": "ref_vulkan_sdk_components",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_kdgpu_vcpkg_json",
+      "target": "kdgpu_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_hlsl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_hlsl",
+      "target": "kdgpu_vcpkg_hlsl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_hlsl",
+      "target": "kdgpu_vcpkg_hlsl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_hlsl",
+      "target": "kdgpu_vcpkg_hlsl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_kdgpuexample",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_kdgpuexample",
+      "target": "kdgpu_vcpkg_kdgpuexample_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_kdgpuexample",
+      "target": "kdgpu_vcpkg_kdgpuexample_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_kdgpuexample_dependencies",
+      "target": "ref_glm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_kdgpukdgui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_kdgpukdgui",
+      "target": "kdgpu_vcpkg_kdgpukdgui_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_kdgpuutils",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_kdgpuutils",
+      "target": "kdgpu_vcpkg_kdgpuutils_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_openxr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_openxr",
+      "target": "kdgpu_vcpkg_openxr_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_openxr",
+      "target": "kdgpu_vcpkg_openxr_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_openxr_dependencies",
+      "target": "ref_kdbindings",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kdgpu_vcpkg_openxr_dependencies",
+      "target": "ref_openxr_loader",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "kdgpu_vcpkg_features",
+      "target": "kdgpu_vcpkg_features_slang",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_slang",
+      "target": "kdgpu_vcpkg_slang_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_slang",
+      "target": "kdgpu_vcpkg_slang_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "kdgpu_vcpkg_features_slang",
+      "target": "kdgpu_vcpkg_slang_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/kdgpu/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    }
+  ]
+}

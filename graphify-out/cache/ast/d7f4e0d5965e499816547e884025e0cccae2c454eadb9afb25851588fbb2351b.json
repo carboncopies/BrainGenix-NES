@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vowpal_wabbit_json",
+      "label": "vowpal-wabbit.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vowpal-wabbit.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vowpal_wabbit_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vowpal-wabbit.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vowpal_wabbit_json",
+      "target": "v_vowpal_wabbit_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vowpal-wabbit.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

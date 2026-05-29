@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_soqt_json",
+      "label": "soqt.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soqt.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_soqt_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soqt.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_soqt_json",
+      "target": "s_soqt_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soqt.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

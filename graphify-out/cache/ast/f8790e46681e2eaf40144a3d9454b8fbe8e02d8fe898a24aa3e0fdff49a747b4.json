@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cppcms_json",
+      "label": "cppcms.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cppcms.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cppcms_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cppcms.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cppcms_json",
+      "target": "c_cppcms_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cppcms.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

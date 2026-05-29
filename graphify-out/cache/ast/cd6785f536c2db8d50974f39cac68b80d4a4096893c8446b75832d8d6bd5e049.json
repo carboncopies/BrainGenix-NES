@@ -1,0 +1,333 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_features_disable_nagles",
+      "label": "disable-nagles",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_disable_nagles_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_features_expand_read",
+      "label": "expand-read",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_expand_read_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_features_expand_socket",
+      "label": "expand-socket",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "tgbot_cpp_vcpkg_expand_socket_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_algorithm",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_asio",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_lexical_cast",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_property_tree",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_system",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_boost_variant",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tgbot_cpp_vcpkg_json",
+      "target": "tgbot_cpp_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features",
+      "target": "tgbot_cpp_vcpkg_features_disable_nagles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features_disable_nagles",
+      "target": "tgbot_cpp_vcpkg_disable_nagles_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features",
+      "target": "tgbot_cpp_vcpkg_features_expand_read",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features_expand_read",
+      "target": "tgbot_cpp_vcpkg_expand_read_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features",
+      "target": "tgbot_cpp_vcpkg_features_expand_socket",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "tgbot_cpp_vcpkg_features_expand_socket",
+      "target": "tgbot_cpp_vcpkg_expand_socket_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tgbot-cpp/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ]
+}

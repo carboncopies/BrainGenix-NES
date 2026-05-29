@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_orefkov_simstr_json",
+      "label": "orefkov-simstr.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orefkov-simstr.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_orefkov_simstr_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orefkov-simstr.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_orefkov_simstr_json",
+      "target": "o_orefkov_simstr_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/orefkov-simstr.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

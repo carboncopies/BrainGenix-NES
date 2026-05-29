@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cpp_smtpclient_library_json",
+      "label": "cpp-smtpclient-library.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-smtpclient-library.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cpp_smtpclient_library_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-smtpclient-library.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cpp_smtpclient_library_json",
+      "target": "c_cpp_smtpclient_library_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-smtpclient-library.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

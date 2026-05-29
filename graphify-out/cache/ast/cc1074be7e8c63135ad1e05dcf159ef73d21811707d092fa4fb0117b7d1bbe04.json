@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_l_lapack_reference_json",
+      "label": "lapack-reference.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lapack-reference.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "l_lapack_reference_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lapack-reference.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_l_lapack_reference_json",
+      "target": "l_lapack_reference_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/l-/lapack-reference.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

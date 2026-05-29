@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "owners_db_package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "owners_db_package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "owners_db_package_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "owners_db_package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "owners_db_package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "owners_db_package_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "owners_db_package_engines",
+      "label": "engines",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "owners_db_package_engines_node",
+      "label": "node",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "owners_db_package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "owners_db_package_dependencies_adm_zip",
+      "label": "adm-zip",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "owners_db_package_dependencies_ts_node",
+      "label": "ts-node",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "owners_db_package_dependencies_typescript",
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "owners_db_package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "owners_db_package_devdependencies_types_adm_zip",
+      "label": "@types/adm-zip",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_engines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_engines",
+      "target": "owners_db_package_engines_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_dependencies",
+      "target": "owners_db_package_dependencies_adm_zip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_dependencies_adm_zip",
+      "target": "adm_zip",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "owners_db_package_dependencies",
+      "target": "owners_db_package_dependencies_ts_node",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_dependencies_ts_node",
+      "target": "ts_node",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "owners_db_package_dependencies",
+      "target": "owners_db_package_dependencies_typescript",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_dependencies_typescript",
+      "target": "typescript",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_azure_pipelines_owners_db_package_json",
+      "target": "owners_db_package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_devdependencies",
+      "target": "owners_db_package_devdependencies_types_adm_zip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "owners_db_package_devdependencies_types_adm_zip",
+      "target": "types_adm_zip",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/azure-pipelines/owners-db/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

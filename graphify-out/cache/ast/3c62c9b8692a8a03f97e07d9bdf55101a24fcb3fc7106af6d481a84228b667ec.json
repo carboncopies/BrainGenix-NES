@@ -1,0 +1,575 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "label": "update_suitesparse.py",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_update_suitesparse_download",
+      "label": "download()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "scripts_update_suitesparse_sha512",
+      "label": "sha512()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L28"
+    },
+    {
+      "id": "scripts_update_suitesparse_extract_version",
+      "label": "extract_version()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "scripts_update_suitesparse_load_versions",
+      "label": "load_versions()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "scripts_update_suitesparse_update_manifest",
+      "label": "update_manifest()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L60"
+    },
+    {
+      "id": "scripts_update_suitesparse_update_portfile",
+      "label": "update_portfile()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L71"
+    },
+    {
+      "id": "scripts_update_suitesparse_update_port",
+      "label": "update_port()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L84"
+    },
+    {
+      "id": "scripts_update_suitesparse_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L100"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "hashlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "io",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "tarfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "requests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_download",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_sha512",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_extract_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_load_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_update_manifest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_update_portfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_update_port",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_update_suitesparse_py",
+      "target": "scripts_update_suitesparse_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_load_versions",
+      "target": "scripts_update_suitesparse_extract_version",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_update_port",
+      "target": "scripts_update_suitesparse_update_manifest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_update_port",
+      "target": "scripts_update_suitesparse_sha512",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_update_port",
+      "target": "scripts_update_suitesparse_download",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_update_port",
+      "target": "scripts_update_suitesparse_update_portfile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_main",
+      "target": "scripts_update_suitesparse_download",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_main",
+      "target": "scripts_update_suitesparse_sha512",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_main",
+      "target": "scripts_update_suitesparse_load_versions",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L107",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_main",
+      "target": "scripts_update_suitesparse_update_port",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_update_suitesparse_main",
+      "target": "scripts_update_suitesparse_update_manifest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L111",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "scripts_update_suitesparse_download",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_download",
+      "callee": "raise_for_status",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_sha512",
+      "callee": "update",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_sha512",
+      "callee": "hexdigest",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "group",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "search",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "group",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "search",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "group",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_extract_version",
+      "callee": "search",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "BytesIO",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "getmembers",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "isfile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "fullmatch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "group",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "read",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "extractfile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "endswith",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "read",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_load_versions",
+      "callee": "extractfile",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_manifest",
+      "callee": "loads",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_manifest",
+      "callee": "read_text",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_manifest",
+      "callee": "write_text",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_manifest",
+      "callee": "dumps",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "read_text",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "subn",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L77"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "subn",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L78"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L80"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_portfile",
+      "callee": "write_text",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L81"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_port",
+      "callee": "exists",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_update_port",
+      "callee": "Exception",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_main",
+      "callee": "items",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "scripts_update_suitesparse_main",
+      "callee": "lower",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/update_suitesparse.py",
+      "source_location": "L109"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_plutovg_json",
+      "label": "plutovg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutovg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_plutovg_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutovg.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_plutovg_json",
+      "target": "p_plutovg_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plutovg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

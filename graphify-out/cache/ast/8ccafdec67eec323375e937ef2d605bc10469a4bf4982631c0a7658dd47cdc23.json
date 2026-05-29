@@ -1,0 +1,203 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_features_force_build",
+      "label": "force-build",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_force_build_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "wayland_protocols_vcpkg_force_build_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L16"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "wayland_protocols_vcpkg_dependencies",
+      "target": "ref_wayland",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_wayland_protocols_vcpkg_json",
+      "target": "wayland_protocols_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "wayland_protocols_vcpkg_features",
+      "target": "wayland_protocols_vcpkg_features_force_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "wayland_protocols_vcpkg_features_force_build",
+      "target": "wayland_protocols_vcpkg_force_build_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "wayland_protocols_vcpkg_force_build_description",
+      "target": "ref_build_wayland_libraries_instead_of_depending_on_system_ones",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wayland_protocols_vcpkg_force_build_description",
+      "target": "ref_requires_triplet_variable_x_vcpkg_force_vcpkg_wayland_libraries_to_be_set",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "wayland_protocols_vcpkg_features_force_build",
+      "target": "wayland_protocols_vcpkg_force_build_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/wayland-protocols/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    }
+  ]
+}

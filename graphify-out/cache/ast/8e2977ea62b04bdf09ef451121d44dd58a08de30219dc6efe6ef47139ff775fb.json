@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_soem_json",
+      "label": "soem.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soem.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_soem_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soem.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_soem_json",
+      "target": "s_soem_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/soem.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

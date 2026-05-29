@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_a_appstream_json",
+      "label": "appstream.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "a_appstream_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_a_appstream_json",
+      "target": "a_appstream_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/a-/appstream.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

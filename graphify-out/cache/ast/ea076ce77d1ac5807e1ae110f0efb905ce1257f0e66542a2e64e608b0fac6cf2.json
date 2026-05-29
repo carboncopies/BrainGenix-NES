@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_g_glib_json",
+      "label": "glib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "g_glib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_g_glib_json",
+      "target": "g_glib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/g-/glib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

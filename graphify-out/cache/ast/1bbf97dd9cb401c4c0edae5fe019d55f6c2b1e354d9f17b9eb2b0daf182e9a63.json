@@ -1,0 +1,215 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "supernovas_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "supernovas_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "supernovas_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "supernovas_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "supernovas_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "supernovas_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "supernovas_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "supernovas_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "supernovas_vcpkg_features_solsys_calceph",
+      "label": "solsys-calceph",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "supernovas_vcpkg_solsys_calceph_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "supernovas_vcpkg_solsys_calceph_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "supernovas_vcpkg_solsys_calceph_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L22"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_supernovas_vcpkg_json",
+      "target": "supernovas_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "supernovas_vcpkg_features",
+      "target": "supernovas_vcpkg_features_solsys_calceph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "supernovas_vcpkg_features_solsys_calceph",
+      "target": "supernovas_vcpkg_solsys_calceph_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "supernovas_vcpkg_features_solsys_calceph",
+      "target": "supernovas_vcpkg_solsys_calceph_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "supernovas_vcpkg_features_solsys_calceph",
+      "target": "supernovas_vcpkg_solsys_calceph_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "supernovas_vcpkg_solsys_calceph_dependencies",
+      "target": "ref_calceph",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/supernovas/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

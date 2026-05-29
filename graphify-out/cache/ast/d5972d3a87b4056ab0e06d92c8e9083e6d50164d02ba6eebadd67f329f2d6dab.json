@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_ctbench_json",
+      "label": "ctbench.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbench.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_ctbench_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbench.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_ctbench_json",
+      "target": "c_ctbench_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/ctbench.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

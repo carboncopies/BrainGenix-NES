@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_docs_users_triplets_md",
+      "label": "triplets.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/triplets.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_triplets_triplets",
+      "label": "Triplets",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/triplets.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_docs_users_triplets_md",
+      "target": "users_triplets_triplets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/docs/users/triplets.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

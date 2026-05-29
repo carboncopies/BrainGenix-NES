@@ -1,0 +1,454 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_color_table_cc",
+      "label": "Color_Table.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_color_table_color_table",
+      "label": "Color_Table()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "source_color_table_init",
+      "label": "init()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "netmorph_color_table",
+      "label": "netmorph_Color_Table",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L62"
+    },
+    {
+      "id": "source_color_table_set_defaults",
+      "label": "set_defaults()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L86"
+    },
+    {
+      "id": "source_color_table_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L90"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L90"
+    },
+    {
+      "id": "source_color_table_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L101"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L101"
+    },
+    {
+      "id": "source_color_table_set_culture_stain",
+      "label": "set_culture_stain()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L113"
+    },
+    {
+      "id": "source_color_table_get_color",
+      "label": "get_color()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L133"
+    },
+    {
+      "id": "source_color_table_set_color",
+      "label": "set_color()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L143"
+    },
+    {
+      "id": "source_color_table_fig_str",
+      "label": "Fig_str()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L166"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "thirdparty_netmorphcmake_source_color_table_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "thirdparty_netmorphcmake_source_global_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "thirdparty_netmorphcmake_source_fig_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_color_table",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_color_table",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_init",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_init",
+      "target": "netmorph_color_table",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_set_defaults",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L90",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_set_culture_stain",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_get_color",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_set_color",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_color_table_cc",
+      "target": "source_color_table_fig_str",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_fig_str",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L166",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_color_table_color_table",
+      "target": "source_color_table_init",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_set_defaults",
+      "target": "source_color_table_init",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_parse_clp",
+      "target": "source_color_table_init",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "source_color_table_parse_clp",
+      "target": "source_color_table_set_culture_stain",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L94",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_color_table_color_table",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_color_table_set_defaults",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L94"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "strtoul",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "source_color_table_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "source_color_table_report_parameters",
+      "callee": "report",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "source_color_table_report_parameters",
+      "callee": "RGBstr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "source_color_table_report_parameters",
+      "callee": "report",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "source_color_table_get_color",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "source_color_table_set_color",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "source_color_table_set_color",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "source_color_table_fig_str",
+      "callee": "Fig_Color",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L168"
+    },
+    {
+      "caller_nid": "source_color_table_fig_str",
+      "callee": "Fig_Color",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/Color_Table.cc",
+      "source_location": "L169"
+    }
+  ]
+}

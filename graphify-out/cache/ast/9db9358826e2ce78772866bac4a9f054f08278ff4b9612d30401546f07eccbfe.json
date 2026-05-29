@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cmark_json",
+      "label": "cmark.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cmark.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cmark_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cmark.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cmark_json",
+      "target": "c_cmark_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cmark.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

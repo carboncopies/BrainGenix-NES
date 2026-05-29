@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_w_wcslib_json",
+      "label": "wcslib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wcslib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "w_wcslib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wcslib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_w_wcslib_json",
+      "target": "w_wcslib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/w-/wcslib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

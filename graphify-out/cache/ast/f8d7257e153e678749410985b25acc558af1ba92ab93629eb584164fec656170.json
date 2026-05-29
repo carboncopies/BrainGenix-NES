@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_moos_ui_json",
+      "label": "moos-ui.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/moos-ui.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_moos_ui_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/moos-ui.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_moos_ui_json",
+      "target": "m_moos_ui_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/moos-ui.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

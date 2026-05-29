@@ -1,0 +1,229 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ruckig_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ruckig_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ruckig_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ruckig_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ruckig_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ruckig_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ruckig_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "ruckig_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ruckig_vcpkg_features_cloud",
+      "label": "cloud",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "ruckig_vcpkg_cloud_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ruckig_vcpkg_cloud_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_dependencies",
+      "target": "ref_eigen3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_default_features",
+      "target": "ref_cloud",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ruckig_vcpkg_json",
+      "target": "ruckig_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_features",
+      "target": "ruckig_vcpkg_features_cloud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_features_cloud",
+      "target": "ruckig_vcpkg_cloud_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_features_cloud",
+      "target": "ruckig_vcpkg_cloud_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "ruckig_vcpkg_cloud_dependencies",
+      "target": "ref_cpp_httplib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ruckig_vcpkg_cloud_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ruckig/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

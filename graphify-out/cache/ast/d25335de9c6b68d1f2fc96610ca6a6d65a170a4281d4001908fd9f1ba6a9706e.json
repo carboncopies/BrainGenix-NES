@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_functionalplus_json",
+      "label": "functionalplus.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/functionalplus.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_functionalplus_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/functionalplus.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_functionalplus_json",
+      "target": "f_functionalplus_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/functionalplus.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

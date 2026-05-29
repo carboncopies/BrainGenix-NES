@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_contributing_md",
+      "label": "CONTRIBUTING.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_contribution_guidelines",
+      "label": "Contribution Guidelines",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_contributing_issues",
+      "label": "Issues",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_contributing_pull_requests",
+      "label": "Pull Requests",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "vcpkg_contributing_new_package_guidelines",
+      "label": "New package Guidelines",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "vcpkg_contributing_legal",
+      "label": "Legal",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L29"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_contributing_md",
+      "target": "vcpkg_contributing_contribution_guidelines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_contribution_guidelines",
+      "target": "vcpkg_contributing_issues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_contribution_guidelines",
+      "target": "vcpkg_contributing_pull_requests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_pull_requests",
+      "target": "vcpkg_contributing_new_package_guidelines",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_contributing_contribution_guidelines",
+      "target": "vcpkg_contributing_legal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/CONTRIBUTING.md",
+      "source_location": "L29",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

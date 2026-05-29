@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_suitesparse_klu_json",
+      "label": "suitesparse-klu.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-klu.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_suitesparse_klu_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-klu.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_suitesparse_klu_json",
+      "target": "s_suitesparse_klu_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/suitesparse-klu.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

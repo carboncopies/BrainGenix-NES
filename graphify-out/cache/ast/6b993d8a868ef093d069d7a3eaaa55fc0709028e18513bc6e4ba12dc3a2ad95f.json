@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mysvac_jsonlib_json",
+      "label": "mysvac-jsonlib.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mysvac-jsonlib.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mysvac_jsonlib_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mysvac-jsonlib.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mysvac_jsonlib_json",
+      "target": "m_mysvac_jsonlib_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mysvac-jsonlib.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

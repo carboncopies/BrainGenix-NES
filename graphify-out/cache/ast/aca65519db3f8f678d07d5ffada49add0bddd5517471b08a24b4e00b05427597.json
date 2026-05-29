@@ -1,0 +1,225 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_features_example",
+      "label": "example",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_example_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "sqlite_orm_vcpkg_test_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_sqlite_orm_vcpkg_json",
+      "target": "sqlite_orm_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_features",
+      "target": "sqlite_orm_vcpkg_features_example",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_features_example",
+      "target": "sqlite_orm_vcpkg_example_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_features",
+      "target": "sqlite_orm_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_features_test",
+      "target": "sqlite_orm_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_features_test",
+      "target": "sqlite_orm_vcpkg_test_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "sqlite_orm_vcpkg_test_dependencies",
+      "target": "ref_catch2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/sqlite-orm/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

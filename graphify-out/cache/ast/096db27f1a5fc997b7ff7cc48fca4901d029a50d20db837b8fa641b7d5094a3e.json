@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vcpkg_tool_meson_json",
+      "label": "vcpkg-tool-meson.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-tool-meson.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vcpkg_tool_meson_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-tool-meson.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vcpkg_tool_meson_json",
+      "target": "v_vcpkg_tool_meson_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vcpkg-tool-meson.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

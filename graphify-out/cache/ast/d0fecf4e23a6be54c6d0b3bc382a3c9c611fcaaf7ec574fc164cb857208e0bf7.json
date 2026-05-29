@@ -1,0 +1,2523 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "magnum_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "magnum_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "magnum_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "magnum_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "magnum_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "magnum_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "magnum_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "magnum_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "magnum_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "magnum_vcpkg_features_al_info",
+      "label": "al-info",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "magnum_vcpkg_al_info_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "magnum_vcpkg_al_info_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "magnum_vcpkg_features_anyaudioimporter",
+      "label": "anyaudioimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "magnum_vcpkg_anyaudioimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "magnum_vcpkg_anyaudioimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "magnum_vcpkg_features_anyimageconverter",
+      "label": "anyimageconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L76"
+    },
+    {
+      "id": "magnum_vcpkg_anyimageconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L77"
+    },
+    {
+      "id": "magnum_vcpkg_anyimageconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L78"
+    },
+    {
+      "id": "magnum_vcpkg_features_anyimageimporter",
+      "label": "anyimageimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L88"
+    },
+    {
+      "id": "magnum_vcpkg_anyimageimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L89"
+    },
+    {
+      "id": "magnum_vcpkg_anyimageimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "magnum_vcpkg_features_anysceneconverter",
+      "label": "anysceneconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L100"
+    },
+    {
+      "id": "magnum_vcpkg_anysceneconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L101"
+    },
+    {
+      "id": "magnum_vcpkg_anysceneconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L102"
+    },
+    {
+      "id": "magnum_vcpkg_features_anysceneimporter",
+      "label": "anysceneimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L112"
+    },
+    {
+      "id": "magnum_vcpkg_anysceneimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L113"
+    },
+    {
+      "id": "magnum_vcpkg_anysceneimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L114"
+    },
+    {
+      "id": "magnum_vcpkg_features_anyshaderconverter",
+      "label": "anyshaderconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L124"
+    },
+    {
+      "id": "magnum_vcpkg_anyshaderconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L125"
+    },
+    {
+      "id": "magnum_vcpkg_anyshaderconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L126"
+    },
+    {
+      "id": "magnum_vcpkg_features_audio",
+      "label": "audio",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L136"
+    },
+    {
+      "id": "magnum_vcpkg_audio_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L137"
+    },
+    {
+      "id": "magnum_vcpkg_audio_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L138"
+    },
+    {
+      "id": "magnum_vcpkg_features_cglcontext",
+      "label": "cglcontext",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L142"
+    },
+    {
+      "id": "magnum_vcpkg_cglcontext_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L143"
+    },
+    {
+      "id": "magnum_vcpkg_cglcontext_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L144"
+    },
+    {
+      "id": "magnum_vcpkg_cglcontext_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L145"
+    },
+    {
+      "id": "magnum_vcpkg_features_debugtools",
+      "label": "debugtools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L155"
+    },
+    {
+      "id": "magnum_vcpkg_debugtools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L156"
+    },
+    {
+      "id": "magnum_vcpkg_features_distancefieldconverter",
+      "label": "distancefieldconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L158"
+    },
+    {
+      "id": "magnum_vcpkg_distancefieldconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L159"
+    },
+    {
+      "id": "magnum_vcpkg_distancefieldconverter_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L160"
+    },
+    {
+      "id": "magnum_vcpkg_distancefieldconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L161"
+    },
+    {
+      "id": "magnum_vcpkg_features_eglcontext",
+      "label": "eglcontext",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L173"
+    },
+    {
+      "id": "magnum_vcpkg_eglcontext_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L174"
+    },
+    {
+      "id": "magnum_vcpkg_eglcontext_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L175"
+    },
+    {
+      "id": "magnum_vcpkg_eglcontext_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L176"
+    },
+    {
+      "id": "magnum_vcpkg_features_fontconverter",
+      "label": "fontconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L186"
+    },
+    {
+      "id": "magnum_vcpkg_fontconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L187"
+    },
+    {
+      "id": "magnum_vcpkg_fontconverter_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L188"
+    },
+    {
+      "id": "magnum_vcpkg_fontconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L189"
+    },
+    {
+      "id": "magnum_vcpkg_features_gl",
+      "label": "gl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L201"
+    },
+    {
+      "id": "magnum_vcpkg_gl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L202"
+    },
+    {
+      "id": "magnum_vcpkg_gl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L203"
+    },
+    {
+      "id": "magnum_vcpkg_features_gl_info",
+      "label": "gl-info",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L205"
+    },
+    {
+      "id": "magnum_vcpkg_gl_info_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L206"
+    },
+    {
+      "id": "magnum_vcpkg_gl_info_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L207"
+    },
+    {
+      "id": "magnum_vcpkg_gl_info_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L208"
+    },
+    {
+      "id": "magnum_vcpkg_features_glfwapplication",
+      "label": "glfwapplication",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L218"
+    },
+    {
+      "id": "magnum_vcpkg_glfwapplication_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L219"
+    },
+    {
+      "id": "magnum_vcpkg_glfwapplication_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L220"
+    },
+    {
+      "id": "magnum_vcpkg_features_glxcontext",
+      "label": "glxcontext",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L224"
+    },
+    {
+      "id": "magnum_vcpkg_glxcontext_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L225"
+    },
+    {
+      "id": "magnum_vcpkg_glxcontext_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L226"
+    },
+    {
+      "id": "magnum_vcpkg_glxcontext_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L227"
+    },
+    {
+      "id": "magnum_vcpkg_features_imageconverter",
+      "label": "imageconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L237"
+    },
+    {
+      "id": "magnum_vcpkg_imageconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L238"
+    },
+    {
+      "id": "magnum_vcpkg_imageconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L239"
+    },
+    {
+      "id": "magnum_vcpkg_features_magnumfont",
+      "label": "magnumfont",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L256"
+    },
+    {
+      "id": "magnum_vcpkg_magnumfont_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L257"
+    },
+    {
+      "id": "magnum_vcpkg_magnumfont_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L258"
+    },
+    {
+      "id": "magnum_vcpkg_features_magnumfontconverter",
+      "label": "magnumfontconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L268"
+    },
+    {
+      "id": "magnum_vcpkg_magnumfontconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L269"
+    },
+    {
+      "id": "magnum_vcpkg_magnumfontconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L270"
+    },
+    {
+      "id": "magnum_vcpkg_features_meshtools",
+      "label": "meshtools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L287"
+    },
+    {
+      "id": "magnum_vcpkg_meshtools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L288"
+    },
+    {
+      "id": "magnum_vcpkg_meshtools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L289"
+    },
+    {
+      "id": "magnum_vcpkg_features_objimporter",
+      "label": "objimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L299"
+    },
+    {
+      "id": "magnum_vcpkg_objimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L300"
+    },
+    {
+      "id": "magnum_vcpkg_objimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L301"
+    },
+    {
+      "id": "magnum_vcpkg_features_opengltester",
+      "label": "opengltester",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L311"
+    },
+    {
+      "id": "magnum_vcpkg_opengltester_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L312"
+    },
+    {
+      "id": "magnum_vcpkg_opengltester_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L313"
+    },
+    {
+      "id": "magnum_vcpkg_features_primitives",
+      "label": "primitives",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L330"
+    },
+    {
+      "id": "magnum_vcpkg_primitives_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L331"
+    },
+    {
+      "id": "magnum_vcpkg_primitives_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L332"
+    },
+    {
+      "id": "magnum_vcpkg_features_sceneconverter",
+      "label": "sceneconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L343"
+    },
+    {
+      "id": "magnum_vcpkg_sceneconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L344"
+    },
+    {
+      "id": "magnum_vcpkg_sceneconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L345"
+    },
+    {
+      "id": "magnum_vcpkg_features_scenegraph",
+      "label": "scenegraph",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L362"
+    },
+    {
+      "id": "magnum_vcpkg_scenegraph_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L363"
+    },
+    {
+      "id": "magnum_vcpkg_features_sdl2application",
+      "label": "sdl2application",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L365"
+    },
+    {
+      "id": "magnum_vcpkg_sdl2application_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L366"
+    },
+    {
+      "id": "magnum_vcpkg_sdl2application_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L367"
+    },
+    {
+      "id": "magnum_vcpkg_features_shaderconverter",
+      "label": "shaderconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L371"
+    },
+    {
+      "id": "magnum_vcpkg_shaderconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L372"
+    },
+    {
+      "id": "magnum_vcpkg_shaderconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L373"
+    },
+    {
+      "id": "magnum_vcpkg_features_shaders",
+      "label": "shaders",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L384"
+    },
+    {
+      "id": "magnum_vcpkg_shaders_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L385"
+    },
+    {
+      "id": "magnum_vcpkg_shaders_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L386"
+    },
+    {
+      "id": "magnum_vcpkg_features_shadertools",
+      "label": "shadertools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L396"
+    },
+    {
+      "id": "magnum_vcpkg_shadertools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L397"
+    },
+    {
+      "id": "magnum_vcpkg_features_text",
+      "label": "text",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L399"
+    },
+    {
+      "id": "magnum_vcpkg_text_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L400"
+    },
+    {
+      "id": "magnum_vcpkg_text_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L401"
+    },
+    {
+      "id": "magnum_vcpkg_features_texturetools",
+      "label": "texturetools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L425"
+    },
+    {
+      "id": "magnum_vcpkg_texturetools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L426"
+    },
+    {
+      "id": "magnum_vcpkg_features_tgaimageconverter",
+      "label": "tgaimageconverter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L428"
+    },
+    {
+      "id": "magnum_vcpkg_tgaimageconverter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L429"
+    },
+    {
+      "id": "magnum_vcpkg_tgaimageconverter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L430"
+    },
+    {
+      "id": "magnum_vcpkg_features_tgaimporter",
+      "label": "tgaimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L440"
+    },
+    {
+      "id": "magnum_vcpkg_tgaimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L441"
+    },
+    {
+      "id": "magnum_vcpkg_tgaimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L442"
+    },
+    {
+      "id": "magnum_vcpkg_features_trade",
+      "label": "trade",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L452"
+    },
+    {
+      "id": "magnum_vcpkg_trade_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L453"
+    },
+    {
+      "id": "magnum_vcpkg_trade_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L454"
+    },
+    {
+      "id": "magnum_vcpkg_features_vk",
+      "label": "vk",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L464"
+    },
+    {
+      "id": "magnum_vcpkg_vk_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L465"
+    },
+    {
+      "id": "magnum_vcpkg_vk_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L466"
+    },
+    {
+      "id": "magnum_vcpkg_features_vk_info",
+      "label": "vk-info",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L470"
+    },
+    {
+      "id": "magnum_vcpkg_vk_info_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L471"
+    },
+    {
+      "id": "magnum_vcpkg_vk_info_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L472"
+    },
+    {
+      "id": "magnum_vcpkg_features_wavaudioimporter",
+      "label": "wavaudioimporter",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L482"
+    },
+    {
+      "id": "magnum_vcpkg_wavaudioimporter_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L483"
+    },
+    {
+      "id": "magnum_vcpkg_wavaudioimporter_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L484"
+    },
+    {
+      "id": "magnum_vcpkg_features_wglcontext",
+      "label": "wglcontext",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L494"
+    },
+    {
+      "id": "magnum_vcpkg_wglcontext_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L495"
+    },
+    {
+      "id": "magnum_vcpkg_wglcontext_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L496"
+    },
+    {
+      "id": "magnum_vcpkg_wglcontext_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L497"
+    },
+    {
+      "id": "magnum_vcpkg_features_windowlesscglapplication",
+      "label": "windowlesscglapplication",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L507"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesscglapplication_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L508"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesscglapplication_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L509"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesscglapplication_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L510"
+    },
+    {
+      "id": "magnum_vcpkg_features_windowlesseglapplication",
+      "label": "windowlesseglapplication",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L520"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesseglapplication_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L521"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesseglapplication_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L522"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesseglapplication_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L523"
+    },
+    {
+      "id": "magnum_vcpkg_features_windowlessglxapplication",
+      "label": "windowlessglxapplication",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L533"
+    },
+    {
+      "id": "magnum_vcpkg_windowlessglxapplication_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L534"
+    },
+    {
+      "id": "magnum_vcpkg_windowlessglxapplication_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L535"
+    },
+    {
+      "id": "magnum_vcpkg_windowlessglxapplication_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L536"
+    },
+    {
+      "id": "magnum_vcpkg_features_windowlesswglapplication",
+      "label": "windowlesswglapplication",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L546"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesswglapplication_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L547"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesswglapplication_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L548"
+    },
+    {
+      "id": "magnum_vcpkg_windowlesswglapplication_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L549"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_anyaudioimporter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_anyimageconverter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_anyimageimporter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_anysceneconverter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_anysceneimporter",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_debugtools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_gl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_meshtools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_primitives",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_scenegraph",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_sdl2application",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_shaders",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_text",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_texturetools",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_default_features",
+      "target": "ref_trade",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_magnum_vcpkg_json",
+      "target": "magnum_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_al_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_al_info",
+      "target": "magnum_vcpkg_al_info_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_al_info",
+      "target": "magnum_vcpkg_al_info_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anyaudioimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyaudioimporter",
+      "target": "magnum_vcpkg_anyaudioimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyaudioimporter",
+      "target": "magnum_vcpkg_anyaudioimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anyimageconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyimageconverter",
+      "target": "magnum_vcpkg_anyimageconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyimageconverter",
+      "target": "magnum_vcpkg_anyimageconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anyimageimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyimageimporter",
+      "target": "magnum_vcpkg_anyimageimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyimageimporter",
+      "target": "magnum_vcpkg_anyimageimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anysceneconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anysceneconverter",
+      "target": "magnum_vcpkg_anysceneconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anysceneconverter",
+      "target": "magnum_vcpkg_anysceneconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anysceneimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anysceneimporter",
+      "target": "magnum_vcpkg_anysceneimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anysceneimporter",
+      "target": "magnum_vcpkg_anysceneimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_anyshaderconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L124",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyshaderconverter",
+      "target": "magnum_vcpkg_anyshaderconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L125",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_anyshaderconverter",
+      "target": "magnum_vcpkg_anyshaderconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_audio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_audio",
+      "target": "magnum_vcpkg_audio_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_audio",
+      "target": "magnum_vcpkg_audio_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_audio_dependencies",
+      "target": "ref_openal_soft",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L138",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_cglcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_cglcontext",
+      "target": "magnum_vcpkg_cglcontext_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_cglcontext",
+      "target": "magnum_vcpkg_cglcontext_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_cglcontext",
+      "target": "magnum_vcpkg_cglcontext_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_debugtools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L155",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_debugtools",
+      "target": "magnum_vcpkg_debugtools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_distancefieldconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_distancefieldconverter",
+      "target": "magnum_vcpkg_distancefieldconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_distancefieldconverter",
+      "target": "magnum_vcpkg_distancefieldconverter_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_distancefieldconverter",
+      "target": "magnum_vcpkg_distancefieldconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_eglcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_eglcontext",
+      "target": "magnum_vcpkg_eglcontext_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_eglcontext",
+      "target": "magnum_vcpkg_eglcontext_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_eglcontext",
+      "target": "magnum_vcpkg_eglcontext_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_fontconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_fontconverter",
+      "target": "magnum_vcpkg_fontconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_fontconverter",
+      "target": "magnum_vcpkg_fontconverter_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_fontconverter",
+      "target": "magnum_vcpkg_fontconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_gl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_gl",
+      "target": "magnum_vcpkg_gl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_gl",
+      "target": "magnum_vcpkg_gl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_gl_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_gl_info",
+      "target": "magnum_vcpkg_gl_info_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_gl_info",
+      "target": "magnum_vcpkg_gl_info_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_gl_info",
+      "target": "magnum_vcpkg_gl_info_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_glfwapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_glfwapplication",
+      "target": "magnum_vcpkg_glfwapplication_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_glfwapplication",
+      "target": "magnum_vcpkg_glfwapplication_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_glfwapplication_dependencies",
+      "target": "ref_glfw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L220",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_glxcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_glxcontext",
+      "target": "magnum_vcpkg_glxcontext_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L225",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_glxcontext",
+      "target": "magnum_vcpkg_glxcontext_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_glxcontext",
+      "target": "magnum_vcpkg_glxcontext_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_imageconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_imageconverter",
+      "target": "magnum_vcpkg_imageconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L238",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_imageconverter",
+      "target": "magnum_vcpkg_imageconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_magnumfont",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_magnumfont",
+      "target": "magnum_vcpkg_magnumfont_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_magnumfont",
+      "target": "magnum_vcpkg_magnumfont_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_magnumfontconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L268",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_magnumfontconverter",
+      "target": "magnum_vcpkg_magnumfontconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_magnumfontconverter",
+      "target": "magnum_vcpkg_magnumfontconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_meshtools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L287",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_meshtools",
+      "target": "magnum_vcpkg_meshtools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_meshtools",
+      "target": "magnum_vcpkg_meshtools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_objimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L299",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_objimporter",
+      "target": "magnum_vcpkg_objimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_objimporter",
+      "target": "magnum_vcpkg_objimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_opengltester",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L311",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_opengltester",
+      "target": "magnum_vcpkg_opengltester_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_opengltester",
+      "target": "magnum_vcpkg_opengltester_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L313",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_primitives",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_primitives",
+      "target": "magnum_vcpkg_primitives_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L331",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_primitives",
+      "target": "magnum_vcpkg_primitives_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_sceneconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L343",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_sceneconverter",
+      "target": "magnum_vcpkg_sceneconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L344",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_sceneconverter",
+      "target": "magnum_vcpkg_sceneconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_scenegraph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_scenegraph",
+      "target": "magnum_vcpkg_scenegraph_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L363",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_sdl2application",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L365",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_sdl2application",
+      "target": "magnum_vcpkg_sdl2application_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_sdl2application",
+      "target": "magnum_vcpkg_sdl2application_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L367",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_sdl2application_dependencies",
+      "target": "ref_sdl2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L367",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_shaderconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L371",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_shaderconverter",
+      "target": "magnum_vcpkg_shaderconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_shaderconverter",
+      "target": "magnum_vcpkg_shaderconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L373",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_shaders",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L384",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_shaders",
+      "target": "magnum_vcpkg_shaders_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L385",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_shaders",
+      "target": "magnum_vcpkg_shaders_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L386",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_shadertools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L396",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_shadertools",
+      "target": "magnum_vcpkg_shadertools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L397",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_text",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_text",
+      "target": "magnum_vcpkg_text_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L400",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_text",
+      "target": "magnum_vcpkg_text_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L401",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_texturetools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L425",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_texturetools",
+      "target": "magnum_vcpkg_texturetools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L426",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_tgaimageconverter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_tgaimageconverter",
+      "target": "magnum_vcpkg_tgaimageconverter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L429",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_tgaimageconverter",
+      "target": "magnum_vcpkg_tgaimageconverter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L430",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_tgaimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L440",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_tgaimporter",
+      "target": "magnum_vcpkg_tgaimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L441",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_tgaimporter",
+      "target": "magnum_vcpkg_tgaimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L442",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_trade",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L452",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_trade",
+      "target": "magnum_vcpkg_trade_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L453",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_trade",
+      "target": "magnum_vcpkg_trade_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L454",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_vk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L464",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_vk",
+      "target": "magnum_vcpkg_vk_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L465",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_vk",
+      "target": "magnum_vcpkg_vk_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L466",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_vk_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L466",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_vk_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L470",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_vk_info",
+      "target": "magnum_vcpkg_vk_info_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_vk_info",
+      "target": "magnum_vcpkg_vk_info_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L472",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_wavaudioimporter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L482",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_wavaudioimporter",
+      "target": "magnum_vcpkg_wavaudioimporter_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L483",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_wavaudioimporter",
+      "target": "magnum_vcpkg_wavaudioimporter_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L484",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_wglcontext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L494",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_wglcontext",
+      "target": "magnum_vcpkg_wglcontext_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L495",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_wglcontext",
+      "target": "magnum_vcpkg_wglcontext_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L496",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_wglcontext",
+      "target": "magnum_vcpkg_wglcontext_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L497",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_windowlesscglapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L507",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesscglapplication",
+      "target": "magnum_vcpkg_windowlesscglapplication_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L508",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesscglapplication",
+      "target": "magnum_vcpkg_windowlesscglapplication_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L509",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesscglapplication",
+      "target": "magnum_vcpkg_windowlesscglapplication_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L510",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_windowlesseglapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L520",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesseglapplication",
+      "target": "magnum_vcpkg_windowlesseglapplication_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L521",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesseglapplication",
+      "target": "magnum_vcpkg_windowlesseglapplication_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesseglapplication",
+      "target": "magnum_vcpkg_windowlesseglapplication_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L523",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_windowlessglxapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L533",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlessglxapplication",
+      "target": "magnum_vcpkg_windowlessglxapplication_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L534",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlessglxapplication",
+      "target": "magnum_vcpkg_windowlessglxapplication_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L535",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlessglxapplication",
+      "target": "magnum_vcpkg_windowlessglxapplication_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L536",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features",
+      "target": "magnum_vcpkg_features_windowlesswglapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L546",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesswglapplication",
+      "target": "magnum_vcpkg_windowlesswglapplication_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L547",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesswglapplication",
+      "target": "magnum_vcpkg_windowlesswglapplication_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L548",
+      "weight": 1.0
+    },
+    {
+      "source": "magnum_vcpkg_features_windowlesswglapplication",
+      "target": "magnum_vcpkg_windowlesswglapplication_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/magnum/vcpkg.json",
+      "source_location": "L549",
+      "weight": 1.0
+    }
+  ]
+}

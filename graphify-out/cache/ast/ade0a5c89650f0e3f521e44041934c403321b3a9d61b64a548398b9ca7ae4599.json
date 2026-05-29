@@ -1,0 +1,299 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_features_dtoa",
+      "label": "dtoa",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_dtoa_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_features_mem_file",
+      "label": "mem-file",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_mem_file_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_mem_file_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_features_openssl_md5",
+      "label": "openssl-md5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_openssl_md5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "libxlsxwriter_vcpkg_openssl_md5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_dependencies",
+      "target": "ref_minizip",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libxlsxwriter_vcpkg_json",
+      "target": "libxlsxwriter_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features",
+      "target": "libxlsxwriter_vcpkg_features_dtoa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features_dtoa",
+      "target": "libxlsxwriter_vcpkg_dtoa_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features",
+      "target": "libxlsxwriter_vcpkg_features_mem_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features_mem_file",
+      "target": "libxlsxwriter_vcpkg_mem_file_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features_mem_file",
+      "target": "libxlsxwriter_vcpkg_mem_file_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features",
+      "target": "libxlsxwriter_vcpkg_features_openssl_md5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features_openssl_md5",
+      "target": "libxlsxwriter_vcpkg_openssl_md5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_features_openssl_md5",
+      "target": "libxlsxwriter_vcpkg_openssl_md5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libxlsxwriter_vcpkg_openssl_md5_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libxlsxwriter/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

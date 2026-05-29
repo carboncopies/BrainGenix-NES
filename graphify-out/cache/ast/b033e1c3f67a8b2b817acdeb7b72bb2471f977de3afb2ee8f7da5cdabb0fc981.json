@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rlottie_json",
+      "label": "rlottie.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rlottie.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rlottie_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rlottie.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rlottie_json",
+      "target": "r_rlottie_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rlottie.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

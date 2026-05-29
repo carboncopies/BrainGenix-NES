@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_opentelemetry_fluentd_json",
+      "label": "opentelemetry-fluentd.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/opentelemetry-fluentd.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_opentelemetry_fluentd_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/opentelemetry-fluentd.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_opentelemetry_fluentd_json",
+      "target": "o_opentelemetry_fluentd_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/opentelemetry-fluentd.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

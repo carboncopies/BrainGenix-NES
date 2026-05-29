@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_spdk_json",
+      "label": "spdk.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_spdk_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_spdk_json",
+      "target": "s_spdk_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/spdk.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

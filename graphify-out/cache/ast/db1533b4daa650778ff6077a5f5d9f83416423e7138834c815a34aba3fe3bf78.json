@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_rbdl_json",
+      "label": "rbdl.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rbdl.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_rbdl_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rbdl.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_rbdl_json",
+      "target": "r_rbdl_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/rbdl.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

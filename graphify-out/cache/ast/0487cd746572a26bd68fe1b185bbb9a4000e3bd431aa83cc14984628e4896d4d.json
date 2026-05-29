@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_comment",
+      "label": "$comment",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L15"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_comment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_comment",
+      "target": "ref_note_all_changes_made_to_this_file_will_get_overwritten_by_the_next_port_release",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_comment",
+      "target": "ref_please_contribute_your_changes_to_https_github_com_azure_azure_sdk_for_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_description",
+      "target": "ref_microsoft_azure_messaging_event_hubs_blob_checkpoint_store_sdk_for_c",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_description",
+      "target": "ref_this_library_provides_an_azure_storage_blobs_based_implementation_of_an_azure_messaging_event_hubs_sdk_checkpoint_store",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_json",
+      "target": "azure_messaging_eventhubs_checkpointstore_blob_cpp_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/azure-messaging-eventhubs-checkpointstore-blob-cpp/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    }
+  ]
+}

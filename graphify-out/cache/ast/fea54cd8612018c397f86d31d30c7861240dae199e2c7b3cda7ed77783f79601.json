@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_o_oniguruma_json",
+      "label": "oniguruma.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oniguruma.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "o_oniguruma_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oniguruma.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_o_oniguruma_json",
+      "target": "o_oniguruma_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/o-/oniguruma.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

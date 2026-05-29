@@ -1,0 +1,467 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ogre_next_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ogre_next_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ogre_next_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ogre_next_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ogre_next_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "ogre_next_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "ogre_next_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "ogre_next_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "ogre_next_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "ogre_next_vcpkg_features_d3d11",
+      "label": "d3d11",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "ogre_next_vcpkg_d3d11_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "ogre_next_vcpkg_d3d11_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "ogre_next_vcpkg_features_gl3plus",
+      "label": "gl3plus",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "ogre_next_vcpkg_gl3plus_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "ogre_next_vcpkg_gl3plus_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "ogre_next_vcpkg_features_metal",
+      "label": "metal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "ogre_next_vcpkg_metal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "ogre_next_vcpkg_metal_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "ogre_next_vcpkg_features_planar_reflections",
+      "label": "planar-reflections",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "ogre_next_vcpkg_planar_reflections_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L59"
+    },
+    {
+      "id": "ogre_next_vcpkg_features_vulkan",
+      "label": "vulkan",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L61"
+    },
+    {
+      "id": "ogre_next_vcpkg_vulkan_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L62"
+    },
+    {
+      "id": "ogre_next_vcpkg_vulkan_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L63"
+    },
+    {
+      "id": "ogre_next_vcpkg_vulkan_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L64"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_dependencies",
+      "target": "ref_freeimage",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ogre_next_vcpkg_dependencies",
+      "target": "ref_rapidjson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ogre_next_vcpkg_dependencies",
+      "target": "ref_tinyxml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ogre_next_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ogre_next_vcpkg_dependencies",
+      "target": "ref_zziplib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ogre_next_vcpkg_json",
+      "target": "ogre_next_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features",
+      "target": "ogre_next_vcpkg_features_d3d11",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_d3d11",
+      "target": "ogre_next_vcpkg_d3d11_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_d3d11",
+      "target": "ogre_next_vcpkg_d3d11_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features",
+      "target": "ogre_next_vcpkg_features_gl3plus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_gl3plus",
+      "target": "ogre_next_vcpkg_gl3plus_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_gl3plus",
+      "target": "ogre_next_vcpkg_gl3plus_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features",
+      "target": "ogre_next_vcpkg_features_metal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_metal",
+      "target": "ogre_next_vcpkg_metal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_metal",
+      "target": "ogre_next_vcpkg_metal_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features",
+      "target": "ogre_next_vcpkg_features_planar_reflections",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_planar_reflections",
+      "target": "ogre_next_vcpkg_planar_reflections_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features",
+      "target": "ogre_next_vcpkg_features_vulkan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_vulkan",
+      "target": "ogre_next_vcpkg_vulkan_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_vulkan",
+      "target": "ogre_next_vcpkg_vulkan_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_features_vulkan",
+      "target": "ogre_next_vcpkg_vulkan_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "ogre_next_vcpkg_vulkan_dependencies",
+      "target": "ref_glslang",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ogre_next_vcpkg_vulkan_dependencies",
+      "target": "ref_vulkan",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ogre-next/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "joltphysics_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "joltphysics_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "joltphysics_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "joltphysics_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "joltphysics_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "joltphysics_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "joltphysics_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "joltphysics_vcpkg_features_debugrenderer",
+      "label": "debugrenderer",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "joltphysics_vcpkg_debugrenderer_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "joltphysics_vcpkg_features_profiler",
+      "label": "profiler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "joltphysics_vcpkg_profiler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "joltphysics_vcpkg_features_rtti",
+      "label": "rtti",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "joltphysics_vcpkg_rtti_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L25"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_joltphysics_vcpkg_json",
+      "target": "joltphysics_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features",
+      "target": "joltphysics_vcpkg_features_debugrenderer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features_debugrenderer",
+      "target": "joltphysics_vcpkg_debugrenderer_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features",
+      "target": "joltphysics_vcpkg_features_profiler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features_profiler",
+      "target": "joltphysics_vcpkg_profiler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features",
+      "target": "joltphysics_vcpkg_features_rtti",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "joltphysics_vcpkg_features_rtti",
+      "target": "joltphysics_vcpkg_rtti_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/joltphysics/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    }
+  ]
+}

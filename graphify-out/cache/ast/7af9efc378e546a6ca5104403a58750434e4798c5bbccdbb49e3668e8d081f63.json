@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_pocketfft_json",
+      "label": "pocketfft.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pocketfft.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_pocketfft_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pocketfft.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_pocketfft_json",
+      "target": "p_pocketfft_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/pocketfft.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

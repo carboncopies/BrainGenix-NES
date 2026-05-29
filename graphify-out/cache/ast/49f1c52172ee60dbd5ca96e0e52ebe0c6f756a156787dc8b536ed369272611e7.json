@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_igraph_arith_osx_h",
+      "label": "arith_osx.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/igraph/arith_osx.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_d_deadlightreal_swiftnet_json",
+      "label": "deadlightreal-swiftnet.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/deadlightreal-swiftnet.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "d_deadlightreal_swiftnet_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/d-/deadlightreal-swiftnet.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_d_deadlightreal_swiftnet_json",
+      "target": "d_deadlightreal_swiftnet_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/d-/deadlightreal-swiftnet.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

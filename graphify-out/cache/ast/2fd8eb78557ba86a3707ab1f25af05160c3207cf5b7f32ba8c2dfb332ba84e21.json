@@ -1,0 +1,405 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features_bigquery",
+      "label": "bigquery",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_bigquery_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_bigquery_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features_flightsql",
+      "label": "flightsql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_flightsql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_flightsql_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features_postgresql",
+      "label": "postgresql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_postgresql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_postgresql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features_snowflake",
+      "label": "snowflake",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_snowflake_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_snowflake_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_features_sqlite",
+      "label": "sqlite",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_sqlite_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "arrow_adbc_vcpkg_sqlite_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L48"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_dependencies",
+      "target": "ref_fmt",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "arrow_adbc_vcpkg_dependencies",
+      "target": "ref_nanoarrow",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_arrow_adbc_vcpkg_json",
+      "target": "arrow_adbc_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features",
+      "target": "arrow_adbc_vcpkg_features_bigquery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_bigquery",
+      "target": "arrow_adbc_vcpkg_bigquery_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_bigquery",
+      "target": "arrow_adbc_vcpkg_bigquery_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features",
+      "target": "arrow_adbc_vcpkg_features_flightsql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_flightsql",
+      "target": "arrow_adbc_vcpkg_flightsql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_flightsql",
+      "target": "arrow_adbc_vcpkg_flightsql_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features",
+      "target": "arrow_adbc_vcpkg_features_postgresql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_postgresql",
+      "target": "arrow_adbc_vcpkg_postgresql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_postgresql",
+      "target": "arrow_adbc_vcpkg_postgresql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_postgresql_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features",
+      "target": "arrow_adbc_vcpkg_features_snowflake",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_snowflake",
+      "target": "arrow_adbc_vcpkg_snowflake_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_snowflake",
+      "target": "arrow_adbc_vcpkg_snowflake_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features",
+      "target": "arrow_adbc_vcpkg_features_sqlite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_sqlite",
+      "target": "arrow_adbc_vcpkg_sqlite_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_features_sqlite",
+      "target": "arrow_adbc_vcpkg_sqlite_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "arrow_adbc_vcpkg_sqlite_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/arrow-adbc/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

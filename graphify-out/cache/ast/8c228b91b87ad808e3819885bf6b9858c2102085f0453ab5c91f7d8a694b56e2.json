@@ -1,0 +1,784 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "label": "synapse_formation_model.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_synapse_formation_model_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L38"
+    },
+    {
+      "id": "source_synapse_formation_model_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "source_synapse_formation_model_evaluate_possible_connection",
+      "label": "evaluate_possible_connection()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L96"
+    },
+    {
+      "id": "fibre_segment",
+      "label": "fibre_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L96"
+    },
+    {
+      "id": "source_synapse_formation_model_establish_connections",
+      "label": "establish_connections()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L443"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "math",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_diagnostic_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_formation_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_synapse_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "thirdparty_netmorphcmake_source_file_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "source_synapse_formation_model_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_formation_model_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "source_synapse_formation_model_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_formation_model_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L54",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "source_synapse_formation_model_evaluate_possible_connection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "source_synapse_formation_model_evaluate_possible_connection",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_synapse_formation_model_evaluate_possible_connection",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_synapse_formation_model_cc",
+      "target": "source_synapse_formation_model_establish_connections",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L443",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "pdfselection",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "atof",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_report_parameters",
+      "callee": "replicate",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_report_parameters",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L75"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L121"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L123"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "dist3D_Segment_to_Segment",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L133"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "dist3D_Segment_to_Segment",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L141"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L182"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L183"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L184"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L185"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L186"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L190"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L191"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L192"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L193"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L194"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L222"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L223"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L295"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L295"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L296"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L310"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L390"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L390"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L390"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "pow",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L390"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "connect_to",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L436"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_evaluate_possible_connection",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L438"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L448"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "PLLRoot<neuron>::head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L451"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "PLL_LOOP_FORWARD_NESTED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "OutputConnections",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L456"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Synapses",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L456"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Next",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L457"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "type_ID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L459"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Likelihood",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L464"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Presynaptic_Neuron",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "TypeID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Postsynaptic_Neuron",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L466"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "random_positive",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L489"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L492"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Structure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L492"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L493"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Structure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L493"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "Structure",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L494"
+    },
+    {
+      "caller_nid": "source_synapse_formation_model_establish_connections",
+      "callee": "remove",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/synapse_formation_model.cc",
+      "source_location": "L500"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_meekrosoft_fff_json",
+      "label": "meekrosoft-fff.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/meekrosoft-fff.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_meekrosoft_fff_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/meekrosoft-fff.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_meekrosoft_fff_json",
+      "target": "m_meekrosoft_fff_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/meekrosoft-fff.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

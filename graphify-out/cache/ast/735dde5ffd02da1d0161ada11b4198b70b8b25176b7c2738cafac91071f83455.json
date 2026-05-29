@@ -1,0 +1,93 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mpark_variant_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mpark_variant_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mpark_variant_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mpark_variant_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mpark_variant_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "target": "mpark_variant_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "target": "mpark_variant_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "target": "mpark_variant_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "target": "mpark_variant_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mpark_variant_vcpkg_json",
+      "target": "mpark_variant_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mpark-variant/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ]
+}

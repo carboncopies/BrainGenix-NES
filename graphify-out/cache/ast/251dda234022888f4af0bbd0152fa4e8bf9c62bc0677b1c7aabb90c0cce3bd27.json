@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_fontconfig_json",
+      "label": "fontconfig.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fontconfig.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_fontconfig_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fontconfig.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_fontconfig_json",
+      "target": "f_fontconfig_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/fontconfig.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

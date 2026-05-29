@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "clue_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "clue_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "clue_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "clue_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "clue_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "clue_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "clue_vcpkg_features_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "clue_vcpkg_test_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L14"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_clue_vcpkg_json",
+      "target": "clue_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "clue_vcpkg_features",
+      "target": "clue_vcpkg_features_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "clue_vcpkg_features_test",
+      "target": "clue_vcpkg_test_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/clue/vcpkg.json",
+      "source_location": "L14",
+      "weight": 1.0
+    }
+  ]
+}

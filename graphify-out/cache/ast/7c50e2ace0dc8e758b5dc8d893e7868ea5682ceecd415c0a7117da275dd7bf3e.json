@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_u_urdfdom_json",
+      "label": "urdfdom.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/urdfdom.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "u_urdfdom_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/u-/urdfdom.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_u_urdfdom_json",
+      "target": "u_urdfdom_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/u-/urdfdom.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

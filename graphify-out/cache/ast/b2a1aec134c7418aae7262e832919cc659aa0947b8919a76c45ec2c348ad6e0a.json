@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "ncurses_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "ncurses_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "ncurses_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "ncurses_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "ncurses_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "ncurses_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "ncurses_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "ncurses_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "ncurses_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "ncurses_vcpkg_features_check_size",
+      "label": "check-size",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "ncurses_vcpkg_check_size_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "ncurses_vcpkg_description",
+      "target": "ref_free_software_emulation_of_curses_in_system_v_release_4_0_and_more",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "ncurses_vcpkg_description",
+      "target": "ref_this_port_installs_a_wide_character_configuration_ncursesw",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_ncurses_vcpkg_json",
+      "target": "ncurses_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "ncurses_vcpkg_features",
+      "target": "ncurses_vcpkg_features_check_size",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "ncurses_vcpkg_features_check_size",
+      "target": "ncurses_vcpkg_check_size_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/ncurses/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    }
+  ]
+}

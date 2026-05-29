@@ -1,0 +1,381 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "libproxy_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "libproxy_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "libproxy_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "libproxy_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "libproxy_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "libproxy_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "libproxy_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "libproxy_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "libproxy_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "libproxy_vcpkg_features_bindings_csharp",
+      "label": "bindings-csharp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "libproxy_vcpkg_bindings_csharp_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "libproxy_vcpkg_features_bindings_perl",
+      "label": "bindings-perl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "libproxy_vcpkg_bindings_perl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "libproxy_vcpkg_features_bindings_python",
+      "label": "bindings-python",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "libproxy_vcpkg_bindings_python_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "libproxy_vcpkg_features_bindings_ruby",
+      "label": "bindings-ruby",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "libproxy_vcpkg_bindings_ruby_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "libproxy_vcpkg_features_bindings_vala",
+      "label": "bindings-vala",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "libproxy_vcpkg_bindings_vala_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "libproxy_vcpkg_features_tests",
+      "label": "tests",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "libproxy_vcpkg_tests_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "libproxy_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "libproxy_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_libproxy_vcpkg_json",
+      "target": "libproxy_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_bindings_csharp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_bindings_csharp",
+      "target": "libproxy_vcpkg_bindings_csharp_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_bindings_perl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_bindings_perl",
+      "target": "libproxy_vcpkg_bindings_perl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_bindings_python",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_bindings_python",
+      "target": "libproxy_vcpkg_bindings_python_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_bindings_ruby",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_bindings_ruby",
+      "target": "libproxy_vcpkg_bindings_ruby_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_bindings_vala",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_bindings_vala",
+      "target": "libproxy_vcpkg_bindings_vala_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_tests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_tests",
+      "target": "libproxy_vcpkg_tests_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features",
+      "target": "libproxy_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "libproxy_vcpkg_features_tools",
+      "target": "libproxy_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/libproxy/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ]
+}

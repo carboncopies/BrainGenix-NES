@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_k_kf5itemmodels_json",
+      "label": "kf5itemmodels.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf5itemmodels.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "k_kf5itemmodels_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf5itemmodels.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_k_kf5itemmodels_json",
+      "target": "k_kf5itemmodels_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/k-/kf5itemmodels.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

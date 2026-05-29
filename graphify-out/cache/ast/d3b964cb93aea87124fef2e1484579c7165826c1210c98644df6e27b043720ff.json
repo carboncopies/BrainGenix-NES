@@ -1,0 +1,407 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "label": "Vector2D.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "geometry_vector2d_operator",
+      "label": "operator-()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L15"
+    },
+    {
+      "id": "vector2d",
+      "label": "Vector2D",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L15"
+    },
+    {
+      "id": "geometry_vector2d_normalize",
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L86"
+    },
+    {
+      "id": "geometry_vector2d_sum",
+      "label": "sum()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L94"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "thirdparty_netmorphcmake_source_geometry_point2d_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "thirdparty_netmorphcmake_source_geometry_vector2d_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L50",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L58",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L65",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L72",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_operator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_operator",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L79",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_normalize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_sum",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_sum",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_geometry_vector2d_cc",
+      "target": "geometry_vector2d_sum",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "geometry_vector2d_sum",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "geometry_vector2d_sum",
+      "target": "vector2d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L103",
+      "weight": 1.0,
+      "context": "parameter_type"
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "geometry_vector2d_normalize",
+      "callee": "sqrt",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/geometry/Vector2D.cc",
+      "source_location": "L87"
+    }
+  ]
+}

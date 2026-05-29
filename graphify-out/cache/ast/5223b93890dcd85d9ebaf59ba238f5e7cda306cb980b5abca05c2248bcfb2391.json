@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_j_josuttis_jthread_json",
+      "label": "josuttis-jthread.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/josuttis-jthread.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "j_josuttis_jthread_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/j-/josuttis-jthread.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_j_josuttis_jthread_json",
+      "target": "j_josuttis_jthread_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/j-/josuttis-jthread.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

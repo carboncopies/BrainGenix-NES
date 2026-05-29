@@ -1,0 +1,239 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "angle_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "angle_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "angle_vcpkg_port_version",
+      "label": "port-version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "angle_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "angle_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "angle_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "angle_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "angle_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "angle_vcpkg_features_metal",
+      "label": "metal",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "angle_vcpkg_metal_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "angle_vcpkg_metal_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L31"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_port_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_vcpkg_description",
+      "target": "ref_a_conformant_opengl_es_implementation_for_windows_mac_and_linux",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "angle_vcpkg_description",
+      "target": "ref_the_goal_of_angle_is_to_allow_users_of_multiple_operating_systems_to_seamlessly_run_webgl_and_other_opengl_es_content_by_translating_opengl_es_api_calls_to_one_of_the_hardware_supported_apis_available_for_that_platform_angle_currently_provides_translation_from_opengl_es_2_0_and_3_0_to_desktop_opengl_opengl_es_direct3d_9_and_direct3d_11_support_for_translation_from_opengl_es_to_vulkan_is_underway_and_future_plans_include_compute_shader_support_es_3_1_and_macos_support",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_vcpkg_dependencies",
+      "target": "ref_egl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "angle_vcpkg_dependencies",
+      "target": "ref_opengl_registry",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "angle_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_angle_vcpkg_json",
+      "target": "angle_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_vcpkg_features",
+      "target": "angle_vcpkg_features_metal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_vcpkg_features_metal",
+      "target": "angle_vcpkg_metal_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "angle_vcpkg_features_metal",
+      "target": "angle_vcpkg_metal_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/angle/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    }
+  ]
+}

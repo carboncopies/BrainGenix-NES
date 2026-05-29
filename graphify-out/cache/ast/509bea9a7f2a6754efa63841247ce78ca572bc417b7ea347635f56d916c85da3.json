@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_flashlight_cuda_json",
+      "label": "flashlight-cuda.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cuda.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_flashlight_cuda_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cuda.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_flashlight_cuda_json",
+      "target": "f_flashlight_cuda_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flashlight-cuda.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

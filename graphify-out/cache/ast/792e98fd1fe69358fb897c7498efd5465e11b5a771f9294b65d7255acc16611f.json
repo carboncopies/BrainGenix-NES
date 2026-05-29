@@ -1,0 +1,829 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "label": "global_preferences.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload",
+      "label": "HotReload",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_clearlog",
+      "label": "clearLog",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_deletepatchfiles",
+      "label": "deletePatchFiles",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_hotreloadshortcutmodifiers",
+      "label": "hotReloadShortcutModifiers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_hotreloadshortcutvirtualkeycode",
+      "label": "hotReloadShortcutVirtualKeyCode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_loadincompletecompilands",
+      "label": "loadIncompleteCompilands ",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_loadincompletemodules",
+      "label": "loadIncompleteModules",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "livepp_global_preferences_hotreload_timeout",
+      "label": "timeout",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "livepp_global_preferences_hotrestart",
+      "label": "HotRestart",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "livepp_global_preferences_hotrestart_hotrestartshortcutmodifiers",
+      "label": "hotRestartShortcutModifiers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "livepp_global_preferences_hotrestart_hotrestartshortcutvirtualkeycode",
+      "label": "hotRestartShortcutVirtualKeyCode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "livepp_global_preferences_hotrestart_timeout",
+      "label": "timeout",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "livepp_global_preferences_ide",
+      "label": "IDE",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "livepp_global_preferences_ide_keepbreakpointsenabled",
+      "label": "keepBreakpointsEnabled",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "livepp_global_preferences_ide_showmodaldialog",
+      "label": "showModalDialog",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "livepp_global_preferences_ide_toggleoptimizationsshortcutmodifiers",
+      "label": "toggleOptimizationsShortcutModifiers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "livepp_global_preferences_ide_toggleoptimizationsshortcutvirtualkeycode",
+      "label": "toggleOptimizationsShortcutVirtualKeyCode",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "livepp_global_preferences_licensing",
+      "label": "Licensing",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "livepp_global_preferences_licensing_enablelicenseexpirationwarning",
+      "label": "enableLicenseExpirationWarning",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "livepp_global_preferences_licensing_licenseexpirationwarningdays",
+      "label": "licenseExpirationWarningDays",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "livepp_global_preferences_logging",
+      "label": "Logging",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorerror",
+      "label": "colorError",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorinfo",
+      "label": "colorInfo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorpanic",
+      "label": "colorPanic",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorplatform",
+      "label": "colorPlatform",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorsuccess",
+      "label": "colorSuccess",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colortimeanddate",
+      "label": "colorTimeAndDate",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L32"
+    },
+    {
+      "id": "livepp_global_preferences_logging_colorwarning",
+      "label": "colorWarning",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L33"
+    },
+    {
+      "id": "livepp_global_preferences_logging_enablewordwrap",
+      "label": "enableWordWrap",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "livepp_global_preferences_logging_font",
+      "label": "font",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "livepp_global_preferences_logging_printtimestamps",
+      "label": "printTimestamps",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "livepp_global_preferences_logging_verbosity",
+      "label": "verbosity",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "livepp_global_preferences_network",
+      "label": "Network",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "livepp_global_preferences_network_hostorip",
+      "label": "hostOrIP",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "livepp_global_preferences_network_port",
+      "label": "port",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "livepp_global_preferences_network_timeout",
+      "label": "timeout",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "livepp_global_preferences_notifications",
+      "label": "Notifications",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_areenabled",
+      "label": "areEnabled",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L45"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_focustype",
+      "label": "focusType",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L46"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_playsoundonerror",
+      "label": "playSoundOnError",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L47"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_playsoundonsuccess",
+      "label": "playSoundOnSuccess",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_soundonerror",
+      "label": "soundOnError",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "livepp_global_preferences_notifications_soundonsuccess",
+      "label": "soundOnSuccess",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L50"
+    },
+    {
+      "id": "livepp_global_preferences_ui",
+      "label": "UI",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "livepp_global_preferences_ui_initialstate",
+      "label": "initialState",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L53"
+    },
+    {
+      "id": "livepp_global_preferences_ui_language",
+      "label": "language",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "livepp_global_preferences_ui_showanimatedicon",
+      "label": "showAnimatedIcon",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "livepp_global_preferences_ui_showcolorizedicon",
+      "label": "showColorizedIcon",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "livepp_global_preferences_ui_showerroronversionmismatch",
+      "label": "showErrorOnVersionMismatch",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "livepp_global_preferences_ui_showtaskbarprogress",
+      "label": "showTaskBarProgress",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L58"
+    },
+    {
+      "id": "livepp_global_preferences_ui_style",
+      "label": "style",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_hotreload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_clearlog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_deletepatchfiles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_hotreloadshortcutmodifiers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_hotreloadshortcutvirtualkeycode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_loadincompletecompilands",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_loadincompletemodules",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotreload",
+      "target": "livepp_global_preferences_hotreload_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_hotrestart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotrestart",
+      "target": "livepp_global_preferences_hotrestart_hotrestartshortcutmodifiers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotrestart",
+      "target": "livepp_global_preferences_hotrestart_hotrestartshortcutvirtualkeycode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_hotrestart",
+      "target": "livepp_global_preferences_hotrestart_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_ide",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ide",
+      "target": "livepp_global_preferences_ide_keepbreakpointsenabled",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ide",
+      "target": "livepp_global_preferences_ide_showmodaldialog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ide",
+      "target": "livepp_global_preferences_ide_toggleoptimizationsshortcutmodifiers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ide",
+      "target": "livepp_global_preferences_ide_toggleoptimizationsshortcutvirtualkeycode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_licensing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_licensing",
+      "target": "livepp_global_preferences_licensing_enablelicenseexpirationwarning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_licensing",
+      "target": "livepp_global_preferences_licensing_licenseexpirationwarningdays",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_logging",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorinfo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorpanic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorplatform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorsuccess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colortimeanddate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_colorwarning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_enablewordwrap",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_font",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_printtimestamps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_logging",
+      "target": "livepp_global_preferences_logging_verbosity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_network",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_network",
+      "target": "livepp_global_preferences_network_hostorip",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_network",
+      "target": "livepp_global_preferences_network_port",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_network",
+      "target": "livepp_global_preferences_network_timeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_notifications",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_areenabled",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_focustype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_playsoundonerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_playsoundonsuccess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_soundonerror",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_notifications",
+      "target": "livepp_global_preferences_notifications_soundonsuccess",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_livepp_global_preferences_json",
+      "target": "livepp_global_preferences_ui",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_initialstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_language",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_showanimatedicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_showcolorizedicon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_showerroronversionmismatch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_showtaskbarprogress",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "livepp_global_preferences_ui",
+      "target": "livepp_global_preferences_ui_style",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/livepp/global_preferences.json",
+      "source_location": "L59",
+      "weight": 1.0
+    }
+  ]
+}

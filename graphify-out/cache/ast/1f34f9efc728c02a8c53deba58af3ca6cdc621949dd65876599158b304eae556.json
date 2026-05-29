@@ -1,0 +1,295 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "directxmesh_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "directxmesh_vcpkg_version_date",
+      "label": "version-date",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "directxmesh_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "directxmesh_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "directxmesh_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "directxmesh_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "directxmesh_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "directxmesh_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "directxmesh_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "directxmesh_vcpkg_features_dx12",
+      "label": "dx12",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "directxmesh_vcpkg_dx12_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "directxmesh_vcpkg_dx12_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "directxmesh_vcpkg_features_spectre",
+      "label": "spectre",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "directxmesh_vcpkg_spectre_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "directxmesh_vcpkg_features_tools",
+      "label": "tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "directxmesh_vcpkg_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "directxmesh_vcpkg_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L43"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_version_date",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_dependencies",
+      "target": "ref_directxmath",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_directxmesh_vcpkg_json",
+      "target": "directxmesh_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features",
+      "target": "directxmesh_vcpkg_features_dx12",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features_dx12",
+      "target": "directxmesh_vcpkg_dx12_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features_dx12",
+      "target": "directxmesh_vcpkg_dx12_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features",
+      "target": "directxmesh_vcpkg_features_spectre",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features_spectre",
+      "target": "directxmesh_vcpkg_spectre_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features",
+      "target": "directxmesh_vcpkg_features_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features_tools",
+      "target": "directxmesh_vcpkg_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "directxmesh_vcpkg_features_tools",
+      "target": "directxmesh_vcpkg_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/directxmesh/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    }
+  ]
+}

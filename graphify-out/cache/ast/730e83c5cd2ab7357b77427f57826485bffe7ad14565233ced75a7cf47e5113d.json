@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cunit_json",
+      "label": "cunit.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cunit.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cunit_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cunit.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cunit_json",
+      "target": "c_cunit_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cunit.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

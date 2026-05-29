@@ -1,0 +1,377 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "aravis_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "aravis_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "aravis_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "aravis_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "aravis_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "aravis_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "aravis_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "aravis_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "aravis_vcpkg_features_fast_heartbeat",
+      "label": "fast-heartbeat",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "aravis_vcpkg_fast_heartbeat_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "aravis_vcpkg_features_introspection",
+      "label": "introspection",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "aravis_vcpkg_introspection_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "aravis_vcpkg_introspection_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "aravis_vcpkg_introspection_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "aravis_vcpkg_features_packet_socket",
+      "label": "packet-socket",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "aravis_vcpkg_packet_socket_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "aravis_vcpkg_features_usb",
+      "label": "usb",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "aravis_vcpkg_usb_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "aravis_vcpkg_usb_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_dependencies",
+      "target": "ref_glib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aravis_vcpkg_dependencies",
+      "target": "ref_libxml2",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aravis_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_default_features",
+      "target": "ref_usb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_aravis_vcpkg_json",
+      "target": "aravis_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features",
+      "target": "aravis_vcpkg_features_fast_heartbeat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_fast_heartbeat",
+      "target": "aravis_vcpkg_fast_heartbeat_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features",
+      "target": "aravis_vcpkg_features_introspection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_introspection",
+      "target": "aravis_vcpkg_introspection_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_introspection",
+      "target": "aravis_vcpkg_introspection_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_introspection",
+      "target": "aravis_vcpkg_introspection_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_introspection_dependencies",
+      "target": "ref_gobject_introspection",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "aravis_vcpkg_features",
+      "target": "aravis_vcpkg_features_packet_socket",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_packet_socket",
+      "target": "aravis_vcpkg_packet_socket_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features",
+      "target": "aravis_vcpkg_features_usb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_usb",
+      "target": "aravis_vcpkg_usb_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_features_usb",
+      "target": "aravis_vcpkg_usb_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "aravis_vcpkg_usb_dependencies",
+      "target": "ref_libusb",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/aravis/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_openvpn3_project_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "project_main_client",
+      "label": "Client",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L6"
+    },
+    {
+      "id": "openvpnclient",
+      "label": "OpenVPNClient",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "project_main_client_acc_event",
+      "label": ".acc_event()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "appcustomcontrolmessageevent",
+      "label": "AppCustomControlMessageEvent",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "project_main_client_event",
+      "label": ".event()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L10"
+    },
+    {
+      "id": "event",
+      "label": "Event",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L10"
+    },
+    {
+      "id": "project_main_client_external_pki_cert_request",
+      "label": ".external_pki_cert_request()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L11"
+    },
+    {
+      "id": "externalpkicertrequest",
+      "label": "ExternalPKICertRequest",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L11"
+    },
+    {
+      "id": "project_main_client_external_pki_sign_request",
+      "label": ".external_pki_sign_request()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L12"
+    },
+    {
+      "id": "externalpkisignrequest",
+      "label": "ExternalPKISignRequest",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L12"
+    },
+    {
+      "id": "project_main_client_log",
+      "label": ".log()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L13"
+    },
+    {
+      "id": "loginfo",
+      "label": "LogInfo",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L13"
+    },
+    {
+      "id": "project_main_client_pause_on_connection_timeout",
+      "label": ".pause_on_connection_timeout()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L14"
+    },
+    {
+      "id": "project_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L17"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_openvpn3_project_main_cpp",
+      "target": "ovpncli",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_openvpn3_project_main_cpp",
+      "target": "project_main_client",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client",
+      "target": "openvpnclient",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_acc_event",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client_acc_event",
+      "target": "appcustomcontrolmessageevent",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_event",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client_event",
+      "target": "event",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_external_pki_cert_request",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client_external_pki_cert_request",
+      "target": "externalpkicertrequest",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_external_pki_sign_request",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client_external_pki_sign_request",
+      "target": "externalpkisignrequest",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_log",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "project_main_client_log",
+      "target": "loginfo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "project_main_client",
+      "target": "project_main_client_pause_on_connection_timeout",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_openvpn3_project_main_cpp",
+      "target": "project_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L17",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "project_main_main",
+      "callee": "stats_n",
+      "is_member_call": true,
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-openvpn3/project/main.cpp",
+      "source_location": "L20"
+    }
+  ]
+}

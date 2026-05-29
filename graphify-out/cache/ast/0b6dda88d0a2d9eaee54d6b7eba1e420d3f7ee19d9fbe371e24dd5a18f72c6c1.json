@@ -1,0 +1,205 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_version_string",
+      "label": "version-string",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_features_qt5",
+      "label": "qt5",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_qt5_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "vcpkg_ci_libgwenhywfar_vcpkg_qt5_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L39"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_version_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_scripts_test_ports_vcpkg_ci_libgwenhywfar_vcpkg_json",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features_openssl",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features_openssl",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_features_qt5",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features_qt5",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_qt5_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "vcpkg_ci_libgwenhywfar_vcpkg_features_qt5",
+      "target": "vcpkg_ci_libgwenhywfar_vcpkg_qt5_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/scripts/test_ports/vcpkg-ci-libgwenhywfar/vcpkg.json",
+      "source_location": "L39",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,573 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "drogon_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "drogon_vcpkg_version_semver",
+      "label": "version-semver",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "drogon_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "drogon_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "drogon_vcpkg_documentation",
+      "label": "documentation",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "drogon_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "drogon_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "drogon_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "drogon_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "drogon_vcpkg_features_ctl",
+      "label": "ctl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "drogon_vcpkg_ctl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "drogon_vcpkg_ctl_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "drogon_vcpkg_ctl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "drogon_vcpkg_features_mysql",
+      "label": "mysql",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "drogon_vcpkg_mysql_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L43"
+    },
+    {
+      "id": "drogon_vcpkg_mysql_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L44"
+    },
+    {
+      "id": "drogon_vcpkg_features_orm",
+      "label": "orm",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "drogon_vcpkg_orm_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L65"
+    },
+    {
+      "id": "drogon_vcpkg_features_postgres",
+      "label": "postgres",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L67"
+    },
+    {
+      "id": "drogon_vcpkg_postgres_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L68"
+    },
+    {
+      "id": "drogon_vcpkg_postgres_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L69"
+    },
+    {
+      "id": "drogon_vcpkg_features_redis",
+      "label": "redis",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L79"
+    },
+    {
+      "id": "drogon_vcpkg_redis_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L80"
+    },
+    {
+      "id": "drogon_vcpkg_redis_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L81"
+    },
+    {
+      "id": "drogon_vcpkg_features_sqlite3",
+      "label": "sqlite3",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "drogon_vcpkg_sqlite3_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L92"
+    },
+    {
+      "id": "drogon_vcpkg_sqlite3_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "drogon_vcpkg_features_yaml",
+      "label": "yaml",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L103"
+    },
+    {
+      "id": "drogon_vcpkg_yaml_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L104"
+    },
+    {
+      "id": "drogon_vcpkg_yaml_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L105"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_version_semver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_documentation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_dependencies",
+      "target": "ref_brotli",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_dependencies",
+      "target": "ref_jsoncpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_dependencies",
+      "target": "ref_trantor",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_drogon_vcpkg_json",
+      "target": "drogon_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_ctl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_ctl",
+      "target": "drogon_vcpkg_ctl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_ctl",
+      "target": "drogon_vcpkg_ctl_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_ctl",
+      "target": "drogon_vcpkg_ctl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_mysql",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_mysql",
+      "target": "drogon_vcpkg_mysql_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_mysql",
+      "target": "drogon_vcpkg_mysql_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_orm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_orm",
+      "target": "drogon_vcpkg_orm_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_postgres",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_postgres",
+      "target": "drogon_vcpkg_postgres_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_postgres",
+      "target": "drogon_vcpkg_postgres_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_postgres_dependencies",
+      "target": "ref_libpq",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_redis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_redis",
+      "target": "drogon_vcpkg_redis_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_redis",
+      "target": "drogon_vcpkg_redis_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_redis_dependencies",
+      "target": "ref_hiredis",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_sqlite3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_sqlite3",
+      "target": "drogon_vcpkg_sqlite3_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_sqlite3",
+      "target": "drogon_vcpkg_sqlite3_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_sqlite3_dependencies",
+      "target": "ref_sqlite3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "drogon_vcpkg_features",
+      "target": "drogon_vcpkg_features_yaml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_yaml",
+      "target": "drogon_vcpkg_yaml_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_features_yaml",
+      "target": "drogon_vcpkg_yaml_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "drogon_vcpkg_yaml_dependencies",
+      "target": "ref_yaml_cpp",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/drogon/vcpkg.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

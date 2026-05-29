@@ -1,0 +1,345 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_features_openssl",
+      "label": "openssl",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_openssl_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_openssl_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L31"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_features_snappy",
+      "label": "snappy",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_snappy_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_snappy_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_features_zstd",
+      "label": "zstd",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_zstd_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "mongo_c_driver_vcpkg_zstd_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L43"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_dependencies",
+      "target": "ref_libbson",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_dependencies",
+      "target": "ref_utf8proc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_dependencies",
+      "target": "ref_zlib",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_mongo_c_driver_vcpkg_json",
+      "target": "mongo_c_driver_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features",
+      "target": "mongo_c_driver_vcpkg_features_openssl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_openssl",
+      "target": "mongo_c_driver_vcpkg_openssl_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_openssl",
+      "target": "mongo_c_driver_vcpkg_openssl_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_openssl_dependencies",
+      "target": "ref_openssl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features",
+      "target": "mongo_c_driver_vcpkg_features_snappy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_snappy",
+      "target": "mongo_c_driver_vcpkg_snappy_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_snappy",
+      "target": "mongo_c_driver_vcpkg_snappy_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_snappy_dependencies",
+      "target": "ref_snappy",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features",
+      "target": "mongo_c_driver_vcpkg_features_zstd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_zstd",
+      "target": "mongo_c_driver_vcpkg_zstd_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_features_zstd",
+      "target": "mongo_c_driver_vcpkg_zstd_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "mongo_c_driver_vcpkg_zstd_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/mongo-c-driver/vcpkg.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

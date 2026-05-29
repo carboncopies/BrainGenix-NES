@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_range_v3_vs2015_json",
+      "label": "range-v3-vs2015.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/range-v3-vs2015.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_range_v3_vs2015_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/range-v3-vs2015.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_range_v3_vs2015_json",
+      "target": "r_range_v3_vs2015_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/range-v3-vs2015.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

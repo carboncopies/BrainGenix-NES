@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_v_vmaware_vm_detection_json",
+      "label": "vmaware-vm-detection.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vmaware-vm-detection.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "v_vmaware_vm_detection_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vmaware-vm-detection.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_v_vmaware_vm_detection_json",
+      "target": "v_vmaware_vm_detection_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/v-/vmaware-vm-detection.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

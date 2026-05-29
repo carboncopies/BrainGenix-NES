@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_skia_example_skcms_cpp",
+      "label": "skcms.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "example_skcms_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_skia_example_skcms_cpp",
+      "target": "skcms",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_skia_example_skcms_cpp",
+      "target": "example_skcms_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "example_skcms_main",
+      "callee": "skcms_Transform",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "example_skcms_main",
+      "callee": "skcms_sRGB_profile",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L8"
+    },
+    {
+      "caller_nid": "example_skcms_main",
+      "callee": "skcms_XYZD50_profile",
+      "is_member_call": false,
+      "source_file": "ThirdParty/vcpkg/ports/skia/example/skcms.cpp",
+      "source_location": "L9"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_p_ranav_glob_json",
+      "label": "p-ranav-glob.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/p-ranav-glob.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_p_ranav_glob_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/p-ranav-glob.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_p_ranav_glob_json",
+      "target": "p_p_ranav_glob_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/p-ranav-glob.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

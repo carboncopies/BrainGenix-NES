@@ -1,0 +1,579 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "tracy_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "tracy_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "tracy_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "tracy_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "tracy_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "tracy_vcpkg_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "tracy_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "tracy_vcpkg_default_features",
+      "label": "default-features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "tracy_vcpkg_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "tracy_vcpkg_features_cli_tools",
+      "label": "cli-tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "tracy_vcpkg_cli_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "tracy_vcpkg_cli_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "tracy_vcpkg_cli_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "tracy_vcpkg_features_crash_handler",
+      "label": "crash-handler",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L48"
+    },
+    {
+      "id": "tracy_vcpkg_crash_handler_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L49"
+    },
+    {
+      "id": "tracy_vcpkg_features_fibers",
+      "label": "fibers",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L51"
+    },
+    {
+      "id": "tracy_vcpkg_fibers_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L52"
+    },
+    {
+      "id": "tracy_vcpkg_features_gui_tools",
+      "label": "gui-tools",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L54"
+    },
+    {
+      "id": "tracy_vcpkg_gui_tools_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L55"
+    },
+    {
+      "id": "tracy_vcpkg_gui_tools_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L56"
+    },
+    {
+      "id": "tracy_vcpkg_gui_tools_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "tracy_vcpkg_features_on_demand",
+      "label": "on-demand",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L90"
+    },
+    {
+      "id": "tracy_vcpkg_on_demand_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L91"
+    },
+    {
+      "id": "tracy_vcpkg_features_verbose",
+      "label": "verbose",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L93"
+    },
+    {
+      "id": "tracy_vcpkg_verbose_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L94"
+    },
+    {
+      "id": "tracy_vcpkg_verbose_supports",
+      "label": "supports",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L95"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_default_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_default_features",
+      "target": "ref_crash_handler",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_tracy_vcpkg_json",
+      "target": "tracy_vcpkg_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_cli_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_cli_tools",
+      "target": "tracy_vcpkg_cli_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_cli_tools",
+      "target": "tracy_vcpkg_cli_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_cli_tools",
+      "target": "tracy_vcpkg_cli_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_cli_tools_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_cli_tools_dependencies",
+      "target": "ref_ppqsort",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_cli_tools_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_crash_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_crash_handler",
+      "target": "tracy_vcpkg_crash_handler_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_fibers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_fibers",
+      "target": "tracy_vcpkg_fibers_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_gui_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_gui_tools",
+      "target": "tracy_vcpkg_gui_tools_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_gui_tools",
+      "target": "tracy_vcpkg_gui_tools_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_gui_tools",
+      "target": "tracy_vcpkg_gui_tools_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_aklomp_base64",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_curl",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_freetype",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_glfw3",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_md4c",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_nativefiledialog_extended",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_nlohmann_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_ppqsort",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_pugixml",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_tidy_html5",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_gui_tools_dependencies",
+      "target": "ref_zstd",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_on_demand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_on_demand",
+      "target": "tracy_vcpkg_on_demand_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features",
+      "target": "tracy_vcpkg_features_verbose",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_verbose",
+      "target": "tracy_vcpkg_verbose_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "tracy_vcpkg_features_verbose",
+      "target": "tracy_vcpkg_verbose_supports",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/tracy/vcpkg.json",
+      "source_location": "L95",
+      "weight": 1.0
+    }
+  ]
+}

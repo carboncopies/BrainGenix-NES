@@ -1,0 +1,3996 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "label": "fibre_structure.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_fibre_structure_parse_clp",
+      "label": "parse_CLP()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L46"
+    },
+    {
+      "id": "command_line_parameters",
+      "label": "Command_Line_Parameters",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L46"
+    },
+    {
+      "id": "source_fibre_structure_report_parameters",
+      "label": "report_parameters()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "source_fibre_structure_fibre_segment_initialization",
+      "label": "fibre_segment_initialization()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L59"
+    },
+    {
+      "id": "source_fibre_structure_op",
+      "label": "op()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L67"
+    },
+    {
+      "id": "fibre_segment",
+      "label": "fibre_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L67"
+    },
+    {
+      "id": "source_fibre_structure_branch",
+      "label": "branch()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L74"
+    },
+    {
+      "id": "source_fibre_structure_turn",
+      "label": "turn()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L110"
+    },
+    {
+      "id": "source_fibre_structure_continuation_node_to_branch",
+      "label": "continuation_node_to_branch()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L129"
+    },
+    {
+      "id": "source_fibre_structure_branches_at_continuation_nodes",
+      "label": "branches_at_continuation_nodes()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L167"
+    },
+    {
+      "id": "delayed_branching_model",
+      "label": "Delayed_Branching_Model",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L167"
+    },
+    {
+      "id": "source_fibre_structure_cartesian_soma_center_distance2",
+      "label": "cartesian_soma_center_distance2()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L194"
+    },
+    {
+      "id": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "label": "cartesian_to_fiber_ratio()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L201"
+    },
+    {
+      "id": "fibre_collected_data",
+      "label": "fibre_collected_data",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L201"
+    },
+    {
+      "id": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "label": "soma_to_term_cartesian_to_fiber_ratio()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L216"
+    },
+    {
+      "id": "source_fibre_structure_fiber_location",
+      "label": "fiber_location()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L223"
+    },
+    {
+      "id": "spatial",
+      "label": "spatial",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L223"
+    },
+    {
+      "id": "source_fibre_structure_collect_data",
+      "label": "Collect_Data()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L227"
+    },
+    {
+      "id": "source_fibre_structure_count_segments",
+      "label": "count_segments()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L300"
+    },
+    {
+      "id": "source_fibre_structure_count_terminal_segments",
+      "label": "count_terminal_segments()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L307"
+    },
+    {
+      "id": "source_fibre_structure_count_segment_types",
+      "label": "count_segment_types()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L315"
+    },
+    {
+      "id": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "label": "sum_of_intermediate_segment_lengths()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L328"
+    },
+    {
+      "id": "network_statistics_data",
+      "label": "network_statistics_data",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L328"
+    },
+    {
+      "id": "source_fibre_structure_move_add",
+      "label": "move_add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L342"
+    },
+    {
+      "id": "source_fibre_structure_fanin_rot",
+      "label": "fanin_rot()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L349"
+    },
+    {
+      "id": "source_fibre_structure_net_fig",
+      "label": "net_Fig()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L374"
+    },
+    {
+      "id": "fig_object",
+      "label": "Fig_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L374"
+    },
+    {
+      "id": "source_fibre_structure_bifurcationnode_net_txt",
+      "label": "bifurcationnode_net_Txt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L437"
+    },
+    {
+      "id": "txt_object",
+      "label": "Txt_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L437"
+    },
+    {
+      "id": "source_fibre_structure_continuationnode_net_txt",
+      "label": "continuationnode_net_Txt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L466"
+    },
+    {
+      "id": "source_fibre_structure_net_txt",
+      "label": "net_Txt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L494"
+    },
+    {
+      "id": "source_fibre_structure_net_vrml",
+      "label": "net_VRML()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L524"
+    },
+    {
+      "id": "vrml_object",
+      "label": "VRML_Object",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L524"
+    },
+    {
+      "id": "source_fibre_structure_tree_op",
+      "label": "tree_op()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L570"
+    },
+    {
+      "id": "fibre_tree_op",
+      "label": "fibre_tree_op",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L570"
+    },
+    {
+      "id": "source_fibre_structure_fibre_structure",
+      "label": "fibre_structure()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580"
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580"
+    },
+    {
+      "id": "fibre_structure_class_id",
+      "label": "fibre_structure_class_id",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580"
+    },
+    {
+      "id": "neuron",
+      "label": "neuron",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580"
+    },
+    {
+      "id": "segment",
+      "label": "Segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587"
+    },
+    {
+      "id": "source_fibre_structure_array_of_terminal_segments",
+      "label": "array_of_terminal_segments()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L619"
+    },
+    {
+      "id": "terminal_segment_ptr",
+      "label": "terminal_segment_ptr",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L619"
+    },
+    {
+      "id": "source_fibre_structure_total_arbor_length",
+      "label": "total_arbor_length()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L632"
+    },
+    {
+      "id": "source_fibre_structure_center_of_gravity",
+      "label": "center_of_gravity()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L651"
+    },
+    {
+      "id": "source_fibre_structure_batch_elongate",
+      "label": "batch_elongate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L661"
+    },
+    {
+      "id": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "label": "sum_of_perturbed_expected_elongations()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L689"
+    },
+    {
+      "id": "source_fibre_structure_count_terminal_segments_in_pll",
+      "label": "count_terminal_segments_in_PLL()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L697"
+    },
+    {
+      "id": "source_fibre_structure_net_nes",
+      "label": "net_NES()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L745"
+    },
+    {
+      "id": "netdata",
+      "label": "NetData",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L745"
+    },
+    {
+      "id": "source_fibre_structure_add",
+      "label": "add()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L751"
+    },
+    {
+      "id": "source_fibre_structure_find_t_genesis",
+      "label": "find_t_genesis()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L771"
+    },
+    {
+      "id": "source_fibre_structure_distribute_elongation",
+      "label": "Distribute_Elongation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799"
+    },
+    {
+      "id": "terminal_segment",
+      "label": "terminal_segment",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799"
+    },
+    {
+      "id": "source_fibre_structure_terminal_segment",
+      "label": "terminal_segment()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L829"
+    },
+    {
+      "id": "pllroot",
+      "label": "PLLRoot",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L863"
+    },
+    {
+      "id": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "label": "turn_without_update_of_segment_vector()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L997"
+    },
+    {
+      "id": "source_fibre_structure_randomize_last_segment_elongation",
+      "label": "randomize_last_segment_elongation()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1030"
+    },
+    {
+      "id": "source_fibre_structure_init",
+      "label": "init()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1069"
+    },
+    {
+      "id": "natural_schema_parent_set",
+      "label": "natural_schema_parent_set",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1069"
+    },
+    {
+      "id": "source_fibre_structure_initialize",
+      "label": "initialize()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1090"
+    },
+    {
+      "id": "source_fibre_structure_structure_initialization_selection",
+      "label": "structure_initialization_selection()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101"
+    },
+    {
+      "id": "structure_initialization",
+      "label": "structure_initialization",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_fig_object_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_fibre_structure_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_dendritic_growth_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_axon_direction_model_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_network_generated_statistics_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_sampled_output_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_neuron_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "thirdparty_netmorphcmake_source_network_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_parse_clp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_parse_clp",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_segment_initialization",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_op",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_op",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L67",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_branch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_turn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_continuation_node_to_branch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_continuation_node_to_branch",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L129",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_branches_at_continuation_nodes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branches_at_continuation_nodes",
+      "target": "delayed_branching_model",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L167",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_cartesian_soma_center_distance2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L201",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "target": "fibre_collected_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L201",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L216",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fiber_location",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L223",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fiber_location",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L223",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_collect_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_collect_data",
+      "target": "fibre_collected_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L227",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_count_segments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L300",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_count_terminal_segments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_count_segment_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L328",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "target": "network_statistics_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L328",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_move_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L342",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_move_add",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L342",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fanin_rot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L349",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L374",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_fig",
+      "target": "fig_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L374",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_bifurcationnode_net_txt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L437",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_bifurcationnode_net_txt",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L437",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_continuationnode_net_txt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L466",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_continuationnode_net_txt",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L466",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_txt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L494",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_txt",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L494",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_vrml",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L524",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_vrml",
+      "target": "vrml_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L524",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_tree_op",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L570",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_tree_op",
+      "target": "fibre_tree_op",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L570",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L580",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L587",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L594",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L601",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L609",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L609",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L609",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L611",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L611",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L611",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L611",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "fibre_structure_class_id",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_structure",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_array_of_terminal_segments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L619",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_array_of_terminal_segments",
+      "target": "terminal_segment_ptr",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L619",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_total_arbor_length",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L632",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_total_arbor_length",
+      "target": "network_statistics_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L632",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_center_of_gravity",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L651",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_center_of_gravity",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L651",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_batch_elongate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L661",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L689",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_count_terminal_segments_in_pll",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L697",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_move_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L703",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_move_add",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L703",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_fanin_rot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L707",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_fig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L711",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_fig",
+      "target": "fig_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L711",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_txt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L725",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_txt",
+      "target": "txt_object",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L725",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_net_nes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L745",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_nes",
+      "target": "netdata",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L745",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_add",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L751",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_add",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L751",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_find_t_genesis",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L771",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_find_t_genesis",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L771",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_collect_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L777",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_collect_data",
+      "target": "fibre_collected_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L777",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_distribute_elongation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_distribute_elongation",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_distribute_elongation",
+      "target": "terminal_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_distribute_elongation",
+      "target": "terminal_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L799",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_terminal_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L829",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L829",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L829",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L829",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_terminal_segment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L845",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L845",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L845",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "fibre_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L845",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_terminal_segment",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L845",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_branch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L863",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "pllroot",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L863",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "source_fibre_structure_terminal_segment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L863",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_turn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L985",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_turn",
+      "target": "neuron",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L985",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L997",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "target": "spatial",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L997",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_randomize_last_segment_elongation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1030",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_init",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1069",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_init",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1069",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_init",
+      "target": "natural_schema_parent_set",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1069",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_report_parameters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1082",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_report_parameters",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1082",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_fibre_structure_report_parameters",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1082",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1090",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_initialize",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1090",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_initialize",
+      "target": "source_fibre_structure_fibre_structure",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1090",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_fibre_structure_cc",
+      "target": "source_fibre_structure_structure_initialization_selection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "structure_initialization",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "base",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "command_line_parameters",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "structure_initialization",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_structure_initialization_selection",
+      "target": "structure_initialization",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1101",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "source_fibre_structure_fibre_segment_initialization",
+      "target": "source_fibre_structure_add",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_collect_data",
+      "target": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_collect_data",
+      "target": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_collect_data",
+      "target": "source_fibre_structure_fiber_location",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_bifurcationnode_net_txt",
+      "target": "source_fibre_structure_find_t_genesis",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L459",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_bifurcationnode_net_txt",
+      "target": "source_fibre_structure_net_txt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L461",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_continuationnode_net_txt",
+      "target": "source_fibre_structure_find_t_genesis",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L488",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_continuationnode_net_txt",
+      "target": "source_fibre_structure_net_txt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L490",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_txt",
+      "target": "source_fibre_structure_bifurcationnode_net_txt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_txt",
+      "target": "source_fibre_structure_continuationnode_net_txt",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L499",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_tree_op",
+      "target": "source_fibre_structure_op",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L572",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_total_arbor_length",
+      "target": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L646",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_count_terminal_segments_in_pll",
+      "target": "source_fibre_structure_count_terminal_segments",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L699",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_net_txt",
+      "target": "source_fibre_structure_find_t_genesis",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L740",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "source_fibre_structure_randomize_last_segment_elongation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L895",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "source_fibre_structure_distribute_elongation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L928",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "source_fibre_structure_initialize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L930",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_branch",
+      "target": "source_fibre_structure_collect_data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L957",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_turn",
+      "target": "source_fibre_structure_randomize_last_segment_elongation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L988",
+      "weight": 1.0
+    },
+    {
+      "source": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "target": "source_fibre_structure_turn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1003",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_fibre_structure_parse_clp",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_fibre_structure_parse_clp",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_fibre_structure_parse_clp",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_segment_initialization",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "possibly_add_attractor",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Net",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L100"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L120"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L132"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L139"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L145"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L146"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L148"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L149"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L150"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L156"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuation_node_to_branch",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branches_at_continuation_nodes",
+      "callee": "branch_selection",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L189"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_soma_center_distance2",
+      "callee": "distance2",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L197"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_soma_center_distance2",
+      "callee": "Pos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L197"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L210"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "callee": "Pos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L211"
+    },
+    {
+      "caller_nid": "source_fibre_structure_cartesian_to_fiber_ratio",
+      "callee": "Radius",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L212"
+    },
+    {
+      "caller_nid": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "callee": "distance",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "callee": "Pos",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L218"
+    },
+    {
+      "caller_nid": "source_fibre_structure_soma_to_term_cartesian_to_fiber_ratio",
+      "callee": "Radius",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L228"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L237"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L238"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L242"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L243"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L244"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L253"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L271"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L272"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "branch_at_end",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L284"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "branch_at_end",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L293"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "callee": "has_daughters",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L329"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_intermediate_segment_lengths",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L351"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L352"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L353"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "convert_to_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L354"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "set_Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L355"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L357"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "convert_from_spherical",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L362"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "Radius",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L366"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "N",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L366"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "iszerolength",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L383"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L385"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L385"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "isnan",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "progresss",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L387"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "plane_mapped",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L390"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L391"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L396"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L398"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L400"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L401"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L402"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L403"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L405"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L406"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L407"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L408"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L409"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "FIGSCALED",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L411"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "Y",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DSTR3",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "Z",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L421"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L428"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "Add_Fig_Object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "source_fibre_structure_bifurcationnode_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L445"
+    },
+    {
+      "caller_nid": "source_fibre_structure_bifurcationnode_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L449"
+    },
+    {
+      "caller_nid": "source_fibre_structure_bifurcationnode_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuationnode_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L474"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuationnode_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L478"
+    },
+    {
+      "caller_nid": "source_fibre_structure_continuationnode_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L482"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L505"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L509"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L513"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L519"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "fig_in_zoom",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L527"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "X3D_cylinder_center",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L528"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "X3D_SFrotation_to_vector",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L529"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L535"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_vrml",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L541"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L584"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L591"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L598"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L605"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L609"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L611"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L613"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fibre_structure",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L615"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L620"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L621"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L623"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L626"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L628"
+    },
+    {
+      "caller_nid": "source_fibre_structure_array_of_terminal_segments",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L628"
+    },
+    {
+      "caller_nid": "source_fibre_structure_total_arbor_length",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "source_fibre_structure_total_arbor_length",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "source_fibre_structure_total_arbor_length",
+      "callee": "Length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L643"
+    },
+    {
+      "caller_nid": "source_fibre_structure_center_of_gravity",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L653"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "TerminalSegments",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L669"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "Next",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L670"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L671"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "TerminalSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L671"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "elongate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L672"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "ElongationModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L672"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L673"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "TerminalSegment",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L673"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L674"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L678"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "TerminalSegments",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L678"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "Next",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L679"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "elongate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L680"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "ElongationModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L680"
+    },
+    {
+      "caller_nid": "source_fibre_structure_batch_elongate",
+      "callee": "progress",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L684"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L690"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "TerminalSegments",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "perturbed_expected_elongation",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "ElongationModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L692"
+    },
+    {
+      "caller_nid": "source_fibre_structure_sum_of_perturbed_expected_elongations",
+      "callee": "T",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L693"
+    },
+    {
+      "caller_nid": "source_fibre_structure_count_terminal_segments_in_pll",
+      "callee": "PLL_LOOP_FORWARD",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L699"
+    },
+    {
+      "caller_nid": "source_fibre_structure_count_terminal_segments_in_pll",
+      "callee": "head",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L699"
+    },
+    {
+      "caller_nid": "source_fibre_structure_move_add",
+      "callee": "fibre_segment::move_add",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L704"
+    },
+    {
+      "caller_nid": "source_fibre_structure_fanin_rot",
+      "callee": "fibre_segment::fanin_rot",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L708"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L713"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L715"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_fig",
+      "callee": "fibre_segment::net_Fig",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L719"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L731"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "get_all",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L735"
+    },
+    {
+      "caller_nid": "source_fibre_structure_net_txt",
+      "callee": "POINTER_TO_ID",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L739"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "update_segment_vector",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L784"
+    },
+    {
+      "caller_nid": "source_fibre_structure_collect_data",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L785"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L817"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L819"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "add_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "AngularCoords",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L824"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "add_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L825"
+    },
+    {
+      "caller_nid": "source_fibre_structure_distribute_elongation",
+      "callee": "AngularCoords",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L825"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "get_fstype",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L837"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "NextAttractor",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L838"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L838"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "get_fstype",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L853"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "NextAttractor",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L854"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L854"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "direction_boundary_effect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L859"
+    },
+    {
+      "caller_nid": "source_fibre_structure_terminal_segment",
+      "callee": "update_segment_vector",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L860"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Min_Node_Interval",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L895"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "BranchingModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L895"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Arbor",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L895"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L898"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "update_segment_vector",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L901"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L910"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L911"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Branch2",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L912"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "link_after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L913"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L913"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "link_after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L914"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L914"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L917"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L920"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L922"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L923"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L924"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L926"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "branch_angle",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L932"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "handle_branching",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L934"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "veer",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L939"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L939"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L940"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "daughter_to_network_coordinate_system",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L941"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Theta",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L946"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L946"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Theta",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L947"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L947"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Collect",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L953"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "STANDARDIZE_ANGLE_DATA",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L956"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L956"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L957"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "STANDARDIZE_ANGLE_DATA",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L958"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L958"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Pitch",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L959"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L968"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L968"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L969"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "Length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L969"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "set_angularcoords",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L970"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "set_angularcoords",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L971"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L972"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "update_segment_vector",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L973"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "isolate",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L976"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "link_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L977"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "remove",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L979"
+    },
+    {
+      "caller_nid": "source_fibre_structure_branch",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L980"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "Min_Node_Interval",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L988"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "BranchingModel",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L988"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "Arbor",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L988"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "direction",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L989"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn",
+      "callee": "DirectionModel",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L989"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "DIAGNOSTIC_BEFORE_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1012"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "Branch1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1013"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "link_after",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1014"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "Root",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1014"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1016"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1017"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1018"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1019"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1020"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "handle_turning",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1021"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "remove",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1022"
+    },
+    {
+      "caller_nid": "source_fibre_structure_turn_without_update_of_segment_vector",
+      "callee": "DIAGNOSTIC_AFTER_ALLOCATION",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1025"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1053"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "get_rand_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1057"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "set_X",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1058"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1060"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1061"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1062"
+    },
+    {
+      "caller_nid": "source_fibre_structure_randomize_last_segment_elongation",
+      "callee": "Length",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1063"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "set_color",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1076"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "coldef",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1076"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "set_color",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1077"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "coldef",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1077"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "set_color",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1078"
+    },
+    {
+      "caller_nid": "source_fibre_structure_init",
+      "callee": "coldef",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1078"
+    },
+    {
+      "caller_nid": "source_fibre_structure_report_parameters",
+      "callee": "RGBstr",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1086"
+    },
+    {
+      "caller_nid": "source_fibre_structure_report_parameters",
+      "callee": "get_color",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1086"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1092"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "error",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1095"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "numerical_ID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1095"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1095"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "set_length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1096"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "head",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1096"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "TerminalSegments",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1096"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "get_rand_range_real1",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1096"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1097"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "numerical_ID",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1097"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "N",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1097"
+    },
+    {
+      "caller_nid": "source_fibre_structure_initialize",
+      "callee": "set_colnum",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1098"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1111"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "str2vec",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1113"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1113"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "warning",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1114"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "Specifies_Parameter",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1126"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "set_color",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1131"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "strtoul",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1131"
+    },
+    {
+      "caller_nid": "source_fibre_structure_structure_initialization_selection",
+      "callee": "ParValue",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/fibre_structure.cc",
+      "source_location": "L1131"
+    }
+  ]
+}

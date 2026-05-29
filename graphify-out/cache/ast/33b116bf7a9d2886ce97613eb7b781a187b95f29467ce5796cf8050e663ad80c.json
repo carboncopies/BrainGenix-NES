@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_m_mdnsresponder_json",
+      "label": "mdnsresponder.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdnsresponder.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "m_mdnsresponder_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdnsresponder.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_m_mdnsresponder_json",
+      "target": "m_mdnsresponder_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/m-/mdnsresponder.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

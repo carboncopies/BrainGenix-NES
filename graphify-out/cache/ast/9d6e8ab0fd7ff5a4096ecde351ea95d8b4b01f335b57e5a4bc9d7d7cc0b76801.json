@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_p_plf_nanotimer_json",
+      "label": "plf-nanotimer.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-nanotimer.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "p_plf_nanotimer_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-nanotimer.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_p_plf_nanotimer_json",
+      "target": "p_plf_nanotimer_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/p-/plf-nanotimer.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

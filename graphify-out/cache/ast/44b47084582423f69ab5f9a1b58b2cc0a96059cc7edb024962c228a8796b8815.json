@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_c_cpp_timsort_json",
+      "label": "cpp-timsort.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-timsort.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "c_cpp_timsort_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-timsort.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_c_cpp_timsort_json",
+      "target": "c_cpp_timsort_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/c-/cpp-timsort.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "label": "BigRegex.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_bigregex_bigregex",
+      "label": "~BigRegex()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L54"
+    },
+    {
+      "id": "source_bigregex_match_info",
+      "label": "match_info()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L111"
+    },
+    {
+      "id": "source_bigregex_subpos",
+      "label": "subpos()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L118"
+    },
+    {
+      "id": "source_bigregex_sublen",
+      "label": "sublen()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L123"
+    },
+    {
+      "id": "source_bigregex_search",
+      "label": "search()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L130"
+    },
+    {
+      "id": "source_bigregex_ok",
+      "label": "OK()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L348"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "thirdparty_netmorphcmake_source_bigregex_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "stdlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_bigregex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_bigregex",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_match_info",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_subpos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_sublen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L130",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_search",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L190",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_bigregex_cc",
+      "target": "source_bigregex_ok",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L348",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_bigregex_bigregex",
+      "callee": "regfree",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "source_bigregex_bigregex",
+      "callee": "regcomp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "source_bigregex_bigregex",
+      "callee": "regcomp",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L98"
+    },
+    {
+      "caller_nid": "source_bigregex_bigregex",
+      "callee": "regerror",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "regexec",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L157"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "DEBUG_OUT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L200"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "regexec",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L220"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "regexec",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L227"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "DEBUG_OUT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L244"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "TALLOC",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L253"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "re_search",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L255"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "DEBUG_OUT",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L257"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "TFREE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L264"
+    },
+    {
+      "caller_nid": "source_bigregex_search",
+      "callee": "TFREE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/BigRegex.cc",
+      "source_location": "L265"
+    }
+  ]
+}

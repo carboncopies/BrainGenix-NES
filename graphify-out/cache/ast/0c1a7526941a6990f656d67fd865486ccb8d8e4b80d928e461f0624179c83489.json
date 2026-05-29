@@ -1,0 +1,240 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_netmorphcmake_source_wizard_cc",
+      "label": "wizard.cc",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L1"
+    },
+    {
+      "id": "source_wizard_binary_choice",
+      "label": "binary_choice()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L33"
+    },
+    {
+      "id": "source_wizard_integer_value",
+      "label": "integer_value()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L43"
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L43"
+    },
+    {
+      "id": "source_wizard_terminal",
+      "label": "terminal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "stringlist",
+      "label": "StringList",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L51"
+    },
+    {
+      "id": "source_wizard_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L76"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "thirdparty_netmorphcmake_source_wizard_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "thirdparty_netmorphcmake_source_stringlist_hh",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "source_wizard_binary_choice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "source_wizard_integer_value",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "source_wizard_integer_value",
+      "target": "string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "source_wizard_terminal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "source_wizard_terminal",
+      "target": "stringlist",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L51",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "thirdparty_netmorphcmake_source_wizard_cc",
+      "target": "source_wizard_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "source_wizard_terminal",
+      "target": "source_wizard_binary_choice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "source_wizard_terminal",
+      "target": "source_wizard_integer_value",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "source_wizard_main",
+      "target": "source_wizard_terminal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L80",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "source_wizard_binary_choice",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "source_wizard_binary_choice",
+      "callee": "readline",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "source_wizard_binary_choice",
+      "callee": "downcase",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "source_wizard_binary_choice",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "source_wizard_integer_value",
+      "callee": "readline",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "source_wizard_integer_value",
+      "callee": "matches",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "source_wizard_terminal",
+      "callee": "append",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_wizard_terminal",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "source_wizard_terminal",
+      "callee": "append",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "source_wizard_terminal",
+      "callee": "length",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "source_wizard_terminal",
+      "callee": "concatenate",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NetmorphCMake/Source/wizard.cc",
+      "source_location": "L72"
+    }
+  ]
+}

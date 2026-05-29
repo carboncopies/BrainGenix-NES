@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_s_si_json",
+      "label": "si.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/si.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "s_si_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/s-/si.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_s_si_json",
+      "target": "s_si_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/s-/si.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_t_tdscpp_json",
+      "label": "tdscpp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdscpp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "t_tdscpp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdscpp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_t_tdscpp_json",
+      "target": "t_tdscpp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/t-/tdscpp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

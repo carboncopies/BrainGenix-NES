@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_docs_users_registries_md",
+      "label": "registries.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/registries.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "users_registries_registries",
+      "label": "Registries",
+      "file_type": "document",
+      "source_file": "ThirdParty/vcpkg/docs/users/registries.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_docs_users_registries_md",
+      "target": "users_registries_registries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/docs/users/registries.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

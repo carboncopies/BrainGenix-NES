@@ -1,0 +1,119 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "label": "vcpkg.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "asio_grpc_vcpkg_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "asio_grpc_vcpkg_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "asio_grpc_vcpkg_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "asio_grpc_vcpkg_homepage",
+      "label": "homepage",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "asio_grpc_vcpkg_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "asio_grpc_vcpkg_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_vcpkg_ports_asio_grpc_vcpkg_json",
+      "target": "asio_grpc_vcpkg_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "asio_grpc_vcpkg_dependencies",
+      "target": "ref_grpc",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/ports/asio-grpc/vcpkg.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

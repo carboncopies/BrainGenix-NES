@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_f_flatbush_json",
+      "label": "flatbush.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flatbush.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "f_flatbush_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flatbush.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_f_flatbush_json",
+      "target": "f_flatbush_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/f-/flatbush.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}

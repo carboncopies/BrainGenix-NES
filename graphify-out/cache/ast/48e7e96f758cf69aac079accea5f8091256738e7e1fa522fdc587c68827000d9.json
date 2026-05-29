@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_vcpkg_versions_r_red0124_ssp_json",
+      "label": "red0124-ssp.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/red0124-ssp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "r_red0124_ssp_versions",
+      "label": "versions",
+      "file_type": "code",
+      "source_file": "ThirdParty/vcpkg/versions/r-/red0124-ssp.json",
+      "source_location": "L2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_vcpkg_versions_r_red0124_ssp_json",
+      "target": "r_red0124_ssp_versions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/vcpkg/versions/r-/red0124-ssp.json",
+      "source_location": "L2",
+      "weight": 1.0
+    }
+  ]
+}
