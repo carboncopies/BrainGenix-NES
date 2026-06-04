@@ -46,6 +46,8 @@ public:
     Nm2NESLogging(BG::Common::Logger::LoggingSystem& _logger): logger(_logger) {}
 
     virtual void error(const std::string & msg) {
+        error_str += msg;
+        num_errors++;
         logger.Log(msg, 7);
     }
     virtual void warning(const std::string & msg) {
