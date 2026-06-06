@@ -57,6 +57,8 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+class SimulationRPCInterface; // Forward declaration for TaskFunctionPtr.
+using TaskFunctionPtr = void(*)(SimulationRPCInterface*, API::ManagerTaskData*);
 
 /**
  * @brief This class provides the infrastructure to run simulations.
@@ -111,7 +113,7 @@ public:
 
     // === Functions for Managed Tasks that can take long to complete
 
-    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData, void* TaskThread);
+    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData, TaskFunctionPtr TaskThread);
 
     void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(API::ManagerTaskData & TaskData);

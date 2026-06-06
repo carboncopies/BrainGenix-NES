@@ -133,7 +133,7 @@ bool LoadFileIntoString(const std::string& FilePath, std::string& FileContents) 
 }
 
 // A API::ManagerTaskData struct must have been prepared and the thread already launched.
-int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData, void* TaskThread) {
+int SimulationRPCInterface::AddManagerTask(std::unique_ptr<API::ManagerTaskData>& TaskData, TaskFunctionPtr TaskThread) {
     std::lock_guard<std::mutex> lock(ManTaskMtx); 
 
     if (TaskData->InputSim) TaskData->InputSim->IncRunningManagedTasksCounter();
