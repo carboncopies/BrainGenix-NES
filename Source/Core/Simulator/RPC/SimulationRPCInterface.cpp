@@ -113,7 +113,8 @@ SimulationRPCInterface::~SimulationRPCInterface() {
 
     Logger_->Log("Joining Simulation Worker Threads", 2);
     for (unsigned int i = 0; i < SimulationThreads_.size(); i++) {
-        SimulationThreads_[i].join();
+        //SimulationThreads_[i].join();
+        SimulationThreads_.read(i)->join();
     }
 }
 
@@ -164,7 +165,8 @@ void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
     Sim->SetRandomSeed(0);
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
+    //SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
+    SimulationThreads_.append(std::make_unique<std::thread>(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
 
 
     // Get New SimID
@@ -212,7 +214,8 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
     Sim->ID = idx;
 
     // Start Thread
-    SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
+    //SimulationThreads_.push_back(std::thread(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
+    SimulationThreads_.append(std::make_unique<std::thread>(&SimulationEngineThread, Logger_, Sim, RenderPool_, VisualizerPool_, &StopThreads_));
 
     // Return Result ID
     return Handle.ResponseWithID("SimulationID", Sim->ID);
@@ -251,9 +254,11 @@ void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskD
         SimToDelete->NetmorphWorkerThread = std::thread();
     }
     SimToDelete->KeepResident = false; // Stop thread for this specific simulation
-    if (SimulationThreads_.at(SimToDelete->ID).get_id() != std::thread::id()) {
-        SimulationThreads_.at(SimToDelete->ID).join(); // Wait to ensure stopped
-        SimulationThreads_[SimToDelete->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+    std::thread* SimThread = SimulationThreads_.read(SimToDelete->ID);
+    if (SimThread->get_id() != std::thread::id()) {
+        SimThread->join(); // Wait to ensure stopped
+        //SimulationThreads_[SimToDelete->ID] = std::thread(); // cleared to default-constructed std:thread (does not execute)
+        SimulationThreads_.remove(SimToDelete->ID);
     }
 
     // *** Testing what part of the Simulation object may not be deleting clean

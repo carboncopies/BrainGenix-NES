@@ -68,7 +68,8 @@ private:
 
     API::RPCManager* RPCManager_;
 
-    std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
+    //std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
+    ConcurrentUniquePtrRegistry<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
     std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
 
     ConcurrentUniquePtrRegistry<Simulation> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
