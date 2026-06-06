@@ -94,6 +94,8 @@ protected:
     std::vector<StoredRequest> StoredRequests;
     int StoredReqID = 0; // Used to create request IDs for stored NESRequests.
 
+    int RunningManagedTasksCounter = 0; // Tracks running managed tasks, but not Netmorph thread or the thread in SimulationThreads_.
+
 public:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr;
 
@@ -168,6 +170,10 @@ public:
 
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);
+
+    int GetRunningManagedTasksCounter() { return RunningManagedTasksCounter; }
+    void IncRunningManagedTasksCounter() { RunningManagedTasksCounter++; }
+    void DecRunningManagedTasksCounter() { if (RunningManagedTasksCounter>0) RunningManagedTasksCounter--; }
 
     /**
      * Takes a fresh random seed and creates a new random generator with that

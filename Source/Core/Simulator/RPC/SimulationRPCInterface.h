@@ -111,7 +111,7 @@ public:
 
     // === Functions for Managed Tasks that can take long to complete
 
-    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
+    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData, void* TaskThread);
 
     void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(API::ManagerTaskData & TaskData);
