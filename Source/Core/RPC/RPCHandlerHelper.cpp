@@ -73,6 +73,14 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
     }
+    // *** Might be slightly risky, incase SimVec was modified right after read(), in
+    //     that case will have to maintain a separate vector next to SimVec with
+    //     "Deleting" flags to set at onset of deleting.
+    if (ThisSimulation->Deleting) { 
+        Logger_->Log("Simulation with ID "+std::to_string(SimulationID)+" currently deleting, cannot make further requests", 8);
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
 
     if (!PermitBusy && (ThisSimulation->IsProcessing || ThisSimulation->WorkRequested)) {
         Logger_->Log("Simulation Is Currently Busy, And Route Is Not Allowed To Run While Busy", 8);

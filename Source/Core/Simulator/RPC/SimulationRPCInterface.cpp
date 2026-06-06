@@ -251,6 +251,7 @@ std::string SimulationRPCInterface::SimulationReset(std::string _JSONRequest) {
 }
 
 void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskData) {
+    // 1. Check if this is a valid Simulation to delete.
     int SimID = TaskData.InputInt;
     if ((SimID < 0) || (SimID>=Simulations_.size())) {
         Logger_->Log("Sim "+std::to_string(SimID)+" to delete is out of range", 8);
@@ -264,10 +265,16 @@ void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskD
         return;
     }
 
+    // 2. Signal that the Simulation is being deleted to prevent new requests on the object.
+    SimToDelete->Deleting = true;
+
+    // 3. Ensure possible Netmorph thread is inactive or becomes inactivated.
     if (SimToDelete->NetmorphWorkerThread.get_id() != std::thread::id()) {
         SimToDelete->NetmorphWorkerThread.join(); // Wait for thread to complete
         SimToDelete->NetmorphWorkerThread = std::thread();
     }
+
+    // 4. Ensure there are no pending Managed Task threads running.
     if (SimToDelete->GetRunningManagedTasksCounter()>0) { // Managed tasks may still be running on this simulation
         int mantaskwaitcount = SimToDelete->GetRunningManagedTasksCounter()*10; // Let's wait up to 10 seconds per managed task that's running
         while (mantaskwaitcount > 0) {
@@ -282,6 +289,8 @@ void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskD
             return;
         }
     }
+
+    // 5. Terminate and remove the Simulation Thread.
     SimToDelete->KeepResident = false; // Stop thread for this specific simulation
     std::thread* SimThread = SimulationThreads_.read(SimToDelete->ID);
     if (SimThread->get_id() != std::thread::id()) {
@@ -315,8 +324,8 @@ void SimulationRPCInterface::DeleteResidentByIDTask(API::ManagerTaskData & TaskD
     // SimToDelete->NetmorphParams.reset();
     // SimToDelete->ClearStoredRequests();
 
-    //Simulations_[SimID].reset(); // Delete the Simulation object and all associated data
-    Simulations_.remove(SimID); // Delete the Simulation object and all associated data
+    // 6. Delete the Simulation object and all its associated data.
+    Simulations_.remove(SimID);
     Logger_->Log("Removed memory resident simulation with ID "+std::to_string(SimID), 3);
 
     TaskData.SetStatus(API::ManagerTaskStatus::Success);
