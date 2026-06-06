@@ -1,3 +1,18 @@
+//=================================================================//
+// This file is part of the BrainGenix-NES Neuron Emulation System //
+//=================================================================//
+
+/*
+    Description: This file provides thread safe STL container templates.
+    Additional Notes: None
+    Date Created: 2026-06-06
+*/
+
+#pragma once
+
+// Standard Libraries (BG convention: use <> instead of "")
+#include <shared_mutex>
+
 namespace BG {
 namespace NES {
 

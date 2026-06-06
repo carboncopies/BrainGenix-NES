@@ -154,7 +154,7 @@ void SimulationRPCInterface::SimLoadingTask(API::ManagerTaskData& TaskData) {
 
     // Build New Simulation Object
     //Simulations_.push_back(std::make_unique<Simulation>(Logger_));
-    size_t idx = Simulations_.append(std::make_unique<Simulation>(Logger_))
+    size_t idx = Simulations_.append(std::make_unique<Simulation>(Logger_));
     //Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
     Simulation* Sim = Simulations_.read(idx);
     assert(Sim != nullptr);
@@ -202,7 +202,7 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
 
     // Build New Simulation Object
     //Simulations_.push_back(std::make_unique<Simulation>(Logger_));
-    size_t idx = Simulations_.append(std::make_unique<Simulation>(Logger_))
+    size_t idx = Simulations_.append(std::make_unique<Simulation>(Logger_));
     //Simulation* Sim = Simulations_[Simulations_.size() - 1].get();
     Simulation* Sim = Simulations_.read(idx);
     assert(Sim != nullptr);
