@@ -30,7 +30,7 @@ namespace VSDA {
 
 
 
-VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, std::vector<std::unique_ptr<Simulation>>* _SimulationsVectorPointer) {
+VSDARPCInterface::VSDARPCInterface(BG::Common::Logger::LoggingSystem* _Logger, API::RPCManager* _RPCManager, ConcurrentUniquePtrRegistry<Simulation>* _SimulationsVectorPointer) {
 
     // Check Preconditions
     assert(_Logger != nullptr);
