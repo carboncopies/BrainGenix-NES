@@ -1,4 +1,4 @@
-# BrainGenix-NES: Overview
+# BrainGenix-NES: Overview 
 
 BrainGenix-NES (Neuron Emulation System) is a cutting-edge simulation platform developed by the Carboncopies Foundation's BrainGenix initiative. It's designed to support research in whole brain emulation (WBE), aiming to replicate brain function in a digital environment. BrainGenix-NES complements the Virtual Brain Platform (VBP), also developed by BrainGenix, which serves as an in-silico experimentation space for neuroscientists.
 
