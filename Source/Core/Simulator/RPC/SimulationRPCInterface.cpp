@@ -349,7 +349,7 @@ std::string SimulationRPCInterface::DeleteResidentByID(std::string _JSONRequest)
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> DeleteResidentByIDTaskData = std::make_unique<API::ManagerTaskData>(API::DeleteResidentByIDTask);
 
     // Note that this managed request needs to know the Simulation to delete.
     DeleteResidentByIDTaskData->InputInt = Handle.Sim()->ID;
@@ -424,7 +424,7 @@ std::string SimulationRPCInterface::GetResourceStatus(std::string _JSONRequest) 
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> GetResourceStatusTaskData = std::make_unique<API::ManagerTaskData>(API::GetResourceStatusTask);
 
     // Note that this managed request does not need any GetResourceStatusTaskData->InputData.
 
@@ -831,7 +831,7 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     Logger_->Log("Loading Saved Simulation " + SavedSimName, 2);
 
     // Prepare data structure to run the actual Simulation loading in a task
-    std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>(API::SimLoadingTask);
 
     // Check if save file exists and load its request contents into the task data
     if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
@@ -885,7 +885,7 @@ std::string SimulationRPCInterface::SimulationSaveModel(std::string _JSONRequest
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> SimulationSaveModelTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> SimulationSaveModelTaskData = std::make_unique<API::ManagerTaskData>(API::SimulationSaveModelTask);
 
     // Get the Model File Name
     std::string SavedModelName;
@@ -942,7 +942,7 @@ std::string SimulationRPCInterface::SimulationLoadModel(std::string _JSONRequest
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> SimulationLoadModelTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> SimulationLoadModelTaskData = std::make_unique<API::ManagerTaskData>(API::SimulationLoadModelTask);
 
     // Get the Model File Name
     std::string SavedModelName;
@@ -1346,7 +1346,7 @@ std::string SimulationRPCInterface::GetConnectome(std::string _JSONRequest) {
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> GetConnectomeTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> GetConnectomeTaskData = std::make_unique<API::ManagerTaskData>(API::GetConnectomeTask);
 
     GetConnectomeTaskData->InputSim = Handle.Sim();
 
@@ -1384,7 +1384,7 @@ std::string SimulationRPCInterface::GetAbstractConnectome(std::string _JSONReque
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> GetAbstractConnectomeTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> GetAbstractConnectomeTaskData = std::make_unique<API::ManagerTaskData>(API::GetAbstractConnectomeTask);
 
     // --> Put necessary data into task data input variables, e.g.
     //     SomethingTaskData->InputInt = Handle.Sim()->ID;
@@ -1460,7 +1460,7 @@ std::string SimulationRPCInterface::Something(std::string _JSONRequest) {
     }
 
     // Prepare data structure for task
-    std::unique_ptr<API::ManagerTaskData> SomethingTaskData = std::make_unique<API::ManagerTaskData>();
+    std::unique_ptr<API::ManagerTaskData> SomethingTaskData = std::make_unique<API::ManagerTaskData>(API::SomethingTask);
 
     // --> Put necessary data into task data input variables, e.g.
     //     SomethingTaskData->InputInt = Handle.Sim()->ID;

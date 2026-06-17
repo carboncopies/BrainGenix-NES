@@ -35,6 +35,21 @@ enum ManagerTaskStatus {
     NUMManagerTaskStatus
 };
 
+/**
+ * Let's enumerate the kinds of tasks that can be launched as
+ * managed tasks. This way we keep track of them throughout the
+ * codebase.
+ */
+enum ManagedTasks {
+    DeleteResidentByIDTask = 0,
+    GetResourceStatusTask = 1,
+    SimLoadingTask = 2,
+    SimulationSaveModelTask = 3,
+    SimulationLoadModelTask = 4,
+    GetConnectomeTask = 5,
+    GetAbstractConnectomeTask = 6,
+    NUMManagedTasks
+};
 
 
 /**
@@ -51,6 +66,8 @@ enum ManagerTaskStatus {
 struct ManagerTaskData {
     // Must be set before launching Task:
     // Simulator::Manager& Man;
+    ManagedTasks TaskType;
+
     std::string InputData; // optional, string for input data (JSON or whatever)
     int InputInt; // optional, useful for something like Simulation ID
     Simulator::Simulation* InputSim = nullptr; // optional, quick pointer to Simulation object
@@ -67,7 +84,7 @@ struct ManagerTaskData {
     nlohmann::json OutputData;
     int ReplaceSimulationID = -1;
 
-    ManagerTaskData() {}
+    ManagerTaskData(ManagedTasks _task): TaskType(_task) {}
 
     void SetStatus(ManagerTaskStatus _status) { Status = _status; }
 
