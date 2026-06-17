@@ -48,6 +48,7 @@
 
 #include <Simulator/EngineController.h>
 #include <Config/Config.h>
+#include <Util/SafeContainers.h>
 #include <Util/JSONHelpers.h>
 #include <BG/Common/Logger/Logger.h>
 
@@ -56,6 +57,8 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+class SimulationRPCInterface; // Forward declaration for TaskFunctionPtr.
+using TaskFunctionPtr = void(*)(SimulationRPCInterface*, API::ManagerTaskData*);
 
 /**
  * @brief This class provides the infrastructure to run simulations.
@@ -67,11 +70,12 @@ private:
 
     API::RPCManager* RPCManager_;
 
-    std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
+    //std::vector<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
+    ConcurrentUniquePtrRegistry<std::thread> SimulationThreads_; /**Threads that enumerate simulations and checks for any tasks to be done.*/
     std::atomic<bool> StopThreads_; /**Indicates to workers to stop what they're doing*/
-    std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
-    // Note: This simulation vector is not thread safe and will probably segfault if you try to multithread this
-    // we will fix this later when we scale the system (DO NOT ALLOW RPC to use more than 1 thread unless this is fixed!)
+
+    ConcurrentUniquePtrRegistry<Simulation> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    //std::vector<std::unique_ptr<Simulation>> Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
     VSDA::RenderPool* RenderPool_;                        /**Pointer to an instance of the render threadpool class*/
@@ -109,7 +113,7 @@ public:
 
     // === Functions for Managed Tasks that can take long to complete
 
-    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData);
+    int AddManagerTask(std::unique_ptr<API::ManagerTaskData> & TaskData, TaskFunctionPtr TaskThread);
 
     void LoadingSimSetter(bool SetTo);
     void SimLoadingTask(API::ManagerTaskData & TaskData);
@@ -199,7 +203,7 @@ public:
      * 
      * @return std::vector<std::unique_ptr<Simulation>>* 
      */
-    std::vector<std::unique_ptr<Simulation>>* GetSimulationVectorPtr();
+    ConcurrentUniquePtrRegistry<Simulation>* GetSimulationVectorPtr();
 
 
 };

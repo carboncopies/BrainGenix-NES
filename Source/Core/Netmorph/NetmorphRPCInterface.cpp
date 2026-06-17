@@ -18,7 +18,7 @@ namespace NES {
 namespace Simulator {
 
 
-NetmorphRPCInterface::NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<Simulation>>* _Simulations, API::RPCManager* _RPCManager) {
+NetmorphRPCInterface::NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, ConcurrentUniquePtrRegistry<Simulation>* _Simulations, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_RPCManager != nullptr);
 
@@ -154,7 +154,11 @@ std::string NetmorphRPCInterface::NetmorphGetStatus(std::string _JSONRequest) {
     } else if (Handle.Sim()->NetmorphParams->State == Netmorph_WORKING) {
         Status = "Working";
     } else if (Handle.Sim()->NetmorphParams->State == Netmorph_DONE) {
-        Status = "Done";
+        if (Handle.Sim()->NetmorphParams->Result.Status) {
+            Status = "Done";
+        } else {
+            Status = "Failed";
+        }
     }
 
     // Build Response
@@ -162,6 +166,18 @@ std::string NetmorphRPCInterface::NetmorphGetStatus(std::string _JSONRequest) {
     ResponseJSON["StatusCode"] = 0;
     ResponseJSON["Progress_percent"] = Handle.Sim()->NetmorphParams->Progress_percent;
     ResponseJSON["NetmorphStatus"] = Status;
+    if (Status == "Failed") {
+        std::string errstr;
+        auto baseptr = Handle.Sim()->NetmorphParams->Result.base.get();
+        if (baseptr) {
+            if (baseptr->global) {
+                if (baseptr->global->embedlog) {
+                    errstr = baseptr->global->embedlog->error_str;
+                }
+            }
+        }
+        ResponseJSON["Error"] = errstr;
+    }
     return ResponseJSON.dump();
 
 }

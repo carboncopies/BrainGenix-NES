@@ -94,12 +94,15 @@ protected:
     std::vector<StoredRequest> StoredRequests;
     int StoredReqID = 0; // Used to create request IDs for stored NESRequests.
 
+    int RunningManagedTasksCounter = 0; // Tracks running managed tasks, but not Netmorph thread or the thread in SimulationThreads_.
+
 public:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr;
 
     std::string Name; /**Name of the simulation*/
     int ID;           /**ID of the simulation*/
     bool KeepResident = true; // Can be used to delete this specific simulation (see DeleteResidentByID)
+    bool Deleting = false;    // Turn this on when deleting this Simulation starts to prevent new threads being started by requests
 
     int RandomSeed = 0; /** Master random seed for this simulation. */
     std::unique_ptr<Distributions::Generic> MasterRandom_;
@@ -168,6 +171,10 @@ public:
 
     //! Constructors
     Simulation(BG::Common::Logger::LoggingSystem* _Logger);
+
+    int GetRunningManagedTasksCounter() { return RunningManagedTasksCounter; }
+    void IncRunningManagedTasksCounter() { RunningManagedTasksCounter++; }
+    void DecRunningManagedTasksCounter() { if (RunningManagedTasksCounter>0) RunningManagedTasksCounter--; }
 
     /**
      * Takes a fresh random seed and creates a new random generator with that

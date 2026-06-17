@@ -24,6 +24,7 @@
 #include <nlohmann/json.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Util/SafeContainers.h>
 #include <Simulator/Structs/Simulation.h>
 
 #include <RPC/RPCManager.h>
@@ -45,7 +46,7 @@ class NetmorphRPCInterface {
 
 private:
 
-    std::vector<std::unique_ptr<Simulation>>* Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
+    ConcurrentUniquePtrRegistry<Simulation>* Simulations_; /**Vector containing simulation instances. Index in this vector is the simulation's ID (Also stored in the simulation struct for reference.)*/
 
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
 
@@ -61,7 +62,7 @@ public:
      * @param _RPCManager
      * @param _Renderer Instance of the rendering system.
      */
-    NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<Simulation>>* _Simulations, API::RPCManager* _RPCManager);
+    NetmorphRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, ConcurrentUniquePtrRegistry<Simulation>* _Simulations, API::RPCManager* _RPCManager);
 
     /**
      * @brief Destroy the NetmorphRPCInterface object

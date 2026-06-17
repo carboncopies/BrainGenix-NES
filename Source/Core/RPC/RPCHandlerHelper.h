@@ -19,6 +19,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <BG/Common/Logger/Logger.h>
 
+#include <Util/SafeContainers.h>
 #include <Simulator/Structs/Simulation.h>
 
 // #include <RPC/ManagerTaskData.h>
@@ -30,7 +31,7 @@ namespace NES {
 namespace API {
 
 
-typedef std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations;
+typedef ConcurrentUniquePtrRegistry<Simulator::Simulation>* Simulations;
 
 
 

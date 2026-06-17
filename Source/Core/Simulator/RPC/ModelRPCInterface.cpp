@@ -30,7 +30,7 @@ namespace NES {
 namespace Simulator {
 
 
-ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, std::vector<std::unique_ptr<Simulation>>* _Simulations, API::RPCManager* _RPCManager) {
+ModelRPCInterface::ModelRPCInterface(BG::Common::Logger::LoggingSystem* _Logger, ConcurrentUniquePtrRegistry<Simulation>* _Simulations, API::RPCManager* _RPCManager) {
     assert(_Logger != nullptr);
     assert(_RPCManager != nullptr);
 

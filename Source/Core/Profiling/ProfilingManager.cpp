@@ -35,7 +35,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
     std::chrono::time_point Start = std::chrono::high_resolution_clock::now();
 
 
-    std::vector<std::unique_ptr<Simulator::Simulation>>* Simulations = _SimManager->GetSimulationVectorPtr();
+    ConcurrentUniquePtrRegistry<Simulator::Simulation>* Simulations = _SimManager->GetSimulationVectorPtr();
 
     // Profiling Stuff
     if (_Config->ProfilingStatus_ == Config::PROFILE_CALCIUM_END_TO_END_TEST_1) {
@@ -43,9 +43,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running Calcium Imaging Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -72,7 +71,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -172,9 +171,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running 100K Sphere Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -201,7 +199,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -257,9 +255,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running 10K Cylinder Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -289,7 +286,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.End1Radius_um = Radius_um;
             S.End0Pos_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.End1Pos_um = Simulator::Geometries::Vec3D(CenterPos2X, CenterPos2Y, CenterPos2Z);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -344,9 +341,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running 10K Box Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -374,7 +370,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -431,9 +427,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running 500K shape Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -460,7 +455,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -496,7 +491,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         //     S.End1Radius_um = Radius_um;
         //     S.End0Pos_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
         //     S.End1Pos_um = Simulator::Geometries::Vec3D(CenterPos2X, CenterPos2Y, CenterPos2Z);
-        //     Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+        //     Simulator::Simulation* ThisSimulation = Simulations->read(0);
         //     S.ID = ThisSimulation->Collection.Geometries.size();
         //     ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -530,7 +525,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -584,9 +579,8 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
         _Logger->Log("Running 500K shape Profiling Test", 6);
 
         // Create A Simulation
-        Simulations->push_back(std::make_unique<Simulator::Simulation>(_Logger));
-        int SimID = Simulations->size()-1;
-        Simulator::Simulation* Sim = (*Simulations)[SimID].get();
+        int SimID = Simulations->append(std::make_unique<Simulator::Simulation>(_Logger));
+        Simulator::Simulation* Sim = Simulations->read(SimID);
         Sim->Name = "Profiling Sim";
         Sim->ID = SimID;
         Sim->CurrentTask = Simulator::SIMULATION_NONE;
@@ -612,7 +606,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Name = Name;
             S.Center_um = Simulator::Geometries::Vec3D(CenterPosX, CenterPosY, CenterPosZ);
             S.Dims_um = Simulator::Geometries::Vec3D(SizeX, SizeY, SizeZ);
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
@@ -645,7 +639,7 @@ int Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config,
             S.Center_um.x = CenterPosX;
             S.Center_um.y = CenterPosY;
             S.Center_um.z = CenterPosZ;
-            Simulator::Simulation* ThisSimulation = (*Simulations)[0].get();
+            Simulator::Simulation* ThisSimulation = Simulations->read(0);
             S.ID = ThisSimulation->Collection.Geometries.size();
             ThisSimulation->Collection.Geometries.push_back(S);
 
