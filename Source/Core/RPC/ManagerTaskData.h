@@ -81,7 +81,7 @@ struct ManagerTaskData {
 
     // Results set by the Task thread:
     ManagerTaskStatus Status = ManagerTaskStatus::Active;
-    nlohmann::json OutputData;
+    nlohmann::json OutputData = nlohmann::json::object();
     int ReplaceSimulationID = -1;
 
     ManagerTaskData(ManagedTasks _task): TaskType(_task) {}
