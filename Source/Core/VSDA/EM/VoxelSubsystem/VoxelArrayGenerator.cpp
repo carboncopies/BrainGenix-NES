@@ -4,6 +4,8 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <algorithm>
+#include <cmath>
 #include <vector>
 #include <filesystem>
 #include <chrono>
@@ -174,7 +176,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // if (EstimatedSize_vox > SubdivisionThreshold_vox) {
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
-                int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                int NumSegments = std::max(1, int(std::ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox))));
                 // _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
 
 
@@ -226,7 +228,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                 double AverageRadius_um = (ThisCylinder.End0Radius_um + ThisCylinder.End1Radius_um) / 2.;
                 double Distance_um = ThisCylinder.End0Pos_um.Distance(ThisCylinder.End1Pos_um);
-                double Volume_um3 = pow(AverageRadius_um * 3.14159, 2) * Distance_um;
+                double Volume_um3 = 3.14159 * AverageRadius_um * AverageRadius_um * Distance_um;
 
                 double Voxel_um3 = pow(_Params->VoxelResolution_um, 3);
 
@@ -240,47 +242,39 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // }
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
-                int NumSegments = ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox));
+                int NumSegments = std::max(1, int(std::ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox))));
                 // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
                 // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
 
+                // We only need one cap sphere per cylinder; enqueueing one per segment bloats the queue
+                // and forces the cap work down the slower CPU SpherePart path.
+                {
+                    std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
+                    Task->Array_ = _Array;
+                    Task->GeometryCollection_ = &_Sim->Collection;
+                    Task->ShapeID_ = -1;
+                    Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
+                    Task->WorldInfo_ = Info;
+                    Task->Parameters_ = _Params;
+
+                    Geometries::Sphere ThisSphere;
+                    ThisSphere.Center_um = ThisCylinder.End0Pos_um;
+                    ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
+                    ThisSphere.ParentID = ThisCylinder.ParentID;
+                    Task->CustomSphere_ = ThisSphere;
+                    Task->CustomThisComponent = 0;
+                    Task->CustomTotalComponents = 1;
+
+                    _Sim->VSDAData_->TotalVoxelQueueLength_++;
+                    _GeneratorPool->QueueWorkOperation(Task.get());
+                    Tasks.push_back(std::move(Task));
+                    TotalSegments++;
+                }
+
                 // now, create a task for each of these
                 // note that we assume the PointList has at least two segments in it, else it will crash
                 for (unsigned int i = 0; i < NumSegments; i++) {
-
-                    // Add sphere for cosmetic rendering issues
-                    {
-                        // We always add a sphere at the start of a cylinder for cosmetics.
-                        std::unique_ptr<VoxelArrayGenerator::Task> Task = std::make_unique<VoxelArrayGenerator::Task>();
-                        Task->Array_ = _Array;
-                        Task->GeometryCollection_ = &_Sim->Collection;
-                        Task->ShapeID_ = -1;
-                        Task->CustomShape_ = VoxelArrayGenerator::CUSTOM_SPHERE;
-                        Task->WorldInfo_ = Info;
-                        Task->Parameters_ = _Params;
-
-                        // We have to build a new sphere cause one doesnt exist yet, so we do it just in time
-                        Geometries::Sphere ThisSphere;
-                        ThisSphere.Center_um = ThisCylinder.End0Pos_um;
-                        ThisSphere.Radius_um = ThisCylinder.End0Radius_um;
-                        ThisSphere.ParentID = ThisCylinder.ParentID;
-                        Task->CustomSphere_ = ThisSphere;
-
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
-
-                        // Update Total Queue Length Statistics
-                        _Sim->VSDAData_->TotalVoxelQueueLength_++;
-
-                        // Now, enqueue it
-                        _GeneratorPool->QueueWorkOperation(Task.get());
-
-                        // Then move it to the list so we can keep track of it
-                        Tasks.push_back(std::move(Task));
-                        TotalSegments++;
-
-                    }
     
                     // Now add the cylinder part
                     {

@@ -4,6 +4,7 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <cmath>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -35,6 +36,34 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 namespace VoxelArrayGenerator {
+
+namespace {
+
+inline int WorldToVoxelIndex(float position_um, float origin_um, float inverse_voxel_scale) {
+    return static_cast<int>(std::lround((position_um - origin_um) * inverse_voxel_scale));
+}
+
+inline void CompositeVoxelFast(VoxelArray* array,
+                               float x_um,
+                               float y_um,
+                               float z_um,
+                               float origin_x_um,
+                               float origin_y_um,
+                               float origin_z_um,
+                               float inverse_voxel_scale,
+                               VoxelState state,
+                               float distance_to_edge_um,
+                               uint64_t parent_uid) {
+    array->CompositeVoxelAtIndex(
+        WorldToVoxelIndex(x_um, origin_x_um, inverse_voxel_scale),
+        WorldToVoxelIndex(y_um, origin_y_um, inverse_voxel_scale),
+        WorldToVoxelIndex(z_um, origin_z_um, inverse_voxel_scale),
+        state,
+        distance_to_edge_um,
+        parent_uid);
+}
+
+} // namespace
 
 
 
@@ -131,6 +160,11 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 #endif
 
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
+    const float inverse_voxel_scale = 1.0f / _WorldInfo.VoxelScale_um;
+    const BoundingBox array_bb = _Array->GetBoundingBox();
+    const float origin_x_um = array_bb.bb_point1[0];
+    const float origin_y_um = array_bb.bb_point1[1];
+    const float origin_z_um = array_bb.bb_point1[2];
 
     for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
         for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
@@ -138,7 +172,7 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
                 if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
 
                     float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
-                    _Array->CompositeVoxel(X, Y, Z, VoxelState_INTERIOR, DistanceToEdge, _Shape->ParentID);
+                    CompositeVoxelFast(_Array, X, Y, Z, origin_x_um, origin_y_um, origin_z_um, inverse_voxel_scale, VoxelState_INTERIOR, DistanceToEdge, _Shape->ParentID);
 
                 }
             }
@@ -190,6 +224,11 @@ int isPointInCylinder(const Geometries::Vec3D& P1, const Geometries::Vec3D& P2, 
 bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geometries::Cylinder* _Cylinder, VSDA::WorldInfo& _WorldInfo, MicroscopeParameters* _Params, noise::module::Perlin* _Generator) {
     assert(_Array != nullptr);
     assert(_WorldInfo.VoxelScale_um != 0); // Will get stuck in infinite loop
+    const float inverse_voxel_scale = 1.0f / _WorldInfo.VoxelScale_um;
+    const BoundingBox array_bb = _Array->GetBoundingBox();
+    const float origin_x_um = array_bb.bb_point1[0];
+    const float origin_y_um = array_bb.bb_point1[1];
+    const float origin_z_um = array_bb.bb_point1[2];
 
     // Rotate The Endpoints Around World Origin By Amount Set In World Info
     //   This deals with the rotation of the whole model
@@ -232,7 +271,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
         // VoxelType FinalVoxelValue = GenerateVoxelColor(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, _Params, _Generator);
         // _Array->SetVoxelIfNotDarker(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, FinalVoxelValue);
         float DistanceToEdge = radius_at_z;
-        _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
+        CompositeVoxelFast(_Array, RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, origin_x_um, origin_y_um, origin_z_um, inverse_voxel_scale, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
 
         // Find points on circles around the midline up to the radius at this point along the cylinder.
         for (float r = stepsize + (_ThisThread * stepsize); r <= radius_at_z; r += (_TotalThreads * stepsize)) {
@@ -247,7 +286,7 @@ bool FillCylinderPart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Ge
                 Geometries::Vec3D RotatedPoint = RotatedVec(x, y, z, rot_y, rot_z, translate);
 
                 float DistanceToEdge = radius_at_z - r;
-                _Array->CompositeVoxel(RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
+                CompositeVoxelFast(_Array, RotatedPoint.x, RotatedPoint.y, RotatedPoint.z, origin_x_um, origin_y_um, origin_z_um, inverse_voxel_scale, VoxelState_INTERIOR, DistanceToEdge, _Cylinder->ParentID);
 
 
                 // // Set voxel at the point.
