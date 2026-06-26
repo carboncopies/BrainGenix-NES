@@ -81,7 +81,7 @@ struct GeometryCollection {
                 break;
             }
             case GeometryBox: {
-                totsize == sizeof(Box);
+                totsize += sizeof(Box);
                 break;
             }
             default: {
