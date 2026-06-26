@@ -15,6 +15,7 @@
 
 #ifdef __APPLE__
 #include <Accelerate/Accelerate.h>
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.h>
 #endif
 
 
@@ -387,16 +388,28 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Perform Gaussian Blurring Step
             if (Task->EnableGaussianBlur) {
 #ifdef __APPLE__
-                // vImageTentConvolve_Planar8: SIMD-accelerated tent filter, good Gaussian approximation.
-                // Kernel size ~4*sigma gives coverage similar to the IIR filter's radius16 rule.
-                vImagePixelCount W = (vImagePixelCount)OneToOneVoxelImage.Width_px;
-                vImagePixelCount H = (vImagePixelCount)OneToOneVoxelImage.Height_px;
-                std::vector<uint8_t> TmpBuf(W * H);
-                vImage_Buffer Src = { OneToOneVoxelImage.Data_.get(), H, W, (size_t)W };
-                vImage_Buffer Dst = { TmpBuf.data(), H, W, (size_t)W };
-                uint32_t Ks = std::max(3u, (uint32_t)(Task->GaussianBlurSigma * 4 + 1) | 1);
-                vImageTentConvolve_Planar8(&Src, &Dst, nullptr, 0, 0, Ks, Ks, 0, kvImageEdgeExtend);
-                std::memcpy(OneToOneVoxelImage.Data_.get(), TmpBuf.data(), (size_t)W * H);
+                // Tiered blur strategy on Apple Silicon:
+                //   sigma >= 5 → MPS (GPU, ~10-20× faster for large blur radii)
+                //   sigma <  5 → vImage tent filter (AMX SIMD, low-overhead for small radii)
+                // MPS path falls back to vImage if the Metal device is unavailable.
+                bool BlurDone = false;
+                if (Task->GaussianBlurSigma >= 5.0f) {
+                    BlurDone = MPS_GaussianBlur(
+                        OneToOneVoxelImage.Data_.get(),
+                        OneToOneVoxelImage.Width_px,
+                        OneToOneVoxelImage.Height_px,
+                        Task->GaussianBlurSigma);
+                }
+                if (!BlurDone) {
+                    vImagePixelCount W = (vImagePixelCount)OneToOneVoxelImage.Width_px;
+                    vImagePixelCount H = (vImagePixelCount)OneToOneVoxelImage.Height_px;
+                    std::vector<uint8_t> TmpBuf(W * H);
+                    vImage_Buffer Src = { OneToOneVoxelImage.Data_.get(), H, W, (size_t)W };
+                    vImage_Buffer Dst = { TmpBuf.data(), H, W, (size_t)W };
+                    uint32_t Ks = std::max(3u, (uint32_t)(Task->GaussianBlurSigma * 4 + 1) | 1);
+                    vImageTentConvolve_Planar8(&Src, &Dst, nullptr, 0, 0, Ks, Ks, 0, kvImageEdgeExtend);
+                    std::memcpy(OneToOneVoxelImage.Data_.get(), TmpBuf.data(), (size_t)W * H);
+                }
 #else
                 iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
 #endif

@@ -351,8 +351,22 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
 if(APPLE)
-    target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE "-framework Accelerate")
-    target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Accelerate")
+    set(APPLE_BLUR_SRC
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.mm)
+
+    # Compile the Objective-C++ bridge with ARC so Metal objects are automatically released
+    set_source_files_properties(${APPLE_BLUR_SRC} PROPERTIES COMPILE_FLAGS "-fobjc-arc")
+
+    target_sources(${PROJECT_LIBRARY_NAME} PRIVATE ${APPLE_BLUR_SRC})
+    target_sources(${PROJECT_NAME}         PRIVATE ${APPLE_BLUR_SRC})
+
+    foreach(_TGT ${PROJECT_LIBRARY_NAME} ${PROJECT_NAME})
+        target_link_libraries(${_TGT} PRIVATE
+            "-framework Accelerate"
+            "-framework Metal"
+            "-framework MetalPerformanceShaders"
+        )
+    endforeach()
 endif()
 
 ## -- IMPORTANT -- | !FOR REDUCED THREADING DEBUGGING, UNCOMMENT LINE BELOW, OTHERWISE LEAVE COMMENTED OUT! | -- IMPORTANT -- ##
