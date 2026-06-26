@@ -8,9 +8,14 @@
 #include <chrono>
 #include <filesystem>
 #include <cstdlib>
+#include <cstring>
 #include <random>
 #include <algorithm>
 #include <math.h>
+
+#ifdef __APPLE__
+#include <Accelerate/Accelerate.h>
+#endif
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -381,7 +386,20 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Perform Gaussian Blurring Step
             if (Task->EnableGaussianBlur) {
+#ifdef __APPLE__
+                // vImageTentConvolve_Planar8: SIMD-accelerated tent filter, good Gaussian approximation.
+                // Kernel size ~4*sigma gives coverage similar to the IIR filter's radius16 rule.
+                vImagePixelCount W = (vImagePixelCount)OneToOneVoxelImage.Width_px;
+                vImagePixelCount H = (vImagePixelCount)OneToOneVoxelImage.Height_px;
+                std::vector<uint8_t> TmpBuf(W * H);
+                vImage_Buffer Src = { OneToOneVoxelImage.Data_.get(), H, W, (size_t)W };
+                vImage_Buffer Dst = { TmpBuf.data(), H, W, (size_t)W };
+                uint32_t Ks = std::max(3u, (uint32_t)(Task->GaussianBlurSigma * 4 + 1) | 1);
+                vImageTentConvolve_Planar8(&Src, &Dst, nullptr, 0, 0, Ks, Ks, 0, kvImageEdgeExtend);
+                std::memcpy(OneToOneVoxelImage.Data_.get(), TmpBuf.data(), (size_t)W * H);
+#else
                 iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+#endif
             }
 
 
@@ -457,8 +475,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
         } else {
 
-            // We didn't get any work, just go to sleep for a few milliseconds so we don't rail the cpu
-            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+            std::unique_lock<std::mutex> Lock(QueueMutex_);
+            WorkAvailable_.wait_for(Lock, std::chrono::milliseconds(50),
+                [this]{ return !Queue_.empty() || !ThreadControlFlag_; });
         }
     }
 }
@@ -492,6 +511,7 @@ ImageProcessorPool::~ImageProcessorPool() {
     // Send Stop Signal To Threads
     Logger_->Log("Stopping EMImageProcessorPool Threads", 2);
     ThreadControlFlag_ = false;
+    WorkAvailable_.notify_all();
 
     // Join All Threads
     Logger_->Log("Joining EMImageProcessorPool Threads", 1);
@@ -506,10 +526,11 @@ ImageProcessorPool::~ImageProcessorPool() {
 // Queue Access Functions
 void ImageProcessorPool::EnqueueTask(ProcessingTask* _Task) {
 
-    // Firstly, Ensure Nobody Else Is Using The Queue
-    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
-    Queue_.emplace(_Task);
+    {
+        std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+        Queue_.emplace(_Task);
+    }
+    WorkAvailable_.notify_one();
 }
 
 int ImageProcessorPool::GetQueueSize() {

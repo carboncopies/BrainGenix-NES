@@ -34,6 +34,8 @@
 #include <iostream>
 #include <assert.h>
 #include <memory>
+#include <mutex>
+#include <condition_variable>
 #include <queue>
 #include <thread>
 
@@ -73,6 +75,7 @@ private:
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
     std::mutex QueueMutex_;                               /**Mutex used to lock access to the queue when it's being modified*/
+    std::condition_variable WorkAvailable_;               /**Notified when a task is pushed; workers block on this instead of sleep-spinning*/
     std::queue<ProcessingTask*> Queue_;                            /**Queue that contains tasks to be compressed*/
 
     std::vector<std::thread> EncoderThreads_;             /**List of encoding threads - each one tries to dequeue stuff from the queue to work on.*/

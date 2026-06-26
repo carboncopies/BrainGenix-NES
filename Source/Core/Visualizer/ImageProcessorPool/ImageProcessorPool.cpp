@@ -118,8 +118,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
         } else {
 
-            // We didn't get any work, just go to sleep for a few milliseconds so we don't rail the cpu
-            std::this_thread::sleep_for(std::chrono::milliseconds(5));
+            std::unique_lock<std::mutex> Lock(QueueMutex_);
+            WorkAvailable_.wait_for(Lock, std::chrono::milliseconds(50),
+                [this]{ return !Queue_.empty() || !ThreadControlFlag_; });
         }
     }
 }
@@ -154,6 +155,7 @@ ImageProcessorPool::~ImageProcessorPool() {
     // Send Stop Signal To Threads
     Logger_->Log("Stopping VisualizerImageProcessorPool Threads", 2);
     ThreadControlFlag_ = false;
+    WorkAvailable_.notify_all();
 
     // Join All Threads
     Logger_->Log("Joining VisualizerImageProcessorPool Threads", 1);
@@ -168,9 +170,11 @@ ImageProcessorPool::~ImageProcessorPool() {
 // Queue Access Functions
 void ImageProcessorPool::EnqueueTask(ProcessingTask* _Task) {
 
-    // Firstly, Ensure Nobody Else Is Using The Queue
-    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-    Queue_.emplace(_Task);
+    {
+        std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+        Queue_.emplace(_Task);
+    }
+    WorkAvailable_.notify_one();
 }
 
 int ImageProcessorPool::GetQueueSize() {

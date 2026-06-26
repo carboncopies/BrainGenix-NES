@@ -350,6 +350,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
+if(APPLE)
+    target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE "-framework Accelerate")
+    target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Accelerate")
+endif()
+
 ## -- IMPORTANT -- | !FOR REDUCED THREADING DEBUGGING, UNCOMMENT LINE BELOW, OTHERWISE LEAVE COMMENTED OUT! | -- IMPORTANT -- ##
 # target_compile_definitions(${PROJECT_NAME} PRIVATE REDUCED_THREADING_DEBUG=1)
 ## -- END REDUCED THREADING COMMENT -- ##
