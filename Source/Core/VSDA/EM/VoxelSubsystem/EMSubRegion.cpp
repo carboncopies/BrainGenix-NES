@@ -283,6 +283,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     noise::module::Perlin PerlinGenerator;
+    const size_t TaskStartIndex = VSDAData_->Tasks_.size();
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
 
@@ -306,12 +307,13 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     }
-    for (unsigned int i = 0; i < VSDAData_->Tasks_.size(); i++) {
+    for (size_t i = TaskStartIndex; i < VSDAData_->Tasks_.size(); i++) {
         ProcessingTask* Task = VSDAData_->Tasks_[i].get();
         while (Task->IsDone_ != true) {
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
         }
     }
+    VSDAData_->Tasks_.clear();
 
 
 

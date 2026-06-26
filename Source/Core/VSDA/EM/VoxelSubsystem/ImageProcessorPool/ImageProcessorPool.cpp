@@ -110,6 +110,10 @@ double GetAverage(std::vector<double>* _Vec) {
     return Total / _Vec->size();
 }
 
+inline uint64_t GetVoxelBufferIndex(int x, int y, int z, uint64_t yz_stride, uint64_t z_stride) {
+    return (uint64_t(x) * yz_stride) + (uint64_t(y) * z_stride) + uint64_t(z);
+}
+
 
 // Thread Main Function
 void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
@@ -153,22 +157,24 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
                     int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
                     int NumChannels = 3;
+                    const int array_y = Task->Array_->GetY();
+                    const int array_z = Task->Array_->GetZ();
+                    const uint64_t yz_stride = uint64_t(array_y) * uint64_t(array_z);
+                    const uint64_t z_stride = uint64_t(array_z);
+                    const VoxelType* voxel_data = Task->Array_->GetRawData();
 
                     Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
                     OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
+                    unsigned char* image_data = OneToOneVoxelImage.Data_.get();
 
                     // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
                     for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
+                        const int pixel_x = XVoxelIndex - Task->VoxelStartingX;
+                        const uint64_t x_base = GetVoxelBufferIndex(XVoxelIndex, 0, Task->VoxelZ, yz_stride, z_stride);
                         for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
-
-                        
-                            // Enumerate Depth, Compose based on rules defined above
-                            VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
-        
-
-                            // Calculate Pixel Index
-                            int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
-                            int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
+                            const VoxelType& PresentingVoxel = voxel_data[x_base + (uint64_t(YVoxelIndex) * z_stride)];
+                            const int pixel_y = YVoxelIndex - Task->VoxelStartingY;
+                            const size_t pixel_offset = (pixel_x + (VoxelsPerStepX * pixel_y)) * NumChannels;
 
                             uint64_t Seed = PresentingVoxel.ParentUID;
                             unsigned int R = (Seed * 9301 + 49297) % 256;
@@ -181,7 +187,9 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                                 B = 0;
                             }
 
-                            OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, R, G, B);
+                            image_data[pixel_offset + 0] = static_cast<unsigned char>(R);
+                            image_data[pixel_offset + 1] = static_cast<unsigned char>(G);
+                            image_data[pixel_offset + 2] = static_cast<unsigned char>(B);
                                 
 
                         }
@@ -226,46 +234,44 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             int VoxelsPerStepX = Task->VoxelEndingX - Task->VoxelStartingX;
             int VoxelsPerStepY = Task->VoxelEndingY - Task->VoxelStartingY;
             int NumChannels = 1;
+            const int array_y = Task->Array_->GetY();
+            const int array_z = Task->Array_->GetZ();
+            const uint64_t yz_stride = uint64_t(array_y) * uint64_t(array_z);
+            const uint64_t z_stride = uint64_t(array_z);
+            const VoxelType* voxel_data = Task->Array_->GetRawData();
+            const BoundingBox voxel_bb = Task->Array_->GetBoundingBox();
+            const float voxel_scale = Task->VoxelScale_um;
+            const float z_position_um = voxel_bb.bb_point1[2] + (Task->VoxelZ * voxel_scale);
 
             Image OneToOneVoxelImage(VoxelsPerStepX, VoxelsPerStepY, NumChannels);
             OneToOneVoxelImage.TargetFileName_ = Task->TargetFileName_;
+            unsigned char* image_data = OneToOneVoxelImage.Data_.get();
+            std::fill_n(image_data, VoxelsPerStepX * VoxelsPerStepY, static_cast<unsigned char>(240));
 
             // Now enumerate the voxel array and populate the image with the desired pixels (for the subregion we're on)
             bool IsImageEmpty = true;
             for (unsigned int XVoxelIndex = Task->VoxelStartingX; XVoxelIndex < Task->VoxelEndingX; XVoxelIndex++) {
+                const int pixel_x = XVoxelIndex - Task->VoxelStartingX;
+                const uint64_t x_base = GetVoxelBufferIndex(XVoxelIndex, 0, Task->VoxelZ, yz_stride, z_stride);
+                const float x_position_um = voxel_bb.bb_point1[0] + (XVoxelIndex * voxel_scale);
                 for (unsigned int YVoxelIndex = Task->VoxelStartingY; YVoxelIndex < Task->VoxelEndingY; YVoxelIndex++) {
-
-                    // -- Compositor Rules -- //
-                    // In order for us to have some way that the system can repeatibly handle information, we define these rules
-                    // They specify what will show up from a multilayer voxel array
-                    // Firstly, we render from bottom to top - that is, from a lower Z height to a higher Z Height.
-                    // Any debug colors (from bottom to top, whichever is encountered earlier), will overwrite any color in the pixels
-                    // This will also terminate the continuation of enumerating up the Z height
-                    // Other than those enums, we will pick the darkest color currently <--- NO WE DON'T WE JUST PICK THE TOP ONE!
-                    // This isn't super realistic and needs to be fixed later, (such as with a focal distance, and blurring), but it works for now
-
-
-                    // Enumerate Depth, Compose based on rules defined above
-                    VoxelType PresentingVoxel = Task->Array_->GetVoxel(XVoxelIndex, YVoxelIndex, Task->VoxelZ);
-
-                    // Calculate Pixel Index
-                    int ThisPixelX = XVoxelIndex - Task->VoxelStartingX;
-                    int ThisPixelY = YVoxelIndex - Task->VoxelStartingY;
+                    const VoxelType& PresentingVoxel = voxel_data[x_base + (uint64_t(YVoxelIndex) * z_stride)];
+                    const int pixel_y = YVoxelIndex - Task->VoxelStartingY;
+                    const size_t pixel_offset = pixel_x + (VoxelsPerStepX * pixel_y);
 
                     // Calculate Color To Be Set
                     if (PresentingVoxel.State_ == VoxelState_BLACK) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0);
+                        image_data[pixel_offset] = 0;
                         IsImageEmpty = false;
                         continue;
                     } else if (PresentingVoxel.State_ == VoxelState_WHITE) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 255);
+                        image_data[pixel_offset] = 255;
                         IsImageEmpty = false;
                         continue;
                     } else if (PresentingVoxel.State_ == VoxelState_EMPTY) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 240); // <-- THAT IS THE DEFAULT IMAGE COLOR, SHOULD BE CONFIGURABLE
                         continue;                    
                     } else if (PresentingVoxel.State_ == VoxelState_OUT_OF_BOUNDS) {
-                        OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, 0); // Force out of bounds color to be black.
+                        image_data[pixel_offset] = 0; // Force out of bounds color to be black.
                         continue;                    
                     } 
 
@@ -273,10 +279,8 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                     // then we set the color based on the perlin noise, and distance to edge
                     uint8_t Intensity;
                     if (Task->Params_->GeneratePerlinNoise_) {
-                        float X = Task->Array_->GetXPositionAtIndex(XVoxelIndex);
-                        float Y = Task->Array_->GetYPositionAtIndex(YVoxelIndex);
-                        float Z = Task->Array_->GetZPositionAtIndex(Task->VoxelZ);
-                        Intensity = GenerateVoxelColor(X, Y, Z, Task->Params_, Task->Generator_);
+                        const float y_position_um = voxel_bb.bb_point1[1] + (YVoxelIndex * voxel_scale);
+                        Intensity = GenerateVoxelColor(x_position_um, y_position_um, z_position_um, Task->Params_, Task->Generator_);
                     } else {
                         Intensity = Task->Params_->DefaultIntensity_;
                     }
@@ -285,7 +289,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         Intensity = CalculateBorderColor(Intensity, PresentingVoxel.DistanceToEdge_vox_, Task->Params_);
                     }
 
-                    OneToOneVoxelImage.SetPixel(ThisPixelX, ThisPixelY, Intensity);
+                    image_data[pixel_offset] = Intensity;
                     IsImageEmpty = false;
                         
 
@@ -327,15 +331,12 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 float ThisContrast = Task->Contrast + ((-1+2*((float)rand())/RAND_MAX) * Task->ContrastRandomAmount);
                 float ThisBrightness = Task->Brightness + ((-1+2*((float)rand())/RAND_MAX) * Task->BrightnessRandomAmount);
 
-                for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
-                    for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
-
-                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
-                        Color = (ThisContrast * ((float)Color - 128.)) + 128 + ThisBrightness;
-                        Color = std::clamp(Color, 0, 255);
-                        OneToOneVoxelImage.SetPixel(X, Y, Color);
-
-                    }
+                const size_t pixel_count = size_t(OneToOneVoxelImage.Width_px) * size_t(OneToOneVoxelImage.Height_px);
+                for (size_t pixel_index = 0; pixel_index < pixel_count; ++pixel_index) {
+                    int Color = image_data[pixel_index];
+                    Color = (ThisContrast * ((float)Color - 128.)) + 128 + ThisBrightness;
+                    Color = std::clamp(Color, 0, 255);
+                    image_data[pixel_index] = static_cast<unsigned char>(Color);
                 }
             }
 
@@ -353,16 +354,15 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 }
 
                 for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
+                    const float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
                     for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
-
-                        int Color = OneToOneVoxelImage.GetPixel(X, Y);
-                        float PositionX = (Task->VoxelStartingX + X) * Task->VoxelScale_um;
+                        const size_t pixel_offset = X + (OneToOneVoxelImage.Width_px * Y);
+                        int Color = image_data[pixel_offset];
                         float PositionY = (Task->VoxelStartingY + Y) * Task->VoxelScale_um;
                         float ScaledPositionX = (PositionX + ZOffset) + (sin(PositionY * Task->InterferencePatternWobbleFrequency) * Task->InterferencePatternYAxisWobbleIntensity); 
                         Color += sin(Task->InterferencePatternXScale_um * ScaledPositionX) * ThisImageAmplitude + Task->InterferencePatternBias;
                         Color = std::clamp(Color, 0, 255);
-                        OneToOneVoxelImage.SetPixel(X, Y, Color);
-
+                        image_data[pixel_offset] = static_cast<unsigned char>(Color);
                     }
                 }
             }
@@ -371,15 +371,12 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Pre-Blur Noise Pass
             if (Task->EnableImageNoise) {
                 for (unsigned int i = 0; i < Task->PreBlurNoisePasses; i++) {
-                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
-                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
-
-                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
-                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
-                            Color = std::clamp(Color, 0, 255);
-                            OneToOneVoxelImage.SetPixel(X, Y, Color);
-
-                        }
+                    const size_t pixel_count = size_t(OneToOneVoxelImage.Width_px) * size_t(OneToOneVoxelImage.Height_px);
+                    for (size_t pixel_index = 0; pixel_index < pixel_count; ++pixel_index) {
+                        int Color = image_data[pixel_index];
+                        Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                        Color = std::clamp(Color, 0, 255);
+                        image_data[pixel_index] = static_cast<unsigned char>(Color);
                     }
                 }
             }
@@ -415,15 +412,12 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             // Post-Blur Noise Pass
             if (Task->EnableImageNoise) {
                 for (unsigned int i = 0; i < Task->PostBlurNoisePasses; i++) {
-                    for (size_t X = 0; X < OneToOneVoxelImage.Width_px; X++) {
-                        for (size_t Y = 0; Y < OneToOneVoxelImage.Height_px; Y++) {
-
-                            int Color = OneToOneVoxelImage.GetPixel(X, Y);
-                            Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
-                            Color = std::clamp(Color, 0, 255);
-                            OneToOneVoxelImage.SetPixel(X, Y, Color);
-
-                        }
+                    const size_t pixel_count = size_t(OneToOneVoxelImage.Width_px) * size_t(OneToOneVoxelImage.Height_px);
+                    for (size_t pixel_index = 0; pixel_index < pixel_count; ++pixel_index) {
+                        int Color = image_data[pixel_index];
+                        Color += (RandomGenerator() % Task->ImageNoiseAmount) - int(Task->ImageNoiseAmount/2);
+                        Color = std::clamp(Color, 0, 255);
+                        image_data[pixel_index] = static_cast<unsigned char>(Color);
                     }
                 }
             }

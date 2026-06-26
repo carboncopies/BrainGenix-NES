@@ -160,21 +160,51 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
 #endif
 
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
-    const float inverse_voxel_scale = 1.0f / _WorldInfo.VoxelScale_um;
     const BoundingBox array_bb = _Array->GetBoundingBox();
     const float origin_x_um = array_bb.bb_point1[0];
     const float origin_y_um = array_bb.bb_point1[1];
     const float origin_z_um = array_bb.bb_point1[2];
+    const float voxel_scale = _WorldInfo.VoxelScale_um;
+    const float inverse_voxel_scale = 1.0f / voxel_scale;
+    const float radius_um = _Shape->Radius_um;
+    const float radius_sq_um = radius_um * radius_um;
+    const float center_x_um = _Shape->Center_um.x;
+    const float center_y_um = _Shape->Center_um.y;
+    const float center_z_um = _Shape->Center_um.z;
 
-    for (float X = BB.bb_point1[0] + (_ThisThread * _WorldInfo.VoxelScale_um); X < BB.bb_point2[0]; X+= (_TotalThreads * _WorldInfo.VoxelScale_um)) {
-        for (float Y = BB.bb_point1[1]; Y < BB.bb_point2[1]; Y+= _WorldInfo.VoxelScale_um) {
-            for (float Z = BB.bb_point1[2]; Z < BB.bb_point2[2]; Z+= _WorldInfo.VoxelScale_um) {
-                if (_Shape->IsPointInShape(Geometries::Vec3D(X, Y, Z), _WorldInfo)) {
+    const int min_x = std::max(0, WorldToVoxelIndex(BB.bb_point1[0], origin_x_um, inverse_voxel_scale));
+    const int max_x = std::min(_Array->GetX(), WorldToVoxelIndex(BB.bb_point2[0], origin_x_um, inverse_voxel_scale) + 1);
+    const int min_y = std::max(0, WorldToVoxelIndex(BB.bb_point1[1], origin_y_um, inverse_voxel_scale));
+    const int max_y = std::min(_Array->GetY(), WorldToVoxelIndex(BB.bb_point2[1], origin_y_um, inverse_voxel_scale) + 1);
+    const int min_z = std::max(0, WorldToVoxelIndex(BB.bb_point1[2], origin_z_um, inverse_voxel_scale));
+    const int max_z = std::min(_Array->GetZ(), WorldToVoxelIndex(BB.bb_point2[2], origin_z_um, inverse_voxel_scale) + 1);
 
-                    float DistanceToEdge = _Shape->Radius_um - Geometries::Vec3D(X, Y, Z).Distance(_Shape->Center_um);
-                    CompositeVoxelFast(_Array, X, Y, Z, origin_x_um, origin_y_um, origin_z_um, inverse_voxel_scale, VoxelState_INTERIOR, DistanceToEdge, _Shape->ParentID);
+    for (int x_index = min_x + _ThisThread; x_index < max_x; x_index += _TotalThreads) {
+        const float x_um = origin_x_um + (x_index * voxel_scale);
+        const float dx = x_um - center_x_um;
+        const float dx_sq = dx * dx;
+        if (dx_sq > radius_sq_um) {
+            continue;
+        }
 
+        for (int y_index = min_y; y_index < max_y; ++y_index) {
+            const float y_um = origin_y_um + (y_index * voxel_scale);
+            const float dy = y_um - center_y_um;
+            const float xy_sq = dx_sq + (dy * dy);
+            if (xy_sq > radius_sq_um) {
+                continue;
+            }
+
+            for (int z_index = min_z; z_index < max_z; ++z_index) {
+                const float z_um = origin_z_um + (z_index * voxel_scale);
+                const float dz = z_um - center_z_um;
+                const float distance_sq = xy_sq + (dz * dz);
+                if (distance_sq > radius_sq_um) {
+                    continue;
                 }
+
+                const float distance_to_edge = radius_um - std::sqrt(distance_sq);
+                _Array->CompositeVoxelAtIndex(x_index, y_index, z_index, VoxelState_INTERIOR, distance_to_edge, _Shape->ParentID);
             }
         }
     }
