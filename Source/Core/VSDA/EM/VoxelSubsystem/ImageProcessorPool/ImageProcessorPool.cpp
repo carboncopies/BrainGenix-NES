@@ -14,7 +14,6 @@
 #include <math.h>
 
 #ifdef __APPLE__
-#include <Accelerate/Accelerate.h>
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.h>
 #endif
 
@@ -401,14 +400,11 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                         Task->GaussianBlurSigma);
                 }
                 if (!BlurDone) {
-                    vImagePixelCount W = (vImagePixelCount)OneToOneVoxelImage.Width_px;
-                    vImagePixelCount H = (vImagePixelCount)OneToOneVoxelImage.Height_px;
-                    std::vector<uint8_t> TmpBuf(W * H);
-                    vImage_Buffer Src = { OneToOneVoxelImage.Data_.get(), H, W, (size_t)W };
-                    vImage_Buffer Dst = { TmpBuf.data(), H, W, (size_t)W };
-                    uint32_t Ks = std::max(3u, (uint32_t)(Task->GaussianBlurSigma * 4 + 1) | 1);
-                    vImageTentConvolve_Planar8(&Src, &Dst, nullptr, 0, 0, Ks, Ks, 0, kvImageEdgeExtend);
-                    std::memcpy(OneToOneVoxelImage.Data_.get(), TmpBuf.data(), (size_t)W * H);
+                    Accelerate_GaussianBlur(
+                        OneToOneVoxelImage.Data_.get(),
+                        OneToOneVoxelImage.Width_px,
+                        OneToOneVoxelImage.Height_px,
+                        Task->GaussianBlurSigma);
                 }
 #else
                 iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);

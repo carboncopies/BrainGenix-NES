@@ -361,6 +361,7 @@ if(APPLE)
     foreach(_TGT ${PROJECT_LIBRARY_NAME} ${PROJECT_NAME})
         target_sources(${_TGT} PRIVATE ${APPLE_MM_SRCS})
         target_link_libraries(${_TGT} PRIVATE
+            "-framework Foundation"
             "-framework Accelerate"
             "-framework Metal"
             "-framework MetalPerformanceShaders"

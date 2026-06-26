@@ -21,7 +21,7 @@
  * Thread-safe: a shared MTLDevice/MTLCommandQueue/MTLComputePipelineState are
  * initialised once; each call creates its own MTLCommandBuffer.
  */
-bool Metal_FillSphere(VoxelArray* array,
+bool Metal_FillSphere(BG::NES::Simulator::VoxelArray* array,
                       float cx, float cy, float cz,
                       float radius, uint64_t parentUID);
 

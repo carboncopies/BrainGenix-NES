@@ -5,9 +5,13 @@
 #ifdef __APPLE__
 
 #include <mutex>
+#include <vector>
+#include <cstring>
+#include <algorithm>
 
 #import <Metal/Metal.h>
 #import <MetalPerformanceShaders/MetalPerformanceShaders.h>
+#import <Accelerate/Accelerate.h>
 
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.h>
 
@@ -48,7 +52,7 @@ bool MPS_GaussianBlur(uint8_t* pixels, int width, int height, float sigma) {
 
         id<MTLTexture> SrcTex = [gDevice newTextureWithDescriptor:Desc];
         id<MTLTexture> DstTex = [gDevice newTextureWithDescriptor:Desc];
-        if (!SrcTex || !DstTex) return; // success stays false
+        if (!SrcTex || !DstTex) return false;
 
         // Upload source pixels
         [SrcTex replaceRegion:MTLRegionMake2D(0, 0, (NSUInteger)width, (NSUInteger)height)
@@ -67,7 +71,7 @@ bool MPS_GaussianBlur(uint8_t* pixels, int width, int height, float sigma) {
         [CmdBuf commit];
         [CmdBuf waitUntilCompleted];
 
-        if (CmdBuf.status == MTLCommandBufferStatusError) return; // success stays false
+        if (CmdBuf.status == MTLCommandBufferStatusError) return false;
 
         // Read blurred pixels back (still in unified memory — no physical transfer)
         [DstTex getBytes:pixels
@@ -79,6 +83,19 @@ bool MPS_GaussianBlur(uint8_t* pixels, int width, int height, float sigma) {
     }
 
     return Success;
+}
+
+
+bool Accelerate_GaussianBlur(uint8_t* pixels, int width, int height, float sigma) {
+    vImagePixelCount W = (vImagePixelCount)width;
+    vImagePixelCount H = (vImagePixelCount)height;
+    std::vector<uint8_t> TmpBuf((size_t)W * H);
+    vImage_Buffer Src = { pixels,         H, W, (size_t)W };
+    vImage_Buffer Dst = { TmpBuf.data(),  H, W, (size_t)W };
+    uint32_t Ks = std::max(3u, (uint32_t)((uint32_t)(sigma * 4 + 1) | 1));
+    vImageTentConvolve_Planar8(&Src, &Dst, nullptr, 0, 0, Ks, Ks, 0, kvImageEdgeExtend);
+    std::memcpy(pixels, TmpBuf.data(), (size_t)W * H);
+    return true;
 }
 
 #endif // __APPLE__

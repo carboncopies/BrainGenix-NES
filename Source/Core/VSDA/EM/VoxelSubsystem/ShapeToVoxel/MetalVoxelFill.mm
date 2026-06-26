@@ -12,6 +12,7 @@
 #include <VSDA/EM/VoxelSubsystem/ShapeToVoxel/MetalVoxelFill.h>
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 
+using namespace BG::NES::Simulator;
 
 // ── Metal Shading Language source (compiled at first call, cached by Metal) ─────
 
@@ -118,7 +119,7 @@ static void InitMetal() {
 
 // ── C++ bridge struct (must match SphereParams in the shader exactly) ────────
 
-struct alignas(4) SphereKernelParams {
+struct alignas(8) SphereKernelParams {
     float    cx, cy, cz;
     float    radius;
     float    voxelScale;
@@ -132,7 +133,7 @@ struct alignas(4) SphereKernelParams {
 
 // ── Public entry point ───────────────────────────────────────────────────────
 
-bool Metal_FillSphere(VoxelArray* array,
+bool Metal_FillSphere(BG::NES::Simulator::VoxelArray* array,
                       float cx, float cy, float cz,
                       float radius, uint64_t parentUID) {
     InitMetal();
@@ -179,7 +180,7 @@ bool Metal_FillSphere(VoxelArray* array,
                                                             length:byteLen
                                                            options:MTLResourceStorageModeShared
                                                        deallocator:nil];
-        if (!voxelBuf) return;
+        if (!voxelBuf) return false;
 
         // Fill params struct
         SphereKernelParams p{};
@@ -198,7 +199,7 @@ bool Metal_FillSphere(VoxelArray* array,
         id<MTLBuffer> paramBuf = [gDevice newBufferWithBytes:&p
                                                       length:sizeof(p)
                                                      options:MTLResourceStorageModeShared];
-        if (!paramBuf) return;
+        if (!paramBuf) return false;
 
         // Encode and dispatch
         id<MTLCommandBuffer>         cmdBuf  = [gQueue commandBuffer];
