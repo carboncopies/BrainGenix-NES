@@ -10,6 +10,10 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.h>
 
+#ifdef __APPLE__
+#include <VSDA/EM/VoxelSubsystem/ShapeToVoxel/MetalVoxelFill.h>
+#endif
+
 /**
  * Just as a reminder of the process used below:
  * 
@@ -114,6 +118,17 @@ bool FillSpherePart(int _TotalThreads, int _ThisThread, VoxelArray* _Array, Geom
     assert(_Params != nullptr);
     assert(_Generator != nullptr);
 
+#ifdef __APPLE__
+    // Full-sphere Metal path: only when called as a single-threaded dispatch (the common case).
+    // Multi-part custom spheres fall through to the CPU loop to avoid concurrent GPU+CPU writes.
+    if (_TotalThreads == 1) {
+        if (Metal_FillSphere(_Array,
+                             _Shape->Center_um.x, _Shape->Center_um.y, _Shape->Center_um.z,
+                             _Shape->Radius_um, _Shape->ParentID)) {
+            return true;
+        }
+    }
+#endif
 
     BoundingBox BB = _Shape->GetBoundingBox(_WorldInfo);
 

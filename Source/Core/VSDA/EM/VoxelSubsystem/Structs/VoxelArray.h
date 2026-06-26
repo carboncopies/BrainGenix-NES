@@ -302,10 +302,17 @@ public:
 
     /**
      * @brief Returns the size of the array.
-     * 
-     * @return uint64_t 
+     *
+     * @return uint64_t
      */
     uint64_t GetSize();
+
+    /**
+     * @brief Returns a raw pointer to the voxel data buffer.
+     * Used by platform-specific acceleration paths (e.g. Metal compute on Apple Silicon).
+     * The pointer is valid for the lifetime of this VoxelArray.
+     */
+    VoxelType* GetRawData() { return Data_.get(); }
 
 };
 

@@ -3,6 +3,7 @@
 #include <future>
 #include <cstdlib>
 #include <vector>
+#include <cstdlib>
 
 #include <VSDA/EM/VoxelSubsystem/Structs/VoxelArray.h>
 
@@ -72,7 +73,13 @@ VoxelArray::VoxelArray(BG::Common::Logger::LoggingSystem* _Logger, ScanRegion _R
     DataMaxLength_ = (uint64_t)SizeX_ * (uint64_t)SizeY_ * (uint64_t)SizeZ_;
     float SizeMiB = (sizeof(VoxelType) * DataMaxLength_) / 1024. / 1024.;
     _Logger->Log("Allocating Array Of Size " + std::to_string(SizeMiB) + "MiB In System RAM", 2);
-    VoxelType* VoxelArrayPtr = (VoxelType*)std::malloc(DataMaxLength_ * sizeof(VoxelType));
+
+    // Page-aligned allocation lets Metal use newBufferWithBytesNoCopy (zero-copy on Apple Silicon).
+    VoxelType* VoxelArrayPtr = nullptr;
+    if (posix_memalign(reinterpret_cast<void**>(&VoxelArrayPtr), 4096,
+                       DataMaxLength_ * sizeof(VoxelType)) != 0) {
+        VoxelArrayPtr = static_cast<VoxelType*>(std::malloc(DataMaxLength_ * sizeof(VoxelType)));
+    }
     Data_ = std::unique_ptr<VoxelType[]>(VoxelArrayPtr);
 
     ClearArrayThreaded(std::thread::hardware_concurrency());

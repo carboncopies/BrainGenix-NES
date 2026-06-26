@@ -142,8 +142,9 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
         } else {
 
-            // We didn't get any work, just go to sleep for a few milliseconds so we don't rail the cpu
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            std::unique_lock<std::mutex> Lock(QueueMutex_);
+            WorkAvailable_.wait_for(Lock, std::chrono::milliseconds(50),
+                [this]{ return !Queue_.empty() || !ThreadControlFlag_; });
         }
     }
 }
@@ -176,6 +177,7 @@ ArrayGeneratorPool::~ArrayGeneratorPool() {
     // Send Stop Signal To Threads
     Logger_->Log("Stopping EMArrayGeneratorPool Threads", 2);
     ThreadControlFlag_ = false;
+    WorkAvailable_.notify_all();
 
     // Join All Threads
     Logger_->Log("Joining EMArrayGeneratorPool Threads", 1);
@@ -190,10 +192,11 @@ ArrayGeneratorPool::~ArrayGeneratorPool() {
 // Queue Access Functions
 void ArrayGeneratorPool::EnqueueTask(Task* _Task) {
 
-    // Firstly, Ensure Nobody Else Is Using The Queue
-    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
-    Queue_.emplace(_Task);
+    {
+        std::lock_guard<std::mutex> LockQueue(QueueMutex_);
+        Queue_.emplace(_Task);
+    }
+    WorkAvailable_.notify_one();
 }
 
 int ArrayGeneratorPool::GetQueueSize() {
