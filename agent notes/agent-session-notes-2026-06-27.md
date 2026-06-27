@@ -125,7 +125,27 @@ Conclusion:
 
 Action taken:
 
-- Restored `VSDA_EM_PercentOfSysteMemoryLimit: 6` in `Binaries/NES.yaml`.
+- Restored `VSDA_EM_PercentOfSysteMemoryLimit: 6` in tracked source config `Source/Data/NES.yaml`.
+- Rebuilt/restarted NES so the runtime `Binaries/NES.yaml` was regenerated with the tuned value.
+
+Corrected acquisition-only rerun:
+
+```bash
+cd /Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge/src/models/xor_scnm
+/usr/bin/time -p ./Run.sh -x a -H localhost -P 8000
+```
+
+Result with `RelWithDebInfo` NES, `VSDA_EM_PercentOfSysteMemoryLimit: 6`, API on localhost:8000:
+
+- `real 312.82s` (`5m 13s`)
+- `user 4.91s`
+- `sys 1.25s`
+
+Interpretation:
+
+- This recovered the run from the bad `46m 21s` result back into the same order of magnitude as the earlier `237s` EM-acquisition metric.
+- It is still slower than the best recorded `237s`, so the config drift explains the major regression but not all remaining delta.
+- The remaining likely drag is still inside EM rasterization/image processing, especially the cylinder AABB scan path and hidden per-region image-processing/finalization time.
 
 ---
 
@@ -137,7 +157,7 @@ Use `nohup` or a detached script — acquisition runs 4–20 min and will be kil
 # Build
 cd Tools && ./Build.sh $(sysctl -n hw.ncpu) RelWithDebInfo
 
-# Edit Binaries/NES.yaml: VSDA_EM_PercentOfSysteMemoryLimit: 6
+# Confirm Source/Data/NES.yaml: VSDA_EM_PercentOfSysteMemoryLimit: 6
 
 # Start servers
 cd Tools && ./Run.sh >/tmp/nes.log 2>&1 &
