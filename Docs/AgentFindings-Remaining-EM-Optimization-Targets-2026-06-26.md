@@ -236,6 +236,22 @@ This review is consistent with the current measured behavior:
 
 The findings above were partially implemented and benchmarked locally after this note was first written.
 
+### Benchmark command and repo setup
+
+Repositories used during this experiment cycle:
+
+- NES repo under test:
+  `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES`
+- API repo:
+  `/Users/apple/fun_project/mac_silicon/BrainGenix-API`
+- Challenge workload repo:
+  `/Users/apple/fun_project/mac_silicon/BrainEmulationChallenge`
+
+Benchmark command used:
+
+- `cd /Users/apple/fun_project/mac_silicon/BrainEmulationChallenge/src/models/xor_scnm`
+- `/usr/bin/time -p ./Run.sh -H localhost -P 8000`
+
 ### What helped
 
 - Replacing fake cylinder "segmentation" with real geometric sub-cylinders improved the end-to-end benchmark from `1881.55s` to `1735.76s`.

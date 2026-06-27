@@ -57,6 +57,38 @@ Validation was performed with the BrainEmulationChallenge `xor_scnm` workload us
 - API target: `localhost:8000`
 - NES branch: `feature/mac-silicon-acceleration`
 
+## Experiment Setup
+
+The benchmark and validation setup in this session used the following local repositories:
+
+- NES repo under test:
+  `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES`
+- API repo:
+  `/Users/apple/fun_project/mac_silicon/BrainGenix-API`
+- Challenge workload repo:
+  `/Users/apple/fun_project/mac_silicon/BrainEmulationChallenge`
+
+The optimized NES work was performed on branch:
+
+- `feature/mac-silicon-acceleration`
+
+The main commands used during the session were:
+
+- Start API:
+  `cd /Users/apple/fun_project/mac_silicon/BrainGenix-API/Tools`
+  `./Run.sh`
+- Start optimized NES:
+  `cd /Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES/Tools`
+  `./Run.sh`
+- Run benchmark:
+  `cd /Users/apple/fun_project/mac_silicon/BrainEmulationChallenge/src/models/xor_scnm`
+  `/usr/bin/time -p ./Run.sh -H localhost -P 8000`
+
+Build commands used for the optimized NES branch:
+
+- `cd /Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES/Tools`
+- `./Build.sh`
+
 ## Timing Results
 
 Observed end-to-end timings during this optimization cycle:
