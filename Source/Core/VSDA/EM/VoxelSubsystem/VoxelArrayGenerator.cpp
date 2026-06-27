@@ -123,8 +123,9 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     auto StartTime = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < numcompartments; i++) {
 
-        //Compartments::BS* ThisCompartment = &_Sim->BSCompartments[i];
-        int ShapeID = _Sim->GetCompartmentByIdx(i)->ShapePtr->ID;
+        Compartments::BS* ThisCompartment = static_cast<Compartments::BS*>(_Sim->GetCompartmentByIdx(i));
+        if (!ThisCompartment) continue;
+        int ShapeID = ThisCompartment->ShapeID;
 
         TotalShapes++;
 

@@ -50,6 +50,7 @@ def main():
     print(" -- Creating Simulation")
     SimulationCfg = NES.Simulation.Configuration()
     SimulationCfg.Name = "My First Simulation"
+    SimulationCfg.Seed = 0
     MySim = ClientInstance.CreateSimulation(SimulationCfg)
 
 
@@ -152,7 +153,7 @@ def main():
     EMConfig.NumPixelsPerVoxel_px = 1
     VSDAEMInstance = MySim.AddVSDAEM(EMConfig)
 
-    VSDAEMInstance.DefineScanRegion([0, 0, 0], [Size, Size, 30])
+    VSDAEMInstance.DefineScanRegion([0, 0, 0], [Size, Size, 30], [0, 0, 0])
     VSDAEMInstance.QueueRenderOperation()
     VSDAEMInstance.WaitForRender()
     VSDAEMInstance.SaveImageStack(".BulkImages")

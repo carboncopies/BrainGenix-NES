@@ -34,6 +34,7 @@ def main():
     # Create A New Simulation
     SimulationCfg = NES.Simulation.Configuration()
     SimulationCfg.Name = "My First Simulation"
+    SimulationCfg.Seed = 0
     MySim = ClientInstance.CreateSimulation(SimulationCfg)
 
     NeuronLocations:list = []
@@ -97,7 +98,7 @@ def main():
     EMConfig.NumPixelsPerVoxel_px = 1
     VSDAEMInstance = MySim.AddVSDAEM(EMConfig)
 
-    VSDAEMInstance.DefineScanRegion([0, 0, 0], [350, 350, 350])
+    VSDAEMInstance.DefineScanRegion([0, 0, 0], [350, 350, 350], [0, 0, 0])
     VSDAEMInstance.QueueRenderOperation()
     VSDAEMInstance.WaitForRender()
     VSDAEMInstance.SaveImageStack(".Test6")
