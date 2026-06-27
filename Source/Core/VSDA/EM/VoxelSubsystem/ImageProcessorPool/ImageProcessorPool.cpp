@@ -139,6 +139,11 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
         // Step 1, Check For Work
         ProcessingTask* Task = nullptr;
         if (DequeueTask(&Task)) {
+            auto CompleteTask = [this, Task]() {
+                Task->IsDone_ = true;
+                ActiveTasks_.fetch_sub(1, std::memory_order_release);
+                IdleCondition_.notify_all();
+            };
 
             // If we're compressing instead.
             if (Task->IsSegmentation_) {
@@ -213,7 +218,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
                 }
 
-                Task->IsDone_ = true;
+                CompleteTask();
 
                 // Logging
                 //Logger_->Log("Compressed segmentation layer " + std::to_string(Task->VoxelZ) + " to " + Task->OutputPath_, 1);
@@ -311,7 +316,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
                 std::filesystem::copy_file(Task->NullImagePath_, Task->TargetDirectory_ + Task->TargetFileName_, std::filesystem::copy_options::overwrite_existing);
 
                 // Update Task Result
-                Task->IsDone_ = true;
+                CompleteTask();
 
                 continue;
             }
@@ -464,7 +469,7 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
             stbi_write_png((Task->TargetDirectory_ + Task->TargetFileName_).c_str(), TargetX, TargetY, Channels, OutPixels, TargetX * Channels);
 
             // Update Task Result
-            Task->IsDone_ = true;
+            CompleteTask();
 
             // Measure Time
             double Duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - Start).count();
@@ -532,18 +537,17 @@ void ImageProcessorPool::EnqueueTask(ProcessingTask* _Task) {
     {
         std::lock_guard<std::mutex> LockQueue(QueueMutex_);
         Queue_.emplace(_Task);
+        QueuedTasks_.fetch_add(1, std::memory_order_relaxed);
     }
     WorkAvailable_.notify_one();
 }
 
 int ImageProcessorPool::GetQueueSize() {
+    return QueuedTasks_.load(std::memory_order_relaxed);
+}
 
-    // Firstly, Ensure Nobody Else Is Using The Queue
-    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
-    int QueueSize = Queue_.size();
-
-    return QueueSize;
+int ImageProcessorPool::GetOutstandingTaskCount() {
+    return QueuedTasks_.load(std::memory_order_relaxed) + ActiveTasks_.load(std::memory_order_acquire);
 }
 
 bool ImageProcessorPool::DequeueTask(ProcessingTask** _Task) {
@@ -555,6 +559,8 @@ bool ImageProcessorPool::DequeueTask(ProcessingTask** _Task) {
     if (Queue_.size() > 0) {
         *_Task = Queue_.front();
         Queue_.pop();
+        QueuedTasks_.fetch_sub(1, std::memory_order_relaxed);
+        ActiveTasks_.fetch_add(1, std::memory_order_relaxed);
 
         return true;
     }
@@ -566,6 +572,14 @@ bool ImageProcessorPool::DequeueTask(ProcessingTask** _Task) {
 // Public Enqueue Function
 void ImageProcessorPool::QueueEncodeOperation(ProcessingTask* _Task) {
     EnqueueTask(_Task);
+}
+
+void ImageProcessorPool::WaitUntilIdle() {
+    std::unique_lock<std::mutex> Lock(IdleMutex_);
+    IdleCondition_.wait(Lock, [this] {
+        return (QueuedTasks_.load(std::memory_order_relaxed) == 0) &&
+               (ActiveTasks_.load(std::memory_order_acquire) == 0);
+    });
 }
 
 

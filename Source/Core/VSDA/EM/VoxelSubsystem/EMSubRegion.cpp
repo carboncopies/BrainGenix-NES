@@ -246,7 +246,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     
     // Force us to wait for any other renders using the image processor pool
-    while (_ImageProcessorPool->GetQueueSize() > 0) {
+    while (_ImageProcessorPool->GetOutstandingTaskCount() > 0) {
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
         VSDAData_->CurrentOperation_ = "Image Processing Enqueued";
@@ -256,9 +256,9 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         VSDAData_->TotalVoxelQueueLength_ = 0;
         VSDAData_->TotalSlices_ = 0;
         VSDAData_->CurrentSlice_ = 0;
-        VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetQueueSize();
+        VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetOutstandingTaskCount();
 
-        _Logger->Log("Waiting for ImageProcessorPool to become available; '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "' items remaining", 1);
+        _Logger->Log("Waiting for ImageProcessorPool to become available; '" + std::to_string(_ImageProcessorPool->GetOutstandingTaskCount()) + "' items remaining", 1);
 
         // Now wait a while so we don't spam the console
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -283,7 +283,6 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     noise::module::Perlin PerlinGenerator;
-    const size_t TaskStartIndex = VSDAData_->Tasks_.size();
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
 
@@ -295,24 +294,19 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     // Ensure All Tasks Are Finished
-    while (_ImageProcessorPool->GetQueueSize() > 0) {
+    while (_ImageProcessorPool->GetOutstandingTaskCount() > 0) {
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
-        VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetQueueSize();
+        VSDAData_->CurrentSlice_ = VSDAData_->TotalSlices_ - _ImageProcessorPool->GetOutstandingTaskCount();
 
-        _Logger->Log("ImageProcessorPool Queue Length '" + std::to_string(_ImageProcessorPool->GetQueueSize()) + "'", 1);
+        _Logger->Log("ImageProcessorPool Outstanding Work '" + std::to_string(_ImageProcessorPool->GetOutstandingTaskCount()) + "'", 1);
 
         // Now wait a while so we don't spam the console
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
 
     }
-    for (size_t i = TaskStartIndex; i < VSDAData_->Tasks_.size(); i++) {
-        ProcessingTask* Task = VSDAData_->Tasks_[i].get();
-        while (Task->IsDone_ != true) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(5));
-        }
-    }
+    _ImageProcessorPool->WaitUntilIdle();
     VSDAData_->Tasks_.clear();
 
 

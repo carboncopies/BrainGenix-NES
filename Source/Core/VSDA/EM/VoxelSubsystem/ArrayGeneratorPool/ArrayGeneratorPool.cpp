@@ -123,6 +123,8 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             // Update Task Result
             ThisTask->IsDone_ = true;
+            ActiveTasks_.fetch_sub(1, std::memory_order_release);
+            IdleCondition_.notify_all();
 
 
             // Measure Time
@@ -195,18 +197,17 @@ void ArrayGeneratorPool::EnqueueTask(Task* _Task) {
     {
         std::lock_guard<std::mutex> LockQueue(QueueMutex_);
         Queue_.emplace(_Task);
+        QueuedTasks_.fetch_add(1, std::memory_order_relaxed);
     }
     WorkAvailable_.notify_one();
 }
 
 int ArrayGeneratorPool::GetQueueSize() {
+    return QueuedTasks_.load(std::memory_order_relaxed);
+}
 
-    // Firstly, Ensure Nobody Else Is Using The Queue
-    std::lock_guard<std::mutex> LockQueue(QueueMutex_);
-
-    int QueueSize = Queue_.size();
-
-    return QueueSize;
+int ArrayGeneratorPool::GetOutstandingTaskCount() {
+    return QueuedTasks_.load(std::memory_order_relaxed) + ActiveTasks_.load(std::memory_order_acquire);
 }
 
 bool ArrayGeneratorPool::DequeueTask(Task** _TaskPtr) {
@@ -218,6 +219,8 @@ bool ArrayGeneratorPool::DequeueTask(Task** _TaskPtr) {
     if (Queue_.size() > 0) {
         *_TaskPtr = Queue_.front();
         Queue_.pop();
+        QueuedTasks_.fetch_sub(1, std::memory_order_relaxed);
+        ActiveTasks_.fetch_add(1, std::memory_order_relaxed);
 
         return true;
     }
@@ -261,7 +264,7 @@ void ArrayGeneratorPool::BlockUntilQueueEmpty(bool _LogOutput) {
             // Firstly, Ensure Nobody Else Is Using The Queue, then update the queue size
             std::lock_guard<std::mutex> LockQueue(QueueMutex_);
 
-            QueueLength = Queue_.size();
+            QueueLength = GetQueueSize();
         }
 
 
@@ -273,6 +276,14 @@ void ArrayGeneratorPool::BlockUntilQueueEmpty(bool _LogOutput) {
 
     }
 
+}
+
+void ArrayGeneratorPool::WaitUntilIdle() {
+    std::unique_lock<std::mutex> Lock(IdleMutex_);
+    IdleCondition_.wait(Lock, [this] {
+        return (QueuedTasks_.load(std::memory_order_relaxed) == 0) &&
+               (ActiveTasks_.load(std::memory_order_acquire) == 0);
+    });
 }
 
 }; // Close Namespace VoxelArrayGenerator

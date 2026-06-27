@@ -53,27 +53,24 @@ bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region,
 
 std::vector<Geometries::Vec3D> SubdivideLine(Geometries::Vec3D Point1, Geometries::Vec3D Point2, int NumPoints) {
     std::vector<Geometries::Vec3D> segments;
+    if (NumPoints <= 0) {
+        segments.push_back(Point1);
+        segments.push_back(Point2);
+        return segments;
+    }
 
     float deltaX = Point2.x - Point1.x;
     float deltaY = Point2.y - Point1.y;
     float deltaZ = Point2.z - Point1.z;
 
-    float segmentLength = sqrt(deltaX * deltaX * deltaX + deltaY * deltaZ);
-
-    float step = segmentLength / NumPoints;
-
-    float x = Point1.x;
-    float y = Point1.y;
-    float z = Point1.z;
-
-    for (int i = 0; i < NumPoints; i++) {
-
+    segments.reserve(NumPoints + 1);
+    for (int i = 0; i <= NumPoints; i++) {
+        const float t = static_cast<float>(i) / static_cast<float>(NumPoints);
         Geometries::Vec3D segment;
-        segment.x = x + (i / NumPoints * deltaX);
-        segment.y = y + (i / NumPoints * deltaY);
-        segment.z = z + (i / NumPoints * deltaZ);
+        segment.x = Point1.x + (t * deltaX);
+        segment.y = Point1.y + (t * deltaY);
+        segment.z = Point1.z + (t * deltaZ);
         segments.push_back(segment);
-
     }
 
     return segments;
@@ -241,10 +238,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 //     std::cout<<ThisCylinder.End0Pos_um.str()<<ThisCylinder.End1Pos_um.str()<<std::endl;
                 // }
 
-                // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
+                // Subdivide large cylinders into real geometric sub-cylinders so each task
+                // only rasterizes its own span instead of repeatedly scanning the full shape.
                 int NumSegments = std::max(1, int(std::ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox))));
                 // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
-                // std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
+                std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
 
                 // We only need one cap sphere per cylinder; enqueueing one per segment bloats the queue
@@ -272,8 +270,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                     TotalSegments++;
                 }
 
-                // now, create a task for each of these
-                // note that we assume the PointList has at least two segments in it, else it will crash
+                // Now create one task per actual sub-cylinder segment.
                 for (unsigned int i = 0; i < NumSegments; i++) {
     
                     // Now add the cylinder part
@@ -286,14 +283,16 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         Task->WorldInfo_ = Info;
                         Task->Parameters_ = _Params;
 
-                        Task->CustomCylinder_.End0Pos_um = ThisCylinder.End0Pos_um;
-                        Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um;
-                        Task->CustomCylinder_.End1Pos_um = ThisCylinder.End1Pos_um;
-                        Task->CustomCylinder_.End1Radius_um = ThisCylinder.End1Radius_um;
+                        const float SegmentStartRatio = static_cast<float>(i) / static_cast<float>(NumSegments);
+                        const float SegmentEndRatio = static_cast<float>(i + 1) / static_cast<float>(NumSegments);
+                        Task->CustomCylinder_.End0Pos_um = PointList[i];
+                        Task->CustomCylinder_.End1Pos_um = PointList[i + 1];
+                        Task->CustomCylinder_.End0Radius_um = ThisCylinder.End0Radius_um + ((ThisCylinder.End1Radius_um - ThisCylinder.End0Radius_um) * SegmentStartRatio);
+                        Task->CustomCylinder_.End1Radius_um = ThisCylinder.End0Radius_um + ((ThisCylinder.End1Radius_um - ThisCylinder.End0Radius_um) * SegmentEndRatio);
                         Task->CustomCylinder_.ParentID = ThisCylinder.ParentID;
 
-                        Task->CustomThisComponent = i;
-                        Task->CustomTotalComponents = NumSegments;
+                        Task->CustomThisComponent = 0;
+                        Task->CustomTotalComponents = 1;
 
 
                         // Update Total Queue Length Statistics
@@ -415,26 +414,21 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
-    while (_GeneratorPool->GetQueueSize() != 0) {
+    while (_GeneratorPool->GetOutstandingTaskCount() != 0) {
 
         // Update Progress Bar
         _Sim->VSDAData_->CurrentOperation_ = "Rasterization";
-        _Sim->VSDAData_->VoxelQueueLength_ = _GeneratorPool->GetQueueSize();
+        _Sim->VSDAData_->VoxelQueueLength_ = _GeneratorPool->GetOutstandingTaskCount();
 
         // Wait for a bit
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
         // Log Queue Size
-        _Logger->Log("EMArrayGeneratorPool Queue Length '" + std::to_string((int)_GeneratorPool->GetQueueSize()) + "'", 1);
+        _Logger->Log("EMArrayGeneratorPool Outstanding Work '" + std::to_string((int)_GeneratorPool->GetOutstandingTaskCount()) + "'", 1);
     }
 
 
-    // _GeneratorPool->BlockUntilQueueEmpty(true);
-    for (size_t i = 0; i < Tasks.size(); i++) {
-        while (Tasks[i]->IsDone_ != true) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(5));
-        }
-    }
+    _GeneratorPool->WaitUntilIdle();
 
     return true;
 

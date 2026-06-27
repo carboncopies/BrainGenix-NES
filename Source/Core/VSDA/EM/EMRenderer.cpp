@@ -93,9 +93,9 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     double ImageStepSizeX_um = (Params->ImageWidth_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (1 - (double(Params->ScanRegionOverlap_percent) / 100.));
     double ImageStepSizeY_um = (Params->ImageHeight_px / Params->NumPixelsPerVoxel_px) * Params->VoxelResolution_um * (1 - (double(Params->ScanRegionOverlap_percent) / 100.));
     int NumImagesInXDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeX_um);
-    int NumImagesInYDimension_img = ceil(BaseRegion->SizeX() / ImageStepSizeY_um);
+    int NumImagesInYDimension_img = ceil(BaseRegion->SizeY() / ImageStepSizeY_um);
     _Simulation->VSDAData_->TotalImagesX_ = NumImagesInXDimension_img;
-    _Simulation->VSDAData_->TotalImagesY_ = NumImagesInXDimension_img;
+    _Simulation->VSDAData_->TotalImagesY_ = NumImagesInYDimension_img;
     _Logger->Log("Identified The Total Number Of Images To Be '" + std::to_string(NumImagesInXDimension_img) + "'X, '" + std::to_string(NumImagesInYDimension_img) + "'Y", 4);
 
     // Nextly, we're going to figure out the step size information for the subregions.

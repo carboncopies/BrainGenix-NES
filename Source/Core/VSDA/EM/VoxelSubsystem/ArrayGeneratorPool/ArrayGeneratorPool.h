@@ -38,6 +38,7 @@
 #include <condition_variable>
 #include <queue>
 #include <thread>
+#include <atomic>
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -79,6 +80,10 @@ private:
     std::mutex QueueMutex_;                                  /**Mutex used to lock access to the queue when it's being modified*/
     std::condition_variable WorkAvailable_;                  /**Notified when a task is pushed; workers block on this instead of sleep-spinning*/
     std::queue<Task*> Queue_;                                /**Queue that contains tasks that need to be rendered*/
+    std::mutex IdleMutex_;                                   /**Mutex paired with idle condition variable*/
+    std::condition_variable IdleCondition_;                  /**Notified when outstanding work may have reached zero*/
+    std::atomic<int> QueuedTasks_{0};                        /**Number of queued tasks waiting for a worker*/
+    std::atomic<int> ActiveTasks_{0};                        /**Number of tasks currently being processed by workers*/
 
     std::vector<std::thread> RenderThreads_;                 /**List of rendering threads - each one tries to dequeue stuff from the queue to work on.*/
     std::atomic_bool ThreadControlFlag_;                     /**Bool that signals threads to exit*/
@@ -163,6 +168,19 @@ public:
      * @return int 
      */
     int GetQueueSize();
+
+    /**
+     * @brief Returns the number of queued plus in-flight tasks.
+     *
+     * @return int
+     */
+    int GetOutstandingTaskCount();
+
+    /**
+     * @brief Blocks until there are no queued or active tasks.
+     *
+     */
+    void WaitUntilIdle();
 
 
 };
