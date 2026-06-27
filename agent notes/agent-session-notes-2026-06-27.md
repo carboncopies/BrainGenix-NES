@@ -84,6 +84,51 @@ EM acquisition is the target metric for optimization. Baseline is **237s**.
 
 ---
 
+## Follow-up regression check
+
+Date: 2026-06-27
+
+After pulling additional work from another agent, the benchmark was rerun from:
+
+```bash
+cd /Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge/src/models/xor_scnm
+/usr/bin/time -p ./Run.sh -H localhost -P 8000
+```
+
+Services used:
+
+- NES: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES`
+- API: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-API`
+- Challenge: `/Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge`
+
+Result:
+
+- `real 2780.62s` (`46m 21s`)
+- `user 17.68s`
+- `sys 4.89s`
+
+Critical finding: this run used `Binaries/NES.yaml` with `VSDA_EM_PercentOfSysteMemoryLimit: 70`, not the tuned value `6` used by the faster baseline above. That makes the run non-comparable to the earlier metric. The 70% setting creates much larger voxel subregions and was already identified as a cause of poor Apple Silicon behavior because it increases memory-bandwidth pressure and can trigger swap depending on free RAM.
+
+Live monitoring during the 46-minute run showed:
+
+- No swap activity at the OS level (`Swapins: 0`, `Swapouts: 0`).
+- NES RSS around 24 GB.
+- Early first-region rasterization around 9-10 tasks/sec.
+- Later stages using high multicore CPU, so the slowdown is not simply single-threaded execution.
+- Region 0 had a large raster queue (`5852` tasks), and post-raster/image-processing work added significant hidden wall time after the visible queue ended.
+
+Conclusion:
+
+- The pulled ShapeID change was correctness-motivated but unsafe for LIFC simulations because it cast every compartment to `BS*`; this was fixed by reading `ShapeID` from the simulation's concrete compartment storage.
+- The immediate regression versus the fast metric is most likely config drift from `6` back to `70`, not the ShapeID fix itself.
+- Future comparisons should explicitly record `Build/BuildType`, `VSDA_EM_PercentOfSysteMemoryLimit`, repo paths, and whether the timing is EM acquisition-only or full end-to-end.
+
+Action taken:
+
+- Restored `VSDA_EM_PercentOfSysteMemoryLimit: 6` in `Binaries/NES.yaml`.
+
+---
+
 ## How to run the benchmark
 
 Use `nohup` or a detached script — acquisition runs 4–20 min and will be killed by terminal timeouts if run inline.
