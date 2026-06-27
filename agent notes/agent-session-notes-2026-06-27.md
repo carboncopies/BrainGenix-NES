@@ -147,6 +147,13 @@ Interpretation:
 - It is still slower than the best recorded `237s`, so the config drift explains the major regression but not all remaining delta.
 - The remaining likely drag is still inside EM rasterization/image processing, especially the cylinder AABB scan path and hidden per-region image-processing/finalization time.
 
+Failed follow-up experiment:
+
+- Tried reducing rasterization and image-processing completion polling sleeps from `1000ms` to `100ms` while throttling logs to once per second.
+- Rebuilt NES in `RelWithDebInfo`, restarted NES, and reran the same acquisition-only command.
+- Result: `real 456.74s`, `user 3.93s`, `sys 0.96s`.
+- Decision: reverted the code change and did not keep it. The increased polling cadence likely added progress/status churn or contention without addressing the dominant rasterization/image-processing work.
+
 ---
 
 ## How to run the benchmark
