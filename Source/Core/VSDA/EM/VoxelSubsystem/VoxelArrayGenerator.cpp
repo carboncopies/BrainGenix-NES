@@ -50,6 +50,24 @@ bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region,
 
 }
 
+int GetCompartmentShapeID(Simulation* _Sim, size_t _CompartmentIdx) {
+    if (_Sim == nullptr) {
+        return -1;
+    }
+
+    if (_Sim->SimNeuronClass == LIFCNEURONS) {
+        if (_CompartmentIdx >= _Sim->LIFCCompartments.size()) {
+            return -1;
+        }
+        return _Sim->LIFCCompartments[_CompartmentIdx].ShapeID;
+    }
+
+    if (_CompartmentIdx >= _Sim->BSCompartments.size()) {
+        return -1;
+    }
+    return _Sim->BSCompartments[_CompartmentIdx].ShapeID;
+}
+
 
 std::vector<Geometries::Vec3D> SubdivideLine(Geometries::Vec3D Point1, Geometries::Vec3D Point2, int NumPoints) {
     std::vector<Geometries::Vec3D> segments;
@@ -123,9 +141,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     auto StartTime = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < numcompartments; i++) {
 
-        Compartments::BS* ThisCompartment = static_cast<Compartments::BS*>(_Sim->GetCompartmentByIdx(i));
-        if (!ThisCompartment) continue;
-        int ShapeID = ThisCompartment->ShapeID;
+        int ShapeID = GetCompartmentShapeID(_Sim, i);
+        if (ShapeID < 0) continue;
 
         TotalShapes++;
 
