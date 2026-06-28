@@ -28,6 +28,10 @@ namespace BG {
 namespace NES {
 namespace Simulator {
 
+static double ElapsedMs(std::chrono::high_resolution_clock::time_point _Start) {
+    return std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - _Start).count();
+}
+
 
 bool IsShapeInsideRegion(Simulation* _Sim, size_t _ShapeID, BoundingBox _Region, VSDA::WorldInfo _WorldInfo) {
 
@@ -102,6 +106,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     assert(_Sim != nullptr);
     assert(_Logger != nullptr);
 
+    auto FunctionStart = std::chrono::high_resolution_clock::now();
     _Logger->Log(std::string("Building Voxel Array For Simulation (Threaded) '") + _Sim->Name + "'", 2);
 
 
@@ -137,8 +142,16 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
     size_t AddedSpheres = 0;
     size_t AddedCylinders = 0;
     size_t AddedCylinderEnds = 0;
+    size_t AddedSphereTasks = 0;
+    size_t AddedCylinderTasks = 0;
+    size_t AddedReceptorTasks = 0;
+    size_t AddedTearTasks = 0;
+    uint64_t MaxEstimatedShapeSize_vox = 0;
+    int MaxShapeSegments = 0;
+    int MaxSegmentShapeID = -1;
     _Sim->VSDAData_->TotalVoxelQueueLength_ = 0;
     auto StartTime = std::chrono::high_resolution_clock::now();
+    auto CompartmentPreprocessStart = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < numcompartments; i++) {
 
         int ShapeID = GetCompartmentShapeID(_Sim, i);
@@ -192,6 +205,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
                 // subdivide the cylinder into segments until it's shorter than the threshold number of voxels
                 int NumSegments = std::max(1, int(std::ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox))));
+                if (EstimatedSize_vox > MaxEstimatedShapeSize_vox) {
+                    MaxEstimatedShapeSize_vox = EstimatedSize_vox;
+                    MaxShapeSegments = NumSegments;
+                    MaxSegmentShapeID = ShapeID;
+                }
                 // _Logger->Log("Detected Sphere of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
 
 
@@ -222,6 +240,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                     Tasks.push_back(std::move(Task));
 
                     TotalSegments++;
+                    AddedSphereTasks++;
 
 
                 }
@@ -259,6 +278,11 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                 // Subdivide large cylinders into real geometric sub-cylinders so each task
                 // only rasterizes its own span instead of repeatedly scanning the full shape.
                 int NumSegments = std::max(1, int(std::ceil(double(EstimatedSize_vox) / double(SubdivisionThreshold_vox))));
+                if (EstimatedSize_vox > MaxEstimatedShapeSize_vox) {
+                    MaxEstimatedShapeSize_vox = EstimatedSize_vox;
+                    MaxShapeSegments = NumSegments;
+                    MaxSegmentShapeID = ShapeID;
+                }
                 // _Logger->Log("Detected Cylinder of Size " + std::to_string(EstimatedSize_vox) + "vox, Subdividing Into " + std::to_string(NumSegments) + " Segments", 2);
                 std::vector<Geometries::Vec3D> PointList = SubdivideLine(ThisCylinder.End0Pos_um, ThisCylinder.End1Pos_um, NumSegments);
 
@@ -286,6 +310,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                     _GeneratorPool->QueueWorkOperation(Task.get());
                     Tasks.push_back(std::move(Task));
                     TotalSegments++;
+                    AddedSphereTasks++;
                 }
 
                 // Now create one task per actual sub-cylinder segment.
@@ -323,6 +348,7 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
                         // Then move it to the list so we can keep track of it
                         Tasks.push_back(std::move(Task));
                         TotalSegments++;
+                        AddedCylinderTasks++;
                     }
 
 
@@ -345,14 +371,25 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
         }
 
     }
+    double CompartmentPreprocess_ms = ElapsedMs(CompartmentPreprocessStart);
     _Logger->Log("Rasterization Preprocessing Added " + std::to_string(AddedShapes) + " Shapes (" + std::to_string(AddedSpheres) + " Spheres, " + std::to_string(AddedCylinders) + " Cylinders)", 5);
     _Logger->Log("Added " + std::to_string(AddedCylinderEnds) + " Spheres To Cylinder Ends", 5);
+    _Logger->Log("EMOBS RasterPreprocess Compartments ms=" + std::to_string(CompartmentPreprocess_ms) +
+        " total_compartments=" + std::to_string(numcompartments) +
+        " inside_shapes=" + std::to_string(AddedShapes) +
+        " total_tasks=" + std::to_string(TotalSegments) +
+        " sphere_tasks=" + std::to_string(AddedSphereTasks) +
+        " cylinder_tasks=" + std::to_string(AddedCylinderTasks) +
+        " max_estimated_vox=" + std::to_string(MaxEstimatedShapeSize_vox) +
+        " max_segments=" + std::to_string(MaxShapeSegments) +
+        " max_shape_id=" + std::to_string(MaxSegmentShapeID), 4);
 
 
     // Now Do It For Receptors
     unsigned int numreceptors = _Sim->GetNumReceptors();
     _Logger->Log("Receptor Preprocessing " + std::to_string(numreceptors) + " Boxes", 5);
 
+    auto ReceptorPreprocessStart = std::chrono::high_resolution_clock::now();
     for (unsigned int i = 0; i < numreceptors; i++) {
 
         //Connections::Receptor* ThisReceptor = _Sim->Receptors[i].get();
@@ -396,12 +433,17 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
             // Then move it to the list so we can keep track of it
             Tasks.push_back(std::move(Task));
+            AddedReceptorTasks++;
 
         }
 
     }
+    _Logger->Log("EMOBS RasterPreprocess Receptors ms=" + std::to_string(ElapsedMs(ReceptorPreprocessStart)) +
+        " total_receptors=" + std::to_string(numreceptors) +
+        " receptor_tasks=" + std::to_string(AddedReceptorTasks), 4);
 
     // Now Add Tears
+    auto TearPreprocessStart = std::chrono::high_resolution_clock::now();
     if (_Params->TearingEnabled) {
         for (size_t z = 0; z < _Array->GetZ(); z++) {
 
@@ -415,11 +457,15 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
             for (int i = 0; i < NumTearsThisSlice; i++) {
                 int NumShapes = GenerateTear(_Logger, Tasks, _GeneratorPool, _Region, _Params, _Array, Info, z, Generator());
                 AddedShapes += NumShapes;
+                AddedTearTasks += NumShapes;
                 _Sim->VSDAData_->TotalVoxelQueueLength_ += NumShapes;
             }
 
         }
     }
+    _Logger->Log("EMOBS RasterPreprocess Tears ms=" + std::to_string(ElapsedMs(TearPreprocessStart)) +
+        " enabled=" + std::to_string(_Params->TearingEnabled) +
+        " tear_tasks=" + std::to_string(AddedTearTasks), 4);
 
 
     // Log some info for the ratio of added shapes
@@ -432,6 +478,8 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
 
     // Okay, now we just go through the list of tasks and make sure they're all done
+    auto RasterWaitStart = std::chrono::high_resolution_clock::now();
+    int RasterWaitPolls = 0;
     while (_GeneratorPool->GetOutstandingTaskCount() != 0) {
 
         // Update Progress Bar
@@ -440,13 +488,19 @@ bool CreateVoxelArrayFromSimulation(BG::Common::Logger::LoggingSystem* _Logger, 
 
         // Wait for a bit
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        RasterWaitPolls++;
 
         // Log Queue Size
-        _Logger->Log("EMArrayGeneratorPool Outstanding Work '" + std::to_string((int)_GeneratorPool->GetOutstandingTaskCount()) + "'", 1);
+        _Logger->Log("EMArrayGeneratorPool Outstanding Work '" + std::to_string((int)_GeneratorPool->GetOutstandingTaskCount()) +
+            "' elapsed_ms=" + std::to_string(ElapsedMs(RasterWaitStart)), 1);
     }
 
 
     _GeneratorPool->WaitUntilIdle();
+    _Logger->Log("EMOBS Rasterization Complete ms=" + std::to_string(ElapsedMs(RasterWaitStart)) +
+        " polls=" + std::to_string(RasterWaitPolls) +
+        " queued_total=" + std::to_string(_Sim->VSDAData_->TotalVoxelQueueLength_) +
+        " function_total_ms=" + std::to_string(ElapsedMs(FunctionStart)), 4);
 
     return true;
 

@@ -21,6 +21,10 @@ namespace NES {
 namespace Simulator {
 namespace VSDA {
 
+static double ElapsedMs(std::chrono::high_resolution_clock::time_point _Start) {
+    return std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - _Start).count();
+}
+
 
 
 // Returns:
@@ -163,6 +167,7 @@ void createCheckerboardWithTextPlaceholder(const std::string& filePath, int widt
 
 
 bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _SubRegion, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
+    auto SubRegionStart = std::chrono::high_resolution_clock::now();
     _Logger->Log("Executing SubRegion Render For Region Starting At " + std::to_string(_SubRegion->RegionOffsetX_um) + "X, " + std::to_string(_SubRegion->RegionOffsetY_um) + "Y, Layer " + std::to_string(_SubRegion->LayerOffset), 4);
 
 
@@ -182,8 +187,12 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     std::string NullImagePath = "Renders/" + FileNamePrefix + "/NullImage.png";
     VSDAData_->NullImagePath_ = NullImagePath;
     std::error_code e;
+    auto PlaceholderStart = std::chrono::high_resolution_clock::now();
     VSCreateDirectoryRecursive3("Renders/" + FileNamePrefix, e);
     createCheckerboardWithTextPlaceholder(NullImagePath, VSDAData_->Params_.ImageWidth_px, VSDAData_->Params_.ImageHeight_px);
+    _Logger->Log("EMOBS SubRegion Placeholder ms=" + std::to_string(ElapsedMs(PlaceholderStart)) +
+        " sim_id=" + std::to_string(Sim->ID) +
+        " layer=" + std::to_string(_SubRegion->LayerOffset), 4);
 
 
     // Setup Metadata For GetRenderStatus
@@ -202,11 +211,14 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     // Create Voxel Array
     _Logger->Log(std::string("Creating Voxel Array Of Size ") + RequestedRegion.Dimensions() + std::string(" With Points ") + RequestedRegion.ToString(), 2);
+    auto VoxelArrayStart = std::chrono::high_resolution_clock::now();
     uint64_t TargetArraySize = RequestedRegion.GetVoxelSize(VSDAData_->Params_.VoxelResolution_um);
+    bool RecreatedVoxelArray = false;
     if (VSDAData_->Array_.get() == nullptr || VSDAData_->Array_->GetSize() <= TargetArraySize) {
         _Logger->Log("Voxel Array Does Not Exist Yet Or Is Wrong Size, (Re)Creating Now", 2);
         VSDAData_->Array_ = std::make_unique<VoxelArray>(_Logger, ScanRegion(), 99.);
         VSDAData_->Array_ = std::make_unique<VoxelArray>(_Logger, RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
+        RecreatedVoxelArray = true;
     } else {
         _Logger->Log("Reusing Existing Voxel Array, Clearing Data", 2);
         bool Status = VSDAData_->Array_->SetSize(RequestedRegion, VSDAData_->Params_.VoxelResolution_um);
@@ -218,6 +230,10 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
         // VSDAData_->Array_->ClearArray();
         VSDAData_->Array_->SetBB(RequestedRegion);
     }
+    _Logger->Log("EMOBS SubRegion VoxelArray ms=" + std::to_string(ElapsedMs(VoxelArrayStart)) +
+        " recreated=" + std::to_string(RecreatedVoxelArray) +
+        " target_voxels=" + std::to_string(TargetArraySize) +
+        " dims=" + RequestedRegion.GetDimensionsInVoxels(VSDAData_->Params_.VoxelResolution_um), 4);
 
 
     // Initialize Stats
@@ -229,7 +245,11 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     VSDAData_->VoxelQueueLength_ = 0;
     VSDAData_->TotalVoxelQueueLength_ = 0;
 
+    auto RasterizationStart = std::chrono::high_resolution_clock::now();
     CreateVoxelArrayFromSimulation(_Logger, Sim, &VSDAData_->Params_, VSDAData_->Array_.get(), RequestedRegion, _GeneratorPool);
+    _Logger->Log("EMOBS SubRegion RasterizationTotal ms=" + std::to_string(ElapsedMs(RasterizationStart)) +
+        " queued_total=" + std::to_string(VSDAData_->TotalVoxelQueueLength_) +
+        " layer=" + std::to_string(_SubRegion->LayerOffset), 4);
 
 
 
@@ -246,6 +266,8 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
     
     // Force us to wait for any other renders using the image processor pool
+    auto ImagePoolPreWaitStart = std::chrono::high_resolution_clock::now();
+    int ImagePoolPreWaitPolls = 0;
     while (_ImageProcessorPool->GetOutstandingTaskCount() > 0) {
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
@@ -262,7 +284,12 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
         // Now wait a while so we don't spam the console
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        ImagePoolPreWaitPolls++;
     
+    }
+    if (ImagePoolPreWaitPolls > 0) {
+        _Logger->Log("EMOBS SubRegion ImagePoolPreWait ms=" + std::to_string(ElapsedMs(ImagePoolPreWaitStart)) +
+            " polls=" + std::to_string(ImagePoolPreWaitPolls), 4);
     }
 
     
@@ -283,6 +310,7 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     noise::module::Perlin PerlinGenerator;
+    auto SliceEnqueueStart = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < NumZSlices; i++) {
         int CurrentSliceIndex = i * NumVoxelsPerSlice;
 
@@ -290,10 +318,15 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
 
     }
+    _Logger->Log("EMOBS SubRegion ImageEnqueue ms=" + std::to_string(ElapsedMs(SliceEnqueueStart)) +
+        " z_slices=" + std::to_string(NumZSlices) +
+        " image_tasks=" + std::to_string(VSDAData_->TotalSlices_), 4);
 
 
 
     // Ensure All Tasks Are Finished
+    auto ImageWaitStart = std::chrono::high_resolution_clock::now();
+    int ImageWaitPolls = 0;
     while (_ImageProcessorPool->GetOutstandingTaskCount() > 0) {
 
         // Update Current Slice Information (Account for slice numbers not starting at 0)
@@ -303,12 +336,20 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
 
         // Now wait a while so we don't spam the console
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        ImageWaitPolls++;
 
 
     }
     _ImageProcessorPool->WaitUntilIdle();
+    _Logger->Log("EMOBS SubRegion ImageProcessingWait ms=" + std::to_string(ElapsedMs(ImageWaitStart)) +
+        " polls=" + std::to_string(ImageWaitPolls) +
+        " image_tasks=" + std::to_string(VSDAData_->TotalSlices_), 4);
     VSDAData_->Tasks_.clear();
 
+    _Logger->Log("EMOBS SubRegion Total ms=" + std::to_string(ElapsedMs(SubRegionStart)) +
+        " layer=" + std::to_string(_SubRegion->LayerOffset) +
+        " region_start_x=" + std::to_string(_SubRegion->RegionOffsetX_um) +
+        " region_start_y=" + std::to_string(_SubRegion->RegionOffsetY_um), 4);
 
 
     return true;

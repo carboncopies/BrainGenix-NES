@@ -391,17 +391,17 @@ void VoxelArray::CompositeVoxel(float _X, float _Y, float _Z, VoxelState _State,
     CompositeVoxelAtIndex(XIndex, YIndex, ZIndex, _State, _DistanceToEdge, _ParentUID);
 }
 void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State, float _DistanceToEdge_um, uint64_t _ParentUID) {
-    int XIndex = _X;
-    int YIndex = _Y;
-    int ZIndex = _Z;
-
-    // Check bounds
-    if ((XIndex < 0 || XIndex >= SizeX_) || (YIndex < 0 || YIndex >= SizeY_) || (ZIndex < 0 || ZIndex >= SizeZ_)) {
+    if ((_X < 0 || _X >= SizeX_) || (_Y < 0 || _Y >= SizeY_) || (_Z < 0 || _Z >= SizeZ_)) {
         return;
     }
 
-    // Get the current voxel at the index
-    VoxelType ThisVoxel = GetVoxel(XIndex, YIndex, ZIndex);
+    // Update the backing voxel in place to avoid a Get/Set copy on the hot path.
+    uint64_t CurrentIndex = GetIndex(_X, _Y, _Z);
+    if (CurrentIndex >= DataMaxLength_) {
+        return;
+    }
+
+    VoxelType& ThisVoxel = Data_[CurrentIndex];
 
     // Update the voxel state and distance to edge
     uint8_t CorrectedDistanceToEdge_vox = std::min(255, int(_DistanceToEdge_um / VoxelScale_um));
@@ -412,7 +412,6 @@ void VoxelArray::CompositeVoxelAtIndex(int _X, int _Y, int _Z, VoxelState _State
         ThisVoxel.State_ = _State;
     }
     ThisVoxel.ParentUID = _ParentUID;
-    SetVoxel(XIndex, YIndex, ZIndex, ThisVoxel);
 
 }
 

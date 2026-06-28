@@ -34,6 +34,10 @@ namespace NES {
 namespace Simulator {
 namespace VSDA {
 
+static double ElapsedMs(std::chrono::high_resolution_clock::time_point _Start) {
+    return std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - _Start).count();
+}
+
 
 
 bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Simulation* _Simulation, ImageProcessorPool* _ImageProcessorPool, VoxelArrayGenerator::ArrayGeneratorPool* _GeneratorPool) {
@@ -43,6 +47,8 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
         return false;
     }
     _Simulation->VSDAData_->State_ = VSDA_RENDER_IN_PROGRESS;
+    auto RenderStart = std::chrono::high_resolution_clock::now();
+    auto PlanningStart = std::chrono::high_resolution_clock::now();
     
     _Logger->Log("Executing Render Job For Requested Simulation " + std::to_string(_Simulation->ID), 4);
 
@@ -129,6 +135,12 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInXDim) + "'X Subregions", 3);
     _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInYDim) + "'Y Subregions", 3);
     _Logger->Log("Calculated '" + std::to_string(NumSubRegionsInZDim) + "'Z Subregions", 3);
+    _Logger->Log("EMOBS Render PlanningGrid ms=" + std::to_string(ElapsedMs(PlanningStart)) +
+        " subregions_x=" + std::to_string(NumSubRegionsInXDim) +
+        " subregions_y=" + std::to_string(NumSubRegionsInYDim) +
+        " subregions_z=" + std::to_string(NumSubRegionsInZDim) +
+        " max_axis_vox=" + std::to_string(MaxVoxelArrayAxisSize_vox) +
+        " memory_mb=" + std::to_string(MemorySize_MB), 4);
 
 
     // An intermediary step - we're going to calculate the total region's effective index size, to make plugging this data into neuroglancer easier if desired
@@ -172,6 +184,7 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
 
     // Now, we go through all of the steps in each direction that we identified, and calculate the bounding boxes for each
     std::vector<SubRegion> SubRegions;
+    auto SubRegionBuildStart = std::chrono::high_resolution_clock::now();
     for (int XStep = 0; XStep < NumSubRegionsInXDim; XStep++) {
         for (int YStep = 0; YStep < NumSubRegionsInYDim; YStep++) {
             for (int ZStep = 0; ZStep < NumSubRegionsInZDim; ZStep++) {
@@ -239,14 +252,28 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
 
 
     _Simulation->VSDAData_->TotalRegions_ = SubRegions.size();
+    _Logger->Log("EMOBS Render SubRegionBuild ms=" + std::to_string(ElapsedMs(SubRegionBuildStart)) +
+        " total_regions=" + std::to_string(SubRegions.size()), 4);
 
 
     // -- Phase 3 -- 
     // Now, we're just going to go and render each of the different regions
     // This is done through simply running a for loop, and calling the rendersubregion code on each
     _Logger->Log("Rendering " + std::to_string(SubRegions.size()) + " Sub Regions", 4);
+    double SlowestRegion_ms = 0.0;
+    size_t SlowestRegionIndex = 0;
     for (size_t i = 0; i < SubRegions.size(); i++) {
+        auto RegionStart = std::chrono::high_resolution_clock::now();
         EMRenderSubRegion(_Logger, &SubRegions[i], _ImageProcessorPool, _GeneratorPool);
+        double Region_ms = ElapsedMs(RegionStart);
+        if (Region_ms > SlowestRegion_ms) {
+            SlowestRegion_ms = Region_ms;
+            SlowestRegionIndex = i;
+        }
+        _Logger->Log("EMOBS Render RegionComplete index=" + std::to_string(i) +
+            " of=" + std::to_string(SubRegions.size()) +
+            " ms=" + std::to_string(Region_ms) +
+            " cumulative_ms=" + std::to_string(ElapsedMs(RenderStart)), 4);
         _Simulation->VSDAData_->CurrentRegion_ = i + 1;
     }
 
@@ -273,6 +300,10 @@ bool ExecuteSubRenderOperations(Config::Config* _Config, BG::Common::Logger::Log
     // Decrement memory usage counter
     _ImageProcessorPool->TotalConsumedMemory_MB -= MemorySize_MB;
 
+    _Logger->Log("EMOBS Render Complete total_ms=" + std::to_string(ElapsedMs(RenderStart)) +
+        " total_regions=" + std::to_string(SubRegions.size()) +
+        " slowest_region_index=" + std::to_string(SlowestRegionIndex) +
+        " slowest_region_ms=" + std::to_string(SlowestRegion_ms), 4);
 
     return true;
 

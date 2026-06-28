@@ -190,3 +190,69 @@ time $VENV xor_scnm_acquisition_direct.py -Host localhost -Port 8000 -modelname 
 2. **Metal sphere path** — remove `_TotalThreads == 1` guard so GPU fills large subdivided soma spheres.
 3. **CompositeVoxelAtIndex** — inline index computation, single bounds check, direct write.
 4. **Polling loops** — replace `while (queue != 0) sleep_for(1000ms)` with `WaitUntilIdle()` in VoxelArrayGenerator and EMSubRegion.
+
+---
+
+## Observability and voxel writeback experiment
+
+Date: 2026-06-27
+
+This follow-up pass focused on two things:
+
+- adding timing instrumentation around EM render planning, subregion setup, rasterization wait, and image-processing wait
+- removing an avoidable read-modify-write copy in `VoxelArray::CompositeVoxelAtIndex`
+
+Code changes kept in this experiment:
+
+- `Source/Core/VSDA/EM/EMRenderer.cpp`
+  - added `EMOBS` timing for render planning, subregion construction, per-region completion, and total render duration
+- `Source/Core/VSDA/EM/VoxelSubsystem/EMSubRegion.cpp`
+  - added `EMOBS` timing for placeholder generation, voxel-array allocation/reuse, rasterization total, image enqueue, image wait, and per-subregion total
+- `Source/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.cpp`
+  - added `EMOBS` timing and counters for compartment/receptor/tear preprocessing, task mix, max subdivision, raster wait, and total queued work
+- `Source/Core/VSDA/EM/VoxelSubsystem/ArrayGeneratorPool/ArrayGeneratorPool.cpp`
+  - added per-worker shape timing summaries so we can distinguish cylinder-heavy vs sphere-heavy cost
+- `Source/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp`
+  - changed `CompositeVoxelAtIndex` to update `Data_[index]` in place after bounds checking, avoiding `GetVoxel()` copy plus `SetVoxel()` writeback on the hot path
+
+Repositories used:
+
+- NES: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES`
+- API: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-API`
+- Challenge: `/Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge`
+
+Build and run procedure:
+
+```bash
+cd /Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES/Tools
+./Build.sh 10 RelWithDebInfo
+./Run.sh
+
+cd /Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge/src/models/xor_scnm
+/usr/bin/time -p ./Run.sh -x a -H localhost -P 8000
+```
+
+Benchmark result:
+
+- acquisition-only EM run completed in `real 251.91s`
+- `user 4.16s`
+- `sys 1.06s`
+
+Comparison to recent reference points:
+
+- faster than the corrected post-regression acquisition rerun at `312.82s` by `60.91s`
+- still slower than the earlier best acquisition baseline at `237s` by `14.91s`
+
+What the new observability showed:
+
+- rasterization is still the dominant cost in the expensive subregions
+- early large subregions still spend about `12–16s` in rasterization before image processing
+- many later subregions complete rasterization in `1–3s`
+- image processing frequently adds a roughly fixed `~1s` tail per subregion
+- preprocessing itself is cheap, usually around `15–16ms`, so the main remaining opportunity is still in shape-to-voxel work rather than setup
+
+Interpretation:
+
+- the in-place voxel update recovered a substantial part of the remaining EM regression
+- the renderer is now back near the earlier target band, but not yet past the `237s` best run
+- the most likely next gain is still reducing wasted cylinder voxel iteration rather than further tuning queue polling

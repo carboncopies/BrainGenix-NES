@@ -53,8 +53,16 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
     noise::module::Perlin PerlinGenerator;
 
     // Initialize Metrics
-    int SamplesBeforeUpdate = 10000;
+    int SamplesBeforeUpdate = 1000;
     std::vector<double> Times;
+    int SphereSamples = 0;
+    int CylinderSamples = 0;
+    int BoxSamples = 0;
+    int OtherSamples = 0;
+    double SphereTime_ms = 0.0;
+    double CylinderTime_ms = 0.0;
+    double BoxTime_ms = 0.0;
+    double OtherTime_ms = 0.0;
 
     // Run until thread exit is requested - that is, this is set to false
     while (ThreadControlFlag_) {
@@ -134,10 +142,42 @@ void ArrayGeneratorPool::RendererThreadMainFunction(int _ThreadNumber) {
 
             }
             Times.push_back(Duration_ms);
+            if (ShapeName.find("Sphere") != std::string::npos) {
+                SphereSamples++;
+                SphereTime_ms += Duration_ms;
+            } else if (ShapeName.find("Cylinder") != std::string::npos) {
+                CylinderSamples++;
+                CylinderTime_ms += Duration_ms;
+            } else if (ShapeName.find("Box") != std::string::npos) {
+                BoxSamples++;
+                BoxTime_ms += Duration_ms;
+            } else {
+                OtherSamples++;
+                OtherTime_ms += Duration_ms;
+            }
             if (Times.size() > SamplesBeforeUpdate) {
                 double AverageTime = GetAverage(&Times);
-                Logger_ ->Log("EMArrayGeneratorPool Thread Info '" + std::to_string(_ThreadNumber) + "' Processed Most Recent Shape '" + ShapeName + " (" + std::to_string(ShapeID) + ")', Averaging " + std::to_string(AverageTime) + "ms / Shape", 0);
+                Logger_->Log("EMOBS ArrayWorker thread=" + std::to_string(_ThreadNumber) +
+                    " samples=" + std::to_string(Times.size()) +
+                    " avg_ms=" + std::to_string(AverageTime) +
+                    " sphere_count=" + std::to_string(SphereSamples) +
+                    " sphere_ms=" + std::to_string(SphereTime_ms) +
+                    " cylinder_count=" + std::to_string(CylinderSamples) +
+                    " cylinder_ms=" + std::to_string(CylinderTime_ms) +
+                    " box_count=" + std::to_string(BoxSamples) +
+                    " box_ms=" + std::to_string(BoxTime_ms) +
+                    " other_count=" + std::to_string(OtherSamples) +
+                    " other_ms=" + std::to_string(OtherTime_ms) +
+                    " recent_shape=" + ShapeName + " (" + std::to_string(ShapeID) + ")", 1);
                 Times.clear();
+                SphereSamples = 0;
+                CylinderSamples = 0;
+                BoxSamples = 0;
+                OtherSamples = 0;
+                SphereTime_ms = 0.0;
+                CylinderTime_ms = 0.0;
+                BoxTime_ms = 0.0;
+                OtherTime_ms = 0.0;
             }
 
 
