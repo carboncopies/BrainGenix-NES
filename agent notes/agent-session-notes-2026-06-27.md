@@ -256,3 +256,122 @@ Interpretation:
 - the in-place voxel update recovered a substantial part of the remaining EM regression
 - the renderer is now back near the earlier target band, but not yet past the `237s` best run
 - the most likely next gain is still reducing wasted cylinder voxel iteration rather than further tuning queue polling
+
+---
+
+## Clean full end-to-end validation run
+
+Date: 2026-06-28
+
+To verify that the optimizations also hold up in a real reservoir-to-acquisition pipeline, a full `r -> c -> a` xor run was executed against the local NES and API services.
+
+Reason for the run layout:
+
+- the default `ExpsDB.json` in the xor model directory had stale/corrupted entries from prior runs
+- to avoid contaminating older records or failing lookup on malformed data, this run used a fresh temporary experiment DB and a unique model name
+
+Services used:
+
+- NES: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-NES`
+- API: `/Users/apple/fun_project/mac_silicon/optimisations/BrainGenix-API`
+- Challenge: `/Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge`
+
+Command used:
+
+```bash
+/usr/bin/time -p /bin/zsh -lc '
+set -e
+export MPLCONFIGDIR=/private/tmp/mpl-xor-e2e-20260628
+mkdir -p "$MPLCONFIGDIR"
+MODEL=apple-xor_scnm-e2e-20260628-001
+DB=/private/tmp/xor_e2e_20260628_001.json
+rm -f "$DB" "$DB.locked"
+cd /Users/apple/fun_project/mac_silicon/optimisations/BrainEmulationChallenge/src/models/xor_scnm
+./xor_scnm_groundtruth_reservoir.py -Host localhost -Port 8000 -modelfile nesvbp-xor-res-sep-targets -modelname "$MODEL" -ExpsDB "$DB"
+./xor_scnm_groundtruth_connectome.py -Host localhost -Port 8000 -modelname "$MODEL" -ExpsDB "$DB"
+./xor_scnm_acquisition_direct.py -Host localhost -Port 8000 -modelname "$MODEL-tuned" -RenderEM -SubdivideSize 10 -Resolution_um 0.1 -ExpsDB "$DB"
+'
+```
+
+Result:
+
+- `real 301.49s`
+- `user 4.59s`
+- `sys 1.14s`
+
+Converted:
+
+- full end-to-end wall time: about `5m 1s`
+
+Comparison:
+
+- acquisition-only optimized run: `251.91s` (`4m 12s`)
+- additional reservoir + connectome overhead in this clean e2e run: about `49.58s`
+
+Interpretation:
+
+- the benchmark flow is now validated in both acquisition-only and end-to-end modes
+- the dominant runtime is still EM acquisition, not the reservoir or connectome stages
+- the current optimized branch is fast enough that the full pipeline now completes in roughly five minutes under this configuration
+
+---
+
+## Root-workspace xor_scnm comparison run
+
+Date: 2026-06-28
+
+To compare against the older "about 25 minute" expectation, xor_scnm was also run from the root workspace layout instead of the `optimisations` copies.
+
+Requested command shape:
+
+```bash
+cd /Users/apple/fun_project/mac_silicon/BrainEmulationChallenge/src/models/xor_scnm
+./Run.sh -H localhost -P 8000
+```
+
+Important caveat:
+
+- the requested NES checkout at `/Users/apple/fun_project/mac_silicon/.codex-work/BrainGenix-NES` did not contain a `Binaries/` directory, so it could not be started without rebuilding
+- to complete the timing run without rebuilding, NES was started from `/Users/apple/fun_project/mac_silicon/BrainGenix-NES`, while API and Challenge used the root workspace paths
+
+Command used for the timed run:
+
+```bash
+/usr/bin/time -p /bin/zsh -lc '
+set -e
+killall BrainGenix-NES BrainGenix-API 2>/dev/null || true
+sleep 3
+cd /Users/apple/fun_project/mac_silicon/BrainGenix-API/Tools
+nohup ./Run.sh > /tmp/braingenix-api-challenge.log 2>&1 &
+cd /Users/apple/fun_project/mac_silicon/BrainGenix-NES/Tools
+nohup ./Run.sh > /tmp/braingenix-nes-challenge.log 2>&1 &
+until curl -sS --max-time 2 http://127.0.0.1:8000/ >/dev/null; do sleep 1; done
+export MPLCONFIGDIR=/private/tmp/mpl-xor-root-challenge-20260628
+mkdir -p "$MPLCONFIGDIR"
+cd /Users/apple/fun_project/mac_silicon/BrainEmulationChallenge/src/models/xor_scnm
+./Run.sh -H localhost -P 8000 -m xor_scnm-run-20260628-001
+'
+```
+
+Result:
+
+- `real 1399.00s`
+- `user 16.22s`
+- `sys 1.57s`
+
+Converted:
+
+- full wall time: about `23m 19s`
+
+Interpretation:
+
+- this matches the older "roughly 25 minute" behavior much more closely than the optimized branch measurements
+- the large difference versus the optimized branch is not a small regression; it indicates the root workspace path is materially different in build/config/runtime state
+- the root Challenge run therefore should not be used as a direct replacement for the optimized-branch benchmark history
+
+What worked best overall in this session:
+
+- `RelWithDebInfo` instead of Debug was the largest structural improvement
+- lowering `VSDA_EM_PercentOfSysteMemoryLimit` from `70` to `6` avoided the worst oversized-subregion behavior
+- in-place `CompositeVoxelAtIndex` updates improved the hot voxel write path
+- EM observability logs made it clear that rasterization, especially cylinder voxelization, remains the main remaining optimization target
