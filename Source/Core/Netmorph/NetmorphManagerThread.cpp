@@ -382,12 +382,16 @@ struct LIFCReceptorPars {
 struct spines_test_data {
     std::vector<synapse_morphology> collected;
     size_t duplicates() {
+        std::vector<bool> is_duplicate(collected.size(), false);
         size_t count = 0;
         for (size_t i = 0; i<collected.size(); i++) {
-            for (size_t j = 0; j<collected.size(); j++) {
-                if (i != j) {
-                    if ((collected[i].presyn_terminal_pos == collected[j].presyn_terminal_pos) && (collected[i].postsyn_pos == collected[j].postsyn_pos)) {
-                        count++;
+            if (!is_duplicate[i]) {
+                for (size_t j = 0; j<collected.size(); j++) {
+                    if (i != j) {
+                        if ((collected[i].presyn_terminal_pos == collected[j].presyn_terminal_pos) && (collected[i].postsyn_pos == collected[j].postsyn_pos)) {
+                            is_duplicate[j] = true;
+                            count++;
+                        }
                     }
                 }
             }
