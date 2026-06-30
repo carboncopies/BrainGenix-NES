@@ -377,6 +377,34 @@ struct LIFCReceptorPars {
     }
 };
 
+#define SPINES_TEST
+#ifdef SPINES_TEST
+struct spines_test_data {
+    std::vector<synapse_morphology> collected;
+    size_t duplicates() {
+        size_t count = 0;
+        for (size_t i = 0; i<collected.size(); i++) {
+            for (size_t j = 0; j<collected.size(); j++) {
+                if (i != j) {
+                    if ((collected[i].presyn_terminal_pos == collected[j].presyn_terminal_pos) && (collected[i].postsyn_pos == collected[j].postsyn_pos)) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+    size_t need_spines() {
+        size_t count = 0;
+        for (auto& morph: collected) {
+            if (morph.requires_dendritic_spine) count++;
+        }
+        return count;
+    }
+};
+spines_test_data spines_test;
+#endif
+
 class LIFCSynapseBuild: public SynapseBuild {
 public:
     size_t ampa_found = 0;
@@ -387,6 +415,9 @@ public:
     LIFCSynapseBuild(NetmorphParameters& Params, const LIFCReceptorPars& _LIFCreceptorpars):
         SynapseBuild(Params, Dummypsptiming), LIFCreceptorpars(_LIFCreceptorpars) {}
     virtual void op(synapse* s) {
+        // *** TESTING
+        synapse_morphology morphology = s->Structure()->get_morphology();
+        spines_test.collected.emplace_back(morphology);
         // Morphology shape.
         Geometries::Box S;
         // *** This needs better detailing to take what are clearly pre-
@@ -905,6 +936,12 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
 
     _Params->Result.postop();
     _Params->State = Netmorph_DONE;
+
+    #ifdef SPINES_TEST
+    _Logger->Log("SPINES_TEST:\nNumber of synapse morphologies collected: "+std::to_string(spines_test.collected.size()), 5);
+    _Logger->Log("Number of duplicate morphologies: "+std::to_string(spines_test.duplicates()), 5);
+    _Logger->Log("Number of synapses needing spines: "+std::to_string(spines_test.need_spines()), 5);
+    #endif
 
     return 0;
 }
