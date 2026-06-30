@@ -456,7 +456,7 @@ public:
             S.ID = _Params.Sim->AddBox(S); // *** WE DO NOT NEED TO ADD MULTIPLE BOXES (MORPHOLOGIES) FOR COLOCATED RECEPTORS!
             s->Structure()->cache.i = S.ID;
             shape_id = S.ID;
-            #ifdef spines_test
+            #ifdef SPINES_TEST
             spines_test.morphologies_built.emplace_back(&(spines_test.collected.back()));
             #endif
         }
