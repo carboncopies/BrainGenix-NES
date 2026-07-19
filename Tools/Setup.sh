@@ -106,6 +106,18 @@ echo "Updating submodules"
 run_cmd git submodule sync --recursive
 run_cmd git submodule update --init --recursive
 
+# Netmorph's Apple Silicon fixes live in a dedicated, pinned revision. Keep the
+# superproject's recorded cross-platform revision for every other platform so a
+# Linux checkout cannot be changed by this setup path.
+if [ "$(uname)" = "Darwin" ] && [ "$(uname -m)" = "arm64" ]; then
+    NETMORPH_MAC_SILICON_COMMIT="5c26c4aa84ad08a7f8f2bba7d650c0581dba7ace"
+    NETMORPH_DIR="$REPO_ROOT/ThirdParty/NetmorphCMake"
+
+    echo "Selecting pinned Apple Silicon Netmorph revision: $NETMORPH_MAC_SILICON_COMMIT"
+    run_cmd git -C "$NETMORPH_DIR" fetch origin mac-silicon-support
+    run_cmd git -C "$NETMORPH_DIR" checkout --detach "$NETMORPH_MAC_SILICON_COMMIT"
+fi
+
 echo "Bootstrapping vcpkg"
 run_cmd "$REPO_ROOT/ThirdParty/vcpkg/bootstrap-vcpkg.sh" -disableMetrics
 
