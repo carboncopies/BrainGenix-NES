@@ -367,7 +367,37 @@ if(APPLE AND CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm64|aarch64)$")
             "-framework MetalPerformanceShaders"
         )
     endforeach()
+
+    add_executable(AppleAcceleration.test
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleAcceleration.test.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/MetalVoxelFill.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.cpp
+        ${SRC_DIR}/Core/Simulator/Geometries/VecTools.cpp
+        ${SRC_DIR}/Core/Simulator/Structs/BoundingBox.cpp
+        ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.cpp)
+    set_source_files_properties(
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleAcceleration.test.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/MetalVoxelFill.mm
+        PROPERTIES COMPILE_FLAGS "-fobjc-arc")
+    target_compile_features(AppleAcceleration.test PRIVATE cxx_std_17)
+    target_include_directories(AppleAcceleration.test PRIVATE ${SRC_DIR}/Core)
+    target_link_libraries(AppleAcceleration.test PRIVATE
+        GTest::gtest_main
+        bg-common-logger
+        "-framework Foundation"
+        "-framework Accelerate"
+        "-framework Metal"
+        "-framework MetalPerformanceShaders")
+    add_test(NAME AppleAcceleration COMMAND AppleAcceleration.test)
 endif()
+
+add_test(
+    NAME AppleAccelerationCMakeGuards
+    COMMAND ${CMAKE_COMMAND}
+        -DCORE_CMAKE_FILE=${CMAKE_CURRENT_LIST_FILE}
+        -P ${PROJECT_SOURCE_DIR}/CMake/Tests/AppleAccelerationCMakeGuards.cmake)
 
 ## -- IMPORTANT -- | !FOR REDUCED THREADING DEBUGGING, UNCOMMENT LINE BELOW, OTHERWISE LEAVE COMMENTED OUT! | -- IMPORTANT -- ##
 # target_compile_definitions(${PROJECT_NAME} PRIVATE REDUCED_THREADING_DEBUG=1)
