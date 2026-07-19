@@ -350,6 +350,25 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${GZIP_HPP_INCLUDE_DIRS})
 
+if(APPLE AND CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm64|aarch64)$")
+    set(APPLE_MM_SRCS
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.mm
+        ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/MetalVoxelFill.mm)
+
+    # Compile Objective-C++ bridges with ARC so Metal objects are automatically released
+    set_source_files_properties(${APPLE_MM_SRCS} PROPERTIES COMPILE_FLAGS "-fobjc-arc")
+
+    foreach(_TGT ${PROJECT_LIBRARY_NAME} ${PROJECT_NAME})
+        target_sources(${_TGT} PRIVATE ${APPLE_MM_SRCS})
+        target_link_libraries(${_TGT} PRIVATE
+            "-framework Foundation"
+            "-framework Accelerate"
+            "-framework Metal"
+            "-framework MetalPerformanceShaders"
+        )
+    endforeach()
+endif()
+
 ## -- IMPORTANT -- | !FOR REDUCED THREADING DEBUGGING, UNCOMMENT LINE BELOW, OTHERWISE LEAVE COMMENTED OUT! | -- IMPORTANT -- ##
 # target_compile_definitions(${PROJECT_NAME} PRIVATE REDUCED_THREADING_DEBUG=1)
 ## -- END REDUCED THREADING COMMENT -- ##

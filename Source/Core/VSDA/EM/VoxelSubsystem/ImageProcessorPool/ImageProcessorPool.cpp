@@ -8,9 +8,14 @@
 #include <chrono>
 #include <filesystem>
 #include <cstdlib>
+#include <cstring>
 #include <random>
 #include <algorithm>
 #include <math.h>
+
+#if defined(__APPLE__) && defined(__aarch64__)
+#include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/AppleGaussianBlur.h>
+#endif
 
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -381,7 +386,29 @@ void ImageProcessorPool::EncoderThreadMainFunction(int _ThreadNumber) {
 
             // Perform Gaussian Blurring Step
             if (Task->EnableGaussianBlur) {
+#if defined(__APPLE__) && defined(__aarch64__)
+                // Tiered blur strategy on Apple Silicon:
+                //   sigma >= 5 → MPS (GPU, ~10-20× faster for large blur radii)
+                //   sigma <  5 → vImage tent filter (AMX SIMD, low-overhead for small radii)
+                // MPS path falls back to vImage if the Metal device is unavailable.
+                bool BlurDone = false;
+                if (Task->GaussianBlurSigma >= 5.0f) {
+                    BlurDone = MPS_GaussianBlur(
+                        OneToOneVoxelImage.Data_.get(),
+                        OneToOneVoxelImage.Width_px,
+                        OneToOneVoxelImage.Height_px,
+                        Task->GaussianBlurSigma);
+                }
+                if (!BlurDone) {
+                    Accelerate_GaussianBlur(
+                        OneToOneVoxelImage.Data_.get(),
+                        OneToOneVoxelImage.Width_px,
+                        OneToOneVoxelImage.Height_px,
+                        Task->GaussianBlurSigma);
+                }
+#else
                 iir_gauss_blur(OneToOneVoxelImage.Width_px, OneToOneVoxelImage.Height_px, 1, OneToOneVoxelImage.Data_.get(), Task->GaussianBlurSigma);
+#endif
             }
 
 
