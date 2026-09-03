@@ -88,6 +88,7 @@ struct CalciumImagingData {
 
 
 
+    std::string OutputUsername_ = "anonymous"; /**API username used to resolve per-user output paths for this calcium job */
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/
     std::vector<std::unique_ptr<ProcessingTask>> Tasks_; /**List of tasks that have been created for this render operation, we check that they're all done before finishing our render operation*/
 

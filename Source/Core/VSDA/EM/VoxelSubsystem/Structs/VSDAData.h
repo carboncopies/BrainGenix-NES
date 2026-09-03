@@ -95,6 +95,7 @@ struct VSDAData {
 
 
     std::string                 NullImagePath_ = "";       /**Defines the path of the black png to be used when no content is in frame of rendered image */
+    std::string                 OutputUsername_ = "anonymous"; /**API username used to resolve per-user output paths for this VSDA job */
 
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/

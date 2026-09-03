@@ -4,6 +4,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
+#include <Util/StoragePaths.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.h>
@@ -224,6 +225,8 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
     Simulation* Sim = Simulations_.read(idx);
     assert(Sim != nullptr);
     Sim->Name = SimulationName;
+    Sim->OwnerUsername = Handle.RequestUsername();
+    Util::Storage::EnsureUserRoot(Sim->OwnerUsername);
     Sim->SetRandomSeed(0);
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = idx;
@@ -742,7 +745,11 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
         SaveName.erase(i, Pattern.length());
         i = SaveName.find(Pattern, i);
     }
-    std::string SafeHandle = "SavedSimulations/" + SaveName + ".NES";
+    std::string RelativeHandle = "SavedSimulations/" + SaveName + ".NES";
+    std::string SafeHandle = Util::Storage::FindExisting(RelativeHandle, Handle.RequestUsername());
+    if (SafeHandle.empty()) {
+        SafeHandle = Util::Storage::Resolve(Handle.RequestUsername(), RelativeHandle);
+    }
 
 
     // Now Check If The Handle Is Valid, If So, Load It
@@ -834,7 +841,11 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>(API::SimLoadingTask);
 
     // Check if save file exists and load its request contents into the task data
-    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
+    std::string SavedSimPath = Util::Storage::FindExisting("SavedSimulations/" + SavedSimName + ".NES", Handle.RequestUsername());
+    if (SavedSimPath.empty()) {
+        SavedSimPath = Util::Storage::Resolve(Handle.RequestUsername(), "SavedSimulations/" + SavedSimName + ".NES");
+    }
+    if (!LoadFileIntoString(SavedSimPath, LoadTaskData->InputData)) {
         Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }

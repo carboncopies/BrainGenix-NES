@@ -21,6 +21,7 @@
 #include <memory>
 
 #include <iostream>
+#include <Util/StoragePaths.h>
 
 namespace BG {
 namespace NES {
@@ -28,6 +29,10 @@ namespace Simulator {
 
 //! Constructors
 Simulation::Simulation(BG::Common::Logger::LoggingSystem* _Logger) : Logger_(_Logger) {};
+
+std::string Simulation::ResolvePath(const std::string& RelativePath) const {
+    return Util::Storage::Resolve(OwnerUsername, RelativePath);
+}
 
 /**
  * Takes a fresh random seed and creates a new random generator with that
@@ -910,12 +915,17 @@ public:
  * Save neuronal circuit specifications to file.
  */
 bool Simulation::SaveModel(const std::string& Name) {
+    std::error_code Error;
+    if (Util::Storage::CreateDirectories(OwnerUsername, "Models/", Error).empty()) {
+        return false;
+    }
+    std::string ModelPath = ResolvePath(std::string("Models/") + Name);
     if (SimNeuronClass == LIFCNEURONS) {
-        LIFCSaver _Saver(Name, SimNeuronClass);
+        LIFCSaver _Saver(ModelPath, SimNeuronClass);
         if (!_Saver.Prepare(this)) return false;
         return _Saver.Save();
     } else {
-        Saver _Saver(Name, SimNeuronClass);
+        Saver _Saver(ModelPath, SimNeuronClass);
         if (!_Saver.Prepare(this)) return false;
         return _Saver.Save();
     }
@@ -927,7 +937,11 @@ bool Simulation::SaveModel(const std::string& Name) {
  */
 bool Simulation::LoadModel(const std::string& Name) {
     SaveLoadPrior _SaveLoadPrior;
-    std::fstream LoadFile = std::fstream(Name, std::ios::in | std::ios::binary);
+    std::string ModelPath = Util::Storage::FindExisting(std::string("Models/") + Name, OwnerUsername);
+    if (ModelPath.empty()) {
+        ModelPath = ResolvePath(std::string("Models/") + Name);
+    }
+    std::fstream LoadFile = std::fstream(ModelPath, std::ios::in | std::ios::binary);
     // 0. SaveLoadPrior
     LoadFile.read((char*)&_SaveLoadPrior, sizeof(_SaveLoadPrior));
 
@@ -1928,9 +1942,10 @@ std::string TimeStamp() {
 }
 
 std::string Simulation::StoredRequestsSave() const {
-    // Make sure the directory exists.
+    // Make sure the directory exists under the owner's shared root with ACLs.
     std::error_code err;
-    if (!MkDirRecursive("SavedSimulations/", err)) {
+    std::string SaveDir = Util::Storage::CreateDirectories(OwnerUsername, "SavedSimulations/", err);
+    if (SaveDir.empty()) {
         return "";
     }
 
@@ -1942,7 +1957,7 @@ std::string Simulation::StoredRequestsSave() const {
         FileName += Name;
     }
 
-    std::ofstream SaveFile("SavedSimulations/"+FileName+".NES");
+    std::ofstream SaveFile(ResolvePath("SavedSimulations/" + FileName + ".NES"));
     if (!SaveFile.is_open()) {
         return "";
     }

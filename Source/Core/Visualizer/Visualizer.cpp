@@ -1,4 +1,5 @@
 #include <Visualizer/Visualizer.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -60,13 +61,26 @@ bool VisualizeSimulation(BG::Common::Logger::LoggingSystem* _Logger, Renderer::I
 
     // -- Stage 2 --
     // Now, we're just going to render it to a file, and get that path back.
-    std::string TargetDirectory = "Visualizations/" + std::to_string(_Simulation->ID) + "/";
+    // FileHandles stay relative for clients; filesystem writes use the absolute path.
+    std::string RelativeDirectory = "Visualizations/" + std::to_string(_Simulation->ID) + "/";
     std::error_code Code;
-    if (!VSCreateDirectoryRecursive(TargetDirectory, Code)) {
+    std::string TargetDirectory = Util::Storage::CreateDirectories(_Simulation->OwnerUsername, RelativeDirectory, Code);
+    if (TargetDirectory.empty()) {
         _Logger->Log("Failed To Create Directory, Error '" + Code.message() + "'", 7);
+        return false;
+    }
+    if (TargetDirectory.back() != '/') {
+        TargetDirectory += "/";
     }
     std::string Filepath = TargetDirectory;
     RenderVisualization(_Logger, _Renderer, _Simulation->VisualizerParams.get(), Filepath, _ImageProcessorPool);
+    for (std::string& Handle : _Simulation->VisualizerParams->FileHandles) {
+        // Convert absolute write paths back to relative handles for GetImage.
+        std::string AbsoluteRoot = TargetDirectory;
+        if (Handle.rfind(AbsoluteRoot, 0) == 0) {
+            Handle = RelativeDirectory + Handle.substr(AbsoluteRoot.size());
+        }
+    }
 
 
     return true;

@@ -11,6 +11,7 @@
 
 
 #include <Visualizer/VisualizerRPCInterface.h>
+#include <Util/StoragePaths.h>
 #include <Visualizer/Visualizer.h>
 #include <RPC/APIStatusCode.h>
 
@@ -109,7 +110,11 @@ std::string VisualizerRPCInterface::VisualizerGetImage(std::string _JSONRequest)
         ImageHandle.erase(i, Pattern.length());
         i = ImageHandle.find(Pattern, i);
     }
-    std::string SafeHandle = "./" + ImageHandle;
+    std::string PreferredUser = Handle.Sim() ? Handle.Sim()->OwnerUsername : Handle.RequestUsername();
+    std::string SafeHandle = Util::Storage::FindExisting(ImageHandle, PreferredUser);
+    if (SafeHandle.empty()) {
+        SafeHandle = Util::Storage::Resolve(PreferredUser, ImageHandle);
+    }
     std::cout<<SafeHandle<<std::endl;
 
 

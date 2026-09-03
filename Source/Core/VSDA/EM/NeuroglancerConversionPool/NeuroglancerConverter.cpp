@@ -18,6 +18,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h>
 #include <VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -79,12 +80,15 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
     // Create our new dataset path, and create the directory for the output
     uuids::uuid const ThisID = uuids::uuid_system_generator{}();
     std::string UUID = uuids::to_string(ThisID);
-    std::string BasePath = "NeuroglancerDatasets/" + UUID + "/";
-
+    std::string RelativeBasePath = "NeuroglancerDatasets/" + UUID + "/";
+    _Simulation->VSDAData_->OutputUsername_ = _Simulation->OwnerUsername;
     std::error_code Error;
-    bool Status = CreateDirectoryRecursive(BasePath, Error);
-    if (!Status) {
+    std::string BasePath = Util::Storage::CreateDirectories(_Simulation->OwnerUsername, RelativeBasePath, Error);
+    if (BasePath.empty()) {
         return false;
+    }
+    if (BasePath.back() != '/') {
+        BasePath += "/";
     }
 
     // _NumResolutionLevels = 1;
@@ -182,7 +186,8 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
             Scales["key"] = "Segmentation";
 
 
-            Status = CreateDirectoryRecursive(BasePath + "/Segmentation/Segmentation", Error);
+            std::error_code SegError;
+            bool Status = CreateDirectoryRecursive(BasePath + "/Segmentation/Segmentation", SegError);
             if (!Status) {
                 return false;
             }
@@ -263,7 +268,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
         ThisTask->IndexInfo_ = BaseRegion->ImageVoxelIndexes_[i];
         ThisTask->OutputDirectoryBasePath_ = BasePath + "/Data";
-        ThisTask->SourceFilePath_ = BaseRegion->ImageFilenames_[i];
+        ThisTask->SourceFilePath_ = _Simulation->ResolvePath(BaseRegion->ImageFilenames_[i]);
         ThisTask->ReductionLevels_ = _NumResolutionLevels;
         ThisTask->IsSegmentation_ = false;
 
@@ -286,7 +291,7 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
 
         ThisTask->IndexInfo_ = BaseRegion->SegmentationVoxelIndexes_[i];
         ThisTask->OutputDirectoryBasePath_ = BasePath + "/Segmentation/";
-        ThisTask->SourceFilePath_ = BaseRegion->SegmentationFilenames_[i];
+        ThisTask->SourceFilePath_ = _Simulation->ResolvePath(BaseRegion->SegmentationFilenames_[i]);
         ThisTask->ReductionLevels_ = _NumResolutionLevels;
         ThisTask->IsSegmentation_ = true;
 
@@ -317,8 +322,8 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         _Simulation->VSDAData_->TotalSlices_ = 0;
         _Simulation->VSDAData_->CurrentSlice_ = 0;
 
-        std::string DatasetPath = "NeuroglancerDatasets/" + UUID + "/Segmentation";
-        std::string OutputPath = "Meshes/" + UUID;
+        std::string DatasetPath = _Simulation->ResolvePath("NeuroglancerDatasets/" + UUID + "/Segmentation");
+        std::string OutputPath = _Simulation->ResolvePath("Meshes/" + UUID);
         if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
             _Logger->Log("Igneous meshing pipeline execution failed!", 10);
             return false;

@@ -13,6 +13,7 @@
 #include <VSDA/EM/VoxelSubsystem/EMSubRegion.h>
 
 #include <VSDA/EM/MeshGenerator/MeshingStage.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -175,14 +176,17 @@ bool EMRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     double YOffset = _SubRegion->RegionOffsetY_um;
 
     std::string FileNamePrefix = "Simulation" + std::to_string(Sim->ID) + "/Region" + std::to_string(VSDAData_->ActiveRegionID_);
+    VSDAData_->OutputUsername_ = Sim->OwnerUsername;
+    Util::Storage::EnsureUserRoot(VSDAData_->OutputUsername_);
 
 
 
     // Generate Black Placeholder PNG
-    std::string NullImagePath = "Renders/" + FileNamePrefix + "/NullImage.png";
+    std::string NullImageRelative = "Renders/" + FileNamePrefix + "/NullImage.png";
+    std::string NullImagePath = Sim->ResolvePath(NullImageRelative);
     VSDAData_->NullImagePath_ = NullImagePath;
     std::error_code e;
-    VSCreateDirectoryRecursive3("Renders/" + FileNamePrefix, e);
+    VSCreateDirectoryRecursive3(Sim->ResolvePath("Renders/" + FileNamePrefix), e);
     createCheckerboardWithTextPlaceholder(NullImagePath, VSDAData_->Params_.ImageWidth_px, VSDAData_->Params_.ImageHeight_px);
 
 
