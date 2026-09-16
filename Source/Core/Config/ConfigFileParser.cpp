@@ -49,6 +49,9 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
 
     _Config.MaxVoxelArraySize_ = Config["VSDA_EM_MaxVoxelArraySize"].as<int>();
     _Config.VoxelArrayPercentOfSystemMemory_ = Config["VSDA_EM_PercentOfSysteMemoryLimit"].as<int>();
+    if (Config["Output_BasePath"]) {
+        _Config.OutputBasePath = Config["Output_BasePath"].as<std::string>();
+    }
 
 }
 

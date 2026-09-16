@@ -3,6 +3,7 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <filesystem>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <Netmorph/NetmorphRPCInterface.h>
@@ -11,6 +12,7 @@
 #include <uuid.h>
 
 #include <Netmorph/NetmorphManagerThread.h>
+#include <Util/StoragePaths.h>
 
 
 namespace BG {
@@ -102,19 +104,14 @@ std::string NetmorphRPCInterface::NetmorphStartSimulation(std::string _JSONReque
         Status = 3; // Something is broken
     }
 
-    // Create a unique output directory for this Netmorph run
+    // Create a unique output directory for this Netmorph run under the owner's shared root.
     uuids::uuid const ThisID = uuids::uuid_system_generator{}();
     std::string UUID = uuids::to_string(ThisID);
-    std::string NetmorphOutputPath = "NetmorphOutput/" + UUID + "/";
     std::error_code err;
-    err.clear();
-    if (!std::filesystem::create_directories(NetmorphOutputPath, err)) {
-        if (std::filesystem::exists(NetmorphOutputPath)) {
-            // The folder already exists:
-            err.clear();
-        } else {
-            return Handle.ErrResponse();
-        }
+    std::string NetmorphOutputPath = Util::Storage::CreateDirectories(
+        Handle.Sim()->OwnerUsername, "NetmorphOutput/" + UUID + "/", err);
+    if (NetmorphOutputPath.empty()) {
+        return Handle.ErrResponse();
     }
     Handle.Sim()->NetmorphParams->OutputDirectory = NetmorphOutputPath;
 

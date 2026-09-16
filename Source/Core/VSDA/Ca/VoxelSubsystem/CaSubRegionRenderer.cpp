@@ -17,6 +17,7 @@
 #include <VSDA/Ca/VoxelSubsystem/ShapeToVoxel/CalciumConcentration.h>
 
 #include <Simulator/Structs/Simulation.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -38,6 +39,8 @@ bool CaRenderSubRegion(BG::Common::Logger::LoggingSystem* _Logger, SubRegion* _S
     int SliceOffset = _SubRegion->LayerOffset;
     double XOffset = _SubRegion->RegionOffsetX_um;
     double YOffset = _SubRegion->RegionOffsetY_um;
+    CaData_->OutputUsername_ = Sim->OwnerUsername;
+    Util::Storage::EnsureUserRoot(CaData_->OutputUsername_);
 
 
     // Setup Metadata For GetRenderStatus

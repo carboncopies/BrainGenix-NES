@@ -11,6 +11,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 #include <RPC/RPCHandlerHelper.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -30,6 +31,12 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
 
     SimVec = _Simulations;
     RequestJSON = nlohmann::json::parse(_JSONRequest);
+    if (RequestJSON.contains("RequestUsername") && RequestJSON["RequestUsername"].is_string()) {
+        RequestUsername_ = RequestJSON["RequestUsername"].get<std::string>();
+        if (RequestUsername_.empty()) {
+            RequestUsername_ = "anonymous";
+        }
+    }
 
     // bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
     // if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?
@@ -72,6 +79,13 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
         Logger_->Log("Simulation with ID "+std::to_string(SimulationID)+" was deleted, cannot make further requests", 8);
         Status = BGStatusCode::BGStatusInvalidParametersPassed;
         return;
+    }
+    // Bind filesystem ownership to the authenticated API caller when present.
+    if (!RequestUsername_.empty() && RequestUsername_ != "anonymous") {
+        ThisSimulation->OwnerUsername = RequestUsername_;
+        BG::NES::Util::Storage::EnsureUserRoot(ThisSimulation->OwnerUsername);
+    } else if (ThisSimulation->OwnerUsername.empty()) {
+        ThisSimulation->OwnerUsername = "anonymous";
     }
     // *** Might be slightly risky, incase SimVec was modified right after read(), in
     //     that case will have to maintain a separate vector next to SimVec with
@@ -174,6 +188,10 @@ Simulator::Simulation* HandlerData::Sim() const {
 
 const nlohmann::json& HandlerData::ReqJSON() const {
     return RequestJSON;
+}
+
+std::string HandlerData::RequestUsername() const {
+    return RequestUsername_;
 }
 
 // bool HandlerData::CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory) {

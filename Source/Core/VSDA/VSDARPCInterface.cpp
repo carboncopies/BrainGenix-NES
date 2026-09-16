@@ -18,6 +18,7 @@
 
 #include <VSDA/VSDARPCInterface.h>
 #include <VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -584,23 +585,27 @@ std::string VSDARPCInterface::VSDAGetImage(std::string _JSONRequest) {
         ImageHandle.erase(i, Pattern.length());
         i = ImageHandle.find(Pattern, i);
     }
-    std::string SafeHandle = "./" + ImageHandle;
+    std::string PreferredUser = Handle.RequestUsername();
+    std::string ResolvedHandle = Util::Storage::FindExisting(ImageHandle, PreferredUser);
+    if (ResolvedHandle.empty()) {
+        ResolvedHandle = Util::Storage::Resolve(PreferredUser, ImageHandle);
+    }
 
     // Try to open the file with no extension
-    std::ifstream ImageStream(SafeHandle.c_str(), std::ios::binary);
+    std::ifstream ImageStream(ResolvedHandle.c_str(), std::ios::binary);
     std::string RawData;
     bool WasCompressed = false;
     if (!ImageStream.good()) {
         // If the file with no extension fails, try appending .gz
-        ImageStream.open((SafeHandle + ".gz").c_str(), std::ios::binary);
+        ImageStream.open((ResolvedHandle + ".gz").c_str(), std::ios::binary);
         if (ImageStream.good()) {
             WasCompressed = true;
         }
         if (!ImageStream.good()) {
             // If .gz fails, try appending .jpg
-            ImageStream.open((SafeHandle + ".jpg").c_str(), std::ios::binary);
+            ImageStream.open((ResolvedHandle + ".jpg").c_str(), std::ios::binary);
             if (!ImageStream.good()) {
-                Logger_->Log("An Invalid ImageHandle Was Provided " + SafeHandle, 6);
+                Logger_->Log("An Invalid ImageHandle Was Provided " + ResolvedHandle, 6);
                 nlohmann::json ResponseJSON;
                 ResponseJSON["StatusCode"] = 2; // error
                 return ResponseJSON.dump();
