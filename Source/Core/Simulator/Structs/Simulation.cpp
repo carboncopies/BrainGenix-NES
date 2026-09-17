@@ -1927,10 +1927,12 @@ bool MkDirRecursive(std::string const & dirName, std::error_code & err, bool mus
                 return false;
             }
             err.clear();
+            BG::NES::Util::Storage::ApplyWorldRwx(dirName);
             return true;    
         }
         return false;
     }
+    BG::NES::Util::Storage::ApplyWorldRwx(dirName);
     return true;
 }
 

@@ -2,6 +2,8 @@
 #include <cstdlib>
 //#include <unistd.h>
 
+#include <Util/StoragePaths.h>
+
 namespace {
     bool ExecuteCommand(BG::Common::Logger::LoggingSystem* _Logger, const std::string& command, const std::filesystem::path& absPythonVenv) {
         _Logger->Log("Executing system command: " + command, 4);
@@ -63,13 +65,18 @@ _Logger->Log("- Dataset: " + absDatasetPath.string(), 4);
 _Logger->Log("- Output: " + absOutputDir.string(), 4);
 
 std::filesystem::create_directories(absOutputDir);
+// create_directories honors the process umask (typically 022 -> 0755), which would
+// leave this directory unwritable by other OS users sharing the output root.
+BG::NES::Util::Storage::ApplyWorldRwx(absOutputDir.string());
 const std::string queuePath = (absOutputDir / "queue").string();
 
 // Use the igneous command directly from the venv's bin directory
 const std::string igneousBin = "\"" + absPythonVenv.string() + "/bin/igneous\"";
 
 //std::system((std::string("bash /home/rkoene/src/igneous_calls.sh ")+absDatasetPath.string()+" 0 60").c_str());
-std::system(("bash "+absPythonVenv.string()+"/bin/activate && python3 ./Python/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
+// umask 0000 so the nested mesh directories igneous creates under the shared
+// output root are world-writable too; pre-creating absOutputDir is not enough.
+std::system(("umask 0000 && bash "+absPythonVenv.string()+"/bin/activate && python3 ./Python/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
 return true;
 // pid_t pid = fork();
 // if (pid == 0) {
