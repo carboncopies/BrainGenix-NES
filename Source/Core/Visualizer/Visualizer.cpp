@@ -23,10 +23,12 @@ bool VSCreateDirectoryRecursive(std::string const & dirName, std::error_code & e
         {
             // The folder already exists:
             err.clear();
+            BG::NES::Util::Storage::ApplyWorldRwx(dirName);
             return true;    
         }
         return false;
     }
+    BG::NES::Util::Storage::ApplyWorldRwx(dirName);
     return true;
 }
 

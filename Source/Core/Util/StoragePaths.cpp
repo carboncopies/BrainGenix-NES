@@ -56,6 +56,45 @@ void SetOutputBasePath(const std::string& OutputBasePath) {
     MakeWorldWritable(OutputBasePath_);
 }
 
+void ApplyWorldRwx(const std::string& Path) {
+    if (Path.empty()) {
+        return;
+    }
+
+    // Only ever relax permissions inside the shared output root. Callers are
+    // generic directory helpers that are also used for paths outside it, and
+    // world-writing e.g. something under a user's home would be wrong.
+    std::error_code Error;
+    std::filesystem::path Canonical = std::filesystem::weakly_canonical(Path, Error);
+    if (Error) {
+        return;
+    }
+    std::filesystem::path Base = std::filesystem::weakly_canonical(OutputBasePath_, Error);
+    if (Error) {
+        return;
+    }
+
+    auto BaseIt = Base.begin();
+    auto PathIt = Canonical.begin();
+    for (; BaseIt != Base.end(); ++BaseIt, ++PathIt) {
+        if (PathIt == Canonical.end() || *PathIt != *BaseIt) {
+            return; // Not under the output base; leave permissions alone.
+        }
+    }
+
+    // create_directories() also creates intermediate components, and those
+    // inherit the umask too. Walk up to the output base so every level the
+    // caller may have just created is world-writable, not only the leaf.
+    std::filesystem::path Current = Canonical;
+    while (!Current.empty() && Current != Base) {
+        MakeWorldWritable(Current);
+        if (!Current.has_parent_path() || Current.parent_path() == Current) {
+            break;
+        }
+        Current = Current.parent_path();
+    }
+}
+
 std::string GetOutputBasePath() {
     return OutputBasePath_;
 }

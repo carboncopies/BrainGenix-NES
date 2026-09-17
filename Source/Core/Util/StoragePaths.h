@@ -26,6 +26,11 @@ std::string FindExisting(const std::string& RelativePath, const std::string& Pre
 // user can access shared outputs even when NES runs as another account.
 bool EnsureUserRoot(const std::string& Username);
 
+// Force world rwx (0777) on an already-existing path. For writers that create
+// their own directories (e.g. the Igneous mesh pipeline) and would otherwise
+// leave them at the process umask, which is not world-writable.
+void ApplyWorldRwx(const std::string& Path);
+
 // EnsureUserRoot, then create RelativePath under that user root (also 0777).
 // Returns the absolute path on success, or empty string on mkdir failure.
 std::string CreateDirectories(const std::string& Username, const std::string& RelativePath);

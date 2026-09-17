@@ -20,6 +20,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -43,10 +44,12 @@ bool CreateDirectoryRecursive(std::string const & dirName, std::error_code & err
         {
             // The folder already exists:
             err.clear();
+            BG::NES::Util::Storage::ApplyWorldRwx(dirName);
             return true;    
         }
         return false;
     }
+    BG::NES::Util::Storage::ApplyWorldRwx(dirName);
     return true;
 }
 

@@ -8,6 +8,7 @@
 #include <filesystem>
 #include <cstring>
 #include <cmath>
+#include <Util/StoragePaths.h>
 
 #pragma pack(push, 1)
 struct BlockHeader {
@@ -27,10 +28,12 @@ bool CreateDirectoryRecursive2(std::string const& dirName, std::error_code& err)
     if (!std::filesystem::create_directories(dirName, err)) {
         if (std::filesystem::exists(dirName)) {
             err.clear();
+            BG::NES::Util::Storage::ApplyWorldRwx(dirName);
             return true;
         }
         return false;
     }
+    BG::NES::Util::Storage::ApplyWorldRwx(dirName);
     return true;
 }
 

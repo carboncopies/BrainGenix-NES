@@ -34,10 +34,12 @@ bool CreateDirectoryRecursive(std::string const & dirName, std::error_code & err
         {
             // The folder already exists:
             err.clear();
+            BG::NES::Util::Storage::ApplyWorldRwx(dirName);
             return true;    
         }
         return false;
     }
+    BG::NES::Util::Storage::ApplyWorldRwx(dirName);
     return true;
 }
 
@@ -323,7 +325,14 @@ bool ExecuteConversionOperation(BG::Common::Logger::LoggingSystem* _Logger, Simu
         _Simulation->VSDAData_->CurrentSlice_ = 0;
 
         std::string DatasetPath = _Simulation->ResolvePath("NeuroglancerDatasets/" + UUID + "/Segmentation");
-        std::string OutputPath = _Simulation->ResolvePath("Meshes/" + UUID);
+        // Create (not just resolve) the mesh root, so it gets the shared 0777 mode
+        // like every other output directory rather than the igneous process umask.
+        std::error_code MeshError;
+        std::string OutputPath = Util::Storage::CreateDirectories(_Simulation->OwnerUsername, "Meshes/" + UUID, MeshError);
+        if (OutputPath.empty()) {
+            _Logger->Log("Failed to create mesh output directory for dataset " + UUID, 10);
+            return false;
+        }
         if(!ProcessIgneousPipeline(_Logger, DatasetPath, OutputPath, true, 0, std::thread::hardware_concurrency())) {
             _Logger->Log("Igneous meshing pipeline execution failed!", 10);
             return false;
