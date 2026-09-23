@@ -7,7 +7,7 @@ namespace NES {
 namespace API {
 
 std::string GetAPIVersion() {
-    return VERSION; // VERSION is a pre-defined constant or variable.
+    return NES_API_VERSION;
 }
 
 std::string Echo(std::string _Data) {

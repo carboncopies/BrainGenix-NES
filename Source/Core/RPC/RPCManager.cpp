@@ -5,6 +5,10 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <thread>
+#include <algorithm>
+#include <sstream>
+#include <iomanip>
+#include <cstdint>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 
@@ -40,6 +44,8 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
     AddRoute("Echo", _Logger, &Echo);
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     AddRoute("SetCallback", Logger_, [this](std::string RequestJSON){ return SetupCallback(RequestJSON);});
+    AddRoute("GetAPIChecksum", _Logger, [this](){ return ComputeChecksum(); });
+    AddRoute("GetAPIManifest", _Logger, [this](){ return GetManifestJSON(); });
     
 
     int ThreadCount = std::thread::hardware_concurrency();
@@ -89,12 +95,33 @@ bool RPCManager::UnRegisterBgAPIProcess(long _BGRequestID) {
 void RPCManager::AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function) {
     Logger_->Log("Registering Callback For Route '" + _RouteHandle + "'", 4);
     RequestHandlers_.insert(std::pair<std::string, std::function<std::string(std::string _JSONRequest)>>(_RouteHandle, _Function));
-    // RouteAndHandler Handler;
-    // Handler.Route_ = _RouteHandle;
-    // Handler.Handler_ = _Function;
-    // AddRequestHandler(_RouteHandle, Handler);
+    RouteNames_.push_back(_RouteHandle);
 }
 
+
+static std::string FNV1a64(const std::string& data) {
+    uint64_t hash = 14695981039346656037ULL;
+    const uint64_t prime = 1099511628211ULL;
+    for (unsigned char c : data) { hash ^= c; hash *= prime; }
+    std::ostringstream oss;
+    oss << std::hex << std::setw(16) << std::setfill('0') << hash;
+    return oss.str();
+}
+
+std::string RPCManager::ComputeChecksum() {
+    std::vector<std::string> sorted = RouteNames_;
+    std::sort(sorted.begin(), sorted.end());
+    std::string joined;
+    for (const auto& r : sorted) joined += r + "\n";
+    return FNV1a64(joined);
+}
+
+std::string RPCManager::GetManifestJSON() {
+    std::vector<std::string> sorted = RouteNames_;
+    std::sort(sorted.begin(), sorted.end());
+    nlohmann::json manifest = sorted;
+    return manifest.dump();
+}
 
 bool BadReqID(int ReqID) {
     // *** TODO: Add some rules here for ReqIDs that should be refused.

@@ -53,8 +53,8 @@ bool SafeClient::RunVersionCheck() {
         return false;
     }
 
-    if (Version != VERSION) {
-        Logger_->Log("Client/Server Version Mismatch! This might make stuff break. Server " + Version + " Client " + VERSION, 9);
+    if (Version != NES_API_VERSION) {
+        Logger_->Log("Client/Server Version Mismatch! This might make stuff break. Server " + Version + " Client " + NES_API_VERSION, 9);
         return false;
     }
     return true;
