@@ -11,6 +11,10 @@ run_cmd() {
     "$@"
 }
 
+# Prefix for privileged commands; stays empty when already root (e.g. CI image
+# builds, where sudo is not installed).
+SUDO=""
+
 ensure_sudo() {
     if [ "${EUID}" -eq 0 ]; then
         return 0
@@ -18,6 +22,7 @@ ensure_sudo() {
 
     if command -v sudo >/dev/null 2>&1; then
         sudo -v
+        SUDO="sudo"
         return 0
     fi
 
@@ -34,8 +39,8 @@ install_linux_packages() {
 
     case "$distro" in
         ubuntu|debian)
-            run_cmd sudo apt update
-            run_cmd sudo apt install -y \
+            run_cmd $SUDO apt update
+            run_cmd $SUDO apt install -y \
                 git wget cmake g++ ninja-build \
                 curl zip unzip tar pkg-config autoconf autoconf-archive automake libtool flex bison \
                 python3 python3-pip python3-venv \
@@ -43,7 +48,7 @@ install_linux_packages() {
                 libxi-dev libxinerama-dev libxcursor-dev
             ;;
         fedora)
-            run_cmd sudo dnf install -y \
+            run_cmd $SUDO dnf install -y \
                 git wget cmake gcc-c++ ninja-build \
                 curl zip unzip tar pkgconf-pkg-config autoconf autoconf-archive automake libtool flex bison \
                 python3 python3-pip \
@@ -51,7 +56,7 @@ install_linux_packages() {
                 libX11-devel libXrandr-devel libXcursor-devel libXi-devel libXinerama-devel libxcb-devel
             ;;
         arch)
-            run_cmd sudo pacman -Sy --noconfirm \
+            run_cmd $SUDO pacman -Sy --noconfirm \
                 git wget cmake gcc ninja \
                 curl zip unzip tar pkgconf autoconf autoconf-archive automake libtool flex bison \
                 python \
