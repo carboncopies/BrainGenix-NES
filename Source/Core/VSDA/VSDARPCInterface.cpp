@@ -429,7 +429,8 @@ std::string VSDARPCInterface::VSDAEMPrepareNeuroglancerDataset(std::string _JSON
         return "{\"StatusCode\":\"Help\"}";
     }
 
-    if (ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE) {
+    // A failed conversion can be retried; the rendered images are still there.
+    if (ThisSimulation->VSDAData_->State_ != VSDA_RENDER_DONE && ThisSimulation->VSDAData_->State_ != VSDA_CONVERSION_FAILED) {
         Logger_->Log(std::string("VSDA EM Called On Simulation Not Yet Rendered"), 7);
         return Handle.ErrResponse();
     }

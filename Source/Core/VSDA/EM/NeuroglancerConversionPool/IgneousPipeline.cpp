@@ -1,5 +1,8 @@
 #include "IgneousPipeline.h"
 #include <cstdlib>
+#include <cstdio>
+#include <deque>
+#include <sys/wait.h>
 //#include <unistd.h>
 
 #include <Util/StoragePaths.h>
@@ -76,7 +79,34 @@ const std::string igneousBin = "\"" + absPythonVenv.string() + "/bin/igneous\"";
 //std::system((std::string("bash /home/rkoene/src/igneous_calls.sh ")+absDatasetPath.string()+" 0 60").c_str());
 // umask 0000 so the nested mesh directories igneous creates under the shared
 // output root are world-writable too; pre-creating absOutputDir is not enough.
-std::system(("umask 0000 && bash "+absPythonVenv.string()+"/bin/activate && python3 ./Python/igneous_local.py --datapath "+absDatasetPath.string()+" --parallel 60").c_str());
+// Run with the venv's own interpreter (sourcing bin/activate in a subshell never
+// affected python3), and check the exit status: a failure here used to be dropped,
+// so a missing taskqueue/igneous produced no meshes while the run reported success.
+const std::string IgneousCmd = "umask 0000 && \"" + absPythonVenv.string() + "/bin/python\" ./Python/igneous_local.py --datapath \""
+    + absDatasetPath.string() + "\" --parallel 60 2>&1";
+FILE* IgneousPipe = popen(IgneousCmd.c_str(), "r");
+if (IgneousPipe == nullptr) {
+    _Logger->Log("Igneous meshing script could not be launched: " + IgneousCmd, 10);
+    return false;
+}
+std::deque<std::string> OutputTail;
+char LineBuffer[1024];
+while (fgets(LineBuffer, sizeof(LineBuffer), IgneousPipe) != nullptr) {
+    OutputTail.emplace_back(LineBuffer);
+    if (OutputTail.size() > 20) {
+        OutputTail.pop_front();
+    }
+}
+const int IgneousStatus = pclose(IgneousPipe);
+if (IgneousStatus == -1 || !WIFEXITED(IgneousStatus) || WEXITSTATUS(IgneousStatus) != 0) {
+    _Logger->Log("Igneous meshing script failed (wait status " + std::to_string(IgneousStatus) + "): " + IgneousCmd, 10);
+    for (std::string& Line : OutputTail) {
+        Line.erase(Line.find_last_not_of("\r\n") + 1);
+        _Logger->Log("Igneous: " + Line, 10);
+    }
+    return false;
+}
+_Logger->Log("Igneous processing completed successfully", 2);
 return true;
 // pid_t pid = fork();
 // if (pid == 0) {

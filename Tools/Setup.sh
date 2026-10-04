@@ -91,7 +91,7 @@ setup_venv() {
     fi
 
     run_cmd "$VENV_DIR/bin/python" -m pip install --upgrade pip
-    run_cmd "$VENV_DIR/bin/python" -m pip install igneous-pipeline graphifyy
+    run_cmd "$VENV_DIR/bin/python" -m pip install -r "$REPO_ROOT/requirements.txt"
 }
 
 echo "Entering repository root: $REPO_ROOT"
