@@ -43,7 +43,11 @@ void RenderPool::RendererThreadMainFunction(int _ThreadNumber) {
                 ::BG::NES::VSDA::Calcium::ExecuteCaSubRenderOperations(Logger_, SimToProcess, CalciumImageProcessorPool_.get(), CalciumArrayGeneratorPool_.get());
             } else if (SimToProcess->VSDAData_->State_ == VSDA_CONVERSION_REQUESTED) {
                 Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Converting EM Stack To Neuroglancer Precomputed Format For Simulation " + std::to_string(SimToProcess->ID), 5);
-                ExecuteConversionOperation(Logger_, SimToProcess, EMImageConversionPool_.get());
+                if (!ExecuteConversionOperation(Logger_, SimToProcess, EMImageConversionPool_.get())) {
+                    // Without a terminal state the client would poll VSDA_CONVERSION_IN_PROGRESS forever.
+                    Logger_->Log("RenderPool Thread " + std::to_string(_ThreadNumber) + " Conversion Failed For Simulation " + std::to_string(SimToProcess->ID), 10);
+                    SimToProcess->VSDAData_->State_ = VSDA_CONVERSION_FAILED;
+                }
             }
             SimToProcess->IsRendering = false;
 

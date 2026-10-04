@@ -61,7 +61,8 @@ enum VSDAState {
     VSDA_RENDER_IN_PROGRESS=4,
     VSDA_RENDER_DONE=5,
     VSDA_CONVERSION_REQUESTED=6, // note that for vsda conversions, it will retunr to render done when finished
-    VSDA_CONVERSION_IN_PROGRESS=7
+    VSDA_CONVERSION_IN_PROGRESS=7,
+    VSDA_CONVERSION_FAILED=8 // conversion or meshing failed (see NES log); PrepareNeuroglancerDataset may be retried
 };
 
 
