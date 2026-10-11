@@ -412,7 +412,7 @@ TEST_F(RPCManagerKnownBug, NullHandlerItemReportsAnErrorStatus) {
     EXPECT_NE(R[0]["StatusCode"], 0);
 }
 
-// Bug: dev_frame #103
+// Bug: dev_frame #72 (#103 was closed as a duplicate of it)
 // RPCManager reads Config::Host but never uses it: rpc::server(port) listens on every interface.
 // The Config asks for 127.0.0.1, so the listening socket must be bound to 127.0.0.1 only.
 TEST_F(RPCManagerKnownBug, ListensOnlyOnConfiguredHost) {
