@@ -20,26 +20,22 @@
 #include <Simulator/Geometries/Sphere.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/RecordingElectrode.h>
+#include <TestUtil/TestUtil.h>
 #include <Util/StoragePaths.h>
 
 using BG::NES::Simulator::Simulation;
 
-struct SimulationTest : testing::Test {
-    BG::Common::Logger::LoggingSystem Logger;
+struct SimulationTest : BG::NES::TestUtil::TempOutputRoot {
     std::unique_ptr<Simulation> testSimulation{};
-    std::filesystem::path TmpDir;
 
-    void SetUp() {
-        TmpDir = std::filesystem::temp_directory_path() / "nes_simulation_test";
-        std::filesystem::create_directories(TmpDir);
-        BG::NES::Util::Storage::SetOutputBasePath(TmpDir.string());
-        testSimulation = std::make_unique<Simulation>(&Logger);
+    void SetUp() override {
+        TempOutputRoot::SetUp();
+        testSimulation = std::make_unique<Simulation>(Logger_.get());
     }
 
-    void TearDown() {
+    void TearDown() override {
         testSimulation.reset();
-        std::error_code ec;
-        std::filesystem::remove_all(TmpDir, ec);
+        TempOutputRoot::TearDown();
     }
 };
 
