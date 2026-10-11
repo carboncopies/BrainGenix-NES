@@ -136,6 +136,8 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 # Options
 # option(WITH_AVX "Compile With AVX Instructions" ${AVX_FOUND})
 option(WITH_DEBUG_SYMBOLS "Enable or disable debug symbols" ON)
+# Coverage instrumentation (gcc/gcov) for the library and the test binary only. Use Tools/Coverage.sh.
+option(NES_COVERAGE "Instrument the NES library and test binary for gcov (--coverage -O0 -g)" OFF)
 set(WITH_AVX ${AVX_FOUND})
 
 

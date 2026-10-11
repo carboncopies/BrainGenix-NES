@@ -277,6 +277,9 @@ set(MAIN_SOURCES
  
 set(UNITTEST_SOURCES
 
+  # Test kit (test-only: never added to the library). See TestUtil/README.md
+  ${SRC_DIR}/Core/TestUtil/TestUtil.test.cpp
+
   ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
@@ -381,4 +384,25 @@ target_link_libraries(${TEST_BINS} PRIVATE
 target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 
-gtest_discover_tests(${TEST_BINS})
+# Coverage instrumentation: --coverage on compile and link for the library and the test binary.
+# -O0 keeps line counts faithful. Controlled by the NES_COVERAGE option (off by default).
+if(NES_COVERAGE)
+    message(STATUS "Code coverage enabled (--coverage -O0 -g) for ${PROJECT_LIBRARY_NAME} and ${TEST_BINS}")
+    foreach(COVERAGE_TARGET ${PROJECT_LIBRARY_NAME} ${TEST_BINS})
+        target_compile_options(${COVERAGE_TARGET} PRIVATE --coverage -O0 -g)
+        target_link_options(${COVERAGE_TARGET} PRIVATE --coverage)
+    endforeach()
+endif()
+
+# known_bug convention (dev_frame D8): a test whose suite name ends in KnownBug is
+# registered with the ctest label known_bug. `ctest -LE known_bug` is the gate,
+# `ctest -L known_bug` lists them. See TestUtil/README.md.
+gtest_discover_tests(${TEST_BINS}
+    TEST_FILTER "-*KnownBug.*"
+    DISCOVERY_TIMEOUT 60
+)
+gtest_discover_tests(${TEST_BINS}
+    TEST_FILTER "*KnownBug.*"
+    PROPERTIES LABELS known_bug
+    DISCOVERY_TIMEOUT 60
+)
