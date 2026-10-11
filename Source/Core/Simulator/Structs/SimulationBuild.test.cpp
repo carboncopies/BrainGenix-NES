@@ -23,7 +23,7 @@
 #include <Simulator/SimpleCompartmental/SCNeuron.h>
 #include <Simulator/Structs/Simulation.h>
 #include <Simulator/Structs/RecordingElectrode.h>
-#include <Simulator/Structs/SimulationTestHelpers.h>
+#include <TestUtil/SimulationTestHelpers.h>
 #include <TestUtil/TestUtil.h>
 
 using namespace BG::NES::Simulator;
