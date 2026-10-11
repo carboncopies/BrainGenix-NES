@@ -280,6 +280,13 @@ set(UNITTEST_SOURCES
   # Test kit (test-only: never added to the library). See TestUtil/README.md
   ${SRC_DIR}/Core/TestUtil/TestUtil.test.cpp
 
+  # VSDA EM data layer (dev_frame NT-13)
+  ${SRC_DIR}/Core/VSDA/Common/Structs/ScanRegion.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/Structs/VoxelArray.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.test.cpp
+
   ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Sphere.test.cpp
