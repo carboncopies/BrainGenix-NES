@@ -11,6 +11,9 @@
 #include <cmath>
 #include <memory>
 
+#include <cmath>
+#include <random>
+
 #include <gtest/gtest.h>
 
 #include <Simulator/Geometries/VecTools.h>
@@ -139,4 +142,208 @@ TEST_F(Vec3DTest, test_Maximum_default) {
 
     float max = testVec3D_2->Max();
     ASSERT_EQ(max, 5.6f);
+}
+
+// New comprehensive tests for NT-3
+
+TEST_F(Vec3DTest, test_RotateAroundX_Pi2) {
+    // (0,1,0).rotate_around_x(π/2) should give (0,0,1)
+    BG::NES::Simulator::Geometries::Vec3D v{0.0f, 1.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D result = v.rotate_around_x(M_PI / 2.0f);
+    ASSERT_NEAR(result.x, 0.0f, tol);
+    ASSERT_NEAR(result.y, 0.0f, tol);
+    ASSERT_NEAR(result.z, 1.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_RotateAroundY_Pi2) {
+    // (0,0,1).rotate_around_y(π/2) should give (1,0,0)
+    BG::NES::Simulator::Geometries::Vec3D v{0.0f, 0.0f, 1.0f};
+    BG::NES::Simulator::Geometries::Vec3D result = v.rotate_around_y(M_PI / 2.0f);
+    ASSERT_NEAR(result.x, 1.0f, tol);
+    ASSERT_NEAR(result.y, 0.0f, tol);
+    ASSERT_NEAR(result.z, 0.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_RotateAroundZ_Pi2) {
+    // (1,0,0).rotate_around_z(π/2) should give (0,1,0)
+    BG::NES::Simulator::Geometries::Vec3D v{1.0f, 0.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D result = v.rotate_around_z(M_PI / 2.0f);
+    ASSERT_NEAR(result.x, 0.0f, tol);
+    ASSERT_NEAR(result.y, 1.0f, tol);
+    ASSERT_NEAR(result.z, 0.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_RotateAroundXYZ_composition) {
+    // rotate_around_xyz(a,b,c) should equal Rz(Ry(Rx(v)))
+    float a = M_PI / 6.0f;  // 30 degrees
+    float b = M_PI / 4.0f;  // 45 degrees
+    float c = M_PI / 3.0f;  // 60 degrees
+    BG::NES::Simulator::Geometries::Vec3D v{1.0f, 1.0f, 1.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D result1 = v.rotate_around_xyz(a, b, c);
+    BG::NES::Simulator::Geometries::Vec3D result2 = v.rotate_around_x(a).rotate_around_y(b).rotate_around_z(c);
+
+    ASSERT_NEAR(result1.x, result2.x, tol);
+    ASSERT_NEAR(result1.y, result2.y, tol);
+    ASSERT_NEAR(result1.z, result2.z, tol);
+}
+
+TEST_F(Vec3DTest, test_RotateAroundZYX_composition) {
+    // rotate_around_zyx should equal Rx(Ry(Rz(v)))
+    float a = M_PI / 6.0f;
+    float b = M_PI / 4.0f;
+    float c = M_PI / 3.0f;
+    BG::NES::Simulator::Geometries::Vec3D v{1.0f, 1.0f, 1.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D result1 = v.rotate_around_zyx(a, b, c);
+    BG::NES::Simulator::Geometries::Vec3D result2 = v.rotate_around_z(c).rotate_around_y(b).rotate_around_x(a);
+
+    ASSERT_NEAR(result1.x, result2.x, tol);
+    ASSERT_NEAR(result1.y, result2.y, tol);
+    ASSERT_NEAR(result1.z, result2.z, tol);
+}
+
+TEST_F(Vec3DTest, test_MagnitudePreservedAfterRotation) {
+    // Rotation should preserve magnitude
+    BG::NES::Simulator::Geometries::Vec3D v{3.5f, 2.1f, 4.2f};
+    float orig_mag = v.Magnitude();
+
+    BG::NES::Simulator::Geometries::Vec3D rotated = v.rotate_around_xyz(M_PI/6, M_PI/4, M_PI/3);
+    float rot_mag = rotated.Magnitude();
+
+    ASSERT_NEAR(orig_mag, rot_mag, orig_mag * 1e-5f);  // Relative tolerance
+}
+
+TEST_F(Vec3DTest, test_CrossProductAnticommutative) {
+    // a × b = −b × a
+    BG::NES::Simulator::Geometries::Vec3D a{1.0f, 2.0f, 3.0f};
+    BG::NES::Simulator::Geometries::Vec3D b{4.0f, 5.0f, 6.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D cross_ab = a.Cross(b);
+    BG::NES::Simulator::Geometries::Vec3D cross_ba = b.Cross(a);
+
+    ASSERT_NEAR(cross_ab.x, -cross_ba.x, tol);
+    ASSERT_NEAR(cross_ab.y, -cross_ba.y, tol);
+    ASSERT_NEAR(cross_ab.z, -cross_ba.z, tol);
+}
+
+TEST_F(Vec3DTest, test_DotCrossOrthogonality) {
+    // a·(a×b) = 0 and b·(a×b) = 0
+    BG::NES::Simulator::Geometries::Vec3D a{2.0f, 3.0f, 1.0f};
+    BG::NES::Simulator::Geometries::Vec3D b{1.0f, 4.0f, 2.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D cross = a.Cross(b);
+
+    ASSERT_NEAR(a.Dot(cross), 0.0f, tol);
+    ASSERT_NEAR(b.Dot(cross), 0.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_CrossProductMagnitude) {
+    // |a×b|² = |a|²|b|² - (a·b)²
+    BG::NES::Simulator::Geometries::Vec3D a{1.0f, 2.0f, 3.0f};
+    BG::NES::Simulator::Geometries::Vec3D b{4.0f, 5.0f, 6.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D cross = a.Cross(b);
+    float cross_mag_sq = cross.Magnitude() * cross.Magnitude();
+
+    float a_mag_sq = a.Magnitude() * a.Magnitude();
+    float b_mag_sq = b.Magnitude() * b.Magnitude();
+    float dot_sq = a.Dot(b) * a.Dot(b);
+
+    float expected = a_mag_sq * b_mag_sq - dot_sq;
+
+    ASSERT_NEAR(cross_mag_sq, expected, tol * tol * 1000);  // Larger tolerance due to sq operations
+}
+
+TEST_F(Vec3DTest, test_SphericalRoundTrip) {
+    // sphericalToCartesian(cartesianToSpherical(v)) ≈ v
+    BG::NES::Simulator::Geometries::Vec3D v{3.0f, 4.0f, 5.0f};
+
+    BG::NES::Simulator::Geometries::Vec3D spherical = v.cartesianToSpherical();
+    BG::NES::Simulator::Geometries::Vec3D cartesian = spherical.sphericalToCartesian();
+
+    ASSERT_NEAR(cartesian.x, v.x, tol);
+    ASSERT_NEAR(cartesian.y, v.y, tol);
+    ASSERT_NEAR(cartesian.z, v.z, tol);
+}
+
+TEST_F(Vec3DTest, test_SphericalSpecialCase1) {
+    // (0,0,5) cartesian should map to (5,0,0) in spherical
+    BG::NES::Simulator::Geometries::Vec3D v{0.0f, 0.0f, 5.0f};
+    BG::NES::Simulator::Geometries::Vec3D spherical = v.cartesianToSpherical();
+
+    ASSERT_NEAR(spherical.x, 5.0f, tol);       // r = 5
+    ASSERT_NEAR(spherical.y, 0.0f, tol);       // theta = 0 (z points forward)
+    ASSERT_NEAR(spherical.z, 0.0f, tol);       // phi = 0
+}
+
+TEST_F(Vec3DTest, test_SphericalSpecialCase2) {
+    // (0,5,0) cartesian should map to (5, π/2, π/2) in spherical
+    BG::NES::Simulator::Geometries::Vec3D v{0.0f, 5.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D spherical = v.cartesianToSpherical();
+
+    ASSERT_NEAR(spherical.x, 5.0f, tol);              // r = 5
+    ASSERT_NEAR(spherical.y, M_PI / 2.0f, tol);       // theta = π/2
+    ASSERT_NEAR(spherical.z, M_PI / 2.0f, tol);       // phi = π/2
+}
+
+TEST_F(Vec3DTest, test_SphericalZeroVector) {
+    // Zero vector should map to zero in spherical
+    BG::NES::Simulator::Geometries::Vec3D v{0.0f, 0.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D spherical = v.cartesianToSpherical();
+
+    ASSERT_NEAR(spherical.x, 0.0f, tol);
+    ASSERT_NEAR(spherical.y, 0.0f, tol);
+    ASSERT_NEAR(spherical.z, 0.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_Normalize) {
+    // Normalized vector should have magnitude 1
+    BG::NES::Simulator::Geometries::Vec3D v{3.0f, 4.0f, 0.0f};
+    BG::NES::Simulator::Geometries::Vec3D normalized = v.Normalize();
+
+    float mag = normalized.Magnitude();
+    ASSERT_NEAR(mag, 1.0f, tol);
+
+    // Check direction is preserved
+    ASSERT_NEAR(normalized.x, 0.6f, tol);
+    ASSERT_NEAR(normalized.y, 0.8f, tol);
+    ASSERT_NEAR(normalized.z, 0.0f, tol);
+}
+
+TEST_F(Vec3DTest, test_RotationOrderMatters) {
+    // xyz and zyx orders differ for non-commuting angles.
+    BG::NES::Simulator::Geometries::Vec3D v{1.0f, 1.0f, 1.0f};
+    BG::NES::Simulator::Geometries::Vec3D a = v.rotate_around_xyz(M_PI / 6, M_PI / 4, M_PI / 3);
+    BG::NES::Simulator::Geometries::Vec3D b = v.rotate_around_zyx(M_PI / 6, M_PI / 4, M_PI / 3);
+    float diff = std::fabs(a.x - b.x) + std::fabs(a.y - b.y) + std::fabs(a.z - b.z);
+    ASSERT_GT(diff, 0.1f);
+}
+
+TEST_F(Vec3DTest, test_SeededRandomInvariants) {
+    // Cross/dot identities and spherical round trip over seeded random vectors.
+    std::mt19937 rng(7);
+    std::uniform_real_distribution<float> dist(-5.0f, 5.0f);
+    for (int i = 0; i < 200; ++i) {
+        BG::NES::Simulator::Geometries::Vec3D a{dist(rng), dist(rng), dist(rng)};
+        BG::NES::Simulator::Geometries::Vec3D b{dist(rng), dist(rng), dist(rng)};
+        BG::NES::Simulator::Geometries::Vec3D c = a.Cross(b);
+        BG::NES::Simulator::Geometries::Vec3D d = b.Cross(a);
+        float scale = a.Magnitude() * b.Magnitude();
+
+        ASSERT_NEAR(a.Dot(c), 0.0f, 1e-4f * scale * a.Magnitude()) << i;
+        ASSERT_NEAR(b.Dot(c), 0.0f, 1e-4f * scale * b.Magnitude()) << i;
+        ASSERT_NEAR(c.x, -d.x, 1e-4f * scale) << i;
+        ASSERT_NEAR(c.y, -d.y, 1e-4f * scale) << i;
+        ASSERT_NEAR(c.z, -d.z, 1e-4f * scale) << i;
+
+        float lhs = c.Dot(c);
+        float rhs = a.Dot(a) * b.Dot(b) - a.Dot(b) * a.Dot(b);
+        ASSERT_NEAR(lhs, rhs, 1e-4f * scale * scale) << i;
+
+        BG::NES::Simulator::Geometries::Vec3D rt = a.cartesianToSpherical().sphericalToCartesian();
+        ASSERT_NEAR(rt.x, a.x, 1e-4f) << i;
+        ASSERT_NEAR(rt.y, a.y, 1e-4f) << i;
+        ASSERT_NEAR(rt.z, a.z, 1e-4f) << i;
+    }
 }
