@@ -14,4 +14,8 @@ GTEST_COLOR=1 ctest --output-on-failure -LE known_bug
 RC=$?
 
 echo "ctest exit code: $RC"
+
+# Known bugs (suites named KnownBug*, label known_bug) are reported separately and never gate.
+echo "Known bugs (not gating):"
+ctest -N -L known_bug | tail -n +2
 exit $RC

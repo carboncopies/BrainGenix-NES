@@ -48,3 +48,5 @@ nes_build.log
 *.app
 example.cpp
 example_headless.cpp
+/Build-Coverage/
+/.cov-venv/
