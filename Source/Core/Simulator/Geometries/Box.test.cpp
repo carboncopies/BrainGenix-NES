@@ -142,9 +142,12 @@ TEST_F( BoxTest, test_IsPointInShape_corner ) {
     worldInfo.WorldRotationOffsetY_rad = 0.0f;
     worldInfo.WorldRotationOffsetZ_rad = 0.0f;
 
-    BG::NES::Simulator::Geometries::Vec3D corner = testBox->Center_um + testBox->Dims_um / 2.0f;
+    // Use an unrotated box: on the rotated fixture, c + d/2 is not a corner, and
+    // asserting it is inside would pin bug #98 (rotation ignored).
+    BG::NES::Simulator::Geometries::Box box(testBox->Center_um, testBox->Dims_um);
+    BG::NES::Simulator::Geometries::Vec3D corner = box.Center_um + box.Dims_um / 2.0f;
 
-    bool isInside = testBox->IsPointInShape(corner, worldInfo);
+    bool isInside = box.IsPointInShape(corner, worldInfo);
     ASSERT_TRUE(isInside) << "Corner should be inside (inclusive)";
 }
 
@@ -155,9 +158,11 @@ TEST_F( BoxTest, test_IsPointInShape_outside ) {
     worldInfo.WorldRotationOffsetY_rad = 0.0f;
     worldInfo.WorldRotationOffsetZ_rad = 0.0f;
 
-    BG::NES::Simulator::Geometries::Vec3D corner = testBox->Center_um + testBox->Dims_um / 2.0f + BG::NES::Simulator::Geometries::Vec3D(0.001f, 0.0f, 0.0f);
+    // Unrotated box, for the same reason as test_IsPointInShape_corner (#98).
+    BG::NES::Simulator::Geometries::Box box(testBox->Center_um, testBox->Dims_um);
+    BG::NES::Simulator::Geometries::Vec3D corner = box.Center_um + box.Dims_um / 2.0f + BG::NES::Simulator::Geometries::Vec3D(0.001f, 0.0f, 0.0f);
 
-    bool isInside = testBox->IsPointInShape(corner, worldInfo);
+    bool isInside = box.IsPointInShape(corner, worldInfo);
     ASSERT_FALSE(isInside);
 }
 
@@ -175,7 +180,7 @@ TEST_F( BoxTest, test_IsPointInShape_unrotated_box_is_axis_aligned ) {
 // ---------------------------------------------------------------------
 // Known bug. Asserts the CORRECT behaviour, so it FAILS today. The suite
 // name ends in KnownBug so ctest labels it known_bug and the gate
-// (--gtest_filter=-*KnownBug*) excludes it.
+// (ctest -LE known_bug) excludes it.
 // ---------------------------------------------------------------------
 
 // Bug: dev_frame #98
