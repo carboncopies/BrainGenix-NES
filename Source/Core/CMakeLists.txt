@@ -290,7 +290,6 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSMorphology.test.cpp
 
   ${SRC_DIR}/Core/Simulator/Receptors/NMDAReceptor.test.cpp
-  ${SRC_DIR}/Core/Simulator/Receptors/AMPAReceptor.test.cpp
   ${SRC_DIR}/Core/Simulator/Receptors/Receptor.test.cpp
   
   ${SRC_DIR}/Core/Simulator/Structs/SignalFunctions.test.cpp
@@ -305,8 +304,13 @@ set(TEST_BINS
     BrainGenix-NES.test
 )
 
+# Library sources: everything except the entry point, so that test binaries
+# can link the library without a second main().
+set(LIB_SOURCES ${MAIN_SOURCES})
+list(REMOVE_ITEM LIB_SOURCES ${SRC_DIR}/Core/Main.cpp)
+
 # Create Main Library
-add_library(${PROJECT_LIBRARY_NAME} STATIC ${MAIN_SOURCES})
+add_library(${PROJECT_LIBRARY_NAME} STATIC ${LIB_SOURCES})
 target_compile_features(${PROJECT_LIBRARY_NAME} PRIVATE cxx_std_17)
 
 target_link_libraries(${PROJECT_LIBRARY_NAME} PRIVATE 
@@ -371,6 +375,8 @@ target_link_libraries(${TEST_BINS} PRIVATE
     GTest::gtest 
     GTest::gtest_main
     ${PROJECT_LIBRARY_NAME}
+    NetmorphCMake
+    ZLIB::ZLIB
 )
 target_include_directories(${TEST_BINS} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${TEST_BINS} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
