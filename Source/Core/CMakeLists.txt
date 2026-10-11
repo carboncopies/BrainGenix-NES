@@ -286,6 +286,13 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ShapeToVoxel/ShapeToVoxel.test.cpp
   ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/TearGenerator.test.cpp
   ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverter.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/NeuroglancerConverterPipeline.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/IgneousPipeline.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/NeuroglancerConversionPool/ConversionPool/ConversionPool.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/VoxelArrayGenerator.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/ImageProcessorPool.test.cpp
+  ${SRC_DIR}/Core/VSDA/EM/VoxelSubsystem/ImageProcessorPool/SegmentationCompression.test.cpp
 
   ${SRC_DIR}/Core/Simulator/Geometries/Box.test.cpp
   ${SRC_DIR}/Core/Simulator/Geometries/Cylinder.test.cpp

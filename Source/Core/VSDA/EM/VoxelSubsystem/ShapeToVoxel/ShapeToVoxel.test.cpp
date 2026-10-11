@@ -110,8 +110,9 @@ TEST_F(Fixture, SphereWritesOnlyVoxelsWithinRadius) {
         float D = std::sqrt(float((X - 6) * (X - 6) + (Y - 6) * (Y - 6) + (Z - 6) * (Z - 6)));
         EXPECT_LE(D, 3.0f + 1e-3) << X << "," << Y << "," << Z;
     }
-    EXPECT_GT(N, 50);  // ~4/3 pi r^3 = 113
-    EXPECT_LT(N, 130);
+    // Exact: the sampler visits the unit lattice from the bounding-box minimum (-3) up to, but excluding, the
+    // maximum (+3), i.e. {-3..2}^3, and keeps points with x^2+y^2+z^2 <= 9. That is 120 points (4/3 pi r^3 = 113).
+    EXPECT_EQ(N, 120);
 }
 
 TEST_F(Fixture, SphereSplitIntoPartsEqualsSinglePart) {
@@ -144,8 +145,8 @@ TEST_F(Fixture, SphereClippedAtArrayEdgeOnlyWritesInside) {
     EXPECT_EQ(A->GetVoxel(0, 0, 0).State_, VoxelState_INTERIOR);
     EXPECT_EQ(A->GetVoxel(2, 0, 0).State_, VoxelState_INTERIOR);
     EXPECT_EQ(A->GetVoxel(4, 4, 4).State_, VoxelState_EMPTY);
-    EXPECT_GT(CountNotEmpty(*A), 0);
-    EXPECT_LT(CountNotEmpty(*A), 60);  // roughly 1/8 of 113
+    // Exact: lattice points {0,1,2}^3 inside the sphere of radius 3, i.e. all 27 except (2,2,2).
+    EXPECT_EQ(CountNotEmpty(*A), 26);
 }
 
 TEST_F(Fixture, SphereEntirelyOutsideArrayWritesNothing) {
@@ -231,7 +232,8 @@ TEST_F(Fixture, ZeroRadiusCylinderWritesOnlyTheAxis) {
     Geometries::Vec3D P0(-3, 0, 0), P1(3, 0, 0);
     auto C = MakeCylinder(P0, 0.0f, P1, 0.0f, 8);
     EXPECT_TRUE(FillCylinderPart(1, 0, A.get(), &C, World, &Params, &Perlin));
-    EXPECT_GT(CountNotEmpty(*A), 0);
+    // Exact: the axis from x=-3 to x=3 is sampled every half voxel, which rounds onto the 7 voxels x = -3..3.
+    EXPECT_EQ(CountNotEmpty(*A), 7);
     for (int X = 0; X < 14; X++) for (int Y = 0; Y < 14; Y++) for (int Z = 0; Z < 14; Z++) {
         VoxelType V = A->GetVoxel(X, Y, Z);
         if (V.State_ == VoxelState_EMPTY) continue;
@@ -344,4 +346,23 @@ TEST(ShapeToVoxelKnownBug, FillWedgeLeavesNoUninitialisedVoxelFields) {
         EXPECT_EQ(V.DistanceToEdge_vox_, 0);
     }
     EXPECT_GT(Checked, 0);
+}
+
+// Bug: dev_frame #145
+TEST(ShapeToVoxelKnownBug, ZeroLengthCylinderStillMarksItsOwnVoxel) {
+    auto Logger = BG::NES::TestUtil::MakeSilentLogger();
+    MicroscopeParameters Params{};
+    noise::module::Perlin Perlin;
+    WorldInfo World{};
+    World.VoxelScale_um = 1.0f;
+    VoxelArray A(Logger.get(), MakeBB(-7, 7), 1.0f);
+    Geometries::Vec3D P(1, 1, 1);
+    auto C = MakeCylinder(P, 2.0f, P, 2.0f, 8);
+    EXPECT_TRUE(FillCylinderPart(1, 0, &A, &C, World, &Params, &Perlin));
+    // The cylinder's centre voxel (world 1,1,1 -> index 8,8,8) belongs to the cylinder (End0 == End1 is a disc/point).
+    EXPECT_EQ(A.GetVoxel(8, 8, 8).State_, VoxelState_INTERIOR);
+    EXPECT_EQ(A.GetVoxel(8, 8, 8).ParentUID, 8u);
+    // On its axis a voxel is `radius` from the edge (as for every other cylinder); here the radius ratio is 0/0 = NaN
+    // and the NaN is converted to the uint8 distance.
+    EXPECT_EQ(A.GetVoxel(8, 8, 8).DistanceToEdge_vox_, 2);
 }
