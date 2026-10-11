@@ -213,7 +213,7 @@ std::vector<RouteSpec> AllRoutes() {
     json AdcCreate = Pos; AdcCreate["SourceCompartmentID"] = 0; AdcCreate["Name"] = "adc";
 
     std::vector<RouteSpec> R;
-    R.push_back({"Staple", [](MI& M, const std::string& S) { return M.StapleCreate(S); }, Kind::None, Prep::Nothing, nullptr,
+    R.push_back({"Staple", [](MI& M, const std::string& S) { return M.StapleCreate(S); }, Kind::BS, Prep::Compartments, nullptr,
                  {{"SourceCompartmentID", 0}, {"DestinationCompartmentID", 1}, {"Name", "st"}}, "StapleID",
                  [](Simulation* S) { return S->Staples.size(); }, {}, {}});
     R.push_back({"Receptor", [](MI& M, const std::string& S) { return M.ReceptorCreate(S); }, Kind::BS, Prep::Neurons, nullptr,
@@ -243,16 +243,16 @@ std::vector<RouteSpec> AllRoutes() {
                  {"RestingPotential_mV", "ResetPotential_mV", "SpikeThreshold_mV", "MembraneResistance_MOhm", "MembraneCapacitance_pF",
                   "RefractoryPeriod_ms", "SpikeDepolarization_mV"},
                  {"SpikeThreshold_mV"}});
-    R.push_back({"PatchClampDACCreate", [](MI& M, const std::string& S) { return M.PatchClampDACCreate(S); }, Kind::None, Prep::Nothing, nullptr,
+    R.push_back({"PatchClampDACCreate", [](MI& M, const std::string& S) { return M.PatchClampDACCreate(S); }, Kind::BS, Prep::Compartments, nullptr,
                  DacCreate, "PatchClampDACID", [](Simulation* S) { return S->PatchClampDACs.size(); }, {}, {}});
-    R.push_back({"PatchClampDACSetOutputList", [](MI& M, const std::string& S) { return M.PatchClampDACSetOutputList(S); }, Kind::None, Prep::Nothing, DAC,
+    R.push_back({"PatchClampDACSetOutputList", [](MI& M, const std::string& S) { return M.PatchClampDACSetOutputList(S); }, Kind::BS, Prep::Compartments, DAC,
                  {{"PatchClampDACID", 0}, {"ControlData", json::array({json::array({0.0, -70.0}), json::array({5.0, -20.0})})}}, "", nullptr, {},
                  {"ControlData"}});
-    R.push_back({"PatchClampADCCreate", [](MI& M, const std::string& S) { return M.PatchClampADCCreate(S); }, Kind::None, Prep::Nothing, nullptr,
+    R.push_back({"PatchClampADCCreate", [](MI& M, const std::string& S) { return M.PatchClampADCCreate(S); }, Kind::BS, Prep::Compartments, nullptr,
                  AdcCreate, "PatchClampADCID", [](Simulation* S) { return S->PatchClampADCs.size(); }, {}, {}});
-    R.push_back({"PatchClampADCSetSampleRate", [](MI& M, const std::string& S) { return M.PatchClampADCSetSampleRate(S); }, Kind::None, Prep::Nothing, ADC,
+    R.push_back({"PatchClampADCSetSampleRate", [](MI& M, const std::string& S) { return M.PatchClampADCSetSampleRate(S); }, Kind::BS, Prep::Compartments, ADC,
                  {{"PatchClampADCID", 0}, {"Timestep_ms", 0.5}}, "", nullptr, {}, {}});
-    R.push_back({"PatchClampADCGetRecordedData", [](MI& M, const std::string& S) { return M.PatchClampADCGetRecordedData(S); }, Kind::None, Prep::Nothing, ADC,
+    R.push_back({"PatchClampADCGetRecordedData", [](MI& M, const std::string& S) { return M.PatchClampADCGetRecordedData(S); }, Kind::BS, Prep::Compartments, ADC,
                  {{"PatchClampADCID", 0}}, "", nullptr, {}, {}});
     R.push_back({"SetSpecificAPTimes", [](MI& M, const std::string& S) { return M.SetSpecificAPTimes(S); }, Kind::SC, Prep::Neurons, nullptr,
                  {{"TimeNeuronPairs", json::array({json::array({1.5, 0}), json::array({2.5, 1})})}}, "", nullptr, {}, {}});
@@ -464,15 +464,16 @@ TEST_F(ModelRouteTest, CompartmentsStoreTheirParametersAndShape) {
 }
 
 TEST_F(ModelRouteTest, CompartmentWithUnknownShapeIsStatus2) {
-    int Sim = SimWith(Kind::None, Prep::Shapes);  // shape IDs 0..3 exist
     for (Kind K : {Kind::BS, Kind::SC, Kind::LIFC}) {
+        // A fresh simulation per kind: a rejected add must be rejected for the shape, not for a class mismatch.
+        int Sim = SimWith(Kind::None, Prep::Shapes);  // shape IDs 0..3 exist
         for (int Shape : {4, 100, -1}) {
             json Req = (K == Kind::LIFC) ? LIFCCompJson(Shape) : BSCompJson(Shape);
             EXPECT_EQ(Do(CompFn(K), Req, Sim), json({{"StatusCode", 2}})) << int(K) << " shape " << Shape;
         }
+        EXPECT_EQ(H().Sim(Sim)->BSCompartments.size(), 0u);
+        EXPECT_EQ(H().Sim(Sim)->LIFCCompartments.size(), 0u);
     }
-    EXPECT_EQ(H().Sim(Sim)->BSCompartments.size(), 0u);
-    EXPECT_EQ(H().Sim(Sim)->LIFCCompartments.size(), 0u);
 }
 
 TEST_F(ModelRouteTest, CompartmentOnSimulationWithoutShapesIsStatus2) {
@@ -683,15 +684,15 @@ TEST_F(ModelRouteTest, EditOnSimulationWithoutNeuronsAcceptsOnlyAnEmptyList) {
 // ---- Staples and receptors --------------------------------------------------------------
 
 TEST_F(ModelRouteTest, StapleStoresItsCompartmentsAndGetsSequentialIds) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     auto Create = [this](const std::string& R) { return M().StapleCreate(R); };
-    json Req = {{"SourceCompartmentID", 4}, {"DestinationCompartmentID", 9}, {"Name", "stp"}};
+    json Req = {{"SourceCompartmentID", 2}, {"DestinationCompartmentID", 3}, {"Name", "stp"}};
     EXPECT_EQ(Do(Create, Req, Sim), json({{"StatusCode", 0}, {"StapleID", 0}}));
     EXPECT_EQ(Do(Create, Req, Sim), json({{"StatusCode", 0}, {"StapleID", 1}}));
     const auto& S = H().Sim(Sim)->Staples.at(1);
     EXPECT_EQ(S.ID, 1);
-    EXPECT_EQ(S.SourceCompartmentID, 4);
-    EXPECT_EQ(S.DestinationCompartmentID, 9);
+    EXPECT_EQ(S.SourceCompartmentID, 2);
+    EXPECT_EQ(S.DestinationCompartmentID, 3);
     EXPECT_EQ(S.Name, "stp");
 }
 
@@ -802,7 +803,7 @@ TEST_F(ModelRouteTest, ReceptorsWithUnknownCompartmentAreStatus2ForLIFCAndNetmor
 // ---- Patch clamp ------------------------------------------------------------------------
 
 TEST_F(ModelRouteTest, DacAndAdcCreateStoreTheirFields) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     json Dac = {{"DestinationCompartmentID", 3}, {"ClampPosX_um", 1.0}, {"ClampPosY_um", 2.0}, {"ClampPosZ_um", 3.0}, {"Name", "dac"}};
     EXPECT_EQ(Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, Dac, Sim), json({{"StatusCode", 0}, {"PatchClampDACID", 0}}));
     const auto& D = H().Sim(Sim)->PatchClampDACs.at(0);
@@ -812,11 +813,11 @@ TEST_F(ModelRouteTest, DacAndAdcCreateStoreTheirFields) {
     EXPECT_EQ(D.Name, "dac");
     EXPECT_TRUE(D.ControlData.empty());
 
-    json Adc = {{"SourceCompartmentID", 5}, {"ClampPosX_um", 4.0}, {"ClampPosY_um", 5.0}, {"ClampPosZ_um", 6.0}, {"Name", "adc"}};
+    json Adc = {{"SourceCompartmentID", 2}, {"ClampPosX_um", 4.0}, {"ClampPosY_um", 5.0}, {"ClampPosZ_um", 6.0}, {"Name", "adc"}};
     EXPECT_EQ(Do([this](const std::string& R) { return M().PatchClampADCCreate(R); }, Adc, Sim), json({{"StatusCode", 0}, {"PatchClampADCID", 0}}));
     const auto& A = H().Sim(Sim)->PatchClampADCs.at(0);
     EXPECT_EQ(A.ID, 0);
-    EXPECT_EQ(A.SourceCompartmentID, 5);
+    EXPECT_EQ(A.SourceCompartmentID, 2);
     EXPECT_NEAR(A.ClampPos_um.z, 6.0f, 1e-6);
     EXPECT_NEAR(A.Timestep_ms, 0.0f, 1e-9);
     EXPECT_TRUE(A.RecordedData_mV.empty());
@@ -826,7 +827,7 @@ TEST_F(ModelRouteTest, DacAndAdcCreateStoreTheirFields) {
 }
 
 TEST_F(ModelRouteTest, DacSetOutputListStoresReplacesAndClearsControlData) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     json Dac = {{"DestinationCompartmentID", 0}, {"ClampPosX_um", 0.0}, {"ClampPosY_um", 0.0}, {"ClampPosZ_um", 0.0}, {"Name", "dac"}};
     Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, Dac, Sim);
     Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, Dac, Sim);
@@ -852,7 +853,7 @@ TEST_F(ModelRouteTest, DacSetOutputListStoresReplacesAndClearsControlData) {
 }
 
 TEST_F(ModelRouteTest, DacSetOutputListRejectsUnknownDacAndBadPairs) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     json Dac = {{"DestinationCompartmentID", 0}, {"ClampPosX_um", 0.0}, {"ClampPosY_um", 0.0}, {"ClampPosZ_um", 0.0}, {"Name", "dac"}};
     Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, Dac, Sim);
     auto Set = [this](const std::string& R) { return M().PatchClampDACSetOutputList(R); };
@@ -866,7 +867,7 @@ TEST_F(ModelRouteTest, DacSetOutputListRejectsUnknownDacAndBadPairs) {
 }
 
 TEST_F(ModelRouteTest, AdcSetSampleRateStoresTimestepAndClearsRecordedData) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     json Adc = {{"SourceCompartmentID", 0}, {"ClampPosX_um", 0.0}, {"ClampPosY_um", 0.0}, {"ClampPosZ_um", 0.0}, {"Name", "adc"}};
     Do([this](const std::string& R) { return M().PatchClampADCCreate(R); }, Adc, Sim);
     Do([this](const std::string& R) { return M().PatchClampADCCreate(R); }, Adc, Sim);
@@ -885,7 +886,7 @@ TEST_F(ModelRouteTest, AdcSetSampleRateStoresTimestepAndClearsRecordedData) {
 }
 
 TEST_F(ModelRouteTest, AdcGetRecordedDataReturnsTimestepAndSamples) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     json Adc = {{"SourceCompartmentID", 0}, {"ClampPosX_um", 0.0}, {"ClampPosY_um", 0.0}, {"ClampPosZ_um", 0.0}, {"Name", "adc"}};
     Do([this](const std::string& R) { return M().PatchClampADCCreate(R); }, Adc, Sim);
     auto Get = [this](const std::string& R) { return M().PatchClampADCGetRecordedData(R); };
@@ -1033,7 +1034,7 @@ protected:
 
 // Bug: dev_frame #132
 TEST_F(ModelRouteKnownBug, PatchClampDacCreateIsJournaledUnderItsRegisteredRoute) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     ASSERT_EQ(Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, PatchClampDac(), Sim)["StatusCode"], 0);
     json Journal = Parse(H().Sim(Sim)->StoredRequestsToNESRequestArray());
     ASSERT_TRUE(Journal.is_array());
@@ -1094,7 +1095,7 @@ TEST_F(ModelRouteKnownBug, SetSpontaneousActivityRejectsUnknownNeuronIdsInsteadO
 
 // Bug: dev_frame #135
 TEST_F(ModelRouteKnownBug, SetOutputListRejectsAnObjectElementInsteadOfThrowing) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, PatchClampDac(), Sim);
     bool Threw = false;
     json Resp = DoNoThrow([this](const std::string& R) { return M().PatchClampDACSetOutputList(R); },
@@ -1137,7 +1138,7 @@ TEST_F(ModelRouteKnownBug, LIFCEditWithAWronglyTypedOptionalFieldChangesNothing)
 
 // Bug: dev_frame #136
 TEST_F(ModelRouteKnownBug, SetOutputListWithABadPairKeepsThePreviousControlData) {
-    int Sim = H().NewSim();
+    int Sim = SimWith(Kind::BS, Prep::Compartments);
     Do([this](const std::string& R) { return M().PatchClampDACCreate(R); }, PatchClampDac(), Sim);
     auto Set = [this](const std::string& R) { return M().PatchClampDACSetOutputList(R); };
     ASSERT_EQ(Do(Set, {{"PatchClampDACID", 0}, {"ControlData", json::array({json::array({1.0, 5.0}), json::array({2.0, 6.0})})}}, Sim)["StatusCode"], 0);
