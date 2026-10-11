@@ -286,7 +286,8 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Geometries/VecTools.test.cpp
 
   ${SRC_DIR}/Core/Simulator/Distributions/TruncNorm.test.cpp
-  
+  ${SRC_DIR}/Core/Simulator/Distributions/Generic.test.cpp
+
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSNeuron.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNC.test.cpp
   ${SRC_DIR}/Core/Simulator/BallAndStick/BSAlignedNCRandomUniform.test.cpp
