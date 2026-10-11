@@ -32,8 +32,11 @@ struct SignalFunctionsTest : testing::Test {
 
 TEST_F(SignalFunctionsTest, test_DoubleExponentExpr_default) {
     float amp = 1.1;
-    float tauRise = 0.5;
-    float tauDecay = 0.1;
+    // The implemented kernel is the physical double exponential
+    // amp * (exp(-t/tauDecay) - exp(-t/tauRise)), which needs tauDecay > tauRise
+    // to be positive (see SignalFunctions.cpp DoubleExponentExpr).
+    float tauRise = 0.1;
+    float tauDecay = 0.5;
     float tDiff = 0.0, expected = 0.0;
 
     // Test for negative tdiff
@@ -44,10 +47,16 @@ TEST_F(SignalFunctionsTest, test_DoubleExponentExpr_default) {
 
     // Test for non-negative tdiff
     tDiff = 0.5;
-    expected = amp * (exp(-tDiff / tauRise) + exp(-tDiff / tauDecay));
+    expected = amp * (-exp(-tDiff / tauRise) + exp(-tDiff / tauDecay));
     ASSERT_NEAR(BG::NES::Simulator::SignalFunctions::DoubleExponentExpr(
                     amp, tauRise, tauDecay, tDiff),
                 expected, tol);
+    ASSERT_GT(expected, 0.0f);
+
+    // The kernel is zero at t=0 (rise starts from nothing).
+    ASSERT_NEAR(BG::NES::Simulator::SignalFunctions::DoubleExponentExpr(
+                    amp, tauRise, tauDecay, 0.0),
+                0.0, tol);
 }
 
 TEST_F(SignalFunctionsTest, test_Convolve1D_default) {

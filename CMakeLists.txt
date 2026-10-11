@@ -199,9 +199,6 @@ file(COPY "${SRC_DIR}/Python" DESTINATION "${BIN_DIR}")
 
 
 
-# Include CTest for testing
-include(CTest)
-
 
 # CPack Information
 SET(CPACK_GENERATOR "DEB")

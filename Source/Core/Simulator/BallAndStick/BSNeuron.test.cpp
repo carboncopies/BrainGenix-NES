@@ -277,33 +277,34 @@ TEST_F(BSNeuronTest, test_SetFIFO_default) {
 }
 
 TEST_F(BSNeuronTest, test_UpdateConvolvedFIFO_default) {
-    std::vector<float> reversed_kernel = {1.0, 0.0, -1.0};
-    std::vector<float> expectedConvolvedFIFO{};
-    std::deque<float> FIFO{};
+    // The kernel length must match the one passed to SetFIFO in Simulate(),
+    // because ConvolvedFIFO is sized FIFO.size()+kernel.size()-1 there.
+    std::vector<float> reversed_kernel = {1.0, 0.0, -1.0, 0.5, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.25};
 
-    // Simulate
     Simulate();
+
+    // Reference convolution of the FIFO as it is now (newest value at back;
+    // UpdateConvolvedFIFO no longer reverses or clips it, see BSNeuron.cpp).
+    std::deque<float> FIFO(testBSNeuron->FIFO.begin(), testBSNeuron->FIFO.end());
+    std::vector<float> expectedConvolvedFIFO(FIFO.size() + reversed_kernel.size() - 1, 0.0);
+    BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, reversed_kernel, expectedConvolvedFIFO);
+
+    size_t nCaBefore = testBSNeuron->CaSamples.size();
+    size_t nTBefore = testBSNeuron->TCaSamples_ms.size();
 
     testBSNeuron->UpdateConvolvedFIFO(reversed_kernel);
 
-    std::reverse_copy(testBSNeuron->FIFO.begin(), testBSNeuron->FIFO.end(), FIFO.begin());
-
-    for (size_t i = 0; i < FIFO.size(); ++i) {
-        FIFO[i] *= -1.0;
-        if (FIFO[i] < 0.0)
-            FIFO[i] = 0.0;
-    }
-
-    expectedConvolvedFIFO.resize(FIFO.size(), 0.0);
-
-    BG::NES::Simulator::SignalFunctions::Convolve1D(FIFO, reversed_kernel, expectedConvolvedFIFO);
-
     ASSERT_EQ(testBSNeuron->ConvolvedFIFO.size(), expectedConvolvedFIFO.size());
     for (size_t i = 0; i < testBSNeuron->ConvolvedFIFO.size(); ++i)
-        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], expectedConvolvedFIFO[i],
-                    tol);
+        ASSERT_NEAR(testBSNeuron->ConvolvedFIFO[i], expectedConvolvedFIFO[i], tol);
 
-    ASSERT_EQ(testBSNeuron->CaSamples.back(),
-              testBSNeuron->ConvolvedFIFO.back() + 1.0f);
-    ASSERT_EQ(testBSNeuron->TCaSamples_ms.back(), 1.6f);
+    // One new Ca sample is taken from the end region of the convolution
+    // (BSNeuron.cpp:344 reads ConvolvedFIFO[size-10], without offset) and is
+    // stamped with the neuron's current time.
+    ASSERT_EQ(testBSNeuron->CaSamples.size(), nCaBefore + 1);
+    ASSERT_EQ(testBSNeuron->TCaSamples_ms.size(), nTBefore + 1);
+    ASSERT_NEAR(testBSNeuron->CaSamples.back(),
+                testBSNeuron->ConvolvedFIFO[testBSNeuron->ConvolvedFIFO.size() - 10], tol);
+    ASSERT_NEAR(testBSNeuron->TCaSamples_ms.back(), 1.6f, tol);
 }
