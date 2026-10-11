@@ -300,6 +300,9 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/Simulation.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
+
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.test.cpp
+  ${SRC_DIR}/Core/RPC/RPCManager.test.cpp
 )
 
 # Configure test binaries
@@ -376,6 +379,7 @@ target_compile_features(${TEST_BINS} PRIVATE cxx_std_17)
 
 target_link_libraries(${TEST_BINS} PRIVATE 
     NESRenderer
+    VersioningSystem   # Version.h (NES_API_VERSION), needed by the RPC tests
     GTest::gtest 
     GTest::gtest_main
     ${PROJECT_LIBRARY_NAME}
