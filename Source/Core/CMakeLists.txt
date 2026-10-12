@@ -310,6 +310,9 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
 
+  ${SRC_DIR}/Core/Simulator/RPC/GeometryRPCInterface.test.cpp
+  ${SRC_DIR}/Core/Simulator/RPC/ModelRPCInterface.test.cpp
+
   ${SRC_DIR}/Core/RPC/RPCHandlerHelper.test.cpp
   ${SRC_DIR}/Core/RPC/RPCManager.test.cpp
 )

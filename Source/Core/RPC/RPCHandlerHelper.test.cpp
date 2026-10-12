@@ -474,7 +474,8 @@ TEST_F(HandlerDataTest, ResponseAndStoreRequestRecordsOnSimulationOnly) {
     EXPECT_EQ(H.ResponseAndStoreRequest(Body), "{\"StatusCode\":0}");
     EXPECT_EQ(Sim->NumStoredRequests(), 1u);
     H.ResponseWithID("A", 1);
-    H.ErrResponse(2);
+    EXPECT_EQ(Sim->NumStoredRequests(), 2u);
+    H.ErrResponse(0);  // ErrResponse(0) is the success reply, so it is journaled
     EXPECT_EQ(Sim->NumStoredRequests(), 3u);
     H.StringResponse("K", "V");  // does not store
     EXPECT_EQ(Sim->NumStoredRequests(), 3u);
@@ -488,6 +489,20 @@ TEST_F(HandlerDataTest, NoSimulationHandlerStoresNothingAndDoesNotCrash) {
 }
 
 // ---- Known bug -------------------------------------------------------------------------
+
+// Bug: dev_frame #137
+// A rejected request must not be written into the model journal: replaying it on load
+// would re-run a request the server refused. Only successful responses are recorded.
+class HandlerDataJournalKnownBug : public HandlerDataTest {};
+
+TEST_F(HandlerDataJournalKnownBug, ErrorResponseIsNotJournaled) {
+    AddSim();
+    HandlerData H = Make({{"SimulationID", 0}});
+    Simulation* Sim = H.Sim();
+    ASSERT_EQ(Sim->NumStoredRequests(), 0u);
+    H.ErrResponse(2);
+    EXPECT_EQ(Sim->NumStoredRequests(), 0u);
+}
 
 // Bug: dev_frame #102
 // Malformed JSON should produce an error status, not an exception out of the constructor.
