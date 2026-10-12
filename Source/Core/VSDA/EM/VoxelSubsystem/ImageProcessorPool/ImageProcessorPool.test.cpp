@@ -351,28 +351,28 @@ TEST_F(PoolFixture, SegmentationPngIsNotWrittenWhenDisabled) {
 namespace {
 // Runs Scenario in the child; exit code 0 means the pool survived and finished the task.
 template <typename F>
-void ExpectSurvives(F Scenario) {
+void ExpectSurvives(const std::string& Root, F Scenario) {
     GTEST_FLAG_SET(death_test_style, "threadsafe");
-    EXPECT_EXIT({ Scenario(); }, ::testing::ExitedWithCode(0), "");
+    EXPECT_EXIT({ ArmChildCleanup(Root); Scenario(); }, ::testing::ExitedWithCode(0), "");
 }
 } // namespace
 
 // Bug: dev_frame #138
 TEST_F(PoolFixtureKnownBug, MissingNullImageDoesNotKillTheProcess) {
-    ExpectSurvives([&] {
+    ExpectSurvives(RootPath(), [&] {
         auto T = Task("empty.png", 0, 8, 0, 8, 0, 8, 8);
         T->NullImagePath_ = RootPath() + "/does-not-exist.png";
         srand(1);
         ImageProcessorPool Pool(Logger_.get(), 1);
         Pool.QueueEncodeOperation(T.get());
         bool Done = WaitFor([&] { return T->IsDone_.load(); }, 3000);
-        _exit(Done ? 0 : 1);
+        ChildExit(Done ? 0 : 1);
     });
 }
 
 // Bug: dev_frame #138
 TEST_F(PoolFixtureKnownBug, UnwritableSegmentationOutputDoesNotKillTheProcess) {
-    ExpectSurvives([&] {
+    ExpectSurvives(RootPath(), [&] {
         WriteFileBytes(RootPath() + "/blocker", "x");  // a file where the output directory should go
         auto T = Task("block.seg", 0, 4, 0, 4, 0, 4, 4);
         T->IsSegmentation_ = true;
@@ -383,13 +383,13 @@ TEST_F(PoolFixtureKnownBug, UnwritableSegmentationOutputDoesNotKillTheProcess) {
         Pool.QueueEncodeOperation(T.get());
         // Either outcome is acceptable as long as the process survives and the task is marked finished.
         bool Done = WaitFor([&] { return T->IsDone_.load(); }, 3000);
-        _exit(Done ? 0 : 1);
+        ChildExit(Done ? 0 : 1);
     });
 }
 
 // Bug: dev_frame #139
 TEST_F(PoolFixtureKnownBug, ZeroImageNoiseIntensityDoesNotCrash) {
-    ExpectSurvives([&] {
+    ExpectSurvives(RootPath(), [&] {
         FillSlice(0, VoxelState_WHITE);
         auto T = Task("n0.png", 0, 8, 0, 8, 0, 8, 8);
         T->EnableImageNoise = true;
@@ -399,7 +399,7 @@ TEST_F(PoolFixtureKnownBug, ZeroImageNoiseIntensityDoesNotCrash) {
         ImageProcessorPool Pool(Logger_.get(), 1);
         Pool.QueueEncodeOperation(T.get());
         bool Done = WaitFor([&] { return T->IsDone_.load(); }, 3000);
-        _exit(Done ? 0 : 1);
+        ChildExit(Done ? 0 : 1);
     });
 }
 

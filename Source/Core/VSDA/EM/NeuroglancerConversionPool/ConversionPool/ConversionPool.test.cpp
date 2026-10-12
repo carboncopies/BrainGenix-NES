@@ -160,16 +160,20 @@ TEST_F(ConvFixture, PoolWithWorkersDestructsPromptlyWhenIdle) {
     EXPECT_LT(std::chrono::steady_clock::now() - Start, std::chrono::seconds(2));
 }
 
-// Bug: dev_frame #144
-TEST_F(ConvFixtureKnownBug, MissingSourceImageDoesNotCrashAndTheTaskFinishes) {
+// Bug: dev_frame #144. DISABLED: the unfixed code is undefined behaviour (uninitialised Width/Height sizing a malloc),
+// and on the build used for NT-14 the scenario happens to survive. This test therefore passes with and without the
+// #144 fix and cannot detect it; enable it only together with a deterministic way to provoke the failure.
+TEST_F(ConvFixtureKnownBug, DISABLED_MissingSourceImageDoesNotCrashAndTheTaskFinishes) {
     GTEST_FLAG_SET(death_test_style, "threadsafe");
+    const std::string Root = RootPath();
     EXPECT_EXIT(
         {
+            ArmChildCleanup(Root);
             auto T = ImageTask(RootPath() + "/missing.png", 1);
             ConversionPool::ConversionPool Pool(Logger_.get(), 1);
             Pool.QueueEncodeOperation(T.get());
             bool Done = WaitFor([&] { return T->IsDone_.load(); }, 3000);
-            _exit(Done ? 0 : 1);
+            ChildExit(Done ? 0 : 1);
         },
         ::testing::ExitedWithCode(0), "");
 }

@@ -14,8 +14,11 @@
 #pragma once
 
 #include <sys/stat.h>
+#include <unistd.h>
 
 #include <atomic>
+#include <csignal>
+#include <exception>
 #include <chrono>
 #include <cstdint>
 #include <cstdio>
@@ -38,6 +41,29 @@
 namespace BG {
 namespace NES {
 namespace TestUtil {
+
+/**
+ * Death-test children re-run the fixture SetUp (a fresh /tmp/nes-test-XXXXXX) and then leave through _exit or a
+ * crash, so TearDown never runs. ArmChildCleanup(Root) makes the child remove its own root on std::terminate and on
+ * SIGABRT/SIGFPE/SIGSEGV; ChildExit(code) removes it on the normal path. Call only inside a death-test statement.
+ */
+inline std::string& ChildRoot() {
+    static std::string Root;
+    return Root;
+}
+inline void ChildRemoveRoot() {
+    std::error_code Ec;
+    if (!ChildRoot().empty()) std::filesystem::remove_all(ChildRoot(), Ec);
+}
+[[noreturn]] inline void ChildExit(int Code) {
+    ChildRemoveRoot();
+    ::_exit(Code);
+}
+inline void ArmChildCleanup(const std::string& Root) {
+    ChildRoot() = Root;
+    std::set_terminate([] { ChildExit(134); });
+    for (int Sig : {SIGABRT, SIGFPE, SIGSEGV}) std::signal(Sig, [](int S) { ChildExit(128 + S); });
+}
 
 /** Poll Pred every few ms until it is true or the timeout expires. Returns the final value of Pred. */
 inline bool WaitFor(const std::function<bool()>& Pred, int Timeout_ms = 10000) {

@@ -149,11 +149,14 @@ TEST_F(GenFixture, SmallCylinderIsOneSphereCapPlusOneCylinderTask) {
     EXPECT_EQ(Array->GetVoxel(4, 15, 4).State_, VoxelState_EMPTY);
 }
 
-TEST_F(GenFixture, LongCylinderTaskCountIsTwoPerSegment) {
-    // Estimated volume = (20 * 3.14159)^2 * 30 / 1 = 118,435 voxels -> 2 segments -> 2 * 2 = 4 tasks.
+TEST_F(GenFixture, LongCylinderTasksComeInSphereCapPlusCylinderPairsAndFillTheAxis) {
+    // Independent of the segment-count estimate (dev_frame #143): every segment queues one end-cap sphere and one
+    // cylinder part, so the count is even and at least 2, and the axis of the cylinder is rasterised INTERIOR.
     AddCylinder(Geometries::Vec3D(16, 1, 4), 20.0f, Geometries::Vec3D(16, 31, 4), 20.0f);
     EXPECT_TRUE(Generate());
-    EXPECT_EQ(Tasks(), 4);
+    EXPECT_GE(Tasks(), 2);
+    EXPECT_EQ(Tasks() % 2, 0);
+    for (int Y = 1; Y <= 31; Y++) EXPECT_EQ(Array->GetVoxel(16, Y, 4).State_, VoxelState_INTERIOR) << Y;
 }
 
 TEST_F(GenFixture, TasksFromSeveralShapesAdd) {

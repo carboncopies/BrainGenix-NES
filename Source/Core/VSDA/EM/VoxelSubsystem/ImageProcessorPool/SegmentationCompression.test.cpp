@@ -53,6 +53,8 @@ struct SegFixture : TempOutputRoot {
     static size_t Idx(int X, int Y, int Z) { return (size_t(X) * 4 + Y) * 2 + Z; }
 };
 
+struct SegFixtureKnownBug : SegFixture {};  // suites ending in KnownBug get the ctest label known_bug (D8)
+
 } // namespace
 
 TEST_F(SegFixture, KnownUidsSurviveTheRoundTripAcrossBlockTypes) {
@@ -124,25 +126,29 @@ TEST_F(SegFixture, ProcessTaskCreatesTheOutputDirectoryAndMarksTheTaskDone) {
     EXPECT_TRUE(std::filesystem::exists(RootPath() + "/deep/er/x.seg"));
 }
 
-TEST_F(SegFixture, ProcessTaskThrowsAndLeavesTheTaskPendingWhenTheDirectoryCannotBeCreated) {
+// Whether a failure is reported by throwing or by marking the task finished is dev_frame #138; the gate tests below
+// hold either way and only pin that nothing is written where it should not be.
+TEST_F(SegFixture, ProcessTaskWritesNoFileWhenTheDirectoryCannotBeCreated) {
     WriteFileBytes(RootPath() + "/blocker", "x");
     ProcessingTask T;
     ConfigurePlainTask(T, Array.get(), &Params, 0, 2, 0, 2, 0, 2, 2);
     T.OutputPath_ = T.TargetDirectory_ = RootPath() + "/blocker/sub/";
     T.TargetFileName_ = "x.seg";
-    T.IsDone_ = false;
-    EXPECT_THROW(SegmentationCompressor::ProcessTask(&T), std::runtime_error);
-    EXPECT_FALSE(T.IsDone_);
+    try { SegmentationCompressor::ProcessTask(&T); } catch (const std::exception&) {}
+    EXPECT_TRUE(std::filesystem::is_regular_file(RootPath() + "/blocker"));
+    EXPECT_EQ(ReadFileBytes(RootPath() + "/blocker"), "x");
+    EXPECT_FALSE(std::filesystem::exists(RootPath() + "/blocker/sub"));
 }
 
-TEST_F(SegFixture, ProcessTaskThrowsWhenTheFileCannotBeOpened) {
+TEST_F(SegFixture, ProcessTaskWritesNoFileWhenTheFileCannotBeOpened) {
     ProcessingTask T;
     ConfigurePlainTask(T, Array.get(), &Params, 0, 2, 0, 2, 0, 2, 2);
     T.OutputPath_ = RootPath() + "/seg/";
     T.TargetDirectory_ = RootPath() + "/seg/";
     T.TargetFileName_ = "missing-dir/x.seg";  // directory part does not exist, so open() fails
-    EXPECT_THROW(SegmentationCompressor::ProcessTask(&T), std::runtime_error);
-    EXPECT_FALSE(T.IsDone_);
+    try { SegmentationCompressor::ProcessTask(&T); } catch (const std::exception&) {}
+    EXPECT_FALSE(std::filesystem::exists(RootPath() + "/seg/missing-dir"));
+    EXPECT_FALSE(std::filesystem::exists(RootPath() + "/seg/missing-dir/x.seg"));
 }
 
 TEST_F(SegFixture, CompressSegmentationRegionOutputStartsWithTheChannelOffset) {
@@ -154,4 +160,27 @@ TEST_F(SegFixture, CompressSegmentationRegionOutputStartsWithTheChannelOffset) {
     std::vector<uint64_t> Got = DecodeCompressedSegmentation(Out, 2, 2, 2);
     EXPECT_EQ(Got[0], 9u);
     for (size_t i = 1; i < Got.size(); i++) EXPECT_EQ(Got[i], 0u);
+}
+
+// Bug: dev_frame #138
+TEST_F(SegFixtureKnownBug, ProcessTaskDoesNotThrowAndFinishesTheTaskWhenTheDirectoryCannotBeCreated) {
+    WriteFileBytes(RootPath() + "/blocker", "x");
+    ProcessingTask T;
+    ConfigurePlainTask(T, Array.get(), &Params, 0, 2, 0, 2, 0, 2, 2);
+    T.OutputPath_ = T.TargetDirectory_ = RootPath() + "/blocker/sub/";
+    T.TargetFileName_ = "x.seg";
+    T.IsDone_ = false;
+    EXPECT_NO_THROW(SegmentationCompressor::ProcessTask(&T));
+    EXPECT_TRUE(T.IsDone_);
+}
+
+// Bug: dev_frame #138
+TEST_F(SegFixtureKnownBug, ProcessTaskDoesNotThrowAndFinishesTheTaskWhenTheFileCannotBeOpened) {
+    ProcessingTask T;
+    ConfigurePlainTask(T, Array.get(), &Params, 0, 2, 0, 2, 0, 2, 2);
+    T.OutputPath_ = T.TargetDirectory_ = RootPath() + "/seg/";
+    T.TargetFileName_ = "missing-dir/x.seg";
+    T.IsDone_ = false;
+    EXPECT_NO_THROW(SegmentationCompressor::ProcessTask(&T));
+    EXPECT_TRUE(T.IsDone_);
 }
