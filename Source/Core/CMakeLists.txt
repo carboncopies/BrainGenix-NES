@@ -411,12 +411,19 @@ endif()
 # known_bug convention (dev_frame D8): a test whose suite name ends in KnownBug is
 # registered with the ctest label known_bug. `ctest -LE known_bug` is the gate,
 # `ctest -L known_bug` lists them. See TestUtil/README.md.
+# Every discovered test gets a ctest TIMEOUT (dev_frame NT-24, #146): a hung test (for example the
+# ~RPCManager hang, #105) must fail the run instead of holding its sockets for hours.
+# ctest kills the test process at the limit and reports "Timeout" as a failure.
+# Override with -D NES_TEST_TIMEOUT_SECONDS=<n> at configure time; raise a single slow test with
+# set_tests_properties(<name> PROPERTIES TIMEOUT <n>) rather than the global value.
+set(NES_TEST_TIMEOUT_SECONDS 60 CACHE STRING "Per-test ctest TIMEOUT in seconds")
 gtest_discover_tests(${TEST_BINS}
     TEST_FILTER "-*KnownBug.*"
+    PROPERTIES TIMEOUT ${NES_TEST_TIMEOUT_SECONDS}
     DISCOVERY_TIMEOUT 60
 )
 gtest_discover_tests(${TEST_BINS}
     TEST_FILTER "*KnownBug.*"
-    PROPERTIES LABELS known_bug
+    PROPERTIES LABELS known_bug TIMEOUT ${NES_TEST_TIMEOUT_SECONDS}
     DISCOVERY_TIMEOUT 60
 )

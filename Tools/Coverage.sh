@@ -38,12 +38,13 @@ echo "[COVERAGE] build wall time: $((BUILD_DONE - START)) s"
 find "$BUILD_DIR" -name '*.gcda' -delete
 
 cd "$BUILD_DIR" || exit 2
-GTEST_COLOR=1 ctest --output-on-failure -LE known_bug
+# Per-test TIMEOUT comes from Source/Core/CMakeLists.txt; --timeout is a backstop. A timeout is a failure.
+GTEST_COLOR=1 ctest --output-on-failure --timeout "${NES_TEST_TIMEOUT_SECONDS:-60}" -LE known_bug
 TEST_RC=$?
 echo "[COVERAGE] gate ctest exit code: $TEST_RC"
 
 echo "[COVERAGE] known_bug tests (not gating):"
-ctest -L known_bug --output-on-failure 2>&1 | tail -n 15
+ctest -L known_bug --output-on-failure --timeout "${NES_TEST_TIMEOUT_SECONDS:-60}" 2>&1 | tail -n 15
 
 cd "$ROOT" || exit 2
 mkdir -p "$OUT_DIR"
