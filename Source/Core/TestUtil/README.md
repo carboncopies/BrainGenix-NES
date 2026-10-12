@@ -20,6 +20,7 @@ in `Source/Core/CMakeLists.txt`.
 | `WriteGreyPng`, `LoadImageFile`, `ReadFileBytes`, `WriteFileBytes` | write source images and read PNG/JPEG output back through stb_image (the stb implementations live in the library) |
 | `DecodeCompressedSegmentation`, `ReadSegWords` | independent decoder for the neuroglancer compressed_segmentation format (the library only has the encoder), for round-trip tests |
 | `MakeStubVenv(dir, script)` | temp `bin/python` shell script standing in for the virtualenv that `ProcessIgneousPipeline` runs |
+| `ArmChildCleanup(root)`, `ChildExit(code)` | inside a death-test statement: remove the child's own temp root on exit, `std::terminate` or SIGABRT/SIGFPE/SIGSEGV (the child re-runs SetUp but never TearDown) |
 | `MakePlainParams`, `ConfigurePlainTask` | `MicroscopeParameters` / `ProcessingTask` with noise, blur, interference, contrast, borders and tearing all off |
 
 Pool tests: `ImageProcessorPool`/`ArrayGeneratorPool` with 0 threads is only a queue (`CreateVoxelArrayFromSimulation` hangs on it as soon as
