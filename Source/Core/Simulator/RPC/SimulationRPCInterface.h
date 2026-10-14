@@ -124,6 +124,7 @@ public:
     void SimulationLoadModelTask(API::ManagerTaskData & TaskData);
     void GetConnectomeTask(API::ManagerTaskData & TaskData);
     void GetAbstractConnectomeTask(API::ManagerTaskData & TaskData);
+    void SimulationGetRecordingTask(API::ManagerTaskData & TaskData);
 
     // === API Request Handler functions that must complete quickly
 
