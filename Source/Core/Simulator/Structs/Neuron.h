@@ -16,6 +16,7 @@
 #include <unordered_map>
 #include <vector>
 #include <memory>
+#include <limits>
 //#include <deque>
 
 #include <Simulator/Geometries/VecTools.h>
@@ -173,7 +174,9 @@ struct Neuron {
 
     virtual void Update(float t_ms, bool recording);
 
-    virtual nlohmann::json GetSpikeTimesJSON() const;
+    //! Returns this neuron's spike times at or after SinceTime_ms.
+    //! The default (lowest float) returns the complete history.
+    virtual nlohmann::json GetSpikeTimesJSON(float SinceTime_ms = std::numeric_limits<float>::lowest()) const;
 
     virtual nlohmann::json GetRecordingJSON() const;
 

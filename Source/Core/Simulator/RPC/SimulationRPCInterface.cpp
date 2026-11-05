@@ -14,6 +14,7 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+#include <limits>
 
 #ifdef __linux__
 #include <malloc.h>
@@ -660,10 +661,27 @@ std::string SimulationRPCInterface::SimulationGetSpikeTimes(std::string _JSONReq
         return Handle.ErrResponse();
     }
 
+    // Optional time window and neuron list. Both absent means the original
+    // full-history, all-neuron response.
+    float SinceTime_ms = std::numeric_limits<float>::lowest();
+    std::vector<int> NeuronIDs;
+    Handle.GetParFloat("SinceTime_ms", SinceTime_ms, true);
+    bool HasNeuronIDs = Handle.GetParVecInt("NeuronIDs", NeuronIDs, true);
+    if (Handle.HasError()) { // wrong type for an optional field
+        return Handle.ErrResponse();
+    }
+    int maxID = Handle.Sim()->GetTotalNumberOfNeurons()-1;
+    for (auto& nID : NeuronIDs) {
+        if ((nID < 0) || (nID > maxID)) {
+            Logger_->Log("Error: Invalid Neuron ID '" + std::to_string(nID) + "'", 7);
+            return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+        }
+    }
+
     // Return JSON
     nlohmann::json ResponseJSON;
     ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["SpikeTimes"] = Handle.Sim()->GetSpikeTimesJSON();
+    ResponseJSON["SpikeTimes"] = Handle.Sim()->GetSpikeTimesJSON(SinceTime_ms, HasNeuronIDs ? &NeuronIDs : nullptr);
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 

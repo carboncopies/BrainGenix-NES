@@ -252,6 +252,9 @@ public:
     bool IsRecording() const;
     std::unordered_map<std::string, CoreStructs::CircuitRecording> GetRecording();
     nlohmann::json GetSpikeTimesJSON() const;
+    //! Spike times with t >= SinceTime_ms, for all neurons or, if NeuronIDs is
+    //! given, only those (callers validate IDs; unknown IDs are skipped).
+    nlohmann::json GetSpikeTimesJSON(float SinceTime_ms, const std::vector<int>* NeuronIDs = nullptr) const;
     nlohmann::json GetRecordingJSON() const;
 
     nlohmann::json GetCaImagingVoxelsJSON();

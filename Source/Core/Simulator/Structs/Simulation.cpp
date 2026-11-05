@@ -19,6 +19,8 @@
 #include <iomanip>
 #include <fstream>
 #include <memory>
+#include <limits>
+#include <unordered_set>
 
 #include <iostream>
 #include <Util/StoragePaths.h>
@@ -1454,13 +1456,27 @@ std::unordered_map<std::string, CoreStructs::CircuitRecording> Simulation::GetRe
 };
 
 nlohmann::json Simulation::GetSpikeTimesJSON() const {
-    nlohmann::json spiketimes;
+    return GetSpikeTimesJSON(std::numeric_limits<float>::lowest());
+}
 
-    for (const auto & neuron_ptr : this->Neurons) {
-        assert(neuron_ptr);
-        spiketimes[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetSpikeTimesJSON();
+nlohmann::json Simulation::GetSpikeTimesJSON(float SinceTime_ms, const std::vector<int>* NeuronIDs) const {
+    nlohmann::json spiketimes; // null when there are no neurons, as before
+
+    if (NeuronIDs == nullptr) {
+        for (const auto & neuron_ptr : this->Neurons) {
+            assert(neuron_ptr);
+            spiketimes[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetSpikeTimesJSON(SinceTime_ms);
+        }
+    } else {
+        spiketimes = nlohmann::json::object(); // an ID filter always yields an object
+        std::unordered_set<int> requestedIDs(NeuronIDs->begin(), NeuronIDs->end());
+        for (const auto & neuron_ptr : this->Neurons) {
+            assert(neuron_ptr);
+            if (requestedIDs.count(neuron_ptr->ID) == 0) continue;
+            spiketimes[std::to_string(neuron_ptr->ID)] = neuron_ptr->GetSpikeTimesJSON(SinceTime_ms);
+        }
     }
-    
+
     return spiketimes;
 }
 

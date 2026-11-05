@@ -268,9 +268,22 @@ void Neuron::Update(float t_ms, bool recording) {
     WARNWRONGOOPLEVEL();
 }
 
-nlohmann::json Neuron::GetSpikeTimesJSON() const {
+nlohmann::json Neuron::GetSpikeTimesJSON(float SinceTime_ms) const {
     nlohmann::json spiketimes;
-    spiketimes["tSpike_ms"] = nlohmann::json(this->TAct_ms);
+
+    if (SinceTime_ms <= std::numeric_limits<float>::lowest()) {
+        // No window requested: preserve the original full-history response.
+        spiketimes["tSpike_ms"] = nlohmann::json(this->TAct_ms);
+        return spiketimes;
+    }
+
+    // Do not assume TAct_ms is sorted: callers may populate it directly.
+    std::vector<float> windowed;
+    windowed.reserve(this->TAct_ms.size());
+    for (float t_ms : this->TAct_ms) {
+        if (t_ms >= SinceTime_ms) windowed.emplace_back(t_ms);
+    }
+    spiketimes["tSpike_ms"] = nlohmann::json(windowed);
     return spiketimes;
 }
 
