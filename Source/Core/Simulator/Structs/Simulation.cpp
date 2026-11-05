@@ -19,6 +19,9 @@
 #include <iomanip>
 #include <fstream>
 #include <memory>
+#include <unordered_map>
+#include <cmath>
+#include <algorithm>
 
 #include <iostream>
 #include <Util/StoragePaths.h>
@@ -589,6 +592,7 @@ protected:
     std::vector<Compartments::LIFC>* RefToCompartments;
     std::vector<std::shared_ptr<CoreStructs::Neuron>>* RefToLIFCNeurons;
     std::vector<std::unique_ptr<Connections::LIFCReceptor>>* RefToReceptors;
+    std::vector<std::unique_ptr<CoreStructs::LIFCReceptorData>>* RefToLIFCReceptorData = nullptr;
     std::vector<std::unique_ptr<BrainRegions::BrainRegion>>* RefToRegions;
     std::vector<std::unique_ptr<CoreStructs::NeuralCircuit>>* RefToNeuralCircuits;
 
@@ -618,6 +622,9 @@ public:
     }
     void AddLIFCReceptors(std::vector<std::unique_ptr<Connections::LIFCReceptor>>& _RefToReceptors) {
         RefToReceptors = &_RefToReceptors;
+    }
+    void AddLIFCReceptorData(std::vector<std::unique_ptr<CoreStructs::LIFCReceptorData>>& _RefToLIFCReceptorData) {
+        RefToLIFCReceptorData = &_RefToLIFCReceptorData;
     }
     void AddRegions(std::vector<std::unique_ptr<BrainRegions::BrainRegion>>& _RefToRegions) {
         RefToRegions = &_RefToRegions;
@@ -657,6 +664,7 @@ public:
         AddNeurons(Sim->Neurons);
         // Save synapses.
         AddLIFCReceptors(Sim->LIFCReceptors);
+        AddLIFCReceptorData(Sim->LIFCReceptorDataVec);
         // Save regions.
         AddRegions(Sim->Regions);
         // Save circuits.
@@ -713,8 +721,35 @@ public:
         }
 
         // Save fixed-size base data of receptors.
+        // The strength setters (SetPrePostStrength etc.) only change the
+        // runtime LIFCReceptorData::weight, an abstraction over one or more
+        // receptors (weight = sum(w_i*g_i)/sum(g_i)). Where that runtime
+        // weight differs from what the base structs aggregate to, write it into
+        // every receptor of the group (on a copy; the in-memory model is not
+        // changed). Untouched groups keep their individual base weights.
+        std::unordered_map<const Connections::LIFCReceptor*, float> RuntimeWeights;
+        if (RefToLIFCReceptorData) {
+            for (auto& RData : (*RefToLIFCReceptorData)) {
+                float WeightGSum = 0.0f;
+                float GSum = 0.0f;
+                for (auto* RPtr : RData->ReceptorPtrs) {
+                    WeightGSum += RPtr->Weight * RPtr->PeakConductance_nS;
+                    GSum += RPtr->PeakConductance_nS;
+                }
+                float BaseWeight = (GSum > 0.0f) ? WeightGSum / GSum : RData->weight;
+                if (std::fabs(RData->weight - BaseWeight) > 1e-6f * std::max(1.0f, std::fabs(BaseWeight))) {
+                    for (auto* RPtr : RData->ReceptorPtrs) {
+                        RuntimeWeights[RPtr] = RData->weight;
+                    }
+                }
+            }
+        }
         for (auto& ref : (*RefToReceptors)) {
-            Connections::LIFCReceptorBase& basedataref = *ref;
+            Connections::LIFCReceptorBase basedataref = *ref;
+            auto RuntimeWeight = RuntimeWeights.find(ref.get());
+            if (RuntimeWeight != RuntimeWeights.end()) {
+                basedataref.Weight = RuntimeWeight->second;
+            }
             SaveFile.write((char*)&basedataref, sizeof(Connections::LIFCReceptorBase));
         }
 
@@ -1002,6 +1037,7 @@ bool Simulation::LoadModel(const std::string& Name) {
 
         // Reset and instantiate receptors.
         LIFCReceptors.clear();
+        LIFCReceptorDataVec.clear(); // Abstractions point into LIFCReceptors; rebuilt by AddLIFCReceptor.
 
         for (size_t i = 0; i < _Loader._SaverInfo.ReceptorsSize; i++) {
             Connections::LIFCReceptor _R(_Loader.ReceptorData.get()[i]);
