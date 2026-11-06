@@ -1,4 +1,5 @@
 #include <Simulator/Structs/Receptor.h>
+#include <algorithm>
 
 namespace BG {
 namespace NES {
@@ -21,6 +22,16 @@ float g_norm(float t, const std::vector<float>& spike_times, float tau_rise, flo
     t -= onset_delay;
     history_delta *= norm;
     float gnorm = 0;
+
+    // Per-kernel lookback cap: a spike older than kLookbackTauMultiple slow time constants
+    // contributes less than exp(-12) = 6.1e-6 of one spike's peak (and the tail of a whole train,
+    // at most one spike per ms, less than (tau+0.5)*6.1e-6), far below history_delta. The caller's
+    // spike_dt_delta is only ever lowered, never raised, so kernels with long tails (sAHP 300 ms,
+    // ADP 200 ms: 12*tau > spike_dt_delta) behave exactly as before.
+    constexpr float kLookbackTauMultiple = 12.0f;
+    constexpr float kLookbackMinMs = 10.0f;
+    float lookback_cap = std::max(kLookbackTauMultiple * std::max(tau_rise, tau_decay), kLookbackMinMs);
+    spike_dt_delta = std::min(spike_dt_delta, lookback_cap);
     
     // Iterate in reverse to process most recent spikes first
     for (auto it = spike_times.rbegin(); it != spike_times.rend(); ++it) {

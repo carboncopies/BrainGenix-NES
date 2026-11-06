@@ -298,6 +298,7 @@ set(UNITTEST_SOURCES
   ${SRC_DIR}/Core/Simulator/Structs/SimulationSpikeTimes.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/RecordingElectrode.test.cpp
   ${SRC_DIR}/Core/Simulator/Structs/SynTrQuantalRelease.test.cpp
+  ${SRC_DIR}/Core/Simulator/Structs/ReceptorGNorm.test.cpp
 )
 
 # Configure test binaries
