@@ -1355,15 +1355,16 @@ Geometries::Vec3D Simulation::GetGeoCenter() const {
  * one the conductance is set to 0. The remaining receptor
  * conductance is used to express the new strength.
  */
-bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS) {
+bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS, int NT) {
     if (PostsynapticID >= Neurons.size()) return false;
 
     CoreStructs::Neuron* PostsynapticPtr = Neurons.at(PostsynapticID).get();
     if (PostsynapticPtr->Class_<CoreStructs::_BSNeuron) return false;
 
     if (SimNeuronClass == LIFCNEURONS) {
-        return static_cast<LIFCNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
+        return static_cast<LIFCNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS, NT);
     } else {
+        if (NT >= 0) return false; // Per-receptor-type update is only available for LIFC neurons.
         return static_cast<BallAndStick::BSNeuron*>(PostsynapticPtr)->UpdatePrePostStrength(PresynapticID, NewConductance_nS);
     }
 }
@@ -1372,19 +1373,21 @@ bool Simulation::UpdatePrePostStrength(int PresynapticID, int PostsynapticID, fl
  * This is particularly useful for clearing all effective connection
  * strengths before setting specific ones.
  */
-void Simulation::UpdateAllStrength(float NewConductance_nS) {
+void Simulation::UpdateAllStrength(float NewConductance_nS, int NT) {
     for (int PostSynIdx = 0; PostSynIdx < Neurons.size(); PostSynIdx++) {
         for (int PreSynIdx = 0; PreSynIdx < Neurons.size(); PreSynIdx++) {
-            UpdatePrePostStrength(PreSynIdx, PostSynIdx, NewConductance_nS);
+            UpdatePrePostStrength(PreSynIdx, PostSynIdx, NewConductance_nS, NT);
         }
     }
 }
 
-bool Simulation::UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec) {
+bool Simulation::UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec, const std::vector<int>& NeurotransmitterVec) {
     if ((PresynapticIDVec.size()!=PostsynapticIDVec.size()) || (PresynapticIDVec.size()!=NewConductance_nSVec.size())) return false;
+    if ((!NeurotransmitterVec.empty()) && (NeurotransmitterVec.size()!=PresynapticIDVec.size())) return false;
 
     for (size_t Idx = 0; Idx < PresynapticIDVec.size(); Idx++) {
-        if (!UpdatePrePostStrength(PresynapticIDVec.at(Idx), PostsynapticIDVec.at(Idx), NewConductance_nSVec.at(Idx))) return false;
+        int NT = NeurotransmitterVec.empty() ? -1 : NeurotransmitterVec.at(Idx);
+        if (!UpdatePrePostStrength(PresynapticIDVec.at(Idx), PostsynapticIDVec.at(Idx), NewConductance_nSVec.at(Idx), NT)) return false;
     }
 
     return true;

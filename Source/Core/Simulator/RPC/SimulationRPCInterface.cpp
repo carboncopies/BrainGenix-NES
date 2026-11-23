@@ -592,6 +592,46 @@ std::string SimulationRPCInterface::SimulationRecordAll(std::string _JSONRequest
     return Handle.ErrResponse(); // ok
 }
 
+
+namespace {
+
+// Optional "Neurotransmitter" argument of the strength routes.
+// Returns false (and sets Err) if present but invalid.
+// Absent (or null, or "") -> NTs stays empty / -1 = legacy behavior.
+bool ParseNTName(const nlohmann::json& J, int& NT) {
+    if (J.is_null()) { NT = -1; return true; }
+    if (!J.is_string()) return false;
+    const std::string Name = J.get<std::string>();
+    if (Name.empty()) NT = -1;
+    else if (Name == "AMPA") NT = Connections::AMPA;
+    else if (Name == "GABA") NT = Connections::GABA;
+    else if (Name == "NMDA") NT = Connections::NMDA;
+    else return false;
+    return true;
+}
+
+// Single value (string) -> NTs has Count copies; list of strings -> one per entry (length must equal Count).
+bool ParseOptionalNT(const nlohmann::json& Req, size_t Count, bool AllowList, std::vector<int>& NTs) {
+    NTs.clear();
+    auto it = Req.find("Neurotransmitter");
+    if (it == Req.end()) return true;
+    if (it->is_array()) {
+        if ((!AllowList) || (it->size() != Count)) return false;
+        for (const auto& e : *it) {
+            int NT;
+            if (!ParseNTName(e, NT)) return false;
+            NTs.push_back(NT);
+        }
+        return true;
+    }
+    int NT;
+    if (!ParseNTName(*it, NT)) return false;
+    if (NT >= 0) NTs.assign(Count, NT);
+    return true;
+}
+
+} // namespace
+
 std::string SimulationRPCInterface::SetPrePostStrength(std::string _JSONRequest) {
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/SetPrePostStrength", &Simulations_);
     if (Handle.HasError()) {
@@ -606,7 +646,14 @@ std::string SimulationRPCInterface::SetPrePostStrength(std::string _JSONRequest)
         return Handle.ErrResponse();
     }
 
-    if (!Handle.Sim()->UpdatePrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
+    // Optional: Neurotransmitter = "AMPA" | "GABA" | "NMDA". Absent: legacy behavior.
+    std::vector<int> NTs;
+    if (!ParseOptionalNT(Handle.ReqJSON(), 1, false, NTs)) {
+        Logger_->Log("Error: Invalid Neurotransmitter in Simulation/SetPrePostStrength (expected \"AMPA\", \"GABA\" or \"NMDA\")", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    if (!Handle.Sim()->UpdatePrePostStrength(PreSyn, PostSyn, Conductance_nS, NTs.empty() ? -1 : NTs.at(0))) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 
@@ -625,7 +672,14 @@ std::string SimulationRPCInterface::SetAllStrength(std::string _JSONRequest) {
         return Handle.ErrResponse();
     }
 
-    Handle.Sim()->UpdateAllStrength(Conductance_nS);
+    // Optional: Neurotransmitter = "AMPA" | "GABA" | "NMDA". Absent: legacy behavior.
+    std::vector<int> NTs;
+    if (!ParseOptionalNT(Handle.ReqJSON(), 1, false, NTs)) {
+        Logger_->Log("Error: Invalid Neurotransmitter in Simulation/SetAllStrength (expected \"AMPA\", \"GABA\" or \"NMDA\")", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    Handle.Sim()->UpdateAllStrength(Conductance_nS, NTs.empty() ? -1 : NTs.at(0));
 
     // Return Result ID
     return Handle.ErrResponse(); // ok
@@ -645,7 +699,14 @@ std::string SimulationRPCInterface::BatchSetPrePostStrength(std::string _JSONReq
         return Handle.ErrResponse();
     }
 
-    if (!Handle.Sim()->UpdateBatchPrePostStrength(PreSyn, PostSyn, Conductance_nS)) {
+    // Optional: Neurotransmitter = "AMPA" | "GABA" | "NMDA" for all entries, or a list with one entry per pair.
+    std::vector<int> NTs;
+    if (!ParseOptionalNT(Handle.ReqJSON(), PreSyn.size(), true, NTs)) {
+        Logger_->Log("Error: Invalid Neurotransmitter in Simulation/BatchSetPrePostStrength (expected \"AMPA\", \"GABA\" or \"NMDA\", or a list with one entry per pair)", 7);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
+    }
+
+    if (!Handle.Sim()->UpdateBatchPrePostStrength(PreSyn, PostSyn, Conductance_nS, NTs)) {
         return Handle.ErrResponse(API::BGStatusCode::BGStatusInvalidParametersPassed);
     }
 

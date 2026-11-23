@@ -540,7 +540,32 @@ void LIFCNeuron::GetConnectomeTargetsJSON(
     }   
 }
 
-bool LIFCNeuron::UpdatePrePostStrength(int PresynapticID, float NewConductance_nS) {
+bool LIFCNeuron::UpdatePrePostStrength(int PresynapticID, float NewConductance_nS, int NT) {
+    if (NT >= 0) {
+        // Per-receptor-type update: only the groups of type NT from this
+        // presynaptic neuron are modified. Nothing else is touched, also
+        // when the request fails.
+        if (NT >= Connections::NUMNeurotransmitterType) return false;
+        if (!(NewConductance_nS >= 0.0f)) return false; // negative or NaN
+        float g_peak_sum_total = 0.0;
+        for (auto& _ReceptorDataptr : LIFCReceptorDataVec) {
+            if ((_ReceptorDataptr->SrcNeuronID == PresynapticID) && (_ReceptorDataptr->Type() == NT)) {
+                g_peak_sum_total += _ReceptorDataptr->g_peak_sum_nS;
+            }
+        }
+        if (g_peak_sum_total <= 0.0) return false; // no receptor of that type for this pair
+        // In abstracted mode there is exactly one group per (pre, post, type).
+        // Otherwise the conductance is shared among the groups in proportion
+        // to their peak conductance (same weight for each).
+        const float w = NewConductance_nS / g_peak_sum_total;
+        for (auto& _ReceptorDataptr : LIFCReceptorDataVec) {
+            if ((_ReceptorDataptr->SrcNeuronID == PresynapticID) && (_ReceptorDataptr->Type() == NT)) {
+                _ReceptorDataptr->weight = w;
+            }
+        }
+        return true;
+    }
+
     bool AMPA_found = false;
     for (auto& _ReceptorDataptr : LIFCReceptorDataVec) {
         if (_ReceptorDataptr->SrcNeuronID == PresynapticID) {

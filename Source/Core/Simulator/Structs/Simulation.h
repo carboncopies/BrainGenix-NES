@@ -236,9 +236,12 @@ public:
 
     Geometries::Geometry* FindShapeByID(int ShapeID);
 
-    bool UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS);
-    void UpdateAllStrength(float NewConductance_nS);
-    bool UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec);
+    // NT < 0 (default) keeps the legacy behavior; NT >= 0 is a
+    // Connections::NeurotransmitterType and restricts the update to that type.
+    bool UpdatePrePostStrength(int PresynapticID, int PostsynapticID, float NewConductance_nS, int NT = -1);
+    void UpdateAllStrength(float NewConductance_nS, int NT = -1);
+    // NeurotransmitterVec is empty (legacy) or has one entry per pair (-1 = legacy for that pair).
+    bool UpdateBatchPrePostStrength(const std::vector<int>& PresynapticIDVec, const std::vector<int>& PostsynapticIDVec, const std::vector<float>& NewConductance_nSVec, const std::vector<int>& NeurotransmitterVec = {});
 
     void AttachDirectStim(std::vector<std::tuple<float, size_t>> listOfStims);
     void SetSpontaneousActivity(std::vector<std::tuple<float, float, size_t>> spontSpikeSettings);

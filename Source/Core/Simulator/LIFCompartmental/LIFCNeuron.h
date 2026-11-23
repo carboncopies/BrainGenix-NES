@@ -170,7 +170,11 @@ public:
         nlohmann::json& numreceptorsvec);
 
     // Used in Simulation::UpdatePrePostStrength().
-    virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS);
+    // NT < 0 (default): legacy behavior (first AMPA group of the pair is set,
+    // all other receptor groups from that presynaptic neuron are zeroed).
+    // NT >= 0 (Connections::NeurotransmitterType): only the receptor
+    // group(s) of that type are set; groups of other types are not touched.
+    virtual bool UpdatePrePostStrength(int PresynapticID, float NewConductance_nS, int NT = -1);
 
     // Pure abstraction count of number of synapses.
     virtual size_t GetAbstractConnection(int PreSynID, bool NonZero);
