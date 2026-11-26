@@ -377,7 +377,7 @@ struct LIFCReceptorPars {
     }
 };
 
-#define SPINES_TEST
+//#define SPINES_TEST // Diagnostic only. Not thread-safe (global data shared by concurrent Netmorph jobs); enable for spine development.
 #ifdef SPINES_TEST
 struct spines_test_data {
     std::vector<synapse_morphology> collected;
