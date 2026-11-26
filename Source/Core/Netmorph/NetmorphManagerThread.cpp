@@ -377,6 +377,47 @@ struct LIFCReceptorPars {
     }
 };
 
+//#define SPINES_TEST // Diagnostic only. Not thread-safe (global data shared by concurrent Netmorph jobs); enable for spine development.
+#ifdef SPINES_TEST
+struct spines_test_data {
+    std::vector<synapse_morphology> collected;
+    std::vector<synapse_morphology*> morphologies_built;
+    size_t duplicates() {
+        std::vector<bool> is_duplicate(collected.size(), false);
+        size_t count = 0;
+        for (size_t i = 0; i<collected.size(); i++) {
+            if (!is_duplicate[i]) {
+                for (size_t j = 0; j<collected.size(); j++) {
+                    if (i != j) {
+                        if ((collected[i].presyn_terminal_pos == collected[j].presyn_terminal_pos) && (collected[i].postsyn_pos == collected[j].postsyn_pos)) {
+                            is_duplicate[j] = true;
+                            count++;
+                        }
+                    }
+                }
+            }
+        }
+        return count;
+    }
+    size_t need_spines() {
+        size_t count = 0;
+        for (auto& morph: collected) {
+            if (morph.requires_dendritic_spine) count++;
+        }
+        return count;
+    }
+};
+spines_test_data spines_test;
+#endif
+
+/**
+ * Note: While Netmorph produces individual synpases (e.g. AMPA_receptors) for each
+ *       receptor type at a synaptic site, these reuse the same synapse_structure
+ *       objects. This makes it clear which ones occur together on one morphological
+ *       synapse.
+ *       E.g. s->Structure()->AxonSegment()->cache.i is already set to point to
+ *       the same SourceCompartmentID for each colocated receptor type.
+ */
 class LIFCSynapseBuild: public SynapseBuild {
 public:
     size_t ampa_found = 0;
@@ -387,55 +428,67 @@ public:
     LIFCSynapseBuild(NetmorphParameters& Params, const LIFCReceptorPars& _LIFCreceptorpars):
         SynapseBuild(Params, Dummypsptiming), LIFCreceptorpars(_LIFCreceptorpars) {}
     virtual void op(synapse* s) {
-        // Morphology shape.
-        Geometries::Box S;
-        // *** This needs better detailing to take what are clearly pre-
-        //     and postsynaptic locations and to transform them into a
-        //     morphology for synapses, with spines, terminals and receptors.
+        #ifdef SPINES_TEST
+        synapse_morphology morphology = s->Structure()->get_morphology();
+        spines_test.collected.emplace_back(morphology);
+        #endif
+        int shape_id = s->Structure()->cache.i; // Did we already encounter a receptor on the same morphological synapse?
+        if (shape_id < 0) {
+            // Morphology shape.
+            Geometries::Box S;
+            // *** This needs better detailing to take what are clearly pre-
+            //     and postsynaptic locations and to transform them into a
+            //     morphology for synapses, with spines, terminals and receptors.
 
-        auto center = (s->Structure()->P0 + s->Structure()->P1)/2.0;
-        double x_absdiff = fabs(s->Structure()->P0.X() - s->Structure()->P1.X());
-        double y_absdiff = fabs(s->Structure()->P0.Y() - s->Structure()->P1.Y());
-        double z_absdiff = fabs(s->Structure()->P0.Z() - s->Structure()->P1.Z());
-        S.Center_um.x = center.X();
-        S.Center_um.y = center.Y();
-        S.Center_um.z = center.Z();
-        S.Dims_um.x = x_absdiff;
-        S.Dims_um.y = y_absdiff;
-        S.Dims_um.z = z_absdiff;
-        // S.Rotations_rad = ...;
-        S.Name = "synbox";
+            auto center = (s->Structure()->P0 + s->Structure()->P1)/2.0;
+            double x_absdiff = fabs(s->Structure()->P0.X() - s->Structure()->P1.X());
+            double y_absdiff = fabs(s->Structure()->P0.Y() - s->Structure()->P1.Y());
+            double z_absdiff = fabs(s->Structure()->P0.Z() - s->Structure()->P1.Z());
+            S.Center_um.x = center.X();
+            S.Center_um.y = center.Y();
+            S.Center_um.z = center.Z();
+            S.Dims_um.x = x_absdiff;
+            S.Dims_um.y = y_absdiff;
+            S.Dims_um.z = z_absdiff;
+            // S.Rotations_rad = ...;
+            S.Name = "synbox";
 
-        S.ID = _Params.Sim->AddBox(S);
-
-        // Morphology compartment.
-        Connections::LIFCReceptor C;
-        Connections::NetmorphLIFCReceptorRaw RawData;
-
-        C.Neurotransmitter = synapse_typeToNeurotransmitterType.at(s->type_ID());
-        if (C.Neurotransmitter ==  Connections::AMPA) {
-            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.ampa;
-        } else if (C.Neurotransmitter ==  Connections::NMDA) {
-            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.nmda;
-        } else {
-            static_cast<Connections::LIFCReceptorBase&>(C) = LIFCreceptorpars.gaba;
+            S.ID = _Params.Sim->AddBox(S); // *** WE DO NOT NEED TO ADD MULTIPLE BOXES (MORPHOLOGIES) FOR COLOCATED RECEPTORS!
+            s->Structure()->cache.i = S.ID;
+            shape_id = S.ID;
+            #ifdef SPINES_TEST
+            spines_test.morphologies_built.emplace_back(&(spines_test.collected.back()));
+            #endif
         }
 
-        C.Name = "synapse";
-        C.SourceCompartmentID = s->Structure()->AxonSegment()->cache.i;
-        C.DestinationCompartmentID = s->Structure()->DendriteSegment()->cache.i;
-        if (C.SourceCompartmentID<0) {
+        // Synaptic receptor.
+        Connections::LIFCReceptor R;
+        Connections::NetmorphLIFCReceptorRaw RawData;
+
+        R.Neurotransmitter = synapse_typeToNeurotransmitterType.at(s->type_ID());
+        if (R.Neurotransmitter ==  Connections::AMPA) {
+            static_cast<Connections::LIFCReceptorBase&>(R) = LIFCreceptorpars.ampa;
+        } else if (R.Neurotransmitter ==  Connections::NMDA) {
+            static_cast<Connections::LIFCReceptorBase&>(R) = LIFCreceptorpars.nmda;
+        } else {
+            static_cast<Connections::LIFCReceptorBase&>(R) = LIFCreceptorpars.gaba;
+        }
+
+        R.Name = "synapse";
+        R.SourceCompartmentID = s->Structure()->AxonSegment()->cache.i;
+        R.DestinationCompartmentID = s->Structure()->DendriteSegment()->cache.i;
+        if (R.SourceCompartmentID<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Presynaptic neurite segment not found.");
             return;
         }
-        if (C.DestinationCompartmentID<0) {
+        if (R.DestinationCompartmentID<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Postsynaptic neurite segment not found.");
             return;
         }
 
-        C.ShapeID = S.ID;
+        R.ShapeID = shape_id;
 
         /**
          * *** TODO: Structure-to-function improvements:
@@ -443,10 +496,10 @@ public:
          * - HillocDistance_um calculated by tracing back from synapse location
          * - Weight specified
          */
-        if (C.Neurotransmitter ==  Connections::AMPA) {
+        if (R.Neurotransmitter ==  Connections::AMPA) {
             RawData = LIFCreceptorpars.ampa_raw;
             ampa_found++;
-        } else if (C.Neurotransmitter ==  Connections::NMDA) {
+        } else if (R.Neurotransmitter ==  Connections::NMDA) {
             RawData = LIFCreceptorpars.nmda_raw;
             nmda_found++;
         } else {
@@ -454,10 +507,10 @@ public:
             gaba_found++;
         }
 
-        C.Weight = 0.2;
+        R.Weight = 0.2;
 
-        C.ID = _Params.Sim->AddNetmorphLIFCReceptor(C, RawData);
-        if (C.ID<0) {
+        R.ID = _Params.Sim->AddNetmorphLIFCReceptor(R, RawData);
+        if (R.ID<0) {
             num_errors++;
             NETMORPH_PARAMS_FAIL("SynapsesBuild failed: Source neuron or destination neuron not found.");
             return;
@@ -860,6 +913,12 @@ bool BuildLIFCFromNetmorphNetwork(NetmorphParameters& _Params) {
     // FindUnParsedSegments findunparsed(_Params);
     // Net.tree_op(findunparsed);
 
+    // Make sure the common cache integer values of all synapse_structure segments
+    // are initialized to -1.
+    set_synstruc_cache_int synop;
+    synop.value = -1;
+    Net.synapse_op(synop);
+
     // Synapses need to be processed after all segments have received IDs.
     LIFCSynapseBuild synapse_build(_Params, LIFCreceptorpars);
     Net.synapse_op(synapse_build);
@@ -905,6 +964,12 @@ int ExecuteNetmorphOperation(BG::Common::Logger::LoggingSystem* _Logger, Netmorp
 
     _Params->Result.postop();
     _Params->State = Netmorph_DONE;
+
+    #ifdef SPINES_TEST
+    _Logger->Log("SPINES_TEST:\nNumber of synaptic receptors collected: "+std::to_string(spines_test.collected.size()), 5);
+    _Logger->Log("Number of morphologies built: "+std::to_string(spines_test.morphologies_built.size()), 5);
+    _Logger->Log("Number of synapses needing spines: "+std::to_string(spines_test.need_spines()), 5);
+    #endif
 
     return 0;
 }
