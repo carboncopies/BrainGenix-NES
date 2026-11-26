@@ -101,6 +101,7 @@ public:
 
     std::string Name; /**Name of the simulation*/
     int ID;           /**ID of the simulation*/
+    std::string OwnerUsername = "anonymous"; /**API username that owns this simulation's filesystem outputs*/
     bool KeepResident = true; // Can be used to delete this specific simulation (see DeleteResidentByID)
     bool Deleting = false;    // Turn this on when deleting this Simulation starts to prevent new threads being started by requests
 
@@ -215,6 +216,9 @@ public:
     bool SaveModel(const std::string& Name);
     bool LoadModel(const std::string& Name);
     void InspectSavedModel(const std::string& Name, SaveLoadPrior& _SaveLoadPrior) const;
+
+    // Resolve a relative output handle under this simulation owner's shared root.
+    std::string ResolvePath(const std::string& RelativePath) const;
 
     size_t GetNumCompartments(); // independent of SimNeuronClass
     Compartments::Compartment* GetCompartmentByIdx(size_t Idx); // independent of SimNeuronClass

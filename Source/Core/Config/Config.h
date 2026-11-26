@@ -63,6 +63,7 @@ struct Config {
 
     int MaxVoxelArraySize_; /**Sets the maximum size of each voxel array even if enough memory exists*/
     float VoxelArrayPercentOfSystemMemory_; /**Set the amount of system memory we allow*/
+    std::string OutputBasePath = "/var/lib/BrainGenix/NES"; /**Shared root for all NES filesystem outputs, grouped by API username*/
 
 };
 

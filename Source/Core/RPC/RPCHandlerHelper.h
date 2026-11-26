@@ -52,6 +52,7 @@ protected:
 
     int SimulationID = -1;
     Simulator::Simulation* ThisSimulation = nullptr;
+    std::string RequestUsername_ = "anonymous";
 
 public:
     HandlerData(const std::string& _JSONRequest, BG::Common::Logger::LoggingSystem* _Logger, std::string _RoutePath, Simulations _Simulations, bool PermitBusy = false, bool NoSimulation = false);
@@ -88,6 +89,7 @@ public:
     Simulator::Simulation* Sim() const;
 
     const nlohmann::json& ReqJSON() const;
+    std::string RequestUsername() const;
 
     //bool CheckCompatibility(Simulator::SimulationNeuronClass _NewObjectCategory);
 

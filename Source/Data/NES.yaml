@@ -3,3 +3,6 @@ Network_NES_API_Host: 0.0.0.0
 
 VSDA_EM_PercentOfSysteMemoryLimit: 70
 VSDA_EM_MaxVoxelArraySize: 5000
+
+# Shared root for all NES filesystem outputs, grouped by API username.
+Output_BasePath: /var/lib/BrainGenix/NES

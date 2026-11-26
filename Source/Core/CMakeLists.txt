@@ -124,6 +124,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/LogLogo.cpp
   ${SRC_DIR}/Core/Util/LogLogo.h
   ${SRC_DIR}/Core/Util/SafeContainers.h
+  ${SRC_DIR}/Core/Util/StoragePaths.cpp
+  ${SRC_DIR}/Core/Util/StoragePaths.h
+
 
 
   ${SRC_DIR}/Core/Profiling/ProfilingManager.cpp

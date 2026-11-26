@@ -50,7 +50,11 @@ void SimulationEngineThread(BG::Common::Logger::LoggingSystem* _Logger, Simulati
                 while (_Sim->IsRendering) {
                     std::this_thread::sleep_for(std::chrono::milliseconds(10)); // sleep for 10ms
                 }
-                _Sim->VSDAData_->State_ = VSDA_RENDER_DONE;
+                // Keep a conversion failure visible to GetRenderStatus; overwriting it with
+                // RENDER_DONE is what made failed meshing look like success to the client.
+                if (_Sim->VSDAData_->State_ != VSDA_CONVERSION_FAILED) {
+                    _Sim->VSDAData_->State_ = VSDA_RENDER_DONE;
+                }
                 _Sim->CurrentTask = SIMULATION_NONE;
                 _Sim->WorkRequested = false;
             } else if (_Sim->CurrentTask == SIMULATION_VISUALIZATION) {

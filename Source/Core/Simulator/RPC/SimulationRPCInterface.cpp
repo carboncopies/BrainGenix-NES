@@ -4,6 +4,7 @@
 #include <Simulator/Geometries/VecTools.h>
 #include <Simulator/Structs/RecordingElectrode.h>
 #include <Simulator/Structs/CalciumImaging.h>
+#include <Util/StoragePaths.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <cpp-base64/base64.h>
@@ -224,6 +225,8 @@ std::string SimulationRPCInterface::SimulationCreate(std::string _JSONRequest) {
     Simulation* Sim = Simulations_.read(idx);
     assert(Sim != nullptr);
     Sim->Name = SimulationName;
+    Sim->OwnerUsername = Handle.RequestUsername();
+    Util::Storage::EnsureUserRoot(Sim->OwnerUsername);
     Sim->SetRandomSeed(0);
     Sim->CurrentTask = SIMULATION_NONE;
     Sim->ID = idx;
@@ -664,18 +667,47 @@ std::string SimulationRPCInterface::SimulationGetSpikeTimes(std::string _JSONReq
     return Handle.ResponseAndStoreRequest(ResponseJSON);
 }
 
+// The function that handles the request.
+void SimulationRPCInterface::SimulationGetRecordingTask(API::ManagerTaskData & TaskData) {
+
+    TaskData.OutputData["Recording"] = TaskData.InputSim->GetRecordingJSON(); //TaskData.InputSim->RecordingBlob;
+
+    TaskData.SetStatus(API::ManagerTaskStatus::Success); // Signal task done
+}
+
+// The threadable function that calls the task handler above.
+void SimulationGetRecordingTaskThread(SimulationRPCInterface* _Manager, API::ManagerTaskData* TaskData) {
+    if (!TaskData) return;
+    _Manager->SimulationGetRecordingTask(*TaskData); // Run the rest back in the Manager for full context.
+    if (TaskData->InputSim) TaskData->InputSim->DecRunningManagedTasksCounter();
+}
+
+/**
+ * Collecting and converting a large recording to JSON can take longer than
+ * the NES request timeout, so this is a managed request and completion should
+ * be tested with ManTaskStatus. The recording is then found in the "Recording"
+ * field of the ManTaskStatus response.
+ */
 std::string SimulationRPCInterface::SimulationGetRecording(std::string _JSONRequest) {
- 
     API::HandlerData Handle(_JSONRequest, Logger_, "Simulation/GetRecording", &Simulations_);
     if (Handle.HasError()) {
         return Handle.ErrResponse();
     }
 
-    // Return JSON
-    nlohmann::json ResponseJSON;
-    ResponseJSON["StatusCode"] = 0; // ok
-    ResponseJSON["Recording"] = Handle.Sim()->GetRecordingJSON(); //Handle.Sim()->RecordingBlob;
-    return Handle.ResponseAndStoreRequest(ResponseJSON);
+    // Prepare data structure for task
+    std::unique_ptr<API::ManagerTaskData> SimulationGetRecordingTaskData = std::make_unique<API::ManagerTaskData>(API::SimulationGetRecordingTask);
+
+    SimulationGetRecordingTaskData->InputSim = Handle.Sim();
+
+    // Add task with fresh task status and get task ID to be returned to requestor
+    int TaskID = AddManagerTask(SimulationGetRecordingTaskData, SimulationGetRecordingTaskThread);
+    if (TaskID<0) {
+        Logger_->Log("Unable to launch SimulationGetRecording Task", 8);
+        return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
+    }
+
+    // Return Result ID
+    return Handle.ResponseWithID("TaskID", TaskID);
 }
 
 std::string SimulationRPCInterface::SimulationGetStatus(std::string _JSONRequest) {
@@ -742,7 +774,11 @@ std::string SimulationRPCInterface::SimulationGetSave(std::string _JSONRequest) 
         SaveName.erase(i, Pattern.length());
         i = SaveName.find(Pattern, i);
     }
-    std::string SafeHandle = "SavedSimulations/" + SaveName + ".NES";
+    std::string RelativeHandle = "SavedSimulations/" + SaveName + ".NES";
+    std::string SafeHandle = Util::Storage::FindExisting(RelativeHandle, Handle.RequestUsername());
+    if (SafeHandle.empty()) {
+        SafeHandle = Util::Storage::Resolve(Handle.RequestUsername(), RelativeHandle);
+    }
 
 
     // Now Check If The Handle Is Valid, If So, Load It
@@ -834,7 +870,11 @@ std::string SimulationRPCInterface::SimulationLoad(std::string _JSONRequest) {
     std::unique_ptr<API::ManagerTaskData> LoadTaskData = std::make_unique<API::ManagerTaskData>(API::SimLoadingTask);
 
     // Check if save file exists and load its request contents into the task data
-    if (!LoadFileIntoString("SavedSimulations/"+SavedSimName+".NES", LoadTaskData->InputData)) {
+    std::string SavedSimPath = Util::Storage::FindExisting("SavedSimulations/" + SavedSimName + ".NES", Handle.RequestUsername());
+    if (SavedSimPath.empty()) {
+        SavedSimPath = Util::Storage::Resolve(Handle.RequestUsername(), "SavedSimulations/" + SavedSimName + ".NES");
+    }
+    if (!LoadFileIntoString(SavedSimPath, LoadTaskData->InputData)) {
         Logger_->Log("Unable to Read Simulation Save File " + SavedSimName, 8);
         return Handle.ErrResponse(API::BGStatusCode::BGStatusGeneralFailure);
     }

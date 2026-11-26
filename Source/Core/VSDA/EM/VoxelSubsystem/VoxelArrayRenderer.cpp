@@ -12,6 +12,7 @@
 #include <VSDA/EM/VoxelSubsystem/VoxelArrayRenderer.h>
 
 #include <VSDA/EM/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -88,6 +89,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
 
             // Calculate the filename of the image to be generated, add to list of generated images
             std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
+            std::string AbsoluteDirectoryPath = Util::Storage::CreateDirectories(_VSDAData->OutputUsername_, DirectoryPath);
             double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
             double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
             std::string FilePath = ""; //"X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
@@ -110,7 +112,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
             ThisTask->VoxelZ = _SliceNumber;
             ThisTask->SliceThickness_vox = _SliceThickness;
             ThisTask->TargetFileName_ = FilePath;
-            ThisTask->TargetDirectory_ = DirectoryPath;
+            ThisTask->TargetDirectory_ = AbsoluteDirectoryPath;
             ThisTask->NullImagePath_ = _VSDAData->NullImagePath_;
             ThisTask->EnableImageNoise = Params->GenerateImageNoise;
             ThisTask->ImageNoiseAmount = Params->ImageNoiseIntensity;
@@ -170,6 +172,7 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 // Calculate the filename of the image to be generated, add to list of generated images
                 // int AdjustedSliceNumber = (CurrentSliceIndex + SliceOffset) / (VSDAData_->Params_.SliceThickness_um / VSDAData_->Params_.VoxelResolution_um);
                 std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(AdjustedSliceNumber) + "/";
+                std::string AbsoluteDirectoryPath = Util::Storage::CreateDirectories(_VSDAData->OutputUsername_, DirectoryPath);
 
                 std::string FilePath = ""; //"X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
                 FilePath = std::to_string(VoxelsPerStepX * XStep + VoxelOffsetX) + "-" + std::to_string((VoxelsPerStepX * XStep) + ImageWidth_vox + VoxelOffsetX) + "_";
@@ -186,9 +189,9 @@ int RenderSliceFromArray(BG::Common::Logger::LoggingSystem* _Logger, int MaxImag
                 SegTask->VoxelStartingY = VoxelsPerStepY * YStep;
                 SegTask->VoxelEndingX = SegTask->VoxelStartingX + ImageWidth_vox;
                 SegTask->VoxelEndingY = SegTask->VoxelStartingY + ImageHeight_vox;
-                SegTask->OutputPath_ = DirectoryPath;
+                SegTask->OutputPath_ = AbsoluteDirectoryPath;
                 SegTask->TargetFileName_ = FilePath;
-                SegTask->TargetDirectory_ = DirectoryPath;
+                SegTask->TargetDirectory_ = AbsoluteDirectoryPath;
                 SegTask->IsSegmentation_ = true;
                 SegTask->IsDone_ = false;
                 SegTask->Params_ = &_VSDAData->Params_;

@@ -48,6 +48,7 @@ enum ManagedTasks {
     SimulationLoadModelTask = 4,
     GetConnectomeTask = 5,
     GetAbstractConnectomeTask = 6,
+    SimulationGetRecordingTask = 7,
     NUMManagedTasks
 };
 

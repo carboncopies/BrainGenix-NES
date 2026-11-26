@@ -12,6 +12,7 @@
 #include <VSDA/Ca/VoxelSubsystem/CaVoxelArrayRenderer.h>
 
 #include <VSDA/Ca/VoxelSubsystem/ImageProcessorPool/Image.h>
+#include <Util/StoragePaths.h>
 
 
 
@@ -83,6 +84,7 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
                 // Calculate the filename of the image to be generated, add to list of generated images
                 std::string DirectoryPath = "Renders/" + _FilePrefix + "/Slice" + std::to_string(SliceNumber + _SliceOffset) + "/";
                 DirectoryPath += "Timestep" + std::to_string(_CaData->CalciumConcentrationTimestep_ms * CalciumConcentrationIndex) + "/"; // fixme - make this done by a list of timesteps instead of a hard-coded single timestep
+                std::string AbsoluteDirectoryPath = Util::Storage::CreateDirectories(_CaData->OutputUsername_, DirectoryPath);
                 double RoundedXCoord = std::ceil(((CameraStepSizeX_um * XStep) + _OffsetX) * 100.0) / 100.0;
                 double RoundedYCoord = std::ceil(((CameraStepSizeY_um * YStep) + _OffsetY) * 100.0) / 100.0;
                 std::string FilePath = "X" + std::to_string(RoundedXCoord) + "_Y" + std::to_string(RoundedYCoord) + ".png";
@@ -102,7 +104,7 @@ std::vector<std::string> CaRenderSliceFromArray(BG::Common::Logger::LoggingSyste
                 // std::cout<<"StartX:"<<ThisTask->VoxelStartingX<<" StartY:"<<ThisTask->VoxelStartingY<<" EndX:"<<ThisTask->VoxelEndingX<<" EndY:"<<ThisTask->VoxelEndingY<<std::endl;
                 ThisTask->VoxelZ = SliceNumber;
                 ThisTask->TargetFileName_ = FilePath;
-                ThisTask->TargetDirectory_ = DirectoryPath;
+                ThisTask->TargetDirectory_ = AbsoluteDirectoryPath;
                 ThisTask->CurrentTimestepIndex_ = CalciumConcentrationIndex;
                 ThisTask->CalciumConcentrationByIndex_ = _CaData->CalciumConcentrationByIndex_;
                 ThisTask->BrightnessAmplification = _CaData->Params_.BrightnessAmplification;

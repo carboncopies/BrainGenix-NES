@@ -13,6 +13,10 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <memory>
+#include <algorithm>
+#include <sstream>
+#include <iomanip>
+#include <cstdint>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <rpc/server.h>
@@ -53,6 +57,7 @@ private:
 
 
     std::map<std::string, std::function<std::string(std::string _JSONRequest)>> RequestHandlers_;
+    std::vector<std::string> RouteNames_; // all sub route names for checksum computation
 
     long BgRequestID = 0; // The next ID to use for a background request.
     std::map<long, nlohmann::json*> BgStatusResultMap;
@@ -118,6 +123,9 @@ public:
      * @param _Function 
      */
     void AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function);
+
+    std::string ComputeChecksum();
+    std::string GetManifestJSON();
 
 
     /**

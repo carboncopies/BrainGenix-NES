@@ -61,7 +61,8 @@ enum VSDAState {
     VSDA_RENDER_IN_PROGRESS=4,
     VSDA_RENDER_DONE=5,
     VSDA_CONVERSION_REQUESTED=6, // note that for vsda conversions, it will retunr to render done when finished
-    VSDA_CONVERSION_IN_PROGRESS=7
+    VSDA_CONVERSION_IN_PROGRESS=7,
+    VSDA_CONVERSION_FAILED=8 // conversion or meshing failed (see NES log); PrepareNeuroglancerDataset may be retried
 };
 
 
@@ -95,6 +96,7 @@ struct VSDAData {
 
 
     std::string                 NullImagePath_ = "";       /**Defines the path of the black png to be used when no content is in frame of rendered image */
+    std::string                 OutputUsername_ = "anonymous"; /**API username used to resolve per-user output paths for this VSDA job */
 
 
     std::vector<std::vector<std::string>> RenderedImagePaths_; /**List of paths for each region to be populated as we render all the images for this simulation into a stack*/

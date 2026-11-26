@@ -1,0 +1,4 @@
+# Python dependencies for NES's helper scripts (Source/Python/), installed into
+# ./venv by Tools/Setup.sh. Versions are the set verified to mesh on 2026-10-04.
+igneous-pipeline==4.37.0   # Source/Python/igneous_local.py (pulls task-queue, cloud-volume, cloud-files)
+graphifyy==0.9.63          # release tagging (Tools/Tag.sh)
